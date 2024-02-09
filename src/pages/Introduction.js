@@ -1,14 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
 
 const Item = ({ title, description, isDarkMode }) => (
-  <div isclassName="card mb-3">
+  <div className="card mb-3" data-bs-theme={isDarkMode ? "dark" : "light"}>
     <div className="card-body">
       <h5 className="card-title">{title}</h5>
       <p className="card-text">{description}</p>
     </div>
   </div>
 );
-const Introduction = (isDarkMode) => {
+const Introduction = ({ isDarkMode }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const introComponentRef = useRef(null);
 
@@ -31,6 +31,7 @@ const Introduction = (isDarkMode) => {
       introComponent.style.transform = `translateY(-${distance}px)`;
     }
   }, [scrollPosition]);
+
   const items = [
     { title: "Item 1", description: "Description for Item 1" },
     { title: "Item 2", description: "Description for Item 2" },
@@ -55,10 +56,8 @@ const Introduction = (isDarkMode) => {
       ref={introComponentRef}>
       <div className="row justify-content-center">
         <div
-          className="col-md-10 rounded shadow-lg"
-          // style={{ backgroundColor: isDarkMode ? "" : "#6c757d" }}
-          // style={{ backgroundColor: "6c757d" }}
-        >
+          className="col-md-10 rounded shadow-lg "
+          style={{ backgroundColor: isDarkMode ? "#252d38" : "white" }}>
           <div className="row justify-content-center">
             <div className="col-md-10">
               {/* Map over the array of items and render individual Item introComponents */}
