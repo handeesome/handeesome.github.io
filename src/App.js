@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Test from "./Test";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
   };
