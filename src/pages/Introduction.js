@@ -1,14 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
 
-const Item = ({ title, description }) => (
-  <div className="card mb-3">
+const Item = ({ title, description, isDarkMode }) => (
+  <div isclassName="card mb-3">
     <div className="card-body">
       <h5 className="card-title">{title}</h5>
       <p className="card-text">{description}</p>
     </div>
   </div>
 );
-const Introduction = () => {
+const Introduction = (isDarkMode) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const introComponentRef = useRef(null);
 
@@ -49,16 +49,26 @@ const Introduction = () => {
     <div
       className="container pt-5 pb-5"
       id="introduction"
-      style={{ transition: "transform ease-in-out" }}
+      style={{
+        transition: "transform ease-in-out",
+      }}
       ref={introComponentRef}>
       <div className="row justify-content-center">
-        <div className="col-md-10 bg-white rounded shadow-lg">
+        <div
+          className="col-md-10 rounded shadow-lg"
+          // style={{ backgroundColor: isDarkMode ? "" : "#6c757d" }}
+          // style={{ backgroundColor: "6c757d" }}
+        >
           <div className="row justify-content-center">
             <div className="col-md-10">
               {/* Map over the array of items and render individual Item introComponents */}
               {items.map((item, index) => (
                 <div key={index} className="mb-5 mt-5">
-                  <Item title={item.title} description={item.description} />
+                  <Item
+                    title={item.title}
+                    description={item.description}
+                    isDarkMode={isDarkMode}
+                  />
                 </div>
               ))}
             </div>
