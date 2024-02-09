@@ -4,19 +4,13 @@ import Home from "./pages/Home";
 import Test from "./Test";
 
 function App() {
-  const [themeMode, setThemeMode] = useState("light");
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const toggleMode = () => {
-    if (themeMode === "light") {
-      setThemeMode("dark");
-      document.body.style.backgroundColor = "#050122"; //'#042743'
-    } else {
-      setThemeMode("light");
-      document.body.style.backgroundColor = "#e7e7e7";
-    }
+    setIsDarkMode(!isDarkMode);
   };
 
   // const toggleTheme = () => {
-  //   setThemeMode(themeMode === "light" ? "dark" : "light");
+  //   setIsDarkMode(isDarkMode === "light" ? "dark" : "light");
   // };
   return (
     // <BrowserRouter>
@@ -26,8 +20,8 @@ function App() {
     //     </Routes>
     //   </Layout>
     // </BrowserRouter>
-    <div>
-      <Layout toggleMode={toggleMode}>
+    <div style={{ background: isDarkMode ? "#181c27" : "#e7e7e7" }}>
+      <Layout toggleMode={toggleMode} isDarkMode={isDarkMode}>
         <Home />
       </Layout>
     </div>
