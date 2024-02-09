@@ -7,7 +7,7 @@ const Layout = ({ toggleMode, isDarkMode, children }) => {
     <div>
       <Header toggleMode={toggleMode} isDarkMode={isDarkMode} />
       {children}
-      <Footer />
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 };
