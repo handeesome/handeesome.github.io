@@ -4,7 +4,8 @@ import backgroundImageLight from "../assets/images/background_light.jpg";
 import backgroundImageDark from "../assets/images/background_dark.jpg";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 
 const Header = ({ toggleMode, isDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,7 +83,12 @@ const Header = ({ toggleMode, isDarkMode }) => {
                   onClick={toggleMode}
                   style={{ cursor: "pointer" }}
                   className="align-items-center d-flex ">
-                  <FontAwesomeIcon icon={faSun} className="fa-2xl" />
+                  <FontAwesomeIcon
+                    icon={isDarkMode ? faSun : faMoon}
+                    className={`fa-2xl ${
+                      isDarkMode || isScrolled ? "text-white" : ""
+                    }`}
+                  />
                 </div>
               </Nav>
             </Navbar.Collapse>
