@@ -22,7 +22,7 @@ function App() {
     // </BrowserRouter>
     <div style={{ background: isDarkMode ? "#181c27" : "#e7e7e7" }}>
       <Layout toggleMode={toggleMode} isDarkMode={isDarkMode}>
-        <Home />
+        <Home isDarkMode={isDarkMode} />
       </Layout>
     </div>
 

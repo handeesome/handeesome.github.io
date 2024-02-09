@@ -6,10 +6,7 @@ const Layout = ({ toggleMode, isDarkMode, children }) => {
   return (
     <div>
       <Header toggleMode={toggleMode} isDarkMode={isDarkMode} />
-      {React.Children.map(children, (child) => {
-        // Clone the child element and pass isDarkMode as a prop
-        return React.cloneElement(child, { isDarkMode });
-      })}
+      {children}
       <Footer />
     </div>
   );
