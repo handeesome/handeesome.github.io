@@ -26,7 +26,7 @@ const Introduction = ({ isDarkMode }) => {
 
   useEffect(() => {
     const introComponent = introComponentRef.current;
-    if (introComponent && scrollPosition < 376) {
+    if (introComponent && scrollPosition < 205) {
       const distance = scrollPosition * 0.5;
       introComponent.style.transform = `translateY(-${distance}px)`;
     }
@@ -48,8 +48,7 @@ const Introduction = ({ isDarkMode }) => {
   ];
   return (
     <div
-      className="container pt-5 pb-5"
-      id="introduction"
+      className="container pb-5"
       style={{
         transition: "transform ease-in-out",
       }}
@@ -58,7 +57,7 @@ const Introduction = ({ isDarkMode }) => {
         <div
           className="col-md-10 rounded shadow-lg "
           style={{ backgroundColor: isDarkMode ? "#252d38" : "white" }}>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center" id="introduction">
             <div className="col-md-10">
               {/* Map over the array of items and render individual Item introComponents */}
               {items.map((item, index) => (
@@ -71,7 +70,6 @@ const Introduction = ({ isDarkMode }) => {
                 </div>
               ))}
             </div>
-            <div className="w-100"></div>
           </div>
         </div>
       </div>
