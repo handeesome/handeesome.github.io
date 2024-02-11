@@ -1,29 +1,67 @@
-import { createContext, useState } from "react";
-import Layout from "./components/Layout";
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Test from "./Test";
+import Projects from "./pages/Projects";
+import StudyNotes from "./pages/StudyNotes";
+import BookLists from "./pages/BookLists";
+import Footer from "./components/Footer";
+import HomeHeader from "./components/header/HomeHeader";
+import PageHeader from "./components/header/PageHeader";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
   };
-
-  // const toggleTheme = () => {
-  //   setIsDarkMode(isDarkMode === "light" ? "dark" : "light");
-  // };
   return (
-    // <BrowserRouter>
-    //   <Layout>
-    //     <Routes>
-    //       <Route exact path="/" component={Introduction} />
-    //     </Routes>
-    //   </Layout>
-    // </BrowserRouter>
     <div style={{ background: isDarkMode ? "#181c27" : "#e7e7e7" }}>
-      <Layout toggleMode={toggleMode} isDarkMode={isDarkMode}>
-        <Home isDarkMode={isDarkMode} />
-      </Layout>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <HomeHeader toggleMode={toggleMode} isDarkMode={isDarkMode} />
+                <Home isDarkMode={isDarkMode} />
+              </div>
+            }></Route>
+          <Route
+            path="/projects"
+            element={
+              <div>
+                <PageHeader toggleMode={toggleMode} isDarkMode={isDarkMode} />
+                <Projects isDarkMode={isDarkMode} />
+              </div>
+            }></Route>
+          <Route
+            path="/study-notes"
+            element={
+              <div>
+                <PageHeader toggleMode={toggleMode} isDarkMode={isDarkMode} />
+                <StudyNotes isDarkMode={isDarkMode} />
+              </div>
+            }></Route>
+          <Route
+            path="/book-lists"
+            element={
+              <div>
+                <PageHeader toggleMode={toggleMode} isDarkMode={isDarkMode} />
+                <BookLists isDarkMode={isDarkMode} />
+              </div>
+            }></Route>
+          <Route
+            path="*"
+            element={
+              <div>
+                <PageHeader toggleMode={toggleMode} isDarkMode={isDarkMode} />
+              </div>
+            }
+          />
+        </Routes>
+        <Footer isDarkMode={isDarkMode} />
+      </BrowserRouter>
     </div>
 
     // <Test />

@@ -1,18 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link } from "react-scroll";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faSun } from "@fortawesome/free-solid-svg-icons";
-// Create a context to manage theme
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
+
+const ParentComponent = () => {
+  return (
+    <div>
+      <h1>Parent Component</h1>
+      <Outlet /> {/* This is where child routes will be rendered */}
+    </div>
+  );
+};
+
+const ChildComponent1 = () => {
+  return <h2>Child Component 1</h2>;
+};
+
+const ChildComponent2 = () => {
+  return <h2>Child Component 2</h2>;
+};
 
 const Test = () => {
-  const [themeMode, setThemeMode] = useState("light");
-
-  const toggleTheme = () => {
-    setThemeMode(themeMode === "light" ? "dark" : "light");
-  };
-
-  return;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<ParentComponent />}>
+          <Route path="child1" element={<ChildComponent1 />} />
+          <Route path="child2" element={<ChildComponent2 />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 };
 
 export default Test;
