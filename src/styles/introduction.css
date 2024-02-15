@@ -1,7 +1,17 @@
-.round-corners {
-  border-radius: 25px;
-  background: #73ad21;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
+#introduction .card,
+#introduction .card-footer {
+  background-color: #252d38;
+  color: #c4c6c9;
+  border: 0;
+}
+#introduction .card-title {
+  color: white;
+}
+
+#introduction a {
+  text-decoration: none;
+}
+
+#introduction a:hover {
+  color: #30a9de;
 }

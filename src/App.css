@@ -1,0 +1,12 @@
+#dark {
+  background-color: #181c27;
+  --text-color: #c4c6c9;
+  --link-hover-color: #30a9de;
+  --link-hover-bg-color: #364151;
+}
+#light {
+  background-color: #e7e7e7;
+  --text-color: #3c4858;
+  --link-hover-color: #30a9de;
+  --link-hover-bg-color: #f8f9fa;
+}

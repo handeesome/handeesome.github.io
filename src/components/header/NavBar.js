@@ -38,7 +38,7 @@ const NavBar = ({ isScrolled, isDarkMode, toggleMode }) => {
               Study Notes
             </Nav.Link>
             <Nav.Link
-              href="/book-list"
+              href="/book-lists"
               className={isDarkMode ? "text-white" : ""}>
               Book List
             </Nav.Link>

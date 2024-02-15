@@ -1,0 +1,27 @@
+#dark .list-group-item,
+#light .list-group-item {
+  background-color: transparent;
+  border: 0;
+}
+
+.list-group-item .list-group-item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#dark .list-group-item-action {
+  color: #c4c6c9;
+}
+#dark .list-group-item-action:focus,
+#dark .list-group-item-action:hover {
+  color: #30a9de;
+  background-color: #364151;
+}
+#light .list-group-item-action {
+  color: #3c4858;
+}
+#light .list-group-item-action:focus,
+#light .list-group-item-action:hover {
+  color: #30a9de;
+  background-color: #f8f9fa;
+}

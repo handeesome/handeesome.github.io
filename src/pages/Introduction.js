@@ -1,79 +1,43 @@
 import React, { useRef, useEffect, useState } from "react";
+import Board from "../components/Board";
+import "../styles/Introduction.css";
 
-const Item = ({ title, description, isDarkMode }) => (
-  <div className="card mb-3" data-bs-theme={isDarkMode ? "dark" : "light"}>
-    <div className="card-body">
+const Item = ({ title, description }) => (
+  <div className="card mb-3 custom-card">
+    <a href="one" className="card-body">
       <h5 className="card-title">{title}</h5>
       <p className="card-text">{description}</p>
+    </a>
+    <div className="card-footer bg-transparent">
+      <time>2024-2-15</time>
+      <a>hello world</a>
     </div>
   </div>
 );
 const Introduction = ({ isDarkMode }) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const introComponentRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const position = window.pageYOffset;
-      setScrollPosition(position);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const introComponent = introComponentRef.current;
-    if (introComponent && scrollPosition < 205) {
-      const distance = scrollPosition * 0.5;
-      introComponent.style.transform = `translateY(-${distance}px)`;
-    }
-  }, [scrollPosition]);
-
   const items = [
-    { title: "Item 1", description: "Description for Item 1" },
-    { title: "Item 2", description: "Description for Item 2" },
-    { title: "Item 3", description: "Description for Item 3" },
-    { title: "Item 1", description: "Description for Item 1" },
-    { title: "Item 2", description: "Description for Item 2" },
-    { title: "Item 3", description: "Description for Item 3" },
-    { title: "Item 1", description: "Description for Item 1" },
-    { title: "Item 2", description: "Description for Item 2" },
-    { title: "Item 3", description: "Description for Item 3" },
-    { title: "Item 1", description: "Description for Item 1" },
-    { title: "Item 2", description: "Description for Item 2" },
-    { title: "Item 3", description: "Description for Item 3" },
+    {
+      title: "Hello World",
+      description: "First item that will always be displayed to the viewers.",
+    },
   ];
   return (
-    <div
-      className="container pb-5"
-      style={{
-        transition: "transform ease-in-out",
-      }}
-      ref={introComponentRef}>
-      <div className="row justify-content-center">
-        <div
-          className="col-md-10 rounded shadow-lg "
-          style={{ backgroundColor: isDarkMode ? "#252d38" : "white" }}>
-          <div className="row justify-content-center" id="introduction">
-            <div className="col-md-10">
-              {/* Map over the array of items and render individual Item introComponents */}
-              {items.map((item, index) => (
-                <div key={index} className="mb-5 mt-5">
-                  <Item
-                    title={item.title}
-                    description={item.description}
-                    isDarkMode={isDarkMode}
-                  />
-                </div>
-              ))}
+    <Board isDarkMode={isDarkMode}>
+      <div className="row justify-content-center" id="introduction">
+        <div className="col-md-10 mt-5">
+          {/* Map over the array of items and render individual Item introComponents */}
+          {items.map((item, index) => (
+            <div key={index}>
+              <Item
+                title={item.title}
+                description={item.description}
+                isDarkMode={isDarkMode}
+              />
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </Board>
   );
 };
 

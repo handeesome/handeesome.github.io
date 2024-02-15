@@ -40,7 +40,6 @@ const Card = ({ isDarkMode }) => {
   useEffect(() => {
     const introComponent = introComponentRef.current;
     if (introComponent && scrollPosition < 205) {
-      console.log(scrollPosition);
       const distance = scrollPosition * 0.5;
       introComponent.style.transform = `translateY(-${distance}px)`;
     }
