@@ -1,5 +1,7 @@
 import React from "react";
 import Board from "../components/Board";
+import { Routes, Route } from "react-router-dom";
+import HelloWorld from "./projects/HelloWolrd";
 import "../styles/Projects.css";
 
 const Items = () => {
@@ -13,7 +15,7 @@ const Items = () => {
     {
       title: "Auto Generate PPTX in Python using python-pptx",
       date: "2024-2-11",
-      itemLink: "/one",
+      itemLink: "/projects/hello",
     },
   ];
   return (

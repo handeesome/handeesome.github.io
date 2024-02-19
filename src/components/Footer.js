@@ -4,7 +4,10 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = ({ isDarkMode }) => {
   return (
-    <footer className={`container ${isDarkMode ? "text-light" : "text-dark"}`}>
+    <footer
+      className={`position-bottom container ${
+        isDarkMode ? "text-light" : "text-dark"
+      }`}>
       <div className="row justify-content-md-center">
         <div className="col-md-5 ">
           <p>&copy; 2024 Cenhan Du. All Rights Reserved.</p>

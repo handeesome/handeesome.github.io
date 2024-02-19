@@ -10,6 +10,8 @@ import BookLists from "./pages/BookLists";
 import Footer from "./components/Footer";
 import HomeHeader from "./components/header/HomeHeader";
 import PageHeader from "./components/header/PageHeader";
+import Project from "./pages/projects/Project";
+import HelloWorld from "./pages/projects/HelloWolrd";
 
 export const ThemeContext = createContext(null);
 
@@ -41,6 +43,12 @@ function App() {
                   <Projects isDarkMode={isDarkMode} />
                 </div>
               }></Route>
+            <Route
+              path="/projects/:projectId"
+              element={
+                <Project toggleMode={toggleMode} isDarkMode={isDarkMode} />
+              }></Route>
+
             <Route
               path="/study-notes"
               element={
