@@ -4,7 +4,7 @@ import "../styles/Introduction.css";
 
 const Item = ({ title, description }) => (
   <div className="card mb-3 custom-card">
-    <a href="test" className="card-body">
+    <a href="/projects/hello" className="card-body">
       <h5 className="card-title">{title}</h5>
       <p className="card-text">{description}</p>
     </a>

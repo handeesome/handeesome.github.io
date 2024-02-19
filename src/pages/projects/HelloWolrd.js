@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 import content from "./hello-world.md";
 
 const HelloWorld = () => {
@@ -10,7 +12,7 @@ const HelloWorld = () => {
       setMarkdown(text);
     });
 
-  return <Markdown>{markdown}</Markdown>;
+  return <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>;
 };
 
 export default HelloWorld;
