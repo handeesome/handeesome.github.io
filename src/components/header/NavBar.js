@@ -18,7 +18,7 @@ const NavBar = ({ isScrolled, isDarkMode, toggleMode }) => {
       <Container>
         <Navbar.Brand
           style={{ fontSize: "1.5rem", color: isDarkMode ? "white" : "" }}
-          href="#home">
+          href="/">
           Cenhan's Site
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
