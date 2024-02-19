@@ -11,7 +11,12 @@
 #introduction a {
   text-decoration: none;
 }
+.tag {
+  color: #c4c6c9;
+}
 
-#introduction a:hover {
+#introduction .card-title:hover,
+#introduction .card-text:hover,
+#introduction .tag:hover {
   color: #30a9de;
 }
