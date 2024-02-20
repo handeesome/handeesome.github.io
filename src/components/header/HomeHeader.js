@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 const HomeHeader = ({ toggleMode, isDarkMode }) => {
   return (
-    <div>
+    <>
       <Header toggleMode={toggleMode} isDarkMode={isDarkMode} picHeight={100} />
       <Link to="introduction" spy={true} offset={-143}>
         <div
@@ -20,7 +20,7 @@ const HomeHeader = ({ toggleMode, isDarkMode }) => {
           />
         </div>
       </Link>
-    </div>
+    </>
   );
 };
 
