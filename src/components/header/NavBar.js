@@ -2,6 +2,8 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import "../../styles/NavBar.css";
 
 const NavBar = ({ isScrolled, isDarkMode, toggleMode }) => {
   return (
@@ -16,30 +18,23 @@ const NavBar = ({ isScrolled, isDarkMode, toggleMode }) => {
         transition: "height 0.3s ease-in-out",
       }}>
       <Container>
-        <Navbar.Brand
-          style={{ fontSize: "1.5rem", color: isDarkMode ? "white" : "" }}
-          href="/">
-          Cenhan's Site
-        </Navbar.Brand>
+        <Navbar.Brand href="/">Cenhan's Site</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto " variant="underline">
-            <Nav.Link href="/" className={isDarkMode ? "text-white" : ""}>
+          <Nav className="mr-auto" variant="underline">
+            <Link to="/" className="nav-link ">
               Home
-            </Nav.Link>
-            <Nav.Link
-              href="/projects"
-              className={isDarkMode ? "text-white" : ""}>
+            </Link>
+            <Link to="/projects" className="nav-link">
               Projects
-            </Nav.Link>
-            <Nav.Link
-              href="/study-notes"
-              className={isDarkMode ? "text-white" : ""}>
+            </Link>
+            <Link to="/study-notes" className="nav-link">
               Study Notes
-            </Nav.Link>
+            </Link>
             <Nav.Link
               href="/book-lists"
-              className={isDarkMode ? "text-white" : ""}>
+              // className={isDarkMode ? "text-white" : ""}
+            >
               Book List
             </Nav.Link>
             <div
