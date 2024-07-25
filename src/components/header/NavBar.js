@@ -31,12 +31,15 @@ const NavBar = ({ isScrolled, isDarkMode, toggleMode }) => {
             <Link to="/study-notes" className="nav-link">
               Study Notes
             </Link>
-            <Nav.Link
+            <Link to="/book-lists" className="nav-link">
+              Book List
+            </Link>
+            {/* <Nav.Link
               href="/book-lists"
               // className={isDarkMode ? "text-white" : ""}
             >
               Book List
-            </Nav.Link>
+            </Nav.Link> */}
             <div
               onClick={toggleMode}
               style={{ cursor: "pointer" }}

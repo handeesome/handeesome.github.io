@@ -26,32 +26,36 @@ function App() {
   };
   return (
     // <ThemeContext.Provider value={{ theme, toggleMode }}>
-    //   <div id={theme}>
-    <>
-      <Header toggleMode={toggleMode} isDarkMode={isDarkMode} picHeight={80} />
+    <div id={theme}>
+      <>
+        <Header
+          toggleMode={toggleMode}
+          isDarkMode={isDarkMode}
+          picHeight={80}
+        />
 
-      <Routes>
-        <Route path="/" element={<Home isDarkMode={isDarkMode} />}></Route>
-        <Route
-          path="/projects"
-          element={<Projects isDarkMode={isDarkMode} />}></Route>
-        {/* <Route
+        <Routes>
+          <Route path="/" element={<Home isDarkMode={isDarkMode} />}></Route>
+          <Route
+            path="/projects"
+            element={<Projects isDarkMode={isDarkMode} />}></Route>
+          {/* <Route
             path="/projects/:projectId"
             element={
               <Project toggleMode={toggleMode} isDarkMode={isDarkMode} />
             }></Route> */}
 
-        <Route
-          path="/study-notes"
-          element={<StudyNotes isDarkMode={isDarkMode} />}></Route>
-        <Route
-          path="/book-lists"
-          element={<BookLists isDarkMode={isDarkMode} />}></Route>
-      </Routes>
-      <Footer isDarkMode={isDarkMode} />
-    </>
-    /* </div>
-    </ThemeContext.Provider> */
+          <Route
+            path="/study-notes"
+            element={<StudyNotes isDarkMode={isDarkMode} />}></Route>
+          <Route
+            path="/book-lists"
+            element={<BookLists isDarkMode={isDarkMode} />}></Route>
+        </Routes>
+        <Footer isDarkMode={isDarkMode} />
+      </>
+    </div>
+    // </ThemeContext.Provider>
 
     // <Test />
   );
