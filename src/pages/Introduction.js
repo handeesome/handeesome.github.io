@@ -4,12 +4,12 @@ import "../styles/Introduction.css";
 
 const Item = ({ title, description }) => (
   <div className="card mb-3 custom-card">
-    <a href="/projects/hello" className="card-body">
+    <a href="/projects/HelloWorld" className="card-body">
       <h5 className="card-title">{title}</h5>
       <p className="card-text">{description}</p>
     </a>
     <div className="card-footer bg-transparent">
-      <time>2024-2-15</time>
+      <time>2024-2-15 </time>
       <a className="tag">hello world</a>
     </div>
   </div>

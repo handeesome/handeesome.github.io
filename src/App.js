@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import HomeHeader from "./components/header/HomeHeader";
 import PageHeader from "./components/header/PageHeader";
 import Project from "./pages/projects/Project";
-import HelloWorld from "./pages/projects/HelloWolrd";
+import HelloWorld from "./pages/projects/HelloWorld";
 import Header from "./components/header/Header";
 import backgroundImageDark from "./assets/images/background_dark_old.jpg";
 
@@ -39,6 +39,7 @@ function App() {
           <Route
             path="/projects"
             element={<Projects isDarkMode={isDarkMode} />}></Route>
+
           {/* <Route
             path="/projects/:projectId"
             element={

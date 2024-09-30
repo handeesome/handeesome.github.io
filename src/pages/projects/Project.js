@@ -1,5 +1,5 @@
 import React from "react";
-import HelloWorld from "./HelloWolrd";
+import HelloWorld from "./HelloWorld";
 import PageHeader from "../../components/header/PageHeader";
 import Board from "../../components/Board";
 const Project = ({ toggleMode, isDarkMode }) => {
