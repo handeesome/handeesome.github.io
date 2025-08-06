@@ -3,7 +3,7 @@ name: Deploy React to GitHub Pages
 on:
   push:
     branches:
-      - dev # or main, or any branch you use for development
+      - dev # your development branch
 
 jobs:
   deploy:
