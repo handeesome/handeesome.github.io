@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useTheme } from "../ThemeContext";
 
-const Board = ({ isDarkMode, children }) => {
+const Board = ({ title, children }) => {
+  const { theme } = useTheme();
   const [scrollPosition, setScrollPosition] = useState(0);
   const introComponentRef = useRef(null);
 
@@ -37,10 +39,16 @@ const Board = ({ isDarkMode, children }) => {
           className="col-md-10 rounded shadow-lg"
           id="board"
           style={{
-            backgroundColor: isDarkMode ? "#252d38" : "white",
-            color: isDarkMode ? "white" : "",
+            backgroundColor: theme === "dark" ? "#252d38" : "white",
+            color: theme === "dark" ? "white" : "",
           }}>
-          <div className="row justify-content-center">{children}</div>
+          <div className="row justify-content-center">
+            <div className="col-md-10">
+              <p className="h4 mt-5">{title}</p>
+              <hr />
+              {children}
+            </div>
+          </div>
         </div>
       </div>
     </div>

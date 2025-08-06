@@ -1,0 +1,34 @@
+name: Update Toggl Data
+
+on:
+  schedule:
+    - cron: "0 3 * * 0" # Every Sunday at 03:00 UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r toggl-fetch/requirements.txt
+
+      - name: Run fetch script
+        env:
+          TOGGL_API_TOKEN: ${{ secrets.TOGGL_API_TOKEN }}
+        run: python toggl-fetch/fetch.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/toggl-data.json
+          git commit -m "Update Toggl data [CI]" || echo "No changes"
+          git push

@@ -37,9 +37,9 @@ const Items = () => {
     </div>
   );
 };
-const Projects = ({ isDarkMode }) => {
+const Projects = () => {
   return (
-    <Board isDarkMode={isDarkMode}>
+    <Board>
       <Items />
     </Board>
   );
