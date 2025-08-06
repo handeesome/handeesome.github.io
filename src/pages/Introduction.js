@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Board from "../components/Board";
-import "../styles/Introduction.css";
+import "../styles/introduction.css";
 
 const Item = ({ title, description }) => (
   <div className="card mb-3 custom-card">

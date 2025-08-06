@@ -4,11 +4,12 @@ import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "../../styles/NavBar.css";
+import { ThemeProvider, useTheme } from "../../ThemeContext";
 
-const NavBar = ({ isScrolled, isDarkMode, toggleMode }) => {
+const NavBar = ({ isScrolled }) => {
+  const { toggleTheme, theme } = useTheme();
   return (
     <Navbar
-      data-bs-theme={isScrolled ? "dark" : "light"}
       expand="lg"
       fixed="top"
       style={{
@@ -41,14 +42,12 @@ const NavBar = ({ isScrolled, isDarkMode, toggleMode }) => {
               Book List
             </Nav.Link> */}
             <div
-              onClick={toggleMode}
+              onClick={toggleTheme}
               style={{ cursor: "pointer" }}
-              className="align-items-center d-flex ">
+              className="align-items-center d-flex">
               <FontAwesomeIcon
-                icon={isDarkMode ? faSun : faMoon}
-                className={`fa-2xl ${
-                  isDarkMode || isScrolled ? "text-white" : ""
-                }`}
+                icon={theme === "light" ? faMoon : faSun}
+                className={`fa-2xl ${theme === "dark" ? "" : "text-white"}`}
               />
             </div>
           </Nav>

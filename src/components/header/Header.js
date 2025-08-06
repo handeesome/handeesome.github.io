@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import backgroundImageLight from "../../assets/images/background_light.jpg";
 import backgroundImageDark from "../../assets/images/background_dark.jpg";
 import NavBar from "./NavBar";
-const Header = ({ toggleMode, isDarkMode, picHeight }) => {
+import { useTheme } from "../../ThemeContext";
+
+const Header = ({ picHeight }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +22,13 @@ const Header = ({ toggleMode, isDarkMode, picHeight }) => {
   useEffect(() => {
     const container = document.querySelector(".header-container");
     if (container) {
-      container.style.backgroundImage = isDarkMode
-        ? `url(${backgroundImageDark})`
-        : `url(${backgroundImageLight})`;
+      container.style.backgroundImage =
+        theme === "dark"
+          ? `url(${backgroundImageDark})`
+          : `url(${backgroundImageLight})`;
     }
-  }, [isDarkMode]);
+  });
+
   return (
     <div>
       <div
@@ -33,17 +38,11 @@ const Header = ({ toggleMode, isDarkMode, picHeight }) => {
           backgroundPosition: "center",
           height: `${picHeight}vh`,
         }}>
-        <NavBar
-          isScrolled={isScrolled}
-          isDarkMode={isDarkMode}
-          toggleMode={toggleMode}
-        />
+        <NavBar isScrolled={isScrolled} />
         <div className="container d-flex h-100 justify-content-center align-items-center">
           <div className=" p-5">
             <h2>
-              <span style={{ color: isDarkMode ? "white" : "" }}>
-                Hello World!! from the other side
-              </span>
+              <span>Hello World!! from the other side</span>
             </h2>
           </div>
         </div>
