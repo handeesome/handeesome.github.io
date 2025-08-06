@@ -1,5 +1,5 @@
-import React, { Children, useState } from "react";
 import Board from "../components/Board";
+import TogglChart from "../components/TogglChart";
 
 const Items = () => {
   const Item = ({ category, date, itemLink }) => (
@@ -16,7 +16,12 @@ const Items = () => {
     </a>
   );
 
-  return <div>123</div>;
+  return (
+    <div>
+      <h1>My Time Tracking Dashboard</h1>
+      <TogglChart />
+    </div>
+  );
 };
 const BookLists = () => {
   const title = "Book Lists";
