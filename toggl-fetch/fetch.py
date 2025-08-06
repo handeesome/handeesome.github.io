@@ -8,12 +8,12 @@ WORKSPACE_ID = 20692980
 USER_AGENT = "ducenhandee@gmail.com"
 JSON_PATH = 'public/toggl-data.json'  # Path relative to the repo root
 
-def fetch_entries(start_date, end_date):
+def fetch_entries(since_date, until_date):
     url = "https://api.track.toggl.com/reports/api/v2/details"
     params = {
         "workspace_id": WORKSPACE_ID,
-        "since": start_date,
-        "until": end_date,
+        "since": since_date,
+        "until": until_date,
         "user_agent": USER_AGENT
     }
     response = requests.get(url, params=params, auth=(API_TOKEN, "api_token"))
