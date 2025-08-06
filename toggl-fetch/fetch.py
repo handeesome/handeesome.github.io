@@ -4,17 +4,21 @@ import os
 from datetime import datetime, timedelta
 
 API_TOKEN = os.environ['TOGGL_API_TOKEN']
+WORKSPACE_ID = 20692980
+USER_AGENT = "ducenhandee@gmail.com"
 JSON_PATH = 'public/toggl-data.json'  # Path relative to the repo root
 
 def fetch_entries(start_date, end_date):
-    url = "https://api.track.toggl.com/api/v9/time_entries"
-    response = requests.get(
-        url,
-        params={"start_date": start_date, "end_date": end_date},
-        auth=(API_TOKEN, "api_token")
-    )
+    url = "https://api.track.toggl.com/reports/api/v2/details"
+    params = {
+        "workspace_id": WORKSPACE_ID,
+        "since": start_date,
+        "until": end_date,
+        "user_agent": USER_AGENT
+    }
+    response = requests.get(url, params=params, auth=(API_TOKEN, "api_token"))
     response.raise_for_status()
-    return response.json()
+    return response.json().get("data", [])
 
 def get_last_date_from_file():
     try:
@@ -29,7 +33,11 @@ def get_last_date_from_file():
 def main():
     start = get_last_date_from_file()
     end = datetime.utcnow()
-    entries = fetch_entries(start.isoformat(), end.isoformat())
+
+    since = start.strftime('%Y-%m-%d')
+    until = end.strftime('%Y-%m-%d')
+
+    entries = fetch_entries(since, until)
 
     # Load existing data
     try:
