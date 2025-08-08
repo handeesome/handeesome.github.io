@@ -4,7 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import StudyNotes from "./pages/StudyNotes";
-import BookLists from "./pages/BookLists";
+import BookShelf from "./pages/BookShelf";
 import Footer from "./components/Footer";
 import Header from "./components/header/Header";
 import { ThemeProvider } from "./ThemeContext";
@@ -26,7 +26,7 @@ function App() {
             }></Route> */}
 
           <Route path="/study-notes" element={<StudyNotes />}></Route>
-          <Route path="/book-lists" element={<BookLists />}></Route>
+          <Route path="/book-shelf" element={<BookShelf />}></Route>
         </Routes>
         <Footer />
       </>

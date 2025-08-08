@@ -1,6 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
 import Board from "../components/Board";
-import "../styles/introduction.css";
+import "../styles/Introduction.css";
 
 const Item = ({ title, description }) => (
   <div className="card mb-3 custom-card">
@@ -14,7 +13,7 @@ const Item = ({ title, description }) => (
     </div>
   </div>
 );
-const Introduction = ({ isDarkMode }) => {
+const Introduction = () => {
   const items = [
     {
       title: "Hello World",
@@ -22,17 +21,13 @@ const Introduction = ({ isDarkMode }) => {
     },
   ];
   return (
-    <Board isDarkMode={isDarkMode}>
+    <Board>
       <div className="row justify-content-center" id="introduction">
         <div className="col-md-10 mt-5">
           {/* Map over the array of items and render individual Item introComponents */}
           {items.map((item, index) => (
             <div key={index}>
-              <Item
-                title={item.title}
-                description={item.description}
-                isDarkMode={isDarkMode}
-              />
+              <Item title={item.title} description={item.description} />
             </div>
           ))}
         </div>

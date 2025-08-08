@@ -1,0 +1,11 @@
+.line-clamp-6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fixed-img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}

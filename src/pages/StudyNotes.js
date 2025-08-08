@@ -1,4 +1,3 @@
-import React from "react";
 import Board from "../components/Board";
 import "../styles/StudyNotes.css";
 
@@ -34,9 +33,9 @@ const Items = () => {
     </div>
   );
 };
-const StudyNotes = ({ isDarkMode }) => {
+const StudyNotes = () => {
   return (
-    <Board isDarkMode={isDarkMode}>
+    <Board>
       <Items />
     </Board>
   );

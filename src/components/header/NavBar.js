@@ -32,8 +32,8 @@ const NavBar = ({ isScrolled }) => {
             <Link to="/study-notes" className="nav-link">
               Study Notes
             </Link>
-            <Link to="/book-lists" className="nav-link">
-              Book List
+            <Link to="/book-shelf" className="nav-link">
+              Book Shelf
             </Link>
             {/* <Nav.Link
               href="/book-lists"

@@ -157,7 +157,7 @@ const MultiBookChart = () => {
   const [formatter, setFormatter] = useState(() => (m) => m);
 
   useEffect(() => {
-    fetch("/toggl-data.json")
+    fetch("/src/data/books/toggl-data.json")
       .then((res) => res.json())
       .then((fetchedData) => {
         setRawData(fetchedData);

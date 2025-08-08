@@ -1,7 +1,7 @@
 import React from "react";
 import Introduction from "./Introduction";
-const Home = ({ isDarkMode }) => {
-  return <Introduction isDarkMode={isDarkMode} />;
+const Home = () => {
+  return <Introduction />;
 };
 
 export default Home;
