@@ -1,4 +1,4 @@
-const TAG_COLORS = {
+export const TAG_COLORS = {
   fiction: "#FF5733",
   philosophy: "#9b59b6",
   religion: "#f39c12",

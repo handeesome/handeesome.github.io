@@ -29,7 +29,9 @@ dist-ssr
 .env.test.local
 .env.production.local
 
-# Remove CRA-specific ignores (if any)
-# /build  <- Remove this, Vite uses /dist
+# To prevent CRA artifacts
+public/asset-manifest.json
+
 
 automate_tools
+

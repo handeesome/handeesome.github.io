@@ -3,7 +3,7 @@ name: Convert CSV to JSON
 on:
   push:
     paths:
-      - "data/books.csv"
+      - "data/books/books.csv"
 
 jobs:
   convert:
