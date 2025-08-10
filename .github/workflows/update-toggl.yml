@@ -8,9 +8,14 @@ on:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    permissions: # Add permissions
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -25,10 +30,20 @@ jobs:
           TOGGL_API_TOKEN: ${{ secrets.TOGGL_API_TOKEN }}
         run: python actions/toggl-fetch/fetch.py
 
-      - name: Commit and push changes
+      - name: Check for changes
+        id: verify-changed-files
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet src/data/books/toggl-data.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git config --local user.name 'github-actions[bot]'
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
           git add src/data/books/toggl-data.json
-          git commit -m "Update Toggl data [CI]" || echo "No changes"
+          git commit -m "📊 Update Toggl data [CI]"
           git push

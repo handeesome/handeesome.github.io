@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 API_TOKEN = os.environ['TOGGL_API_TOKEN']
 WORKSPACE_ID = 20692980
 USER_AGENT = "ducenhandee@gmail.com"
-JSON_PATH = 'public/toggl-data.json'  # Path relative to the repo root
+JSON_PATH = 'src/data/books/toggl-data.json'  # Path relative to the repo root
 
 def fetch_entries(since_date, until_date):
     url = "https://api.track.toggl.com/reports/api/v2/details"
