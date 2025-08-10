@@ -4,10 +4,8 @@ import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import "../../styles/NavBar.css";
-import { ThemeProvider, useTheme } from "../../ThemeContext";
 
 const NavBar = ({ isScrolled }) => {
-  const { toggleTheme, theme } = useTheme();
   return (
     <Navbar
       expand="lg"
@@ -42,12 +40,11 @@ const NavBar = ({ isScrolled }) => {
               Book List
             </Nav.Link> */}
             <div
-              onClick={toggleTheme}
               style={{ cursor: "pointer" }}
               className="align-items-center d-flex">
               <FontAwesomeIcon
-                icon={theme === "light" ? faMoon : faSun}
-                className={`fa-2xl ${theme === "dark" ? "" : "text-white"}`}
+                icon={faMoon}
+                // className={`fa-2xl ${theme === "dark" ? "" : "text-white"}`}
               />
             </div>
           </Nav>

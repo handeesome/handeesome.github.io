@@ -1,7 +1,6 @@
 import React from "react";
 import Board from "../components/Board";
-import { Routes, Route } from "react-router-dom";
-import HelloWorld from "./projects/HelloWorld";
+// import HelloWorld from "./projects/HelloWorld";
 import "../styles/Projects.css";
 
 const Items = () => {

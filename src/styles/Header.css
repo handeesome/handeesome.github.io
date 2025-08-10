@@ -1,0 +1,16 @@
+.header-container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+}
+
+.header-background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/assets/images/background_light.jpg");
+  background-size: cover;
+  background-position: center;
+}

@@ -1,222 +1,287 @@
 {
-    "3730": {
-        "title": "The Hidden Persuaders"
-    },
-    "19280263": {
-        "title": "Pollyanna",
-        "title2": "波丽安娜"
-    },
-    "40000210": {
-        "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
-        "title2": "存在主义咖啡馆"
-    },
-    "59719801": {
-        "title": "法治的细节"
-    },
-    "28154510": {
-        "title": "Le mythe de Sisyphe",
-        "title2": "西西弗神话"
-    },
-    "36160370": {
-        "title": "Brave New World",
-        "title2": "美丽新世界"
-    },
-    "54383459": {
-        "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
-        "title2": "哲学的故事"
-    },
-    "202694": {
-        "title": "Émile, ou De l’éducation",
-        "title2": "爱弥儿"
-    },
-    "28807853": {
-        "title": "The Four Loves",
-        "title2": "四种爱"
-    },
-    "26007192": {
-        "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
-        "title2": "山寨版的上帝",
-        "author": "Timothy Keller"
-    },
-    "54444309": {
-        "title": "Every Good Endeavor: Connecting Your Work to God's Work",
-        "title2": "工作的意义",
-        "author": "Timothy Keller"
-    },
-    "42767746": {
-        "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
-        "title2": "婚姻的意义"
-    },
-    "17174373": {
-        "title": "Cloud Atlas",
-        "title2": "云图"
-    },
-    "1156110": {
-        "title": "Micromegas"
-    },
-    "42092510": {
-        "title": "Brave New World Revisited",
-        "title2": "重返美丽新世界"
-    },
-    "168675287": {
-        "title": "A Treatise on the Family",
-        "title2": "家庭论"
-    },
-    "53263624": {
-        "title": "L'évolution créatrice",
-        "title2": "创造进化论"
-    },
-    "3836": {
-        "title": "Don Quixote de la Mancha",
-        "title2": "堂吉诃德"
-    },
-    "43491623": {
-        "title": "Zadig ou la Destinée",
-        "title2": "查第格"
-    },
-    "80493508": {
-        "title": "ノルウェイの森",
-        "title2": "挪威的森林"
-    },
-    "19380": {
-        "title": "Candide, ou l'Optimisme",
-        "title2": "老实人"
-    },
-    "60470571": {
-        "title": "Nonverts: The Making of Ex-Christian America"
-    },
-    "63354300": {
-        "title": "The Great Dechurching: Who’s Leaving, Why Are They Going, and What Will It Take to Bring Them Back?"
-    },
-    "38135623": {
-        "title": "L'Ingénu",
-        "title2": "天真汉"
-    },
-    "11438": {
-        "title": "What We Talk About When We Talk About Love"
-    },
-    "16241133": {
-        "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
-        "title2": "世界史的故事"
-    },
-    "225947": {
-        "title": "The History of the Ancient World: From the Earliest Accounts to the Fall of Rome",
-        "title2": "世界史的故事"
-    },
-    "48917953": {
-        "title": "La Peste",
-        "title2": "鼠疫"
-    },
-    "6484128": {
-        "title": "The History of the Medieval World: From the Conversion of Constantine to the First Crusade",
-        "title2": "世界史的故事"
-    },
-    "18250837": {
-        "title": "How (Not) to Be Secular: Reading Charles Taylor"
-    },
-    "824412": {
-        "title": "A Secular Age"
-    },
-    "55385983": {
-        "title": "Speechless: Controlling Words, Controlling Minds"
-    },
-    "61369370": {
-        "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth"
-    },
-    "36651676": {
-        "title": "L'Étranger",
-        "title2": "局外人"
-    },
-    "57846996": {
-        "title": "Red Roulette: An Insider's Story of Wealth, Power, Corruption, and Vengeance in Today's China",
-        "title2": "红色赌盘"
-    },
-    "28137375": {
-        "title": "Pride and Predujice",
-        "title2": "傲慢与偏见"
-    },
-    "18922517": {
-        "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
-        "title2": "红与黑"
-    },
-    "19179596": {
-        "title": "Преступление и наказание",
-        "title2": "罪与罚"
-    },
-    "19230853": {
-        "title": "Война и миръ",
-        "title2": "战争与和平"
-    },
-    "203774224": {
-        "title": "法律的悖论",
-        "title2": "Paradoxes of Law"
-    },
-    "17259893": {
-        "title": "Le petit prince",
-        "title2": "小王子"
-    },
-    "27788": {
-        "title": "Julie ou La nouvelle Héloïse",
-        "title2": "新爱洛伊丝"
-    },
-    "12649": {
-        "title": "Les Confessions",
-        "title2": "忏悔录"
-    },
-    "3023": {
-        "title": "Basic Economics: A Citizen's Guide to the Economy"
-    },
-    "170448": {
-        "title": "Animal Farm"
-    },
-    "61439040": {
-        "title": "1984"
-    },
-    "27840555": {
-        "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity"
-    },
-    "152344": {
-        "title": "Victory Over the Darkness"
-    },
-    "52104820": {
-        "title": "圆圈正义：作为自由前提的信念",
-        "title2": "The Faith as Premise of Freedom"
-    },
-    "41889692": {
-        "title": "When Breath Becomes Air",
-        "title2": "当呼吸化为空气"
-    },
-    "23336950": {
-        "title": "A Pearl Necklace",
-        "title2": "珍珠项链"
-    },
-    "52884924": {
-        "title": "走到比錢更遠的地方"
-    },
-    "38819247": {
-        "title": "Food and Nutrition: What Everyone Needs to Know®"
-    },
-    "211854307": {
-        "title": "康熙的红票：全球化中的清朝",
-        "title2": "Emporor Kangxi's Red Manifesto: The Qing Dynasty in Globalization"
-    },
-    "210594797": {
-        "title": "A Pearl Necklace",
-        "title2": "珍珠项链"
-    },
-    "32899495": {
-        "title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow"
-    },
-    "38606117": {
-        "title": "Java编程的逻辑 (Java核心技术系列) (Chinese Edition)"
-    },
-    "52935138": {
-        "title": "The Secret Life of Programs: Understand Computers -- Craft Better Code"
-    },
-    "52555533": {
-        "title": "Algorithmic Thinking: A Problem-Based Introduction"
-    },
-    "13590009": {
-        "title": "Think Like a Programmer: An Introduction to Creative Problem Solving"
-    }
+  "3730": {
+    "title": "The Hidden Persuaders",
+    "tags": ["philosophy", "social-science"]
+  },
+  "19280263": {
+    "title": "Pollyanna",
+    "title2": "波丽安娜",
+    "tags": ["fiction"]
+  },
+  "40000210": {
+    "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
+    "title2": "存在主义咖啡馆",
+    "tags": ["philosophy"]
+  },
+  "59719801": {
+    "title": "法治的细节",
+    "tags": ["philosophy", "social-science"]
+  },
+  "28154510": {
+    "title": "Le mythe de Sisyphe",
+    "title2": "西西弗神话",
+    "tags": ["philosophy"]
+  },
+  "36160370": {
+    "title": "Brave New World",
+    "title2": "美丽新世界",
+    "tags": ["fiction"]
+  },
+  "54383459": {
+    "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
+    "title2": "哲学的故事",
+    "tags": ["philosophy", "biography"]
+  },
+  "202694": {
+    "title": "Émile, ou De l'éducation",
+    "title2": "爱弥儿",
+    "tags": ["philosophy"]
+  },
+  "28807853": {
+    "title": "The Four Loves",
+    "title2": "四种爱",
+    "tags": ["religion", "philosophy"]
+  },
+  "26007192": {
+    "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
+    "title2": "山寨版的上帝",
+    "author": "Timothy Keller",
+    "tags": ["religion"]
+  },
+  "54444309": {
+    "title": "Every Good Endeavor: Connecting Your Work to God's Work",
+    "title2": "工作的意义",
+    "author": "Timothy Keller",
+    "tags": ["religion"]
+  },
+  "42767746": {
+    "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
+    "title2": "婚姻的意义",
+    "tags": ["religion"]
+  },
+  "17174373": {
+    "title": "Cloud Atlas",
+    "title2": "云图",
+    "tags": ["fiction"]
+  },
+  "1156110": {
+    "title": "Micromegas",
+    "tags": ["fiction", "philosophy"]
+  },
+  "42092510": {
+    "title": "Brave New World Revisited",
+    "title2": "重返美丽新世界",
+    "tags": ["philosophy", "social-science"]
+  },
+  "168675287": {
+    "title": "A Treatise on the Family",
+    "title2": "家庭论",
+    "num pages": "440",
+    "avg rating": "3.93",
+    "tags": ["economics", "social-science"]
+  },
+  "53263624": {
+    "title": "L'évolution créatrice",
+    "title2": "创造进化论",
+    "tags": ["philosophy"]
+  },
+  "3836": {
+    "title": "Don Quixote de la Mancha",
+    "title2": "堂吉诃德",
+    "tags": ["fiction"]
+  },
+  "43491623": {
+    "title": "Zadig ou la Destinée",
+    "title2": "查第格",
+    "num pages": "192",
+    "avg rating": "3.79",
+    "tags": ["fiction", "philosophy"]
+  },
+  "80493508": {
+    "title": "ノルウェイの森",
+    "title2": "挪威的森林",
+    "tags": ["fiction"]
+  },
+  "19380": {
+    "title": "Candide, ou l'Optimisme",
+    "title2": "老实人",
+    "tags": ["fiction", "philosophy"]
+  },
+  "60470571": {
+    "title": "Nonverts: The Making of Ex-Christian America",
+    "tags": ["religion", "history", "social-science"]
+  },
+  "63354300": {
+    "title": "The Great Dechurching: Who's Leaving, Why Are They Going, and What Will It Take to Bring Them Back?",
+    "tags": ["religion", "social-science"]
+  },
+  "38135623": {
+    "title": "L'Ingénu",
+    "title2": "天真汉",
+    "tags": ["fiction", "philosophy"]
+  },
+  "11438": {
+    "title": "What We Talk About When We Talk About Love",
+    "tags": ["fiction"]
+  },
+  "16241133": {
+    "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
+    "title2": "世界史的故事",
+    "tags": ["history"]
+  },
+  "225947": {
+    "title": "The History of the Ancient World: From the Earliest Accounts to the Fall of Rome",
+    "title2": "世界史的故事",
+    "tags": ["history"]
+  },
+  "48917953": {
+    "title": "La Peste",
+    "title2": "鼠疫",
+    "tags": ["fiction", "philosophy"]
+  },
+  "6484128": {
+    "title": "The History of the Medieval World: From the Conversion of Constantine to the First Crusade",
+    "title2": "世界史的故事",
+    "tags": ["history"]
+  },
+  "18250837": {
+    "title": "How (Not) to Be Secular: Reading Charles Taylor",
+    "tags": ["religion", "philosophy"]
+  },
+  "824412": {
+    "title": "A Secular Age",
+    "tags": ["religion", "philosophy", "history", "social-science"]
+  },
+  "55385983": {
+    "title": "Speechless: Controlling Words, Controlling Minds",
+    "tags": ["philosophy", "social-science"]
+  },
+  "61369370": {
+    "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
+    "tags": ["economics", "philosophy", "social-science"]
+  },
+  "36651676": {
+    "title": "L'Étranger",
+    "title2": "局外人",
+    "tags": ["fiction", "philosophy"]
+  },
+  "57846996": {
+    "title": "Red Roulette: An Insider's Story of Wealth, Power, Corruption, and Vengeance in Today's China",
+    "title2": "红色赌盘",
+    "num pages": "171",
+    "tags": ["biography", "history", "social-science"]
+  },
+  "28137375": {
+    "title": "Pride and Predujice",
+    "title2": "傲慢与偏见",
+    "tags": ["fiction"]
+  },
+  "18922517": {
+    "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
+    "title2": "红与黑",
+    "tags": ["fiction"]
+  },
+  "19179596": {
+    "title": "Преступление и наказание",
+    "title2": "罪与罚",
+    "tags": ["fiction", "philosophy"]
+  },
+  "19230853": {
+    "title": "Война и миръ",
+    "title2": "战争与和平",
+    "tags": ["fiction", "history"]
+  },
+  "203774224": {
+    "title": "法律的悖论",
+    "title2": "Paradoxes of Law",
+    "tags": ["philosophy", "social-science"]
+  },
+  "17259893": {
+    "title": "Le petit prince",
+    "title2": "小王子",
+    "tags": ["fiction", "philosophy"]
+  },
+  "27788": {
+    "title": "Julie ou La nouvelle Héloïse",
+    "title2": "新爱洛伊丝",
+    "tags": ["fiction", "philosophy"]
+  },
+  "12649": {
+    "title": "Les Confessions",
+    "title2": "忏悔录",
+    "tags": ["biography", "philosophy"]
+  },
+  "3023": {
+    "title": "Basic Economics: A Citizen's Guide to the Economy",
+    "tags": ["economics", "social-science"]
+  },
+  "170448": {
+    "title": "Animal Farm",
+    "tags": ["fiction", "philosophy"]
+  },
+  "61439040": {
+    "title": "1984",
+    "tags": ["fiction", "philosophy"]
+  },
+  "27840555": {
+    "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity",
+    "tags": ["religion"]
+  },
+  "152344": {
+    "title": "Victory Over the Darkness",
+    "tags": ["religion"]
+  },
+  "52104820": {
+    "title": "圆圈正义：作为自由前提的信念",
+    "title2": "The Faith as Premise of Freedom",
+    "tags": ["philosophy", "social-science"]
+  },
+  "41889692": {
+    "title": "When Breath Becomes Air",
+    "title2": "当呼吸化为空气",
+    "tags": ["biography"]
+  },
+  "23336950": {
+    "title": "A Pearl Necklace",
+    "title2": "珍珠项链",
+    "tags": ["biography"]
+  },
+  "52884924": {
+    "title": "走到比錢更遠的地方",
+    "tags": ["biography"]
+  },
+  "38819247": {
+    "title": "Food and Nutrition: What Everyone Needs to Know®",
+    "tags": ["philosophy", "social-science"]
+  },
+  "211854307": {
+    "title": "康熙的红票：全球化中的清朝",
+    "title2": "Emporor Kangxi's Red Manifesto: The Qing Dynasty in Globalization",
+    "tags": ["history"]
+  },
+  "210594797": {
+    "title": "A Pearl Necklace",
+    "title2": "珍珠项链",
+    "tags": ["biography"]
+  },
+  "32899495": {
+    "title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
+    "tags": ["programming"]
+  },
+  "38606117": {
+    "title": "Java编程的逻辑 (Java核心技术系列) (Chinese Edition)",
+    "tags": ["programming"]
+  },
+  "52935138": {
+    "title": "The Secret Life of Programs: Understand Computers -- Craft Better Code",
+    "tags": ["programming"]
+  },
+  "52555533": {
+    "title": "Algorithmic Thinking: A Problem-Based Introduction",
+    "tags": ["programming"]
+  },
+  "13590009": {
+    "title": "Think Like a Programmer: An Introduction to Creative Problem Solving",
+    "tags": ["programming"]
+  }
 }

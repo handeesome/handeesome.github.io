@@ -1,6 +1,6 @@
 [
   {
-    "key": "1156110",
+    "id": "1156110",
     "title": "Micromegas",
     "author": "Voltaire",
     "num pages": "38",
@@ -8,45 +8,55 @@
     "shelves": "finished",
     "date read": "2025/07/15",
     "date added": "2025/08/07",
-    "introduction": ""
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "3730",
+    "id": "3730",
     "title": "The Hidden Persuaders",
     "author": "Vance Packard",
     "num pages": "240",
     "avg rating": "3.84",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/08/07",
-    "introduction": "One of the best books around for demystifying the deliberately mysterious arts of advertising.\"-- Salon \"Fascinating, entertaining and thought-stimulating.\"-- The New York Times Book Review \"A brisk, authoritative and frightening report on how manufacturers, fundraisers and politicians are attempting to turn the American mind into a kind of catatonic dough that will buy, give or vote at their command-- The New Yorker Originally published in 1957 and now back in print to celebrate its fiftieth anniversary, The Hidden Persuaders is Vance Packard’s pioneering and prescient work revealing how advertisers use psychological methods to tap into our unconscious desires in order to \"persuade\" us to buy the products they are selling. A classic examination of how our thoughts and feelings are manipulated by business, media and politicians, The Hidden Persuaders was the first book to expose the hidden world of “motivation research,” the psychological technique that advertisers use to probe our minds in order to control our actions as consumers. Through analysis of products, political campaigns and television programs of the 1950s, Packard shows how the insidious manipulation practices that have come to dominate today’s corporate-driven world began. Featuring an introduction by Mark Crispin Miller, The Hidden Persuaders has sold over one million copies, and forever changed the way we look at the world of advertising. Vance Packard (1914-1996) was an American journalist, social critic, and best-selling author. Among his other books were The Status Seekers , which described American social stratification and behavior, The Waste Makers, which criticizes planned obsolescence, and The Naked Society , about the threats to privacy posed by new technologies."
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
   },
   {
-    "key": "19280263",
+    "id": "19280263",
     "title": "Pollyanna",
     "author": "Eleanor H. Porter",
     "num pages": "208",
     "avg rating": "4.02",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/08/04",
     "title2": "波丽安娜",
-    "introduction": "Pollyanna's eternal optimism has made her one of the most beloved characters in American literature. First published in 1913, her story spawned the formation of \"Glad\" clubs all over the country, devoted to playing Pollyanna's famous game. Pollyanna has since sold over one million copies, been translated into several languages, and has become both a Broadway play and a Disney motion picture."
+    "tags": [
+      "fiction"
+    ]
   },
   {
-    "key": "40000210",
+    "id": "40000210",
     "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
     "author": "Sarah Bakewell",
     "num pages": "563",
     "avg rating": "4.24",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/08/03",
     "title2": "存在主义咖啡馆",
-    "introduction": "Paris, near the turn of 1933. Three young friends meet over apricot cocktails at the Bec-de-Gaz bar on the rue Montparnasse. They are Jean-Paul Sartre, Simone de Beauvoir and their friend Raymond Aron, who opens their eyes to a radical new way of thinking. Pointing to his drink, he says, 'You can make philosophy out of this cocktail!'\n\nFrom this moment of inspiration, Sartre will create his own extraordinary philosophy of real, experienced life–of love and desire, of freedom and being, of cafés and waiters, of friendships and revolutionary fervour. It is a philosophy that will enthral Paris and sweep through the world, leaving its mark on post-war liberation movements, from the student uprisings of 1968 to civil rights pioneers.\n\nAt the Existentialist Café tells the story of modern existentialism as one of passionate encounters between people, minds and ideas. From the ‘king and queen of existentialism'–Sartre and de Beauvoir–to their wider circle of friends and adversaries including Albert Camus, Martin Heidegger, Maurice Merleau-Ponty and Iris Murdoch, this book is an enjoyable and original journey through a captivating intellectual movement. Weaving biography and thought, Sarah Bakewell takes us to the heart of a philosophy about life that also changed lives, and that tackled the biggest questions of all: what we are and how we are to live."
+    "tags": [
+      "philosophy"
+    ]
   },
   {
-    "key": "59719801",
+    "id": "59719801",
     "title": "法治的细节",
     "author": "罗翔",
     "num pages": "288",
@@ -54,11 +64,13 @@
     "shelves": "currently-reading",
     "date read": null,
     "date added": "2025/07/27",
-    "title2": "",
-    "introduction": "《法治的细节》是中国政法大学法学教授罗翔全新的法学随笔，面向大众读者，从热点案件解读、法学理念科普、经典名著讲解等6大板块，普及法律常识与法治观念。内容包括辛普森案、电车难题、性同意制度等法律基本常识，或N号房、张玉环案等时事热点的案件，多维度培育法律思维，助力法治社会的构建，点亮每个人心中的法治之光。\n\n此外，本书还收录了罗翔在爆红后的心路历程，分享其求学成长经历，袒露其心境的变化与成熟，与读者一起通过阅读与思辨，走出生活中的迷茫时刻，在现实中共同完善法治的细节。"
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
   },
   {
-    "key": "28154510",
+    "id": "28154510",
     "title": "Le mythe de Sisyphe",
     "author": "Albert Camus",
     "num pages": "172",
@@ -67,10 +79,12 @@
     "date read": null,
     "date added": "2025/06/30",
     "title2": "西西弗神话",
-    "introduction": "Throughout history, some books have changed the world. They have transformed the way we see ourselves—and each other. They have inspired debate, dissent, war and revolution. They have enlightened, outraged, provoked and comforted. They have enriched lives—and destroyed them. Now Penguin brings you the works of the great thinkers, pioneers, radicals and visionaries whose ideas shook civilization and helped make us who we are. Inspired by the myth of a man condemned to ceaselessly push a rock up a mountain and watch it roll back to the valley below, The Myth of Sisyphus transformed twentieth-century philosophy with its impassioned argument for the value of life in a world without religious meaning."
+    "tags": [
+      "philosophy"
+    ]
   },
   {
-    "key": "42092510",
+    "id": "42092510",
     "title": "Brave New World Revisited",
     "author": "Aldous Huxley",
     "num pages": "347",
@@ -79,10 +93,13 @@
     "date read": null,
     "date added": "2025/07/27",
     "title2": "重返美丽新世界",
-    "introduction": "When the novel Brave New World first appeared in 1932, its shocking analysis of a scientific dictatorship seemed a projection into the remote future. Here, in one of the most important and fascinating books of his career, Aldous Huxley uses his tremendous knowledge of human relations to compare the modern-day world with his prophetic fantasy. He scrutinizes threats to humanity, such as overpopulation, propaganda, and chemical persuasion, and explains why we have found it virtually impossible to avoid them. Brave New World Revisited is a trenchant plea that humankind should educate itself for freedom before it is too late. Brave New World Revisted (first published in 1958) is not a reissue or revision Brave New World. Brave New World is a novel, whereas Brave New World Revisted is a nonfiction exploration of the themes in Brave New World."
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
   },
   {
-    "key": "54383459",
+    "id": "54383459",
     "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
     "author": "Will Durant",
     "num pages": "608",
@@ -91,11 +108,14 @@
     "date read": "2025/07/30",
     "date added": "2025/05/28",
     "title2": "哲学的故事",
-    "introduction": "This brilliant and concise account of the lives and ideas of the world's great philosophers —Plato, Aristotle, Bacon, Spinoza, Voltaire, Kant, Schopenhauer, Spencer, Nietzsche, Bergson, Croce, Russell, Santayana, James, and Dewey—is \"a delight\" ( The New York Times ) and remains one of the most important books of our time.\n\nWill Durant chronicles the ideas of the great thinkers, the economic and intellectual environments which influenced them, and the personal traits and adventures out of which each philosophy grew. Durant’s insight and wit never cease to dazzle; The Story of Philosophy is an essential book for anyone who wishes to understand the history and development of philosophical ideas in the Western world."
+    "tags": [
+      "philosophy",
+      "biography"
+    ]
   },
   {
-    "key": "202694",
-    "title": "Émile, ou De l’éducation",
+    "id": "202694",
+    "title": "Émile, ou De l'éducation",
     "author": "Jean-Jacques Rousseau",
     "num pages": "315",
     "avg rating": "3.58",
@@ -103,70 +123,83 @@
     "date read": null,
     "date added": "2025/06/20",
     "title2": "爱弥儿",
-    "introduction": "In his pioneering treatise on education the great French philosopher presented concepts that had a significant influence on the development of pedagogy, and yet many of his ideas still sound radical today. Written in reaction to the stultifying system of rote learning and memorization prevalent throughout Europe in Rousseau's time, Emile is a utopian vision of child-centered education, full of the sentiments of Romanticism, which Rousseau himself inspired.Imagining a typical boy named Emile, Rousseau creates an ideal model of one-on-one tutelage from infancy to manhood with himself as the child's mentor. \"Everything is good as it comes from the hands of the Author of Nature; but everything degenerates in the hands of man.\" This is the first of many provocative statements that characterize this work and are a hallmark of Rousseau's arresting rhetoric. As in so many of his other famous works, here too Rousseau asserts his main thesis that human beings by nature are good; it is only the distorting influences of civilization that have corrupted them.If this is true, then in educating children one must do nothing to interfere with human nature in its natural course. Far from being the chief means by which society inculcates its rules and principles, education should be the method of helping youths discover the inherent truths of their own human nature. From infancy to young adulthood learning should come purely from personal experience. Rather than imparting facts, teachers should foster self-discovery, so that knowledge is acquired through following innate curiosity, not vicariously through the statements of others.Educators as well as students of philosophy will find much to admire in Rousseau's original and still radical ideas."
+    "tags": [
+      "philosophy"
+    ]
   },
   {
-    "key": "28807853",
+    "id": "28807853",
     "title": "The Four Loves",
     "author": "C.S. Lewis",
     "num pages": "264",
     "avg rating": "4.17",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/27",
     "title2": "四种爱",
-    "introduction": "A repackaged edition of the revered author's classic work that examines the four types of human love: affection, friendship, erotic love, and the love of God—part of the C. S. Lewis Signature Classics series.\n\nC.S. Lewis—the great British writer, scholar, lay theologian, broadcaster, Christian apologist, and bestselling author of Mere Christianity, The Screwtape Letters, The Great Divorce, The Chronicles of Narnia, and many other beloved classics—contemplates the essence of love and how it works in our daily lives in one of his most famous works of nonfiction. Lewis examines four varieties of human love: affection, the most basic form; friendship, the rarest and perhaps most insightful; Eros, passionate love; charity, the greatest and least selfish. Throughout this compassionate and reasoned study, he encourages readers to open themselves to all forms of love—the key to understanding that brings us closer to God."
+    "tags": [
+      "religion",
+      "philosophy"
+    ]
   },
   {
-    "key": "26007192",
+    "id": "26007192",
     "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
     "author": "Timothy Keller",
     "num pages": "285",
     "avg rating": "4.36",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/27",
     "title2": "山寨版的上帝",
-    "introduction": "The New York Times bestselling author of The Reason for God and The Songs of Jesus and a nationally renowned minister, Timothy Keller exposes the error of making good things “ultimate” in this book, and shows readers a new path toward a hope that lasts. \n\nSuccess, true love, and the life you’ve always wanted. Many of us placed our faith in these things, believing they held the key to happiness, but with a sneaking suspicion they might not deliver. The recent economic meltdown has cast a harsh new light on these pursuits. In a matter of months, fortunes, marriages, careers, and a secure retirement have disappeared for millions of people. No wonder so many of us feel lost, alone, disenchanted, and resentful. But the truth is that we made lesser gods of these good things—gods that can’t give us what we really need. There is only one God who can wholly satisfy our cravings—and now is the perfect time to meet him again, or for the first time.\n\nThe Bible tells us that the human heart is an “idol-factory,” taking good things and making them into idols that drive us. In Counterfeit Gods, Keller applies his trademark approach to show us how a proper understanding of the Bible reveals the unvarnished truth about societal ideals and our own hearts. This powerful message will cement Keller’s reputation as a critical thinker and pastor, and comes at a crucial time—for both the faithful and the skeptical."
+    "tags": [
+      "religion"
+    ]
   },
   {
-    "key": "54444309",
-    "title": "工作的意义 (Chinese Edition)",
-    "author": "提摩太·凯勒",
+    "id": "54444309",
+    "title": "Every Good Endeavor: Connecting Your Work to God's Work",
+    "author": "Timothy Keller",
     "num pages": "292",
     "avg rating": "4.60",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/27",
     "title2": "工作的意义",
-    "introduction": "New York Times bestselling author of The Prodigal Prophet Timothy Keller shows how God calls on each of us to express meaning and purpose through our work and careers.\n\n“A touchstone of the [new evangelical] movement.” — The New York Times\n\nTim Keller, pastor of New York’s Redeemer Presbyterian Church and the New York Times bestselling author of The Reason for God , has taught and counseled students, young professionals, and senior leaders on the subject of work and calling for more than twenty years. Now he pulls his insights into a thoughtful and practical book for readers everywhere.\n\nWith deep conviction and often surprising advice, Keller shows readers that biblical wisdom is immensely relevant to our questions about work today. In fact, the Christian view of work—that we work to serve others, not ourselves—can provide the foundation of a thriving professional and balanced personal life. Keller shows how excellence, integrity, discipline, creativity, and passion in the workplace can help others and even be considered acts of worship—not just of self-interest."
+    "tags": [
+      "religion"
+    ]
   },
   {
-    "key": "42767746",
+    "id": "42767746",
     "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
     "author": "Timothy J. Keller",
     "num pages": "287",
     "avg rating": "4.49",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/27",
     "title2": "婚姻的意义",
-    "introduction": "Renowned pastor of New York’s Redeemer Presbyterian Church and author of The Songs of Jesus, Timothy Keller with his wife of 36 years, delivers The Meaning of Marriage, an extraordinarily insightful look at the keys to happiness in marriage that will inspire Christians, skeptics, singles, long-time married couples, and those about to be engaged.\n\nModern culture would make you believe that everyone has a soul-mate; that romance is the most important part of a successful marriage; that your spouse is there to help you realize your potential; that marriage does not mean forever, but merely for now; that starting over after a divorce is the best solution to seemingly intractable marriage issues. All those modern-day assumptions are, in a word, wrong.\n\nUsing the Bible as his guide, coupled with insightful commentary from his wife of thirty-six years, Kathy, Timothy Keller shows that God created marriage to bring us closer to him and to bring us more joy in our lives. It is a glorious relationship that is also the most misunderstood and mysterious. With a clear-eyed understanding of the Bible, and meaningful instruction on how to have a successful marriage, The Meaning of Marriage is essential reading for anyone who wants to know God and love more deeply in this life."
+    "tags": [
+      "religion"
+    ]
   },
   {
-    "key": "17174373",
+    "id": "17174373",
     "title": "Cloud Atlas",
     "author": "David Mitchell",
     "num pages": "486",
     "avg rating": "4.01",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/27",
     "title2": "云图",
-    "introduction": "A postmodern visionary who is also a master of styles of genres, David Mitchell combines flat-out adventure, a Nabokovian lore of puzzles, a keen eye for character, and a taste for mind-bending philosophical and scientific speculation in the tradition of Umberto Eco, Haruki Murakami, and Philip K. Dick. The result is brilliantly original fiction as profund as it is playful. Now in his new novel, David Mitchell explores with daring artistry fundamental questions of reality and identity.\n\nCloud Atlas begins in 1850 with Adam Ewing, an American notary voyaging from the Chatham Isles to his home in California. Along the way, Ewing is befriended by a physician, Dr. Goose, who begins to treat him for a rare species of brain parasite. . . .\n\nAbruptly, the action jumps to Belgium in 1931, where Robert Frobisher, a disinherited bisexual composer, contrives his way into the household of an infirm maestro who has a beguiling wife and a nubile daughter. . . . From there we jump to the West Coast in the 1970s and a troubled reporter named Luisa Rey, who stumbles upon a web of corporate greed and murder that threatens to claim her life. . . . And onward, with dazzling virtuosity, to an inglorious present-day England; to a Korean superstate of the near future where neocapitalism has run amok; and, finally, to a postapocalyptic Iron Age Hawaii in the last days of history.\n\nBut the story doesn't end even there. The narrative then boomerangs back through centuries and space, returning by the same route, in reverse, to its starting point. Along the way, Mitchell reveals how his disparate characters connect, how their fates intertwine, and how their souls drift across time like clouds across the sky.\n\nAs wild as a videogame, as mysterious as a Zen koan, Cloud Atlas is an unforgettable tour de force that, like its incomparable author, has transcended its cult classic status to become a worldwide phenomenon."
+    "tags": [
+      "fiction"
+    ]
   },
   {
-    "key": "36160370",
+    "id": "36160370",
     "title": "Brave New World",
     "author": "Aldous Huxley",
     "num pages": "287",
@@ -175,70 +208,84 @@
     "date read": "2025/07/24",
     "date added": "2025/06/18",
     "title2": "美丽新世界",
-    "introduction": "Aldous Huxley's profoundly important classic of world literature, Brave New World is a searching vision of an unequal, technologically-advanced future where humans are genetically bred, socially indoctrinated, and pharmaceutically anesthetized to passively uphold an authoritarian ruling order–all at the cost of our freedom, full humanity, and perhaps also our souls. “A genius [who] who spent his life decrying the onward march of the Machine” (The New Yorker), Huxley was a man of incomparable talents: equally an artist, a spiritual seeker, and one of history’s keenest observers of human nature and civilization. Brave New World, his masterpiece, has enthralled and terrified millions of readers, and retains its urgent relevance to this day as both a warning to be heeded as we head into tomorrow and as thought-provoking, satisfying work of literature. Written in the shadow of the rise of fascism during the 1930s, Brave New Worldd likewise speaks to a 21st-century world dominated by mass-entertainment, technology, medicine and pharmaceuticals, the arts of persuasion, and the hidden influence of elites.\n\n\"Aldous Huxley is the greatest 20th century writer in English.\" —Chicago Tribune"
+    "tags": [
+      "fiction"
+    ]
   },
   {
-    "key": "168675287",
+    "id": "168675287",
     "title": "A Treatise on the Family",
     "author": "[美]加里·斯坦利·贝克尔",
-    "num pages": "0",
-    "avg rating": "0.0",
-    "shelves": "to-read",
+    "num pages": "440",
+    "avg rating": "3.93",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/24",
     "title2": "家庭论",
-    "introduction": "Imagine each family as a kind of little factory―a multiperson unit producing meals, health, skills, children, and self-esteem from market goods and the time, skills, and knowledge of its members. This is only one of the remarkable concepts explored by Gary S. Becker in his landmark work on the family. Becker applies economic theory to the most sensitive and fateful personal decisions, such as choosing a spouse or having children. He uses the basic economic assumptions of maximizing behavior, stable preferences, arid equilibria in explicit or implicit markets to analyze the allocation of time to child care as well as to careers, to marriage and divorce in polygynous as well as monogamous societies, to the increase and decrease of wealth from one generation to another.\n\nThe consideration of the family from this perspective has profound theoretical and practical implications. For example, Becker’s analysis of assortative mating can be used to study matching processes generally. Becker extends the powerful tools of economic analysis to problems once considered the province of the sociologist, the anthropologist, and the historian. The obligation of these scholars to take account of his work thus constitutes an important step in the unification of the social sciences.\n\nA Treatise on the Family will have an impact on public policy as well. Becker shows that social welfare programs have significant effects on the allocation of resources within families. For example, social security taxes tend to reduce the amount of resources children give to their aged parents. The implications of these findings are obvious and far-reaching. With the publication of this extraordinary book, the family moves to the forefront of the research agenda in the social sciences."
+    "tags": [
+      "economics",
+      "social-science"
+    ]
   },
   {
-    "key": "53263624",
+    "id": "53263624",
     "title": "L'évolution créatrice",
     "author": "Henri Bergson",
     "num pages": "244",
     "avg rating": "4.10",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/24",
     "title2": "创造进化论",
-    "introduction": "While intelligence treats everything mechanically, instinct proceeds, so to speak, organically. If...we could ask and it could reply, it would give up to us the most intimate secrets of life. -from Chapter II Anticipating not only modern scientific theories of psychology but also those of cosmology, this astonishing book sets out a impressive goal for itself: to reconcile human biology with a theory of consciousness. First published in France in 1907, and translated into English in 1911, this work of wonder was esteemed at the time in scientific circles and in the popular culture alike for its profound explorations of perception and memory and its surprising conclusions about the nature and value of art. Contending that intuition is deeper than intellect and that the real consequence of evolution is a mental freedom to grow, to change, to seek and create novelty, Bergson reinvigorated the theory of evolution by refusing to see it as merely mechanistic. His expansion on Darwin remains one of the most original and important philosophical arguments for a scientific inquiry still under fire today. French philosopher HENRI BERGSON (1859-1941) was born in Paris. Among his works are Matter and Memory (1896), An Introduction to Metaphysics (1903), and The Two Sources of Morality and Religion (1932). He was awarded the Nobel Prize for Literature in 1927."
+    "tags": [
+      "philosophy"
+    ]
   },
   {
-    "key": "3836",
+    "id": "3836",
     "title": "Don Quixote de la Mancha",
     "author": "Miguel de Cervantes Saavedra",
     "num pages": "1023",
     "avg rating": "3.91",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/23",
     "title2": "堂吉诃德",
-    "introduction": "Don Quixote has become so entranced by reading chivalric romances that he determines to become a knight-errant himself. In the company of his faithful squire, Sancho Panza, his exploits blossom in all sorts of wonderful ways. While Quixote's fancy often leads him astray—he tilts at windmills, imagining them to be giants—Sancho acquires cunning and a certain sagacity. Sane madman and wise fool, they roam the world together, and together they have haunted readers' imaginations for nearly four hundred years.\n\nWith its experimental form and literary playfulness, Don Quixote has been generally recognized as the first modern novel. The book has been enormously influential on a host of writers, from Fielding and Sterne to Flaubert, Dickens, Melville, and Faulkner, who reread it once a year, \"just as some people read the Bible.\""
+    "tags": [
+      "fiction"
+    ]
   },
   {
-    "key": "43491623",
+    "id": "43491623",
     "title": "Zadig ou la Destinée",
     "author": "Voltaire",
-    "num pages": null,
-    "avg rating": "3.69",
+    "num pages": "192",
+    "avg rating": "3.79",
     "shelves": "finished",
     "date read": "2025/07/15",
     "date added": "2025/06/17",
     "title2": "查第格",
-    "introduction": "In Zadig, a work of satire, Voltaire makes his forceful arguments against religious and metaphysical orthodoxy. The language is intermediate to advanced level, often closer to intermediate. Voltaire was a French writer, historian and philosopher. His intelligence, wit and unique style made him one of France’s greatest writers and philosophers and a leading figure of French Enlightenment. He advocated fiercely for civil liberties, including freedom of religion, freedom of expression, free trade and separation of church and state. "
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "80493508",
+    "id": "80493508",
     "title": "ノルウェイの森",
     "author": "村上春树 林少华",
     "num pages": "200",
     "avg rating": "3.99",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/15",
     "title2": "挪威的森林",
-    "introduction": "这是一部动人心弦的、平缓舒雅的、略带感伤的恋爱小说。小说主人公渡边以第一人称展开他同两个女孩间的爱情纠葛。渡边的第一个恋人直子原是他高中要好同学木月的女友，后来木月自杀了。一年后渡边同直子不期而遇并开始交往。此时的直子已变得娴静腼腆，美丽晶莹的眸子里不时掠过一丝难以捕捉的阴翳。两人只是日复一日地在落叶飘零的东京街头漫无目标地或前或后或并肩行走不止。直子20岁生日的晚上两人发生了性关系，不料第二天直子便不知去向。几个月后直子来信说她住进一家远在深山里的精神疗养院。渡边前去探望时发现直子开始带有成熟女性的丰腴与娇美。晚间两人虽同处一室，但渡边约束了自己，分手前表示永远等待直子。返校不久，由于一次偶然相遇，渡边开始与低年级的绿子交往。绿子同内向的直子截然相反，“简直就像迎着春天的晨光蹦跳到世界上来的一头小鹿”。这期间，渡边内心十分苦闷彷徨。一方面念念不忘直子缠绵的病情与柔情，一方面又难以抗拒绿子大胆的表白和迷人的活力。不久传来直子自杀的噩耗，渡边失魂魄地四处徒步旅行。最后，在直子同房病友玲子的鼓励下，开始摸索此后的人生。"
+    "tags": [
+      "fiction"
+    ]
   },
   {
-    "key": "19380",
+    "id": "19380",
     "title": "Candide, ou l'Optimisme",
     "author": "Voltaire",
     "num pages": "129",
@@ -247,32 +294,42 @@
     "date read": "2025/07/15",
     "date added": "2025/07/13",
     "title2": "老实人",
-    "introduction": "Candide is the story of a gentle man who, though pummeled and slapped in every direction by fate, clings desperately to the belief that he lives in \"the best of all possible worlds.\" On the surface a witty, bantering tale, this eighteenth-century classic is actually a savage, satiric thrust at the philosophical optimism that proclaims that all disaster and human suffering is part of a benevolent cosmic plan. Fast, funny, often outrageous, the French philosopher's immortal narrative takes Candide around the world to discover that — contrary to the teachings of his distinguished tutor Dr. Pangloss — all is not always for the best. Alive with wit, brilliance, and graceful storytelling, Candide has become Voltaire's most celebrated work."
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "60470571",
+    "id": "60470571",
     "title": "Nonverts: The Making of Ex-Christian America",
     "author": "Stephen Bullivant",
     "num pages": "257",
     "avg rating": "3.85",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/14",
-    "introduction": "An entertaining and insightful exploration of the American ex-religious\n\nThe United States is in the midst of a religious revolution. Or, perhaps it is better to say a non-religious revolution. Around a quarter of US adults now say they have no religion. The great majority of these religious nones also say that they used to belong to a religion but no longer do. These are the nonverts: think converts, but from having religion to having none. There are currently has about 59 million of them in the United States.\n\nNonverts explores who they are, and why they joined the rising tide of the ex-religious. One of world's leading experts on contemporary atheism and nonreligiosity, sociologist and theologian Stephen Bullivant draws on dozens of interviews, original analysis of high-quality survey data, and a wealth of cutting-edge studies, to present an entertaining and insightful exploration of America's ex-religious landscape. Bullivant criss-crosses the country, talking to everyone from ex-Mormons in Utah to ex-Catholics in Pennsylvania, from ex-Evangelicals in Georgia to ex-Muslims in California, showing not only what they have in common but also how the traditions they left behind continue to shape them.\n\nWhile American religion is not going to die out any time soon, ex-Christian America is a growing presence in national life. America's religious revolution is not just a religious revolution--it is catalyzing a profound social, cultural, moral, and political impact. Nonverts will serve as an ndispensable guide to this shifting landscape, as well as the future of American life."
+    "tags": [
+      "religion",
+      "history",
+      "social-science"
+    ]
   },
   {
-    "key": "63354300",
-    "title": "The Great Dechurching: Who’s Leaving, Why Are They Going, and What Will It Take to Bring Them Back?",
+    "id": "63354300",
+    "title": "The Great Dechurching: Who's Leaving, Why Are They Going, and What Will It Take to Bring Them Back?",
     "author": "Jim  Davis",
     "num pages": "272",
     "avg rating": "3.85",
     "shelves": "finished",
     "date read": "2025/07/14",
     "date added": "2025/06/05",
-    "introduction": "We are currently experiencing the largest and fastest religious shift in US history. It is greater than the First and Second Great Awakening and every revival in our country combined...but in the opposite direction. Yet precious little rigorous study has been done on the broad phenomenon of dechurching in America. Jim Davis and Michael Graham have commissioned the largest and most comprehensive study of dechurching in America by renowned sociologists Dr. Ryan Burge and Dr. Paul Djupe. The Great Dechurching takes the insights gleaned from this study to drill down on how exactly people are dechurching with respect to beliefs, behavior, and belonging. This book gives the church in America its first ever deep dive into the dechurched phenomenon. You'll learn about the dechurched through a detailed sketch of demographics, size, core concerns, church off-ramps, historical roots, and the gravity of what is at stake. Then you'll explore what can be done to slow the bleed, engage the pertinent issues winsomely and wisely, and hopefully re-church some of the dechurched."
+    "tags": [
+      "religion",
+      "social-science"
+    ]
   },
   {
-    "key": "38135623",
+    "id": "38135623",
     "title": "L'Ingénu",
     "author": "Voltaire",
     "num pages": "182",
@@ -281,10 +338,13 @@
     "date read": "2025/07/12",
     "date added": "2025/06/17",
     "title2": "天真汉",
-    "introduction": "L’Ingénu - The Huron; or, Pupil of Nature\nby Voltaire (François-Marie Arouet) (1694-1778)\n\nL’Ingénu (Huron or the Pupil of Nature) is partly a philosophical, partly a social and political satire aiming at some of Voltaire’s favorite targets. Religious establishments, received opinions, race superiority, the unjustifiable basis of institutional power are laid bare by a novelistic trick. The protagonist is a Huron, whose country has not been yet molded into the French set ways, and he tries to adapt to the French life.\n\nVoltaire was a French writer, historian and philosopher. His intelligence, wit and unique style made him one of France’s greatest writers and philosophers and a leading figure of French Enlightenment. He advocated fiercely for civil liberties, including freedom of religion, freedom of expression, free trade and separation of church and state.\n\nProject Bilingual (A division of Wolf Pup Books) is a continuing project making available great original French writers' texts along with their English translation. This edition, which offers after every original language paragraph its translation, makes both grammar and vocabulary checks as painless as possible. Idiomatic forms that could be overlooked can be easily detected.\nFurthermore, large paragraphs have been broken down to much smaller units so that the check is as effortless as possible. We do hope that by reading French writers that defined the language itself or whose work permeated the French culture, you will be able to get the maximum benefit from this language series. Although this edition is not a replacement for traditional methods of learning language, it is a very powerful tool to speed up the process once you have attained the intermediate level and beyond.\nWolf Pup Books\nA Bilingual Ebook Publishing Company"
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "11438",
+    "id": "11438",
     "title": "What We Talk About When We Talk About Love",
     "author": "Raymond Carver",
     "num pages": "159",
@@ -292,22 +352,26 @@
     "shelves": "finished",
     "date read": "2025/07/12",
     "date added": "2025/07/03",
-    "introduction": "In his second collection, including the iconic and much-referenced title story featured in the Academy Award-winning film Birdman, Carver establishes his reputation as one of the most celebrated short-story writers in American literature—a haunting meditation on love, loss, and companionship, and finding one’s way through the dark."
+    "tags": [
+      "fiction"
+    ]
   },
   {
-    "key": "16241133",
+    "id": "16241133",
     "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
     "author": "Susan Wise Bauer",
     "num pages": "785",
     "avg rating": "4.17",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/09",
     "title2": "世界史的故事",
-    "introduction": "Beginning in the heady days just after the First Crusade, this volume—the third in the series that began with The History of the Ancient World and The History of the Medieval World—chronicles the contradictions of a world in transition.\n\nPopes continue to preach crusade, but the hope of a Christian empire comes to a bloody end at the walls of Constantinople. Aristotelian logic and Greek rationality blossom while the Inquisition gathers strength. As kings and emperors continue to insist on their divine rights, ordinary people all over the world seize power: the lingayats of India, the Jacquerie of France, the Red Turbans of China, and the peasants of England.\n\nNew threats appear, as the Ottomans emerge from a tiny Turkish village and the Mongols ride out of the East to set the world on fire. New currencies are forged, new weapons invented, and world-changing catastrophes alter the landscape: the Little Ice Age and the Great Famine kill millions; the Black Death, millions more. In the chaos of these epoch-making events, our own world begins to take shape.\n\nImpressively researched and brilliantly told, The History of the Renaissance World offers not just the names, dates, and facts but the memorable characters who illuminate the years between 1100 and 1453 — years that marked a sea change in mankind’s perception of the world."
+    "tags": [
+      "history"
+    ]
   },
   {
-    "key": "225947",
+    "id": "225947",
     "title": "The History of the Ancient World: From the Earliest Accounts to the Fall of Rome",
     "author": "Susan Wise Bauer",
     "num pages": "896",
@@ -316,10 +380,12 @@
     "date read": null,
     "date added": "2025/07/08",
     "title2": "世界史的故事",
-    "introduction": "This is the first volume in a bold new series that tells the stories of all peoples, connecting historical events from Europe to the Middle East to the far coast of China, while still giving weight to the characteristics of each country.\n\nSusan Wise Bauer provides both sweeping scope and vivid attention to the individual lives that give flesh to abstract assertions about human history.\n\nDozens of maps provide a clear geography of great events, while timelines give the reader an ongoing sense of the passage of years and cultural interconnection. This narrative history employs the methods of “history from beneath”—literature, epic traditions, private letters and accounts—to connect kings and leaders with the lives of those they ruled. The result is an engrossing tapestry of human behavior from which we may draw conclusions about the direction of world events and the causes behind them."
+    "tags": [
+      "history"
+    ]
   },
   {
-    "key": "48917953",
+    "id": "48917953",
     "title": "La Peste",
     "author": "Albert Camus",
     "num pages": "235",
@@ -328,66 +394,86 @@
     "date read": "2025/07/08",
     "date added": "2025/07/02",
     "title2": "鼠疫",
-    "introduction": "The Plague is a novel by Albert Camus, published in 1947.\n\nIt tells the story from the point of view of a narrator of a plague sweeping the French Algerian city of Oran. The narrator remains unknown until the start of the last chapter, chapter 5 of part 5. The novel presents a snapshot of life in Oran as seen through the author's distinctive absurdist point of view.\n\nThe book tells a gripping tale of human unrelieved horror, of survival and resilience, and of the ways in which humankind confronts death, The Plague is at once a masterfully crafted novel, eloquently understated and epic in scope, and a parable of ageless moral resonance, profoundly relevant to our times. In Oran, a coastal town in North Africa, the plague begins as a series of portents, unheeded by the people. It gradually becomes an omnipresent reality, obliterating all traces of the past and driving its victims to almost unearthly extremes of suffering, madness, and compassion.\n\nThe Plague is considered an existentialist classic despite Camus' objection to the label. The novel stresses the powerlessness of the individual characters to affect their destinies. The narrative tone is similar to Kafka's, especially in The Trial, whose individual sentences potentially have multiple meanings; the material often pointedly resonating as stark allegory of phenomenal consciousness and the human condition."
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "6484128",
+    "id": "6484128",
     "title": "The History of the Medieval World: From the Conversion of Constantine to the First Crusade",
     "author": "Susan Wise Bauer",
     "num pages": "746",
     "avg rating": "4.11",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/08",
     "title2": "世界史的故事",
-    "introduction": "A masterful narrative of the Middle Ages, when religion became a weapon for kings all over the world.\n\nFrom the schism between Rome and Constantinople to the rise of the T’ang Dynasty, from the birth of Muhammad to the crowning of Charlemagne, this erudite book tells the fascinating, often violent story of kings, generals, and the peoples they ruled.\n\nIn her earlier work, The History of the Ancient World, Susan Wise Bauer wrote of the rise of kingship based on might. But in the years between the fourth and the twelfth centuries, rulers had to find new justification for their power, and they turned to divine truth or grace to justify political and military action. Right thus replaces might as the engine of empire.\n\nNot just Christianity and Islam but the religions of the Persians and the Germans, and even Buddhism, are pressed into the service of the state. This phenomenon—stretching from the Americas all the way to Japan—changes religion, but it also changes the state. 4 illustrations; 46 maps."
+    "tags": [
+      "history"
+    ]
   },
   {
-    "key": "18250837",
+    "id": "18250837",
     "title": "How (Not) to Be Secular: Reading Charles Taylor",
     "author": "James K.A. Smith",
     "num pages": "148",
     "avg rating": "4.21",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/08",
-    "introduction": "What does it mean to say we live in a secular world? Charles Taylor's landmark book A Secular Age provides a monumental history and analysis of what it means for us to live in our post- Christian present a pluralist world of competing beliefs and growing unbelief. This book by Jamie Smith is a small field guide to Taylor's genealogy of the secular, making it accessible to a wide array of readers. Smith's How (Not) to Be Secular is also, however, a philosophical guidebook for practitioners a kind of how-to manual that ultimately offers guidance on how to live in a secular age. It's an adventure in self-understanding and a way to get our bearings in postmodernity. Whether one is proclaiming faith to the secularized or is puzzled that there continue to be people of faith in this day and age, this is a philosophical story meant to help us locate where we are and what's at stake."
+    "tags": [
+      "religion",
+      "philosophy"
+    ]
   },
   {
-    "key": "824412",
+    "id": "824412",
     "title": "A Secular Age",
     "author": "Charles Margrave Taylor",
     "num pages": "874",
     "avg rating": "4.27",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/08",
-    "introduction": "Almost everyone would agree that the place of religion in our societies has changed profoundly over the years. This book takes up the question of what these changes mean—of what, precisely, happens when a society in which it is virtually impossible not to believe in God becomes one in which faith is only one human possibility among others."
+    "tags": [
+      "religion",
+      "philosophy",
+      "history",
+      "social-science"
+    ]
   },
   {
-    "key": "55385983",
+    "id": "55385983",
     "title": "Speechless: Controlling Words, Controlling Minds",
     "author": "Michael J. Knowles",
     "num pages": "383",
     "avg rating": "4.25",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/07",
-    "introduction": "\"Every single American needs to read Michael Knowles’s Speechless. I don’t mean ‘read it eventually.’ I stop what you’re doing and pick up this book.\" —CANDACE OWENS \"The most important book on free speech in decades—read it!\" —SENATOR TED CRUZ A New We Win, They Lose The Culture War is over, and the culture lost. The Left’s assault on liberty, virtue, decency, the Republic of the Founders, and Western civilization has succeeded. You can no longer keep your social media account—or your job—and acknowledge truths such Washington, Jefferson, and Columbus were great men. Schools and libraries should not coach children in sexual deviance. Men don’t have uteruses. How did we get to this point? Michael Knowles of The Daily Wire exposes and diagnosis the losing strategy we have fallen for and shows how we can change course—and start winning. In the groundbreaking  Controlling Words, Controlling Minds Knowles How the “free speech absolutists” gave away the store The First Amendment does not require a value-neutral public square How the Communists figured out that their revolution could never succeed as long as the common man was attached to his own culture Where political correctness came from How, comply or resist, political correctness is a win-win game for the bad guys Why taking our stand on “freedom of speech” helps put atheism, decadence, and nonsense on the same plane with faith, virtue, and reality The real Will we shut down drag queen story hour, or cancel Abraham Lincoln? For 170 years the First Amendment was compatible with prayer in public school How the atheists got the Warren Court to rule their way To this day, there’s a First Amendment exception for obscenity. What exactly is the argument that perverts’ teaching toddlers to twerk is not obscene? Read  Controlling Words, Controlling Minds if you want to learn how to take the fight to the enemy."
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
   },
   {
-    "key": "61369370",
+    "id": "61369370",
     "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
     "author": "Charlie Kirk",
     "num pages": "288",
     "avg rating": "4.16",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/07/07",
-    "introduction": "Why do we send our kids to college? Why do we spend hundreds of thousands of dollars on a useless degree? Why do we let our children get indoctrinated by those who fundamentally disagree with America's greatness? In his newest book, The College Scam, Charlie Kirk answers all of these questions and more. Since founding Turning Point USA, Charlie Kirk has been the leading voice across American college campuses standing up for conservative students. We all know that colleges are filled with far-left professors, but the truth is much worse. Anti-American ideals are thriving, progressives repress speech, and brainwashing is the norm. In The College Scam, Charlie Kirk puts the college industry on trial with a ten-count indictment of why academia has lost all credibility. A must-read for every student, parent, and concerned American citizen!"
+    "tags": [
+      "economics",
+      "philosophy",
+      "social-science"
+    ]
   },
   {
-    "key": "36651676",
+    "id": "36651676",
     "title": "L'Étranger",
     "author": "Albert Camus",
     "num pages": "66",
@@ -396,70 +482,87 @@
     "date read": null,
     "date added": "2025/06/09",
     "title2": "局外人",
-    "introduction": "Published in 1942 by French author Albert Camus, The Stranger has long been considered a classic of twentieth-century literature. Le Monde ranks it as number one on its \"100 Books of the Century\" list. Through this story of an ordinary man unwittingly drawn into a senseless murder on a sundrenched Algerian beach, Camus explores what he termed \"the nakedness of man faced with the absurd.\""
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "57846996",
+    "id": "57846996",
     "title": "Red Roulette: An Insider's Story of Wealth, Power, Corruption, and Vengeance in Today's China",
     "author": "Desmond Shum",
-    "num pages": null,
+    "num pages": "171",
     "avg rating": "3.91",
     "shelves": "finished",
     "date read": "2025/07/01",
     "date added": "2025/06/08",
     "title2": "红色赌盘",
-    "introduction": "This “powerful and disturbing” (Bill Browder, author of Red Notice) New York Times bestseller is narrated by a man who, with his wife, Whitney Duan, rose to the top levels of power and wealth—and then fell out of favor. Whitney had been disappeared four years before, but this book led to her dramatic reemergence.\n\nAs Desmond Shum was growing up impoverished in China, he vowed his life would be different. Through hard work and sheer tenacity he earned an American college degree and returned to his native country to establish himself in business. There, he met his future wife, the highly intelligent and equally ambitious Whitney Duan who was determined to make her mark within China’s male-dominated society. Whitney and Desmond formed an effective team and, aided by relationships they formed with top members of China’s Communist Party, the so-called red aristocracy, he vaulted into China’s billionaire class. Soon they were developing the massive air cargo facility at Beijing International Airport, and they followed that feat with the creation of one of Beijing’s premier hotels. They were dazzlingly successful, traveling in private jets, funding multi-million-dollar buildings and endowments, and purchasing expensive homes, vehicles, and art.\n\nBut in 2017, their fates diverged irrevocably when Desmond, while residing overseas with his son, learned that his now ex-wife Whitney had vanished along with three coworkers."
+    "tags": [
+      "biography",
+      "history",
+      "social-science"
+    ]
   },
   {
-    "key": "28137375",
+    "id": "28137375",
     "title": "Pride and Predujice",
     "author": "Jane Austen",
     "num pages": "234",
     "avg rating": "4.29",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/06/30",
     "title2": "傲慢与偏见",
-    "introduction": "Pride and Prejudice is a novel of manners by Jane Austen, first published in 1813. The story follows the main character, Elizabeth Bennet, as she deals with issues of manners, upbringing, morality, education, and marriage in the society of the landed gentry of the British Regency. Elizabeth is the second of five daughters of a country gentleman, Mr. Bennet living in Longbourn. Page 2 of a letter from Jane Austen to her sister Cassandra (11 June 1799) in which she first mentions Pride and Prejudice, using its working title First Impressions. (NLA) Set in England in the early 19th century, Pride and Prejudice tells the story of Mr and Mrs Bennet's five unmarried daughters after the rich and eligible Mr Bingley and his status-conscious friend, Mr Darcy, have moved into their neighbourhood. While Bingley takes an immediate liking to the eldest Bennet daughter, Jane, Darcy has difficulty adapting to local society and repeatedly clashes with the second-eldest Bennet daughter, Elizabeth. Pride and Prejudice retains a fascination for modern readers, continuing near the top of lists of \"most loved books.\" It has become one of the most popular novels in English literature, selling over 20 million copies, and receives considerable attention from literary scholars. Modern interest in the book has resulted in a number of dramatic adaptations and an abundance of novels and stories imitating Austen's memorable characters or themes."
+    "tags": [
+      "fiction"
+    ]
   },
   {
-    "key": "18922517",
+    "id": "18922517",
     "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
     "author": "Stendhal",
     "num pages": "512",
     "avg rating": "3.86",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/06/30",
     "title2": "红与黑",
-    "introduction": "Handsome, ambitious Julien Sorel is determined to rise above his humble provincial origins. Soon realizing that success can only be achieved by adopting the subtle code of hypocrisy by which society operates, he begins to achieve advancement through deceit and self-interest. His triumphant career takes him into the heart of glamorous Parisian society, along the way conquering the gentle, married Madame de Rênal, and the haughty Mathilde. But then Julien commits an unexpected, devastating crime - and brings about his own downfall. The Red and the Black is a lively, satirical portrayal of French society after Waterloo, riddled with corruption, greed, and ennui, and Julien - the cold exploiter whose Machiavellian campaign is undercut by his own emotions - is one of the most intriguing characters in European literature.\n\nRoger Gard's fine translation remains faithful to the natural, conversational tone of the original, while his introduction elucidates the complexities of Julien's character. This edition also contains a chronology, further reading and an appendix on Stendhal's use of epigraphs."
+    "tags": [
+      "fiction"
+    ]
   },
   {
-    "key": "19179596",
+    "id": "19179596",
     "title": "Преступление и наказание",
     "author": "Fyodor Dostoevsky",
     "num pages": "548",
     "avg rating": "4.28",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/06/30",
     "title2": "罪与罚",
-    "introduction": "Raskolnikov, a destitute and desperate former student, wanders through the slums of St Petersburg and commits a random murder without remorse or regret. He imagines himself to be a great man, a Napoleon: acting for a higher purpose beyond conventional moral law. But as he embarks on a dangerous game of cat and mouse with a suspicious police investigator, Raskolnikov is pursued by the growing voice of his conscience and finds the noose of his own guilt tightening around his neck. Only Sonya, a downtrodden sex worker, can offer the chance of redemption."
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "19230853",
+    "id": "19230853",
     "title": "Война и миръ",
     "author": "Leo Tolstoy",
     "num pages": "726",
     "avg rating": "4.17",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/06/30",
     "title2": "战争与和平",
-    "introduction": "In Russia's struggle with Napoleon, Tolstoy saw a tragedy that involved all mankind.\n\nWar and Peace broadly focuses on Napoleon’s invasion of Russia in 1812 and follows three of the most well-known characters in literature: Pierre Bezukhov, the illegitimate son of a count who is fighting for his inheritance and yearning for spiritual fulfillment; Prince Andrei Bolkonsky, who leaves his family behind to fight in the war against Napoleon; and Natasha Rostov, the beautiful young daughter of a nobleman who intrigues both men.\n\nAs Napoleon’s army invades, Tolstoy brilliantly follows characters from diverse backgrounds—peasants and nobility, civilians and soldiers—as they struggle with the problems unique to their era, their history, and their culture. And as the novel progresses, these characters transcend their specificity, becoming some of the most moving—and human—figures in world literature.\n\nTolstoy gave his personal approval to this translation, published here in a new single volume edition, which includes an introduction by Henry Gifford, and Tolstoy's important essay `Some Words about War and Peace'."
+    "tags": [
+      "fiction",
+      "history"
+    ]
   },
   {
-    "key": "203774224",
+    "id": "203774224",
     "title": "法律的悖论",
     "author": "罗翔",
     "num pages": "254",
@@ -467,10 +570,14 @@
     "shelves": "finished",
     "date read": "2025/06/23",
     "date added": "2025/05/18",
-    "introduction": "法律要讲感情吗？\n\n邪恶才犯罪，还是犯罪才邪恶？\n\n自愿被人杀死，凶手算犯罪吗？\n\n买尸体阴婚判7年，买活人当老婆才3年？\n\n罢工向老板讨钱，是一种敲诈吗？\n\n投降是自首吗？\n\n不在意名誉，名誉权还会被侵犯吗？\n\n为什么人可以被杀死，又无法被杀死？\n\n限制自由，才能保障自由？\n\n……\n\n关于悖论，他的态度是——\n\n“对于这些悖论，我无法提供答案，只能呈现思考过程。希望在这个探讨和思考的过程中，能锻炼自己的思维，承认理性的有限，走出刺猬式的思维独断，接受狐狸式的多元包容。”\n\n“当每一个问题只有一个答案，答案的正确性总是可疑的。”\n\n“不要在自己看重的事情上附着不加边际的价值，要学会接受对立观点的相对合理性。”\n\n书中痛斥丰县案“对人的保护还不如物”“配阴婚判7年，买活人当老婆才3年，实在说不过去”，坦言法条“实有调整之必要。”。网暴是“通过指责他人的错误来获得一种道德平衡”。虚无主义盛行的当下，他说“人生不可能没有意义，当你认为没有‘意义’时，一定有一个与之相对应的‘意义’。”不想努力了，听他说“一个理性的成年人有选择做废物的权利，他可以放弃所有好处。”\n\n通过深入分析法律中14类经典的对向案件，罗翔在书中巧妙地辨析了法律中的盲区，揭示了法治的核心，并引导读者探讨和思考法律中的悖论。《法律的悖论》不仅将深深吸引那些对法律领域充满热情的人，也会为广大读者带来全新的思考方式。这本书不仅是法律知识的丰富之源，更是培养批判性思维和接纳多元观点的重要工具。"
+    "title2": "Paradoxes of Law",
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
   },
   {
-    "key": "17259893",
+    "id": "17259893",
     "title": "Le petit prince",
     "author": "Antoine de Saint-Exupéry",
     "num pages": "112",
@@ -479,34 +586,43 @@
     "date read": "2025/06/23",
     "date added": "2025/06/09",
     "title2": "小王子",
-    "introduction": "A pilot stranded in the desert awakes one morning to see, standing before him, the most extraordinary little fellow. \"Please,\" asks the stranger, \"draw me a sheep.\" And the pilot realizes that when life's events are too difficult to understand, there is no choice but to succumb to their mysteries. He pulls out pencil and paper... And thus begins this wise and enchanting fable that, in teaching the secret of what is really important in life, has changed forever the world for its readers.\n\nFew stories are as widely read and as universally cherished by children and adults alike as The Little Prince, presented here in a stunning new translation with carefully restored artwork. The definitive edition of a worldwide classic, it will capture the hearts of readers of all ages."
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "27788",
+    "id": "27788",
     "title": "Julie ou La nouvelle Héloïse",
     "author": "Jean-Jacques Rousseau",
     "num pages": "728",
     "avg rating": "3.44",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/06/20",
     "title2": "新爱洛伊丝",
-    "introduction": "An elegant translation of one of the most popular novels of its time. Rousseau's great epistolary novel, Julie, or the New Heloise, has been virtually unavailable in English since 1810. In it, Rousseau reconceptualized the relationship of the individual to the collective and articulated a new moral paradigm. The story follows the fates and smoldering passions of Julie d'Etange and St. Preux, a one-time lover who re-enters Julie's life at the invitation of her unsuspecting husband, M. de Wolmar. The complex tones of this work made it a commercial success and a continental sensation when it first appeared in 1761, and its embodiment of Rousseau's system of thought, in which feelings and intellect are intertwined, redefined the function and form of fiction for decades. As the characters negotiate a complex maze of passion and virtue, their purity of soul and honest morality reveal, as Rousseau writes in his preface, \"the subtleties of heart of which this work is full.\" A comprehensive introduction and careful annotations make this novel accessible to contemporary readers, both as an embodiment of Rousseau's philosophy and as a portrayal of the tension and power inherent in domestic life."
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "12649",
+    "id": "12649",
     "title": "Les Confessions",
     "author": "Jean-Jacques Rousseau",
     "num pages": "676",
     "avg rating": "3.59",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/06/20",
     "title2": "忏悔录",
-    "introduction": "In his Confessions Jean-Jacques Rousseau tells the story of his life, from the formative experience of his humble childhood in Geneva, through the achievement of international fame as novelist and philosopher in Paris, to his wanderings as an exile, persecuted by governments and alienated from the world of modern civilization. In trying to explain who he was and how he came to be the object of others' admiration and abuse, Rousseau analyses with unique insight the relationship between an elusive but essential inner self and the variety of social identities he was led to adopt. The book vividly illustrates the mixture of moods and motives that underlie the writing of defiance and vulnerability, self-exploration and denial, passion, puzzlement, and detachment. Above all, Confessions is Rousseau's search, through every resource of language, to convey what he despairs of putting into the personal quality of one's own existence."
+    "tags": [
+      "biography",
+      "philosophy"
+    ]
   },
   {
-    "key": "3023",
+    "id": "3023",
     "title": "Basic Economics: A Citizen's Guide to the Economy",
     "author": "Thomas Sowell",
     "num pages": "448",
@@ -514,32 +630,41 @@
     "shelves": "currently-reading",
     "date read": null,
     "date added": "2025/05/12",
-    "introduction": "Basic Economics is a citizen's guide to economics-for those who want to understand how the economy works but have no interest in jargon or equations. Sowell reveals the general principles behind any kind of economy-capitalist, socialist, feudal, and so on. In readable language, he shows how to critique economic policies in terms of the incentives they create, rather than the goals they proclaim. With clear explanations of the entire field, from rent control and the rise and fall of businesses to the international balance of payments, this is the first book for anyone who wishes to understand how the economy functions."
+    "tags": [
+      "economics",
+      "social-science"
+    ]
   },
   {
-    "key": "170448",
+    "id": "170448",
     "title": "Animal Farm",
     "author": "George Orwell",
     "num pages": "141",
     "avg rating": "4.01",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/06/11",
-    "introduction": "A farm is taken over by its overworked, mistreated animals. With flaming idealism and stirring slogans, they set out to create a paradise of progress, justice, and equality. Thus the stage is set for one of the most telling satiric fables ever penned –a razor-edged fairy tale for grown-ups that records the evolution from revolution against tyranny to a totalitarianism just as terrible.\n\nWhen Animal Farm was first published, Stalinist Russia was seen as its target. Today it is devastatingly clear that wherever and whenever freedom is attacked, under whatever banner, the cutting clarity and savage comedy of George Orwell’s masterpiece have a meaning and message still ferociously fresh."
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "61439040",
+    "id": "61439040",
     "title": "1984",
     "author": "George Orwell",
     "num pages": "368",
     "avg rating": "4.20",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2025/06/11",
-    "introduction": "A masterpiece of rebellion and imprisonment where war is peace freedom is slavery and Big Brother is watching. Thought Police, Big Brother, Orwellian - these words have entered our vocabulary because of George Orwell's classic dystopian novel 1984. The story of one man's Nightmare Odyssey as he pursues a forbidden love affair through a world ruled by warring states and a power structure that controls not only information but also individual thought and memory 1984 is a prophetic haunting tale More relevant than ever before 1984 exposes the worst crimes imaginable the destruction of truth freedom and individuality. With a foreword by Thomas Pynchon. This beautiful paperback edition features deckled edges and french flaps a perfect gift for any occasion"
+    "tags": [
+      "fiction",
+      "philosophy"
+    ]
   },
   {
-    "key": "27840555",
+    "id": "27840555",
     "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity",
     "author": "Nabeel Qureshi",
     "num pages": "320",
@@ -547,10 +672,12 @@
     "shelves": "finished",
     "date read": "2025/05/29",
     "date added": "2025/05/23",
-    "introduction": "Having shared his journey of faith in the New York Times bestselling Seeking Allah, Finding Jesus, Nabeel Qureshi now examines Islam and Christianity in detail, exploring areas of crucial conflict and unpacking the relevant evidence.\n\nIn this anticipated follow-up book, Nabeel reveals what he discovered in the decade following his conversion, providing a thorough and careful comparison of the evidence for Islam and Christianity--evidence that wrenched his heart and transformed his life.\n\nIn Seeking Allah, Finding Jesus, Nabeel Qureshi recounted his dramatic journey, describing his departure from Islam and his decision to follow Christ. In the years that followed, he realized that the world’s two largest religions are far more different than they initially appeared.\n\nNo God but One: Allah or Jesus? addresses the most important questions at the interface of Islam and Christianity: How do the two religions differ? Are the differences significant? Can we be confident that either Christianity or Islam is true? And most important, is it worth sacrificing everything for the truth?\n\nNabeel shares stories from his life and ministry, casts new light on current events, and explores pivotal incidents in the histories of both religions, providing a resource that is gripping and thought-provoking, respectful and challenging.\n\nBoth Islam and Christianity teach that there is No God but One, but who deserves to be worshiped, Allah or Jesus?"
+    "tags": [
+      "religion"
+    ]
   },
   {
-    "key": "152344",
+    "id": "152344",
     "title": "Victory Over the Darkness",
     "author": "Neil T. Anderson",
     "num pages": "256",
@@ -558,10 +685,12 @@
     "shelves": "finished",
     "date read": "2025/05/28",
     "date added": "2025/05/23",
-    "introduction": "Ten years ago a breakthrough book launched a ministry that has helped more than one million people overcome this world and win the battle for their hearts and minds. Now Neil Anderson has revised and expanded Victory over the Darkness for a new generation of readers, outlining practical and more productive ways to Christian growth based on Christ's \"You will know the truth, and the truth will make you free.\" Victory Over the Darkness emphasizes the importance of believing and internalizing the cardinal truths of Scripture as a base from which to renew the mind and fend off Satan's relentless attempt to convince us that we are less than Christ empowers us to be."
+    "tags": [
+      "religion"
+    ]
   },
   {
-    "key": "52104820",
+    "id": "52104820",
     "title": "圆圈正义：作为自由前提的信念",
     "author": "LUO XIANG",
     "num pages": "307",
@@ -569,10 +698,14 @@
     "shelves": "finished",
     "date read": "2025/05/26",
     "date added": "2025/05/04",
-    "introduction": "《圆圈正义》一书共收录作者的49篇随笔文章,分为“圆圈正义”“何谓榜样”“道德谴责的打开方式”“身负权力 各自珍重”“法律人的理智和多数人的情感”“生命的尊严”“心怀永恒 活在当下”七大部分，作者在本书中运用特有的坦诚、自省而尖锐的笔调，探讨了法律、正义、道德、权力的理念与现实、分析了如张扣扣案、莫某纵火案等社会热点案件、分享了自身求学经验和对人生的思考。本书不仅启蒙读者法律意识和法治观念，更在于帮助读者理解法律背后更深层次的价值基础。"
+    "title2": "The Faith as Premise of Freedom",
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
   },
   {
-    "key": "41889692",
+    "id": "41889692",
     "title": "When Breath Becomes Air",
     "author": "Paul Kalanithi",
     "num pages": "148",
@@ -581,10 +714,12 @@
     "date read": null,
     "date added": "2025/05/04",
     "title2": "当呼吸化为空气",
-    "introduction": "For readers of Atul Gawande, Andrew Solomon, and Anne Lamott, a profoundly moving, exquisitely observed memoir by a young neurosurgeon faced with a terminal cancer diagnosis who attempts to answer the question 'What makes a life worth living?'\n\nAt the age of thirty-six, on the verge of completing a decade's worth of training as a neurosurgeon, Paul Kalanithi was diagnosed with stage IV lung cancer. One day he was a doctor treating the dying, and the next he was a patient struggling to live. And just like that, the future he and his wife had imagined evaporated. When Breath Becomes Air chronicles Kalanithi's transformation from a naïve medical student \"possessed,\" as he wrote, \"by the question of what, given that all organisms die, makes a virtuous and meaningful life\" into a neurosurgeon at Stanford working in the brain, the most critical place for human identity, and finally into a patient and new father confronting his own mortality.\n\nWhat makes life worth living in the face of death? What do you do when the future, no longer a ladder toward your goals in life, flattens out into a perpetual present? What does it mean to have a child, to nurture a new life as another fades away? These are some of the questions Kalanithi wrestles with in this profoundly moving, exquisitely observed memoir.\n\nPaul Kalanithi died in March 2015, while working on this book, yet his words live on as a guide and a gift to us all. \"I began to realize that coming face to face with my own mortality, in a sense, had changed nothing and everything,\" he wrote. \"Seven words from Samuel Beckett began to repeat in my head: 'I can't go on. I'll go on.'\" When Breath Becomes Air is an unforgettable, life-affirming reflection on the challenge of facing death and on the relationship between doctor and patient, from a brilliant writer who became both."
+    "tags": [
+      "biography"
+    ]
   },
   {
-    "key": "23336950",
+    "id": "23336950",
     "title": "A Pearl Necklace",
     "author": "Mi Xue",
     "num pages": "288",
@@ -592,10 +727,13 @@
     "shelves": "finished",
     "date read": "2025/05/13",
     "date added": "2025/05/04",
-    "introduction": "A Pearl Necklace is the compelling true story of Mi Xue's struggles and victories strung together throughout life, weaving sorrows and joys, fear and faith to create a beautiful Masterpiece of inspiration that shines like a precious jewel even throughout the darkest times. As a first generation Chinese American, Mi Xue strives to counter alienation with achievement only to discover the inadequacy of her own self-sufficiency to overcome the challenges of her failing marriage. She begins a lifelong search for a purpose and power greater than herself to transform the trials of marriage, three children in three and a half years, an autistic firstborn, job losses, dysfunctional codependency, family-career tug-of-wars, and over twenty relocations in three continents. Mi Xue reaches beyond the depths of her Chinese roots and the heights of the American dream to find her most profound identity and fulfillment beyond herself, connecting you with the lost wanderer yearning to return home in each of us."
+    "title2": "珍珠项链",
+    "tags": [
+      "biography"
+    ]
   },
   {
-    "key": "52884924",
+    "id": "52884924",
     "title": "走到比錢更遠的地方",
     "author": "陳維恩",
     "num pages": "254",
@@ -603,10 +741,12 @@
     "shelves": "finished",
     "date read": null,
     "date added": "2025/05/04",
-    "introduction": "這世界有比你我的夢想更重要的事，值得我們用力「砸」了自己的生命！\n\n　　為了錢，再遠的地方我們都願意去，\n　　而這世上還有什麼，能讓我們走到比錢更遠的地方？\n\n　　巴布亞紐幾內亞．別姆島\n　　走下飛機，眼前是一片荒蕪，唯一看得見的建築物被鐵絲網圍起來；\n　　鐵絲網後方，有一群拿著開山刀、被檳榔汁染成血色牙齒的黑色臉孔。\n　　拔山涉水從城市買來房屋建材，因為船長喝醉酒而沉入大海。\n　　住在可以瞭望太平洋的家，是靠著接雨水與太陽能發電的原始生活，\n　　家門後還有一座不知何時會爆發的活火山。\n　　女兒得了蜂窩性組織炎，在醫療資源缺乏下與死神拚搏；\n　　妻子接續罹患乳癌，也只能每隔九個月回台追蹤……\n\n　　面對一群「為了一顆芒果」一言不合就拿刀互砍、視「偷竊說謊、吸毒酗酒」為家常便飯的族人，以及生活中種種的不確定感，誰會想來這個幾乎與世隔絕的地方？\n\n　　「有很多外國人來巴布亞紐幾內亞，這些人為了錢可以來到那麼遠的地方，你們基督徒為什麼不願意為了福音搬到我們國家呢？」\n\n　　一句真誠的發問，讓原本信誓旦旦絕對不可能把孩子帶到這個地方的陳維恩，一待就將近十年。在這個島上，他與團隊一起為別姆族創造文字、教導別姆人學會讀寫自己的母語，在當地建立首間教會，讓那些「落葉堆下的人」，生命有了一百八十度的奇蹟轉變。\n\n　　因著信仰，陳維恩沒有選擇好走的路，不追求優渥舒適的生活，「因為生命中的各種決定，會顯示我們真正相信的是什麼」。回顧那段數不盡的寂寞、壓力與挑戰，他想說的是，當你認真思考什麼是有永恆價值的，你就會願意用力將生命「砸」在那些事情上。\n\n　　十年的異鄉生活不是一場探險，是值得我們去玩真的的生命抉擇！"
+    "tags": [
+      "biography"
+    ]
   },
   {
-    "key": "38819247",
+    "id": "38819247",
     "title": "Food and Nutrition: What Everyone Needs to Know®",
     "author": "P.K. Newby",
     "num pages": "316",
@@ -614,10 +754,13 @@
     "shelves": "currently-reading",
     "date read": null,
     "date added": "2025/05/04",
-    "introduction": "From gluten-free to all-Paleo, GMOs to grass-fed beef, our newsfeeds abound with nutrition advice. Whether sensational headlines from the latest study or anecdotes from celebrities and food bloggers, we're bombarded with \"superfoods\" and \"best ever\" diets promising to help us lose weight, fight disease, and live longer. At the same time, we live in an over-crowded food environment that makes it easy to eat, all the time. The result is an epidemic of chronic disease amidst a culture of nutrition confusion-and copious food choices that challenge everyday eaters just trying to get a healthy meal on the table.But the exhilarating truth is that scientists know an astounding amount about the power of food. A staggering 80% of chronic diseases are preventable through modifiable lifestyle changes, and diet is the single largest contributing factor. And we also know the secrets to eating sustainably to protect our planet.In Food & Nutrition, Harvard- and Columbia-trained nutrition scientist Dr. P.K. Newby examines 134 stand-alone questions addressing \"need to know\" topics, including how what we eat affects our health and environment, from farm to fork, and why, when it comes to diet, the whole is greater than the sum of its parts-and one size doesn't fit all. At the same time, Newby debunks popular myths and food folklore, encouraging readers to \"learn, unlearn, and relearn\" the fundamentals of nutrition at the heart of a health-giving diet. Her passion for all things food shines through it all, as does her love of the power of science, technology, and engineering to help create healthier diets for ourselves, and a more sustainable future for the planet we share."
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
   },
   {
-    "key": "211854307",
+    "id": "211854307",
     "title": "康熙的红票：全球化中的清朝",
     "author": "Litian Swen",
     "num pages": "400",
@@ -625,10 +768,13 @@
     "shelves": "finished",
     "date read": null,
     "date added": "2025/05/04",
-    "introduction": "2019年北京春季艺术品拍卖会上，出现了一张康熙皇帝1716年发去欧洲的谕令，内容是寻找他派去罗马多年而杳无音讯的洋钦差。这份谕令呈朱红色，历史上又称“红票”。因正史中没有记载，红票的来历一直成谜。康熙为何会派西洋传教士做钦差？派他们到欧洲去所为何事？\n\n本书以红票作为叙事切入点，抽丝剥茧，围绕清初皇室特别是康熙帝与汤若望、南怀仁为代表的北京传教士群体之间的互动，抉出了一段中国与西洋深度接触的往事。\n\n进入中国的西洋传教士，与中国各阶层有着广泛的接触，上至皇帝高官、下至贩夫走卒，他们的交往交织着文化碰撞与私人恩怨，纠缠着国际竞争与内闱宫斗。\n\n作者精读中西文献，细加论证，在诸如清初历狱、中西礼仪之争、雍正禁教等热点问题上均有原创性见解，并对流传已久的“闭关锁国”“朝贡体系”“文明冲突”等历史论调提出了质疑，是一本学术性与通俗性兼具的佳作。"
+    "title2": "Emporor Kangxi's Red Manifesto: The Qing Dynasty in Globalization",
+    "tags": [
+      "history"
+    ]
   },
   {
-    "key": "210594797",
+    "id": "210594797",
     "title": "A Pearl Necklace",
     "author": "雪 米",
     "num pages": "191",
@@ -637,61 +783,73 @@
     "date read": null,
     "date added": "2025/05/04",
     "title2": "珍珠项链",
-    "introduction": "这是一个美籍华人与命运抗争，生生不息，执着追过的传记故事。\n米雪是出生在美国的第一代华人，从小饱尝“边缘人”的滋味，此后生活颇为周折。她的孩子罹患自闭症，全家无所适从；她的丈夫离开报酬丰厚的工作，家庭失去经济来源；她随丈夫在美国四处迁徙，漂泊不定；在人们纷纷移民美国的时候，他们全家迁往香港；她的事业蓬勃发展之时，却突然重返美国……\n悉心品味这个传记，您可以从平凡中看到不平凡，从许多人的身上看到奇妙的恩典。"
+    "tags": [
+      "biography"
+    ]
   },
   {
-    "key": "32899495",
+    "id": "32899495",
     "title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
     "author": "Aurélien Géron",
     "num pages": "450",
     "avg rating": "4.55",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2022/10/05",
-    "introduction": "A series of Deep Learning breakthroughs have boosted the whole field of machine learning over the last decade. Now that machine learning is thriving, even programmers who know close to nothing about this technology can use simple, efficient tools to implement programs capable of learning from data. This practical book shows you how.\n\nBy using concrete examples, minimal theory, and two production-ready Python frameworks—Scikit-Learn and TensorFlow—author Aurélien Géron helps you gain an intuitive understanding of the concepts and tools for building intelligent systems. You’ll learn how to use a range of techniques, starting with simple Linear Regression and progressing to Deep Neural Networks. If you have some programming experience and you’re ready to code a machine learning project, this guide is for you.\n\nThis hands-on book shows you how to use:\n\nScikit-Learn, an accessible framework that implements many algorithms efficiently and serves as a great machine learning entry point\nTensorFlow, a more complex library for distributed numerical computation, ideal for training and running very large neural networks\nPractical code examples that you can apply without learning excessive machine learning theory or algorithm details"
+    "tags": [
+      "programming"
+    ]
   },
   {
-    "key": "38606117",
+    "id": "38606117",
     "title": "Java编程的逻辑 (Java核心技术系列) (Chinese Edition)",
     "author": "马俊昌",
     "num pages": "1308",
     "avg rating": "4.00",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2021/09/27",
-    "introduction": "写一本关于编程的书，是我大概15年前就有的一个想法，当时，我体会到了编程中数据结构的美妙和神奇，有一种收获的喜悦和分享的冲动。这种收获是我反复阅读教程十几遍，花大量时间上机练习调试得到的，这是一个比较痛苦的过程。我想，如果把我学到的知识更为清晰易懂地表达出来，其他人不就可以掌握编程容易一些，并体会到那种喜悦了吗？不过，当时感觉自己学识太浅，要学习的东西太多，想一想也就算了。"
+    "tags": [
+      "programming"
+    ]
   },
   {
-    "key": "52935138",
+    "id": "52935138",
     "title": "The Secret Life of Programs: Understand Computers -- Craft Better Code",
     "author": "Jon Steinhart",
     "num pages": "504",
     "avg rating": "3.86",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2021/04/29",
-    "introduction": "A primer on the underlying technologies that allow computer programs to work. Covers topics like computer hardware, combinatorial logic, sequential logic, computer architecture, computer anatomy, and Input/Output.\n\nMany coders are unfamiliar with the underlying technologies that make their programs run. But why should you care when your code appears to work? Because you want it to run well and not be riddled with hard-to-find bugs. You don't want to be in the news because your code had a security problem.\n\nLots of technical detail is available online but it's not organized or collected into a convenient place. In The Secret Life of Programs, veteran engineer Jonathan E. Steinhart explores--in depth--the foundational concepts that underlie the machine. Subjects like computer hardware, how software behaves on hardware, as well as how people have solved problems using technology over time.\n\nYou'll learn:\n  •  How the real world is converted into a form that computers understand, like bits, logic, numbers, text, and colors\n  •  The fundamental building blocks that make up a computer including logic gates, adders, decoders, registers, and memory\n  •  Why designing programs to match computer hardware, especially memory, improves performance\n  •  How programs are converted into machine language that computers understand\n  •  How software building blocks are combined to create programs like web browsers\n  •  Clever tricks for making programs more efficient, like loop invariance, strength reduction, and recursive subdivision\n  •  The fundamentals of computer security and machine intelligence\n  •  Project design, documentation, scheduling, portability, maintenance, and other practical programming realities.\n\nLearn what really happens when your code runs on the machine and you'll learn to craft better, more efficient code."
+    "tags": [
+      "programming"
+    ]
   },
   {
-    "key": "52555533",
+    "id": "52555533",
     "title": "Algorithmic Thinking: A Problem-Based Introduction",
     "author": "Daniel Zingaro",
     "num pages": "408",
     "avg rating": "4.45",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2021/04/29",
-    "introduction": "A hands-on, problem-based introduction to building algorithms and data structures to solve problems with a computer.\n\nAlgorithmic Thinking will teach you how to solve challenging programming problems and design your own algorithms. Daniel Zingaro, a master teacher, draws his examples from world-class programming competitions like USACO and IOI. You'll learn how to classify problems, choose data structures, and identify appropriate algorithms. You'll also learn how your choice of data structure, whether a hash table, heap, or tree, can affect runtime and speed up your algorithms; and how to adopt powerful strategies like recursion, dynamic programming, and binary search to solve challenging problems.\n\nLine-by-line breakdowns of the code will teach you how to use algorithms and data structures\n\nEach problem in this book is available on a programming-judge website. You'll find the site's URL and problem ID in the description. What's better than a free correctness check?"
+    "tags": [
+      "programming"
+    ]
   },
   {
-    "key": "13590009",
+    "id": "13590009",
     "title": "Think Like a Programmer: An Introduction to Creative Problem Solving",
     "author": "V. Anton Spraul",
     "num pages": "233",
     "avg rating": "3.85",
-    "shelves": "to-read",
+    "shelves": "want-to-read",
     "date read": null,
     "date added": "2021/04/29",
-    "introduction": "Rewire your brain\n\nExamples in this book are written in C++, but will improve your ability to think like a programmer in any language.\n\nThe real challenge of programming isn't learning a language's syntax—it's learning to creatively solve problems so you can build something great. In this one-of-a-kind text, author V. Anton Spraul breaks down the ways that programmers solve problems and teaches you what other introductory books often ignore: how to Think Like a Programmer. Each chapter tackles a single programming concept, like classes, pointers, and recursion, and open-ended exercises throughout challenge you to apply your knowledge. You'll also learn how to:\n\nSplit problems into discrete components to make them easier to solve Make the most of code reuse with functions, classes, and libraries Pick the perfect data structure for a particular job Master more advanced programming tools like recursion and dynamic memory Organize your thoughts and develop strategies to tackle particular types of problems Although the book's examples are written in C++, the creative problem-solving concepts they illustrate go beyond any particular language; in fact, they often reach outside the realm of computer science. As the most skillful programmers know, writing great code is a creative art—and the first step in creating your masterpiece is learning to Think Like a Programmer."
+    "tags": [
+      "programming"
+    ]
   }
 ]

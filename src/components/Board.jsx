@@ -1,8 +1,6 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useTheme } from "../ThemeContext";
+import { useRef, useEffect, useState } from "react";
 
 const Board = ({ title, children }) => {
-  const { theme } = useTheme();
   const [scrollPosition, setScrollPosition] = useState(0);
   const introComponentRef = useRef(null);
 
@@ -30,7 +28,7 @@ const Board = ({ title, children }) => {
       className="container "
       style={{
         transition: "transform ease-in-out",
-        top: "-40px",
+        top: "-80px",
         position: "relative",
       }}
       ref={introComponentRef}>
@@ -38,10 +36,7 @@ const Board = ({ title, children }) => {
         <div
           className="col-md-10 rounded shadow-lg"
           id="board"
-          style={{
-            backgroundColor: theme === "dark" ? "#252d38" : "white",
-            color: theme === "dark" ? "white" : "",
-          }}>
+          style={{ backgroundColor: "white" }}>
           <div className="row justify-content-center">
             <div className="col-md-10">
               <p className="h4 mt-5">{title}</p>

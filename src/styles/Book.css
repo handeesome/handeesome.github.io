@@ -1,11 +1,173 @@
-.line-clamp-6 {
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+/* ======================
+   BOOK CARD LAYOUT
+   ====================== */
+
 .fixed-img {
   width: 200px;
   height: 300px;
   object-fit: cover;
+}
+
+/* ======================
+   BOOK DATES GRID
+   ====================== */
+
+.book-dates {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) auto;
+  gap: 0.25rem 2rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.book-date-label {
+  font-weight: bold;
+}
+
+.book-date-value {
+  color: #6c757d;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+/* ======================
+   SHELF TAGS
+   ====================== */
+
+.book-tag {
+  font-size: 1rem !important;
+  padding: 0.25rem 0.5rem !important;
+  line-height: 1.2 !important;
+  border-width: 2px !important;
+  border-radius: 12px !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  border-color: var(--tag-color, #6c757d) !important;
+  color: var(--tag-color, #6c757d) !important;
+  background-color: transparent;
+}
+
+.book-tag:hover {
+  background-color: var(--tag-color, #6c757d) !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(var(--tag-color-rgb, 108, 117, 125), 0.3);
+}
+
+.book-tag.selected {
+  background-color: var(--tag-color, #6c757d) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.book-tag:active {
+  transform: translateY(0);
+}
+
+.book-tag:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* ======================
+   SHOW MORE/LESS BUTTON
+   ====================== */
+
+.show-more-btn {
+  font-size: 1rem !important;
+  border-radius: 20px !important;
+  padding: 0.25rem 0.75rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.show-more-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================
+   CONTENT CLAMPING
+   ====================== */
+
+.line-clamp-content {
+  max-height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.line-clamp-content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 1.5em;
+  background: linear-gradient(to right, transparent, white);
+  pointer-events: none;
+}
+
+/* ======================
+   MARKDOWN BLOCKQUOTES
+   ====================== */
+
+.card-text blockquote,
+.line-clamp-content blockquote {
+  border-left: 4px solid #007bff !important;
+  background-color: #f8f9fa !important;
+  padding: 0.75rem 1rem !important;
+  margin: 0.75rem 0 !important;
+  font-style: italic !important;
+  border-radius: 0 4px 4px 0 !important;
+  font-size: inherit !important;
+  border: none !important;
+  border-left: 4px solid #007bff !important;
+}
+
+.card-text blockquote p,
+.line-clamp-content blockquote p {
+  margin-bottom: 0.5rem !important;
+  color: #495057 !important;
+}
+
+.card-text blockquote p:last-child,
+.line-clamp-content blockquote p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ======================
+   RESPONSIVE DESIGN
+   ====================== */
+
+@media (max-width: 768px) {
+  .book-dates {
+    grid-template-columns: 1fr;
+    gap: 0.125rem;
+  }
+
+  .book-date-value {
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  .fixed-img {
+    width: 150px;
+    height: 225px;
+  }
+}
+
+@media (max-width: 576px) {
+  .book-tag {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.4rem !important;
+    margin: 0.1rem !important;
+  }
+
+  .show-more-btn {
+    font-size: 0.9rem !important;
+    padding: 0.2rem 0.6rem !important;
+  }
 }
