@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 # Input and output files
-input_csv = Path("public/books.csv").resolve()
+input_csv = Path("src/data/books/books.csv").resolve()
 output_json = Path("src/data/books/books.json").resolve()
 modification_file = Path("src/data/books/book_modifications.json").resolve()  # <- your overrides
 # Fields mapping: target_key -> source_header
