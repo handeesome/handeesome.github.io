@@ -4,7 +4,7 @@
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u7231\u5f25\u513f",
+    "description": "爱弥儿",
     "start": "2025-08-05T02:35:14+08:00",
     "end": "2025-08-05T03:26:40+08:00",
     "updated": "2025-08-05T03:26:41+08:00",
@@ -19,16 +19,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042313136,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u6cd5\u6cbb\u7684\u7ec6\u8282",
+    "description": "法治的细节",
     "start": "2025-08-05T14:36:09+08:00",
     "end": "2025-08-05T14:36:30+08:00",
     "updated": "2025-08-05T14:36:31+08:00",
@@ -43,16 +41,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042315337,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u6cd5\u6cbb\u7684\u7ec6\u8282",
+    "description": "法治的细节",
     "start": "2025-08-05T14:38:06+08:00",
     "end": "2025-08-05T14:52:31+08:00",
     "updated": "2025-08-05T14:52:32+08:00",
@@ -67,16 +63,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042378083,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u6cd5\u6cbb\u7684\u7ec6\u8282",
+    "description": "法治的细节",
     "start": "2025-08-05T15:24:12+08:00",
     "end": "2025-08-05T15:40:22+08:00",
     "updated": "2025-08-05T15:40:23+08:00",
@@ -91,16 +85,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042421740,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u91cd\u8fd4\u7f8e\u4e3d\u65b0\u4e16\u754c",
+    "description": "重返美丽新世界",
     "start": "2025-08-05T15:54:20+08:00",
     "end": "2025-08-05T16:01:30+08:00",
     "updated": "2025-08-05T16:01:31+08:00",
@@ -115,16 +107,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042914556,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u91cd\u8fd4\u7f8e\u4e3d\u65b0\u4e16\u754c",
+    "description": "重返美丽新世界",
     "start": "2025-08-05T21:20:24+08:00",
     "end": "2025-08-05T21:43:01+08:00",
     "updated": "2025-08-05T21:43:02+08:00",
@@ -139,20 +129,18 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4043101958,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u4e16\u754c\u53f2\u7684\u6545\u4e8b",
+    "description": "世界史的故事",
     "start": "2025-08-05T22:52:55+08:00",
-    "end": "2025-08-06T00:05:30+08:00",
+    "end": "2025-08-06T00:00:00+08:00",
     "updated": "2025-08-06T00:05:30+08:00",
-    "dur": 4356000,
+    "dur": 4025000,
     "user": "Ducenhandee",
     "use_stop": false,
     "client": null,
@@ -163,16 +151,36 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
+  },
+  {
+    "id": 4043101959,
+    "pid": 212948757,
+    "tid": null,
+    "uid": 12321294,
+    "description": "世界史的故事",
+    "start": "2025-08-06T00:00:00+08:00",
+    "end": "2025-08-06T00:05:30+08:00",
+    "updated": "2025-08-06T00:05:30+08:00",
+    "dur": 330000,
+    "user": "Ducenhandee",
+    "use_stop": false,
+    "client": null,
+    "project": "Reading",
+    "project_color": "0",
+    "project_hex_color": "#c9806b",
+    "task": null,
+    "billable": 0,
+    "is_billable": false,
+    "cur": "USD",
+    "tags": ["Books"]
   },
   {
     "id": 4043337540,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u7231\u5f25\u513f",
+    "description": "爱弥儿",
     "start": "2025-08-06T01:12:24+08:00",
     "end": "2025-08-06T02:06:44+08:00",
     "updated": "2025-08-06T02:06:45+08:00",
@@ -187,16 +195,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044070320,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u6cd5\u6cbb\u7684\u7ec6\u8282",
+    "description": "法治的细节",
     "start": "2025-08-06T14:48:33+08:00",
     "end": "2025-08-06T15:13:52+08:00",
     "updated": "2025-08-06T15:13:53+08:00",
@@ -211,16 +217,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044131180,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u6cd5\u6cbb\u7684\u7ec6\u8282",
+    "description": "法治的细节",
     "start": "2025-08-06T15:32:09+08:00",
     "end": "2025-08-06T15:53:03+08:00",
     "updated": "2025-08-06T15:53:04+08:00",
@@ -235,16 +239,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044208455,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u4e16\u754c\u53f2\u7684\u6545\u4e8b",
+    "description": "世界史的故事",
     "start": "2025-08-06T16:24:54+08:00",
     "end": "2025-08-06T17:10:15+08:00",
     "updated": "2025-08-06T17:10:16+08:00",
@@ -259,16 +261,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044282483,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u91cd\u8fd4\u7f8e\u4e3d\u65b0\u4e16\u754c",
+    "description": "重返美丽新世界",
     "start": "2025-08-06T17:11:25+08:00",
     "end": "2025-08-06T17:12:40+08:00",
     "updated": "2025-08-06T17:12:41+08:00",
@@ -283,16 +283,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044296210,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "\u91cd\u8fd4\u7f8e\u4e3d\u65b0\u4e16\u754c",
+    "description": "重返美丽新世界",
     "start": "2025-08-06T17:21:41+08:00",
     "end": "2025-08-06T17:48:50+08:00",
     "updated": "2025-08-06T17:48:51+08:00",
@@ -307,8 +305,6 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   }
 ]

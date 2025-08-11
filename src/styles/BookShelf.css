@@ -171,3 +171,74 @@
     padding: 0.2rem 0.6rem !important;
   }
 }
+
+.week-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.week-days {
+  display: flex;
+  transform: translateX(0);
+  transition: none;
+  gap: 0.5rem;
+  width: max-content;
+}
+
+.week-days.animating {
+  transition: transform 0.3s ease;
+}
+.week-days-wrapper {
+  overflow: hidden;
+  width: 450px;
+  position: relative;
+}
+
+.week-days-wrapper::before,
+.week-days-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.week-days-wrapper::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.week-days-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.day-cell {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  min-width: 60px;
+}
+
+.day-cell.selected {
+  background: #007bff;
+  color: white;
+}
+
+.day-cell.has-data {
+  border-color: #28a745;
+}

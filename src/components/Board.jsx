@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 
-const Board = ({ title, children }) => {
+const Board = ({ title, titleRight, children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const introComponentRef = useRef(null);
 
@@ -39,7 +39,10 @@ const Board = ({ title, children }) => {
           style={{ backgroundColor: "white" }}>
           <div className="row justify-content-center">
             <div className="col-md-10">
-              <p className="h4 mt-5">{title}</p>
+              <div className="d-flex justify-content-between align-items-center mt-5">
+                <p className="h4 mb-0">{title}</p>
+                {titleRight && <div>{titleRight}</div>}
+              </div>
               <hr />
               {children}
             </div>

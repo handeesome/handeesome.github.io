@@ -1,10 +1,10 @@
 import { useState, useMemo } from "react";
-import Board from "../components/Board";
-import TogglChart from "../components/bookShelf/TogglChart";
-import books from "../data/books/books.json";
-import Book from "../components/bookShelf/Book";
-import { getTagColor } from "../util/TagColors";
-import { hexToRgb } from "../util/HexToRBG";
+import Board from "../../components/Board";
+import books from "../../data/books/books.json";
+import Book from "../../components/bookShelf/Book";
+import { getTagColor } from "../../utils/TagColors";
+import { hexToRgb } from "../../utils/HexToRBG";
+import { useNavigate } from "react-router-dom";
 
 const Books = ({ books, onShelfClick, onTagClick, selectedTags }) => {
   return (
@@ -36,6 +36,7 @@ const Books = ({ books, onShelfClick, onTagClick, selectedTags }) => {
 const BookLists = () => {
   const [selectedShelf, setSelectedShelf] = useState(null);
   const [selectedTags, setSelectedTags] = useState(new Set());
+  const navigate = useNavigate();
 
   // Get all unique shelves for the filter dropdown/buttons
   const allShelves = useMemo(() => {
@@ -84,6 +85,10 @@ const BookLists = () => {
     });
   }, [selectedTags, filteredShelfBooks]);
 
+  const handleTimeTrackerClick = () => {
+    navigate("./time-tracker");
+  };
+
   const handleShelfClick = (shelf) => {
     setSelectedShelf(shelf);
   };
@@ -108,7 +113,15 @@ const BookLists = () => {
   const title = selectedShelf ? `Book Shelf - ${selectedShelf}` : "Book Shelf";
 
   return (
-    <Board title={title}>
+    <Board
+      title={title}
+      titleRight={
+        <button
+          className="btn btn-outline-primary"
+          onClick={handleTimeTrackerClick}>
+          View Time Tracker
+        </button>
+      }>
       {/* Filter Controls */}
       <div className="row mb-4">
         <div className="col-12">

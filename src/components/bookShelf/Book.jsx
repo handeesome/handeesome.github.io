@@ -1,10 +1,9 @@
-import "../../styles/Book.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import StarRating from "./StarRating";
-import { getTagColor } from "../../util/TagColors";
-import { hexToRgb } from "../../util/HexToRBG";
+import { getTagColor } from "../../utils/TagColors";
+import { hexToRgb } from "../../utils/HexToRBG";
+import { useNavigate } from "react-router-dom";
 
 const Book = ({
   id,
@@ -26,6 +25,7 @@ const Book = ({
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
   const textRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     import(`../../data/books/introductions/${id}.md?raw`)
@@ -53,6 +53,10 @@ const Book = ({
     if (onShelfClick) {
       onShelfClick(shelf);
     }
+  };
+
+  const handleReadSessionsClick = () => {
+    navigate(`/book-shelf/book/${id}/analytics`);
   };
 
   return (
@@ -148,8 +152,10 @@ const Book = ({
                 </div>
 
                 <div className="col-md-auto d-flex flex-column gap-2 mt-2 mt-md-0">
-                  <button className="btn btn-outline-info btn-lg">
-                    Time Track Analysis
+                  <button
+                    className="btn btn-outline-info btn-lg"
+                    onClick={handleReadSessionsClick}>
+                    Read Sessions
                   </button>
                   <button className="btn btn-outline-secondary btn-lg">
                     View Notes

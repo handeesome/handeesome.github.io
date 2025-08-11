@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "../../styles/Header.css";
 import NavBar from "./NavBar";
 
 const Header = () => {

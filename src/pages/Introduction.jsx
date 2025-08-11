@@ -1,5 +1,4 @@
 import Board from "../components/Board";
-import "../styles/Introduction.css";
 
 const Item = ({ title, description }) => (
   <div className="card mb-3 custom-card">
