@@ -1,0 +1,1 @@
+const e="Almost everyone would agree that the place of religion in our societies has changed profoundly over the years. This book takes up the question of what these changes mean—of what, precisely, happens when a society in which it is virtually impossible not to believe in God becomes one in which faith is only one human possibility among others.";export{e as default};
