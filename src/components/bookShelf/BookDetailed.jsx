@@ -4,7 +4,7 @@ import StarRating from "./StarRating";
 import { getTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { useNavigate } from "react-router-dom";
-
+import { useTheme } from "../../ThemeContext";
 const BookDetailed = ({
   id,
   title,
@@ -26,6 +26,7 @@ const BookDetailed = ({
   const [showToggle, setShowToggle] = useState(false);
   const textRef = useRef(null);
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   useEffect(() => {
     import(`../../data/books/introductions/${id}.md?raw`)
@@ -60,7 +61,8 @@ const BookDetailed = ({
   };
 
   return (
-    <div className="card mb-4 shadow-sm">
+    <div
+      className={`card mb-4 shadow-sm ${theme === "light" ? "" : "bg-dark"}`}>
       <div className="row g-0">
         {/* BookDetailed Cover */}
         <div className="col-md-4 d-flex justify-content-center mt-4">

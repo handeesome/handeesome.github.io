@@ -1,12 +1,43 @@
-#dark {
+.dark {
   background-color: #181c27;
   --text-color: #c4c6c9;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #364151;
+  --text-muted-color: #adb5bd;
 }
-#light {
-  background-color: #e7e7e7;
+.light {
+  background-color: #ffeee0;
   --text-color: #3c4858;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #f8f9fa;
+  --text-muted-color: #6c757d;
+}
+
+body {
+  background-color: inherit !important;
+  color: var(--text-color) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color) !important;
+}
+p,
+span,
+div {
+  color: var(--text-color);
+}
+
+strong,
+b {
+  color: var(--text-color);
+  font-weight: 600; /* Optional: make it slightly bolder in dark theme */
+}
+html.dark .text-muted,
+html.light .text-muted {
+  color: var(--text-muted-color) !important;
 }

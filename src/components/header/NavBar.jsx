@@ -1,16 +1,24 @@
-import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../ThemeContext";
+import { faMonument } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ isScrolled }) => {
+  const { theme, toggleTheme } = useTheme();
+
+  const navbarClasses = `navbar-custom ${isScrolled ? "scrolled" : ""}`;
+
   return (
     <Navbar
       expand="lg"
       fixed="top"
+      className={navbarClasses}
       style={{
-        backgroundColor: isScrolled ? "#1f3144" : "transparent",
+        backgroundColor: isScrolled
+          ? "var(--navbar-bg-scrolled)"
+          : "transparent",
         boxShadow: "0 2px 4px rgba(0,0,0,0.3)",
         height: isScrolled ? "50px" : "60px",
         transition: "height 0.3s ease-in-out",
@@ -32,18 +40,14 @@ const NavBar = ({ isScrolled }) => {
             <Link to="/book-shelf" className="nav-link">
               Book Shelf
             </Link>
-            {/* <Nav.Link
-              href="/book-lists"
-              // className={isDarkMode ? "text-white" : ""}
-            >
-              Book List
-            </Nav.Link> */}
+
             <div
               style={{ cursor: "pointer" }}
-              className="align-items-center d-flex">
+              className="align-items-center d-flex theme-toggle"
+              onClick={toggleTheme}>
               <FontAwesomeIcon
-                icon={faMoon}
-                // className={`fa-2xl ${theme === "dark" ? "" : "text-white"}`}
+                icon={theme === "dark" ? faSun : faMoon}
+                className="fa-2xl"
               />
             </div>
           </Nav>

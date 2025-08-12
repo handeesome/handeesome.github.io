@@ -1,18 +1,23 @@
 import StarRating from "./StarRating";
-import BookDetailed from "./BookDetailed";
 import { useNavigate } from "react-router-dom";
 import { getTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
+import { useTheme } from "../../ThemeContext";
+import BookDetailed from "./BookDetailed";
 
 // Layout 1: Grid View - Simple covers with basic info
 export const GridView = ({ books, onShelfClick, onTagClick, selectedTags }) => {
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   return (
     <div className="row g-3 mb-3">
       {books.map((book) => (
         <div key={book.id} className="col-md-3 col-sm-6">
-          <div className="card h-100 shadow-sm book-card-grid">
+          <div
+            className={`card h-100 shadow-sm book-card-grid ${
+              theme === "light" ? "" : "bg-dark"
+            }`}>
             <div className="position-relative">
               <img
                 src={`covers/${book.id}.jpg`}
@@ -125,7 +130,6 @@ export const DetailedView = ({
           avgRating={book["avg rating"]}
           shelves={book.shelves}
           tags={book.tags}
-          introduction={book.introduction}
           dateStarted={book["date started"]}
           dateRead={book["date read"]}
           dateAdded={book["date added"]}
@@ -146,10 +150,14 @@ export const TableView = ({
   selectedTags,
 }) => {
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   return (
     <div className="table-responsive">
-      <table className="table table-hover align-middle">
+      <table
+        className={`table table-hover align-middle ${
+          theme === "dark" ? "table-dark" : ""
+        }`}>
         <thead className="table-dark sticky-top">
           <tr>
             <th style={{ width: "25%" }}>Title & Author</th>

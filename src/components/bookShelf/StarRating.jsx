@@ -1,5 +1,3 @@
-import React from "react";
-
 const StarRating = ({ rating, maxStars = 5, showText = true, size = "sm" }) => {
   // Handle null/undefined ratings
   const numericRating = rating ? parseFloat(rating) : 0;
@@ -85,9 +83,7 @@ const StarRating = ({ rating, maxStars = 5, showText = true, size = "sm" }) => {
             color: "#6c757d",
             fontWeight: "500",
           }}>
-          <span style={{ color: "#495057" }}>
-            {numericRating > 0 ? numericRating.toFixed(2) : "N/A"}
-          </span>
+          <span>{numericRating > 0 ? numericRating.toFixed(2) : "N/A"}</span>
         </div>
       )}
     </div>

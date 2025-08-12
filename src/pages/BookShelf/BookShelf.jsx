@@ -9,10 +9,12 @@ import {
   DetailedView,
   TableView,
 } from "../../components/bookShelf/BookShelfLayouts";
+import { useTheme } from "../../ThemeContext";
 
 const BookLists = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   // Add layout state
   const [layout, setLayout] = useState(searchParams.get("layout") || "grid");
@@ -203,7 +205,10 @@ const BookLists = () => {
       {/* Filter Controls */}
       <div className="row mb-4">
         <div className="col-12">
-          <div className="d-flex flex-wrap align-items-center gap-2 p-3 bg-light rounded">
+          <div
+            className={`d-flex flex-wrap align-items-center gap-2 p-3 rounded ${
+              theme === "light" ? "bg-light" : "bg-dark"
+            }`}>
             <strong>Filter by shelf:</strong>
 
             {/* All Books Button */}
@@ -241,7 +246,10 @@ const BookLists = () => {
             })}
           </div>
           {/* Tags Filter - Only show in non-table view to save space */}
-          <div className="d-flex flex-wrap align-items-center gap-2 p-3 bg-light rounded">
+          <div
+            className={`d-flex flex-wrap align-items-center gap-2 p-3 rounded ${
+              theme === "light" ? "bg-light" : "bg-dark"
+            }`}>
             <strong>Filter by tags:</strong>
             {allTags.map((tag) => {
               const tagBooks = filteredShelfBooks || books;
@@ -268,7 +276,10 @@ const BookLists = () => {
           {/* Current Filter Status */}
           {(selectedShelf || selectedTags.size > 0) && (
             <div className="mt-2">
-              <div className="alert alert-info d-flex justify-content-between align-items-center mb-0">
+              <div
+                className={`alert d-flex justify-content-between align-items-center mb-0 ${
+                  theme === "light" ? "alert-info" : "alert-dark"
+                }`}>
                 <span>
                   <strong>Showing {filteredBooks.length} book(s)</strong>
                   {selectedShelf && (

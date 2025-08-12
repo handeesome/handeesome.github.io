@@ -1,8 +1,10 @@
 import { useRef, useEffect, useState } from "react";
+import { useTheme } from "../ThemeContext";
 
 const Board = ({ title, titleRight, children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const introComponentRef = useRef(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +38,9 @@ const Board = ({ title, titleRight, children }) => {
         <div
           className="col-md-10 rounded shadow-lg"
           id="board"
-          style={{ backgroundColor: "white" }}>
+          style={{
+            backgroundColor: theme === "light" ? "#e7e7e7" : "#252d38",
+          }}>
           <div className="row justify-content-center">
             <div className="col-md-10">
               <div className="d-flex justify-content-between align-items-center mt-5">

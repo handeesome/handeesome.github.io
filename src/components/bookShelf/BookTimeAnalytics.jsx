@@ -12,6 +12,7 @@ import {
   Bar,
 } from "recharts";
 import togglData from "../../data/books/toggl-data.json";
+import { useTheme } from "../../ThemeContext";
 
 const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7300", "#0088fe"];
 
@@ -21,6 +22,7 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
   const [sessionData, setSessionData] = useState([]);
   const [totalStats, setTotalStats] = useState({});
   const [viewMode, setViewMode] = useState("daily"); // 'daily', 'sessions', 'patterns'
+  const { theme } = useTheme();
 
   useEffect(() => {
     // Filter data for this specific book
@@ -114,9 +116,11 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
     });
   };
 
+  const darkBg = theme === "dark" ? "bg-dark" : "";
+
   const StatCard = ({ title, value, unit, icon }) => (
     <div className="col-md-3 mb-3">
-      <div className="card h-100">
+      <div className={`card h-100 ${darkBg}`}>
         <div className="card-body text-center">
           <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>{icon}</div>
           <h5 className="card-title">{title}</h5>
@@ -245,13 +249,16 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
       </div>
 
       {/* Recent Sessions Table */}
-      <div className="card">
+      <div className={`card ${darkBg}`}>
         <div className="card-header">
           <h5>📋 Recent Reading Sessions</h5>
         </div>
         <div className="card-body">
           <div className="table-responsive">
-            <table className="table table-sm">
+            <table
+              className={`table table-sm ${
+                theme === "dark" ? "table-dark" : ""
+              }`}>
               <thead>
                 <tr>
                   <th>Date</th>

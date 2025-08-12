@@ -21,8 +21,3 @@ code {
   --bg-color: #121212;
   --text-color: #f0f0f0;
 }
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}

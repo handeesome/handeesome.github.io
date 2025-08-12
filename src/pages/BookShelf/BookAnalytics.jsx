@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import Board from "../../components/Board";
 import BookTimeAnalytics from "../../components/bookShelf/BookTimeAnalytics"; // Updated import
 import books from "../../data/books/books.json";
+import { useTheme } from "../../ThemeContext";
 
 const BookAnalytics = () => {
   const { bookId } = useParams(); // Get book ID from URL
   const navigate = useNavigate();
   const [book, setBook] = useState(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     // Find the book by ID
@@ -31,13 +33,14 @@ const BookAnalytics = () => {
       </Board>
     );
   }
+  const darkBg = theme === "dark" ? "bg-dark" : "";
 
   return (
     <Board title={`Time Analytics - ${book.title}`}>
       {/* Book Info Header */}
       <div className="row mb-4">
         <div className="col-12">
-          <div className="card">
+          <div className={`card ${darkBg}`}>
             <div className="card-body">
               <div className="row align-items-center">
                 <div className="col-md-2">

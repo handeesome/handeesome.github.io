@@ -14,6 +14,7 @@ import {
 } from "recharts";
 import togglData from "../../data/books/toggl-data.json";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../ThemeContext";
 
 const DAY_CELL_WIDTH = 70;
 
@@ -350,6 +351,7 @@ const TogglChart = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const naviagte = useNavigate();
+  const { theme } = useTheme();
 
   useEffect(() => {
     setRawData(togglData);
@@ -399,9 +401,11 @@ const TogglChart = () => {
     return data;
   }, {});
 
+  const cardDark = theme === "dark" ? "card bg-dark" : "card";
+
   if (loading) {
     return (
-      <div className="card shadow-sm">
+      <div className={`shadow-sm ${cardDark}`}>
         <div className="card-body text-center py-5">
           <div className="spinner-border text-primary mb-3" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -414,7 +418,7 @@ const TogglChart = () => {
 
   if (error) {
     return (
-      <div className="card shadow-sm border-warning">
+      <div className={`shadow-sm border-warning ${cardDark}`}>
         <div className="card-body text-center py-5">
           <div className="text-warning mb-3" style={{ fontSize: "3rem" }}>
             ⚠️
@@ -442,7 +446,7 @@ const TogglChart = () => {
           ← Back to Book Shelf
         </button>
       }>
-      <div className="card shadow-lg border-0 mb-4">
+      <div className={`shadow-lg border-0 mb-4 ${cardDark}`}>
         <div className="card-body p-4">
           <div className="mb-4 d-flex justify-content-center">
             <WeekStrip
