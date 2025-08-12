@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import { useTheme } from "../../ThemeContext";
+import backgroundLight from "/src/assets/images/background_light.jpg";
+import backgroundDark from "/src/assets/images/background_dark.jpg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,8 +27,8 @@ const Header = () => {
         style={{
           backgroundImage:
             theme === "light"
-              ? 'url("/src/assets/images/background_light.jpg")'
-              : 'url("/src/assets/images/background_dark.jpg")',
+              ? `url("${backgroundLight}")`
+              : `url("${backgroundDark}")`,
         }}>
         <NavBar isScrolled={isScrolled} />
         <div className="container d-flex h-100 justify-content-center align-items-center">
