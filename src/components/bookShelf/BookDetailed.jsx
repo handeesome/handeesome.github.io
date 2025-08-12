@@ -5,7 +5,7 @@ import { getTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { useNavigate } from "react-router-dom";
 
-const Book = ({
+const BookDetailed = ({
   id,
   title,
   title2,
@@ -62,7 +62,7 @@ const Book = ({
   return (
     <div className="card mb-4 shadow-sm">
       <div className="row g-0">
-        {/* Book Cover */}
+        {/* BookDetailed Cover */}
         <div className="col-md-4 d-flex justify-content-center mt-4">
           <img
             src={`covers/${id}.jpg`}
@@ -71,7 +71,7 @@ const Book = ({
           />
         </div>
 
-        {/* Book Info */}
+        {/* BookDetailed Info */}
         <div className="col-md-8">
           <div className="card-body d-flex flex-column justify-content-between h-100">
             <div>
@@ -80,7 +80,7 @@ const Book = ({
               <h6 className="card-subtitle mb-3 text-muted">by {author}</h6>
 
               <div className="row justify-content-between align-items-start mb-3">
-                {/* Book Metadata */}
+                {/* BookDetailed Metadata */}
                 <div className="col-md-auto">
                   <div className="mb-2">
                     <p className="mb-1">
@@ -163,7 +163,7 @@ const Book = ({
                 </div>
               </div>
 
-              {/* Book Introduction */}
+              {/* BookDetailed Introduction */}
               <div className="col-md-auto">
                 <div
                   className={`card-text ${
@@ -208,4 +208,4 @@ const Book = ({
   );
 };
 
-export default Book;
+export default BookDetailed;

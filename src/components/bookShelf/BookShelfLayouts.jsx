@@ -1,5 +1,5 @@
 import StarRating from "./StarRating";
-import Book from "./Book";
+import BookDetailed from "./BookDetailed";
 import { useNavigate } from "react-router-dom";
 import { getTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
@@ -50,7 +50,7 @@ export const GridView = ({ books, onShelfClick, onTagClick, selectedTags }) => {
                     ))}
                 </div>
 
-                {/* Book Tags */}
+                {/* BookDetailed Tags */}
                 {book.tags && book.tags.length > 0 && (
                   <div className="mb-2">
                     {book.tags.slice(0, 3).map((tag) => {
@@ -115,7 +115,7 @@ export const DetailedView = ({
   return (
     <div className="bookshelf">
       {books.map((book) => (
-        <Book
+        <BookDetailed
           key={book.id}
           id={book.id}
           title={book.title}
