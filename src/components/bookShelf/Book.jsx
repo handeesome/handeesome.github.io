@@ -155,7 +155,7 @@ const Book = ({
                   <button
                     className="btn btn-outline-info btn-lg"
                     onClick={handleReadSessionsClick}>
-                    Read Sessions
+                    Reading Sessions
                   </button>
                   <button className="btn btn-outline-secondary btn-lg">
                     View Notes

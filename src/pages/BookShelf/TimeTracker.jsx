@@ -13,6 +13,7 @@ import {
   ReferenceLine,
 } from "recharts";
 import togglData from "../../data/books/toggl-data.json";
+import { useNavigate } from "react-router-dom";
 
 const DAY_CELL_WIDTH = 70;
 
@@ -348,6 +349,7 @@ const TogglChart = () => {
   const [formatter, setFormatter] = useState(() => (m) => m);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const naviagte = useNavigate();
 
   useEffect(() => {
     setRawData(togglData);
@@ -425,7 +427,21 @@ const TogglChart = () => {
   }
 
   return (
-    <Board title="Time Tracker">
+    <Board
+      title="Time Tracker"
+      titleRight={
+        <button
+          className="btn btn-outline-info"
+          onClick={() => {
+            if (window.history.length > 1) {
+              naviagte(-1);
+            } else {
+              naviagte("/book-shelf");
+            }
+          }}>
+          ← Back to Book Shelf
+        </button>
+      }>
       <div className="card shadow-lg border-0 mb-4">
         <div className="card-body p-4">
           <div className="mb-4 d-flex justify-content-center">

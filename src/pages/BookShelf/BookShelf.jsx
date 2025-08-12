@@ -1,42 +1,49 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Board from "../../components/Board";
 import books from "../../data/books/books.json";
-import Book from "../../components/bookShelf/Book";
 import { getTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
-import { useNavigate } from "react-router-dom";
-
-const Books = ({ books, onShelfClick, onTagClick, selectedTags }) => {
-  return (
-    <div className="bookshelf">
-      {books.map((book) => (
-        <Book
-          key={book.id}
-          id={book.id}
-          title={book.title}
-          title2={book.title2}
-          author={book.author}
-          numPages={book["num pages"]}
-          avgRating={book["avg rating"]}
-          shelves={book.shelves}
-          tags={book.tags}
-          introduction={book.introduction}
-          dateStarted={book["date started"]}
-          dateRead={book["date read"]}
-          dateAdded={book["date added"]}
-          onShelfClick={onShelfClick}
-          onTagClick={onTagClick}
-          selectedTags={selectedTags}
-        />
-      ))}
-    </div>
-  );
-};
+import {
+  GridView,
+  DetailedView,
+  TableView,
+} from "../../components/bookShelf/BookShelfLayouts";
 
 const BookLists = () => {
-  const [selectedShelf, setSelectedShelf] = useState(null);
-  const [selectedTags, setSelectedTags] = useState(new Set());
+  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+
+  // Add layout state
+  const [layout, setLayout] = useState(searchParams.get("layout") || "grid");
+
+  const [selectedShelf, setSelectedShelf] = useState(() => {
+    const urlShelf = searchParams.get("shelf");
+    if (urlShelf) {
+      return urlShelf; // Use URL parameter if it exists
+    }
+
+    if (searchParams.get("view") === "all") {
+      return null;
+    }
+
+    // Check if "currently-reading" exists in the books
+    const hasCurrentlyReading = books.some(
+      (book) =>
+        book.shelves &&
+        book.shelves
+          .split(",")
+          .map((s) => s.trim())
+          .includes("currently-reading")
+    );
+
+    return hasCurrentlyReading ? "currently-reading" : null;
+  });
+  const [selectedTags, setSelectedTags] = useState(() => {
+    const tagParam = searchParams.get("tags");
+
+    return tagParam ? new Set(tagParam.split(",")) : new Set();
+  });
 
   // Get all unique shelves for the filter dropdown/buttons
   const allShelves = useMemo(() => {
@@ -85,6 +92,24 @@ const BookLists = () => {
     });
   }, [selectedTags, filteredShelfBooks]);
 
+  useEffect(() => {
+    const params = new URLSearchParams();
+
+    params.set("layout", layout);
+
+    if (selectedShelf) {
+      params.set("shelf", selectedShelf);
+    } else {
+      params.set("view", "all");
+    }
+
+    if (selectedTags.size > 0) {
+      params.set("tags", Array.from(selectedTags).join(","));
+    }
+
+    setSearchParams(params, { replace: true });
+  }, [layout, selectedShelf, selectedTags, setSearchParams]);
+
   const handleTimeTrackerClick = () => {
     navigate("./time-tracker");
   };
@@ -110,6 +135,25 @@ const BookLists = () => {
     setSelectedTags(new Set());
   };
 
+  const renderBooks = () => {
+    const props = {
+      books: filteredBooks,
+      onShelfClick: handleShelfClick,
+      onTagClick: handleTagClick,
+      selectedTags: selectedTags,
+    };
+
+    switch (layout) {
+      case "detailed":
+        return <DetailedView {...props} />;
+      case "table":
+        return <TableView {...props} />;
+      case "grid":
+      default:
+        return <GridView {...props} />;
+    }
+  };
+
   const title = selectedShelf ? `Book Shelf - ${selectedShelf}` : "Book Shelf";
 
   return (
@@ -117,11 +161,45 @@ const BookLists = () => {
       title={title}
       titleRight={
         <button
-          className="btn btn-outline-primary"
+          className="btn btn-outline-info"
           onClick={handleTimeTrackerClick}>
-          View Time Tracker
+          📈 View Time Tracker →
         </button>
       }>
+      {/* Layout Selector */}
+      <div className="row mb-3">
+        <div className="col-12">
+          <div className="d-flex justify-content-center">
+            <div className="btn-group" role="group" aria-label="Layout options">
+              <button
+                className={`btn ${
+                  layout === "grid" ? "btn-primary" : "btn-outline-primary"
+                }`}
+                onClick={() => setLayout("grid")}>
+                <i className="fas fa-th-large me-1"></i>
+                🏁 Grid View
+              </button>
+              <button
+                className={`btn ${
+                  layout === "detailed" ? "btn-primary" : "btn-outline-primary"
+                }`}
+                onClick={() => setLayout("detailed")}>
+                <i className="fas fa-list me-1"></i>
+                📖 Detailed View
+              </button>
+              <button
+                className={`btn ${
+                  layout === "table" ? "btn-primary" : "btn-outline-primary"
+                }`}
+                onClick={() => setLayout("table")}>
+                <i className="fas fa-table me-1"></i>
+                📋 Table View
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Filter Controls */}
       <div className="row mb-4">
         <div className="col-12">
@@ -162,7 +240,7 @@ const BookLists = () => {
               );
             })}
           </div>
-
+          {/* Tags Filter - Only show in non-table view to save space */}
           <div className="d-flex flex-wrap align-items-center gap-2 p-3 bg-light rounded">
             <strong>Filter by tags:</strong>
             {allTags.map((tag) => {
@@ -187,22 +265,28 @@ const BookLists = () => {
               );
             })}
           </div>
-
           {/* Current Filter Status */}
-          {selectedShelf && (
+          {(selectedShelf || selectedTags.size > 0) && (
             <div className="mt-2">
               <div className="alert alert-info d-flex justify-content-between align-items-center mb-0">
                 <span>
-                  <strong>Showing {filteredBooks.length} book(s)</strong> from
-                  shelf:{" "}
-                  <strong>
-                    <em>{selectedShelf}</em>
-                  </strong>{" "}
-                  that relates to{" "}
-                  <strong>
-                    <em>{Array.from(selectedTags).join(", ")}</em>
-                  </strong>
-                  {"."}
+                  <strong>Showing {filteredBooks.length} book(s)</strong>
+                  {selectedShelf && (
+                    <>
+                      {" from shelf: "}
+                      <strong>
+                        <em>{selectedShelf}</em>
+                      </strong>
+                    </>
+                  )}
+                  {selectedTags.size > 0 && (
+                    <>
+                      {" with tags: "}
+                      <strong>
+                        <em>{Array.from(selectedTags).join(", ")}</em>
+                      </strong>
+                    </>
+                  )}
                 </span>
                 <button
                   className="btn btn-sm btn-outline-secondary"
@@ -215,25 +299,21 @@ const BookLists = () => {
         </div>
       </div>
 
-      {/* Books List */}
-      {filteredBooks.length > 0 ? (
-        <Books
-          books={filteredBooks}
-          onShelfClick={handleShelfClick}
-          onTagClick={handleTagClick}
-          selectedTags={selectedTags}
-        />
-      ) : (
-        <div className="text-center py-5">
-          <h5>No books found in this filter</h5>
-          <button className="btn btn-primary mt-2" onClick={clearFilter}>
-            Show All Books
-          </button>
+      {/* Books Display */}
+      <div className="row">
+        <div className="col-12">
+          {filteredBooks.length > 0 ? (
+            renderBooks()
+          ) : (
+            <div className="text-center py-5">
+              <h5>No books found in this filter</h5>
+              <button className="btn btn-primary mt-2" onClick={clearFilter}>
+                Show All Books
+              </button>
+            </div>
+          )}
         </div>
-      )}
-
-      {/* Optional: TogglChart component - you can uncomment if needed */}
-      {/* <TogglChart /> */}
+      </div>
     </Board>
   );
 };

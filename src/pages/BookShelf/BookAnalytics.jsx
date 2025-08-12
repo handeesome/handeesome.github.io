@@ -60,7 +60,13 @@ const BookAnalytics = () => {
                   </p>
                   <button
                     className="btn btn-outline-secondary"
-                    onClick={() => navigate("/book-shelf")}>
+                    onClick={() => {
+                      if (window.history.length > 1) {
+                        navigate(-1);
+                      } else {
+                        navigate("/book-shelf");
+                      }
+                    }}>
                     ← Back to Book Shelf
                   </button>
                 </div>
