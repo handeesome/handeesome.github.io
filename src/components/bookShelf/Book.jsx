@@ -14,7 +14,7 @@ const Book = ({
   avgRating,
   shelves,
   tags,
-  dateStarted = "not started",
+  dateStarted = "N/A",
   dateRead,
   dateAdded,
   onShelfClick,
@@ -142,7 +142,7 @@ const Book = ({
 
                       <span className="book-date-label">Date Finished:</span>
                       <span className="book-date-value">
-                        {dateRead ?? "Not finished yet"}
+                        {dateRead ?? "N/A"}
                       </span>
 
                       <span className="book-date-label">Date Added:</span>

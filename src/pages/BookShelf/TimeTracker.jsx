@@ -13,7 +13,7 @@ import {
   ReferenceLine,
 } from "recharts";
 
-const DAY_CELL_WIDTH = 70; // px, adjust to your day cell width including margin
+const DAY_CELL_WIDTH = 70;
 
 const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
   const [middleDate, setMiddleDate] = useState(new Date(defaultDate));
@@ -60,6 +60,7 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
   const onDateClick = (direction) => {
     navigateDay(direction);
   };
+
   return (
     <div className="week-strip">
       <button onClick={() => navigateDay(-1)}>←</button>
@@ -82,7 +83,7 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
                 onDateClick(dayDiff);
               }}>
               <div className="week-of-day">
-                {day.toLocaleDateString("en-US", { weekday: "short" })}{" "}
+                {day.toLocaleDateString("en-US", { weekday: "short" })}
               </div>
               <div className="date">
                 {day.toLocaleDateString("en-US", {
@@ -91,13 +92,13 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
                 })}
               </div>
               <div className="reading-minutes">
-                {readingData[day.getDay()] || 0}m
+                {Math.round(readingData[day.toDateString()]?.totalMinutes) || 0}{" "}
+                mins
               </div>
             </div>
           ))}
         </div>
       </div>
-
       <button onClick={() => navigateDay(1)}>→</button>
     </div>
   );
@@ -116,11 +117,10 @@ const COLORS = [
   "#FFEAA7",
 ];
 
-// Enhanced color palette with gradients
 const GRADIENTS = COLORS.map((color, index) => ({
   id: `gradient${index}`,
   color1: color,
-  color2: color + "40", // Adding transparency
+  color2: color + "40",
 }));
 
 function compressTimeline(data, books, gapThreshold = 90, buffer = 20) {
@@ -150,7 +150,7 @@ function compressTimeline(data, books, gapThreshold = 90, buffer = 20) {
     const prev = activeMinuteArray[i - 1];
 
     if (prev !== undefined && current - prev > gapThreshold) {
-      virtualIdx += Math.ceil((current - prev) / 60); // Scale gaps more naturally
+      virtualIdx += Math.ceil((current - prev) / 60);
     } else if (i !== 0) {
       virtualIdx += 1;
     }
@@ -193,26 +193,63 @@ function aggregateDataByDay(rawData, selectedDate) {
 
   const agg = {};
   const sessionDetails = {};
+  const sessionsByBook = {};
 
   dayData.forEach(({ description, start, dur }) => {
-    const date = new Date(start);
-    const minute = date.getHours() * 60 + date.getMinutes();
+    if (!sessionsByBook[description]) {
+      sessionsByBook[description] = [];
+    }
+
+    const startDate = new Date(start);
+    const endDate = new Date(startDate.getTime() + dur);
+    const startMinute = startDate.getHours() * 60 + startDate.getMinutes();
+    const endMinute = endDate.getHours() * 60 + endDate.getMinutes();
     const minsSpent = dur / (1000 * 60);
 
-    if (!agg[minute]) agg[minute] = {};
-    if (!agg[minute][description]) agg[minute][description] = 0;
-    agg[minute][description] += minsSpent;
+    sessionsByBook[description].push({
+      startMinute,
+      endMinute,
+      startDate,
+      endDate,
+      minsSpent,
+      sessionInfo: {
+        startTime: startDate.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+        endTime: endDate.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+        duration: Math.round(minsSpent),
+        actualStart: startDate,
+        actualEnd: endDate,
+      },
+    });
+  });
 
-    // Store session details for enhanced tooltips
-    if (!sessionDetails[minute]) sessionDetails[minute] = {};
-    sessionDetails[minute][description] = {
-      startTime: date.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-      duration: Math.round(minsSpent),
-      intensity: Math.min(minsSpent / 30, 1), // Normalize intensity 0-1
-    };
+  Object.entries(sessionsByBook).forEach(([description, sessions]) => {
+    sessions.forEach(({ startMinute, endMinute, minsSpent, sessionInfo }) => {
+      if (!agg[startMinute]) agg[startMinute] = {};
+      if (!agg[startMinute][description]) agg[startMinute][description] = 0;
+      agg[startMinute][description] += minsSpent;
+
+      for (
+        let minute = startMinute;
+        minute < Math.min(endMinute, 1440);
+        minute++
+      ) {
+        if (!sessionDetails[minute]) sessionDetails[minute] = {};
+
+        if (
+          !sessionDetails[minute][description] ||
+          sessionInfo.actualStart <
+            sessionDetails[minute][description].actualStart
+        ) {
+          sessionDetails[minute][description] = sessionInfo;
+        }
+      }
+    });
   });
 
   const books = new Set();
@@ -223,21 +260,12 @@ function aggregateDataByDay(rawData, selectedDate) {
   const result = [];
   for (let m = 0; m < 1440; m++) {
     const entry = { minute: m };
-
-    // Add reading intensity for heatmap-like visualization
-    let totalIntensity = 0;
     books.forEach((book) => {
       entry[book] = null;
-      if (agg[m] && agg[m][book]) {
-        totalIntensity += agg[m][book];
-      }
     });
-    entry.totalIntensity = totalIntensity;
-
     result.push(entry);
   }
 
-  // Enhanced data processing with smoother transitions
   books.forEach((book) => {
     Object.entries(agg).forEach(([startMinute, bookData]) => {
       if (bookData[book]) {
@@ -245,21 +273,8 @@ function aggregateDataByDay(rawData, selectedDate) {
         const duration = bookData[book];
         const end = start + Math.floor(duration);
 
-        // Smooth start and end transitions
-        const rampUp = Math.min(3, Math.floor(duration / 4));
-        const rampDown = Math.min(3, Math.floor(duration / 4));
-
         for (let m = start; m < Math.min(end, 1440); m++) {
-          let intensity = duration;
-
-          // Apply smooth ramp up/down for better visual flow
-          if (m - start < rampUp) {
-            intensity *= (m - start + 1) / (rampUp + 1);
-          } else if (end - m <= rampDown) {
-            intensity *= (end - m) / (rampDown + 1);
-          }
-
-          result[m][book] = intensity;
+          result[m][book] = duration;
         }
       }
     });
@@ -268,36 +283,48 @@ function aggregateDataByDay(rawData, selectedDate) {
   return { result, books: Array.from(books), sessionDetails };
 }
 
-// Custom tooltip component for enhanced information
-const CustomTooltip = ({
-  active,
-  payload,
-  label,
-  formatter,
-  sessionDetails,
-}) => {
+const CustomTooltip = ({ active, payload, sessionDetails }) => {
   if (active && payload && payload.length) {
     const realMinute = payload[0]?.payload?.realMinute;
 
     return (
       <div className="bg-white p-3 border rounded shadow-lg">
-        <p className="fw-bold mb-2 text-primary">{`Time: ${formatter(
-          label
-        )}`}</p>
         {payload.map((entry, index) => {
           if (entry.value && entry.value > 0) {
             const session = sessionDetails[realMinute]?.[entry.dataKey];
+
+            const startTime = session?.startTime || formatTimeLabel(realMinute);
+            const endTime =
+              session?.endTime ||
+              formatTimeLabel(
+                Math.min(realMinute + Math.floor(entry.value), 1439)
+              );
+            const duration = session?.duration || entry.value.toFixed(1);
+
             return (
               <div key={index} className="mb-2">
                 <div className="d-flex align-items-center mb-1">
-                  <div className="rounded me-2" />
+                  <div
+                    className="rounded me-2"
+                    style={{
+                      width: "12px",
+                      height: "12px",
+                      backgroundColor: entry.color,
+                    }}
+                  />
                   <span className="fw-bold" style={{ color: entry.color }}>
                     {entry.dataKey}
                   </span>
                 </div>
                 <div className="small text-muted ms-3">
                   <div>
-                    Duration: <strong>{entry.value.toFixed(1)}</strong> minutes
+                    Start: <strong>{startTime}</strong>
+                  </div>
+                  <div>
+                    End: <strong>{endTime}</strong>
+                  </div>
+                  <div>
+                    Duration: <strong>{duration}</strong> minutes
                   </div>
                 </div>
               </div>
@@ -365,6 +392,7 @@ const TogglChart = () => {
       day: "numeric",
     });
   };
+
   const readingData = rawData.reduce((data, entry) => {
     const dateKey = new Date(entry.start).toDateString();
     if (!data[dateKey]) {
@@ -407,11 +435,11 @@ const TogglChart = () => {
       </div>
     );
   }
+
   return (
     <Board title="Time Tracker">
       <div className="card shadow-lg border-0 mb-4">
         <div className="card-body p-4">
-          {/* Date Picker */}
           <div className="mb-4 d-flex justify-content-center">
             <WeekStrip
               defaultDate={new Date()}
@@ -420,7 +448,6 @@ const TogglChart = () => {
             />
           </div>
 
-          {/* Controls Section */}
           <div className="mb-4">
             {selectedDate && (
               <div className="text-lg-end">
@@ -462,7 +489,6 @@ const TogglChart = () => {
             )}
           </div>
 
-          {/* Chart Section */}
           <div style={{ height: 500 }}>
             {data.length > 0 && books.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
@@ -525,12 +551,7 @@ const TogglChart = () => {
                   />
 
                   <Tooltip
-                    content={
-                      <CustomTooltip
-                        formatter={formatter}
-                        sessionDetails={sessionDetails}
-                      />
-                    }
+                    content={<CustomTooltip sessionDetails={sessionDetails} />}
                   />
 
                   <Legend
@@ -541,7 +562,6 @@ const TogglChart = () => {
                     }}
                   />
 
-                  {/* Reference lines for common reading times */}
                   <ReferenceLine
                     x={480}
                     stroke="#ccc"
@@ -561,7 +581,6 @@ const TogglChart = () => {
                     label="6 PM"
                   />
 
-                  {/* Gap indicators */}
                   {(() => {
                     const gaps = [];
                     for (let i = 1; i < data.length; i++) {
