@@ -2,10 +2,6 @@
 <html lang="en">
   <head>
     <script type="text/javascript">
-      console.log("Index.html redirect script loaded");
-      console.log("Current location:", window.location.href);
-      console.log("Search string:", window.location.search);
-
       (function (l) {
         if (l.search[1] === "/") {
           console.log("Found redirect in query string");
@@ -18,12 +14,8 @@
             .join("?");
 
           var newUrl = l.pathname.slice(0, -1) + decoded + l.hash;
-          console.log("Decoded URL:", newUrl);
 
           window.history.replaceState(null, null, newUrl);
-          console.log("URL replaced in history");
-        } else {
-          console.log("No redirect found in query string");
         }
       })(window.location);
     </script>
