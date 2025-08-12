@@ -11,6 +11,7 @@ import {
   BarChart,
   Bar,
 } from "recharts";
+import togglData from "../../data/books/toggl-data.json";
 
 const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7300", "#0088fe"];
 
@@ -22,29 +23,21 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
   const [viewMode, setViewMode] = useState("daily"); // 'daily', 'sessions', 'patterns'
 
   useEffect(() => {
-    fetch("/src/data/books/toggl-data.json")
-      .then((res) => res.json())
-      .then((fetchedData) => {
-        // Filter data for this specific book
-        const bookData = fetchedData.filter((entry) => {
-          if (!entry.description) return false;
+    // Filter data for this specific book
+    const bookData = togglData.filter((entry) => {
+      if (!entry.description) return false;
 
-          const desc = entry.description.toLowerCase();
-          const title1 = bookTitle?.toLowerCase();
-          const title2 = bookTitle2?.toLowerCase();
+      const desc = entry.description.toLowerCase();
+      const title1 = bookTitle?.toLowerCase();
+      const title2 = bookTitle2?.toLowerCase();
 
-          return (
-            (title1 && desc.includes(title1)) ||
-            (title2 && desc.includes(title2))
-          );
-        });
+      return (
+        (title1 && desc.includes(title1)) || (title2 && desc.includes(title2))
+      );
+    });
 
-        setRawData(bookData);
-        generateAnalytics(bookData);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+    setRawData(bookData);
+    generateAnalytics(bookData);
   }, [bookTitle, bookTitle2]);
 
   const generateAnalytics = (data) => {

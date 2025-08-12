@@ -12,6 +12,7 @@ import {
   Brush,
   ReferenceLine,
 } from "recharts";
+import togglData from "../../data/books/toggl-data.json";
 
 const DAY_CELL_WIDTH = 70;
 
@@ -349,21 +350,8 @@ const TogglChart = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
-    fetch("/src/data/books/toggl-data.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch data");
-        return res.json();
-      })
-      .then((fetchedData) => {
-        setRawData(fetchedData);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setError(error.message);
-        setLoading(false);
-      });
+    setRawData(togglData);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
