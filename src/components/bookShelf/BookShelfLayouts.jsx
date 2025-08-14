@@ -4,6 +4,7 @@ import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { useTheme } from "../../ThemeContext";
 import BookDetailed from "./BookDetailed";
+import { useState } from "react";
 // Layout 1: Grid View - Simple covers with basic info
 export const GridView = ({
   books,
@@ -22,7 +23,7 @@ export const GridView = ({
   return (
     <div className="row g-3 mb-3">
       {books.map((book) => {
-        const imgSrc = `covers/${book.id}.jpg`;
+        const [imgSrc, setImgSrc] = useState(`covers/${book.id}.jpg`);
         return (
           <div key={book.id} className="col-md-3 col-sm-6">
             <div
@@ -31,14 +32,13 @@ export const GridView = ({
               }`}>
               <div className="position-relative">
                 <img
-                  src={imgSrc}
+                  src={imgSrc || book.coverBase64}
                   alt={book.title}
                   className="card-img-top book-cover-grid"
                   style={{ height: "200px", objectFit: "cover" }}
-                  onError={(e) => {
-                    e.currentTarget.src = book.coverBase64;
-                    e.currentTarget.onerror = null;
-                  }}
+                  onError={() =>
+                    setImgSrc(book.coverBase64 || "./public/default-cover.jpg")
+                  }
                 />
               </div>
 
@@ -109,6 +109,16 @@ export const GridView = ({
 
                   {/* Action Buttons */}
                   <div className="d-grid gap-2">
+                    <button
+                      className="btn btn-sm btn-outline-warning"
+                      onClick={() => onEditBook && onEditBook(book.id)}>
+                      ✏️ Edit Book
+                    </button>
+                    <button
+                      className="btn btn-sm btn-outline-danger"
+                      onClick={() => deleteBook && deleteBook(book.id)}>
+                      🗑️ Delete Book
+                    </button>
                     <button
                       className="btn btn-sm btn-outline-info"
                       onClick={() =>
@@ -295,6 +305,16 @@ export const TableView = ({
               </td>
               <td>
                 <div className="btn-group-vertical btn-group-sm" role="group">
+                  <button
+                    className="btn btn-outline-warning btn-sm mb-1"
+                    onClick={() => onEditBook && onEditBook(book.id)}>
+                    ✏️ Edit
+                  </button>
+                  <button
+                    className="btn btn-outline-danger btn-sm mb-1"
+                    onClick={() => deleteBook && deleteBook(book.id)}>
+                    🗑️ Delete
+                  </button>
                   <button
                     className="btn btn-outline-info btn-sm mb-2"
                     onClick={() =>

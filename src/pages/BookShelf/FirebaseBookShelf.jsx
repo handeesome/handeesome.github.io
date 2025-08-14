@@ -25,7 +25,7 @@ import { db as firestore, auth as firebaseAuth } from "./firebase-config";
 import { useTheme } from "../../ThemeContext";
 import Board from "../../components/Board";
 import BookShelf from "../../components/bookShelf/BookShelf";
-import CoverDropZone from "../../components/bookShelf/coverDropZone";
+import CoverDropZone from "../../components/BookCoverDropZone";
 
 const TagManagementModal = ({
   isOpen,
