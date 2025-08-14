@@ -315,7 +315,7 @@ const FormDataTags = ({
           </button>
         );
       })}
-      <div className="row g-2 align-items-center">
+      <div key="input-row" className="row g-2 align-items-center">
         <div className="col" style={{ display: showInput ? "block" : "none" }}>
           <input
             type="text"
