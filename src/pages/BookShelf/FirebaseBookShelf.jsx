@@ -39,6 +39,7 @@ const TagManagementModal = ({
   const [newTagColor, setNewTagColor] = useState("#FF6B6B");
   const [editingTag, setEditingTag] = useState(null);
   const [editColor, setEditColor] = useState("");
+  const { theme } = useTheme();
 
   const handleAddTag = () => {
     if (newTagName.trim() && !tagColors[newTagName.trim()]) {
@@ -79,12 +80,14 @@ const TagManagementModal = ({
 
   if (!isOpen) return null;
 
+  const bgDark = theme === "dark" ? "bg-dark text-light" : "";
+
   return (
     <div
       className="modal d-block"
       style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
       <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content">
+        <div className={`modal-content ${bgDark}`}>
           <div className="modal-header">
             <h5 className="modal-title d-flex align-items-center">
               🎨 Manage Tag Colors
@@ -100,8 +103,8 @@ const TagManagementModal = ({
             className="modal-body"
             style={{ maxHeight: "70vh", overflowY: "auto" }}>
             {/* Add New Tag */}
-            <div className="card mb-4">
-              <div className="card-header bg-light">
+            <div className={`card mb-4 ${bgDark}`}>
+              <div className={`card-header bg-light ${bgDark}`}>
                 <h6 className="card-title mb-0 d-flex align-items-center">
                   ➕ Add New Tag
                 </h6>
@@ -111,7 +114,7 @@ const TagManagementModal = ({
                   <div className="col">
                     <input
                       type="text"
-                      className="form-control"
+                      className={`form-control ${bgDark}`}
                       placeholder="Tag name"
                       value={newTagName}
                       onChange={(e) => setNewTagName(e.target.value)}
@@ -121,7 +124,7 @@ const TagManagementModal = ({
                   <div className="col-auto">
                     <input
                       type="color"
-                      className="form-control form-control-color"
+                      className={`form-control form-control-color ${bgDark}`}
                       value={newTagColor}
                       onChange={(e) => setNewTagColor(e.target.value)}
                       style={{ width: "3rem" }}
@@ -166,8 +169,8 @@ const TagManagementModal = ({
             </div>
 
             {/* Existing Tags */}
-            <div className="card">
-              <div className="card-header bg-light">
+            <div className={`card ${bgDark}`}>
+              <div className={`card-header bg-light ${bgDark}`}>
                 <h6 className="card-title mb-0 d-flex align-items-center">
                   🏷️ Existing Tags ({Object.keys(tagColors).length})
                 </h6>
@@ -182,7 +185,7 @@ const TagManagementModal = ({
                     {Object.entries(tagColors).map(([tagName, color]) => (
                       <div
                         key={tagName}
-                        className="d-flex align-items-center justify-content-between p-3 bg-light rounded">
+                        className={`d-flex align-items-center justify-content-between p-3 bg-light rounded ${bgDark}`}>
                         <div className="d-flex align-items-center gap-3">
                           <div
                             className="rounded-circle border"
@@ -453,7 +456,7 @@ const BookFormModal = ({
     if (book && book.id) {
       // Update form data when book prop changes
       setFormData({
-        ...initialFormData,
+        ...getInitialFormData(),
         ...book,
         pages: book.pages || "",
         rating: book.rating || "",
@@ -465,14 +468,13 @@ const BookFormModal = ({
       // Update selected items
       setSelectedTags(book.tags || []);
       setSelectedShelves(book.shelves || []);
-    } else {
-      // Reset to initial state when no book
-      setFormData(getInitialFormData);
+    } else if (!book) {
+      // Only reset when book becomes null/undefined
+      setFormData(getInitialFormData());
       setSelectedTags([]);
       setSelectedShelves([]);
     }
-  }, [book]); // Watch for changes to the book prop
-
+  }, [book?.id]); // Only depend on book.id instead of the entire book object
   const handleSubmit = (e) => {
     e.preventDefault();
     const processedData = {
@@ -487,7 +489,7 @@ const BookFormModal = ({
 
     // Only reset form data for new books (when book.id doesn't exist)
     if (!book.id) {
-      setFormData(initialFormData);
+      setFormData(getInitialFormData());
       setSelectedTags([]);
       setSelectedShelves([]);
     }
@@ -807,6 +809,7 @@ const FirebaseBookshelf = () => {
         userDocRef,
         {
           tagColors: { [newTagName]: newTagColor },
+          userId: user.uid,
         },
         { merge: true }
       );
@@ -830,6 +833,7 @@ const FirebaseBookshelf = () => {
     try {
       await updateDoc(userDocRef, {
         [`tagColors.${tagName}`]: newColor,
+        userId: user.uid,
       });
 
       setTagColors((prev) => ({ ...prev, [tagName]: newColor }));
