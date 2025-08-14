@@ -25,7 +25,7 @@ import { db as firestore, auth as firebaseAuth } from "./firebase-config";
 import { useTheme } from "../../ThemeContext";
 import Board from "../../components/Board";
 import BookShelf from "../../components/bookShelf/BookShelf";
-import CoverDropZone from "../../components/bookShelf/coverDropZone";
+import CoverDropZone from "../../components/bookShelf/CoverDropZone";
 
 const TagManagementModal = ({
   isOpen,
@@ -402,6 +402,20 @@ const FormRow = ({
   );
 };
 
+const getInitialFormData = () => ({
+  title: "",
+  title2: "",
+  author: "",
+  pages: "",
+  rating: "",
+  shelves: ["to-read"],
+  tags: [],
+  dateStarted: "N/A",
+  dateFinished: "N/A",
+  dateAdded: new Date().toISOString().split("T")[0],
+  notes: "",
+});
+
 const BookFormModal = ({
   book = {},
   onSubmit,
@@ -424,22 +438,8 @@ const BookFormModal = ({
 
   const allTags = Object.keys(tagColors);
 
-  const initialFormData = {
-    title: "",
-    title2: "",
-    author: "",
-    pages: "",
-    rating: "",
-    shelves: ["to-read"],
-    tags: [],
-    dateStarted: "N/A",
-    dateFinished: "N/A",
-    dateAdded: new Date().toISOString().split("T")[0],
-    notes: "",
-  };
-
   const [formData, setFormData] = useState({
-    ...initialFormData,
+    ...getInitialFormData(),
     // prefill with book data if needed
     ...(book || {}),
     pages: book?.pages || "",
@@ -467,7 +467,7 @@ const BookFormModal = ({
       setSelectedShelves(book.shelves || []);
     } else {
       // Reset to initial state when no book
-      setFormData(initialFormData);
+      setFormData(getInitialFormData);
       setSelectedTags([]);
       setSelectedShelves([]);
     }
