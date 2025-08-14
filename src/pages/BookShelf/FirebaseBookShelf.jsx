@@ -99,8 +99,6 @@ const FirebaseBookshelf = () => {
       firebaseAuth,
       async (currentUser) => {
         setLoading(true);
-        setIsUnauthorized(false);
-        setUnauthorizedEmail("");
 
         if (currentUser) {
           // Check if user is whitelisted
@@ -110,7 +108,8 @@ const FirebaseBookshelf = () => {
             // User is authorized
             setUser(currentUser);
             setIsUnauthorized(false);
-            fetchBooks(currentUser.email); // Use email instead of UID
+            setUnauthorizedEmail("");
+            fetchBooks(currentUser.email);
             setCurrentViewingUserEmail(null);
           } else {
             // User is not authorized
@@ -120,18 +119,15 @@ const FirebaseBookshelf = () => {
             setUser(null);
             setBooks([]);
 
-            // Sign out the unauthorized user
-            try {
-              await signOut(firebaseAuth);
-            } catch (error) {
-              console.error("Error signing out unauthorized user:", error);
-            }
+            // Don't sign out immediately - let the unauthorized page show first
+            // The user can manually sign out from the unauthorized page
           }
         } else {
-          // No user signed in
+          // No user signed in - reset everything
           setUser(null);
           setBooks([]);
           setIsUnauthorized(false);
+          setUnauthorizedEmail("");
         }
 
         setLoading(false);
@@ -425,8 +421,7 @@ const FirebaseBookshelf = () => {
           <button
             className="btn btn-primary"
             onClick={() => {
-              setIsUnauthorized(false);
-              setUnauthorizedEmail("");
+              signOut(firebaseAuth);
             }}>
             Try Different Account
           </button>
