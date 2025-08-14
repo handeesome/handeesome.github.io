@@ -1,11 +1,66 @@
 [
   {
+    "id": "168675287",
+    "title": "A Treatise on the Family",
+    "author": "Gary S. Becker",
+    "num pages": "440",
+    "avg rating": "3.93",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/08",
+    "title2": "家庭论",
+    "tags": [
+      "economics",
+      "social-science"
+    ]
+  },
+  {
+    "id": "174237",
+    "title": "A Treatise on the Family",
+    "author": "Gary S. Becker",
+    "num pages": "440",
+    "avg rating": "3.93",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/08"
+  },
+  {
+    "id": "13589149",
+    "title": "Every Good Endeavor: Connecting Your Work to God's Plan for the World",
+    "author": "Timothy J. Keller",
+    "num pages": "288",
+    "avg rating": "4.31",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/08"
+  },
+  {
+    "id": "1000751",
+    "title": "Pollyanna (Pollyanna, #1)",
+    "author": "Eleanor H. Porter",
+    "num pages": "304",
+    "avg rating": "4.02",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/08"
+  },
+  {
     "id": "1156110",
     "title": "Micromegas",
     "author": "Voltaire",
     "num pages": "38",
     "avg rating": "3.65",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/15",
     "date added": "2025/08/07",
     "tags": [
@@ -19,7 +74,9 @@
     "author": "Vance Packard",
     "num pages": "240",
     "avg rating": "3.84",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/08/07",
     "tags": [
@@ -28,26 +85,14 @@
     ]
   },
   {
-    "id": "19280263",
-    "title": "Pollyanna",
-    "author": "Eleanor H. Porter",
-    "num pages": "208",
-    "avg rating": "4.02",
-    "shelves": "want-to-read",
-    "date read": null,
-    "date added": "2025/08/04",
-    "title2": "波丽安娜",
-    "tags": [
-      "fiction"
-    ]
-  },
-  {
     "id": "40000210",
     "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
     "author": "Sarah Bakewell",
     "num pages": "563",
     "avg rating": "4.24",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/08/03",
     "title2": "存在主义咖啡馆",
@@ -61,7 +106,9 @@
     "author": "罗翔",
     "num pages": "288",
     "avg rating": "4.23",
-    "shelves": "currently-reading",
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2025/07/27",
     "tags": [
@@ -75,7 +122,9 @@
     "author": "Albert Camus",
     "num pages": "172",
     "avg rating": "4.18",
-    "shelves": "currently-reading",
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2025/06/30",
     "title2": "西西弗神话",
@@ -89,7 +138,9 @@
     "author": "Aldous Huxley",
     "num pages": "347",
     "avg rating": "4.00",
-    "shelves": "currently-reading",
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2025/07/27",
     "title2": "重返美丽新世界",
@@ -104,7 +155,9 @@
     "author": "Will Durant",
     "num pages": "608",
     "avg rating": "4.58",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/30",
     "date added": "2025/05/28",
     "title2": "哲学的故事",
@@ -119,7 +172,9 @@
     "author": "Jean-Jacques Rousseau",
     "num pages": "315",
     "avg rating": "3.58",
-    "shelves": "currently-reading",
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2025/06/20",
     "title2": "爱弥儿",
@@ -133,7 +188,9 @@
     "author": "C.S. Lewis",
     "num pages": "264",
     "avg rating": "4.17",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/27",
     "title2": "四种爱",
@@ -145,10 +202,12 @@
   {
     "id": "26007192",
     "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
-    "author": "Timothy Keller",
+    "author": "Timothy J. Keller",
     "num pages": "285",
     "avg rating": "4.36",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/27",
     "title2": "山寨版的上帝",
@@ -159,10 +218,12 @@
   {
     "id": "54444309",
     "title": "Every Good Endeavor: Connecting Your Work to God's Work",
-    "author": "Timothy Keller",
+    "author": "Timothy J. Keller",
     "num pages": "292",
     "avg rating": "4.60",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/27",
     "title2": "工作的意义",
@@ -176,7 +237,9 @@
     "author": "Timothy J. Keller",
     "num pages": "287",
     "avg rating": "4.49",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/27",
     "title2": "婚姻的意义",
@@ -190,7 +253,9 @@
     "author": "David Mitchell",
     "num pages": "486",
     "avg rating": "4.01",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/27",
     "title2": "云图",
@@ -204,7 +269,9 @@
     "author": "Aldous Huxley",
     "num pages": "287",
     "avg rating": "4.00",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/24",
     "date added": "2025/06/18",
     "title2": "美丽新世界",
@@ -213,27 +280,14 @@
     ]
   },
   {
-    "id": "168675287",
-    "title": "A Treatise on the Family",
-    "author": "[美]加里·斯坦利·贝克尔",
-    "num pages": "440",
-    "avg rating": "3.93",
-    "shelves": "want-to-read",
-    "date read": null,
-    "date added": "2025/07/24",
-    "title2": "家庭论",
-    "tags": [
-      "economics",
-      "social-science"
-    ]
-  },
-  {
     "id": "53263624",
     "title": "L'évolution créatrice",
     "author": "Henri Bergson",
     "num pages": "244",
     "avg rating": "4.10",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/24",
     "title2": "创造进化论",
@@ -247,7 +301,9 @@
     "author": "Miguel de Cervantes Saavedra",
     "num pages": "1023",
     "avg rating": "3.91",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/23",
     "title2": "堂吉诃德",
@@ -261,7 +317,9 @@
     "author": "Voltaire",
     "num pages": "192",
     "avg rating": "3.79",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/15",
     "date added": "2025/06/17",
     "title2": "查第格",
@@ -276,7 +334,9 @@
     "author": "村上春树 林少华",
     "num pages": "200",
     "avg rating": "3.99",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/15",
     "title2": "挪威的森林",
@@ -290,7 +350,9 @@
     "author": "Voltaire",
     "num pages": "129",
     "avg rating": "3.76",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/15",
     "date added": "2025/07/13",
     "title2": "老实人",
@@ -305,7 +367,9 @@
     "author": "Stephen Bullivant",
     "num pages": "257",
     "avg rating": "3.85",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/14",
     "tags": [
@@ -320,7 +384,9 @@
     "author": "Jim  Davis",
     "num pages": "272",
     "avg rating": "3.85",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/14",
     "date added": "2025/06/05",
     "tags": [
@@ -334,7 +400,9 @@
     "author": "Voltaire",
     "num pages": "182",
     "avg rating": "3.52",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/12",
     "date added": "2025/06/17",
     "title2": "天真汉",
@@ -349,7 +417,9 @@
     "author": "Raymond Carver",
     "num pages": "159",
     "avg rating": "4.02",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/12",
     "date added": "2025/07/03",
     "tags": [
@@ -362,7 +432,9 @@
     "author": "Susan Wise Bauer",
     "num pages": "785",
     "avg rating": "4.17",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/09",
     "title2": "世界史的故事",
@@ -376,7 +448,9 @@
     "author": "Susan Wise Bauer",
     "num pages": "896",
     "avg rating": "4.11",
-    "shelves": "currently-reading",
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2025/07/08",
     "title2": "世界史的故事",
@@ -390,7 +464,9 @@
     "author": "Albert Camus",
     "num pages": "235",
     "avg rating": "4.02",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/08",
     "date added": "2025/07/02",
     "title2": "鼠疫",
@@ -405,7 +481,9 @@
     "author": "Susan Wise Bauer",
     "num pages": "746",
     "avg rating": "4.11",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/08",
     "title2": "世界史的故事",
@@ -419,7 +497,9 @@
     "author": "James K.A. Smith",
     "num pages": "148",
     "avg rating": "4.21",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/08",
     "tags": [
@@ -433,7 +513,9 @@
     "author": "Charles Margrave Taylor",
     "num pages": "874",
     "avg rating": "4.27",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/08",
     "tags": [
@@ -449,7 +531,9 @@
     "author": "Michael J. Knowles",
     "num pages": "383",
     "avg rating": "4.25",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/07",
     "tags": [
@@ -463,7 +547,9 @@
     "author": "Charlie Kirk",
     "num pages": "288",
     "avg rating": "4.16",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/07",
     "tags": [
@@ -478,7 +564,9 @@
     "author": "Albert Camus",
     "num pages": "66",
     "avg rating": "4.03",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": null,
     "date added": "2025/06/09",
     "title2": "局外人",
@@ -493,7 +581,9 @@
     "author": "Desmond Shum",
     "num pages": "171",
     "avg rating": "3.91",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/07/01",
     "date added": "2025/06/08",
     "title2": "红色赌盘",
@@ -509,7 +599,9 @@
     "author": "Jane Austen",
     "num pages": "234",
     "avg rating": "4.29",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/06/30",
     "title2": "傲慢与偏见",
@@ -523,7 +615,9 @@
     "author": "Stendhal",
     "num pages": "512",
     "avg rating": "3.86",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/06/30",
     "title2": "红与黑",
@@ -537,7 +631,9 @@
     "author": "Fyodor Dostoevsky",
     "num pages": "548",
     "avg rating": "4.28",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/06/30",
     "title2": "罪与罚",
@@ -552,7 +648,9 @@
     "author": "Leo Tolstoy",
     "num pages": "726",
     "avg rating": "4.17",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/06/30",
     "title2": "战争与和平",
@@ -567,7 +665,9 @@
     "author": "罗翔",
     "num pages": "254",
     "avg rating": "3.95",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/06/23",
     "date added": "2025/05/18",
     "title2": "Paradoxes of Law",
@@ -582,7 +682,9 @@
     "author": "Antoine de Saint-Exupéry",
     "num pages": "112",
     "avg rating": "4.33",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/06/23",
     "date added": "2025/06/09",
     "title2": "小王子",
@@ -597,7 +699,9 @@
     "author": "Jean-Jacques Rousseau",
     "num pages": "728",
     "avg rating": "3.44",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/06/20",
     "title2": "新爱洛伊丝",
@@ -612,7 +716,9 @@
     "author": "Jean-Jacques Rousseau",
     "num pages": "676",
     "avg rating": "3.59",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/06/20",
     "title2": "忏悔录",
@@ -627,7 +733,9 @@
     "author": "Thomas Sowell",
     "num pages": "448",
     "avg rating": "4.37",
-    "shelves": "currently-reading",
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2025/05/12",
     "tags": [
@@ -641,7 +749,9 @@
     "author": "George Orwell",
     "num pages": "141",
     "avg rating": "4.01",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/06/11",
     "tags": [
@@ -655,7 +765,9 @@
     "author": "George Orwell",
     "num pages": "368",
     "avg rating": "4.20",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/06/11",
     "tags": [
@@ -669,7 +781,9 @@
     "author": "Nabeel Qureshi",
     "num pages": "320",
     "avg rating": "4.61",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/05/29",
     "date added": "2025/05/23",
     "tags": [
@@ -682,7 +796,9 @@
     "author": "Neil T. Anderson",
     "num pages": "256",
     "avg rating": "4.21",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/05/28",
     "date added": "2025/05/23",
     "tags": [
@@ -695,7 +811,9 @@
     "author": "LUO XIANG",
     "num pages": "307",
     "avg rating": "4.05",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/05/26",
     "date added": "2025/05/04",
     "title2": "The Faith as Premise of Freedom",
@@ -710,7 +828,9 @@
     "author": "Paul Kalanithi",
     "num pages": "148",
     "avg rating": "4.41",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": null,
     "date added": "2025/05/04",
     "title2": "当呼吸化为空气",
@@ -724,7 +844,9 @@
     "author": "Mi Xue",
     "num pages": "288",
     "avg rating": "4.24",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": "2025/05/13",
     "date added": "2025/05/04",
     "title2": "珍珠项链",
@@ -738,7 +860,9 @@
     "author": "陳維恩",
     "num pages": "254",
     "avg rating": "5.00",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": null,
     "date added": "2025/05/04",
     "tags": [
@@ -751,7 +875,9 @@
     "author": "P.K. Newby",
     "num pages": "316",
     "avg rating": "3.89",
-    "shelves": "currently-reading",
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2025/05/04",
     "tags": [
@@ -765,7 +891,9 @@
     "author": "Litian Swen",
     "num pages": "400",
     "avg rating": "4.56",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": null,
     "date added": "2025/05/04",
     "title2": "Emporor Kangxi's Red Manifesto: The Qing Dynasty in Globalization",
@@ -779,7 +907,9 @@
     "author": "雪 米",
     "num pages": "191",
     "avg rating": "5.00",
-    "shelves": "finished",
+    "shelves": [
+      "finished"
+    ],
     "date read": null,
     "date added": "2025/05/04",
     "title2": "珍珠项链",
@@ -793,7 +923,9 @@
     "author": "Aurélien Géron",
     "num pages": "450",
     "avg rating": "4.55",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2022/10/05",
     "tags": [
@@ -806,7 +938,9 @@
     "author": "马俊昌",
     "num pages": "1308",
     "avg rating": "4.00",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2021/09/27",
     "tags": [
@@ -819,7 +953,9 @@
     "author": "Jon Steinhart",
     "num pages": "504",
     "avg rating": "3.86",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2021/04/29",
     "tags": [
@@ -832,7 +968,9 @@
     "author": "Daniel Zingaro",
     "num pages": "408",
     "avg rating": "4.45",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2021/04/29",
     "tags": [
@@ -845,7 +983,9 @@
     "author": "V. Anton Spraul",
     "num pages": "233",
     "avg rating": "3.85",
-    "shelves": "want-to-read",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2021/04/29",
     "tags": [

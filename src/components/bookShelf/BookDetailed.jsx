@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import StarRating from "./StarRating";
-import { getTagColor } from "../../utils/TagColors";
+import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
@@ -20,35 +20,58 @@ const BookDetailed = ({
   onShelfClick,
   onTagClick,
   selectedTags,
+  paramGetTagColor,
+  coverBase64,
+  notes,
+  disableBtns = false,
+  deleteBook,
+  onEditBook,
 }) => {
+  const getTagColor = paramGetTagColor || defaultGetTagColor;
   const [introduction, setIntroduction] = useState("");
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
   const textRef = useRef(null);
   const navigate = useNavigate();
   const { theme } = useTheme();
+  const latestIdRef = useRef(id);
+  const [imgSrc, setImgSrc] = useState(`covers/${id}.jpg`);
 
   useEffect(() => {
-    import(`../../data/books/introductions/${id}.md?raw`)
-      .then((res) => {
-        setIntroduction(res.default);
-
-        setTimeout(() => {
-          const el = textRef.current;
-          if (el) {
-            setShowToggle(el.scrollHeight > el.clientHeight + 10);
-          }
-        }, 200);
-      })
-      .catch((err) => {
-        console.error(`Failed to load /introductions/${id}.md`, err);
-        setIntroduction("");
-      });
+    latestIdRef.current = id;
   }, [id]);
 
-  const shelfArray = shelves
-    ? shelves.split(",").map((shelf) => shelf.trim())
-    : [];
+  useEffect(() => {
+    let cancelled = false;
+    latestIdRef.current = id;
+
+    setIntroduction("");
+    setExpanded(false);
+    setShowToggle(false);
+    (async () => {
+      try {
+        const mod = await import(`../../data/books/introductions/${id}.md?raw`);
+        if (cancelled || latestIdRef.current !== id) return; // stale
+        setIntroduction(mod.default);
+      } catch {
+        if (cancelled || latestIdRef.current !== id) return; // stale
+        setIntroduction(notes || "");
+      }
+    })();
+    return () => {
+      cancelled = true; // cancel in-flight import for this id
+    };
+  }, [id, notes]);
+
+  useLayoutEffect(() => {
+    const el = textRef.current;
+    if (!el) return;
+    // If your content includes images/fonts, you can also wrap in requestAnimationFrame
+    const needsToggle = el.scrollHeight > el.clientHeight + 10;
+    setShowToggle(needsToggle);
+  }, [introduction]);
+
+  const shelfArray = shelves ? shelves.map((shelf) => shelf.trim()) : [];
 
   const handleShelfClick = (shelf) => {
     if (onShelfClick) {
@@ -60,6 +83,9 @@ const BookDetailed = ({
     navigate(`/book-shelf/book/${id}/analytics`);
   };
 
+  const handleDeleteBook = (bookId) => {
+    deleteBook(bookId);
+  };
   return (
     <div
       className={`card mb-4 shadow-sm ${theme === "light" ? "" : "bg-dark"}`}>
@@ -67,9 +93,12 @@ const BookDetailed = ({
         {/* BookDetailed Cover */}
         <div className="col-md-4 d-flex justify-content-center mt-4">
           <img
-            src={`covers/${id}.jpg`}
+            src={imgSrc || coverBase64}
             alt={title}
             className="fixed-img rounded-start"
+            onError={() =>
+              setImgSrc(coverBase64 || "./public/default-cover.jpg")
+            }
           />
         </div>
 
@@ -155,13 +184,36 @@ const BookDetailed = ({
 
                 <div className="col-md-auto d-flex flex-column gap-2 mt-2 mt-md-0">
                   <button
+                    className="btn btn-outline-warning btn-lg"
+                    onClick={() => onEditBook && onEditBook(id)}>
+                    Edit Book
+                  </button>
+                  <button
+                    className="btn btn-outline-danger btn-lg"
+                    onClick={() => {
+                      handleDeleteBook(id);
+                    }}>
+                    Delete Book
+                  </button>
+                  <button
                     className="btn btn-outline-info btn-lg"
-                    onClick={handleReadSessionsClick}>
+                    onClick={handleReadSessionsClick}
+                    disabled={disableBtns}>
                     Reading Sessions
                   </button>
-                  <button className="btn btn-outline-secondary btn-lg">
+                  <button
+                    className="btn btn-outline-secondary btn-lg"
+                    disabled={disableBtns}>
                     View Notes
                   </button>
+                  {shelfArray.some(
+                    (shelf) => shelf.toLowerCase() === "finished"
+                  ) && (
+                    <img
+                      src="./public/completed.png"
+                      style={{ width: "128px" }}
+                    />
+                  )}
                 </div>
               </div>
 

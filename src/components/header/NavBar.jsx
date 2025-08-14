@@ -40,6 +40,9 @@ const NavBar = ({ isScrolled }) => {
             <Link to="/book-shelf" className="nav-link">
               Book Shelf
             </Link>
+            <Link to="./book-shelf2" className="nav-link">
+              Book Shelf 2
+            </Link>
 
             <div
               style={{ cursor: "pointer" }}

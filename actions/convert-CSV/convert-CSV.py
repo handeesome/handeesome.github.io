@@ -37,9 +37,11 @@ with open(input_csv, newline='', encoding='utf-8') as csvfile:
             value = row.get(source_field, "").strip()
 
             if key == "shelves":
-                book["shelves"] = value or "finished"
-                if(book["shelves"]=="to-read"):
-                    book["shelves"] = "want-to-read"
+                shelves_str = value or "finished"
+                shelves_list = [s.strip() for s in shelves_str.split(",")]
+
+                shelves_list = ["want-to-read" if s == "to-read" else s for s in shelves_list]
+                book["shelves"] = shelves_list
             else:
                 book[key] = value or None
 

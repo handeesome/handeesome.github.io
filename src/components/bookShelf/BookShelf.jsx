@@ -1,17 +1,21 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import Board from "../../components/Board";
-import books from "../../data/books/books.json";
-import { getTagColor } from "../../utils/TagColors";
+import Board from "../Board";
+import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
-import {
-  GridView,
-  DetailedView,
-  TableView,
-} from "../../components/bookShelf/BookShelfLayouts";
+import { GridView, DetailedView, TableView } from "./BookShelfLayouts";
 import { useTheme } from "../../ThemeContext";
 
-const BookLists = () => {
+const BookShelf = ({
+  books,
+  title = "Book Shelf",
+  paramGetTagColor,
+  titleRight = null,
+  disableBtns = false,
+  deleteBook,
+  onEditBook,
+}) => {
+  const getTagColor = paramGetTagColor || defaultGetTagColor;
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const { theme } = useTheme();
@@ -31,12 +35,7 @@ const BookLists = () => {
 
     // Check if "currently-reading" exists in the books
     const hasCurrentlyReading = books.some(
-      (book) =>
-        book.shelves &&
-        book.shelves
-          .split(",")
-          .map((s) => s.trim())
-          .includes("currently-reading")
+      (book) => book.shelves && book.shelves.includes("currently-reading")
     );
 
     return hasCurrentlyReading ? "currently-reading" : null;
@@ -52,13 +51,13 @@ const BookLists = () => {
     const shelfSet = new Set();
     books.forEach((book) => {
       if (book.shelves) {
-        book.shelves.split(",").forEach((shelf) => {
+        book.shelves.forEach((shelf) => {
           shelfSet.add(shelf.trim());
         });
       }
     });
     return Array.from(shelfSet).sort();
-  }, []);
+  }, [books]);
 
   const allTags = useMemo(() => {
     const tagSet = new Set();
@@ -70,7 +69,7 @@ const BookLists = () => {
       }
     });
     return Array.from(tagSet).sort();
-  });
+  }, [books]);
 
   // Filter books based on selected shelf
   const filteredShelfBooks = useMemo(() => {
@@ -79,10 +78,9 @@ const BookLists = () => {
     }
     return books.filter((book) => {
       if (!book.shelves) return false;
-      const bookShelves = book.shelves.split(",").map((shelf) => shelf.trim());
-      return bookShelves.includes(selectedShelf);
+      return book.shelves.includes(selectedShelf);
     });
-  }, [selectedShelf]);
+  }, [selectedShelf, books]);
 
   const filteredBooks = useMemo(() => {
     if (selectedTags.size === 0) {
@@ -143,6 +141,10 @@ const BookLists = () => {
       onShelfClick: handleShelfClick,
       onTagClick: handleTagClick,
       selectedTags: selectedTags,
+      paramGetTagColor: getTagColor,
+      disableBtns: disableBtns,
+      deleteBook: deleteBook,
+      onEditBook: onEditBook,
     };
 
     switch (layout) {
@@ -156,17 +158,22 @@ const BookLists = () => {
     }
   };
 
-  const title = selectedShelf ? `Book Shelf - ${selectedShelf}` : "Book Shelf";
-
+  const displayTitle = selectedShelf ? `${title} - ${selectedShelf}` : title;
   return (
     <Board
-      title={title}
+      title={displayTitle}
       titleRight={
-        <button
-          className="btn btn-outline-info"
-          onClick={handleTimeTrackerClick}>
-          📈 View Time Tracker →
-        </button>
+        <div className="d-flex gap-2 align-items-center">
+          {titleRight}
+          {
+            <button
+              className="btn btn-outline-info"
+              onClick={handleTimeTrackerClick}
+              disabled={disableBtns}>
+              📈 View Time Tracker →
+            </button>
+          }
+        </div>
       }>
       {/* Layout Selector */}
       <div className="row mb-3">
@@ -223,12 +230,7 @@ const BookLists = () => {
             {/* Shelf Filter Buttons */}
             {allShelves.map((shelf) => {
               const shelfCount = books.filter(
-                (book) =>
-                  book.shelves &&
-                  book.shelves
-                    .split(",")
-                    .map((s) => s.trim())
-                    .includes(shelf)
+                (book) => book.shelves && book.shelves.includes(shelf)
               ).length;
 
               return (
@@ -329,4 +331,4 @@ const BookLists = () => {
   );
 };
 
-export default BookLists;
+export default BookShelf;
