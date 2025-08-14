@@ -60,6 +60,12 @@ const TagManagementModal = ({
     setEditColor(currentColor);
   };
 
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   const predefinedColors = [
     "#FF6B6B",
     "#4ECDC4",
@@ -85,7 +91,8 @@ const TagManagementModal = ({
   return (
     <div
       className="modal d-block"
-      style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
+      style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+      onClick={handleBackdropClick}>
       <div className="modal-dialog modal-dialog-centered">
         <div className={`modal-content ${bgDark}`}>
           <div className="modal-header">
@@ -264,13 +271,19 @@ const FormDataTags = ({
   setNewShelf,
   allShelves,
   setAllShelves,
+  onItemsToggle,
 }) => {
   const { theme } = useTheme();
   const toggleItem = (item) => {
     setSelectedItems((prev) =>
       prev.includes(item) ? prev.filter((t) => t !== item) : [...prev, item]
     );
+
+    if (onItemsToggle) {
+      onItemsToggle(item);
+    }
   };
+
   const defaultColors = [
     "#f44336",
     "#e91e63",
@@ -382,6 +395,7 @@ const FormRow = ({
             ) : type === "textarea" ? (
               <textarea
                 className={`form-control ${darkBg}`}
+                placeholder={placeholder || label}
                 style={{ width: "100vh" }}
                 value={value}
                 onChange={onChange}
@@ -438,6 +452,7 @@ const BookFormModal = ({
   const [selectedShelves, setSelectedShelves] = useState(book?.shelves || []);
   const [newShelf, setNewShelf] = useState("");
   const [showTagManagementModal, setShowTagManagementModal] = useState(false);
+  const [validationErrors, setValidationErrors] = useState({});
 
   const allTags = Object.keys(tagColors);
 
@@ -477,6 +492,23 @@ const BookFormModal = ({
   }, [book?.id]); // Only depend on book.id instead of the entire book object
   const handleSubmit = (e) => {
     e.preventDefault();
+    setValidationErrors({});
+    const errors = {};
+    if (selectedShelves.length === 0) {
+      errors.shelves = "At least one shelf must be selected";
+    }
+
+    if (!formData.title.trim()) {
+      errors.title = "Title is required";
+    }
+
+    if (!formData.author.trim()) {
+      errors.author = "Author is required";
+    }
+    if (Object.keys(errors).length > 0) {
+      setValidationErrors(errors);
+      return;
+    }
     const processedData = {
       ...formData,
       pages: parseInt(formData.pages) || 0,
@@ -584,7 +616,20 @@ const BookFormModal = ({
                           setNewShelf={setNewShelf}
                           allShelves={allShelves}
                           setAllShelves={setAllShelves}
+                          onItemsToggle={() => {
+                            if (validationErrors.shelves) {
+                              setValidationErrors((prev) => ({
+                                ...prev,
+                                shelves: undefined,
+                              }));
+                            }
+                          }}
                         />
+                        {validationErrors.shelves && (
+                          <small className="text-danger mt-1 d-block">
+                            ⚠️{validationErrors.shelves}
+                          </small>
+                        )}
 
                         <button
                           type="button"
@@ -661,7 +706,7 @@ const BookFormModal = ({
                     label="Notes"
                     type="textarea"
                     rows="3"
-                    placeholder="Your thoughts about this book..."
+                    placeholder="You can add the Book's Introduction or Your thoughts about this book..."
                     value={formData.notes}
                     onChange={(e) =>
                       setFormData({ ...formData, notes: e.target.value })
@@ -864,10 +909,37 @@ const FirebaseBookshelf = () => {
         [`tagColors.${tagName}`]: deleteField(),
       });
 
+      const booksWithTag = books.filter(
+        (book) => book.tags && book.tags.includes(tagName)
+      );
+
+      const updatePromises = booksWithTag.map(async (book) => {
+        const updatedTags = book.tags.filter((tag) => tag !== tagName);
+        const bookRef = doc(firestore, "books", book.id);
+        await updateDoc(bookRef, {
+          tags: updatedTags,
+        });
+        return { ...book, tags: updatedTags };
+      });
+
+      const updatedBooks = await Promise.all(updatePromises);
+
       setTagColors((prev) => {
         const updated = { ...prev };
         delete updated[tagName];
         return updated;
+      });
+
+      setBooks((prevBooks) => {
+        return prevBooks.map((book) => {
+          if (book.tags && book.tags.includes(tagName)) {
+            return {
+              ...book,
+              tags: book.tags.filter((tag) => tag !== tagName),
+            };
+          }
+          return book;
+        });
       });
 
       console.log(`Successfully deleted tag color: ${tagName}`);
