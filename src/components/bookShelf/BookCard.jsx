@@ -30,9 +30,7 @@ const BookCard = ({
             alt={book.title}
             className="card-img-top book-cover-grid"
             style={{ height: "200px", objectFit: "cover" }}
-            onError={() =>
-              setImgSrc(book.coverBase64 || "./public/default-cover.jpg")
-            }
+            onError={() => setImgSrc(book.coverBase64 || "/default-cover.jpg")}
           />
         </div>
 

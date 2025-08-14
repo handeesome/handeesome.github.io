@@ -96,9 +96,7 @@ const BookDetailed = ({
             src={imgSrc || coverBase64}
             alt={title}
             className="fixed-img rounded-start"
-            onError={() =>
-              setImgSrc(coverBase64 || "./public/default-cover.jpg")
-            }
+            onError={() => setImgSrc(coverBase64 || "/default-cover.jpg")}
           />
         </div>
 
