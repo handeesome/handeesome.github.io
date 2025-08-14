@@ -3,17 +3,23 @@ import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
-import { faMonument } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const NavBar = ({ isScrolled }) => {
   const { theme, toggleTheme } = useTheme();
+  const [expanded, setExpanded] = useState(false);
 
   const navbarClasses = `navbar-custom ${isScrolled ? "scrolled" : ""}`;
 
+  const closeNavbar = () => {
+    setExpanded(false);
+  };
   return (
     <Navbar
       expand="lg"
       fixed="top"
+      expanded={expanded}
+      onToggle={setExpanded}
       className={navbarClasses}
       style={{
         backgroundColor: isScrolled
@@ -28,26 +34,29 @@ const NavBar = ({ isScrolled }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" variant="underline">
-            <Link to="/" className="nav-link ">
+            <Link to="/" className="nav-link" onClick={closeNavbar}>
               Home
             </Link>
-            <Link to="/projects" className="nav-link">
+            <Link to="/projects" className="nav-link" onClick={closeNavbar}>
               Projects
             </Link>
-            <Link to="/study-notes" className="nav-link">
+            <Link to="/study-notes" className="nav-link" onClick={closeNavbar}>
               Study Notes
             </Link>
-            <Link to="/book-shelf" className="nav-link">
+            <Link to="/book-shelf" className="nav-link" onClick={closeNavbar}>
               Book Shelf
             </Link>
-            <Link to="./book-shelf2" className="nav-link">
+            <Link to="./book-shelf2" className="nav-link" onClick={closeNavbar}>
               Book Shelf 2
             </Link>
 
             <div
               style={{ cursor: "pointer" }}
               className="align-items-center d-flex theme-toggle"
-              onClick={toggleTheme}>
+              onClick={() => {
+                toggleTheme();
+                closeNavbar();
+              }}>
               <FontAwesomeIcon
                 icon={theme === "dark" ? faSun : faMoon}
                 className="fa-2xl"
