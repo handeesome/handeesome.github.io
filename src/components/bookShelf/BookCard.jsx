@@ -19,7 +19,7 @@ const BookCard = ({
   const [imgSrc, setImgSrc] = useState(`covers/${book.id}.jpg`);
 
   return (
-    <div key={book.id} className="col-md-3 col-sm-6">
+    <div key={book.id} className="col-4 col-md-3 col-sm-6">
       <div
         className={`card h-100 shadow-sm book-card-grid ${
           theme === "light" ? "" : "bg-dark"

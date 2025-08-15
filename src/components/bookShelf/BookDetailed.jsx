@@ -14,7 +14,7 @@ const BookDetailed = ({
   avgRating,
   shelves,
   tags,
-  dateStarted = "N/A",
+  dateStarted,
   dateRead,
   dateAdded,
   onShelfClick,
@@ -167,15 +167,19 @@ const BookDetailed = ({
                     {/* Dates Grid */}
                     <div className="book-dates">
                       <span className="book-date-label">Date Started:</span>
-                      <span className="book-date-value">{dateStarted}</span>
+                      <span className="book-date-value">
+                        {dateStarted || "N/A"}
+                      </span>
 
                       <span className="book-date-label">Date Finished:</span>
                       <span className="book-date-value">
-                        {dateRead ?? "N/A"}
+                        {dateRead || "N/A"}
                       </span>
 
                       <span className="book-date-label">Date Added:</span>
-                      <span className="book-date-value">{dateAdded}</span>
+                      <span className="book-date-value">
+                        {dateAdded || "N/A"}
+                      </span>
                     </div>
                   </div>
                 </div>

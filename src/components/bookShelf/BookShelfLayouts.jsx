@@ -21,21 +21,23 @@ export const GridView = ({
   const { theme } = useTheme();
 
   return (
-    <div className="row g-3 mb-3">
-      {books.map((book) => (
-        <BookCard
-          key={book.id}
-          book={book}
-          onShelfClick={onShelfClick}
-          onTagClick={onTagClick}
-          selectedTags={selectedTags}
-          getTagColor={getTagColor}
-          onEditBook={onEditBook}
-          deleteBook={deleteBook}
-          disableBtns={disableBtns}
-          theme={theme}
-        />
-      ))}
+    <div className="container">
+      <div className="row g-3 mb-3">
+        {books.map((book) => (
+          <BookCard
+            key={book.id}
+            book={book}
+            onShelfClick={onShelfClick}
+            onTagClick={onTagClick}
+            selectedTags={selectedTags}
+            getTagColor={getTagColor}
+            onEditBook={onEditBook}
+            deleteBook={deleteBook}
+            disableBtns={disableBtns}
+            theme={theme}
+          />
+        ))}
+      </div>
     </div>
   );
 };
