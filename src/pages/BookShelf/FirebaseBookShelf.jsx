@@ -1,7 +1,7 @@
 // FirebaseBookshelf.jsx
 import React, { useState, useEffect } from "react";
 import { Users } from "lucide-react";
-import HideBtnsContext from "../../components/bookShelf/hideBtnsContext";
+import HideBtnsContext from "../../components/bookShelf/HideBtnsContext";
 
 import {
   collection,
