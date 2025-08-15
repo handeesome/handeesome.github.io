@@ -29,8 +29,8 @@ const BookCard = ({
           <img
             src={imgSrc || book.coverBase64}
             alt={book.title}
-            className="card-img-top book-cover-grid"
-            style={{ height: "200px", objectFit: "cover" }}
+            className="book-cover-grid"
+            style={{ width: "100%", height: "auto" }}
             onError={() => setImgSrc(book.coverBase64 || "/default-cover.jpg")}
           />
         </div>
@@ -38,9 +38,9 @@ const BookCard = ({
         {/* Use flexbox to control layout */}
         <div className="card-body p-3 d-flex flex-column">
           {/* Top content - will take available space */}
-          <div className="flex-grow-1">
+          <div className="d-flex flex-column justify-content-center ">
             <h6
-              className="card-title mb-1"
+              className="card-title mb-1 text-center"
               style={{ fontSize: "1rem", lineHeight: "1.2" }}>
               {book.title}
               {book.title2 && (
@@ -50,7 +50,7 @@ const BookCard = ({
             <p className="card-text text-muted mb-2">by {book.author}</p>
 
             {/* Shelf Tags */}
-            <div className="mb-2">
+            <div className="mb-2 ">
               {book.shelves &&
                 book.shelves.map((shelf) => (
                   <button
@@ -65,8 +65,8 @@ const BookCard = ({
 
             {/* BookDetailed Tags */}
             {book.tags && book.tags.length > 0 && (
-              <div className="mb-2">
-                {book.tags.slice(0, 3).map((tag) => {
+              <div className="mb-2 d-flex flex-wrap justify-content-center">
+                {book.tags.slice(0, 4).map((tag) => {
                   const isSelected = selectedTags && selectedTags.has(tag);
                   const tagColor = getTagColor(tag);
                   return (
@@ -84,8 +84,8 @@ const BookCard = ({
                     </button>
                   );
                 })}
-                {book.tags.length > 3 && (
-                  <span className="small text-muted">
+                {book.tags.length > 4 && (
+                  <span className="small text-muted mt-1 d-block text-center">
                     +{book.tags.length - 3} more
                   </span>
                 )}

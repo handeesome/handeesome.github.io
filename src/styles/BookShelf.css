@@ -141,6 +141,10 @@
 .book-cover-grid {
   transition: transform 0.3s ease;
   border-radius: 8px 8px 0 0;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .book-card-grid .card-body {
@@ -507,10 +511,6 @@ svg:focus,
   .col-md-3.col-sm-6 {
     flex: 0 0 33%;
     max-width: 50%;
-  }
-
-  .book-card-grid .book-tag {
-    display: none;
   }
 
   /* Table view responsive */
