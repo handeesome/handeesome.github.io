@@ -1,9 +1,48 @@
 {
+  "54861804": {
+    "title": "如何假装懂音乐",
+    "tags": ["music", "social-science"]
+  },
+  "385228": {
+    "title": "On Liberty",
+    "title2": "论自由",
+    "tags": ["philosophy"]
+  },
+  "1314433": {
+    "title": "Liberty, Equality, Fraternity",
+    "title2": "自由，平等，博爱",
+    "tags": ["philosophy"]
+  },
+  "23275043": {
+    "title": "沈黙",
+    "title2": "沉默",
+    "tags": ["fiction", "religion"]
+  },
+  "19342729": {
+    "title": "Atonement",
+    "title2": "赎罪",
+    "tags": ["fiction"]
+  },
+  "41810863": {
+    "title": "The Remains of the Day",
+    "title2": "长日将尽",
+    "tags": ["fiction"]
+  },
+  "11138": {
+    "title": "Mere Christianity",
+    "title2": "返璞归真-如此基督教",
+    "tags": ["religion"]
+  },
+  "57836039": {
+    "title": "ぼくはこんな音楽を聴いて育った",
+    "title2": "我成长的音乐时代",
+    "tags": ["biography"]
+  },
   "3730": {
     "title": "The Hidden Persuaders",
     "tags": ["philosophy", "social-science"]
   },
-  "19280263": {
+  "1000751": {
     "title": "Pollyanna",
     "title2": "波丽安娜",
     "tags": ["fiction"]
@@ -48,7 +87,7 @@
     "author": "Timothy J. Keller",
     "tags": ["religion"]
   },
-  "54444309": {
+  "13589149": {
     "title": "Every Good Endeavor: Connecting Your Work to God's Work",
     "title2": "工作的意义",
     "author": "Timothy J. Keller",
@@ -73,7 +112,7 @@
     "title2": "重返美丽新世界",
     "tags": ["philosophy", "social-science"]
   },
-  "168675287": {
+  "174237": {
     "title": "A Treatise on the Family",
     "title2": "家庭论",
     "author": "Gary S. Becker",
