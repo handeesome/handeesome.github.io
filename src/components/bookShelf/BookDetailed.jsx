@@ -5,6 +5,8 @@ import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
+import { useHideBtns } from "./hideBtnsContext";
+
 const BookDetailed = ({
   id,
   title,
@@ -23,7 +25,6 @@ const BookDetailed = ({
   paramGetTagColor,
   coverBase64,
   notes,
-  disableBtns = false,
   deleteBook,
   onEditBook,
 }) => {
@@ -36,6 +37,7 @@ const BookDetailed = ({
   const { theme } = useTheme();
   const latestIdRef = useRef(id);
   const [imgSrc, setImgSrc] = useState(`covers/${id}.jpg`);
+  const { hideEditDelete, hideSessions } = useHideBtns();
 
   useEffect(() => {
     latestIdRef.current = id;
@@ -185,29 +187,34 @@ const BookDetailed = ({
                 </div>
 
                 <div className="col-md-auto d-flex flex-column gap-2 mt-2 mt-md-0">
-                  <button
-                    className="btn btn-outline-warning btn-lg"
-                    onClick={() => onEditBook && onEditBook(id)}>
-                    Edit Book
-                  </button>
-                  <button
-                    className="btn btn-outline-danger btn-lg"
-                    onClick={() => {
-                      handleDeleteBook(id);
-                    }}>
-                    Delete Book
-                  </button>
-                  <button
-                    className="btn btn-outline-info btn-lg"
-                    onClick={handleReadSessionsClick}
-                    disabled={disableBtns}>
-                    Reading Sessions
-                  </button>
-                  <button
-                    className="btn btn-outline-secondary btn-lg"
-                    disabled={disableBtns}>
-                    View Notes
-                  </button>
+                  {!hideEditDelete && (
+                    <>
+                      <button
+                        className="btn btn-outline-warning btn-lg"
+                        onClick={() => onEditBook && onEditBook(id)}>
+                        Edit Book
+                      </button>
+                      <button
+                        className="btn btn-outline-danger btn-lg"
+                        onClick={() => {
+                          handleDeleteBook(id);
+                        }}>
+                        Delete Book
+                      </button>
+                    </>
+                  )}
+                  {!hideSessions && (
+                    <>
+                      <button
+                        className="btn btn-outline-info btn-lg"
+                        onClick={handleReadSessionsClick}>
+                        Reading Sessions
+                      </button>
+                      <button className="btn btn-outline-secondary btn-lg">
+                        View Notes
+                      </button>
+                    </>
+                  )}
                   {shelfArray.some(
                     (shelf) => shelf.toLowerCase() === "finished"
                   ) && (

@@ -1,6 +1,7 @@
 // FirebaseBookshelf.jsx
 import React, { useState, useEffect } from "react";
 import { Users } from "lucide-react";
+import HideBtnsContext from "../../components/bookShelf/hideBtnsContext";
 
 import {
   collection,
@@ -25,7 +26,6 @@ import {
   db as firestore,
   auth as firebaseAuth,
 } from "../../components/bookShelf/firebase-config";
-import { useTheme } from "../../ThemeContext";
 import Board from "../../components/Board";
 import BookShelf from "../../components/bookShelf/BookShelf";
 import UserToggleModal from "../../components/bookShelf/UserToggleModal";
@@ -494,39 +494,42 @@ const FirebaseBookshelf = () => {
 
   return (
     <>
-      <BookShelf
-        books={convertedBooks}
-        title={`📚 ${getDisplayName()}'s Bookshelf ${
-          currentViewingUserEmail ? "(Admin View)" : ""
-        }`}
-        paramGetTagColor={getTagColor}
-        disableBtns={true}
-        deleteBook={deleteBook}
-        onEditBook={handleEditBook}
-        titleRight={
-          <div className="d-flex gap-2 align-items-center">
-            <button
-              className="btn btn-success"
-              onClick={() => setShowAddForm(true)}>
-              + Add Book
-            </button>
-            {user?.email === "ducenhandee@gmail.com" && (
+      <HideBtnsContext.Provider value={{ hideSessions: true }}>
+        <BookShelf
+          books={convertedBooks}
+          title={`📚 ${getDisplayName()}'s Bookshelf ${
+            currentViewingUserEmail ? "(Admin View)" : ""
+          }`}
+          paramGetTagColor={getTagColor}
+          hideTimeTracker={true}
+          deleteBook={deleteBook}
+          onEditBook={handleEditBook}
+          titleRight={
+            <div className="d-flex gap-2 align-items-center">
               <button
-                className="btn btn-info"
-                onClick={() => setShowUserToggleModal(true)}
-                title="Switch User View">
-                <Users size={16} className="me-1" />
-                Switch User
+                className="btn btn-success"
+                onClick={() => setShowAddForm(true)}>
+                + Add Book
               </button>
-            )}
-            <button
-              className="btn btn-outline-secondary"
-              onClick={handleSignOut}>
-              Sign Out
-            </button>
-          </div>
-        }
-      />
+              {user?.email === "ducenhandee@gmail.com" && (
+                <button
+                  className="btn btn-info"
+                  onClick={() => setShowUserToggleModal(true)}
+                  title="Switch User View">
+                  <Users size={16} className="me-1" />
+                  Switch User
+                </button>
+              )}
+              <button
+                className="btn btn-outline-secondary"
+                onClick={handleSignOut}>
+                Sign Out
+              </button>
+            </div>
+          }
+        />
+      </HideBtnsContext.Provider>
+
       <BookFormModal
         show={showAddForm}
         onCancel={() => setShowAddForm(false)}

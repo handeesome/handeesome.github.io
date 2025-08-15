@@ -1,7 +1,8 @@
 import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
 import { hexToRgb } from "../../utils/HexToRBG";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useHideBtns } from "./hideBtnsContext";
 
 const BookCard = ({
   book,
@@ -11,15 +12,15 @@ const BookCard = ({
   getTagColor,
   onEditBook,
   deleteBook,
-  disableBtns,
   theme,
 }) => {
   const navigate = useNavigate();
   // Move the useState hook here - now each BookCard has its own consistent hook
   const [imgSrc, setImgSrc] = useState(`covers/${book.id}.jpg`);
+  const { hideEditDelete, hideSessions } = useHideBtns();
 
   return (
-    <div key={book.id} className="col-4 col-md-3 col-sm-6">
+    <div key={book.id} className="col-md-3 col-sm-6">
       <div
         className={`card h-100 shadow-sm book-card-grid ${
           theme === "light" ? "" : "bg-dark"
@@ -100,24 +101,29 @@ const BookCard = ({
 
             {/* Action Buttons */}
             <div className="d-grid gap-2">
-              <button
-                className="btn btn-sm btn-outline-warning"
-                onClick={() => onEditBook && onEditBook(book.id)}>
-                ✏️ Edit Book
-              </button>
-              <button
-                className="btn btn-sm btn-outline-danger"
-                onClick={() => deleteBook && deleteBook(book.id)}>
-                🗑️ Delete Book
-              </button>
-              <button
-                className="btn btn-sm btn-outline-info"
-                onClick={() =>
-                  navigate(`/book-shelf/book/${book.id}/analytics`)
-                }
-                disabled={disableBtns}>
-                📊 Reading Sessions
-              </button>
+              {!hideEditDelete && (
+                <>
+                  <button
+                    className="btn btn-sm btn-outline-warning"
+                    onClick={() => onEditBook && onEditBook(book.id)}>
+                    ✏️ Edit Book
+                  </button>
+                  <button
+                    className="btn btn-sm btn-outline-danger"
+                    onClick={() => deleteBook && deleteBook(book.id)}>
+                    🗑️ Delete Book
+                  </button>
+                </>
+              )}
+              {!hideSessions && (
+                <button
+                  className="btn btn-sm btn-outline-info"
+                  onClick={() =>
+                    navigate(`/book-shelf/book/${book.id}/analytics`)
+                  }>
+                  📊 Reading Sessions
+                </button>
+              )}
             </div>
           </div>
         </div>

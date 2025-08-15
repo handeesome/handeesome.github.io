@@ -11,9 +11,9 @@ const BookShelf = ({
   title = "Book Shelf",
   paramGetTagColor,
   titleRight = null,
-  disableBtns = false,
   deleteBook,
   onEditBook,
+  hideTimeTracker,
 }) => {
   const getTagColor = paramGetTagColor || defaultGetTagColor;
   const [searchParams, setSearchParams] = useSearchParams();
@@ -142,7 +142,6 @@ const BookShelf = ({
       onTagClick: handleTagClick,
       selectedTags: selectedTags,
       paramGetTagColor: getTagColor,
-      disableBtns: disableBtns,
       deleteBook: deleteBook,
       onEditBook: onEditBook,
     };
@@ -165,14 +164,13 @@ const BookShelf = ({
       titleRight={
         <div className="d-flex gap-2 align-items-center">
           {titleRight}
-          {
+          {!hideTimeTracker && (
             <button
               className="btn btn-outline-info"
-              onClick={handleTimeTrackerClick}
-              disabled={disableBtns}>
+              onClick={handleTimeTrackerClick}>
               📈 View Time Tracker →
             </button>
-          }
+          )}
         </div>
       }>
       {/* Layout Selector */}
