@@ -5,7 +5,7 @@ import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
-import { useHideBtns } from "./hideBtnsContext";
+import { useHideBtns } from "./HideBtnsContext";
 
 const BookDetailed = ({
   id,
