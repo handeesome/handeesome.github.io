@@ -1,6 +1,135 @@
 [
   {
-    "id": "168675287",
+    "id": "54861804",
+    "title": "如何假装懂音乐",
+    "author": "王硕",
+    "num pages": "190",
+    "avg rating": "3.12",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "tags": [
+      "music",
+      "social-science"
+    ]
+  },
+  {
+    "id": "385228",
+    "title": "On Liberty",
+    "author": "John Stuart Mill",
+    "num pages": "187",
+    "avg rating": "3.96",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "title2": "论自由",
+    "tags": [
+      "philosophy"
+    ]
+  },
+  {
+    "id": "1314433",
+    "title": "Liberty, Equality, Fraternity",
+    "author": "James Fitzjames Stephen",
+    "num pages": "299",
+    "avg rating": "3.79",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "title2": "自由，平等，博爱",
+    "tags": [
+      "philosophy"
+    ]
+  },
+  {
+    "id": "23275043",
+    "title": "沈黙",
+    "author": "遠藤周作",
+    "num pages": "292",
+    "avg rating": "4.09",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "title2": "沉默",
+    "tags": [
+      "fiction",
+      "religion"
+    ]
+  },
+  {
+    "id": "19342729",
+    "title": "Atonement",
+    "author": "Ian McEwan",
+    "num pages": "426",
+    "avg rating": "3.95",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "title2": "赎罪",
+    "tags": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "41810863",
+    "title": "The Remains of the Day",
+    "author": "Kazuo Ishiguro",
+    "num pages": "337",
+    "avg rating": "4.14",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "title2": "长日将尽",
+    "tags": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "11138",
+    "title": "Mere Christianity",
+    "author": "C.S. Lewis",
+    "num pages": "191",
+    "avg rating": "4.36",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/14",
+    "title2": "返璞归真-如此基督教",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "57836039",
+    "title": "ぼくはこんな音楽を聴いて育った",
+    "author": "大友良英",
+    "num pages": "350",
+    "avg rating": "3.00",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/11",
+    "title2": "我成长的音乐时代",
+    "tags": [
+      "biography"
+    ]
+  },
+  {
+    "id": "174237",
     "title": "A Treatise on the Family",
     "author": "Gary S. Becker",
     "num pages": "440",
@@ -17,20 +146,8 @@
     ]
   },
   {
-    "id": "174237",
-    "title": "A Treatise on the Family",
-    "author": "Gary S. Becker",
-    "num pages": "440",
-    "avg rating": "3.93",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/08"
-  },
-  {
     "id": "13589149",
-    "title": "Every Good Endeavor: Connecting Your Work to God's Plan for the World",
+    "title": "Every Good Endeavor: Connecting Your Work to God's Work",
     "author": "Timothy J. Keller",
     "num pages": "288",
     "avg rating": "4.31",
@@ -38,11 +155,15 @@
       "want-to-read"
     ],
     "date read": null,
-    "date added": "2025/08/08"
+    "date added": "2025/08/08",
+    "title2": "工作的意义",
+    "tags": [
+      "religion"
+    ]
   },
   {
     "id": "1000751",
-    "title": "Pollyanna (Pollyanna, #1)",
+    "title": "Pollyanna",
     "author": "Eleanor H. Porter",
     "num pages": "304",
     "avg rating": "4.02",
@@ -50,7 +171,11 @@
       "want-to-read"
     ],
     "date read": null,
-    "date added": "2025/08/08"
+    "date added": "2025/08/08",
+    "title2": "波丽安娜",
+    "tags": [
+      "fiction"
+    ]
   },
   {
     "id": "1156110",
@@ -216,22 +341,6 @@
     ]
   },
   {
-    "id": "54444309",
-    "title": "Every Good Endeavor: Connecting Your Work to God's Work",
-    "author": "Timothy J. Keller",
-    "num pages": "292",
-    "avg rating": "4.60",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/27",
-    "title2": "工作的意义",
-    "tags": [
-      "religion"
-    ]
-  },
-  {
     "id": "42767746",
     "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
     "author": "Timothy J. Keller",
@@ -366,7 +475,7 @@
     "title": "Nonverts: The Making of Ex-Christian America",
     "author": "Stephen Bullivant",
     "num pages": "257",
-    "avg rating": "3.85",
+    "avg rating": "3.86",
     "shelves": [
       "want-to-read"
     ],
@@ -982,7 +1091,7 @@
     "title": "Think Like a Programmer: An Introduction to Creative Problem Solving",
     "author": "V. Anton Spraul",
     "num pages": "233",
-    "avg rating": "3.85",
+    "avg rating": "3.86",
     "shelves": [
       "want-to-read"
     ],
