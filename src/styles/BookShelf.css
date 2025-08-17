@@ -367,63 +367,24 @@
 .week-strip {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .week-days {
   display: flex;
-  transform: translateX(0);
-  transition: none;
   gap: 0.5rem;
   width: max-content;
 }
 
-.week-days.animating {
-  transition: transform 0.3s ease;
-}
-
 .week-days-wrapper {
-  overflow: hidden;
-  width: 550px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   position: relative;
-}
-
-.week-days-wrapper::before,
-.week-days-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 30px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.dark {
-  --week-fade-color: 33, 37, 41;
-}
-
-.light {
-  --week-fade-color: 255, 255, 255;
-}
-
-.week-days-wrapper::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(var(--week-fade-color), 1),
-    rgba(var(--week-fade-color), 0)
-  );
-}
-
-.week-days-wrapper::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    rgba(var(--week-fade-color), 1),
-    rgba(var(--week-fade-color), 0)
-  );
 }
 
 .day-cell {
@@ -432,16 +393,50 @@
   border-radius: 8px;
   cursor: pointer;
   text-align: center;
-  min-width: 60px;
+  min-width: 70px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
 .day-cell.selected {
   background: #007bff;
-  color: white;
+  --text-color: white;
+  box-shadow: 0 2px 8px rgba(13, 123, 255, 0.3);
 }
 
-.day-cell.has-data {
-  border-color: #28a745;
+.reading-minutes {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.date {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.week-of-day {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.week-strip > button {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .week-strip > button {
+    display: none;
+  }
 }
 
 /* ======================

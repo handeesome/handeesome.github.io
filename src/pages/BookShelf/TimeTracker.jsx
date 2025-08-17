@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Board from "../../components/Board";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import {
   XAxis,
   YAxis,
@@ -16,18 +18,15 @@ import togglData from "../../data/books/toggl-data.json";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 
-const DAY_CELL_WIDTH = 70;
-
 const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
   const [middleDate, setMiddleDate] = useState(new Date(defaultDate));
   const [isAnimating, setIsAnimating] = useState(false);
-  const [translateX, setTranslateX] = useState(0);
-
-  const baseOffset = -DAY_CELL_WIDTH;
+  const wrapperRef = useRef(null);
+  const selectedCellRef = useRef(null);
 
   const getDatesInRange = (middle) => {
     const dates = [];
-    for (let i = -4; i <= 4; i++) {
+    for (let i = -15; i <= 15; i++) {
       const date = new Date(middle);
       date.setDate(middle.getDate() + i);
       dates.push(date);
@@ -37,15 +36,30 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
 
   const dates = getDatesInRange(middleDate);
 
+  const centerSelecetedCell = () => {
+    if (wrapperRef.current && selectedCellRef.current) {
+      const wrapper = wrapperRef.current;
+      const selectedCell = selectedCellRef.current;
+
+      const wrapperWidth = wrapper.clientWidth;
+      const cellWidth = selectedCell.clientWidth;
+
+      const cellOffsetLeft = selectedCell.offsetLeft;
+
+      const scrollLeft = cellOffsetLeft - wrapperWidth / 2 + cellWidth / 2;
+
+      wrapper.scrollTo({
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const navigateDay = (direction) => {
     if (isAnimating) return;
     setIsAnimating(true);
 
-    setTranslateX(-direction * DAY_CELL_WIDTH);
-
     setTimeout(() => {
-      setTranslateX(0);
-
       setMiddleDate((prev) => {
         const newDate = new Date(prev);
         newDate.setDate(prev.getDate() + direction);
@@ -53,11 +67,13 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
       });
 
       setIsAnimating(false);
-    }, 300);
+    }, 150);
   };
 
   useEffect(() => {
     onDateSelect(middleDate.toDateString());
+
+    setTimeout(() => centerSelecetedCell(), 100);
   }, [middleDate]);
 
   const onDateClick = (direction) => {
@@ -66,43 +82,47 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
 
   return (
     <div className="week-strip">
-      <button onClick={() => navigateDay(-1)}>←</button>
-      <div className="week-days-wrapper">
-        <div
-          className={`week-days ${translateX !== 0 ? "animating" : ""}`}
-          style={{ transform: `translateX(${baseOffset + translateX}px)` }}>
-          {[...dates].reverse().map((day) => (
-            <div
-              key={day}
-              className={`day-cell ${
-                new Date(middleDate).toDateString() === day.toDateString()
-                  ? "selected"
-                  : ""
-              }`}
-              onClick={() => {
-                const dayDiff = Math.round(
-                  (day - middleDate) / (1000 * 60 * 60 * 24)
-                );
-                onDateClick(dayDiff);
-              }}>
-              <div className="week-of-day">
-                {day.toLocaleDateString("en-US", { weekday: "short" })}
+      <button onClick={() => navigateDay(-1)}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </button>
+      <div ref={wrapperRef} className="week-days-wrapper">
+        <div className={"week-days"}>
+          {[...dates].reverse().map((day) => {
+            const isSelected =
+              new Date(middleDate).toDateString() === day.toDateString();
+            return (
+              <div
+                key={day.toISOString()}
+                ref={isSelected ? selectedCellRef : null}
+                className={`day-cell ${isSelected ? "selected" : ""}`}
+                onClick={() => {
+                  const dayDiff = Math.round(
+                    (day - middleDate) / (1000 * 60 * 60 * 24)
+                  );
+                  onDateClick(dayDiff);
+                }}>
+                <div className="week-of-day mb-1">
+                  {day.toLocaleDateString("en-US", { weekday: "short" })}
+                </div>
+                <div className="date mb-1">
+                  {day.toLocaleDateString("en-US", {
+                    month: "2-digit",
+                    day: "2-digit",
+                  })}
+                </div>
+                <div className="reading-minutes">
+                  {Math.round(readingData[day.toDateString()]?.totalMinutes) ||
+                    0}{" "}
+                  mins
+                </div>
               </div>
-              <div className="date">
-                {day.toLocaleDateString("en-US", {
-                  month: "2-digit",
-                  day: "2-digit",
-                })}
-              </div>
-              <div className="reading-minutes">
-                {Math.round(readingData[day.toDateString()]?.totalMinutes) || 0}{" "}
-                mins
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
-      <button onClick={() => navigateDay(1)}>→</button>
+      <button onClick={() => navigateDay(1)}>
+        <FontAwesomeIcon icon={faArrowRight} />
+      </button>
     </div>
   );
 };
