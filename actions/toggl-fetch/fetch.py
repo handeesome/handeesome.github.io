@@ -2,7 +2,7 @@ import requests
 import json
 import os
 from datetime import datetime, timedelta, time
-import dateutil.parser
+from dateutil import parser
 
 API_TOKEN = os.environ['TOGGL_API_TOKEN']
 WORKSPACE_ID = 20692980
