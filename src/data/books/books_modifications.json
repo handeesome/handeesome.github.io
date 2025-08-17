@@ -6,12 +6,12 @@
   "385228": {
     "title": "On Liberty",
     "title2": "论自由",
-    "tags": ["philosophy"]
+    "tags": ["philosophy", "social-science", "classics"]
   },
   "1314433": {
     "title": "Liberty, Equality, Fraternity",
     "title2": "自由，平等，博爱",
-    "tags": ["philosophy"]
+    "tags": ["philosophy", "history", "social-science"]
   },
   "23275043": {
     "title": "沈黙",
@@ -26,7 +26,7 @@
   "41810863": {
     "title": "The Remains of the Day",
     "title2": "长日将尽",
-    "tags": ["fiction"]
+    "tags": ["fiction", "classics"]
   },
   "11138": {
     "title": "Mere Christianity",
@@ -45,7 +45,7 @@
   "1000751": {
     "title": "Pollyanna",
     "title2": "波丽安娜",
-    "tags": ["fiction"]
+    "tags": ["fiction", "classics"]
   },
   "40000210": {
     "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
@@ -59,12 +59,12 @@
   "28154510": {
     "title": "Le mythe de Sisyphe",
     "title2": "西西弗神话",
-    "tags": ["philosophy"]
+    "tags": ["philosophy", "classics"]
   },
   "36160370": {
     "title": "Brave New World",
     "title2": "美丽新世界",
-    "tags": ["fiction"]
+    "tags": ["fiction", "classics"]
   },
   "54383459": {
     "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
@@ -74,7 +74,7 @@
   "202694": {
     "title": "Émile, ou De l'éducation",
     "title2": "爱弥儿",
-    "tags": ["philosophy"]
+    "tags": ["philosophy", "classics"]
   },
   "28807853": {
     "title": "The Four Loves",
@@ -105,7 +105,7 @@
   },
   "1156110": {
     "title": "Micromegas",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "42092510": {
     "title": "Brave New World Revisited",
@@ -128,14 +128,14 @@
   "3836": {
     "title": "Don Quixote de la Mancha",
     "title2": "堂吉诃德",
-    "tags": ["fiction"]
+    "tags": ["fiction", "classics"]
   },
   "43491623": {
     "title": "Zadig ou la Destinée",
     "title2": "查第格",
     "num pages": "192",
     "avg rating": "3.79",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "80493508": {
     "title": "ノルウェイの森",
@@ -145,7 +145,7 @@
   "19380": {
     "title": "Candide, ou l'Optimisme",
     "title2": "老实人",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "60470571": {
     "title": "Nonverts: The Making of Ex-Christian America",
@@ -158,7 +158,7 @@
   "38135623": {
     "title": "L'Ingénu",
     "title2": "天真汉",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "11438": {
     "title": "What We Talk About When We Talk About Love",
@@ -177,7 +177,7 @@
   "48917953": {
     "title": "La Peste",
     "title2": "鼠疫",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "6484128": {
     "title": "The History of the Medieval World: From the Conversion of Constantine to the First Crusade",
@@ -203,7 +203,7 @@
   "36651676": {
     "title": "L'Étranger",
     "title2": "局外人",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "57846996": {
     "title": "Red Roulette: An Insider's Story of Wealth, Power, Corruption, and Vengeance in Today's China",
@@ -214,22 +214,22 @@
   "28137375": {
     "title": "Pride and Predujice",
     "title2": "傲慢与偏见",
-    "tags": ["fiction"]
+    "tags": ["fiction", "classics"]
   },
   "18922517": {
     "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
     "title2": "红与黑",
-    "tags": ["fiction"]
+    "tags": ["fiction", "classics"]
   },
   "19179596": {
     "title": "Преступление и наказание",
     "title2": "罪与罚",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "19230853": {
     "title": "Война и миръ",
     "title2": "战争与和平",
-    "tags": ["fiction", "history"]
+    "tags": ["fiction", "history", "classics"]
   },
   "203774224": {
     "title": "法律的悖论",
@@ -239,17 +239,17 @@
   "17259893": {
     "title": "Le petit prince",
     "title2": "小王子",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "27788": {
     "title": "Julie ou La nouvelle Héloïse",
     "title2": "新爱洛伊丝",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "12649": {
     "title": "Les Confessions",
     "title2": "忏悔录",
-    "tags": ["biography", "philosophy"]
+    "tags": ["biography", "philosophy", "classics"]
   },
   "3023": {
     "title": "Basic Economics: A Citizen's Guide to the Economy",
@@ -257,11 +257,11 @@
   },
   "170448": {
     "title": "Animal Farm",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "61439040": {
     "title": "1984",
-    "tags": ["fiction", "philosophy"]
+    "tags": ["fiction", "philosophy", "classics"]
   },
   "27840555": {
     "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity",

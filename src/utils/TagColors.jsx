@@ -8,6 +8,7 @@ export const TAG_COLORS = {
   biography: "#D35400",
   "social-science": "#1ABC9C",
   music: "#E91E63",
+  classics: "#8E44AD",
 };
 export const getTagColor = (tag) => {
   return TAG_COLORS[tag] || "#6c757d"; // Default gray if tag not found
