@@ -10,8 +10,8 @@ USER_AGENT = "ducenhandee@gmail.com"
 JSON_PATH = 'src/data/books/toggl-data.json'  # Path relative to the repo root
 
 def split_entry_if_crosses_midnight(entry):
-    start_dt = dateutil.parser.isoparse(entry['start'])
-    end_dt = dateutil.parser.isoparse(entry['end'])
+    start_dt = parser.isoparse(entry['start'])
+    end_dt = parser.isoparse(entry['end'])
 
     if start_dt.date() == end_dt.date():
         # No split needed
