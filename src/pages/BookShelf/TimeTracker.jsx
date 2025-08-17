@@ -590,25 +590,6 @@ const TogglChart = () => {
                     }}
                   />
 
-                  <ReferenceLine
-                    x={480}
-                    stroke="#ccc"
-                    strokeDasharray="2 2"
-                    label="8 AM"
-                  />
-                  <ReferenceLine
-                    x={720}
-                    stroke="#ccc"
-                    strokeDasharray="2 2"
-                    label="12 PM"
-                  />
-                  <ReferenceLine
-                    x={1080}
-                    stroke="#ccc"
-                    strokeDasharray="2 2"
-                    label="6 PM"
-                  />
-
                   {(() => {
                     const gaps = [];
                     for (let i = 1; i < data.length; i++) {
