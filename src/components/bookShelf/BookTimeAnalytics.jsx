@@ -14,8 +14,6 @@ import {
 import togglData from "../../data/books/toggl-data.json";
 import { useTheme } from "../../ThemeContext";
 
-const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7300", "#0088fe"];
-
 const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
   const [rawData, setRawData] = useState([]);
   const [dailyData, setDailyData] = useState([]);
@@ -187,6 +185,9 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
                   "Reading Time",
                 ]}
                 labelFormatter={(label) => `Date: ${label}`}
+                contentStyle={{
+                  backgroundColor: theme === "dark" ? "#333" : "#fff",
+                }}
               />
               <Bar dataKey="totalMinutes" fill="#8884d8" />
             </BarChart>
@@ -203,9 +204,12 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
               />
               <Tooltip
                 formatter={(value, name) => [
-                  `${value} minutes`,
+                  `${Math.round(value)} minutes`,
                   "Reading Time",
                 ]}
+                contentStyle={{
+                  backgroundColor: theme === "dark" ? "#333" : "#fff",
+                }}
               />
               <Legend />
               <Line
@@ -242,7 +246,7 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
         />
         <StatCard
           title="Avg Per Day"
-          value={totalStats.totalMinutes / totalStats.totalDays}
+          value={Math.round(totalStats.totalMinutes / totalStats.totalDays)}
           unit="minutes"
           icon="⏱️"
         />
