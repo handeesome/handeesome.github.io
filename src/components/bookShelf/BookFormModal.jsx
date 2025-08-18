@@ -6,6 +6,7 @@ import CoverDropZone from "../bookShelf/CoverDropZone";
 import TagManagementModal from "./TagManagementModal";
 import FormDataTags from "./FormDataTags";
 import FormRow from "./FormRow";
+import { Editor } from "@tinymce/tinymce-react";
 
 const getInitialFormData = () => ({
   title: "",
@@ -299,17 +300,31 @@ const BookFormModal = ({
                       setFormData({ ...formData, dateAdded: e.target.value })
                     }
                   />
-                  <FormRow
-                    label="Notes"
-                    type="textarea"
-                    rows="3"
-                    placeholder="You can add the Book's Introduction or Your thoughts about this book...(optional)"
-                    value={formData.notes}
-                    onChange={(e) =>
-                      setFormData({ ...formData, notes: e.target.value })
-                    }
-                  />
                 </div>
+                <div>Notes:</div>
+                <Editor
+                  value={formData.notes}
+                  onEditorChange={(content) =>
+                    setFormData({ ...formData, notes: content })
+                  }
+                  init={{
+                    height: 300,
+                    width: "100%",
+                    menubar: false,
+                    placeholder:
+                      "You can add the Book's Introduction or Your thoughts about this book...(optional)",
+                    plugins: [
+                      "lists",
+                      "link",
+                      "image",
+                      "charmap",
+                      "preview",
+                      "searchreplace",
+                    ],
+                    toolbar:
+                      "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | checklist numlist bullist indent outdent",
+                  }}
+                />
               </div>
             </form>
           </div>

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useLayoutEffect } from "react";
-import ReactMarkdown from "react-markdown";
+import parse from "html-react-parser";
+import { marked } from "marked";
 import StarRating from "./StarRating";
 import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
@@ -54,7 +55,7 @@ const BookDetailed = ({
       try {
         const mod = await import(`../../data/books/introductions/${id}.md?raw`);
         if (cancelled || latestIdRef.current !== id) return; // stale
-        setIntroduction(mod.default);
+        setIntroduction(marked(mod.default));
       } catch {
         if (cancelled || latestIdRef.current !== id) return; // stale
         setIntroduction(notes || "");
@@ -103,7 +104,7 @@ const BookDetailed = ({
         </div>
 
         {/* BookDetailed Info */}
-        <div className="col-md-8">
+        <div className="col-md-8 ">
           <div className="card-body d-flex flex-column justify-content-between h-100">
             <div>
               <h5 className="card-title">{title}</h5>
@@ -225,45 +226,27 @@ const BookDetailed = ({
                   )}
                 </div>
               </div>
-
-              {/* BookDetailed Introduction */}
-              <div className="col-md-auto">
-                <div
-                  className={`card-text ${
-                    !expanded ? "line-clamp-content" : ""
-                  }`}
-                  ref={textRef}>
-                  <ReactMarkdown
-                    components={{
-                      blockquote: ({ node, ...props }) => (
-                        <div
-                          style={{
-                            borderLeft: "4px solid #007bff",
-                            backgroundColor: "#f8f9fa",
-                            padding: "0.75rem 1rem",
-                            margin: "0.75rem 0",
-                            fontStyle: "italic",
-                            borderRadius: "0 4px 4px 0",
-                          }}
-                          {...props}
-                        />
-                      ),
-                    }}>
-                    {introduction}
-                  </ReactMarkdown>
-                </div>
-
-                {showToggle && (
-                  <div className="text-end">
-                    <button
-                      onClick={() => setExpanded((prev) => !prev)}
-                      className="btn btn-outline-secondary btn-sm mt-2 show-more-btn">
-                      {expanded ? "▲ Show Less" : "▼ Show More"}
-                    </button>
-                  </div>
-                )}
-              </div>
             </div>
+          </div>
+        </div>
+        <div className="col-md-10 offset-md-1">
+          {/* BookDetailed Introduction */}
+          <div className="col-md-auto">
+            <div
+              className={`card-text ${!expanded ? "line-clamp-content" : ""}`}
+              ref={textRef}>
+              <div className="rendered-content">{parse(introduction)}</div>
+            </div>
+
+            {showToggle && (
+              <div className="text-end mb-3">
+                <button
+                  onClick={() => setExpanded((prev) => !prev)}
+                  className="btn btn-outline-secondary btn-sm mt-2 show-more-btn">
+                  {expanded ? "▲ Show Less" : "▼ Show More"}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

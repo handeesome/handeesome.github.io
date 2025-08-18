@@ -1,5 +1,3 @@
-// components/FormRow.jsx
-import React from "react";
 import { useTheme } from "../../ThemeContext";
 
 const FormRow = ({
@@ -38,15 +36,6 @@ const FormRow = ({
                   </option>
                 ))}
               </select>
-            ) : type === "textarea" ? (
-              <textarea
-                className={`form-control ${darkBg}`}
-                placeholder={placeholder || label}
-                style={{ width: "100vh" }}
-                value={value}
-                onChange={onChange}
-                {...rest}
-              />
             ) : (
               <input
                 type={type}

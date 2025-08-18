@@ -308,7 +308,7 @@
   bottom: 0;
   right: 0;
   width: 30%;
-  height: 1.5em;
+  height: 1.9em;
   pointer-events: none;
 }
 
@@ -575,4 +575,29 @@ svg:focus,
 .alert strong,
 .alert b {
   color: var(--bs-alert-color) !important;
+}
+
+.rendered-content h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.rendered-content h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.rendered-content p {
+  margin-bottom: 0.75rem;
+}
+
+.rendered-content blockquote {
+  border-left: 4px solid #007bff;
+  background-color: #f8f9fa;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
 }
