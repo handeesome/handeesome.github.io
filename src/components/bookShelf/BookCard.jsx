@@ -1,7 +1,6 @@
 import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
 import { hexToRgb } from "../../utils/HexToRBG";
-import { useContext, useState } from "react";
 import { useHideBtns } from "./HideBtnsContext";
 
 const BookCard = ({
@@ -16,7 +15,6 @@ const BookCard = ({
 }) => {
   const navigate = useNavigate();
   // Move the useState hook here - now each BookCard has its own consistent hook
-  const [imgSrc, setImgSrc] = useState(`covers/${book.id}.jpg`);
   const { hideEditDelete, hideSessions } = useHideBtns();
 
   return (
@@ -27,11 +25,17 @@ const BookCard = ({
         }`}>
         <div className="position-relative">
           <img
-            src={imgSrc || book.coverBase64}
+            src={
+              book.coverBase64 ||
+              `covers/${book.id}.jpg` ||
+              "/default-cover.jpg"
+            }
             alt={book.title}
             className="book-cover-grid"
             style={{ width: "100%", height: "auto" }}
-            onError={() => setImgSrc(book.coverBase64 || "/default-cover.jpg")}
+            onError={(e) =>
+              (e.currentTarget.src = book.coverBase64 || "/default-cover.jpg")
+            }
           />
         </div>
 

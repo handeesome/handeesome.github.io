@@ -37,7 +37,6 @@ const BookDetailed = ({
   const navigate = useNavigate();
   const { theme } = useTheme();
   const latestIdRef = useRef(id);
-  const [imgSrc, setImgSrc] = useState(`covers/${id}.jpg`);
   const { hideEditDelete, hideSessions } = useHideBtns();
 
   useEffect(() => {
@@ -96,10 +95,12 @@ const BookDetailed = ({
         {/* BookDetailed Cover */}
         <div className="col-md-4 d-flex justify-content-center mt-4">
           <img
-            src={imgSrc || coverBase64}
+            src={coverBase64 || `covers/${id}.jpg` || "/default-cover.jpg"}
             alt={title}
             className="fixed-img rounded-start"
-            onError={() => setImgSrc(coverBase64 || "/default-cover.jpg")}
+            onError={(e) =>
+              (e.currentTarget.src = coverBase64 || "/default-cover.jpg")
+            }
           />
         </div>
 
