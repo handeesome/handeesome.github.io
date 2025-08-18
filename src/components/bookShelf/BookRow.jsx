@@ -121,7 +121,9 @@ const BookRow = ({
                 }>
                 📊 Sessions
               </button>
-              <button className="btn btn-outline-secondary btn-sm">
+              <button
+                className="btn btn-outline-secondary btn-sm"
+                onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}>
                 📝 Notes
               </button>
             </>

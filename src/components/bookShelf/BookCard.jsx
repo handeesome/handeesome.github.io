@@ -30,8 +30,13 @@ const BookCard = ({
               "/default-cover.jpg"
             }
             alt={book.title}
+            onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
             className="book-cover-grid"
-            style={{ width: "100%", height: "auto" }}
+            style={{
+              width: "100%",
+              height: "auto",
+              cursor: "pointer",
+            }}
             onError={(e) =>
               (e.currentTarget.src = book.coverBase64 || "/default-cover.jpg")
             }
@@ -44,13 +49,23 @@ const BookCard = ({
           <div className="d-flex flex-column justify-content-center ">
             <h6
               className="card-title mb-1 text-center"
-              style={{ fontSize: "1rem", lineHeight: "1.2" }}>
+              onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
+              style={{
+                fontSize: "1rem",
+                lineHeight: "1.2",
+                cursor: "pointer",
+              }}>
               {book.title}
               {book.title2 && (
                 <div className="text-muted small">{book.title2}</div>
               )}
             </h6>
-            <p className="card-text text-muted mb-2">by {book.author}</p>
+            <p
+              className="card-text text-muted mb-2"
+              onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
+              style={{ cursor: "pointer" }}>
+              by {book.author}
+            </p>
 
             {/* Shelf Tags */}
             <div className="mb-2 ">

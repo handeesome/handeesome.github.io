@@ -7,6 +7,7 @@ import { hexToRgb } from "../../utils/HexToRBG";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 import { useHideBtns } from "./HideBtnsContext";
+import BookQuotes from "../../data/books/book-quotes.json";
 
 const BookDetailed = ({
   id,
@@ -217,9 +218,9 @@ const BookDetailed = ({
                         Reading Sessions
                       </button>
                       <button
-                        className="btn btn-outline-secondary btn-lg"
+                        className="btn btn-outline-warning btn-lg"
                         onClick={handleViewNotesClick}>
-                        View Notes
+                        View {BookQuotes[id]?.[1]?.length || 0} Notes
                       </button>
                     </>
                   )}
