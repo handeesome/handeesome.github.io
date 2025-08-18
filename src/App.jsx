@@ -14,6 +14,7 @@ import {
 } from "./pages/BookShelf";
 import Footer from "./components/Footer";
 import Header from "./components/header/Header";
+import GoToTopButton from "./components/GoToTopButton.jsx";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/book-shelf/time-tracker" element={<TimeTracker />} />
       </Routes>
       <Footer />
+      <GoToTopButton />
     </>
   );
 }
