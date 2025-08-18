@@ -136,7 +136,11 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
         <div className="alert alert-info text-center">
           <h4>📊 No Reading Data Found</h4>
           <p>
-            No time tracking data found for "{bookTitle} {bookTitle2}".{" "}
+            No time tracking data found for{" "}
+            <strong>
+              {bookTitle} {bookTitle2}
+            </strong>
+            .{" "}
           </p>
           <p className="mb-0">
             The book has <b>not started yet </b> or it had{" "}

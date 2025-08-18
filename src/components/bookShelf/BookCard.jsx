@@ -16,7 +16,6 @@ const BookCard = ({
   const navigate = useNavigate();
   // Move the useState hook here - now each BookCard has its own consistent hook
   const { hideEditDelete, hideSessions } = useHideBtns();
-
   return (
     <div key={book.id} className="col-md-3 col-sm-6">
       <div
@@ -27,7 +26,7 @@ const BookCard = ({
           <img
             src={
               book.coverBase64 ||
-              `covers/${book.id}.jpg` ||
+              `/covers/${book.id}.jpg` ||
               "/default-cover.jpg"
             }
             alt={book.title}

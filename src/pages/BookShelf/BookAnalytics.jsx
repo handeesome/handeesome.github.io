@@ -3,13 +3,12 @@ import { useEffect, useState } from "react";
 import Board from "../../components/Board";
 import BookTimeAnalytics from "../../components/bookShelf/BookTimeAnalytics"; // Updated import
 import books from "../../data/books/books.json";
-import { useTheme } from "../../ThemeContext";
+import BookInfoHeader from "../../components/bookShelf/BookInfoHeader";
 
 const BookAnalytics = () => {
   const { bookId } = useParams(); // Get book ID from URL
   const navigate = useNavigate();
   const [book, setBook] = useState(null);
-  const { theme } = useTheme();
 
   useEffect(() => {
     // Find the book by ID
@@ -33,51 +32,11 @@ const BookAnalytics = () => {
       </Board>
     );
   }
-  const darkBg = theme === "dark" ? "bg-dark" : "";
 
   return (
     <Board title={`Time Analytics - ${book.title}`}>
       {/* Book Info Header */}
-      <div className="row mb-4">
-        <div className="col-12">
-          <div className={`card ${darkBg}`}>
-            <div className="card-body">
-              <div className="row align-items-center">
-                <div className="col-md-2">
-                  <img
-                    src={`/covers/${book.id}.jpg`}
-                    alt={book.title}
-                    className="img-fluid rounded"
-                    style={{ maxHeight: "150px", objectFit: "cover" }}
-                  />
-                </div>
-                <div className="col-md-10">
-                  <h4 className="card-title">{book.title}</h4>
-                  {book.title2 && <h5 className="text-muted">{book.title2}</h5>}
-                  <p className="card-text">
-                    <strong>Author:</strong> {book.author}
-                    <br />
-                    <strong>Pages:</strong> {book["num pages"]}
-                    <br />
-                    <strong>Reading Status:</strong> {book.shelves}
-                  </p>
-                  <button
-                    className="btn btn-outline-secondary"
-                    onClick={() => {
-                      if (window.history.length > 1) {
-                        navigate(-1);
-                      } else {
-                        navigate("/book-shelf");
-                      }
-                    }}>
-                    ← Back to Book Shelf
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BookInfoHeader book={book} />
 
       {/* Analytics Chart */}
       <div className="row mb-4">

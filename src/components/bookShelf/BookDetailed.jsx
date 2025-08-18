@@ -85,6 +85,10 @@ const BookDetailed = ({
     navigate(`/book-shelf/book/${id}/analytics`);
   };
 
+  const handleViewNotesClick = () => {
+    navigate(`/book-shelf/book/${id}/notes`);
+  };
+
   const handleDeleteBook = (bookId) => {
     deleteBook(bookId);
   };
@@ -95,7 +99,7 @@ const BookDetailed = ({
         {/* BookDetailed Cover */}
         <div className="col-md-4 d-flex justify-content-center mt-4">
           <img
-            src={coverBase64 || `covers/${id}.jpg` || "/default-cover.jpg"}
+            src={coverBase64 || `/covers/${id}.jpg` || "/default-cover.jpg"}
             alt={title}
             className="fixed-img rounded-start"
             onError={(e) =>
@@ -212,19 +216,16 @@ const BookDetailed = ({
                         onClick={handleReadSessionsClick}>
                         Reading Sessions
                       </button>
-                      <button className="btn btn-outline-secondary btn-lg">
+                      <button
+                        className="btn btn-outline-secondary btn-lg"
+                        onClick={handleViewNotesClick}>
                         View Notes
                       </button>
                     </>
                   )}
                   {shelfArray.some(
                     (shelf) => shelf.toLowerCase() === "finished"
-                  ) && (
-                    <img
-                      src="./public/completed.png"
-                      style={{ width: "128px" }}
-                    />
-                  )}
+                  ) && <img src="/completed.png" style={{ width: "128px" }} />}
                 </div>
               </div>
             </div>

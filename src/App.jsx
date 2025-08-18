@@ -10,6 +10,7 @@ import {
   BookAnalytics,
   TimeTracker,
   FirebaseBookshelf,
+  BookNotes,
 } from "./pages/BookShelf";
 import Footer from "./components/Footer";
 import Header from "./components/header/Header";
@@ -29,6 +30,7 @@ function App() {
           path="/book-shelf/book/:bookId/analytics"
           element={<BookAnalytics />}
         />
+        <Route path="/book-shelf/book/:bookId/notes" element={<BookNotes />} />
         <Route path="/book-shelf/time-tracker" element={<TimeTracker />} />
       </Routes>
       <Footer />
