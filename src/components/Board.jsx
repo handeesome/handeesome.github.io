@@ -1,10 +1,13 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, forwardRef } from "react";
 import { useTheme } from "../ThemeContext";
 
-const Board = ({ title, titleRight, children }) => {
+const Board = forwardRef(({ title, titleRight, children }, ref) => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const introComponentRef = useRef(null);
   const { theme } = useTheme();
+
+  // Use the forwarded ref; if none provided, fallback to internal ref
+  const internalRef = useRef(null);
+  const boardRef = ref || internalRef;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +22,12 @@ const Board = ({ title, titleRight, children }) => {
   }, []);
 
   useEffect(() => {
-    const introComponent = introComponentRef.current;
+    const introComponent = boardRef.current;
     if (introComponent && scrollPosition < 205) {
       const distance = scrollPosition * 0.5;
       introComponent.style.transform = `translateY(-${distance}px)`;
     }
-  }, [scrollPosition]);
+  }, [scrollPosition, boardRef]);
   return (
     <div
       className="container "
@@ -33,7 +36,7 @@ const Board = ({ title, titleRight, children }) => {
         top: "-80px",
         position: "relative",
       }}
-      ref={introComponentRef}>
+      ref={boardRef}>
       <div className="row justify-content-center">
         <div
           className="col-md-10 rounded shadow-lg"
@@ -55,6 +58,6 @@ const Board = ({ title, titleRight, children }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Board;

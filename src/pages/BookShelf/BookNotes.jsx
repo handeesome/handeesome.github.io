@@ -4,12 +4,14 @@ import BookQuote from "../../components/bookShelf/BookQuote";
 import { useParams, useNavigate } from "react-router-dom";
 import BookInfoHeader from "../../components/bookShelf/BookInfoHeader";
 import books from "../../data/books/books.json";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import ScrollToRef from "../../components/ScrollToRef";
 
 const BookNotes = () => {
   const { bookId } = useParams();
   const [book, setBook] = useState(null);
   const navigate = useNavigate();
+  const boardRef = useRef(null);
 
   const quotesEntry = bookQuotes[bookId];
   const bookTitle = quotesEntry
@@ -27,20 +29,21 @@ const BookNotes = () => {
       navigate("/book-shelf");
     }
   }, [bookId, navigate]);
+
   if (!book) {
     return (
-      <Board title="Loading Analytics...">
+      <Board title="Loading Notes..." ref={boardRef}>
         <div className="text-center py-5">
           <div className="spinner-border" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
+        <ScrollToRef scrollRef={boardRef} />
       </Board>
     );
   }
-  console.log(book);
   return (
-    <Board title={`NOTES FROM ${bookTitle}`}>
+    <Board title={`NOTES FROM ${bookTitle}`} ref={boardRef}>
       <BookInfoHeader book={book} />
       {quotes.length > 0 ? (
         quotes.map((note, index) => (
@@ -55,7 +58,7 @@ const BookNotes = () => {
               }}>
               {index + 1}
             </div>
-            (<BookQuote>{note}</BookQuote>)
+            <BookQuote>{note}</BookQuote>
           </div>
         ))
       ) : (
@@ -75,6 +78,7 @@ const BookNotes = () => {
           </div>
         </div>
       )}
+      <ScrollToRef scrollRef={boardRef} />
     </Board>
   );
 };

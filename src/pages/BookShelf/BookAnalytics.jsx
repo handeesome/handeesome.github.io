@@ -1,14 +1,16 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Board from "../../components/Board";
 import BookTimeAnalytics from "../../components/bookShelf/BookTimeAnalytics"; // Updated import
 import books from "../../data/books/books.json";
 import BookInfoHeader from "../../components/bookShelf/BookInfoHeader";
+import ScrollToRef from "../../components/ScrollToRef";
 
 const BookAnalytics = () => {
   const { bookId } = useParams(); // Get book ID from URL
   const navigate = useNavigate();
   const [book, setBook] = useState(null);
+  const boardRef = useRef(null);
 
   useEffect(() => {
     // Find the book by ID
@@ -23,18 +25,19 @@ const BookAnalytics = () => {
 
   if (!book) {
     return (
-      <Board title="Loading Analytics...">
+      <Board title="Loading Analytics..." ref={boardRef}>
         <div className="text-center py-5">
           <div className="spinner-border" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
+        <ScrollToRef scrollRef={boardRef} />
       </Board>
     );
   }
 
   return (
-    <Board title={`Time Analytics - ${book.title}`}>
+    <Board title={`Time Analytics - ${book.title}`} ref={boardRef}>
       {/* Book Info Header */}
       <BookInfoHeader book={book} />
 
@@ -48,6 +51,7 @@ const BookAnalytics = () => {
           />
         </div>
       </div>
+      <ScrollToRef scrollRef={boardRef} />
     </Board>
   );
 };
