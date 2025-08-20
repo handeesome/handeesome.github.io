@@ -13,7 +13,6 @@
     "title2": "战争与和平",
     "tags": [
       "fiction",
-      "history",
       "classics"
     ]
   },
@@ -46,7 +45,7 @@
     "date added": "2025/07/27",
     "title2": "重返美丽新世界",
     "tags": [
-      "philosophy",
+      "essays",
       "social-science"
     ]
   },
@@ -62,7 +61,7 @@
     "date read": "2025/08/18",
     "date added": "2025/07/27",
     "tags": [
-      "philosophy",
+      "essays",
       "social-science"
     ]
   },
@@ -77,12 +76,15 @@
     ],
     "date read": null,
     "date added": "2025/08/17",
-    "title2": "",
-    "tags": []
+    "title2": "麦田里的守望者",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "51502975",
-    "title": "外面是夏天",
+    "title": "바깥은 여름",
     "author": "Kim Ae-ran",
     "num pages": "208",
     "avg rating": "4.11",
@@ -91,8 +93,11 @@
     ],
     "date read": null,
     "date added": "2025/08/17",
-    "title2": "",
-    "tags": []
+    "title2": "外面是夏天",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "2165",
@@ -105,8 +110,11 @@
     ],
     "date read": null,
     "date added": "2025/08/16",
-    "title2": "",
-    "tags": []
+    "title2": "老人与海",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "54861804",
@@ -190,7 +198,8 @@
     "date added": "2025/08/15",
     "title2": "赎罪",
     "tags": [
-      "fiction"
+      "fiction",
+      "classics"
     ]
   },
   {
@@ -307,7 +316,8 @@
     "tags": [
       "fiction",
       "philosophy",
-      "classics"
+      "classics",
+      "satire"
     ]
   },
   {
@@ -322,7 +332,7 @@
     "date read": null,
     "date added": "2025/08/07",
     "tags": [
-      "philosophy",
+      "essays",
       "social-science"
     ]
   },
@@ -339,7 +349,8 @@
     "date added": "2025/08/03",
     "title2": "存在主义咖啡馆",
     "tags": [
-      "philosophy"
+      "philosophy",
+      "essays"
     ]
   },
   {
@@ -455,7 +466,8 @@
     "date added": "2025/07/27",
     "title2": "云图",
     "tags": [
-      "fiction"
+      "fiction",
+      "contemporary"
     ]
   },
   {
@@ -505,7 +517,8 @@
     "title2": "堂吉诃德",
     "tags": [
       "fiction",
-      "classics"
+      "classics",
+      "satire"
     ]
   },
   {
@@ -523,7 +536,8 @@
     "tags": [
       "fiction",
       "philosophy",
-      "classics"
+      "classics",
+      "satire"
     ]
   },
   {
@@ -539,7 +553,8 @@
     "date added": "2025/07/15",
     "title2": "挪威的森林",
     "tags": [
-      "fiction"
+      "fiction",
+      "contemporary"
     ]
   },
   {
@@ -557,7 +572,8 @@
     "tags": [
       "fiction",
       "philosophy",
-      "classics"
+      "classics",
+      "satire"
     ]
   },
   {
@@ -608,7 +624,8 @@
     "tags": [
       "fiction",
       "philosophy",
-      "classics"
+      "classics",
+      "satire"
     ]
   },
   {
@@ -623,7 +640,8 @@
     "date read": "2025/07/12",
     "date added": "2025/07/03",
     "tags": [
-      "fiction"
+      "fiction",
+      "contemporary"
     ]
   },
   {
@@ -689,7 +707,8 @@
     "date added": "2025/07/08",
     "tags": [
       "religion",
-      "philosophy"
+      "philosophy",
+      "essays"
     ]
   },
   {
@@ -706,7 +725,6 @@
     "tags": [
       "religion",
       "philosophy",
-      "history",
       "social-science"
     ]
   },
@@ -722,7 +740,7 @@
     "date read": null,
     "date added": "2025/07/07",
     "tags": [
-      "philosophy",
+      "essays",
       "social-science"
     ]
   },
@@ -738,8 +756,8 @@
     "date read": null,
     "date added": "2025/07/07",
     "tags": [
+      "essays",
       "economics",
-      "philosophy",
       "social-science"
     ]
   },
@@ -932,7 +950,8 @@
     "tags": [
       "fiction",
       "philosophy",
-      "classics"
+      "classics",
+      "satire"
     ]
   },
   {
@@ -1059,7 +1078,7 @@
     "date read": null,
     "date added": "2025/05/04",
     "tags": [
-      "philosophy",
+      "essays",
       "social-science"
     ]
   },
