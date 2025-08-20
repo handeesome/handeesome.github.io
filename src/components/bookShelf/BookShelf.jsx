@@ -92,6 +92,25 @@ const BookShelf = ({
     });
   }, [selectedTags, filteredShelfBooks]);
 
+  const tagCounts = useMemo(() => {
+    const counts = new Map();
+
+    allTags.forEach((tag) => {
+      const count = filteredBooks.filter(
+        (book) => book.tags && book.tags.includes(tag)
+      ).length;
+      counts.set(tag, count);
+    });
+
+    return counts;
+  }, [filteredBooks, allTags]);
+
+  useEffect(() => {
+    if (selectedShelf) {
+      setSelectedTags(new Set());
+    }
+  }, [selectedShelf]);
+
   useEffect(() => {
     const params = new URLSearchParams();
 
@@ -252,24 +271,23 @@ const BookShelf = ({
             }`}>
             <strong>Filter by tags:</strong>
             {allTags.map((tag) => {
-              const tagBooks = filteredShelfBooks || books;
-              const tagCount = tagBooks.filter(
-                (book) => book.tags && book.tags.includes(tag)
-              ).length;
+              const tagCount = tagCounts.get(tag);
 
               return (
-                <button
-                  key={tag}
-                  className={`btn btn-sm book-tag ${
-                    selectedTags.has(tag) ? "selected" : ""
-                  }`}
-                  style={{
-                    "--tag-color": getTagColor(tag),
-                    "--tag-color-rgb": hexToRgb(getTagColor(tag)),
-                  }}
-                  onClick={() => handleTagClick(tag)}>
-                  {tag} ({tagCount})
-                </button>
+                tagCount > 0 && (
+                  <button
+                    key={tag}
+                    className={`btn btn-sm book-tag ${
+                      selectedTags.has(tag) ? "selected" : ""
+                    }`}
+                    style={{
+                      "--tag-color": getTagColor(tag),
+                      "--tag-color-rgb": hexToRgb(getTagColor(tag)),
+                    }}
+                    onClick={() => handleTagClick(tag)}>
+                    {tag} ({tagCount})
+                  </button>
+                )
               );
             })}
           </div>
