@@ -306,12 +306,15 @@ function aggregateDataByDay(rawData, selectedDate) {
   return { result, books: Array.from(books), sessionDetails };
 }
 
-const CustomTooltip = ({ active, payload, sessionDetails }) => {
+const CustomTooltip = ({ active, payload, sessionDetails, theme }) => {
   if (active && payload && payload.length) {
     const realMinute = payload[0]?.payload?.realMinute;
 
     return (
-      <div className="bg-white p-3 border rounded shadow-lg">
+      <div
+        className={`p-3 border rounded shadow-lg ${
+          theme === "dark" ? "bg-dark" : "bg-white"
+        }`}>
         {payload.map((entry, index) => {
           if (entry.value && entry.value > 0) {
             const session = sessionDetails[realMinute]?.[entry.dataKey];
@@ -579,15 +582,18 @@ const TogglChart = () => {
                   />
 
                   <Tooltip
-                    content={<CustomTooltip sessionDetails={sessionDetails} />}
+                    content={
+                      <CustomTooltip
+                        sessionDetails={sessionDetails}
+                        theme={theme}
+                      />
+                    }
                   />
 
                   <Legend
-                    verticalAlign="top"
+                    verticalAlign={window.innerWidth < 768 ? "bottom" : "top"}
                     height={50}
-                    wrapperStyle={{
-                      paddingBottom: "20px",
-                    }}
+                    wrapperStyle={{ paddingBottom: "10px" }}
                   />
 
                   {(() => {
