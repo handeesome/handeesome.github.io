@@ -62,6 +62,13 @@ def get_last_date_from_file():
 def make_key(e):
     return (e.get('id'), e.get('description', ''), e.get('start'))
 
+def filter_entry(entry):
+    return {
+        "description": entry.get("description", ""),
+        "start": entry.get("start"),
+        "end": entry.get("end"),
+        "dur": entry.get("dur")
+    }
 def main():
     start = get_last_date_from_file()
     end = datetime.utcnow()
@@ -86,7 +93,7 @@ def main():
     for e in existing + processed_entries:
         key = make_key(e)
         # If this composite key exists, this entry will overwrite it (merge)
-        final_entries[key] = e
+        final_entries[key] = filter_entry(e)
 
     with open(JSON_PATH, 'w') as f:
         json.dump(list(final_entries.values()), f, indent=2, ensure_ascii=False)
