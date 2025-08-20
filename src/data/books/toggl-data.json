@@ -19,9 +19,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042313136,
@@ -43,9 +41,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042315337,
@@ -67,9 +63,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042378083,
@@ -91,9 +85,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042421740,
@@ -115,9 +107,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4042914556,
@@ -139,9 +129,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4043101958,
@@ -163,9 +151,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4043101959,
@@ -187,9 +173,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4043337540,
@@ -211,9 +195,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044070320,
@@ -235,9 +217,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044131180,
@@ -259,9 +239,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044208455,
@@ -283,9 +261,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044282483,
@@ -307,9 +283,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4044296210,
@@ -331,9 +305,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4045162267,
@@ -355,9 +327,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4045866083,
@@ -379,9 +349,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4045975279,
@@ -403,9 +371,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4046093388,
@@ -427,9 +393,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4046187941,
@@ -451,9 +415,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4046554258,
@@ -475,9 +437,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4046554258,
@@ -499,9 +459,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4048073589,
@@ -523,9 +481,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4048075396,
@@ -547,9 +503,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4048613107,
@@ -571,9 +525,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4048625461,
@@ -595,9 +547,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4056093831,
@@ -619,9 +569,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4056366809,
@@ -643,9 +591,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4056499678,
@@ -667,9 +613,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4056640814,
@@ -691,9 +635,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4056640814,
@@ -715,9 +657,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4056726535,
@@ -739,9 +679,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057187027,
@@ -763,9 +701,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057312447,
@@ -787,9 +723,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057325416,
@@ -811,9 +745,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057440030,
@@ -835,9 +767,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057454001,
@@ -859,9 +789,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057465373,
@@ -883,9 +811,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057491643,
@@ -907,9 +833,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057497371,
@@ -931,9 +855,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057501415,
@@ -955,9 +877,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4057624843,
@@ -979,9 +899,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4058033816,
@@ -1003,9 +921,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4058180845,
@@ -1027,9 +943,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4058323463,
@@ -1051,9 +965,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4058646690,
@@ -1075,9 +987,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4059801172,
@@ -1099,9 +1009,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4059900071,
@@ -1123,9 +1031,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4060004400,
@@ -1147,16 +1053,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4060246144,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "Basic Economics: A Citizen’s Guide to the Economy",
+    "description": "Basic Economics: A Citizen's Guide to the Economy",
     "start": "2025-08-19T19:49:55+08:00",
     "end": "2025-08-19T20:44:29+08:00",
     "updated": "2025-08-19T20:44:30+08:00",
@@ -1171,9 +1075,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4060464580,
@@ -1195,9 +1097,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4061516111,
@@ -1219,9 +1119,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4061663670,
@@ -1243,16 +1141,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4061872806,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "Basic Economics: A Citizen’s Guide to the Economy",
+    "description": "Basic Economics: A Citizen's Guide to the Economy",
     "start": "2025-08-20T19:13:02+08:00",
     "end": "2025-08-20T19:41:53+08:00",
     "updated": "2025-08-20T19:41:54+08:00",
@@ -1267,16 +1163,14 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4061954148,
     "pid": 212948757,
     "tid": null,
     "uid": 12321294,
-    "description": "Basic Economics: A Citizen’s Guide to the Economy",
+    "description": "Basic Economics: A Citizen's Guide to the Economy",
     "start": "2025-08-20T20:10:43+08:00",
     "end": "2025-08-20T21:00:40+08:00",
     "updated": "2025-08-20T21:00:40+08:00",
@@ -1291,9 +1185,7 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   },
   {
     "id": 4062082369,
@@ -1315,8 +1207,6 @@
     "billable": 0,
     "is_billable": false,
     "cur": "USD",
-    "tags": [
-      "Books"
-    ]
+    "tags": ["Books"]
   }
 ]
