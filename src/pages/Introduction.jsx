@@ -1,17 +1,24 @@
 import Board from "../components/Board";
+import { useTheme } from "../ThemeContext";
 
-const Item = ({ title, description }) => (
-  <div className="card mb-3 custom-card">
-    <a href="/projects/HelloWorld" className="card-body">
-      <h5 className="card-title">{title}</h5>
-      <p className="card-text">{description}</p>
-    </a>
-    <div className="card-footer bg-transparent">
-      <time>2024-2-15 </time>
-      <a className="tag">hello world</a>
+const Item = ({ title, description }) => {
+  const { theme } = useTheme();
+  return (
+    <div
+      className={`card mb-3 custom-card ${
+        theme === "dark" ? "bg-dark text-white" : "bg-light text-dark"
+      }`}>
+      <a href="/projects/HelloWorld" className="card-body">
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text">{description}</p>
+      </a>
+      <div className="card-footer">
+        <time>2024-2-15 </time>
+        <a className="tag">hello world</a>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 const Introduction = () => {
   const items = [
     {
@@ -20,7 +27,7 @@ const Introduction = () => {
     },
   ];
   return (
-    <Board>
+    <Board title="Introduction">
       <div className="row justify-content-center" id="introduction">
         <div className="col-md-10 mt-5">
           {/* Map over the array of items and render individual Item introComponents */}

@@ -1,17 +1,7 @@
-#introduction .card,
-#introduction .card-footer {
-  background-color: #252d38;
-  color: #c4c6c9;
-  border: 0;
-}
-#introduction .card-title {
-  color: white;
-}
-
 #introduction a {
   text-decoration: none;
 }
-.tag {
+.bg-dark .tag {
   color: #c4c6c9;
 }
 
