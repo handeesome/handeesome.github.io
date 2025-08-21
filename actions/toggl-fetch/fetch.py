@@ -64,6 +64,7 @@ def make_key(e):
 
 def filter_entry(entry):
     return {
+        "id": entry.get("id"),
         "description": entry.get("description", ""),
         "start": entry.get("start"),
         "end": entry.get("end"),
