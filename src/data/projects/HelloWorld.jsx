@@ -8,9 +8,7 @@ const HelloWorld = () => {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
-    fetch(content)
-      .then((response) => response.text())
-      .then((text) => setMarkdown(text));
+    setMarkdown(content);
   }, []); // empty dependency array: run once on mount
 
   return <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>;

@@ -6,7 +6,6 @@ const GoToTopButton = () => {
 
   // Show button when scrolled down 200px
   useEffect(() => {
-    console.log(window.scrollY);
     const handleScroll = () => {
       setVisible(window.scrollY > 200);
     };
