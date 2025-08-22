@@ -175,8 +175,7 @@ const FirebaseBookshelf = () => {
       setAllShelves([...new Set(userBooks.flatMap((book) => book.shelves))]);
 
       // Fetch tag colors - create user ID from the email parameter passed to this function
-      const userId = userEmail.replace(/[^a-zA-Z0-9]/g, "_");
-      const userDocRef = doc(firestore, "books", userId);
+      const userDocRef = doc(firestore, "userdata", userEmail);
       const userDocSnap = await getDoc(userDocRef);
 
       if (userDocSnap.exists()) {
@@ -222,15 +221,13 @@ const FirebaseBookshelf = () => {
 
   const addTagColor = async (newTagName, newTagColor) => {
     if (!user || !newTagName) return false;
-
-    const userDocRef = doc(firestore, "books", getCurrentUserId());
-
+    const userDocRef = doc(firestore, "userdata", getCurrentUserEmail());
     try {
       await setDoc(
         userDocRef,
         {
           tagColors: { [newTagName]: newTagColor },
-          userId: getCurrentUserId(),
+          userEmail: getCurrentUserEmail(),
         },
         { merge: true }
       );
@@ -249,12 +246,12 @@ const FirebaseBookshelf = () => {
   const updateTagColor = async (tagName, newColor) => {
     if (!user || !tagName) return false;
 
-    const userDocRef = doc(firestore, "books", getCurrentUserId());
+    const userDocRef = doc(firestore, "books", getCurrentUserEmail());
 
     try {
       await updateDoc(userDocRef, {
         [`tagColors.${tagName}`]: newColor,
-        userId: getCurrentUserId(),
+        userEmail: getCurrentUserEmail(),
       });
 
       setTagColors((prev) => ({ ...prev, [tagName]: newColor }));
@@ -278,7 +275,7 @@ const FirebaseBookshelf = () => {
       return false;
     }
 
-    const userDocRef = doc(firestore, "books", getCurrentUserId());
+    const userDocRef = doc(firestore, "books", getCurrentUserEmail());
 
     try {
       await updateDoc(userDocRef, {
