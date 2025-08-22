@@ -54,3 +54,7 @@ html.light .text-muted {
   background-position: right 0.75rem center;
   background-size: 16px 12px;
 }
+
+a {
+  cursor: pointer;
+}

@@ -1,13 +1,22 @@
-import Board from "../components/Board";
-
+import Board from "../../components/Board";
+import fm from "front-matter";
+import { useNavigate } from "react-router-dom";
 const Items = () => {
-  const modules = import.meta.glob("../data/projects/*.md", { eager: true });
-  const projects = Object.entries(modules).map(([path, module]) => {
-    const slug = path.replace("../data/projects/", "").replace(".md", "");
+  const navigate = useNavigate();
+  const modules = import.meta.glob("../../data/projects/*.md", {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  });
+
+  const projects = Object.entries(modules).map(([path, raw]) => {
+    const { attributes, body } = fm(raw);
+    const slug = path.replace("../../data/projects/", "").replace(".md", "");
     return {
-      title: module.frontmatter?.title || slug,
-      date: module.frontmatter?.date,
-      link: `/projects/${slug}`,
+      title: attributes.title || slug,
+      date: attributes.date
+        ? new Date(attributes.date).toLocaleDateString()
+        : "",
       slug,
     };
   });
@@ -19,18 +28,22 @@ const Items = () => {
     </div>
   );
 
+  const handleClick = (slug) => {
+    navigate(`./${slug}`);
+  };
+
   return (
     <div className="col-md-10 list-group">
       <div className="row">
         <div className="col-md-3 text-center">Last Updated</div>
         <div className="col-md-3 text-center">Title</div>
       </div>
-      {projects.map(({ title, date, link, slug }, index) => {
+      {projects.map(({ title, date, slug }) => {
         return (
           // Added missing return
           <a
             key={slug} // Better to use slug than index
-            href={link} // Added the link functionality
+            onClick={() => handleClick(slug)}
             className="pt-2 pb-2 list-group-item list-group-item-action">
             <Item title={title} date={date} />
           </a>

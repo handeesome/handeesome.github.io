@@ -3,8 +3,9 @@ import "./App.css";
 import "./styles/index.js";
 
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
+
 import StudyNotes from "./pages/StudyNotes";
+import { Projects, ProjectPage } from "./pages/Projects";
 import {
   MyBookShelf,
   BookAnalytics,
@@ -23,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
-
+        <Route path="/projects/:slug" element={<ProjectPage />} />
         <Route path="/study-notes" element={<StudyNotes />} />
         <Route path="/book-shelf" element={<MyBookShelf />} />
         <Route path="/book-shelf2" element={<FirebaseBookshelf />} />

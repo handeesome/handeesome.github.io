@@ -373,7 +373,7 @@ const TogglChart = () => {
   const [formatter, setFormatter] = useState(() => (m) => m);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -461,9 +461,9 @@ const TogglChart = () => {
           className="btn btn-outline-info"
           onClick={() => {
             if (window.history.length > 1) {
-              naviagte(-1);
+              navigate(-1);
             } else {
-              naviagte("/book-shelf");
+              navigate("/book-shelf");
             }
           }}>
           ← Back to Book Shelf
