@@ -2,7 +2,7 @@ name: Update Toggl Data
 
 on:
   schedule:
-    - cron: "0 6 * * *" # Every Sunday at 03:00 UTC
+    - cron: "0 6 * * *"
   workflow_dispatch: # Allow manual trigger
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
