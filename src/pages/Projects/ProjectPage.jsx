@@ -2,23 +2,37 @@ import Board from "../../components/Board";
 import { useParams, useNavigate } from "react-router-dom";
 import fm from "front-matter";
 import ReactMarkdown from "react-markdown";
+import { useState } from "react";
 
 const ProjectPage = ({}) => {
   const navigate = useNavigate();
+  const { slug } = useParams();
+  const [content, setContent] = useState(null);
+
   const modules = import.meta.glob("../../data/projects/*.md", {
-    eager: true,
     query: "?raw",
     import: "default",
   });
 
-  const { slug } = useParams();
-  const raw = modules[`../../data/projects/${slug}.md`];
-  if (!raw) return <div>Project not found</div>;
+  useEffect(() => {
+    const loader = modules[`../../data/projects/${slug}.md`];
+    if (!loader) {
+      setContent(null);
+      return;
+    }
 
-  const { attributes, body } = fm(raw);
+    // Dynamically import the requested MD file
+    loader().then((raw) => {
+      const { attributes, body } = fm(raw);
+      setContent({ attributes, body });
+    });
+  }, [slug]);
+
+  if (!content) return <div>Loading or project not found...</div>;
+
   return (
     <Board
-      title={attributes.title}
+      title={content.attributes.title}
       titleRight={
         <button
           className="btn btn-outline-info"
@@ -32,7 +46,7 @@ const ProjectPage = ({}) => {
           ← Go Back
         </button>
       }>
-      <ReactMarkdown>{body}</ReactMarkdown>
+      <ReactMarkdown>{content.body}</ReactMarkdown>
     </Board>
   );
 };
