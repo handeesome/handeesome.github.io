@@ -27,3 +27,18 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
+
+      - name: Trigger GitHub Pages Build
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              await github.rest.repos.requestPagesBuild({
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+              console.log('Successfully triggered GitHub Pages build');
+            } catch (error) {
+              console.log('Error triggering Pages build:', error.message);
+            }
