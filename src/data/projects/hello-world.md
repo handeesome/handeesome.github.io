@@ -1,7 +1,8 @@
 ---
 title: Hello World
 date: 2025-08-21
-lang: en
+tags: [hello-world, first]
+description: This contains the introduction of this website and the TODO list the site owner tries to improve and add.
 ---
 
 # Hello, World!

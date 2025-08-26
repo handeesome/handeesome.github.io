@@ -2,7 +2,7 @@ name: Update Toggl Data
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 9 * * *"
   workflow_dispatch: # Allow manual trigger
 
 jobs:

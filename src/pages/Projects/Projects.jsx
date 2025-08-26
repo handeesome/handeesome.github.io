@@ -1,6 +1,7 @@
 import Board from "../../components/Board";
 import fm from "front-matter";
 import { useNavigate } from "react-router-dom";
+import ArticleCard from "../../components/ArticleCard";
 const Items = () => {
   const navigate = useNavigate();
   const modules = import.meta.glob("../../data/projects/*.md", {
@@ -14,9 +15,11 @@ const Items = () => {
     const slug = path.replace("../../data/projects/", "").replace(".md", "");
     return {
       title: attributes.title || slug,
+      description: attributes.description || "",
       date: attributes.date
         ? new Date(attributes.date).toLocaleDateString()
         : "",
+      tags: attributes.tags || [],
       slug,
     };
   });
@@ -33,22 +36,22 @@ const Items = () => {
   };
 
   return (
-    <div className="col-md-10 list-group">
-      <div className="row">
-        <div className="col-md-3 text-center">Last Updated</div>
-        <div className="col-md-3 text-center">Title</div>
+    <div className="row justify-content-center">
+      <div className="col-md-10 list-group">
+        {projects.map(({ title, description, date, tags, slug }) => {
+          return (
+            <div key={slug}>
+              <ArticleCard
+                title={title}
+                description={description}
+                date={date}
+                tags={tags}
+                onClick={() => handleClick(slug)}
+              />
+            </div>
+          );
+        })}
       </div>
-      {projects.map(({ title, date, slug }) => {
-        return (
-          // Added missing return
-          <a
-            key={slug} // Better to use slug than index
-            onClick={() => handleClick(slug)}
-            className="pt-2 pb-2 list-group-item list-group-item-action">
-            <Item title={title} date={date} />
-          </a>
-        );
-      })}
     </div>
   );
 };

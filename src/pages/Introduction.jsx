@@ -8,7 +8,7 @@ const Item = ({ title, description }) => {
       className={`card mb-3 custom-card ${
         theme === "dark" ? "bg-dark text-white" : "bg-light text-dark"
       }`}>
-      <a href="/projects/HelloWorld" className="card-body">
+      <a href="/projects/hello-world" className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{description}</p>
       </a>

@@ -2,7 +2,7 @@ import Board from "../../components/Board";
 import { useParams, useNavigate } from "react-router-dom";
 import fm from "front-matter";
 import ReactMarkdown from "react-markdown";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ProjectPage = ({}) => {
   const navigate = useNavigate();

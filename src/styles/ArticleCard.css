@@ -1,0 +1,13 @@
+.article-card a {
+  text-decoration: none;
+}
+
+.article-card .tag {
+  margin-right: 0.5rem;
+}
+
+.article-card .card-title:hover,
+.article-card .card-text:hover,
+.article-card .tag:hover {
+  color: #30a9de !important;
+}
