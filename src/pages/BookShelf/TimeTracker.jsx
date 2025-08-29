@@ -473,7 +473,7 @@ const TogglChart = () => {
         <div className="card-body p-4">
           <div className="mb-4 d-flex justify-content-center">
             <WeekStrip
-              defaultDate={new Date()}
+              defaultDate={new Date(Date.now() - 24 * 60 * 60 * 1000)}
               onDateSelect={handleDateChange}
               readingData={readingData}
             />

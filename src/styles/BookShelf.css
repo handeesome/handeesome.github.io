@@ -189,7 +189,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.table th {
+.bg-dark .table th {
   background-color: #343a40 !important;
   color: white;
   font-weight: 600;

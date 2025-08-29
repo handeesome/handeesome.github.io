@@ -14,7 +14,7 @@ import {
 import togglData from "../../data/books/toggl-data.json";
 import { useTheme } from "../../ThemeContext";
 
-const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
+const BookTimeAnalytics = ({ bookTitle, bookTitle2 }) => {
   const [rawData, setRawData] = useState([]);
   const [dailyData, setDailyData] = useState([]);
   const [sessionData, setSessionData] = useState([]);
@@ -71,6 +71,25 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
         }),
       });
     });
+
+    // Fill in missing dates
+    const dates = Object.keys(dailyAgg).map((date) => new Date(date));
+    const minDate = new Date(Math.min(...dates));
+    const maxDate = new Date(Math.max(...dates));
+
+    // Create entries for all dates between min and max
+    const currentDate = new Date(minDate);
+    while (currentDate <= maxDate) {
+      const dateString = currentDate.toDateString();
+      if (!dailyAgg[dateString]) {
+        dailyAgg[dateString] = {
+          date: dateString,
+          totalMinutes: 0,
+          sessionCount: 0,
+        };
+      }
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
 
     // Convert to arrays and sort
     const dailyArray = Object.values(dailyAgg)
@@ -268,7 +287,7 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2, bookId }) => {
                 theme === "dark" ? "table-dark" : ""
               }`}>
               <thead>
-                <tr>
+                <tr className="text-white">
                   <th>Date</th>
                   <th>Start Time</th>
                   <th>Duration</th>
