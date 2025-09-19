@@ -5,6 +5,7 @@ import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { GridView, DetailedView, TableView } from "./BookShelfLayouts";
 import { useTheme } from "../../ThemeContext";
+import GoBackBtn from "../GoBackButton";
 
 const BookShelf = ({
   books,
@@ -182,6 +183,8 @@ const BookShelf = ({
       title={displayTitle}
       titleRight={
         <div className="d-flex gap-2 align-items-center">
+          <GoBackBtn defaultDest="/book-shelf" text="Back to Book Shelf" />
+
           {titleRight}
           {!hideTimeTracker && (
             <button

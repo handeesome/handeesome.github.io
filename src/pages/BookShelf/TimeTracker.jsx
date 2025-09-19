@@ -15,8 +15,8 @@ import {
   ReferenceLine,
 } from "recharts";
 import togglData from "../../data/books/toggl-data.json";
-import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
+import GoBackBtn from "../../components/GoBackButton";
 
 const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
   const [middleDate, setMiddleDate] = useState(new Date(defaultDate));
@@ -373,7 +373,6 @@ const TogglChart = () => {
   const [formatter, setFormatter] = useState(() => (m) => m);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -457,17 +456,7 @@ const TogglChart = () => {
     <Board
       title="Time Tracker"
       titleRight={
-        <button
-          className="btn btn-outline-info"
-          onClick={() => {
-            if (window.history.length > 1) {
-              navigate(-1);
-            } else {
-              navigate("/book-shelf");
-            }
-          }}>
-          ← Back to Book Shelf
-        </button>
+        <GoBackBtn defaultDest="/book-shelf" text="Back to Book Shelf" />
       }>
       <div className={`shadow-lg border-0 mb-4 ${cardDark}`}>
         <div className="card-body p-4">

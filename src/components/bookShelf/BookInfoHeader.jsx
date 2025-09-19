@@ -1,8 +1,7 @@
 import { useTheme } from "../../ThemeContext";
-import { useNavigate } from "react-router-dom";
+import GoBackBtn from "../GoBackButton";
 const BookInfoHeader = ({ book }) => {
   const { theme } = useTheme();
-  const navigate = useNavigate();
   return (
     <div className="row mb-4">
       <div className="col-12">
@@ -27,17 +26,10 @@ const BookInfoHeader = ({ book }) => {
                   <br />
                   <strong>Reading Status:</strong> {book.shelves}
                 </p>
-                <button
-                  className="btn btn-outline-secondary"
-                  onClick={() => {
-                    if (window.history.length > 1) {
-                      navigate(-1);
-                    } else {
-                      navigate("/book-shelf");
-                    }
-                  }}>
-                  ← Back to Book Shelf
-                </button>
+                <GoBackBtn
+                  defaultDest="/book-shelf"
+                  text="Back to Book Shelf"
+                />
               </div>
             </div>
           </div>
