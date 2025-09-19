@@ -1,6 +1,7 @@
 import ProfilePictureUpload from "../ProfilePictureUpload";
 import Modal from "../ui/Modal";
 import { useState } from "react";
+import { useTheme } from "../../ThemeContext";
 const ProfileFormModal = ({
   isOpen,
   onClose,
@@ -16,6 +17,7 @@ const ProfileFormModal = ({
       "This is a book shelf containing various books and collections.",
     profilePictureBase64: profileData.avatarBase64 || "",
     cropData: null,
+    isPublic: profileData.isPublic || true,
   });
 
   const handleSubmit = async (e) => {
@@ -42,6 +44,8 @@ const ProfileFormModal = ({
       "Update Profile"
     </button>
   );
+  const { theme } = useTheme();
+  const darkBg = theme === "dark" ? "bg-dark text-light" : "";
 
   return (
     <Modal
@@ -63,7 +67,7 @@ const ProfileFormModal = ({
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={`form-control ${darkBg}`}
                   id="userName"
                   value={formData.userName || ""}
                   onChange={(e) =>
@@ -78,7 +82,7 @@ const ProfileFormModal = ({
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={`form-control ${darkBg}`}
                   id="shelfName"
                   value={formData.shelfName || ""}
                   onChange={(e) =>
@@ -93,7 +97,7 @@ const ProfileFormModal = ({
                   <strong>Description:</strong>
                 </label>
                 <textarea
-                  className="form-control"
+                  className={`form-control ${darkBg}`}
                   id="description"
                   rows="3"
                   value={formData.shelfDescription || ""}

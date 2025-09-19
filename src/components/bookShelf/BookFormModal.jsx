@@ -7,6 +7,7 @@ import FormDataTags from "./FormDataTags";
 import FormRow from "./FormRow";
 import { Editor } from "@tinymce/tinymce-react";
 import Modal from "../ui/Modal";
+import { useTheme } from "../../ThemeContext";
 const getInitialFormData = () => ({
   title: "",
   title2: "",
@@ -40,6 +41,9 @@ const BookFormModal = ({
   const [newShelf, setNewShelf] = useState("");
   const [showTagManagementModal, setShowTagManagementModal] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
+
+  const { theme } = useTheme();
+  const darkMode = theme === "dark" ? true : false;
 
   const allTags = Object.keys(tagColors);
 
@@ -303,6 +307,9 @@ const BookFormModal = ({
                 height: 300,
                 width: "100%",
                 menubar: false,
+                skin: darkMode ? "oxide-dark" : "oxide",
+                content_css: darkMode ? "dark" : "default",
+
                 placeholder:
                   "You can add the Book's Introduction or Your thoughts about this book...(optional)",
                 plugins: [
