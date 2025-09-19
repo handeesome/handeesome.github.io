@@ -15,7 +15,7 @@ const BookRow = ({
   const getTagColor = paramGetTagColor || defaultGetTagColor;
   const navigate = useNavigate();
 
-  const { hideEditDelete, hideSessions } = useHideBtns();
+  const { hideEditDelete, hideSessions, hideActions } = useHideBtns();
   return (
     <tr key={book.id} className="book-row">
       <td>
@@ -96,40 +96,42 @@ const BookRow = ({
           </div>
         </div>
       </td>
-      <td>
-        <div className="btn-group-vertical btn-group-sm" role="group">
-          {!hideEditDelete && (
-            <>
-              <button
-                className="btn btn-outline-warning btn-sm mb-1"
-                onClick={() => onEditBook && onEditBook(book.id)}>
-                ✏️ Edit
-              </button>
-              <button
-                className="btn btn-outline-danger btn-sm mb-1"
-                onClick={() => deleteBook && deleteBook(book.id)}>
-                🗑️ Delete
-              </button>
-            </>
-          )}
-          {!hideSessions && (
-            <>
-              <button
-                className="btn btn-outline-info btn-sm mb-2"
-                onClick={() =>
-                  navigate(`/book-shelf/book/${book.id}/analytics`)
-                }>
-                📊 Sessions
-              </button>
-              <button
-                className="btn btn-outline-secondary btn-sm"
-                onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}>
-                📝 Notes
-              </button>
-            </>
-          )}
-        </div>
-      </td>
+      {!hideActions && (
+        <td>
+          <div className="btn-group-vertical btn-group-sm" role="group">
+            {!hideEditDelete && (
+              <>
+                <button
+                  className="btn btn-outline-warning btn-sm mb-1"
+                  onClick={() => onEditBook && onEditBook(book.id)}>
+                  ✏️ Edit
+                </button>
+                <button
+                  className="btn btn-outline-danger btn-sm mb-1"
+                  onClick={() => deleteBook && deleteBook(book.id)}>
+                  🗑️ Delete
+                </button>
+              </>
+            )}
+            {!hideSessions && (
+              <>
+                <button
+                  className="btn btn-outline-info btn-sm mb-2"
+                  onClick={() =>
+                    navigate(`/book-shelf/book/${book.id}/analytics`)
+                  }>
+                  📊 Sessions
+                </button>
+                <button
+                  className="btn btn-outline-secondary btn-sm"
+                  onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}>
+                  📝 Notes
+                </button>
+              </>
+            )}
+          </div>
+        </td>
+      )}
     </tr>
   );
 };

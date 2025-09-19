@@ -3,6 +3,7 @@ import { useTheme } from "../../ThemeContext";
 import BookDetailed from "./BookDetailed";
 import BookCard from "./BookCard";
 import BookRow from "./BookRow";
+import { useHideBtns } from "./HideBtnsContext";
 
 // Layout 1: Grid View - Simple covers with basic info
 export const GridView = ({
@@ -89,6 +90,7 @@ export const TableView = ({
   onEditBook,
 }) => {
   const { theme } = useTheme();
+  const { hideActions } = useHideBtns();
 
   return (
     <div className="table-responsive">
@@ -103,8 +105,8 @@ export const TableView = ({
             <th style={{ width: "8%" }}>Pages</th>
             <th style={{ width: "12%" }}>Shelf</th>
             <th style={{ width: "18%" }}>Tags</th>
-            <th style={{ width: "15%" }}>Dates</th>
-            <th style={{ width: "10%" }}>Actions</th>
+            <th style={{ width: hideActions ? "25%" : "15%" }}>Dates</th>
+            {!hideActions && <th style={{ width: "10%" }}>Actions</th>}
           </tr>
         </thead>
         <tbody>

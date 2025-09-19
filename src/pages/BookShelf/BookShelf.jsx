@@ -54,14 +54,18 @@ const BookShelf = () => {
 
   return (
     <HideBtnsContext.Provider
-      value={{ hideEditDelete: true, hideSessions: true }}>
+      value={{
+        hideEditDelete: true,
+        hideSessions: true,
+        hideActions: true,
+        hideTimeTracker: true,
+      }}>
       <DefaultBookShelf
         books={getConvertedBooks()}
         title={`${loading || bookshelfLoading ? "Loading..." : ""}${
           user?.shelfName || `${userName}'s Book Shelf`
         }`}
         paramGetTagColor={getTagColor}
-        hideTimeTracker={true}
       />
     </HideBtnsContext.Provider>
   );

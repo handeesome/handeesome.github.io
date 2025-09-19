@@ -6,6 +6,7 @@ import { hexToRgb } from "../../utils/HexToRBG";
 import { GridView, DetailedView, TableView } from "./BookShelfLayouts";
 import { useTheme } from "../../ThemeContext";
 import GoBackBtn from "../GoBackButton";
+import { useHideBtns } from "./HideBtnsContext";
 
 const BookShelf = ({
   books,
@@ -14,12 +15,12 @@ const BookShelf = ({
   titleRight = null,
   deleteBook,
   onEditBook,
-  hideTimeTracker,
 }) => {
   const getTagColor = paramGetTagColor || defaultGetTagColor;
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const { theme } = useTheme();
+  const { hideTimeTracker } = useHideBtns();
 
   // Add layout state
   const [layout, setLayout] = useState(searchParams.get("layout") || "grid");
@@ -188,7 +189,7 @@ const BookShelf = ({
           {titleRight}
           {!hideTimeTracker && (
             <button
-              className="btn btn-outline-info"
+              className="btn btn-warning"
               onClick={handleTimeTrackerClick}>
               📈 View Time Tracker →
             </button>
