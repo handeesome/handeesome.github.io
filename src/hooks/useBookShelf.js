@@ -27,6 +27,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     shelfName: "",
     shelfDescription: "",
     avatarBase64: "",
+    isPublic: true,
   });
 
   // Update shelves when books change
@@ -122,6 +123,8 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
             shelfName: userData.shelfName || "",
             shelfDescription: userData.shelfDescription || "",
             avatarBase64: userData.avatarBase64 || "",
+            isPublic:
+              userData.isPublic !== undefined ? userData.isPublic : true,
           });
         } else {
           setTagColors({});
@@ -130,6 +133,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
             shelfName: "",
             shelfDescription: "",
             avatarBase64: "",
+            isPublic: true,
           });
         }
       } catch (error) {
@@ -141,6 +145,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
           shelfName: "",
           shelfDescription: "",
           avatarBase64: "",
+          isPublic: true,
         });
       } finally {
         setLoading(false);
@@ -325,6 +330,10 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         shelfName: shelfName || "",
         shelfDescription: shelfDescription || "",
         avatarBase64: avatarBase64 || "",
+        isPublic:
+          profileUpdates.isPublic !== undefined
+            ? profileUpdates.isPublic
+            : true,
       });
     },
     [updateProfileData]
@@ -350,6 +359,8 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
             shelfName: userData.shelfName || "",
             shelfDescription: userData.shelfDescription || "",
             avatarBase64: userData.avatarBase64 || "",
+            isPublic:
+              userData.isPublic !== undefined ? userData.isPublic : true,
           };
 
           setProfileData(profile);
@@ -360,6 +371,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
             shelfName: "",
             shelfDescription: "",
             avatarBase64: "",
+            isPublic: true,
           };
 
           setProfileData(defaultProfile);
@@ -371,6 +383,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
           shelfName: "",
           shelfDescription: "",
           avatarBase64: "",
+          isPublic: true,
         });
       }
     },
@@ -400,6 +413,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
       shelfName: "",
       shelfDescription: "",
       avatarBase64: "",
+      isPublic: true,
     });
   }, [canEdit, updateProfileData]);
 
@@ -545,6 +559,36 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     [fetchBooks]
   );
 
+  // Add this inside your hook, e.g., after updateEntireProfile
+  const updatePublic = useCallback(
+    async (isPublic) => {
+      if (!canEdit) {
+        console.warn("No permission to update public status");
+        return false;
+      }
+
+      const userDocRef = doc(firestore, "userdata", getCurrentUserEmail);
+
+      try {
+        // Merge only the isPublic field
+        await setDoc(
+          userDocRef,
+          { isPublic, updatedAt: new Date() },
+          { merge: true }
+        );
+
+        // Update local state
+        setProfileData((prev) => ({ ...prev, isPublic }));
+
+        return true;
+      } catch (error) {
+        console.error("Error updating public status:", error);
+        return false;
+      }
+    },
+    [canEdit, getCurrentUserEmail]
+  );
+
   return {
     // State
     books,
@@ -590,5 +634,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     // State setters
     setEditingBook,
     setAllShelves,
+
+    updatePublic,
   };
 };

@@ -12,7 +12,6 @@ import {
 // Cache to avoid repeated Firestore calls
 let cachedEmails = null;
 let cacheTimestamp = null;
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 /**
  * Get all user emails from Firestore userdata collection
@@ -20,15 +19,6 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
  * @returns {Promise<string[]>} Array of user emails
  */
 export const getUserList = async () => {
-  // Check if we have valid cached data
-  if (
-    cachedEmails &&
-    cacheTimestamp &&
-    Date.now() - cacheTimestamp < CACHE_DURATION
-  ) {
-    return cachedEmails;
-  }
-
   try {
     // Get all documents from userData collection
     const userDataSnapshot = await getDocs(collection(firestore, "userdata"));

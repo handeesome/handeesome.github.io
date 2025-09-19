@@ -47,7 +47,7 @@ const Board = forwardRef(({ title, titleRight, children }, ref) => {
           <div className="row justify-content-center">
             <div className="col-md-10">
               <div className="d-flex justify-content-between align-items-center mt-5">
-                <p className="h4 mb-0">{title}</p>
+                <div className="h4 mb-0">{title}</div>
                 {titleRight && <div>{titleRight}</div>}
               </div>
               <hr />

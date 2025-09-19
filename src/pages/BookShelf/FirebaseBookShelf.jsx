@@ -10,6 +10,7 @@ import UserToggleModal from "../../components/bookShelf/UserToggleModal";
 import { Users, User } from "lucide-react";
 import ProfileFormModal from "../../components/bookShelf/ProfileFormModal";
 import { getProfileDataForUser } from "../../utils/userUtils";
+import { LockOpen, LockKeyhole } from "lucide-react";
 
 const FirebaseBookshelf = () => {
   // Get auth state from context
@@ -65,6 +66,7 @@ const FirebaseBookshelf = () => {
     setEditingBook,
     setAllShelves,
     updateEntireProfile,
+    updatePublic,
   } = useBookshelf(user, currentViewingUserEmail);
 
   // Enhanced book operations that close modals
@@ -134,13 +136,30 @@ const FirebaseBookshelf = () => {
       </Board>
     );
   }
+  const togglePublic = () => {
+    updatePublic(!profileData.isPublic);
+  };
   // Main bookshelf interface
   return (
     <>
       <HideBtnsContext.Provider value={{ hideSessions: true }}>
         <BookShelf
           books={getConvertedBooks()}
-          title={shelfName}
+          title={
+            <>
+              <div>
+                <span>{shelfName}</span>
+              </div>
+              <button
+                onClick={() => togglePublic()}
+                className={`btn mt-2 ${
+                  profileData.isPublic ? "btn-success" : "btn-secondary"
+                }`}>
+                {profileData.isPublic ? <LockOpen /> : <LockKeyhole />}{" "}
+                {profileData.isPublic ? "PUBLIC" : "PRIVATE"}
+              </button>
+            </>
+          }
           paramGetTagColor={getTagColor}
           hideTimeTracker={true}
           deleteBook={deleteBook}

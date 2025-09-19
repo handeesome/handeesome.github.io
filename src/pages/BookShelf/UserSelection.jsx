@@ -8,7 +8,7 @@ import {
   getBookCountForUser,
 } from "../../utils/userUtils";
 import { useAuth } from "../../contexts/authContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import books from "../../data/books/books.json";
 
 const UserSelection = () => {
@@ -17,6 +17,7 @@ const UserSelection = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const location = useLocation();
 
   // Add state for the selected avatar data
   const [selectedAvatar, setSelectedAvatar] = useState({
@@ -33,6 +34,7 @@ const UserSelection = () => {
       try {
         setLoading(true);
         const userList = await getUserList();
+        console.log("Fetched Users:", userList);
         setUsers(userList);
       } catch (error) {
         console.error("Error fetching emails:", error);
@@ -41,7 +43,7 @@ const UserSelection = () => {
       }
     };
     fetchEmails();
-  }, []);
+  }, [location]);
 
   const handleSignIn = async () => {
     try {
@@ -133,26 +135,33 @@ const UserSelection = () => {
                 })
               }
             />
-            {users.map((user) => {
-              const displayName = getDisplayNameFromEmail(user.id);
-              return (
-                <Avatar
-                  src={user.avatarBase64}
-                  key={user.id}
-                  name={user.userName || displayName}
-                  toggleModal={() =>
-                    handleToggleModal({
-                      shelfPath: getDisplayNameFromEmail(user.id),
-                      shelfName: user.shelfName || displayName,
-                      ownerName: user.userName || displayName,
-                      src: user.avatarBase64 || null,
-                      description: user.shelfDescription,
-                      booksNumber: getBookCountForUser(user.id),
-                    })
-                  }
-                />
-              );
-            })}
+            {users
+              .filter(
+                (user) =>
+                  user.isPublic === true ||
+                  user.isPublic === null ||
+                  user.isPublic === undefined
+              )
+              .map((user) => {
+                const displayName = getDisplayNameFromEmail(user.id);
+                return (
+                  <Avatar
+                    src={user.avatarBase64}
+                    key={user.id}
+                    name={user.userName || displayName}
+                    toggleModal={() =>
+                      handleToggleModal({
+                        shelfPath: getDisplayNameFromEmail(user.id),
+                        shelfName: user.shelfName || displayName,
+                        ownerName: user.userName || displayName,
+                        src: user.avatarBase64 || null,
+                        description: user.shelfDescription,
+                        booksNumber: getBookCountForUser(user.id),
+                      })
+                    }
+                  />
+                );
+              })}
           </div>
         </div>
       </Board>
