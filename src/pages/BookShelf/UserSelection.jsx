@@ -34,7 +34,6 @@ const UserSelection = () => {
       try {
         setLoading(true);
         const userList = await getUserList();
-        console.log("Fetched Users:", userList);
         setUsers(userList);
       } catch (error) {
         console.error("Error fetching emails:", error);
