@@ -1,5 +1,259 @@
 [
   {
+    "id": "3023",
+    "title": "Basic Economics: A Citizen's Guide to the Economy",
+    "author": "Thomas Sowell",
+    "num pages": "448",
+    "avg rating": "4.37",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/09/17",
+    "date added": "2025/05/12",
+    "tags": [
+      "economics",
+      "social-science"
+    ]
+  },
+  {
+    "id": "12649",
+    "title": "Les Confessions",
+    "author": "Jean-Jacques Rousseau",
+    "num pages": "676",
+    "avg rating": "3.59",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/06/20",
+    "title2": "忏悔录",
+    "tags": [
+      "biography",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "28154510",
+    "title": "Le mythe de Sisyphe",
+    "author": "Albert Camus",
+    "num pages": "172",
+    "avg rating": "4.17",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/09/15",
+    "date added": "2025/06/30",
+    "title2": "西西弗神话",
+    "tags": [
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "16241133",
+    "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
+    "author": "Susan Wise Bauer",
+    "num pages": "785",
+    "avg rating": "4.17",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/07/09",
+    "title2": "世界史的故事 III",
+    "tags": [
+      "history"
+    ]
+  },
+  {
+    "id": "485894",
+    "title": "Die Verwandlung",
+    "author": "Franz Kafka",
+    "num pages": "201",
+    "avg rating": "3.90",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/09/14",
+    "title2": "变形记",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "17174373",
+    "title": "Cloud Atlas",
+    "author": "David Mitchell",
+    "num pages": "486",
+    "avg rating": "4.01",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/07/27",
+    "title2": "云图",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "6484128",
+    "title": "The History of the Medieval World: From the Conversion of Constantine to the First Crusade",
+    "author": "Susan Wise Bauer",
+    "num pages": "746",
+    "avg rating": "4.11",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/09/14",
+    "date added": "2025/07/08",
+    "title2": "世界史的故事 II",
+    "tags": [
+      "history"
+    ]
+  },
+  {
+    "id": "45633325",
+    "title": "第二十二条军规",
+    "author": "Joseph Heller",
+    "num pages": "572",
+    "avg rating": "3.99",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/09/13",
+    "title2": "Catch-22",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "18756051",
+    "title": "Братья Карамазовы",
+    "author": "Fyodor Dostoevsky",
+    "num pages": "472",
+    "avg rating": "4.39",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/09/13",
+    "title2": "卡拉马佐夫兄弟",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "19324807",
+    "title": "Die Leiden des jungen Werthers",
+    "author": "Johann Wolfgang von Goethe",
+    "num pages": "154",
+    "avg rating": "3.69",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/09/13",
+    "title2": "少年维特的烦恼",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "2376901",
+    "title": "人間失格 [Ningen Shikkaku]",
+    "author": "Osamu Dazai",
+    "num pages": "185",
+    "avg rating": "3.95",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/09/13",
+    "title2": "人间失格",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "80493508",
+    "title": "ノルウェイの森",
+    "author": "村上春树 林少华",
+    "num pages": "200",
+    "avg rating": "3.99",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/09/11",
+    "date added": "2025/07/15",
+    "title2": "挪威的森林",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "202694",
+    "title": "Émile, ou De l'éducation",
+    "author": "Jean-Jacques Rousseau",
+    "num pages": "315",
+    "avg rating": "3.57",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/09/04",
+    "date added": "2025/06/20",
+    "title2": "爱弥儿",
+    "tags": [
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "58715110",
+    "title": "Anti-Intellectualism in American Life",
+    "author": "Richard Hofstadter",
+    "num pages": null,
+    "avg rating": "4.11",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/21",
+    "title2": "美国的反智传统",
+    "tags": [
+      "essays",
+      "social-science"
+    ]
+  },
+  {
+    "id": "30659",
+    "title": "Τὰ εἰς ἑαυτόν",
+    "author": "Marcus Aurelius",
+    "num pages": "254",
+    "avg rating": "4.28",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/08/20",
+    "title2": "沉思录",
+    "tags": [
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
     "id": "19230853",
     "title": "Война и миръ",
     "author": "Leo Tolstoy",
@@ -37,7 +291,7 @@
     "title": "Brave New World Revisited",
     "author": "Aldous Huxley",
     "num pages": "347",
-    "avg rating": "4.00",
+    "avg rating": "3.99",
     "shelves": [
       "finished"
     ],
@@ -54,7 +308,7 @@
     "title": "法治的细节",
     "author": "罗翔",
     "num pages": "288",
-    "avg rating": "4.23",
+    "avg rating": "4.24",
     "shelves": [
       "finished"
     ],
@@ -87,7 +341,7 @@
     "title": "바깥은 여름",
     "author": "Kim Ae-ran",
     "num pages": "208",
-    "avg rating": "4.11",
+    "avg rating": "4.09",
     "shelves": [
       "want-to-read"
     ],
@@ -307,7 +561,7 @@
     "title": "Micromegas",
     "author": "Voltaire",
     "num pages": "38",
-    "avg rating": "3.65",
+    "avg rating": "3.64",
     "shelves": [
       "finished"
     ],
@@ -354,23 +608,6 @@
     ]
   },
   {
-    "id": "28154510",
-    "title": "Le mythe de Sisyphe",
-    "author": "Albert Camus",
-    "num pages": "172",
-    "avg rating": "4.17",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/06/30",
-    "title2": "西西弗神话",
-    "tags": [
-      "philosophy",
-      "classics"
-    ]
-  },
-  {
     "id": "54383459",
     "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
     "author": "Will Durant",
@@ -388,28 +625,11 @@
     ]
   },
   {
-    "id": "202694",
-    "title": "Émile, ou De l'éducation",
-    "author": "Jean-Jacques Rousseau",
-    "num pages": "315",
-    "avg rating": "3.58",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/06/20",
-    "title2": "爱弥儿",
-    "tags": [
-      "philosophy",
-      "classics"
-    ]
-  },
-  {
     "id": "28807853",
     "title": "The Four Loves",
     "author": "C.S. Lewis",
     "num pages": "264",
-    "avg rating": "4.17",
+    "avg rating": "4.16",
     "shelves": [
       "want-to-read"
     ],
@@ -454,28 +674,11 @@
     ]
   },
   {
-    "id": "17174373",
-    "title": "Cloud Atlas",
-    "author": "David Mitchell",
-    "num pages": "486",
-    "avg rating": "4.01",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/27",
-    "title2": "云图",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
-  },
-  {
     "id": "36160370",
     "title": "Brave New World",
     "author": "Aldous Huxley",
     "num pages": "287",
-    "avg rating": "4.00",
+    "avg rating": "3.99",
     "shelves": [
       "finished"
     ],
@@ -538,23 +741,6 @@
       "philosophy",
       "classics",
       "satire"
-    ]
-  },
-  {
-    "id": "80493508",
-    "title": "ノルウェイの森",
-    "author": "村上春树 林少华",
-    "num pages": "200",
-    "avg rating": "3.99",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/15",
-    "title2": "挪威的森林",
-    "tags": [
-      "fiction",
-      "contemporary"
     ]
   },
   {
@@ -645,22 +831,6 @@
     ]
   },
   {
-    "id": "16241133",
-    "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
-    "author": "Susan Wise Bauer",
-    "num pages": "785",
-    "avg rating": "4.17",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/09",
-    "title2": "世界史的故事 III",
-    "tags": [
-      "history"
-    ]
-  },
-  {
     "id": "48917953",
     "title": "La Peste",
     "author": "Albert Camus",
@@ -676,22 +846,6 @@
       "fiction",
       "philosophy",
       "classics"
-    ]
-  },
-  {
-    "id": "6484128",
-    "title": "The History of the Medieval World: From the Conversion of Constantine to the First Crusade",
-    "author": "Susan Wise Bauer",
-    "num pages": "746",
-    "avg rating": "4.11",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/08",
-    "title2": "世界史的故事 II",
-    "tags": [
-      "history"
     ]
   },
   {
@@ -749,7 +903,7 @@
     "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
     "author": "Charlie Kirk",
     "num pages": "288",
-    "avg rating": "4.17",
+    "avg rating": "4.13",
     "shelves": [
       "want-to-read"
     ],
@@ -854,7 +1008,7 @@
     "title": "法律的悖论",
     "author": "罗翔",
     "num pages": "254",
-    "avg rating": "3.95",
+    "avg rating": "3.90",
     "shelves": [
       "finished"
     ],
@@ -900,40 +1054,6 @@
       "fiction",
       "philosophy",
       "classics"
-    ]
-  },
-  {
-    "id": "12649",
-    "title": "Les Confessions",
-    "author": "Jean-Jacques Rousseau",
-    "num pages": "676",
-    "avg rating": "3.59",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/06/20",
-    "title2": "忏悔录",
-    "tags": [
-      "biography",
-      "philosophy",
-      "classics"
-    ]
-  },
-  {
-    "id": "3023",
-    "title": "Basic Economics: A Citizen's Guide to the Economy",
-    "author": "Thomas Sowell",
-    "num pages": "448",
-    "avg rating": "4.37",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/05/12",
-    "tags": [
-      "economics",
-      "social-science"
     ]
   },
   {
@@ -1087,7 +1207,7 @@
     "title": "康熙的红票：全球化中的清朝",
     "author": "Litian Swen",
     "num pages": "400",
-    "avg rating": "4.56",
+    "avg rating": "4.55",
     "shelves": [
       "finished"
     ],
@@ -1149,7 +1269,7 @@
     "title": "The Secret Life of Programs: Understand Computers -- Craft Better Code",
     "author": "Jon Steinhart",
     "num pages": "504",
-    "avg rating": "3.86",
+    "avg rating": "3.88",
     "shelves": [
       "want-to-read"
     ],
