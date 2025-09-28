@@ -322,7 +322,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
   // Bulk update profile (for forms)
   const updateEntireProfile = useCallback(
     async (profileUpdates) => {
-      const { userName, shelfName, shelfDescription, avatarBase64 } =
+      const { userName, shelfName, shelfDescription, avatarBase64, isPublic } =
         profileUpdates;
 
       return await updateProfileData({
@@ -330,8 +330,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         shelfName: shelfName || "",
         shelfDescription: shelfDescription || "",
         avatarBase64: avatarBase64 || "",
-        isPublic:
-          profileData.isPublic !== undefined ? profileData.isPublic : true,
+        isPublic: isPublic !== undefined ? isPublic : true,
       });
     },
     [updateProfileData]
