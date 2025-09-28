@@ -331,9 +331,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         shelfDescription: shelfDescription || "",
         avatarBase64: avatarBase64 || "",
         isPublic:
-          profileUpdates.isPublic !== undefined
-            ? profileUpdates.isPublic
-            : true,
+          profileData.isPublic !== undefined ? profileData.isPublic : true,
       });
     },
     [updateProfileData]
