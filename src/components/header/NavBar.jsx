@@ -40,9 +40,9 @@ const NavBar = ({ isScrolled }) => {
             <Link to="/projects" className="nav-link" onClick={closeNavbar}>
               Projects
             </Link>
-            <Link to="/study-notes" className="nav-link" onClick={closeNavbar}>
+            {/* <Link to="/study-notes" className="nav-link" onClick={closeNavbar}>
               Study Notes
-            </Link>
+            </Link> */}
             <Link to="/book-shelf" className="nav-link" onClick={closeNavbar}>
               📚 Book Shelf
             </Link>
