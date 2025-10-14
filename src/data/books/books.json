@@ -1,5 +1,209 @@
 [
   {
+    "id": "28807853",
+    "title": "The Four Loves",
+    "author": "C.S. Lewis",
+    "num pages": "264",
+    "avg rating": "4.16",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/07/27",
+    "title2": "四种爱",
+    "tags": [
+      "religion",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "16241133",
+    "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
+    "author": "Susan Wise Bauer",
+    "num pages": "785",
+    "avg rating": "4.17",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/10/12",
+    "date added": "2025/07/09",
+    "title2": "世界史的故事 III",
+    "tags": [
+      "history"
+    ]
+  },
+  {
+    "id": "54383459",
+    "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
+    "author": "Will Durant",
+    "num pages": "608",
+    "avg rating": "4.15",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/07/30",
+    "date added": "2025/05/28",
+    "title2": "哲学的故事",
+    "tags": [
+      "philosophy",
+      "biography"
+    ]
+  },
+  {
+    "id": "61369370",
+    "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
+    "author": "Charlie Kirk",
+    "num pages": "288",
+    "avg rating": "4.13",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/07/07",
+    "tags": [
+      "essays",
+      "economics",
+      "social-science"
+    ]
+  },
+  {
+    "id": "57300433",
+    "title": "The Book of Why: The New Science of Cause and Effect",
+    "author": "Judea Pearl",
+    "num pages": null,
+    "avg rating": "3.94",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/10/11",
+    "title2": "为什么：关于因果关系的新科学",
+    "tags": [
+      "social-science",
+      "essays"
+    ]
+  },
+  {
+    "id": "42767746",
+    "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
+    "author": "Timothy J. Keller",
+    "num pages": "287",
+    "avg rating": "4.49",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/07/27",
+    "title2": "婚姻的意义",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "19179596",
+    "title": "Преступление и наказание",
+    "author": "Fyodor Dostoevsky",
+    "num pages": "548",
+    "avg rating": "4.28",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/06/30",
+    "title2": "罪与罚",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "17174373",
+    "title": "Cloud Atlas",
+    "author": "David Mitchell",
+    "num pages": "486",
+    "avg rating": "4.01",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/10/02",
+    "date added": "2025/07/27",
+    "title2": "云图",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "21122",
+    "title": "The Coming of Age",
+    "author": "Simone de Beauvoir",
+    "num pages": "592",
+    "avg rating": "3.94",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/10/02",
+    "title2": "论老年",
+    "tags": [
+      "philosophy",
+      "social-science",
+      "essays"
+    ]
+  },
+  {
+    "id": "457264",
+    "title": "The Second Sex",
+    "author": "Simone de Beauvoir",
+    "num pages": "746",
+    "avg rating": "4.18",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/10/02",
+    "title2": "第二性",
+    "tags": [
+      "philosophy",
+      "social-science",
+      "essays"
+    ]
+  },
+  {
+    "id": "2054",
+    "title": "The Long Goodbye",
+    "author": "Raymond Chandler",
+    "num pages": "379",
+    "avg rating": "4.19",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/09/26",
+    "title2": "漫长的告别",
+    "tags": [
+      "fiction"
+    ]
+  },
+  {
+    "id": "19230853",
+    "title": "Война и миръ",
+    "author": "Leo Tolstoy",
+    "num pages": "726",
+    "avg rating": "4.17",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/09/26",
+    "date added": "2025/06/30",
+    "title2": "战争与和平",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
     "id": "3023",
     "title": "Basic Economics: A Citizen's Guide to the Economy",
     "author": "Thomas Sowell",
@@ -51,22 +255,6 @@
     ]
   },
   {
-    "id": "16241133",
-    "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
-    "author": "Susan Wise Bauer",
-    "num pages": "785",
-    "avg rating": "4.17",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/07/09",
-    "title2": "世界史的故事 III",
-    "tags": [
-      "history"
-    ]
-  },
-  {
     "id": "485894",
     "title": "Die Verwandlung",
     "author": "Franz Kafka",
@@ -81,23 +269,6 @@
     "tags": [
       "fiction",
       "classics"
-    ]
-  },
-  {
-    "id": "17174373",
-    "title": "Cloud Atlas",
-    "author": "David Mitchell",
-    "num pages": "486",
-    "avg rating": "4.01",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/07/27",
-    "title2": "云图",
-    "tags": [
-      "fiction",
-      "contemporary"
     ]
   },
   {
@@ -223,7 +394,7 @@
     "id": "58715110",
     "title": "Anti-Intellectualism in American Life",
     "author": "Richard Hofstadter",
-    "num pages": null,
+    "num pages": "434",
     "avg rating": "4.11",
     "shelves": [
       "want-to-read"
@@ -254,28 +425,11 @@
     ]
   },
   {
-    "id": "19230853",
-    "title": "Война и миръ",
-    "author": "Leo Tolstoy",
-    "num pages": "726",
-    "avg rating": "4.17",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/06/30",
-    "title2": "战争与和平",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "225947",
     "title": "The History of the Ancient World: From the Earliest Accounts to the Fall of Rome",
     "author": "Susan Wise Bauer",
     "num pages": "896",
-    "avg rating": "4.11",
+    "avg rating": "4.12",
     "shelves": [
       "finished"
     ],
@@ -308,7 +462,7 @@
     "title": "法治的细节",
     "author": "罗翔",
     "num pages": "288",
-    "avg rating": "4.24",
+    "avg rating": "4.25",
     "shelves": [
       "finished"
     ],
@@ -341,7 +495,7 @@
     "title": "바깥은 여름",
     "author": "Kim Ae-ran",
     "num pages": "208",
-    "avg rating": "4.09",
+    "avg rating": "4.10",
     "shelves": [
       "want-to-read"
     ],
@@ -478,7 +632,7 @@
     "title": "Mere Christianity",
     "author": "C.S. Lewis",
     "num pages": "191",
-    "avg rating": "4.36",
+    "avg rating": "4.37",
     "shelves": [
       "want-to-read"
     ],
@@ -561,7 +715,7 @@
     "title": "Micromegas",
     "author": "Voltaire",
     "num pages": "38",
-    "avg rating": "3.64",
+    "avg rating": "3.65",
     "shelves": [
       "finished"
     ],
@@ -608,40 +762,6 @@
     ]
   },
   {
-    "id": "54383459",
-    "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
-    "author": "Will Durant",
-    "num pages": "608",
-    "avg rating": "4.58",
-    "shelves": [
-      "finished"
-    ],
-    "date read": "2025/07/30",
-    "date added": "2025/05/28",
-    "title2": "哲学的故事",
-    "tags": [
-      "philosophy",
-      "biography"
-    ]
-  },
-  {
-    "id": "28807853",
-    "title": "The Four Loves",
-    "author": "C.S. Lewis",
-    "num pages": "264",
-    "avg rating": "4.16",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/27",
-    "title2": "四种爱",
-    "tags": [
-      "religion",
-      "philosophy"
-    ]
-  },
-  {
     "id": "26007192",
     "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
     "author": "Timothy J. Keller",
@@ -653,22 +773,6 @@
     "date read": null,
     "date added": "2025/07/27",
     "title2": "山寨版的上帝",
-    "tags": [
-      "religion"
-    ]
-  },
-  {
-    "id": "42767746",
-    "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
-    "author": "Timothy J. Keller",
-    "num pages": "287",
-    "avg rating": "4.49",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/27",
-    "title2": "婚姻的意义",
     "tags": [
       "religion"
     ]
@@ -887,7 +991,7 @@
     "title": "Speechless: Controlling Words, Controlling Minds",
     "author": "Michael J. Knowles",
     "num pages": "383",
-    "avg rating": "4.25",
+    "avg rating": "4.24",
     "shelves": [
       "want-to-read"
     ],
@@ -895,23 +999,6 @@
     "date added": "2025/07/07",
     "tags": [
       "essays",
-      "social-science"
-    ]
-  },
-  {
-    "id": "61369370",
-    "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
-    "author": "Charlie Kirk",
-    "num pages": "288",
-    "avg rating": "4.13",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/07",
-    "tags": [
-      "essays",
-      "economics",
       "social-science"
     ]
   },
@@ -982,24 +1069,6 @@
     "title2": "红与黑",
     "tags": [
       "fiction",
-      "classics"
-    ]
-  },
-  {
-    "id": "19179596",
-    "title": "Преступление и наказание",
-    "author": "Fyodor Dostoevsky",
-    "num pages": "548",
-    "avg rating": "4.28",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/06/30",
-    "title2": "罪与罚",
-    "tags": [
-      "fiction",
-      "philosophy",
       "classics"
     ]
   },
@@ -1127,7 +1196,7 @@
     "title": "圆圈正义：作为自由前提的信念",
     "author": "LUO XIANG",
     "num pages": "307",
-    "avg rating": "4.05",
+    "avg rating": "4.06",
     "shelves": [
       "finished"
     ],
@@ -1284,7 +1353,7 @@
     "title": "Algorithmic Thinking: A Problem-Based Introduction",
     "author": "Daniel Zingaro",
     "num pages": "408",
-    "avg rating": "4.45",
+    "avg rating": "4.44",
     "shelves": [
       "want-to-read"
     ],
