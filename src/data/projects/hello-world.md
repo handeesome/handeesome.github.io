@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: 2025-08-21
-tags: [hello-world, first]
+tags: [hello-world, first, TODO]
 description: This contains the introduction of this website and the TODO list the site owner tries to improve and add.
 ---
 
@@ -15,7 +15,6 @@ This website currently hosts on github pages and I will shift it to a domain nam
 
 ## TODO list
 
-- write the project auto-pptx page.
 - change the README.MD from default react to customed
 
 # to be continued

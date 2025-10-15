@@ -46,7 +46,35 @@ const ProjectPage = ({}) => {
           ← Go Back
         </button>
       }>
-      <ReactMarkdown>{content.body}</ReactMarkdown>
+      <ReactMarkdown
+        components={{
+          img: ({ node, ...props }) => (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                margin: "1.5rem 0",
+              }}>
+              <img
+                {...props}
+                style={{
+                  maxWidth: "50%",
+                  height: "auto",
+                  borderRadius: "4px",
+                }}
+                loading="lazy"
+              />
+            </div>
+          ),
+          a: ({ node, ...props }) => {
+            if (props.href?.startsWith("http")) {
+              return <a {...props} target="_blank" rel="noopener noreferrer" />;
+            }
+            return <a {...props} />;
+          },
+        }}>
+        {content.body}
+      </ReactMarkdown>
     </Board>
   );
 };
