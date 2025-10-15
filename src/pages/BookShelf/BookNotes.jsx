@@ -42,6 +42,9 @@ const BookNotes = () => {
       </Board>
     );
   }
+  const handleReadSessionsClick = () => {
+    navigate(`/book-shelf/book/${bookId}/analytics`);
+  };
   return (
     <Board title={`NOTES FROM ${bookTitle}`} ref={boardRef}>
       <BookInfoHeader book={book} />
@@ -75,6 +78,9 @@ const BookNotes = () => {
             <p className="mb-0">
               Reading the book was so effortless that no notes were taken.{" "}
             </p>
+            <div className="btn btn-warning" onClick={handleReadSessionsClick}>
+              Check out Reading Sessions
+            </div>
           </div>
         </div>
       )}
