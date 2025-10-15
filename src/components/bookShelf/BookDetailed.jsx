@@ -100,7 +100,11 @@ const BookDetailed = ({
         {/* BookDetailed Cover */}
         <div className="col-md-4 d-flex justify-content-center mt-4">
           <img
-            src={coverBase64 || `/covers/${id}.jpg` || "/default-cover.jpg"}
+            src={
+              coverBase64 ||
+              `/images/bookCovers/${id}.jpg` ||
+              "/default-cover.jpg"
+            }
             alt={title}
             className="fixed-img rounded-start"
             onError={(e) =>

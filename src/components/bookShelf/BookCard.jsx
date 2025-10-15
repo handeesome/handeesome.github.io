@@ -26,7 +26,7 @@ const BookCard = ({
           <img
             src={
               book.coverBase64 ||
-              `/covers/${book.id}.jpg` ||
+              `/images/bookCovers/${book.id}.jpg` ||
               "/default-cover.jpg"
             }
             alt={book.title}

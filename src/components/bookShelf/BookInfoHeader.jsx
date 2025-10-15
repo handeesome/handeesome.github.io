@@ -10,7 +10,7 @@ const BookInfoHeader = ({ book }) => {
             <div className="row align-items-center">
               <div className="col-md-2">
                 <img
-                  src={`/covers/${book.id}.jpg`}
+                  src={`/images/bookCovers/${book.id}.jpg`}
                   alt={book.title}
                   className="img-fluid rounded"
                   style={{ maxHeight: "150px", objectFit: "cover" }}
