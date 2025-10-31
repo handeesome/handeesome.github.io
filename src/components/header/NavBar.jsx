@@ -1,6 +1,8 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
 import { Link } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 import { useState } from "react";
@@ -31,7 +33,15 @@ const NavBar = ({ isScrolled }) => {
       }}>
       <Container>
         <Navbar.Brand href="/">Cenhan's Site</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <FontAwesomeIcon
+            icon={faBars}
+            style={{
+              color: theme === "dark" ? "#fff" : "#000",
+              fontSize: "1.5rem",
+            }}
+          />
+        </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" variant="underline">
             <Link to="/" className="nav-link" onClick={closeNavbar}>
