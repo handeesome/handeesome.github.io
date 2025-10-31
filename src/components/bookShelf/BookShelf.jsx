@@ -21,6 +21,7 @@ const BookShelf = ({
   const navigate = useNavigate();
   const { theme } = useTheme();
   const { hideTimeTracker } = useHideBtns();
+  const [isInitialMount, setIsInitialMount] = useState(true);
 
   // Add layout state
   const [layout, setLayout] = useState(searchParams.get("layout") || "grid");
@@ -108,6 +109,11 @@ const BookShelf = ({
   }, [filteredBooks, allTags]);
 
   useEffect(() => {
+    if (isInitialMount) {
+      setIsInitialMount(false);
+      return;
+    }
+
     if (selectedShelf) {
       setSelectedTags(new Set());
     }
