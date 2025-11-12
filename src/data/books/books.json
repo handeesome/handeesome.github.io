@@ -1,19 +1,289 @@
 [
   {
+    "id": "55385983",
+    "title": "Speechless: Controlling Words, Controlling Minds",
+    "author": "Michael J. Knowles",
+    "num pages": "383",
+    "avg rating": "4.24",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/07/07",
+    "tags": [
+      "essays",
+      "social-science"
+    ]
+  },
+  {
+    "id": "19342729",
+    "title": "Atonement",
+    "author": "Ian McEwan",
+    "num pages": "426",
+    "avg rating": "3.95",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "title2": "赎罪",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "18250837",
+    "title": "How (Not) to Be Secular: Reading Charles Taylor",
+    "author": "James K.A. Smith",
+    "num pages": "148",
+    "avg rating": "4.21",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/12",
+    "date added": "2025/07/08",
+    "tags": [
+      "religion",
+      "philosophy",
+      "essays"
+    ]
+  },
+  {
     "id": "28807853",
     "title": "The Four Loves",
     "author": "C.S. Lewis",
     "num pages": "264",
     "avg rating": "4.16",
     "shelves": [
-      "currently-reading"
+      "finished"
     ],
-    "date read": null,
+    "date read": "2025/11/11",
     "date added": "2025/07/27",
     "title2": "四种爱",
     "tags": [
       "religion",
       "philosophy"
+    ]
+  },
+  {
+    "id": "54861804",
+    "title": "如何假装懂音乐",
+    "author": "王硕",
+    "num pages": "190",
+    "avg rating": "3.12",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/07",
+    "date added": "2025/08/15",
+    "tags": [
+      "music",
+      "social-science"
+    ]
+  },
+  {
+    "id": "87247",
+    "title": "Der Steppenwolf",
+    "author": "Hermann Hesse",
+    "num pages": "278",
+    "avg rating": "4.13",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/11/06",
+    "title2": "荒原狼",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "41810863",
+    "title": "The Remains of the Day",
+    "author": "Kazuo Ishiguro",
+    "num pages": "337",
+    "avg rating": "4.14",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "title2": "长日将尽",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "18752103",
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "num pages": "855",
+    "avg rating": "4.10",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/11/04",
+    "title2": "安娜·卡列尼娜",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "1000751",
+    "title": "Pollyanna",
+    "author": "Eleanor H. Porter",
+    "num pages": "304",
+    "avg rating": "4.02",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/04",
+    "date added": "2025/08/08",
+    "title2": "波丽安娜",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "13589149",
+    "title": "Every Good Endeavor: Connecting Your Work to God's Work",
+    "author": "Timothy J. Keller",
+    "num pages": "288",
+    "avg rating": "4.31",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/02",
+    "date added": "2025/08/08",
+    "title2": "工作的意义",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "18922517",
+    "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
+    "author": "Stendhal",
+    "num pages": "512",
+    "avg rating": "3.86",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/06/30",
+    "title2": "红与黑",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "19179596",
+    "title": "Преступление и наказание",
+    "author": "Fyodor Dostoevsky",
+    "num pages": "548",
+    "avg rating": "4.28",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/10/30",
+    "date added": "2025/06/30",
+    "title2": "罪与罚",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "61369370",
+    "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
+    "author": "Charlie Kirk",
+    "num pages": "288",
+    "avg rating": "4.11",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/10/27",
+    "date added": "2025/07/07",
+    "tags": [
+      "essays",
+      "economics",
+      "social-science"
+    ]
+  },
+  {
+    "id": "19421327",
+    "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
+    "author": "Gary Chapman",
+    "num pages": "200",
+    "avg rating": "4.27",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/10/24",
+    "title2": "爱的五种语言",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "40000210",
+    "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
+    "author": "Sarah Bakewell",
+    "num pages": "563",
+    "avg rating": "4.24",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/08/03",
+    "title2": "存在主义咖啡馆",
+    "tags": [
+      "philosophy",
+      "essays"
+    ]
+  },
+  {
+    "id": "12649",
+    "title": "Les Confessions",
+    "author": "Jean-Jacques Rousseau",
+    "num pages": "676",
+    "avg rating": "3.59",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/10/21",
+    "date added": "2025/06/20",
+    "title2": "忏悔录",
+    "tags": [
+      "biography",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "42767746",
+    "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
+    "author": "Timothy J. Keller",
+    "num pages": "287",
+    "avg rating": "4.48",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/10/20",
+    "date added": "2025/07/27",
+    "title2": "婚姻的意义",
+    "tags": [
+      "religion"
     ]
   },
   {
@@ -50,23 +320,6 @@
     ]
   },
   {
-    "id": "61369370",
-    "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
-    "author": "Charlie Kirk",
-    "num pages": "288",
-    "avg rating": "4.13",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/07/07",
-    "tags": [
-      "essays",
-      "economics",
-      "social-science"
-    ]
-  },
-  {
     "id": "57300433",
     "title": "The Book of Why: The New Science of Cause and Effect",
     "author": "Judea Pearl",
@@ -84,43 +337,9 @@
     ]
   },
   {
-    "id": "42767746",
-    "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
-    "author": "Timothy J. Keller",
-    "num pages": "287",
-    "avg rating": "4.49",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/07/27",
-    "title2": "婚姻的意义",
-    "tags": [
-      "religion"
-    ]
-  },
-  {
-    "id": "19179596",
-    "title": "Преступление и наказание",
-    "author": "Fyodor Dostoevsky",
-    "num pages": "548",
-    "avg rating": "4.28",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/06/30",
-    "title2": "罪与罚",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
-  },
-  {
     "id": "17174373",
     "title": "Cloud Atlas",
-    "author": "David Mitchell",
+    "author": "David  Mitchell",
     "num pages": "486",
     "avg rating": "4.01",
     "shelves": [
@@ -139,7 +358,7 @@
     "title": "The Coming of Age",
     "author": "Simone de Beauvoir",
     "num pages": "592",
-    "avg rating": "3.94",
+    "avg rating": "3.93",
     "shelves": [
       "want-to-read"
     ],
@@ -217,24 +436,6 @@
     "tags": [
       "economics",
       "social-science"
-    ]
-  },
-  {
-    "id": "12649",
-    "title": "Les Confessions",
-    "author": "Jean-Jacques Rousseau",
-    "num pages": "676",
-    "avg rating": "3.59",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/06/20",
-    "title2": "忏悔录",
-    "tags": [
-      "biography",
-      "philosophy",
-      "classics"
     ]
   },
   {
@@ -429,7 +630,7 @@
     "title": "The History of the Ancient World: From the Earliest Accounts to the Fall of Rome",
     "author": "Susan Wise Bauer",
     "num pages": "896",
-    "avg rating": "4.12",
+    "avg rating": "4.11",
     "shelves": [
       "finished"
     ],
@@ -462,7 +663,7 @@
     "title": "法治的细节",
     "author": "罗翔",
     "num pages": "288",
-    "avg rating": "4.25",
+    "avg rating": "4.26",
     "shelves": [
       "finished"
     ],
@@ -495,7 +696,7 @@
     "title": "바깥은 여름",
     "author": "Kim Ae-ran",
     "num pages": "208",
-    "avg rating": "4.10",
+    "avg rating": "4.08",
     "shelves": [
       "want-to-read"
     ],
@@ -522,22 +723,6 @@
     "tags": [
       "fiction",
       "classics"
-    ]
-  },
-  {
-    "id": "54861804",
-    "title": "如何假装懂音乐",
-    "author": "王硕",
-    "num pages": "190",
-    "avg rating": "3.12",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/15",
-    "tags": [
-      "music",
-      "social-science"
     ]
   },
   {
@@ -594,40 +779,6 @@
     ]
   },
   {
-    "id": "19342729",
-    "title": "Atonement",
-    "author": "Ian McEwan",
-    "num pages": "426",
-    "avg rating": "3.95",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/15",
-    "title2": "赎罪",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
-    "id": "41810863",
-    "title": "The Remains of the Day",
-    "author": "Kazuo Ishiguro",
-    "num pages": "337",
-    "avg rating": "4.14",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/15",
-    "title2": "长日将尽",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "11138",
     "title": "Mere Christianity",
     "author": "C.S. Lewis",
@@ -678,39 +829,6 @@
     ]
   },
   {
-    "id": "13589149",
-    "title": "Every Good Endeavor: Connecting Your Work to God's Work",
-    "author": "Timothy J. Keller",
-    "num pages": "288",
-    "avg rating": "4.31",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/08",
-    "title2": "工作的意义",
-    "tags": [
-      "religion"
-    ]
-  },
-  {
-    "id": "1000751",
-    "title": "Pollyanna",
-    "author": "Eleanor H. Porter",
-    "num pages": "304",
-    "avg rating": "4.02",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/08",
-    "title2": "波丽安娜",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "1156110",
     "title": "Micromegas",
     "author": "Voltaire",
@@ -733,7 +851,7 @@
     "title": "The Hidden Persuaders",
     "author": "Vance Packard",
     "num pages": "240",
-    "avg rating": "3.84",
+    "avg rating": "3.83",
     "shelves": [
       "want-to-read"
     ],
@@ -745,28 +863,11 @@
     ]
   },
   {
-    "id": "40000210",
-    "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
-    "author": "Sarah Bakewell",
-    "num pages": "563",
-    "avg rating": "4.24",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/03",
-    "title2": "存在主义咖啡馆",
-    "tags": [
-      "philosophy",
-      "essays"
-    ]
-  },
-  {
     "id": "26007192",
     "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
     "author": "Timothy J. Keller",
     "num pages": "285",
-    "avg rating": "4.36",
+    "avg rating": "4.37",
     "shelves": [
       "want-to-read"
     ],
@@ -953,23 +1054,6 @@
     ]
   },
   {
-    "id": "18250837",
-    "title": "How (Not) to Be Secular: Reading Charles Taylor",
-    "author": "James K.A. Smith",
-    "num pages": "148",
-    "avg rating": "4.21",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/08",
-    "tags": [
-      "religion",
-      "philosophy",
-      "essays"
-    ]
-  },
-  {
     "id": "824412",
     "title": "A Secular Age",
     "author": "Charles Margrave Taylor",
@@ -983,22 +1067,6 @@
     "tags": [
       "religion",
       "philosophy",
-      "social-science"
-    ]
-  },
-  {
-    "id": "55385983",
-    "title": "Speechless: Controlling Words, Controlling Minds",
-    "author": "Michael J. Knowles",
-    "num pages": "383",
-    "avg rating": "4.24",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/07",
-    "tags": [
-      "essays",
       "social-science"
     ]
   },
@@ -1056,28 +1124,11 @@
     ]
   },
   {
-    "id": "18922517",
-    "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
-    "author": "Stendhal",
-    "num pages": "512",
-    "avg rating": "3.86",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/06/30",
-    "title2": "红与黑",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "203774224",
     "title": "法律的悖论",
     "author": "罗翔",
     "num pages": "254",
-    "avg rating": "3.90",
+    "avg rating": "3.91",
     "shelves": [
       "finished"
     ],
@@ -1276,7 +1327,7 @@
     "title": "康熙的红票：全球化中的清朝",
     "author": "Litian Swen",
     "num pages": "400",
-    "avg rating": "4.55",
+    "avg rating": "4.58",
     "shelves": [
       "finished"
     ],
