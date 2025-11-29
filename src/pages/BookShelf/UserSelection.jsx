@@ -2,11 +2,7 @@ import Board from "../../components/Board";
 import Avatar from "../../components/Avatar";
 import { useEffect, useState } from "react";
 import Modal from "../../components/ui/Modal";
-import {
-  getUserList,
-  getDisplayNameFromEmail,
-  getBookCountForUser,
-} from "../../utils/userUtils";
+import { getUserList, getDisplayNameFromEmail, getBookCountForUser } from "../../utils/userUtils";
 import { useAuth } from "../../contexts/authContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import books from "../../data/books/books.json";
@@ -17,6 +13,7 @@ const UserSelection = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [fetchingBookCount, setFetchingBookCount] = useState(false);
   const location = useLocation();
 
   // Add state for the selected avatar data
@@ -25,7 +22,7 @@ const UserSelection = () => {
     shelfName: "",
     ownerName: "",
     src: "",
-    booksNumber: "",
+    booksNumber: null,
     description: "",
   });
 
@@ -54,8 +51,32 @@ const UserSelection = () => {
 
   // Updated to accept avatar data
   const handleToggleModal = (avatarData = {}) => {
-    setSelectedAvatar(avatarData);
-    setShowModal((prev) => !prev);
+    setSelectedAvatar({ ...avatarData, booksNumber: null });
+    setShowModal(true);
+
+    if (avatarData.shelfPath) {
+      setFetchingBookCount(true);
+      setTimeout(async () => {
+        try {
+          let bookCount;
+          if (avatarData.shelfPath === "cenhan") {
+            // For cenhan, use the local books.json
+            bookCount = books.length;
+          } else {
+            // For other users, fetch from Firebase
+            bookCount = await getBookCountForUser(avatarData.userId);
+          }
+
+          // Update the book count
+          setSelectedAvatar((prev) => ({ ...prev, booksNumber: bookCount }));
+        } catch (error) {
+          console.error("Error fetching book count:", error);
+          setSelectedAvatar((prev) => ({ ...prev, booksNumber: 0 }));
+        } finally {
+          setFetchingBookCount(false);
+        }
+      }, 0);
+    }
   };
 
   // Helper functions for the modal
@@ -92,9 +113,7 @@ const UserSelection = () => {
   const handleEnterBookshelf = () => {
     if (selectedAvatar.shelfPath) {
       // Navigate to the user's bookshelf
-      navigate(
-        `/book-shelf/${getDisplayNameFromEmail(selectedAvatar.shelfPath)}`
-      );
+      navigate(`/book-shelf/${getDisplayNameFromEmail(selectedAvatar.shelfPath)}`);
     }
     setShowModal(false);
   };
@@ -112,12 +131,12 @@ const UserSelection = () => {
               } else {
                 handleSignIn();
               }
-            }}>
-            {isAuthenticated
-              ? "Edit Your Book Shelf"
-              : "Create Your Own Book Shelf"}
+            }}
+          >
+            {isAuthenticated ? "Edit Your Book Shelf" : "Create Your Own Book Shelf"}
           </div>
-        }>
+        }
+      >
         <div className="container" style={{ minHeight: "80vh" }}>
           <div className="d-flex gap-3 p-3 justify-content-center flex-wrap">
             <Avatar
@@ -130,17 +149,11 @@ const UserSelection = () => {
                   ownerName: "Cenhan",
                   src: "avatar.jpg",
                   description: "My personal book shelf",
-                  booksNumber: books.length,
                 })
               }
             />
             {users
-              .filter(
-                (user) =>
-                  user.isPublic === true ||
-                  user.isPublic === null ||
-                  user.isPublic === undefined
-              )
+              .filter((user) => user.isPublic === true || user.isPublic === null || user.isPublic === undefined)
               .map((user) => {
                 const displayName = getDisplayNameFromEmail(user.id);
                 return (
@@ -151,11 +164,11 @@ const UserSelection = () => {
                     toggleModal={() =>
                       handleToggleModal({
                         shelfPath: getDisplayNameFromEmail(user.id),
+                        userId: user.id,
                         shelfName: user.shelfName || displayName,
                         ownerName: user.userName || displayName,
                         src: user.avatarBase64 || null,
                         description: user.shelfDescription,
-                        booksNumber: getBookCountForUser(user.id),
                       })
                     }
                   />
@@ -165,11 +178,7 @@ const UserSelection = () => {
         </div>
       </Board>
 
-      <Modal
-        isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        title={selectedAvatar.shelfName || "Somebody's Shelf"}
-        size="lg">
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} title={selectedAvatar.shelfName || "Somebody's Shelf"} size="lg">
         <div className="row">
           <div className="col-md-4 d-flex align-items-start">
             {selectedAvatar.src ? (
@@ -183,9 +192,7 @@ const UserSelection = () => {
                 }}
               />
             ) : (
-              <div style={fallbackStyle}>
-                {getInitials(selectedAvatar.shelfName)}
-              </div>
+              <div style={fallbackStyle}>{getInitials(selectedAvatar.shelfName)}</div>
             )}
           </div>
 
@@ -195,19 +202,21 @@ const UserSelection = () => {
                 <strong>Owner:</strong> {selectedAvatar.ownerName || ""}
               </div>
               <div className="col-6">
-                {selectedAvatar.booksNumber || 0} <strong>Books</strong>
+                {fetchingBookCount ? (
+                  <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                ) : (
+                  selectedAvatar.booksNumber ?? "..."
+                )}{" "}
+                <strong>Books</strong>
               </div>
               <div className="col-12 mt-2">
                 <strong>Description:</strong>
                 <p className="text-muted mt-1">
-                  {selectedAvatar.description ||
-                    "This is a book shelf containing various books and collections."}
+                  {selectedAvatar.description || "This is a book shelf containing various books and collections."}
                 </p>
               </div>
               <div className="col-12 mt-3">
-                <button
-                  className="btn btn-warning"
-                  onClick={handleEnterBookshelf}>
+                <button className="btn btn-warning" onClick={handleEnterBookshelf}>
                   Enter this Book Shelf
                 </button>
               </div>
