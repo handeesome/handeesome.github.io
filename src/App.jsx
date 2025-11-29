@@ -9,6 +9,7 @@ import Header from "./components/header/Header";
 import GoToTopButton from "./components/GoToTopButton.jsx";
 import { AuthProvider } from "./contexts/authContext.jsx";
 import { bookShelfRoutes } from "./routes/bookShelfRoutes.jsx";
+import { gamesRoutes } from "./routes/gameRoutes.jsx";
 
 const Projects = lazy(() => import("./pages/Projects").then((module) => ({ default: module.Projects })));
 const ProjectPage = lazy(() => import("./pages/Projects").then((module) => ({ default: module.ProjectPage })));
@@ -25,6 +26,7 @@ function App() {
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="/study-notes" element={<StudyNotes />} />
           {bookShelfRoutes}
+          {gamesRoutes}
         </Routes>
       </Suspense>
       <Footer />
