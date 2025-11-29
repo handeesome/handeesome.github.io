@@ -1,48 +1,32 @@
 import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import "./App.css";
 import "./styles/index.js";
 
 import Home from "./pages/Home";
-
-import StudyNotes from "./pages/StudyNotes";
-import { Projects, ProjectPage } from "./pages/Projects";
-import {
-  MyBookShelf,
-  BookAnalytics,
-  TimeTracker,
-  FirebaseBookshelf,
-  BookNotes,
-  UserSelection,
-  BookShelf,
-} from "./pages/BookShelf";
 import Footer from "./components/Footer";
 import Header from "./components/header/Header";
 import GoToTopButton from "./components/GoToTopButton.jsx";
 import { AuthProvider } from "./contexts/authContext.jsx";
+import { bookShelfRoutes } from "./routes/bookShelfRoutes.jsx";
+
+const Projects = lazy(() => import("./pages/Projects").then((module) => ({ default: module.Projects })));
+const ProjectPage = lazy(() => import("./pages/Projects").then((module) => ({ default: module.ProjectPage })));
+const StudyNotes = lazy(() => import("./pages/StudyNotes"));
 
 function App() {
   return (
     <AuthProvider>
       <Header picHeight={80} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:slug" element={<ProjectPage />} />
-        <Route path="/study-notes" element={<StudyNotes />} />
-        <Route path="/book-shelf" element={<UserSelection />} />
-        <Route path="/book-shelf/:userName" element={<BookShelf />} />
-        <Route path="/book-shelf/cenhan" element={<MyBookShelf />} />
-        <Route path="/edit-bookshelf" element={<FirebaseBookshelf />} />
-        <Route
-          path="/book-shelf/book/:bookId/analytics"
-          element={<BookAnalytics />}
-        />
-        <Route path="/book-shelf/book/:bookId/notes" element={<BookNotes />} />
-        <Route
-          path="/book-shelf/cenhan/time-tracker"
-          element={<TimeTracker />}
-        />
-      </Routes>
+      <Suspense fallback={<div className="loading">Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<ProjectPage />} />
+          <Route path="/study-notes" element={<StudyNotes />} />
+          {bookShelfRoutes}
+        </Routes>
+      </Suspense>
       <Footer />
       <GoToTopButton />
     </AuthProvider>
