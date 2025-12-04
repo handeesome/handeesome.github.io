@@ -47,12 +47,36 @@ const shuffleNumbers = (board) => {
   }
   return board;
 };
-const generateSudoku = (board) =>
+const generateFullSudoku = (board) =>
   shuffleNumbers(
     shuffleStack(shuffleColsInStack(shuffleBands(shuffleRowsInBand(board))))
   );
+
+const removeNumbers = (board, removeCount) => {
+  const puzzle = board.map((row) => [...row]);
+  let removed = 0;
+
+  while (removed < removeCount) {
+    const row = Math.floor(Math.random() * 9);
+    const col = Math.floor(Math.random() * 9);
+
+    if (puzzle[row][col] !== null) {
+      puzzle[row][col] = null;
+      removed++;
+    }
+  }
+  return puzzle;
+};
+
 const Sudoku = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selRow, selCol] = selectedIndex
+    ? selectedIndex.split("-").map(Number)
+    : [null, null];
+
+  const selBlockRow = selRow !== null ? Math.floor(selRow / 3) : null;
+  const selBlockCol = selCol !== null ? Math.floor(selCol / 3) : null;
+
   const boardRef = useRef(null);
 
   const solvedBase = [
@@ -66,8 +90,10 @@ const Sudoku = () => {
     [6, 7, 8, 9, 1, 2, 3, 4, 5],
     [9, 1, 2, 3, 4, 5, 6, 7, 8],
   ];
-  const initialArray = generateSudoku(solvedBase);
-  const initialBoard = initialArray.map((row) =>
+
+  const initialArray = generateFullSudoku(solvedBase);
+  const puzzle = removeNumbers(initialArray, 55);
+  const initialBoard = puzzle.map((row) =>
     row.map((value) => ({ value, editable: value === null }))
   );
   const [board, setBoard] = useState(initialBoard);
@@ -97,9 +123,17 @@ const Sudoku = () => {
           <Square
             key={`${rowIndex}-${colIndex}`}
             selected={selectedIndex === `${rowIndex}-${colIndex}`}
+            highlightBlock={
+              (selRow !== null &&
+                Math.floor(rowIndex / 3) === selBlockRow &&
+                Math.floor(colIndex / 3) === selBlockCol) ||
+              selRow === rowIndex ||
+              selCol === colIndex
+            }
             value={cell.value}
             row={rowIndex}
             col={colIndex}
+            answer={solvedBase[rowIndex][colIndex]}
             editable={cell.editable}
             onSelect={() => {
               setSelectedIndex(`${rowIndex}-${colIndex}`);

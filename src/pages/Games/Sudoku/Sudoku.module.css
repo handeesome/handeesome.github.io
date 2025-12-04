@@ -3,6 +3,7 @@
   height: 90vmin;
   max-width: 450px;
   max-height: 450px;
+  box-sizing: border-box;
 
   display: grid;
   grid-template-columns: repeat(9, 1fr);

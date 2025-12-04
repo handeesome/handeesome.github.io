@@ -4,7 +4,9 @@ const Square = ({
   value,
   row,
   col,
+  answer,
   selected,
+  highlightBlock,
   onSelect,
   editable,
   onChange,
@@ -15,11 +17,18 @@ const Square = ({
     } ${col % 3 === 0 ? `${styles["left-bold"]}` : ""} ${
       row === 8 ? `${styles["bottom-bold"]}` : ""
     } ${col === 8 ? `${styles["right-bold"]}` : ""} 
+    ${highlightBlock ? styles["block-highlight"] : ""}
     `}>
     {editable ? (
       <input
         className={`${styles.input} ${
           selected ? `${styles.selected}` : "bg-transparent"
+        } ${
+          value
+            ? String(answer) === value
+              ? styles.correct
+              : styles.incorrect
+            : ""
         }`}
         type="text"
         maxLength={1}
