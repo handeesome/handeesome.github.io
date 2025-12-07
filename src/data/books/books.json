@@ -1,5 +1,291 @@
 [
   {
+    "id": "27788",
+    "title": "Julie ou La nouvelle Héloïse",
+    "author": "Jean-Jacques Rousseau",
+    "num pages": "728",
+    "avg rating": "3.44",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/06/20",
+    "title2": "新爱洛伊丝",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "61439040",
+    "title": "1984",
+    "author": "George Orwell",
+    "num pages": "368",
+    "avg rating": "4.20",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/06/11",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "5107",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "num pages": "277",
+    "avg rating": "3.80",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/08/17",
+    "title2": "麦田里的守望者",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "51502975",
+    "title": "바깥은 여름",
+    "author": "Kim Ae-ran",
+    "num pages": "208",
+    "avg rating": "4.07",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/29",
+    "date added": "2025/08/17",
+    "title2": "外面是夏天",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "13590009",
+    "title": "Think Like a Programmer: An Introduction to Creative Problem Solving",
+    "author": "V. Anton Spraul",
+    "num pages": "233",
+    "avg rating": "3.86",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2021/04/29",
+    "tags": [
+      "programming"
+    ]
+  },
+  {
+    "id": "26007192",
+    "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
+    "author": "Timothy J. Keller",
+    "num pages": "285",
+    "avg rating": "4.37",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/28",
+    "date added": "2025/07/27",
+    "title2": "山寨版的上帝",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "2165",
+    "title": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "num pages": "96",
+    "avg rating": "3.81",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/27",
+    "date added": "2025/08/16",
+    "title2": "老人与海",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "19342729",
+    "title": "Atonement",
+    "author": "Ian McEwan",
+    "num pages": "426",
+    "avg rating": "3.95",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/25",
+    "date added": "2025/08/15",
+    "title2": "赎罪",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "28137375",
+    "title": "Pride and Predujice",
+    "author": "Jane Austen",
+    "num pages": "234",
+    "avg rating": "4.29",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/25",
+    "date added": "2025/06/30",
+    "title2": "傲慢与偏见",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "1953",
+    "title": "A Tale of Two Cities",
+    "author": "Charles Dickens",
+    "num pages": "489",
+    "avg rating": "3.88",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/11/24",
+    "title2": "双城记",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "23275043",
+    "title": "沈黙",
+    "author": "遠藤周作",
+    "num pages": "292",
+    "avg rating": "4.09",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/21",
+    "date added": "2025/08/15",
+    "title2": "沉默",
+    "tags": [
+      "fiction",
+      "religion"
+    ]
+  },
+  {
+    "id": "53263624",
+    "title": "L'évolution créatrice",
+    "author": "Henri Bergson",
+    "num pages": "244",
+    "avg rating": "4.10",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/07/24",
+    "title2": "创造进化论",
+    "tags": [
+      "philosophy"
+    ]
+  },
+  {
+    "id": "40000210",
+    "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
+    "author": "Sarah Bakewell",
+    "num pages": "563",
+    "avg rating": "4.24",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/17",
+    "date added": "2025/08/03",
+    "title2": "存在主义咖啡馆",
+    "tags": [
+      "philosophy",
+      "essays"
+    ]
+  },
+  {
+    "id": "16981",
+    "title": "Invisible Man",
+    "author": "Ralph Ellison",
+    "num pages": "581",
+    "avg rating": "3.92",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/11/17",
+    "title2": "看不见的人",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "18922517",
+    "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
+    "author": "Stendhal",
+    "num pages": "512",
+    "avg rating": "3.86",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/14",
+    "date added": "2025/06/30",
+    "title2": "红与黑",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "41810863",
+    "title": "The Remains of the Day",
+    "author": "Kazuo Ishiguro",
+    "num pages": "337",
+    "avg rating": "4.14",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/11/14",
+    "date added": "2025/08/15",
+    "title2": "长日将尽",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "6334",
+    "title": "Never Let Me Go",
+    "author": "Kazuo Ishiguro",
+    "num pages": "288",
+    "avg rating": "3.85",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/11/13",
+    "title2": "别让我走",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
     "id": "55385983",
     "title": "Speechless: Controlling Words, Controlling Minds",
     "author": "Michael J. Knowles",
@@ -13,23 +299,6 @@
     "tags": [
       "essays",
       "social-science"
-    ]
-  },
-  {
-    "id": "19342729",
-    "title": "Atonement",
-    "author": "Ian McEwan",
-    "num pages": "426",
-    "avg rating": "3.95",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/08/15",
-    "title2": "赎罪",
-    "tags": [
-      "fiction",
-      "classics"
     ]
   },
   {
@@ -101,23 +370,6 @@
     ]
   },
   {
-    "id": "41810863",
-    "title": "The Remains of the Day",
-    "author": "Kazuo Ishiguro",
-    "num pages": "337",
-    "avg rating": "4.14",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/08/15",
-    "title2": "长日将尽",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "18752103",
     "title": "Anna Karenina",
     "author": "Leo Tolstoy",
@@ -168,23 +420,6 @@
     ]
   },
   {
-    "id": "18922517",
-    "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
-    "author": "Stendhal",
-    "num pages": "512",
-    "avg rating": "3.86",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/06/30",
-    "title2": "红与黑",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "19179596",
     "title": "Преступление и наказание",
     "author": "Fyodor Dostoevsky",
@@ -207,7 +442,7 @@
     "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
     "author": "Charlie Kirk",
     "num pages": "288",
-    "avg rating": "4.11",
+    "avg rating": "4.08",
     "shelves": [
       "finished"
     ],
@@ -233,23 +468,6 @@
     "title2": "爱的五种语言",
     "tags": [
       "religion"
-    ]
-  },
-  {
-    "id": "40000210",
-    "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
-    "author": "Sarah Bakewell",
-    "num pages": "563",
-    "avg rating": "4.24",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/08/03",
-    "title2": "存在主义咖啡馆",
-    "tags": [
-      "philosophy",
-      "essays"
     ]
   },
   {
@@ -358,7 +576,7 @@
     "title": "The Coming of Age",
     "author": "Simone de Beauvoir",
     "num pages": "592",
-    "avg rating": "3.93",
+    "avg rating": "3.94",
     "shelves": [
       "want-to-read"
     ],
@@ -630,7 +848,7 @@
     "title": "The History of the Ancient World: From the Earliest Accounts to the Fall of Rome",
     "author": "Susan Wise Bauer",
     "num pages": "896",
-    "avg rating": "4.11",
+    "avg rating": "4.12",
     "shelves": [
       "finished"
     ],
@@ -675,57 +893,6 @@
     ]
   },
   {
-    "id": "5107",
-    "title": "The Catcher in the Rye",
-    "author": "J.D. Salinger",
-    "num pages": "277",
-    "avg rating": "3.80",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/17",
-    "title2": "麦田里的守望者",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
-    "id": "51502975",
-    "title": "바깥은 여름",
-    "author": "Kim Ae-ran",
-    "num pages": "208",
-    "avg rating": "4.08",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/17",
-    "title2": "外面是夏天",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
-  },
-  {
-    "id": "2165",
-    "title": "The Old Man and the Sea",
-    "author": "Ernest Hemingway",
-    "num pages": "96",
-    "avg rating": "3.81",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/16",
-    "title2": "老人与海",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "385228",
     "title": "On Liberty",
     "author": "John Stuart Mill",
@@ -759,23 +926,6 @@
       "philosophy",
       "history",
       "social-science"
-    ]
-  },
-  {
-    "id": "23275043",
-    "title": "沈黙",
-    "author": "遠藤周作",
-    "num pages": "292",
-    "avg rating": "4.09",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/15",
-    "title2": "沉默",
-    "tags": [
-      "fiction",
-      "religion"
     ]
   },
   {
@@ -851,7 +1001,7 @@
     "title": "The Hidden Persuaders",
     "author": "Vance Packard",
     "num pages": "240",
-    "avg rating": "3.83",
+    "avg rating": "3.84",
     "shelves": [
       "want-to-read"
     ],
@@ -860,22 +1010,6 @@
     "tags": [
       "essays",
       "social-science"
-    ]
-  },
-  {
-    "id": "26007192",
-    "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
-    "author": "Timothy J. Keller",
-    "num pages": "285",
-    "avg rating": "4.37",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/27",
-    "title2": "山寨版的上帝",
-    "tags": [
-      "religion"
     ]
   },
   {
@@ -893,22 +1027,6 @@
     "tags": [
       "fiction",
       "classics"
-    ]
-  },
-  {
-    "id": "53263624",
-    "title": "L'évolution créatrice",
-    "author": "Henri Bergson",
-    "num pages": "244",
-    "avg rating": "4.10",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/24",
-    "title2": "创造进化论",
-    "tags": [
-      "philosophy"
     ]
   },
   {
@@ -1005,7 +1123,7 @@
     "title": "L'Ingénu",
     "author": "Voltaire",
     "num pages": "182",
-    "avg rating": "3.52",
+    "avg rating": "3.51",
     "shelves": [
       "finished"
     ],
@@ -1107,23 +1225,6 @@
     ]
   },
   {
-    "id": "28137375",
-    "title": "Pride and Predujice",
-    "author": "Jane Austen",
-    "num pages": "234",
-    "avg rating": "4.29",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/06/30",
-    "title2": "傲慢与偏见",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "203774224",
     "title": "法律的悖论",
     "author": "罗翔",
@@ -1159,24 +1260,6 @@
     ]
   },
   {
-    "id": "27788",
-    "title": "Julie ou La nouvelle Héloïse",
-    "author": "Jean-Jacques Rousseau",
-    "num pages": "728",
-    "avg rating": "3.44",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/06/20",
-    "title2": "新爱洛伊丝",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
-  },
-  {
     "id": "170448",
     "title": "Animal Farm",
     "author": "George Orwell",
@@ -1192,23 +1275,6 @@
       "philosophy",
       "classics",
       "satire"
-    ]
-  },
-  {
-    "id": "61439040",
-    "title": "1984",
-    "author": "George Orwell",
-    "num pages": "368",
-    "avg rating": "4.20",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/06/11",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
     ]
   },
   {
@@ -1327,7 +1393,7 @@
     "title": "康熙的红票：全球化中的清朝",
     "author": "Litian Swen",
     "num pages": "400",
-    "avg rating": "4.58",
+    "avg rating": "4.59",
     "shelves": [
       "finished"
     ],
@@ -1389,7 +1455,7 @@
     "title": "The Secret Life of Programs: Understand Computers -- Craft Better Code",
     "author": "Jon Steinhart",
     "num pages": "504",
-    "avg rating": "3.88",
+    "avg rating": "3.89",
     "shelves": [
       "want-to-read"
     ],
@@ -1404,22 +1470,7 @@
     "title": "Algorithmic Thinking: A Problem-Based Introduction",
     "author": "Daniel Zingaro",
     "num pages": "408",
-    "avg rating": "4.44",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2021/04/29",
-    "tags": [
-      "programming"
-    ]
-  },
-  {
-    "id": "13590009",
-    "title": "Think Like a Programmer: An Introduction to Creative Problem Solving",
-    "author": "V. Anton Spraul",
-    "num pages": "233",
-    "avg rating": "3.86",
+    "avg rating": "4.45",
     "shelves": [
       "want-to-read"
     ],
