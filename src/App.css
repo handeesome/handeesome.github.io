@@ -58,3 +58,20 @@ html.light .text-muted {
 a {
   cursor: pointer;
 }
+
+/* Light mode */
+html.light .card {
+  background: #ffffff;
+  color: #222;
+  border: 1px solid #ddd;
+}
+
+/* Dark mode */
+html.dark .card {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+html.dark .icon {
+  filter: invert(1);
+}
