@@ -19,15 +19,15 @@ const Games = () => {
       {games.map((game) => (
         <div key={game.id} className="col-4 col-md-3 mb-4">
           <div
-            className={`card ${styles["game-card"]}`}
+            className={`card ${styles["game-card"]} `}
             onClick={() => handleClick(game.path)}>
             <img
               src={game.thumbnail}
               alt={game.name}
-              className="card-img-top"
+              className="card-img-top icon"
             />
-            <div className="card-body">
-              <h5 className="card-title">{game.name}</h5>
+            <div className={`card-body`}>
+              <h5 className={`card-text `}>{game.name}</h5>
             </div>
           </div>
         </div>

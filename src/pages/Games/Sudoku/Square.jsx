@@ -18,9 +18,12 @@ const Square = ({
       row === 8 ? `${styles["bottom-bold"]}` : ""
     } ${col === 8 ? `${styles["right-bold"]}` : ""} 
     ${highlightBlock ? styles["block-highlight"] : ""}
+    ${selected ? styles.selected : ""}
+    ${editable ? styles.editable : ""}
     `}>
     {editable ? (
-      <input
+      <div
+        tabIndex={0}
         className={`${styles.input} ${
           selected ? `${styles.selected}` : "bg-transparent"
         } ${
@@ -30,23 +33,22 @@ const Square = ({
               : styles.incorrect
             : ""
         }`}
-        type="text"
-        maxLength={1}
-        value={value ?? ""}
-        onClick={onSelect}
-        onChange={(e) => {
-          const val = e.target.value;
-          if (val === "" || (val >= "1" && val <= "9")) {
-            onChange(val);
-          }
+        onClick={(e) => {
+          onSelect();
+          e.currentTarget.focus();
         }}
         onKeyDown={(e) => {
-          if (value && e.key >= "1" && e.key <= "9") {
+          if (e.key >= "1" && e.key <= "9") {
             onChange(e.key);
             e.preventDefault();
           }
-        }}
-      />
+          if (e.key === "Backspace" || e.key === "Delete") {
+            onChange("");
+            e.preventDefault();
+          }
+        }}>
+        {value ?? ""}
+      </div>
     ) : (
       value
     )}
