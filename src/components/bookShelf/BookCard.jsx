@@ -30,12 +30,16 @@ const BookCard = ({
               "/default-cover.jpg"
             }
             alt={book.title}
-            onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
+            onClick={
+              !hideSessions
+                ? () => navigate(`/book-shelf/book/${book.id}/notes`)
+                : undefined
+            }
             className="book-cover-grid"
             style={{
               width: "100%",
               height: "auto",
-              cursor: "pointer",
+              cursor: !hideSessions ? "pointer" : "default",
             }}
             onError={(e) =>
               (e.currentTarget.src = book.coverBase64 || "/default-cover.jpg")
@@ -49,11 +53,15 @@ const BookCard = ({
           <div className="d-flex flex-column justify-content-center ">
             <h6
               className="card-title mb-1 text-center"
-              onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
+              onClick={
+                !hideSessions
+                  ? () => navigate(`/book-shelf/book/${book.id}/notes`)
+                  : undefined
+              }
               style={{
                 fontSize: "1rem",
                 lineHeight: "1.2",
-                cursor: "pointer",
+                cursor: !hideSessions ? "pointer" : "default",
               }}>
               {book.title}
               {book.title2 && (
@@ -62,8 +70,12 @@ const BookCard = ({
             </h6>
             <p
               className="card-text text-muted mb-2"
-              onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
-              style={{ cursor: "pointer" }}>
+              onClick={
+                !hideSessions
+                  ? () => navigate(`/book-shelf/book/${book.id}/notes`)
+                  : undefined
+              }
+              style={{ cursor: !hideSessions ? "pointer" : "default" }}>
               by {book.author}
             </p>
 
