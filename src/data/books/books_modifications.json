@@ -1,4 +1,14 @@
 {
+  "4069": {
+    "title": "Man's Search for Meaning",
+    "title2": "活出意义来",
+    "tags": ["biography", "philosophy"]
+  },
+  "24583": {
+    "title": "The Adventures of Tom Sawyer",
+    "title2": "汤姆索亚历险记",
+    "tags": ["fiction", "classics"]
+  },
   "1953": {
     "title": "A Tale of Two Cities",
     "title2": "双城记",
@@ -131,7 +141,7 @@
   },
   "11138": {
     "title": "Mere Christianity",
-    "title2": "返璞归真-如此基督教",
+    "title2": "返璞归真：纯粹的基督教",
     "tags": ["religion"]
   },
   "57836039": {
