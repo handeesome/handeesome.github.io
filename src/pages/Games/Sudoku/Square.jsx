@@ -27,11 +27,7 @@ const Square = ({
         className={`${styles.input} ${
           selected ? `${styles.selected}` : "bg-transparent"
         } ${
-          value
-            ? String(answer) === value
-              ? styles.correct
-              : styles.incorrect
-            : ""
+          value ? (answer === value ? styles.correct : styles.incorrect) : ""
         }`}
         onClick={(e) => {
           onSelect();
@@ -39,7 +35,7 @@ const Square = ({
         }}
         onKeyDown={(e) => {
           if (e.key >= "1" && e.key <= "9") {
-            onChange(e.key);
+            onChange(Number(e.key));
             e.preventDefault();
           }
           if (e.key === "Backspace" || e.key === "Delete") {
