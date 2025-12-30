@@ -1,5 +1,243 @@
 [
   {
+    "id": "3730",
+    "title": "The Hidden Persuaders",
+    "author": "Vance Packard",
+    "num pages": "240",
+    "avg rating": "3.84",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/08/07",
+    "tags": [
+      "essays",
+      "social-science"
+    ]
+  },
+  {
+    "id": "11138",
+    "title": "Mere Christianity",
+    "author": "C.S. Lewis",
+    "num pages": "191",
+    "avg rating": "4.37",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/08/14",
+    "title2": "返璞归真：纯粹的基督教",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "60470571",
+    "title": "Nonverts: The Making of Ex-Christian America",
+    "author": "Stephen Bullivant",
+    "num pages": "257",
+    "avg rating": "3.86",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/18",
+    "date added": "2025/07/14",
+    "tags": [
+      "religion",
+      "history",
+      "social-science"
+    ]
+  },
+  {
+    "id": "53263624",
+    "title": "L'évolution créatrice",
+    "author": "Henri Bergson",
+    "num pages": "244",
+    "avg rating": "4.10",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/17",
+    "date added": "2025/07/24",
+    "title2": "创造进化论",
+    "tags": [
+      "philosophy"
+    ]
+  },
+  {
+    "id": "18756051",
+    "title": "Братья Карамазовы",
+    "author": "Fyodor Dostoevsky",
+    "num pages": "472",
+    "avg rating": "4.39",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/09/13",
+    "title2": "卡拉马佐夫兄弟",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "19324807",
+    "title": "Die Leiden des jungen Werthers",
+    "author": "Johann Wolfgang von Goethe",
+    "num pages": "154",
+    "avg rating": "3.69",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/16",
+    "date added": "2025/09/13",
+    "title2": "少年维特的烦恼",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "2376901",
+    "title": "人間失格 [Ningen Shikkaku]",
+    "author": "Osamu Dazai",
+    "num pages": "185",
+    "avg rating": "3.94",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/12",
+    "date added": "2025/09/13",
+    "title2": "人间失格",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "170448",
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "num pages": "141",
+    "avg rating": "4.02",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/10",
+    "date added": "2025/06/11",
+    "title2": "动物农场",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics",
+      "satire"
+    ]
+  },
+  {
+    "id": "3836",
+    "title": "Don Quixote de la Mancha",
+    "author": "Miguel de Cervantes Saavedra",
+    "num pages": "1023",
+    "avg rating": "3.91",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/07/23",
+    "title2": "堂吉诃德",
+    "tags": [
+      "fiction",
+      "classics",
+      "satire"
+    ]
+  },
+  {
+    "id": "55385983",
+    "title": "Speechless: Controlling Words, Controlling Minds",
+    "author": "Michael J. Knowles",
+    "num pages": "383",
+    "avg rating": "4.24",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/06",
+    "date added": "2025/07/07",
+    "tags": [
+      "essays",
+      "social-science"
+    ]
+  },
+  {
+    "id": "61439040",
+    "title": "1984",
+    "author": "George Orwell",
+    "num pages": "368",
+    "avg rating": "4.20",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/07",
+    "date added": "2025/06/11",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "4069",
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "num pages": "165",
+    "avg rating": "4.37",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/12/05",
+    "title2": "活出意义来",
+    "tags": [
+      "biography",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "24583",
+    "title": "The Adventures of Tom Sawyer",
+    "author": "Mark Twain",
+    "num pages": "244",
+    "avg rating": "3.92",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/12/05",
+    "title2": "汤姆索亚历险记",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "5107",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "num pages": "277",
+    "avg rating": "3.80",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/04",
+    "date added": "2025/08/17",
+    "title2": "麦田里的守望者",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
     "id": "27788",
     "title": "Julie ou La nouvelle Héloïse",
     "author": "Jean-Jacques Rousseau",
@@ -14,40 +252,6 @@
     "tags": [
       "fiction",
       "philosophy",
-      "classics"
-    ]
-  },
-  {
-    "id": "61439040",
-    "title": "1984",
-    "author": "George Orwell",
-    "num pages": "368",
-    "avg rating": "4.20",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/06/11",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
-  },
-  {
-    "id": "5107",
-    "title": "The Catcher in the Rye",
-    "author": "J.D. Salinger",
-    "num pages": "277",
-    "avg rating": "3.80",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/08/17",
-    "title2": "麦田里的守望者",
-    "tags": [
-      "fiction",
       "classics"
     ]
   },
@@ -185,22 +389,6 @@
     ]
   },
   {
-    "id": "53263624",
-    "title": "L'évolution créatrice",
-    "author": "Henri Bergson",
-    "num pages": "244",
-    "avg rating": "4.10",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/07/24",
-    "title2": "创造进化论",
-    "tags": [
-      "philosophy"
-    ]
-  },
-  {
     "id": "40000210",
     "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
     "author": "Sarah Bakewell",
@@ -283,22 +471,6 @@
     "tags": [
       "fiction",
       "contemporary"
-    ]
-  },
-  {
-    "id": "55385983",
-    "title": "Speechless: Controlling Words, Controlling Minds",
-    "author": "Michael J. Knowles",
-    "num pages": "383",
-    "avg rating": "4.24",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/07/07",
-    "tags": [
-      "essays",
-      "social-science"
     ]
   },
   {
@@ -424,7 +596,7 @@
     "title": "Преступление и наказание",
     "author": "Fyodor Dostoevsky",
     "num pages": "548",
-    "avg rating": "4.28",
+    "avg rating": "4.29",
     "shelves": [
       "finished"
     ],
@@ -442,7 +614,7 @@
     "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
     "author": "Charlie Kirk",
     "num pages": "288",
-    "avg rating": "4.08",
+    "avg rating": "4.10",
     "shelves": [
       "finished"
     ],
@@ -576,7 +748,7 @@
     "title": "The Coming of Age",
     "author": "Simone de Beauvoir",
     "num pages": "592",
-    "avg rating": "3.94",
+    "avg rating": "3.93",
     "shelves": [
       "want-to-read"
     ],
@@ -718,58 +890,6 @@
     "date read": null,
     "date added": "2025/09/13",
     "title2": "Catch-22",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
-    "id": "18756051",
-    "title": "Братья Карамазовы",
-    "author": "Fyodor Dostoevsky",
-    "num pages": "472",
-    "avg rating": "4.39",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/09/13",
-    "title2": "卡拉马佐夫兄弟",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
-  },
-  {
-    "id": "19324807",
-    "title": "Die Leiden des jungen Werthers",
-    "author": "Johann Wolfgang von Goethe",
-    "num pages": "154",
-    "avg rating": "3.69",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/09/13",
-    "title2": "少年维特的烦恼",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
-    "id": "2376901",
-    "title": "人間失格 [Ningen Shikkaku]",
-    "author": "Osamu Dazai",
-    "num pages": "185",
-    "avg rating": "3.95",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/09/13",
-    "title2": "人间失格",
     "tags": [
       "fiction",
       "classics"
@@ -929,22 +1049,6 @@
     ]
   },
   {
-    "id": "11138",
-    "title": "Mere Christianity",
-    "author": "C.S. Lewis",
-    "num pages": "191",
-    "avg rating": "4.37",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/14",
-    "title2": "返璞归真-如此基督教",
-    "tags": [
-      "religion"
-    ]
-  },
-  {
     "id": "57836039",
     "title": "ぼくはこんな音楽を聴いて育った",
     "author": "大友良英",
@@ -997,22 +1101,6 @@
     ]
   },
   {
-    "id": "3730",
-    "title": "The Hidden Persuaders",
-    "author": "Vance Packard",
-    "num pages": "240",
-    "avg rating": "3.84",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/07",
-    "tags": [
-      "essays",
-      "social-science"
-    ]
-  },
-  {
     "id": "36160370",
     "title": "Brave New World",
     "author": "Aldous Huxley",
@@ -1027,24 +1115,6 @@
     "tags": [
       "fiction",
       "classics"
-    ]
-  },
-  {
-    "id": "3836",
-    "title": "Don Quixote de la Mancha",
-    "author": "Miguel de Cervantes Saavedra",
-    "num pages": "1023",
-    "avg rating": "3.91",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/23",
-    "title2": "堂吉诃德",
-    "tags": [
-      "fiction",
-      "classics",
-      "satire"
     ]
   },
   {
@@ -1086,23 +1156,6 @@
     ]
   },
   {
-    "id": "60470571",
-    "title": "Nonverts: The Making of Ex-Christian America",
-    "author": "Stephen Bullivant",
-    "num pages": "257",
-    "avg rating": "3.86",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/07/14",
-    "tags": [
-      "religion",
-      "history",
-      "social-science"
-    ]
-  },
-  {
     "id": "63354300",
     "title": "The Great Dechurching: Who's Leaving, Why Are They Going, and What Will It Take to Bring Them Back?",
     "author": "Jim  Davis",
@@ -1123,7 +1176,7 @@
     "title": "L'Ingénu",
     "author": "Voltaire",
     "num pages": "182",
-    "avg rating": "3.51",
+    "avg rating": "3.52",
     "shelves": [
       "finished"
     ],
@@ -1260,24 +1313,6 @@
     ]
   },
   {
-    "id": "170448",
-    "title": "Animal Farm",
-    "author": "George Orwell",
-    "num pages": "141",
-    "avg rating": "4.01",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/06/11",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics",
-      "satire"
-    ]
-  },
-  {
     "id": "27840555",
     "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity",
     "author": "Nabeel Qureshi",
@@ -1313,7 +1348,7 @@
     "title": "圆圈正义：作为自由前提的信念",
     "author": "LUO XIANG",
     "num pages": "307",
-    "avg rating": "4.06",
+    "avg rating": "4.07",
     "shelves": [
       "finished"
     ],
