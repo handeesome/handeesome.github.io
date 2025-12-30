@@ -63,7 +63,7 @@ const BookShelf = () => {
       <DefaultBookShelf
         books={getConvertedBooks()}
         title={`${loading || bookshelfLoading ? "Loading..." : ""}${
-          user?.shelfName || `${userName}'s Book Shelf`
+          user?.shelfName
         }`}
         paramGetTagColor={getTagColor}
       />
