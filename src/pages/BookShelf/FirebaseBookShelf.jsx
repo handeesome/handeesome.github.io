@@ -1,5 +1,5 @@
 // FirebaseBookshelf.jsx - Using Shared Auth Context
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import HideBtnsContext from "../../components/bookShelf/HideBtnsContext";
 import Board from "../../components/Board";
 import BookShelf from "../../components/bookShelf/BookShelf";
@@ -139,6 +139,14 @@ const FirebaseBookshelf = () => {
   const togglePublic = () => {
     updatePublic(!profileData.isPublic);
   };
+
+  const handleProfileSubmit = async (profileUpdates) => {
+    await updateEntireProfile(profileUpdates);
+
+    setShelfName(profileUpdates.shelfName || "");
+
+    setShowProfileFormToggle(false);
+  };
   // Main bookshelf interface
   return (
     <>
@@ -223,7 +231,7 @@ const FirebaseBookshelf = () => {
       <ProfileFormModal
         isOpen={showProfileFormToggle}
         onClose={() => setShowProfileFormToggle(false)}
-        onSubmit={updateEntireProfile}
+        onSubmit={handleProfileSubmit}
         profileData={profileData}
         defaultName={user.displayName || user.email.split("@")[0]}
       />
