@@ -75,3 +75,6 @@ html.dark .card {
 html.dark .icon {
   filter: invert(1);
 }
+.hover-bg-light:hover {
+  background-color: #f8f9fa;
+}

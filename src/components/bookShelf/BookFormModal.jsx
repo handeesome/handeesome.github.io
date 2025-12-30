@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Palette } from "lucide-react";
 import CoverDropZone from "../bookShelf/CoverDropZone";
 import TagManagementModal from "./TagManagementModal";
+import BookSearchBar from "./BookSearchBar";
 import FormDataTags from "./FormDataTags";
 import FormRow from "./FormRow";
 import { Editor } from "@tinymce/tinymce-react";
@@ -41,6 +42,8 @@ const BookFormModal = ({
   const [newShelf, setNewShelf] = useState("");
   const [showTagManagementModal, setShowTagManagementModal] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
+  const [showSearchModal, setShowSearchModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { theme } = useTheme();
   const darkMode = theme === "dark" ? true : false;
@@ -82,7 +85,7 @@ const BookFormModal = ({
     }
   }, [book?.id]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setValidationErrors({});
     const errors = {};
@@ -112,23 +115,40 @@ const BookFormModal = ({
       shelves: selectedShelves,
       coverBase64: formData.coverBase64,
     };
-    onSubmit(processedData);
+    setIsSubmitting(true);
+    try {
+      await onSubmit(processedData);
 
-    // Only reset form data for new books (when book.id doesn't exist)
-    if (!book?.id) {
-      setFormData(getInitialFormData());
-      setSelectedTags([]);
-      setSelectedShelves([]);
+      // Only reset form data for new books (when book.id doesn't exist)
+      if (!book?.id) {
+        setFormData(getInitialFormData());
+        setSelectedTags([]);
+        setSelectedShelves([]);
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const modalFooter = (
     <>
-      <button type="button" className="btn btn-secondary" onClick={onCancel}>
-        Cancel
-      </button>
-      <button type="submit" form="bookForm" className="btn btn-primary">
-        {book?.id ? "💾 Update Book" : "➕ Add Book"}
+      <button
+        type="submit"
+        form="bookForm"
+        className="btn btn-primary"
+        disabled={isSubmitting}>
+        {isSubmitting ? (
+          <>
+            <span
+              className="spinner-border spinner-border-sm me-2"
+              role="status"></span>
+            Updating...
+          </>
+        ) : book?.id ? (
+          "💾 Update Book"
+        ) : (
+          "➕ Add Book"
+        )}
       </button>
     </>
   );
@@ -143,16 +163,48 @@ const BookFormModal = ({
         title={`📚${title}`}
         size="lg"
         footer={modalFooter}>
+        {isSubmitting && (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 1000,
+            }}>
+            <div className="text-center">
+              <div
+                className="spinner-border mb-3"
+                style={{ color: "white" }}
+                role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+              <div style={{ color: "white" }}>Updating book...</div>
+            </div>
+          </div>
+        )}
         <form onSubmit={handleSubmit} id="bookForm">
           <div className="row g-0">
             <div className="col-md-4 d-flex justify-content-center align-items-start">
-              <div className="text-center">
+              <div className="text-center d-flex flex-column align-items-center">
                 <div className="mb-3">
                   <CoverDropZone
                     formData={formData}
                     setFormData={setFormData}
                   />
                 </div>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => setShowSearchModal(true)}>
+                  Get from
+                  <br /> Cenhan's BookShelf
+                </button>
               </div>
             </div>
 
@@ -334,6 +386,22 @@ const BookFormModal = ({
         onAddTag={addTagColor}
         onUpdateTag={updateTagColor}
         onDeleteTag={deleteTagColor}
+      />
+      <BookSearchBar
+        isOpen={showSearchModal}
+        onClose={() => setShowSearchModal(false)}
+        onSelect={(bookData) => {
+          setFormData({
+            ...formData,
+            title: bookData.title,
+            title2: bookData.title2,
+            author: bookData.author,
+            pages: bookData.pages,
+            rating: bookData.rating,
+            coverBase64: `/images/bookCovers/${bookData.coverId}.jpg`,
+          });
+          setShowSearchModal(false);
+        }}
       />
     </>
   );
