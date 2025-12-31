@@ -1,22 +1,13 @@
 // components/FormDataTags.jsx
-import React from "react";
-import { useTheme } from "../../ThemeContext";
+import { useState } from "react";
 
 const FormDataTags = ({
   items = [],
   colors = {},
   selectedItems = [],
   setSelectedItems,
-  showInput,
-  setShowInput,
-  newShelf,
-  setNewShelf,
-  allShelves,
-  setAllShelves,
   onItemsToggle,
 }) => {
-  const { theme } = useTheme();
-
   const toggleItem = (item) => {
     setSelectedItems((prev) =>
       prev.includes(item) ? prev.filter((t) => t !== item) : [...prev, item]
@@ -44,7 +35,6 @@ const FormDataTags = ({
     "#ffc107",
     "#ff9800",
   ];
-
   return (
     <div
       style={{
@@ -72,31 +62,6 @@ const FormDataTags = ({
           </button>
         );
       })}
-      <div key="input-row" className="row g-2 align-items-center">
-        <div className="col" style={{ display: showInput ? "block" : "none" }}>
-          <input
-            type="text"
-            className={`form-control ${
-              theme === "dark" ? "bg-dark text-light" : ""
-            }`}
-            placeholder="New Shelf"
-            value={newShelf}
-            onChange={(e) => setNewShelf(e.target.value)}
-          />
-        </div>
-        {showInput && (
-          <button
-            type="button"
-            className="btn col-auto"
-            onClick={() => {
-              setAllShelves([...allShelves, newShelf]);
-              setNewShelf("");
-              setShowInput(false);
-            }}>
-            ✔️
-          </button>
-        )}
-      </div>
     </div>
   );
 };

@@ -67,6 +67,8 @@ const FirebaseBookshelf = () => {
     setAllShelves,
     updateEntireProfile,
     updatePublic,
+    renameShelf,
+    deleteShelf,
   } = useBookshelf(user, currentViewingUserEmail);
 
   // Enhanced book operations that close modals
@@ -213,6 +215,8 @@ const FirebaseBookshelf = () => {
         deleteTagColor={deleteTagColor}
         allShelves={allShelves}
         setAllShelves={setAllShelves}
+        renameShelf={renameShelf}
+        deleteShelf={deleteShelf}
       />
 
       <BookFormModal
@@ -227,6 +231,8 @@ const FirebaseBookshelf = () => {
         deleteTagColor={deleteTagColor}
         allShelves={allShelves}
         setAllShelves={setAllShelves}
+        renameShelf={renameShelf}
+        deleteShelf={deleteShelf}
       />
       <ProfileFormModal
         isOpen={showProfileFormToggle}

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Palette } from "lucide-react";
 import CoverDropZone from "../bookShelf/CoverDropZone";
 import TagManagementModal from "./TagManagementModal";
+import BookShelfNameModal from "./BookShelfNameModal";
 import BookSearchBar from "./BookSearchBar";
 import FormDataTags from "./FormDataTags";
 import FormRow from "./FormRow";
@@ -35,15 +36,16 @@ const BookFormModal = ({
   deleteTagColor,
   allShelves,
   setAllShelves,
+  renameShelf,
+  deleteShelf,
 }) => {
-  const [showInput, setShowInput] = useState(false);
   const [selectedTags, setSelectedTags] = useState(book?.tags || []);
   const [selectedShelves, setSelectedShelves] = useState(book?.shelves || []);
-  const [newShelf, setNewShelf] = useState("");
   const [showTagManagementModal, setShowTagManagementModal] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showShelfNameModal, setShowShelfNameModal] = useState(false);
 
   const { theme } = useTheme();
   const darkMode = theme === "dark" ? true : false;
@@ -84,6 +86,21 @@ const BookFormModal = ({
       setSelectedShelves([]);
     }
   }, [book?.id]);
+
+  useEffect(() => {
+    // When a shelf is renamed, update selectedShelves to use the new name
+    if (selectedShelves.length > 0 && allShelves.length > 0) {
+      // Filter out any selected shelves that no longer exist in allShelves
+      const validSelectedShelves = selectedShelves.filter((shelf) =>
+        allShelves.includes(shelf)
+      );
+
+      // Only update if something changed to avoid infinite loops
+      if (validSelectedShelves.length !== selectedShelves.length) {
+        setSelectedShelves(validSelectedShelves);
+      }
+    }
+  }, [allShelves]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -254,12 +271,6 @@ const BookFormModal = ({
                       items={allShelves}
                       selectedItems={selectedShelves}
                       setSelectedItems={setSelectedShelves}
-                      showInput={showInput}
-                      setShowInput={setShowInput}
-                      newShelf={newShelf}
-                      setNewShelf={setNewShelf}
-                      allShelves={allShelves}
-                      setAllShelves={setAllShelves}
                       onItemsToggle={() => {
                         if (validationErrors.shelves) {
                           setValidationErrors((prev) => ({
@@ -278,8 +289,8 @@ const BookFormModal = ({
                     <button
                       type="button"
                       className="btn btn-primary col-auto"
-                      onClick={() => setShowInput(true)}>
-                      New Shelf
+                      onClick={() => setShowShelfNameModal(true)}>
+                      Manage Shelves
                     </button>
                   </>
                 }
@@ -379,6 +390,24 @@ const BookFormModal = ({
           </div>
         </form>
       </Modal>
+      <BookShelfNameModal
+        isOpen={showShelfNameModal}
+        onClose={() => setShowShelfNameModal(false)}
+        existingShelves={allShelves}
+        setAllShelves={setAllShelves}
+        renameShelf={renameShelf}
+        deleteShelf={deleteShelf}
+        onShelfRenamed={(oldName, newName) => {
+          setSelectedShelves((prev) =>
+            prev.map((shelf) => (shelf === oldName ? newName : shelf))
+          );
+        }}
+        onShelfDeleted={(deletedShelf) => {
+          setSelectedShelves((prev) =>
+            prev.filter((shelf) => shelf !== deletedShelf)
+          );
+        }}
+      />
       <TagManagementModal
         isOpen={showTagManagementModal}
         onClose={() => setShowTagManagementModal(false)}

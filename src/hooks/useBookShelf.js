@@ -586,6 +586,146 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     [canEdit, getCurrentUserEmail]
   );
 
+  const renameShelf = useCallback(
+    async (oldShelfName, newShelfName) => {
+      if (!canEdit) {
+        console.warn("No permission to rename shelves");
+        return false;
+      }
+
+      if (!oldShelfName || !newShelfName) {
+        console.error("Both old and new shelf names are required");
+        return false;
+      }
+
+      if (oldShelfName === newShelfName) {
+        console.warn("New shelf name is the same as the old one");
+        return false;
+      }
+
+      // Check if the new shelf name already exists
+      if (allShelves.includes(newShelfName)) {
+        console.warn(`Shelf "${newShelfName}" already exists`);
+        return false;
+      }
+
+      try {
+        // Find all books that have the old shelf name
+        const booksWithShelf = books.filter(
+          (book) => book.shelves && book.shelves.includes(oldShelfName)
+        );
+
+        if (booksWithShelf.length === 0) {
+          console.warn(`No books found with shelf "${oldShelfName}"`);
+          return false;
+        }
+
+        // Update each book's shelves array
+        const updatePromises = booksWithShelf.map(async (book) => {
+          const updatedShelves = book.shelves.map((shelf) =>
+            shelf === oldShelfName ? newShelfName : shelf
+          );
+
+          const bookRef = doc(firestore, "books", book.id);
+          await updateDoc(bookRef, { shelves: updatedShelves });
+
+          return { ...book, shelves: updatedShelves };
+        });
+
+        await Promise.all(updatePromises);
+
+        // Update local state
+        setBooks((prevBooks) =>
+          prevBooks.map((book) => {
+            if (book.shelves && book.shelves.includes(oldShelfName)) {
+              return {
+                ...book,
+                shelves: book.shelves.map((shelf) =>
+                  shelf === oldShelfName ? newShelfName : shelf
+                ),
+              };
+            }
+            return book;
+          })
+        );
+
+        return true;
+      } catch (error) {
+        console.error("Error renaming shelf:", error);
+        return false;
+      }
+    },
+    [canEdit, books, allShelves]
+  );
+
+  const deleteShelf = useCallback(
+    async (shelfName) => {
+      if (!canEdit) {
+        console.warn("No permission to delete shelves");
+        return false;
+      }
+
+      if (!shelfName) {
+        console.error("Shelf name is required");
+        return false;
+      }
+
+      // Count how many books have this shelf
+      const booksWithShelf = books.filter(
+        (book) => book.shelves && book.shelves.includes(shelfName)
+      );
+
+      if (booksWithShelf.length === 0) {
+        console.warn(`No books found with shelf "${shelfName}"`);
+        // Still allow deletion even if no books have it
+      }
+
+      const confirmMessage =
+        booksWithShelf.length > 0
+          ? `Are you sure you want to delete the shelf "${shelfName}"? This will remove it from ${booksWithShelf.length} book(s).`
+          : `Are you sure you want to delete the shelf "${shelfName}"?`;
+
+      if (!window.confirm(confirmMessage)) {
+        return false;
+      }
+
+      try {
+        // Update each book's shelves array to remove this shelf
+        const updatePromises = booksWithShelf.map(async (book) => {
+          const updatedShelves = book.shelves.filter(
+            (shelf) => shelf !== shelfName
+          );
+
+          const bookRef = doc(firestore, "books", book.id);
+          await updateDoc(bookRef, { shelves: updatedShelves });
+
+          return { ...book, shelves: updatedShelves };
+        });
+
+        await Promise.all(updatePromises);
+
+        // Update local state
+        setBooks((prevBooks) =>
+          prevBooks.map((book) => {
+            if (book.shelves && book.shelves.includes(shelfName)) {
+              return {
+                ...book,
+                shelves: book.shelves.filter((shelf) => shelf !== shelfName),
+              };
+            }
+            return book;
+          })
+        );
+
+        return true;
+      } catch (error) {
+        console.error("Error deleting shelf:", error);
+        return false;
+      }
+    },
+    [canEdit, books]
+  );
+
   return {
     // State
     books,
@@ -631,6 +771,10 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     // State setters
     setEditingBook,
     setAllShelves,
+
+    // Shelf operations
+    renameShelf,
+    deleteShelf,
 
     updatePublic,
   };
