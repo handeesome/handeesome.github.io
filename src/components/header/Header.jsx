@@ -5,7 +5,7 @@ import { useTheme } from "../../ThemeContext";
 import backgroundLight from "/src/assets/images/background_light.webp";
 import backgroundDark from "/src/assets/images/background_dark.webp";
 import bookQuotes from "../../data/books/book-quotes.json";
-import { useFitText } from "../../hooks/useFitText";
+import { Textfit } from "react-textfit";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,11 +13,6 @@ const Header = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [selectedQuote, setSelectedQuote] = useState({ text: "", book: "" });
   const location = useLocation();
-
-  const { ref: quoteRef, fontRem } = useFitText({
-    maxRem: 2.5,
-    minRem: 0.9,
-  });
 
   // Select random quote on component mount or when URL changes
   useEffect(() => {
@@ -75,51 +70,41 @@ const Header = () => {
           position: "relative",
         }}>
         <NavBar isScrolled={isScrolled} />
-        <div className="container h-100 d-flex align-items-start justify-content-center">
+        <div className="container h-100 d-flex align-items-start justify-content-center position-relative">
           <div
-            className="p-3"
+            className="position-absolute p-3"
             style={{
-              marginTop: "15%",
+              top: "15vh",
               width: "100%",
-              maxWidth: "800px",
-              height: "40%",
+              height: "35vh",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
             }}>
-            {selectedQuote.text && (
-              <div
-                ref={quoteRef}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                }}>
-                <h2
-                  ref={quoteRef}
-                  style={{
-                    fontStyle: "italic",
-                    textAlign: "center",
-                    fontSize: `${fontRem}rem`,
-                    margin: "0",
-                  }}>
-                  "{selectedQuote.text}"
-                </h2>
-
-                <p
-                  style={{
-                    textAlign: "right",
-                    marginTop: "20px",
-                    fontSize: "1.125rem",
-                    fontWeight: "500",
-                    margin: "20px 0 0 0",
-                  }}>
-                  — {selectedQuote.book}
-                </p>
-              </div>
-            )}
+            <Textfit
+              key={selectedQuote.text}
+              mode="multi"
+              max={40}
+              style={{
+                height: "100%",
+                fontStyle: "italic",
+                textAlign: "center",
+                lineHeight: "1.2",
+                margin: "0",
+                overflow: "hidden",
+              }}>
+              "{selectedQuote.text}"
+            </Textfit>
+            <p
+              style={{
+                textAlign: "right",
+                marginTop: "20px",
+                fontSize: "1.125rem",
+                fontWeight: "500",
+                margin: "20px 0 0 0",
+              }}>
+              — {selectedQuote.book}
+            </p>
           </div>
         </div>
       </div>
