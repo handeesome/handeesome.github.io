@@ -72,10 +72,10 @@ const Header = () => {
         <NavBar isScrolled={isScrolled} />
         <div className="container h-100 d-flex align-items-start justify-content-center position-relative">
           <div
-            className="position-absolute p-3"
+            className="position-absolute"
             style={{
               top: "15vh",
-              width: "100%",
+              width: "80%",
               height: "35vh",
               display: "flex",
               flexDirection: "column",
