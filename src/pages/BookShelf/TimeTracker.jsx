@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Board from "../../components/Board";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+
 import {
   XAxis,
   YAxis,
@@ -17,12 +19,17 @@ import {
 import togglData from "../../data/books/toggl-data.json";
 import { useTheme } from "../../ThemeContext";
 import GoBackBtn from "../../components/GoBackButton";
+import { faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { Overlay, Popover } from "react-bootstrap";
 
 const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
   const [middleDate, setMiddleDate] = useState(new Date(defaultDate));
   const [isAnimating, setIsAnimating] = useState(false);
   const wrapperRef = useRef(null);
   const selectedCellRef = useRef(null);
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  const CalendarRef = useRef(null);
 
   const getDatesInRange = (middle) => {
     const dates = [];
@@ -32,6 +39,14 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
       dates.push(date);
     }
     return dates.reverse();
+  };
+
+  const getHeatLevel = (minutes) => {
+    if (!minutes) return null;
+    if (minutes >= 240) return "heat-4";
+    if (minutes >= 180) return "heat-3";
+    if (minutes >= 90) return "heat-2";
+    return "heat-1";
   };
 
   const dates = getDatesInRange(middleDate);
@@ -82,9 +97,6 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
 
   return (
     <div className="week-strip">
-      <button onClick={() => navigateDay(-1)}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </button>
       <div ref={wrapperRef} className="week-days-wrapper">
         <div className={"week-days"}>
           {[...dates].reverse().map((day) => {
@@ -120,9 +132,53 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
           })}
         </div>
       </div>
-      <button onClick={() => navigateDay(1)}>
-        <FontAwesomeIcon icon={faArrowRight} />
+      <button ref={CalendarRef} onClick={() => setShowCalendar(!showCalendar)}>
+        <FontAwesomeIcon icon={faCalendar} />
       </button>
+      <Overlay
+        target={CalendarRef.current}
+        show={showCalendar}
+        placement="bottom-end">
+        {(props) => (
+          <Popover {...props} className="calendar-popover">
+            <Popover.Body>
+              <Calendar
+                locale="en-us"
+                onChange={(date) => {
+                  setMiddleDate(date);
+                  setShowCalendar(false);
+                }}
+                value={middleDate}
+                tileClassName={({ date, view }) => {
+                  if (view !== "month") return null;
+                  const key = date.toDateString();
+                  const minutes = readingData[key]?.totalMinutes;
+                  return getHeatLevel(minutes);
+                }}
+                tileContent={({ date, view }) => {
+                  if (view !== "month") return null;
+                  const key = date.toDateString();
+                  const minutes = readingData[key]?.totalMinutes;
+
+                  if (minutes) {
+                    return (
+                      <div
+                        style={{
+                          fontSize: "0.65rem",
+                          marginTop: "2px",
+                          fontWeight: "500",
+                        }}>
+                        {Math.round(minutes)}m
+                      </div>
+                    );
+                  }
+                  return null;
+                }}
+              />
+            </Popover.Body>
+          </Popover>
+        )}
+      </Overlay>
     </div>
   );
 };

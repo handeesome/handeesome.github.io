@@ -25,6 +25,7 @@
     "marked": "^16.2.0",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.0",
+    "react-calendar": "^6.0.0",
     "react-dom": "^19.1.1",
     "react-easy-crop": "^5.5.1",
     "react-is": "^19.1.1",
