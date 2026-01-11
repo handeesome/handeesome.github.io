@@ -367,9 +367,10 @@
 .week-strip {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  gap: 1rem;
   margin-bottom: 1rem;
-  width: 100%;
+  position: relative;
 }
 
 .week-days {
@@ -379,12 +380,31 @@
 }
 
 .week-days-wrapper {
+  max-width: 500px;
   overflow-y: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  position: relative;
+}
+
+.week-days-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.week-strip > button {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
 }
 
 .day-cell {
@@ -400,7 +420,7 @@
 
 .day-cell.selected {
   background: #007bff;
-  --text-color: white;
+  color: white;
   box-shadow: 0 2px 8px rgba(13, 123, 255, 0.3);
 }
 
@@ -419,23 +439,124 @@
   font-weight: 500;
 }
 
-.week-strip > button {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  width: 40px;
-  height: 40px;
+/* Mobile: button on top */
+@media (max-width: 767px) {
+  .card-body {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .week-strip {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .week-strip > button {
+    order: -1; /* Move button to top */
+  }
+
+  .week-days-wrapper {
+    max-width: calc(100vw - 2rem);
+    width: 100%;
+  }
+  .day-cell {
+    min-width: 60px;
+  }
+}
+.react-calendar__tile {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  padding: 0.5em;
+  min-height: 60px; /* Give more space for the minutes */
 }
 
-@media (max-width: 768px) {
-  .week-strip > button {
-    display: none;
+.react-calendar__month-view__days__day abbr {
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Heatmap intensity levels */
+.heat-1 {
+  background-color: #e3f2fd !important;
+}
+
+.heat-2 {
+  background-color: #90caf9 !important;
+}
+
+.heat-3 {
+  background-color: #42a5f5 !important;
+  color: #fff;
+}
+
+.heat-4 {
+  background-color: #1565c0 !important;
+  color: #fff;
+}
+
+/* Optional: hover polish */
+.react-calendar__tile:hover {
+  filter: brightness(0.95);
+}
+
+.calendar-popover {
+  max-width: none !important;
+  width: auto;
+}
+
+.calendar-popover .popover-body {
+  padding: 0.5rem;
+}
+
+/* Adjust calendar size */
+.calendar-popover .react-calendar {
+  width: 350px;
+  font-size: 0.875rem;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .calendar-popover .react-calendar {
+    width: calc(100vw - 2rem); /* Full width minus margins */
+    max-width: 350px; /* Don't exceed original size on larger phones */
+    font-size: 0.8rem; /* Slightly smaller text */
+  }
+
+  .react-calendar__tile {
+    padding: 0.3em;
+    min-height: 50px; /* Slightly shorter on mobile */
+  }
+
+  .react-calendar__month-view__days__day abbr {
+    font-size: 0.85rem;
+  }
+
+  /* Adjust minute text size on mobile */
+  .react-calendar__tile > div {
+    font-size: 0.6rem;
+  }
+
+  .calendar-popover .popover-body {
+    padding: 0.25rem;
+  }
+
+  /* Make navigation buttons easier to tap */
+  .react-calendar__navigation button {
+    min-height: 44px; /* iOS recommended tap target */
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 375px) {
+  .calendar-popover .react-calendar {
+    font-size: 0.75rem;
+  }
+
+  .react-calendar__tile {
+    min-height: 45px;
+    padding: 0.2em;
   }
 }
 
@@ -603,58 +724,3 @@ svg:focus,
 }
 
 /* react-calendar overrides */
-.react-calendar__tile {
-  position: relative;
-}
-
-/* Heatmap intensity levels */
-.heat-1 {
-  background-color: #e3f2fd !important;
-}
-
-.heat-2 {
-  background-color: #90caf9 !important;
-}
-
-.heat-3 {
-  background-color: #42a5f5 !important;
-  color: #fff;
-}
-
-.heat-4 {
-  background-color: #1565c0 !important;
-  color: #fff;
-}
-
-/* Optional: hover polish */
-.react-calendar__tile:hover {
-  filter: brightness(0.95);
-}
-.calendar-popover {
-  max-width: none !important; /* Remove Bootstrap's default max-width */
-  width: auto;
-}
-
-.calendar-popover .popover-body {
-  padding: 0.5rem;
-}
-
-/* Adjust calendar size */
-.calendar-popover .react-calendar {
-  width: 350px; /* Set desired width */
-  font-size: 0.875rem; /* Adjust font size */
-}
-
-.react-calendar__tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5em;
-  min-height: 60px; /* Give more space for the minutes */
-}
-
-.react-calendar__month-view__days__day abbr {
-  display: block;
-  margin-bottom: 2px;
-}
