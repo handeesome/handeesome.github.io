@@ -1,18 +1,326 @@
 [
   {
+    "id": "23456814",
+    "title": "Storia della bambina perduta",
+    "author": "Elena Ferrante",
+    "num pages": "451",
+    "avg rating": "4.46",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/12",
+    "title2": "失踪的孩子",
+    "tags": []
+  },
+  {
+    "id": "18716142",
+    "title": "Storia di chi fugge e di chi resta",
+    "author": "Elena Ferrante",
+    "num pages": "382",
+    "avg rating": "4.36",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/12",
+    "title2": "离开的留下的",
+    "tags": []
+  },
+  {
+    "id": "16005941",
+    "title": "Storia del nuovo cognome",
+    "author": "Elena Ferrante",
+    "num pages": "470",
+    "avg rating": "4.46",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/12",
+    "title2": "新名字的故事",
+    "tags": []
+  },
+  {
+    "id": "12913570",
+    "title": "L'amica geniale",
+    "author": "Elena Ferrante",
+    "num pages": "327",
+    "avg rating": "4.05",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/12",
+    "title2": "我的天才女友",
+    "tags": []
+  },
+  {
+    "id": "58715110",
+    "title": "Anti-Intellectualism in American Life",
+    "author": "Richard Hofstadter",
+    "num pages": "434",
+    "avg rating": "4.11",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/08/21",
+    "title2": "美国的反智传统",
+    "tags": [
+      "essays",
+      "social-science"
+    ]
+  },
+  {
+    "id": "19421327",
+    "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
+    "author": "Gary Chapman",
+    "num pages": "200",
+    "avg rating": "4.27",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/10/24",
+    "title2": "爱的五种语言",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
     "id": "3730",
     "title": "The Hidden Persuaders",
     "author": "Vance Packard",
     "num pages": "240",
     "avg rating": "3.84",
     "shelves": [
-      "currently-reading"
+      "finished"
     ],
-    "date read": null,
+    "date read": "2026/01/12",
     "date added": "2025/08/07",
     "tags": [
       "essays",
       "social-science"
+    ]
+  },
+  {
+    "id": "121732",
+    "title": "Surprised by Joy: The Shape of My Early Life",
+    "author": "C.S. Lewis",
+    "num pages": "185",
+    "avg rating": "4.06",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/01/12",
+    "date added": "2025/12/26",
+    "title2": "惊喜之旅",
+    "tags": []
+  },
+  {
+    "id": "485894",
+    "title": "Die Verwandlung",
+    "author": "Franz Kafka",
+    "num pages": "201",
+    "avg rating": "3.90",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/01/11",
+    "date added": "2025/09/14",
+    "title2": "变形记",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "221282",
+    "title": "A Tale of Three Kings: A Study in Brokenness",
+    "author": "Gene Edwards",
+    "num pages": "105",
+    "avg rating": "4.30",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/10",
+    "title2": "三王演义",
+    "tags": []
+  },
+  {
+    "id": "3116205",
+    "title": "The Prodigal God: Recovering the Heart of the Christian Faith",
+    "author": "Timothy J. Keller",
+    "num pages": "139",
+    "avg rating": "4.43",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/10",
+    "title2": "挥霍的上帝",
+    "tags": []
+  },
+  {
+    "id": "125974",
+    "title": "Purity of Heart is to Will One Thing: Spiritual Preparation for the Office of Confession",
+    "author": "Søren Kierkegaard",
+    "num pages": "220",
+    "avg rating": "4.23",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/10",
+    "title2": "清心志于一事",
+    "tags": []
+  },
+  {
+    "id": "27995383",
+    "title": "氷点",
+    "author": "Ayako Miura",
+    "num pages": "396",
+    "avg rating": "3.98",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/10",
+    "title2": "冰点",
+    "tags": []
+  },
+  {
+    "id": "14059361",
+    "title": "ナミヤ雑貨店の奇蹟",
+    "author": "Keigo Higashino",
+    "num pages": "385",
+    "avg rating": "4.41",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/09",
+    "title2": "解忧杂货店",
+    "tags": []
+  },
+  {
+    "id": "6934913",
+    "title": "The Shortest History of Europe",
+    "author": "John Hirst",
+    "num pages": "160",
+    "avg rating": "4.03",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/09",
+    "title2": "你一定爱读的极简欧洲史",
+    "tags": []
+  },
+  {
+    "id": "23692271",
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "num pages": "512",
+    "avg rating": "4.33",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/09",
+    "title2": "人类简史",
+    "tags": []
+  },
+  {
+    "id": "18905230",
+    "title": "Counselling for Toads: A Psychological Adventure",
+    "author": "Robert De Board",
+    "num pages": "153",
+    "avg rating": "4.28",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/09",
+    "title2": "蛤蟆先生去看心理医生",
+    "tags": []
+  },
+  {
+    "id": "19480382",
+    "title": "嫌われる勇気",
+    "author": "Ichiro Kishimi",
+    "num pages": "300",
+    "avg rating": "3.92",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/09",
+    "title2": "被讨厌的勇气",
+    "tags": []
+  },
+  {
+    "id": "23507559",
+    "title": "小顾聊绘画",
+    "author": "顾爷",
+    "num pages": "256",
+    "avg rating": "3.99",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/08",
+    "title2": "",
+    "tags": []
+  },
+  {
+    "id": "52249653",
+    "title": "从量子到宇宙——颠覆人类认知的科学之旅",
+    "author": "高鹏",
+    "num pages": "219",
+    "avg rating": "4.00",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/08",
+    "title2": "From Quantum to UNIVERSE",
+    "tags": []
+  },
+  {
+    "id": "385228",
+    "title": "On Liberty",
+    "author": "John Stuart Mill",
+    "num pages": "187",
+    "avg rating": "3.96",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/08/15",
+    "title2": "论自由",
+    "tags": [
+      "philosophy",
+      "social-science",
+      "classics"
+    ]
+  },
+  {
+    "id": "2054",
+    "title": "The Long Goodbye",
+    "author": "Raymond Chandler",
+    "num pages": "379",
+    "avg rating": "4.19",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/01/07",
+    "date added": "2025/09/26",
+    "title2": "漫长的告别",
+    "tags": [
+      "fiction"
     ]
   },
   {
@@ -22,9 +330,9 @@
     "num pages": "191",
     "avg rating": "4.37",
     "shelves": [
-      "currently-reading"
+      "finished"
     ],
-    "date read": null,
+    "date read": "2026/01/07",
     "date added": "2025/08/14",
     "title2": "返璞归真：纯粹的基督教",
     "tags": [
@@ -32,11 +340,89 @@
     ]
   },
   {
+    "id": "105984427",
+    "title": "今日店休",
+    "author": "坂本健一",
+    "num pages": "0",
+    "avg rating": "4.38",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/06",
+    "title2": "",
+    "tags": []
+  },
+  {
+    "id": "43277265",
+    "title": "回答不了",
+    "author": "匡扶",
+    "num pages": "224",
+    "avg rating": "4.20",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/01/06",
+    "title2": "",
+    "tags": []
+  },
+  {
+    "id": "27788",
+    "title": "Julie ou La nouvelle Héloïse",
+    "author": "Jean-Jacques Rousseau",
+    "num pages": "728",
+    "avg rating": "3.44",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/30",
+    "date added": "2025/06/20",
+    "title2": "新爱洛伊丝",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "3836",
+    "title": "Don Quixote de la Mancha",
+    "author": "Miguel de Cervantes Saavedra",
+    "num pages": "1023",
+    "avg rating": "3.91",
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2025/12/23",
+    "date added": "2025/07/23",
+    "title2": "堂吉诃德",
+    "tags": [
+      "fiction",
+      "classics",
+      "satire"
+    ]
+  },
+  {
+    "id": "238727",
+    "title": "My First Summer in the Sierra",
+    "author": "John Muir",
+    "num pages": "160",
+    "avg rating": "4.05",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2025/12/22",
+    "title2": "夏日走过山间",
+    "tags": []
+  },
+  {
     "id": "60470571",
     "title": "Nonverts: The Making of Ex-Christian America",
     "author": "Stephen Bullivant",
     "num pages": "257",
-    "avg rating": "3.86",
+    "avg rating": "3.85",
     "shelves": [
       "finished"
     ],
@@ -136,24 +522,6 @@
     ]
   },
   {
-    "id": "3836",
-    "title": "Don Quixote de la Mancha",
-    "author": "Miguel de Cervantes Saavedra",
-    "num pages": "1023",
-    "avg rating": "3.91",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/07/23",
-    "title2": "堂吉诃德",
-    "tags": [
-      "fiction",
-      "classics",
-      "satire"
-    ]
-  },
-  {
     "id": "55385983",
     "title": "Speechless: Controlling Words, Controlling Minds",
     "author": "Michael J. Knowles",
@@ -234,24 +602,6 @@
     "title2": "麦田里的守望者",
     "tags": [
       "fiction",
-      "classics"
-    ]
-  },
-  {
-    "id": "27788",
-    "title": "Julie ou La nouvelle Héloïse",
-    "author": "Jean-Jacques Rousseau",
-    "num pages": "728",
-    "avg rating": "3.44",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/06/20",
-    "title2": "新爱洛伊丝",
-    "tags": [
-      "fiction",
-      "philosophy",
       "classics"
     ]
   },
@@ -614,7 +964,7 @@
     "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
     "author": "Charlie Kirk",
     "num pages": "288",
-    "avg rating": "4.10",
+    "avg rating": "4.14",
     "shelves": [
       "finished"
     ],
@@ -627,27 +977,11 @@
     ]
   },
   {
-    "id": "19421327",
-    "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
-    "author": "Gary Chapman",
-    "num pages": "200",
-    "avg rating": "4.27",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/10/24",
-    "title2": "爱的五种语言",
-    "tags": [
-      "religion"
-    ]
-  },
-  {
     "id": "12649",
     "title": "Les Confessions",
     "author": "Jean-Jacques Rousseau",
     "num pages": "676",
-    "avg rating": "3.59",
+    "avg rating": "3.60",
     "shelves": [
       "finished"
     ],
@@ -780,22 +1114,6 @@
     ]
   },
   {
-    "id": "2054",
-    "title": "The Long Goodbye",
-    "author": "Raymond Chandler",
-    "num pages": "379",
-    "avg rating": "4.19",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/09/26",
-    "title2": "漫长的告别",
-    "tags": [
-      "fiction"
-    ]
-  },
-  {
     "id": "19230853",
     "title": "Война и миръ",
     "author": "Leo Tolstoy",
@@ -842,23 +1160,6 @@
     "title2": "西西弗神话",
     "tags": [
       "philosophy",
-      "classics"
-    ]
-  },
-  {
-    "id": "485894",
-    "title": "Die Verwandlung",
-    "author": "Franz Kafka",
-    "num pages": "201",
-    "avg rating": "3.90",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/09/14",
-    "title2": "变形记",
-    "tags": [
-      "fiction",
       "classics"
     ]
   },
@@ -930,23 +1231,6 @@
     ]
   },
   {
-    "id": "58715110",
-    "title": "Anti-Intellectualism in American Life",
-    "author": "Richard Hofstadter",
-    "num pages": "434",
-    "avg rating": "4.11",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/21",
-    "title2": "美国的反智传统",
-    "tags": [
-      "essays",
-      "social-science"
-    ]
-  },
-  {
     "id": "30659",
     "title": "Τὰ εἰς ἑαυτόν",
     "author": "Marcus Aurelius",
@@ -1010,24 +1294,6 @@
     "tags": [
       "essays",
       "social-science"
-    ]
-  },
-  {
-    "id": "385228",
-    "title": "On Liberty",
-    "author": "John Stuart Mill",
-    "num pages": "187",
-    "avg rating": "3.96",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/08/15",
-    "title2": "论自由",
-    "tags": [
-      "philosophy",
-      "social-science",
-      "classics"
     ]
   },
   {
@@ -1348,7 +1614,7 @@
     "title": "圆圈正义：作为自由前提的信念",
     "author": "LUO XIANG",
     "num pages": "307",
-    "avg rating": "4.07",
+    "avg rating": "4.06",
     "shelves": [
       "finished"
     ],
@@ -1412,7 +1678,7 @@
     "title": "Food and Nutrition: What Everyone Needs to Know®",
     "author": "P.K. Newby",
     "num pages": "316",
-    "avg rating": "3.89",
+    "avg rating": "3.90",
     "shelves": [
       "currently-reading"
     ],
@@ -1428,7 +1694,7 @@
     "title": "康熙的红票：全球化中的清朝",
     "author": "Litian Swen",
     "num pages": "400",
-    "avg rating": "4.59",
+    "avg rating": "4.61",
     "shelves": [
       "finished"
     ],
