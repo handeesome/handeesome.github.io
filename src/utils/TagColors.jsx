@@ -9,7 +9,8 @@ export const TAG_COLORS = {
   economics: "#2ECC71", // Green
   "political-science": "#27AE60", // Dark green
   psychology: "#E74C3C", // Red
-  music: "#E91E63", // Pink
+  arts: "#E91E63", // Pink
+  science: "#00BCD4", // Cyan
   programming: "#F1C40F", // Yellow
   classics: "#8E44AD", // Dark purple
   contemporary: "#95A5A6", // Gray
