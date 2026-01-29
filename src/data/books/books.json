@@ -1,5 +1,23 @@
 [
   {
+    "id": "87247",
+    "title": "Der Steppenwolf",
+    "author": "Hermann Hesse",
+    "num pages": "278",
+    "avg rating": "4.13",
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/11/06",
+    "title2": "荒原狼",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
     "id": "23456814",
     "title": "Storia della bambina perduta",
     "author": "Elena Ferrante",
@@ -11,7 +29,10 @@
     "date read": null,
     "date added": "2026/01/12",
     "title2": "失踪的孩子",
-    "tags": []
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "18716142",
@@ -25,7 +46,10 @@
     "date read": null,
     "date added": "2026/01/12",
     "title2": "离开的留下的",
-    "tags": []
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "16005941",
@@ -39,7 +63,10 @@
     "date read": null,
     "date added": "2026/01/12",
     "title2": "新名字的故事",
-    "tags": []
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "12913570",
@@ -53,7 +80,10 @@
     "date read": null,
     "date added": "2026/01/12",
     "title2": "我的天才女友",
-    "tags": []
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "58715110",
@@ -77,7 +107,7 @@
     "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
     "author": "Gary Chapman",
     "num pages": "200",
-    "avg rating": "4.27",
+    "avg rating": "4.28",
     "shelves": [
       "currently-reading"
     ],
@@ -116,7 +146,10 @@
     "date read": "2026/01/12",
     "date added": "2025/12/26",
     "title2": "惊喜之旅",
-    "tags": []
+    "tags": [
+      "biography",
+      "religion"
+    ]
   },
   {
     "id": "485894",
@@ -147,7 +180,9 @@
     "date read": null,
     "date added": "2026/01/10",
     "title2": "三王演义",
-    "tags": []
+    "tags": [
+      "religion"
+    ]
   },
   {
     "id": "3116205",
@@ -161,7 +196,9 @@
     "date read": null,
     "date added": "2026/01/10",
     "title2": "挥霍的上帝",
-    "tags": []
+    "tags": [
+      "religion"
+    ]
   },
   {
     "id": "125974",
@@ -175,7 +212,10 @@
     "date read": null,
     "date added": "2026/01/10",
     "title2": "清心志于一事",
-    "tags": []
+    "tags": [
+      "religion",
+      "philosophy"
+    ]
   },
   {
     "id": "27995383",
@@ -189,7 +229,10 @@
     "date read": null,
     "date added": "2026/01/10",
     "title2": "冰点",
-    "tags": []
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "14059361",
@@ -203,7 +246,10 @@
     "date read": null,
     "date added": "2026/01/09",
     "title2": "解忧杂货店",
-    "tags": []
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "6934913",
@@ -217,7 +263,9 @@
     "date read": null,
     "date added": "2026/01/09",
     "title2": "你一定爱读的极简欧洲史",
-    "tags": []
+    "tags": [
+      "history"
+    ]
   },
   {
     "id": "23692271",
@@ -231,7 +279,11 @@
     "date read": null,
     "date added": "2026/01/09",
     "title2": "人类简史",
-    "tags": []
+    "tags": [
+      "history",
+      "essays",
+      "social-science"
+    ]
   },
   {
     "id": "18905230",
@@ -245,7 +297,9 @@
     "date read": null,
     "date added": "2026/01/09",
     "title2": "蛤蟆先生去看心理医生",
-    "tags": []
+    "tags": [
+      "psychology"
+    ]
   },
   {
     "id": "19480382",
@@ -259,7 +313,10 @@
     "date read": null,
     "date added": "2026/01/09",
     "title2": "被讨厌的勇气",
-    "tags": []
+    "tags": [
+      "psychology",
+      "philosophy"
+    ]
   },
   {
     "id": "23507559",
@@ -273,7 +330,9 @@
     "date read": null,
     "date added": "2026/01/08",
     "title2": "",
-    "tags": []
+    "tags": [
+      "arts"
+    ]
   },
   {
     "id": "52249653",
@@ -287,7 +346,9 @@
     "date read": null,
     "date added": "2026/01/08",
     "title2": "From Quantum to UNIVERSE",
-    "tags": []
+    "tags": [
+      "science"
+    ]
   },
   {
     "id": "385228",
@@ -351,7 +412,10 @@
     "date read": null,
     "date added": "2026/01/06",
     "title2": "",
-    "tags": []
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "43277265",
@@ -365,7 +429,10 @@
     "date read": null,
     "date added": "2026/01/06",
     "title2": "",
-    "tags": []
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "27788",
@@ -422,7 +489,7 @@
     "title": "Nonverts: The Making of Ex-Christian America",
     "author": "Stephen Bullivant",
     "num pages": "257",
-    "avg rating": "3.85",
+    "avg rating": "3.86",
     "shelves": [
       "finished"
     ],
@@ -869,26 +936,8 @@
     "date read": "2025/11/07",
     "date added": "2025/08/15",
     "tags": [
-      "music",
+      "arts",
       "social-science"
-    ]
-  },
-  {
-    "id": "87247",
-    "title": "Der Steppenwolf",
-    "author": "Hermann Hesse",
-    "num pages": "278",
-    "avg rating": "4.13",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/11/06",
-    "title2": "荒原狼",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
     ]
   },
   {
@@ -1319,7 +1368,7 @@
     "title": "ぼくはこんな音楽を聴いて育った",
     "author": "大友良英",
     "num pages": "350",
-    "avg rating": "3.00",
+    "avg rating": "3.50",
     "shelves": [
       "want-to-read"
     ],
@@ -1328,7 +1377,7 @@
     "title2": "我成长的音乐时代",
     "tags": [
       "biography",
-      "music"
+      "arts"
     ]
   },
   {
