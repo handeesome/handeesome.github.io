@@ -1,4 +1,4 @@
-import{g as wt,u as zi,j as le,B as Jr,a as Qr,b as Bi,r as Nt,_ as Mt}from"./index-BT67m2HM.js";import{r as ji}from"./index-84k9TH_T.js";const Gr=`---
+import{g as wt,u as zi,j as le,B as Jr,a as Qr,b as Bi,r as Nt,_ as Mt}from"./index-D0qXOZ9c.js";import{r as ji}from"./index-84k9TH_T.js";const Gr=`---
 title: CCG Auto PPTX Generator
 date: 2025-03-22
 tags: [python, flask, python-pptx]
