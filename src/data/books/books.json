@@ -1,14 +1,183 @@
 [
   {
-    "id": "1314433",
-    "title": "Liberty, Equality, Fraternity",
-    "author": "James Fitzjames Stephen",
-    "num pages": "299",
-    "avg rating": "3.81",
+    "id": "4069",
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "num pages": "165",
+    "avg rating": null,
     "shelves": [
       "currently-reading"
     ],
     "date read": null,
+    "date added": "2025/12/05",
+    "title2": "活出意义来",
+    "tags": [
+      "biography",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "1953",
+    "title": "A Tale of Two Cities",
+    "author": "Charles Dickens",
+    "num pages": "489",
+    "avg rating": null,
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/11/24",
+    "title2": "双城记",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "51374",
+    "title": "Changes That Heal: How to Understand the Past to Ensure a Healthier Future",
+    "author": "Henry Cloud",
+    "num pages": "368",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/04/07",
+    "date added": "2026/02/10",
+    "title2": "改变带来医治",
+    "tags": [
+      "psychology",
+      "religion"
+    ]
+  },
+  {
+    "id": "16981",
+    "title": "Invisible Man",
+    "author": "Ralph Ellison",
+    "num pages": "581",
+    "avg rating": null,
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/11/17",
+    "title2": "看不见的人",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "21122",
+    "title": "The Coming of Age",
+    "author": "Simone de Beauvoir",
+    "num pages": "592",
+    "avg rating": null,
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2025/10/02",
+    "title2": "论老年",
+    "tags": [
+      "philosophy",
+      "social-science",
+      "essays"
+    ]
+  },
+  {
+    "id": "57300433",
+    "title": "The Book of Why: The New Science of Cause and Effect",
+    "author": "Judea Pearl",
+    "num pages": null,
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/03/30",
+    "date added": "2025/10/11",
+    "title2": "为什么：关于因果关系的新科学",
+    "tags": [
+      "social-science",
+      "essays"
+    ]
+  },
+  {
+    "id": "18752103",
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "num pages": "855",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/04/03",
+    "date added": "2025/11/04",
+    "title2": "安娜·卡列尼娜",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "24583",
+    "title": "The Adventures of Tom Sawyer",
+    "author": "Mark Twain",
+    "num pages": "244",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/04/02",
+    "date added": "2025/12/05",
+    "title2": "汤姆索亚历险记",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "25037087",
+    "title": "小顾聊绘画·贰",
+    "author": "顾爷Gu Ye",
+    "num pages": "242",
+    "avg rating": null,
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/03/26",
+    "title2": "",
+    "tags": [
+      "arts"
+    ]
+  },
+  {
+    "id": "212108726",
+    "title": "小顾聊绘画·叁",
+    "author": "顾爷",
+    "num pages": "223",
+    "avg rating": null,
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/03/26",
+    "title2": "",
+    "tags": [
+      "arts"
+    ]
+  },
+  {
+    "id": "1314433",
+    "title": "Liberty, Equality, Fraternity",
+    "author": "James Fitzjames Stephen",
+    "num pages": "299",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/03/23",
     "date added": "2025/08/15",
     "title2": "自由，平等，博爱",
     "tags": [
@@ -18,20 +187,205 @@
     ]
   },
   {
-    "id": "57300433",
-    "title": "The Book of Why: The New Science of Cause and Effect",
-    "author": "Judea Pearl",
-    "num pages": null,
-    "avg rating": "3.94",
+    "id": "44796",
+    "title": "The Moon and Sixpence",
+    "author": "W. Somerset Maugham",
+    "num pages": "187",
+    "avg rating": null,
     "shelves": [
-      "currently-reading"
+      "want-to-read"
     ],
     "date read": null,
-    "date added": "2025/10/11",
-    "title2": "为什么：关于因果关系的新科学",
+    "date added": "2026/03/18",
+    "title2": "月亮与六便士",
     "tags": [
-      "social-science",
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "100142",
+    "title": "The Art of Love",
+    "author": "Ovid",
+    "num pages": "199",
+    "avg rating": null,
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/02/16",
+    "title2": "爱的艺术",
+    "tags": [
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "32175062",
+    "title": "게으름",
+    "author": "김남준",
+    "num pages": "224",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/02/12",
+    "date added": "2026/02/09",
+    "title2": "懒惰",
+    "tags": [
       "essays"
+    ]
+  },
+  {
+    "id": "6334",
+    "title": "Never Let Me Go",
+    "author": "Kazuo Ishiguro",
+    "num pages": "288",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/02/10",
+    "date added": "2025/11/13",
+    "title2": "别让我走",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "50705179",
+    "title": "Numbers Don't Lie: 71 Things You Need to Know About the World",
+    "author": "Vaclav Smil",
+    "num pages": "384",
+    "avg rating": null,
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/02/05",
+    "title2": "",
+    "tags": [
+      "statistics",
+      "essays"
+    ]
+  },
+  {
+    "id": "48889983",
+    "title": "Calling Bullshit: The Art of Skepticism in a Data-Driven World",
+    "author": "Carl T. Bergstrom",
+    "num pages": "336",
+    "avg rating": null,
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/02/05",
+    "title2": "",
+    "tags": [
+      "statistics",
+      "essays"
+    ]
+  },
+  {
+    "id": "53605067",
+    "title": "The Data Detective: Ten Easy Rules to Make Sense of Statistics",
+    "author": "Tim Harford",
+    "num pages": "334",
+    "avg rating": null,
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/02/05",
+    "title2": "",
+    "tags": [
+      "statistics",
+      "essays"
+    ]
+  },
+  {
+    "id": "13588394",
+    "title": "The Signal and the Noise: Why So Many Predictions Fail—But Some Don't",
+    "author": "Nate Silver",
+    "num pages": "544",
+    "avg rating": null,
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/02/05",
+    "title2": "",
+    "tags": [
+      "statistics",
+      "essays"
+    ]
+  },
+  {
+    "id": "43722897",
+    "title": "The Art of Statistics: How to Learn from Data",
+    "author": "David Spiegelhalter",
+    "num pages": "448",
+    "avg rating": null,
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/02/05",
+    "title2": "",
+    "tags": [
+      "statistics"
+    ]
+  },
+  {
+    "id": "45633325",
+    "title": "第二十二条军规",
+    "author": "Joseph Heller",
+    "num pages": "572",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/01/31",
+    "date added": "2025/09/13",
+    "title2": "Catch-22",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "71943",
+    "title": "Peter Camenzind",
+    "author": "Hermann Hesse",
+    "num pages": "201",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/02/01",
+    "date added": "2026/01/23",
+    "title2": "彼得卡门青",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "58715110",
+    "title": "Anti-Intellectualism in American Life",
+    "author": "Richard Hofstadter",
+    "num pages": "434",
+    "avg rating": null,
+    "shelves": [
+      "finished"
+    ],
+    "date read": "2026/01/28",
+    "date added": "2025/08/21",
+    "title2": "美国的反智传统",
+    "tags": [
+      "essays",
+      "social-science"
     ]
   },
   {
@@ -39,7 +393,7 @@
     "title": "Siddhartha",
     "author": "Hermann Hesse",
     "num pages": "152",
-    "avg rating": "4.08",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -57,7 +411,7 @@
     "title": "The Happy Prince",
     "author": "Oscar Wilde",
     "num pages": "32",
-    "avg rating": "4.19",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -74,7 +428,7 @@
     "title": "The Picture of Dorian Gray",
     "author": "Oscar Wilde",
     "num pages": "253",
-    "avg rating": "4.13",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -91,7 +445,7 @@
     "title": "De Profundis",
     "author": "Oscar Wilde",
     "num pages": "188",
-    "avg rating": "4.22",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -108,7 +462,7 @@
     "title": "Τὰ εἰς ἑαυτόν",
     "author": "Marcus Aurelius",
     "num pages": "254",
-    "avg rating": "4.28",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -121,28 +475,11 @@
     ]
   },
   {
-    "id": "71943",
-    "title": "Peter Camenzind",
-    "author": "Hermann Hesse",
-    "num pages": "201",
-    "avg rating": "3.89",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2026/01/23",
-    "title2": "彼得卡门青",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "87247",
     "title": "Der Steppenwolf",
     "author": "Hermann Hesse",
     "num pages": "278",
-    "avg rating": "4.13",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -160,7 +497,7 @@
     "title": "My First Summer in the Sierra",
     "author": "John Muir",
     "num pages": "160",
-    "avg rating": "4.05",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -170,28 +507,11 @@
     "tags": []
   },
   {
-    "id": "45633325",
-    "title": "第二十二条军规",
-    "author": "Joseph Heller",
-    "num pages": "572",
-    "avg rating": "3.99",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/09/13",
-    "title2": "Catch-22",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "18756051",
     "title": "Братья Карамазовы",
     "author": "Fyodor Dostoevsky",
     "num pages": "472",
-    "avg rating": "4.39",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -209,7 +529,7 @@
     "title": "On Liberty",
     "author": "John Stuart Mill",
     "num pages": "187",
-    "avg rating": "3.96",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -227,7 +547,7 @@
     "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
     "author": "Gary Chapman",
     "num pages": "200",
-    "avg rating": "4.28",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -243,7 +563,7 @@
     "title": "Storia della bambina perduta",
     "author": "Elena Ferrante",
     "num pages": "451",
-    "avg rating": "4.46",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -260,7 +580,7 @@
     "title": "Storia di chi fugge e di chi resta",
     "author": "Elena Ferrante",
     "num pages": "382",
-    "avg rating": "4.36",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -277,7 +597,7 @@
     "title": "Storia del nuovo cognome",
     "author": "Elena Ferrante",
     "num pages": "470",
-    "avg rating": "4.46",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -294,7 +614,7 @@
     "title": "L'amica geniale",
     "author": "Elena Ferrante",
     "num pages": "327",
-    "avg rating": "4.05",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -307,28 +627,11 @@
     ]
   },
   {
-    "id": "58715110",
-    "title": "Anti-Intellectualism in American Life",
-    "author": "Richard Hofstadter",
-    "num pages": "434",
-    "avg rating": "4.11",
-    "shelves": [
-      "currently-reading"
-    ],
-    "date read": null,
-    "date added": "2025/08/21",
-    "title2": "美国的反智传统",
-    "tags": [
-      "essays",
-      "social-science"
-    ]
-  },
-  {
     "id": "3730",
     "title": "The Hidden Persuaders",
     "author": "Vance Packard",
     "num pages": "240",
-    "avg rating": "3.84",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -344,7 +647,7 @@
     "title": "Surprised by Joy: The Shape of My Early Life",
     "author": "C.S. Lewis",
     "num pages": "185",
-    "avg rating": "4.06",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -361,7 +664,7 @@
     "title": "Die Verwandlung",
     "author": "Franz Kafka",
     "num pages": "201",
-    "avg rating": "3.91",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -378,7 +681,7 @@
     "title": "A Tale of Three Kings: A Study in Brokenness",
     "author": "Gene Edwards",
     "num pages": "105",
-    "avg rating": "4.30",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -394,7 +697,7 @@
     "title": "The Prodigal God: Recovering the Heart of the Christian Faith",
     "author": "Timothy J. Keller",
     "num pages": "139",
-    "avg rating": "4.43",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -410,7 +713,7 @@
     "title": "Purity of Heart is to Will One Thing: Spiritual Preparation for the Office of Confession",
     "author": "Søren Kierkegaard",
     "num pages": "220",
-    "avg rating": "4.23",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -427,7 +730,7 @@
     "title": "氷点",
     "author": "Ayako Miura",
     "num pages": "396",
-    "avg rating": "3.98",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -444,7 +747,7 @@
     "title": "ナミヤ雑貨店の奇蹟",
     "author": "Keigo Higashino",
     "num pages": "385",
-    "avg rating": "4.41",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -461,7 +764,7 @@
     "title": "The Shortest History of Europe",
     "author": "John Hirst",
     "num pages": "160",
-    "avg rating": "4.03",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -477,7 +780,7 @@
     "title": "Sapiens: A Brief History of Humankind",
     "author": "Yuval Noah Harari",
     "num pages": "512",
-    "avg rating": "4.33",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -495,7 +798,7 @@
     "title": "Counselling for Toads: A Psychological Adventure",
     "author": "Robert De Board",
     "num pages": "153",
-    "avg rating": "4.28",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -511,7 +814,7 @@
     "title": "嫌われる勇気",
     "author": "Ichiro Kishimi",
     "num pages": "300",
-    "avg rating": "3.92",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -528,7 +831,7 @@
     "title": "小顾聊绘画",
     "author": "顾爷",
     "num pages": "256",
-    "avg rating": "3.99",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -544,7 +847,7 @@
     "title": "从量子到宇宙——颠覆人类认知的科学之旅",
     "author": "高鹏",
     "num pages": "219",
-    "avg rating": "4.00",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -560,7 +863,7 @@
     "title": "The Long Goodbye",
     "author": "Raymond Chandler",
     "num pages": "379",
-    "avg rating": "4.19",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -576,7 +879,7 @@
     "title": "Mere Christianity",
     "author": "C.S. Lewis",
     "num pages": "191",
-    "avg rating": "4.37",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -592,7 +895,7 @@
     "title": "今日店休",
     "author": "坂本健一",
     "num pages": "0",
-    "avg rating": "4.38",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -609,7 +912,7 @@
     "title": "回答不了",
     "author": "匡扶",
     "num pages": "224",
-    "avg rating": "4.20",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -626,7 +929,7 @@
     "title": "Julie ou La nouvelle Héloïse",
     "author": "Jean-Jacques Rousseau",
     "num pages": "728",
-    "avg rating": "3.44",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -644,7 +947,7 @@
     "title": "Don Quixote de la Mancha",
     "author": "Miguel de Cervantes Saavedra",
     "num pages": "1023",
-    "avg rating": "3.91",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -662,7 +965,7 @@
     "title": "Nonverts: The Making of Ex-Christian America",
     "author": "Stephen Bullivant",
     "num pages": "257",
-    "avg rating": "3.86",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -679,7 +982,7 @@
     "title": "L'évolution créatrice",
     "author": "Henri Bergson",
     "num pages": "244",
-    "avg rating": "4.10",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -695,7 +998,7 @@
     "title": "Die Leiden des jungen Werthers",
     "author": "Johann Wolfgang von Goethe",
     "num pages": "154",
-    "avg rating": "3.69",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -712,7 +1015,7 @@
     "title": "人間失格 [Ningen Shikkaku]",
     "author": "Osamu Dazai",
     "num pages": "185",
-    "avg rating": "3.94",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -729,7 +1032,7 @@
     "title": "Animal Farm",
     "author": "George Orwell",
     "num pages": "141",
-    "avg rating": "4.02",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -748,7 +1051,7 @@
     "title": "Speechless: Controlling Words, Controlling Minds",
     "author": "Michael J. Knowles",
     "num pages": "383",
-    "avg rating": "4.24",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -764,7 +1067,7 @@
     "title": "1984",
     "author": "George Orwell",
     "num pages": "368",
-    "avg rating": "4.20",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -777,45 +1080,11 @@
     ]
   },
   {
-    "id": "4069",
-    "title": "Man's Search for Meaning",
-    "author": "Viktor E. Frankl",
-    "num pages": "165",
-    "avg rating": "4.37",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/12/05",
-    "title2": "活出意义来",
-    "tags": [
-      "biography",
-      "philosophy"
-    ]
-  },
-  {
-    "id": "24583",
-    "title": "The Adventures of Tom Sawyer",
-    "author": "Mark Twain",
-    "num pages": "244",
-    "avg rating": "3.92",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/12/05",
-    "title2": "汤姆索亚历险记",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "5107",
     "title": "The Catcher in the Rye",
     "author": "J.D. Salinger",
     "num pages": "277",
-    "avg rating": "3.80",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -832,7 +1101,7 @@
     "title": "바깥은 여름",
     "author": "Kim Ae-ran",
     "num pages": "208",
-    "avg rating": "4.07",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -849,7 +1118,7 @@
     "title": "Think Like a Programmer: An Introduction to Creative Problem Solving",
     "author": "V. Anton Spraul",
     "num pages": "233",
-    "avg rating": "3.86",
+    "avg rating": null,
     "shelves": [
       "currently-reading"
     ],
@@ -864,7 +1133,7 @@
     "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
     "author": "Timothy J. Keller",
     "num pages": "285",
-    "avg rating": "4.37",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -880,7 +1149,7 @@
     "title": "The Old Man and the Sea",
     "author": "Ernest Hemingway",
     "num pages": "96",
-    "avg rating": "3.81",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -897,7 +1166,7 @@
     "title": "Atonement",
     "author": "Ian McEwan",
     "num pages": "426",
-    "avg rating": "3.95",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -914,7 +1183,7 @@
     "title": "Pride and Predujice",
     "author": "Jane Austen",
     "num pages": "234",
-    "avg rating": "4.30",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -927,28 +1196,11 @@
     ]
   },
   {
-    "id": "1953",
-    "title": "A Tale of Two Cities",
-    "author": "Charles Dickens",
-    "num pages": "489",
-    "avg rating": "3.88",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/11/24",
-    "title2": "双城记",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "23275043",
     "title": "沈黙",
     "author": "遠藤周作",
     "num pages": "292",
-    "avg rating": "4.09",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -965,7 +1217,7 @@
     "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
     "author": "Sarah Bakewell",
     "num pages": "563",
-    "avg rating": "4.24",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -978,28 +1230,11 @@
     ]
   },
   {
-    "id": "16981",
-    "title": "Invisible Man",
-    "author": "Ralph Ellison",
-    "num pages": "581",
-    "avg rating": "3.92",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/11/17",
-    "title2": "看不见的人",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "18922517",
     "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
     "author": "Stendhal",
     "num pages": "512",
-    "avg rating": "3.86",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1016,7 +1251,7 @@
     "title": "The Remains of the Day",
     "author": "Kazuo Ishiguro",
     "num pages": "337",
-    "avg rating": "4.14",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1029,28 +1264,11 @@
     ]
   },
   {
-    "id": "6334",
-    "title": "Never Let Me Go",
-    "author": "Kazuo Ishiguro",
-    "num pages": "288",
-    "avg rating": "3.85",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/11/13",
-    "title2": "别让我走",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
-  },
-  {
     "id": "18250837",
     "title": "How (Not) to Be Secular: Reading Charles Taylor",
     "author": "James K.A. Smith",
     "num pages": "148",
-    "avg rating": "4.21",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1067,7 +1285,7 @@
     "title": "The Four Loves",
     "author": "C.S. Lewis",
     "num pages": "264",
-    "avg rating": "4.16",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1084,7 +1302,7 @@
     "title": "如何假装懂音乐",
     "author": "王硕",
     "num pages": "190",
-    "avg rating": "3.12",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1096,28 +1314,11 @@
     ]
   },
   {
-    "id": "18752103",
-    "title": "Anna Karenina",
-    "author": "Leo Tolstoy",
-    "num pages": "855",
-    "avg rating": "4.10",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/11/04",
-    "title2": "安娜·卡列尼娜",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
-  },
-  {
     "id": "1000751",
     "title": "Pollyanna",
     "author": "Eleanor H. Porter",
     "num pages": "304",
-    "avg rating": "4.02",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1134,7 +1335,7 @@
     "title": "Every Good Endeavor: Connecting Your Work to God's Work",
     "author": "Timothy J. Keller",
     "num pages": "288",
-    "avg rating": "4.31",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1150,7 +1351,7 @@
     "title": "Преступление и наказание",
     "author": "Fyodor Dostoevsky",
     "num pages": "548",
-    "avg rating": "4.29",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1168,7 +1369,7 @@
     "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
     "author": "Charlie Kirk",
     "num pages": "288",
-    "avg rating": "4.16",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1185,7 +1386,7 @@
     "title": "Les Confessions",
     "author": "Jean-Jacques Rousseau",
     "num pages": "676",
-    "avg rating": "3.60",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1203,7 +1404,7 @@
     "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
     "author": "Timothy J. Keller",
     "num pages": "287",
-    "avg rating": "4.48",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1219,7 +1420,7 @@
     "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
     "author": "Susan Wise Bauer",
     "num pages": "785",
-    "avg rating": "4.17",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1235,7 +1436,7 @@
     "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
     "author": "Will Durant",
     "num pages": "608",
-    "avg rating": "4.15",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1252,7 +1453,7 @@
     "title": "Cloud Atlas",
     "author": "David  Mitchell",
     "num pages": "486",
-    "avg rating": "4.01",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1265,29 +1466,11 @@
     ]
   },
   {
-    "id": "21122",
-    "title": "The Coming of Age",
-    "author": "Simone de Beauvoir",
-    "num pages": "592",
-    "avg rating": "3.93",
-    "shelves": [
-      "want-to-read"
-    ],
-    "date read": null,
-    "date added": "2025/10/02",
-    "title2": "论老年",
-    "tags": [
-      "philosophy",
-      "social-science",
-      "essays"
-    ]
-  },
-  {
     "id": "457264",
     "title": "The Second Sex",
     "author": "Simone de Beauvoir",
     "num pages": "746",
-    "avg rating": "4.18",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -1305,7 +1488,7 @@
     "title": "Война и миръ",
     "author": "Leo Tolstoy",
     "num pages": "726",
-    "avg rating": "4.17",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1322,7 +1505,7 @@
     "title": "Basic Economics: A Citizen's Guide to the Economy",
     "author": "Thomas Sowell",
     "num pages": "448",
-    "avg rating": "4.37",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1338,7 +1521,7 @@
     "title": "Le mythe de Sisyphe",
     "author": "Albert Camus",
     "num pages": "172",
-    "avg rating": "4.17",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1355,7 +1538,7 @@
     "title": "The History of the Medieval World: From the Conversion of Constantine to the First Crusade",
     "author": "Susan Wise Bauer",
     "num pages": "746",
-    "avg rating": "4.11",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1371,7 +1554,7 @@
     "title": "ノルウェイの森",
     "author": "村上春树 林少华",
     "num pages": "200",
-    "avg rating": "3.99",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1388,7 +1571,7 @@
     "title": "Émile, ou De l'éducation",
     "author": "Jean-Jacques Rousseau",
     "num pages": "315",
-    "avg rating": "3.57",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1405,7 +1588,7 @@
     "title": "The History of the Ancient World: From the Earliest Accounts to the Fall of Rome",
     "author": "Susan Wise Bauer",
     "num pages": "896",
-    "avg rating": "4.11",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1421,7 +1604,7 @@
     "title": "Brave New World Revisited",
     "author": "Aldous Huxley",
     "num pages": "347",
-    "avg rating": "3.99",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1438,7 +1621,7 @@
     "title": "法治的细节",
     "author": "罗翔",
     "num pages": "288",
-    "avg rating": "4.26",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1454,7 +1637,7 @@
     "title": "ぼくはこんな音楽を聴いて育った",
     "author": "大友良英",
     "num pages": "350",
-    "avg rating": "3.50",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -1488,7 +1671,7 @@
     "title": "Micromegas",
     "author": "Voltaire",
     "num pages": "38",
-    "avg rating": "3.65",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1506,7 +1689,7 @@
     "title": "Brave New World",
     "author": "Aldous Huxley",
     "num pages": "287",
-    "avg rating": "3.99",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1542,7 +1725,7 @@
     "title": "Candide, ou l'Optimisme",
     "author": "Voltaire",
     "num pages": "129",
-    "avg rating": "3.76",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1561,7 +1744,7 @@
     "title": "The Great Dechurching: Who's Leaving, Why Are They Going, and What Will It Take to Bring Them Back?",
     "author": "Jim  Davis",
     "num pages": "272",
-    "avg rating": "3.86",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1577,7 +1760,7 @@
     "title": "L'Ingénu",
     "author": "Voltaire",
     "num pages": "182",
-    "avg rating": "3.51",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1596,7 +1779,7 @@
     "title": "What We Talk About When We Talk About Love",
     "author": "Raymond Carver",
     "num pages": "159",
-    "avg rating": "4.00",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1612,7 +1795,7 @@
     "title": "La Peste",
     "author": "Albert Camus",
     "num pages": "235",
-    "avg rating": "4.02",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1630,7 +1813,7 @@
     "title": "A Secular Age",
     "author": "Charles Margrave Taylor",
     "num pages": "874",
-    "avg rating": "4.27",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -1647,7 +1830,7 @@
     "title": "L'Étranger",
     "author": "Albert Camus",
     "num pages": "66",
-    "avg rating": "4.03",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1665,7 +1848,7 @@
     "title": "Red Roulette: An Insider's Story of Wealth, Power, Corruption, and Vengeance in Today's China",
     "author": "Desmond Shum",
     "num pages": "171",
-    "avg rating": "3.91",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1683,7 +1866,7 @@
     "title": "法律的悖论",
     "author": "罗翔",
     "num pages": "254",
-    "avg rating": "3.91",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1700,7 +1883,7 @@
     "title": "Le petit prince",
     "author": "Antoine de Saint-Exupéry",
     "num pages": "112",
-    "avg rating": "4.33",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1718,7 +1901,7 @@
     "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity",
     "author": "Nabeel Qureshi",
     "num pages": "320",
-    "avg rating": "4.61",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1733,7 +1916,7 @@
     "title": "Victory Over the Darkness",
     "author": "Neil T. Anderson",
     "num pages": "256",
-    "avg rating": "4.21",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1749,7 +1932,7 @@
     "title": "圆圈正义：作为自由前提的信念",
     "author": "LUO XIANG",
     "num pages": "307",
-    "avg rating": "4.06",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1766,7 +1949,7 @@
     "title": "When Breath Becomes Air",
     "author": "Paul Kalanithi",
     "num pages": "148",
-    "avg rating": "4.41",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1782,7 +1965,7 @@
     "title": "A Pearl Necklace",
     "author": "Mi Xue",
     "num pages": "288",
-    "avg rating": "4.24",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1798,7 +1981,7 @@
     "title": "走到比錢更遠的地方",
     "author": "陳維恩",
     "num pages": "254",
-    "avg rating": "5.00",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1813,7 +1996,7 @@
     "title": "Food and Nutrition: What Everyone Needs to Know®",
     "author": "P.K. Newby",
     "num pages": "316",
-    "avg rating": "3.88",
+    "avg rating": null,
     "shelves": [
       "currently-reading"
     ],
@@ -1829,7 +2012,7 @@
     "title": "康熙的红票：全球化中的清朝",
     "author": "Litian Swen",
     "num pages": "400",
-    "avg rating": "4.61",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1845,7 +2028,7 @@
     "title": "A Pearl Necklace",
     "author": "雪 米",
     "num pages": "191",
-    "avg rating": "5.00",
+    "avg rating": null,
     "shelves": [
       "finished"
     ],
@@ -1861,7 +2044,7 @@
     "title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
     "author": "Aurélien Géron",
     "num pages": "450",
-    "avg rating": "4.55",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -1876,7 +2059,7 @@
     "title": "Java编程的逻辑 (Java核心技术系列) (Chinese Edition)",
     "author": "马俊昌",
     "num pages": "1308",
-    "avg rating": "4.00",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -1891,7 +2074,7 @@
     "title": "The Secret Life of Programs: Understand Computers -- Craft Better Code",
     "author": "Jon Steinhart",
     "num pages": "504",
-    "avg rating": "3.89",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
@@ -1906,7 +2089,7 @@
     "title": "Algorithmic Thinking: A Problem-Based Introduction",
     "author": "Daniel Zingaro",
     "num pages": "408",
-    "avg rating": "4.45",
+    "avg rating": null,
     "shelves": [
       "want-to-read"
     ],
