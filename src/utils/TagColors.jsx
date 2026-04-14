@@ -15,6 +15,7 @@ export const TAG_COLORS = {
   classics: "#8E44AD", // Dark purple
   contemporary: "#95A5A6", // Gray
   satire: "#FF6B35", // Bright orange
+  statistics: "#9C27B0", // Deep purple
 };
 export const getTagColor = (tag) => {
   return TAG_COLORS[tag] || "#6c757d"; // Default gray if tag not found
