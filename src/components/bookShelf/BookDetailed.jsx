@@ -95,7 +95,8 @@ const BookDetailed = ({
   };
   return (
     <div
-      className={`card mb-4 shadow-sm ${theme === "light" ? "" : "bg-dark"}`}>
+      className={`card mb-4 shadow-sm ${theme === "light" ? "" : "bg-dark"}`}
+    >
       <div className="row g-0">
         {/* BookDetailed Cover */}
         <div className="col-md-4 d-flex justify-content-center mt-4">
@@ -129,14 +130,14 @@ const BookDetailed = ({
                       <strong>Pages:</strong> {numPages}
                     </p>
 
-                    <div className="mb-1 d-flex align-items-center gap-2">
+                    {/* <div className="mb-1 d-flex align-items-center gap-2">
                       <strong>Rating:</strong>
                       <StarRating
                         rating={avgRating}
                         size="sm"
                         showText={true}
                       />
-                    </div>
+                    </div> */}
 
                     <div className="mb-1">
                       <strong>Shelf:</strong>{" "}
@@ -144,7 +145,8 @@ const BookDetailed = ({
                         <span key={shelf}>
                           <button
                             className="btn btn-outline-primary btn-sm mx-1 book-tag"
-                            onClick={() => handleShelfClick(shelf)}>
+                            onClick={() => handleShelfClick(shelf)}
+                          >
                             {shelf}
                           </button>
                           {index < shelfArray.length - 1 && " "}
@@ -168,7 +170,8 @@ const BookDetailed = ({
                                   "--tag-color": tagColor,
                                   "--tag-color-rgb": hexToRgb(tagColor),
                                 }}
-                                onClick={() => onTagClick && onTagClick(tag)}>
+                                onClick={() => onTagClick && onTagClick(tag)}
+                              >
                                 {tag} {isSelected && " ✓"}
                               </button>
                               {index < tags.length - 1 && " "}
@@ -202,14 +205,16 @@ const BookDetailed = ({
                     <>
                       <button
                         className="btn btn-outline-warning btn-lg"
-                        onClick={() => onEditBook && onEditBook(id)}>
+                        onClick={() => onEditBook && onEditBook(id)}
+                      >
                         Edit Book
                       </button>
                       <button
                         className="btn btn-outline-danger btn-lg"
                         onClick={() => {
                           handleDeleteBook(id);
-                        }}>
+                        }}
+                      >
                         Delete Book
                       </button>
                     </>
@@ -218,18 +223,20 @@ const BookDetailed = ({
                     <>
                       <button
                         className="btn btn-outline-info btn-lg"
-                        onClick={handleReadSessionsClick}>
+                        onClick={handleReadSessionsClick}
+                      >
                         Reading Sessions
                       </button>
                       <button
                         className="btn btn-outline-warning btn-lg"
-                        onClick={handleViewNotesClick}>
+                        onClick={handleViewNotesClick}
+                      >
                         View {BookQuotes[id]?.[1]?.length || 0} Notes
                       </button>
                     </>
                   )}
                   {shelfArray.some(
-                    (shelf) => shelf.toLowerCase() === "finished"
+                    (shelf) => shelf.toLowerCase() === "finished",
                   ) && <img src="/completed.png" style={{ width: "128px" }} />}
                 </div>
               </div>
@@ -241,7 +248,8 @@ const BookDetailed = ({
           <div className="col-md-auto">
             <div
               className={`card-text ${!expanded ? "line-clamp-content" : ""}`}
-              ref={textRef}>
+              ref={textRef}
+            >
               <div className="rendered-content">{parse(introduction)}</div>
             </div>
 
@@ -249,7 +257,8 @@ const BookDetailed = ({
               <div className="text-end mb-3">
                 <button
                   onClick={() => setExpanded((prev) => !prev)}
-                  className="btn btn-outline-secondary btn-sm mt-2 show-more-btn">
+                  className="btn btn-outline-secondary btn-sm mt-2 show-more-btn"
+                >
                   {expanded ? "▲ Show Less" : "▼ Show More"}
                 </button>
               </div>

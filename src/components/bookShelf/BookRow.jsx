@@ -25,10 +25,10 @@ const BookRow = ({
           <div className="text-muted small">by {book.author}</div>
         </div>
       </td>
-      <td>
+      {/* <td>
         <StarRating rating={book["avg rating"]} size="sm" showText={false} />
         <div className="small text-muted">{book["avg rating"]}</div>
-      </td>
+      </td> */}
       <td>
         <span className="badge bg-secondary">{book["num pages"]}</span>
       </td>
@@ -40,7 +40,8 @@ const BookRow = ({
                 key={shelf.trim()}
                 className="btn btn-outline-primary btn-sm"
                 style={{ fontSize: "0.7rem", padding: "2px 6px" }}
-                onClick={() => onShelfClick(shelf.trim())}>
+                onClick={() => onShelfClick(shelf.trim())}
+              >
                 {shelf.trim()}
               </button>
             ))}
@@ -65,7 +66,8 @@ const BookRow = ({
                       "--tag-color": tagColor,
                       "--tag-color-rgb": hexToRgb(tagColor),
                     }}
-                    onClick={() => onTagClick && onTagClick(tag)}>
+                    onClick={() => onTagClick && onTagClick(tag)}
+                  >
                     {tag} {isSelected && "✓"}
                   </button>
                 );
@@ -73,7 +75,8 @@ const BookRow = ({
               {book.tags.length > 2 && (
                 <span
                   className="small text-muted align-self-center"
-                  title={`Additional tags: ${book.tags.slice(2).join(", ")}`}>
+                  title={`Additional tags: ${book.tags.slice(2).join(", ")}`}
+                >
                   +{book.tags.length - 2}
                 </span>
               )}
@@ -103,12 +106,14 @@ const BookRow = ({
               <>
                 <button
                   className="btn btn-outline-warning btn-sm mb-1"
-                  onClick={() => onEditBook && onEditBook(book.id)}>
+                  onClick={() => onEditBook && onEditBook(book.id)}
+                >
                   ✏️ Edit
                 </button>
                 <button
                   className="btn btn-outline-danger btn-sm mb-1"
-                  onClick={() => deleteBook && deleteBook(book.id)}>
+                  onClick={() => deleteBook && deleteBook(book.id)}
+                >
                   🗑️ Delete
                 </button>
               </>
@@ -119,12 +124,14 @@ const BookRow = ({
                   className="btn btn-outline-info btn-sm mb-2"
                   onClick={() =>
                     navigate(`/book-shelf/book/${book.id}/analytics`)
-                  }>
+                  }
+                >
                   📊 Sessions
                 </button>
                 <button
                   className="btn btn-outline-secondary btn-sm"
-                  onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}>
+                  onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
+                >
                   📝 Notes
                 </button>
               </>

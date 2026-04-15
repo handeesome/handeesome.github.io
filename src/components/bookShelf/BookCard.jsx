@@ -21,7 +21,8 @@ const BookCard = ({
       <div
         className={`card h-100 shadow-sm book-card-grid ${
           theme === "light" ? "" : "bg-dark"
-        }`}>
+        }`}
+      >
         <div className="position-relative">
           <img
             src={
@@ -62,7 +63,8 @@ const BookCard = ({
                 fontSize: "1rem",
                 lineHeight: "1.2",
                 cursor: !hideSessions ? "pointer" : "default",
-              }}>
+              }}
+            >
               {book.title}
               {book.title2 && (
                 <div className="text-muted small">{book.title2}</div>
@@ -75,7 +77,8 @@ const BookCard = ({
                   ? () => navigate(`/book-shelf/book/${book.id}/notes`)
                   : undefined
               }
-              style={{ cursor: !hideSessions ? "pointer" : "default" }}>
+              style={{ cursor: !hideSessions ? "pointer" : "default" }}
+            >
               by {book.author}
             </p>
 
@@ -87,7 +90,8 @@ const BookCard = ({
                     key={shelf.trim()}
                     className="btn btn-outline-primary btn-sm me-1 mb-1"
                     style={{ fontSize: "0.7rem", padding: "2px 6px" }}
-                    onClick={() => onShelfClick(shelf.trim())}>
+                    onClick={() => onShelfClick(shelf.trim())}
+                  >
                     {shelf.trim()}
                   </button>
                 ))}
@@ -109,7 +113,8 @@ const BookCard = ({
                         "--tag-color": tagColor,
                         "--tag-color-rgb": hexToRgb(tagColor),
                       }}
-                      onClick={() => onTagClick && onTagClick(tag)}>
+                      onClick={() => onTagClick && onTagClick(tag)}
+                    >
                       {tag} {isSelected && "✓"}
                     </button>
                   );
@@ -125,9 +130,9 @@ const BookCard = ({
 
           {/* Bottom content - always at bottom */}
           <div className="mt-auto">
-            <div className="mb-2 d-flex justify-content-center">
+            {/* <div className="mb-2 d-flex justify-content-center">
               <StarRating rating={book["avg rating"]} size="sm" />
-            </div>
+            </div> */}
 
             {/* Action Buttons */}
             <div className="d-grid gap-2">
@@ -135,12 +140,14 @@ const BookCard = ({
                 <>
                   <button
                     className="btn btn-sm btn-outline-warning"
-                    onClick={() => onEditBook && onEditBook(book.id)}>
+                    onClick={() => onEditBook && onEditBook(book.id)}
+                  >
                     ✏️ Edit Book
                   </button>
                   <button
                     className="btn btn-sm btn-outline-danger"
-                    onClick={() => deleteBook && deleteBook(book.id)}>
+                    onClick={() => deleteBook && deleteBook(book.id)}
+                  >
                     🗑️ Delete Book
                   </button>
                 </>
@@ -150,7 +157,8 @@ const BookCard = ({
                   className="btn btn-sm btn-outline-info"
                   onClick={() =>
                     navigate(`/book-shelf/book/${book.id}/analytics`)
-                  }>
+                  }
+                >
                   📊 Reading Sessions
                 </button>
               )}
