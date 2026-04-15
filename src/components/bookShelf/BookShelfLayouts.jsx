@@ -97,13 +97,14 @@ export const TableView = ({
       <table
         className={`table table-hover align-middle ${
           theme === "dark" ? "table-dark" : ""
-        }`}>
+        }`}
+      >
         <thead className="table-dark sticky-top">
           <tr>
-            <th style={{ width: "25%" }}>Title & Author</th>
-            <th style={{ width: "12%" }}>Rating</th>
+            <th style={{ width: "31%" }}>Title & Author</th>
+            {/* <th style={{ width: "12%" }}>Rating</th> */}
             <th style={{ width: "8%" }}>Pages</th>
-            <th style={{ width: "12%" }}>Shelf</th>
+            <th style={{ width: "18%" }}>Shelf</th>
             <th style={{ width: "18%" }}>Tags</th>
             <th style={{ width: hideActions ? "25%" : "15%" }}>Dates</th>
             {!hideActions && <th style={{ width: "10%" }}>Actions</th>}
