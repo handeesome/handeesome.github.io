@@ -1,5 +1,5 @@
 // FirebaseBookshelf.jsx - Using Shared Auth Context
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import HideBtnsContext from "../../components/bookShelf/HideBtnsContext";
 import Board from "../../components/Board";
 import BookShelf from "../../components/bookShelf/BookShelf";
@@ -9,7 +9,6 @@ import { useAuth } from "../../contexts/authContext";
 import UserToggleModal from "../../components/bookShelf/UserToggleModal";
 import { Users, User } from "lucide-react";
 import ProfileFormModal from "../../components/bookShelf/ProfileFormModal";
-import { getProfileDataForUser } from "../../utils/userUtils";
 import { LockOpen, LockKeyhole } from "lucide-react";
 
 const FirebaseBookshelf = () => {
@@ -22,32 +21,8 @@ const FirebaseBookshelf = () => {
   const [showProfileFormToggle, setShowProfileFormToggle] = useState(false);
   const [currentViewingUserEmail, setCurrentViewingUserEmail] = useState(null);
 
-  const [shelfName, setShelfName] = useState("");
-
-  useEffect(() => {
-    if (user) {
-      const fetchShelfName = async () => {
-        const profileData = await getProfileDataForUser(user.email);
-        setShelfName(profileData?.shelfName || "");
-      };
-      fetchShelfName();
-    }
-  }, [user]);
-
-  const handleSwitchUser = async (userEmail) => {
-    try {
-      // Set which user's data we're viewing
-      setCurrentViewingUserEmail(userEmail);
-
-      // You might need to trigger a data refresh here
-      // This depends on how your useBookshelf hook works
-      console.log(`Switched to viewing user: ${userEmail}`);
-    } catch (error) {
-      console.error("Error switching user:", error);
-      throw error; // Re-throw so UserToggleModal can handle it
-    }
-  };
-  // Use the extracted bookshelf hook
+  // Use the extracted bookshelf hook — profileData.shelfName replaces the
+  // separate fetchShelfName effect that previously called getProfileDataForUser()
   const {
     tagColors,
     allShelves,
@@ -70,6 +45,15 @@ const FirebaseBookshelf = () => {
     renameShelf,
     deleteShelf,
   } = useBookshelf(user, currentViewingUserEmail);
+
+  const handleSwitchUser = async (userEmail) => {
+    try {
+      setCurrentViewingUserEmail(userEmail);
+    } catch (error) {
+      console.error("Error switching user:", error);
+      throw error;
+    }
+  };
 
   // Enhanced book operations that close modals
   const handleAddBook = async (bookData) => {
@@ -138,17 +122,16 @@ const FirebaseBookshelf = () => {
       </Board>
     );
   }
+
   const togglePublic = () => {
     updatePublic(!profileData.isPublic);
   };
 
   const handleProfileSubmit = async (profileUpdates) => {
     await updateEntireProfile(profileUpdates);
-
-    setShelfName(profileUpdates.shelfName || "");
-
     setShowProfileFormToggle(false);
   };
+
   // Main bookshelf interface
   return (
     <>
@@ -158,7 +141,7 @@ const FirebaseBookshelf = () => {
           title={
             <>
               <div>
-                <span>{shelfName}</span>
+                <span>{profileData.shelfName}</span>
               </div>
               <button
                 onClick={() => togglePublic()}

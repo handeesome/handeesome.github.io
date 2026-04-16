@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import { Users } from "lucide-react";
 import { useTheme } from "../../ThemeContext";
 import Modal from "../ui/Modal";
-import { getUserList, getDisplayNameFromEmail } from "../../utils/userUtils";
+import { getDisplayNameFromEmail } from "../../utils/userUtils";
+import { useUsers } from "../../hooks/useUsers";
 
 const UserToggleModal = ({
   isOpen,
@@ -13,38 +14,21 @@ const UserToggleModal = ({
 }) => {
   const { theme } = useTheme();
   const [loading, setLoading] = useState(false);
-  const [authorizedUsers, setAuthorizedUsers] = useState([]);
-  const [fetchingUsers, setFetchingUsers] = useState(false);
 
-  // Fetch authorized users using userUtils
-  useEffect(() => {
-    const loadAuthorizedUsers = async () => {
-      if (!isOpen || !currentUser) return;
+  // Re-use the cached user list — no extra Firestore fetch if UserSelection
+  // already loaded it in the same session.
+  const { users: rawUsers, loading: fetchingUsers } = useUsers();
 
-      setFetchingUsers(true);
-      try {
-        const usersList = await getUserList();
-        const userEmails = usersList.map((user) => user.id);
-
-        // Transform emails into user objects with display names
-        const users = userEmails.map((email) => ({
-          email,
-          name: getDisplayNameFromEmail(email),
-          // Mark the admin user - adjust this logic as needed
-          isAdmin:
-            email === "ducenhandee@gmail.com" || email === currentUser?.email,
-        }));
-
-        setAuthorizedUsers(users);
-      } catch (error) {
-        console.error("Error loading authorized users:", error);
-        setAuthorizedUsers([]);
-      }
-      setFetchingUsers(false);
-    };
-
-    loadAuthorizedUsers();
-  }, [isOpen, currentUser]);
+  const authorizedUsers = useMemo(
+    () =>
+      rawUsers.map((u) => ({
+        email: u.id,
+        name: getDisplayNameFromEmail(u.id),
+        isAdmin:
+          u.id === "ducenhandee@gmail.com" || u.id === currentUser?.email,
+      })),
+    [rawUsers, currentUser?.email]
+  );
 
   const handleSwitchUser = async (userEmail) => {
     setLoading(true);

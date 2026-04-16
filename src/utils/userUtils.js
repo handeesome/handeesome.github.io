@@ -1,84 +1,31 @@
 // utils/userUtils.js
-import { db as firestore } from "../lib/firebase-config";
-import {
-  collection,
-  query,
-  where,
-  getDocs,
-  doc,
-  getDoc,
-} from "firebase/firestore";
+// ─────────────────────────────────────────────────────────────────────────────
+// Pure string/display-name helpers only.
+// All Firestore calls have been moved to src/services/users.service.js.
+//
+// Re-exports the service functions under their original names so any file
+// that imported from here continues to work without changes.
+// ─────────────────────────────────────────────────────────────────────────────
 
-// Cache to avoid repeated Firestore calls
-let cachedEmails = null;
-let cacheTimestamp = null;
+// ---------------------------------------------------------------------------
+// Re-exports from the service layer (backwards-compatible)
+// ---------------------------------------------------------------------------
+export {
+  getAllUsers   as getUserList,
+  getEmailFromDisplayName,
+  getBookCountForUser,
+  clearUsersCache as clearUserEmailCache,
+  getAllUsers    as refreshUserEmailCache,
+} from "../services/users.service";
 
-/**
- * Get all user emails from Firestore userdata collection
- * Uses caching to avoid repeated database calls
- * @returns {Promise<string[]>} Array of user emails
- */
-export const getUserList = async () => {
-  try {
-    // Get all documents from userData collection
-    const userDataSnapshot = await getDocs(collection(firestore, "userdata"));
-    const users = [];
-
-    userDataSnapshot.forEach((doc) => {
-      users.push({
-        id: doc.id,
-        ...doc.data(),
-      });
-    });
-
-    // Update cache
-    cachedEmails = users;
-    cacheTimestamp = Date.now();
-
-    return users;
-  } catch (error) {
-    console.error("Error fetching users: ", error);
-    return [];
-  }
-};
+// ---------------------------------------------------------------------------
+// Pure helpers — no Firestore dependency
+// ---------------------------------------------------------------------------
 
 /**
- * Convert a display name (part before @) back to the full email
- * @param {string} displayName - The display name (e.g., "johnsmith")
- * @returns {Promise<string|null>} The full email or null if not found
- */
-export const getEmailFromDisplayName = async (displayName) => {
-  if (!displayName) return null;
-
-  try {
-    const users = await getUserList();
-    const emails = users.map((user) => user.id);
-
-    // Find email where the part before @ matches the displayName
-    const foundEmail = emails.find((email) => {
-      const emailDisplayName = email.split("@")[0];
-      return emailDisplayName.toLowerCase() === displayName.toLowerCase();
-    });
-
-    if (foundEmail) {
-    } else {
-      console.warn(`No email found for display name "${displayName}"`);
-    }
-
-    return foundEmail || null;
-  } catch (error) {
-    console.error(
-      `Error finding email for display name "${displayName}":`,
-      error
-    );
-    return null;
-  }
-};
-
-/**
- * Get display name from email (part before @)
- * @param {string} email - The full email address
- * @returns {string} The display name
+ * Get the display name portion of an email (everything before @).
+ * @param {string} email
+ * @returns {string}
  */
 export const getDisplayNameFromEmail = (email) => {
   if (!email) return "";
@@ -86,79 +33,28 @@ export const getDisplayNameFromEmail = (email) => {
 };
 
 /**
- * Check if an email exists in the system
- * @param {string} email - The email to check
- * @returns {Promise<boolean>} True if email exists
+ * Check whether a given email exists in the full user list.
+ * @param {string} email
+ * @returns {Promise<boolean>}
  */
 export const doesEmailExist = async (email) => {
   if (!email) return false;
-
-  try {
-    const users = await getUserList();
-    const emails = users.map((user) => user.id);
-    return emails.includes(email);
-  } catch (error) {
-    console.error(`Error checking if email exists "${email}":`, error);
-    return false;
-  }
+  const { getAllUsers } = await import("../services/users.service");
+  const users = await getAllUsers();
+  return users.some((u) => u.id === email);
 };
 
 /**
- * Get all display names (useful for dropdowns, etc.)
- * @returns {Promise<string[]>} Array of display names
+ * Get every user's display name (the part before @).
+ * @returns {Promise<string[]>}
  */
 export const getAllDisplayNames = async () => {
-  try {
-    const users = await getUserList();
-    const emails = users.map((user) => user.id);
-    return emails.map((email) => getDisplayNameFromEmail(email));
-  } catch (error) {
-    console.error("Error getting display names:", error);
-    return [];
-  }
+  const { getAllUsers } = await import("../services/users.service");
+  const users = await getAllUsers();
+  return users.map((u) => getDisplayNameFromEmail(u.id));
 };
 
-/**
- * Clear the email cache - useful when you know users have been added/removed
- */
-export const clearUserEmailCache = () => {
-  cachedEmails = null;
-  cacheTimestamp = null;
-};
-
-/**
- * Force refresh the email cache
- * @returns {Promise<string[]>} Fresh list of emails
- */
-export const refreshUserEmailCache = async () => {
-  clearUserEmailCache();
-  return await getUserList();
-};
-
-export const getBookCountForUser = async (email) => {
-  const q = query(
-    collection(firestore, "books"),
-    where("userEmail", "==", email)
-  );
-  const snapshot = await getDocs(q);
-  return snapshot.size; // number of matching documents
-};
-
-export const getProfileDataForUser = async (email) => {
-  if (!email) return null;
-
-  try {
-    const userRef = doc(firestore, "userdata", email);
-    const userSnap = await getDoc(userRef);
-    if (userSnap.exists()) {
-      const data = userSnap.data();
-      return data;
-    } else {
-      console.log("No such document!");
-      return null;
-    }
-  } catch (error) {
-    console.error(`Error fetching profile data for "${email}":`, error);
-    return null;
-  }
-};
+// ---------------------------------------------------------------------------
+// Kept for any direct import of getProfileDataForUser that may exist in pages
+// ---------------------------------------------------------------------------
+export { getProfile as getProfileDataForUser } from "../services/profile.service";

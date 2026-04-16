@@ -3,48 +3,39 @@ import MyBookShelf from "./MyBookShelf";
 import { default as DefaultBookShelf } from "../../components/bookShelf/BookShelf";
 import { useBookshelf } from "../../hooks/useBookShelf";
 import { useEffect, useState } from "react";
-import {
-  getEmailFromDisplayName,
-  getProfileDataForUser,
-} from "../../utils/userUtils";
+import { getEmailFromDisplayName } from "../../utils/userUtils";
 import HideBtnsContext from "../../components/bookShelf/HideBtnsContext";
 
 const BookShelf = () => {
   const [userEmail, setUserEmail] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [resolving, setResolving] = useState(true);
 
   const { userName } = useParams();
 
+  // Only needed to translate the URL slug → email; profile data comes from the hook.
   useEffect(() => {
-    const findUserEmail = async () => {
-      if (userName === "cenhan") {
-        setLoading(false);
-        return;
-      }
+    if (userName === "cenhan") {
+      setResolving(false);
+      return;
+    }
 
-      try {
-        setLoading(true);
-        const foundEmail = await getEmailFromDisplayName(userName);
-        const profileData = await getProfileDataForUser(foundEmail);
+    let cancelled = false;
+    setResolving(true);
 
-        if (foundEmail) {
-          setUserEmail(foundEmail);
-        }
-        if (profileData) {
-          setUser(profileData);
-        }
-      } catch (error) {
-        console.error("Error finding user email:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    findUserEmail();
+    getEmailFromDisplayName(userName)
+      .then((foundEmail) => {
+        if (!cancelled && foundEmail) setUserEmail(foundEmail);
+      })
+      .catch((err) => console.error("Error finding user email:", err))
+      .finally(() => { if (!cancelled) setResolving(false); });
+
+    return () => { cancelled = true; };
   }, [userName]);
+
   const {
     getConvertedBooks,
     getTagColor,
+    profileData,
     loading: bookshelfLoading,
   } = useBookshelf(null, userEmail);
 
@@ -62,8 +53,8 @@ const BookShelf = () => {
       }}>
       <DefaultBookShelf
         books={getConvertedBooks()}
-        title={`${loading || bookshelfLoading ? "Loading..." : ""}${
-          user?.shelfName
+        title={`${resolving || bookshelfLoading ? "Loading..." : ""}${
+          profileData.shelfName ?? ""
         }`}
         paramGetTagColor={getTagColor}
       />

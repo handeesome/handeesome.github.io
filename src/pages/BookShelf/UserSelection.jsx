@@ -1,22 +1,24 @@
 import Board from "../../components/Board";
 import Avatar from "../../components/Avatar";
-import { useEffect, useState } from "react";
 import Modal from "../../components/ui/Modal";
-import { getUserList, getDisplayNameFromEmail, getBookCountForUser } from "../../utils/userUtils";
+import { useUsers } from "../../hooks/useUsers";
+import { getDisplayNameFromEmail } from "../../utils/userUtils";
 import { useAuth } from "../../contexts/authContext";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
 import books from "../../data/books/books.json";
 
 const UserSelection = () => {
   const navigate = useNavigate();
   const { isAuthenticated, signInWithGoogle } = useAuth();
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [showModal, setShowModal] = useState(false);
-  const [fetchingBookCount, setFetchingBookCount] = useState(false);
   const location = useLocation();
 
-  // Add state for the selected avatar data
+  // Replaces the manual useEffect + getUserList() pattern.
+  // useUsers() handles loading state and caching internally.
+  const { users, loading, getBookCount } = useUsers();
+
+  const [showModal, setShowModal] = useState(false);
+  const [fetchingBookCount, setFetchingBookCount] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState({
     shelfPath: "",
     shelfName: "",
@@ -26,21 +28,6 @@ const UserSelection = () => {
     description: "",
   });
 
-  useEffect(() => {
-    const fetchEmails = async () => {
-      try {
-        setLoading(true);
-        const userList = await getUserList();
-        setUsers(userList);
-      } catch (error) {
-        console.error("Error fetching emails:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchEmails();
-  }, [location]);
-
   const handleSignIn = async () => {
     try {
       await signInWithGoogle();
@@ -49,7 +36,6 @@ const UserSelection = () => {
     }
   };
 
-  // Updated to accept avatar data
   const handleToggleModal = (avatarData = {}) => {
     setSelectedAvatar({ ...avatarData, booksNumber: null });
     setShowModal(true);
@@ -60,14 +46,11 @@ const UserSelection = () => {
         try {
           let bookCount;
           if (avatarData.shelfPath === "cenhan") {
-            // For cenhan, use the local books.json
             bookCount = books.length;
           } else {
-            // For other users, fetch from Firebase
-            bookCount = await getBookCountForUser(avatarData.userId);
+            // getBookCount now uses getCountFromServer — no full payload download
+            bookCount = await getBookCount(avatarData.userId);
           }
-
-          // Update the book count
           setSelectedAvatar((prev) => ({ ...prev, booksNumber: bookCount }));
         } catch (error) {
           console.error("Error fetching book count:", error);
@@ -79,7 +62,6 @@ const UserSelection = () => {
     }
   };
 
-  // Helper functions for the modal
   const getInitials = (name) => {
     if (!name) return "?";
     return name
@@ -112,7 +94,6 @@ const UserSelection = () => {
 
   const handleEnterBookshelf = () => {
     if (selectedAvatar.shelfPath) {
-      // Navigate to the user's bookshelf
       navigate(`/book-shelf/${getDisplayNameFromEmail(selectedAvatar.shelfPath)}`);
     }
     setShowModal(false);
@@ -153,7 +134,12 @@ const UserSelection = () => {
               }
             />
             {users
-              .filter((user) => user.isPublic === true || user.isPublic === null || user.isPublic === undefined)
+              .filter(
+                (user) =>
+                  user.isPublic === true ||
+                  user.isPublic === null ||
+                  user.isPublic === undefined
+              )
               .map((user) => {
                 const displayName = getDisplayNameFromEmail(user.id);
                 return (
@@ -178,7 +164,12 @@ const UserSelection = () => {
         </div>
       </Board>
 
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} title={selectedAvatar.shelfName || "Somebody's Shelf"} size="lg">
+      <Modal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title={selectedAvatar.shelfName || "Somebody's Shelf"}
+        size="lg"
+      >
         <div className="row">
           <div className="col-md-4 d-flex align-items-start">
             {selectedAvatar.src ? (
@@ -192,7 +183,9 @@ const UserSelection = () => {
                 }}
               />
             ) : (
-              <div style={fallbackStyle}>{getInitials(selectedAvatar.shelfName)}</div>
+              <div style={fallbackStyle}>
+                {getInitials(selectedAvatar.shelfName)}
+              </div>
             )}
           </div>
 
@@ -203,7 +196,11 @@ const UserSelection = () => {
               </div>
               <div className="col-6">
                 {fetchingBookCount ? (
-                  <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                  <span
+                    className="spinner-border spinner-border-sm me-2"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
                 ) : (
                   selectedAvatar.booksNumber ?? "..."
                 )}{" "}
@@ -212,11 +209,15 @@ const UserSelection = () => {
               <div className="col-12 mt-2">
                 <strong>Description:</strong>
                 <p className="text-muted mt-1">
-                  {selectedAvatar.description || "This is a book shelf containing various books and collections."}
+                  {selectedAvatar.description ||
+                    "This is a book shelf containing various books and collections."}
                 </p>
               </div>
               <div className="col-12 mt-3">
-                <button className="btn btn-warning" onClick={handleEnterBookshelf}>
+                <button
+                  className="btn btn-warning"
+                  onClick={handleEnterBookshelf}
+                >
                   Enter this Book Shelf
                 </button>
               </div>

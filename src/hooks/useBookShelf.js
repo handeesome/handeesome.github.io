@@ -1,152 +1,110 @@
-// useBookshelf.js - Cleaned Version (Everyone Can Read)
+// hooks/useBookShelf.js
+// ─────────────────────────────────────────────────────────────────────────────
+// Manages all bookshelf React state for one user.
+// Consumes services only — zero firebase/firestore imports in this file.
+// Public API is identical to the previous version so no UI changes are needed.
+// ─────────────────────────────────────────────────────────────────────────────
 import { useState, useEffect, useCallback, useMemo } from "react";
 import {
-  collection,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
-  getDocs,
-  query,
-  where,
-  getDoc,
-  setDoc,
-  deleteField,
-} from "firebase/firestore";
-import { db as firestore } from "../lib/firebase-config";
+  getBooksByUser,
+  addBook as svcAddBook,
+  updateBook as svcUpdateBook,
+  deleteBook as svcDeleteBook,
+  removeTagFromBooks,
+  renameShelfOnBooks,
+  removeShelfFromBooks,
+} from "../services/books.service";
+import {
+  getProfile,
+  updateProfile as svcUpdateProfile,
+  upsertTagColor,
+  removeTagColor,
+} from "../services/profile.service";
 
+// ---------------------------------------------------------------------------
+// Constants
+// ---------------------------------------------------------------------------
+
+const ADMIN_EMAIL = "ducenhandee@gmail.com";
+
+const DEFAULT_PROFILE = {
+  userName: "",
+  shelfName: "",
+  shelfDescription: "",
+  avatarBase64: "",
+  isPublic: true,
+  tagColors: {},
+};
+
+// ---------------------------------------------------------------------------
+// Hook
+// ---------------------------------------------------------------------------
+
+/**
+ * @param {object|null} user            - Firebase Auth user from useAuth()
+ * @param {string|null} currentViewingUserEmail - email being viewed (null = own shelf)
+ */
 export const useBookshelf = (user, currentViewingUserEmail = null) => {
-  const [books, setBooks] = useState([]);
-  const [tagColors, setTagColors] = useState({});
-  const [allShelves, setAllShelves] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [books,       setBooks]       = useState([]);
+  const [profileData, setProfileData] = useState({ ...DEFAULT_PROFILE });
+  const [loading,     setLoading]     = useState(true);
   const [editingBook, setEditingBook] = useState(null);
 
-  const [profileData, setProfileData] = useState({
-    userName: "",
-    shelfName: "",
-    shelfDescription: "",
-    avatarBase64: "",
-    isPublic: true,
-  });
+  // ── Stable derived values ─────────────────────────────────────────────────
 
-  // Update shelves when books change
-  useEffect(() => {
-    setAllShelves([...new Set(books.flatMap((book) => book.shelves || []))]);
-  }, [books]);
+  /** The email whose data we are displaying (own or viewed). */
+  const getCurrentUserEmail = useMemo(
+    () => currentViewingUserEmail ?? user?.email ?? null,
+    [currentViewingUserEmail, user?.email]
+  );
 
-  // Helper functions - SIMPLIFIED FOR PUBLIC READ ACCESS
-  const getCurrentUserEmail = useMemo(() => {
-    // If viewing another user's bookshelf, use that email
-    if (currentViewingUserEmail) {
-      return currentViewingUserEmail;
-    }
-    // Otherwise, use authenticated user's email (for own bookshelf)
-    return user?.email;
-  }, [currentViewingUserEmail, user?.email]);
-
+  /** Stable userId string (used when writing new books). */
   const getCurrentUserId = useMemo(() => {
-    // For tag colors and book ownership
     if (currentViewingUserEmail) {
       return currentViewingUserEmail.replace(/[^a-zA-Z0-9]/g, "_");
     }
-    return user?.uid;
+    return user?.uid ?? null;
   }, [currentViewingUserEmail, user?.uid]);
 
-  // Check if current user can edit (owner or admin)
+  /** True when the logged-in user may modify the displayed shelf. */
   const canEdit = useMemo(() => {
     if (!user) return false;
-
-    // Admin can edit anyone's bookshelf
-    if (user.email === "ducenhandee@gmail.com") return true;
-
-    // Users can edit their own bookshelf
+    if (user.email === ADMIN_EMAIL) return true;
     if (!currentViewingUserEmail) return true;
-
-    // Users can edit if viewing their own bookshelf
     return user.email === currentViewingUserEmail;
   }, [user, currentViewingUserEmail]);
 
-  // CORE FUNCTION: Fetch books (Public - anyone can read)
+  /** Unique sorted shelf names derived from current book list. */
+  const allShelves = useMemo(
+    () => [...new Set(books.flatMap((b) => b.shelves ?? []))],
+    [books]
+  );
+
+  /** Convenience: tag colour map extracted from profileData. */
+  const tagColors = profileData.tagColors ?? {};
+
+  // ── Data loading ──────────────────────────────────────────────────────────
+
   const fetchBooks = useCallback(
     async (targetEmail = null) => {
-      const emailToFetch = targetEmail || getCurrentUserEmail;
+      const emailToFetch = targetEmail ?? getCurrentUserEmail;
       if (!emailToFetch) {
-        console.warn("No email provided for fetching books");
         setLoading(false);
         return;
       }
 
+      setLoading(true);
       try {
-        setLoading(true);
-
-        // Fetch books
-        const q = query(
-          collection(firestore, "books"),
-          where("userEmail", "==", emailToFetch)
-        );
-        const querySnapshot = await getDocs(q);
-        const userBooks = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        // Sort books by date added (newest first), then by creation date, then by ID
-        userBooks.sort((a, b) => {
-          const dateA = new Date(a.dateAdded || 0);
-          const dateB = new Date(b.dateAdded || 0);
-          const dateDiff = dateB - dateA;
-
-          if (dateDiff !== 0) return dateDiff;
-
-          const createdA = a.createdAt?.toDate?.() || new Date(0);
-          const createdB = b.createdAt?.toDate?.() || new Date(0);
-          const createdDiff = createdB - createdA;
-
-          if (createdDiff !== 0) return createdDiff;
-
-          return a.id.localeCompare(b.id);
-        });
-
-        setBooks(userBooks);
-
-        // Fetch tag colors
-        const userDocRef = doc(firestore, "userdata", emailToFetch);
-        const userDocSnap = await getDoc(userDocRef);
-
-        if (userDocSnap.exists()) {
-          const userData = userDocSnap.data();
-          setTagColors(userData.tagColors || {});
-
-          setProfileData({
-            userName: userData.userName || "",
-            shelfName: userData.shelfName || "",
-            shelfDescription: userData.shelfDescription || "",
-            avatarBase64: userData.avatarBase64 || "",
-            isPublic:
-              userData.isPublic !== undefined ? userData.isPublic : true,
-          });
-        } else {
-          setTagColors({});
-          setProfileData({
-            userName: "",
-            shelfName: "",
-            shelfDescription: "",
-            avatarBase64: "",
-            isPublic: true,
-          });
-        }
-      } catch (error) {
-        console.error("Error fetching books or tag colors:", error);
+        const [fetchedBooks, fetchedProfile] = await Promise.all([
+          getBooksByUser(emailToFetch),
+          getProfile(emailToFetch),
+        ]);
+        setBooks(fetchedBooks);
+        setProfileData(fetchedProfile);
+      } catch (err) {
+        console.error("useBookshelf fetchBooks:", err);
         setBooks([]);
-        setTagColors({});
-        setProfileData({
-          userName: "",
-          shelfName: "",
-          shelfDescription: "",
-          avatarBase64: "",
-          isPublic: true,
-        });
+        setProfileData({ ...DEFAULT_PROFILE });
       } finally {
         setLoading(false);
       }
@@ -154,67 +112,43 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     [getCurrentUserEmail]
   );
 
-  // Auto-fetch when dependencies change
   useEffect(() => {
-    if (getCurrentUserEmail) {
-      fetchBooks();
-    }
+    if (getCurrentUserEmail) fetchBooks();
   }, [getCurrentUserEmail, fetchBooks]);
 
-  // BOOK CRUD OPERATIONS (Require edit permissions)
+  // ── Book CRUD ─────────────────────────────────────────────────────────────
+
   const addBook = useCallback(
     async (bookData) => {
-      if (!canEdit) {
-        console.warn("No permission to add books");
-        return false;
-      }
-
+      if (!canEdit || !getCurrentUserEmail) return false;
       try {
-        const docRef = await addDoc(collection(firestore, "books"), {
-          ...bookData,
-          userId: getCurrentUserId,
-          userEmail: getCurrentUserEmail,
-          dateAdded: new Date().toISOString().split("T")[0],
-          createdAt: new Date(),
-        });
-
-        const newBook = {
-          id: docRef.id,
-          ...bookData,
-          userId: getCurrentUserId,
-          userEmail: getCurrentUserEmail,
-          dateAdded: new Date().toISOString().split("T")[0],
-          createdAt: new Date(),
-        };
-
-        setBooks((prev) => [newBook, ...prev]);
+        const created = await svcAddBook(
+          getCurrentUserEmail,
+          getCurrentUserId,
+          bookData
+        );
+        setBooks((prev) => [created, ...prev]);
         return true;
-      } catch (error) {
-        console.error("Error adding book:", error);
+      } catch (err) {
+        console.error("addBook:", err);
         return false;
       }
     },
-    [canEdit, getCurrentUserId, getCurrentUserEmail]
+    [canEdit, getCurrentUserEmail, getCurrentUserId]
   );
 
   const updateBook = useCallback(
     async (bookId, bookData) => {
-      if (!canEdit) {
-        console.warn("No permission to update books");
-        return false;
-      }
-
+      if (!canEdit) return false;
       try {
-        await updateDoc(doc(firestore, "books", bookId), bookData);
+        await svcUpdateBook(bookId, bookData);
         setBooks((prev) =>
-          prev.map((book) =>
-            book.id === bookId ? { ...book, ...bookData } : book
-          )
+          prev.map((b) => (b.id === bookId ? { ...b, ...bookData } : b))
         );
         setEditingBook(null);
         return true;
-      } catch (error) {
-        console.error("Error updating book:", error);
+      } catch (err) {
+        console.error("updateBook:", err);
         return false;
       }
     },
@@ -223,21 +157,15 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
 
   const deleteBook = useCallback(
     async (bookId) => {
-      if (!canEdit) {
-        console.warn("No permission to delete books");
+      if (!canEdit) return false;
+      if (!window.confirm("Are you sure you want to delete this book?"))
         return false;
-      }
-
-      if (!window.confirm("Are you sure you want to delete this book?")) {
-        return false;
-      }
-
       try {
-        await deleteDoc(doc(firestore, "books", bookId));
-        setBooks((prev) => prev.filter((book) => book.id !== bookId));
+        await svcDeleteBook(bookId);
+        setBooks((prev) => prev.filter((b) => b.id !== bookId));
         return true;
-      } catch (error) {
-        console.error("Error deleting book:", error);
+      } catch (err) {
+        console.error("deleteBook:", err);
         return false;
       }
     },
@@ -246,146 +174,68 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
 
   const handleEditBook = useCallback(
     (bookId) => {
-      if (!canEdit) {
-        console.warn("No permission to edit books");
-        return;
-      }
-
-      const bookToEdit = books.find((book) => book.id === bookId);
-      if (bookToEdit) {
-        setEditingBook(bookToEdit);
-      }
+      if (!canEdit) return;
+      setEditingBook(books.find((b) => b.id === bookId) ?? null);
     },
-    [books, canEdit]
+    [canEdit, books]
   );
+
+  // ── Profile mutations ─────────────────────────────────────────────────────
 
   const updateProfileData = useCallback(
     async (updates) => {
-      if (!canEdit) {
-        console.warn("No permission to update profile");
-        return false;
-      }
-
-      const userDocRef = doc(firestore, "userdata", getCurrentUserEmail);
-
+      if (!canEdit || !getCurrentUserEmail) return false;
       try {
-        // Merge the updates with existing data
-        await setDoc(
-          userDocRef,
-          {
-            ...updates,
-            userEmail: getCurrentUserEmail,
-            updatedAt: new Date(),
-          },
-          { merge: true }
-        );
-
-        // Update local state
+        await svcUpdateProfile(getCurrentUserEmail, updates);
         setProfileData((prev) => ({ ...prev, ...updates }));
         return true;
-      } catch (error) {
-        console.error("Error updating profile data:", error);
+      } catch (err) {
+        console.error("updateProfileData:", err);
         return false;
       }
     },
     [canEdit, getCurrentUserEmail]
   );
 
-  const updateUserName = useCallback(
-    async (newUserName) => {
-      return await updateProfileData({ userName: newUserName });
-    },
-    [updateProfileData]
-  );
+  const updateUserName        = useCallback((v) => updateProfileData({ userName: v }),        [updateProfileData]);
+  const updateShelfName       = useCallback((v) => updateProfileData({ shelfName: v }),       [updateProfileData]);
+  const updateShelfDescription= useCallback((v) => updateProfileData({ shelfDescription: v }),[updateProfileData]);
+  const updateAvatar          = useCallback((v) => updateProfileData({ avatarBase64: v }),    [updateProfileData]);
 
-  const updateShelfName = useCallback(
-    async (newShelfName) => {
-      return await updateProfileData({ shelfName: newShelfName });
-    },
-    [updateProfileData]
-  );
-
-  const updateShelfDescription = useCallback(
-    async (newDescription) => {
-      return await updateProfileData({ shelfDescription: newDescription });
-    },
-    [updateProfileData]
-  );
-
-  const updateAvatar = useCallback(
-    async (newAvatarBase64) => {
-      return await updateProfileData({ avatarBase64: newAvatarBase64 });
-    },
-    [updateProfileData]
-  );
-
-  // Bulk update profile (for forms)
   const updateEntireProfile = useCallback(
     async (profileUpdates) => {
       const { userName, shelfName, shelfDescription, avatarBase64, isPublic } =
         profileUpdates;
-
-      return await updateProfileData({
-        userName: userName || "",
-        shelfName: shelfName || "",
-        shelfDescription: shelfDescription || "",
-        avatarBase64: avatarBase64 || "",
-        isPublic: isPublic !== undefined ? isPublic : true,
+      return updateProfileData({
+        userName:         userName         ?? "",
+        shelfName:        shelfName        ?? "",
+        shelfDescription: shelfDescription ?? "",
+        avatarBase64:     avatarBase64     ?? "",
+        isPublic:         isPublic         ?? true,
       });
     },
     [updateProfileData]
   );
 
+  const updatePublic = useCallback(
+    (isPublic) => updateProfileData({ isPublic }),
+    [updateProfileData]
+  );
+
   const fetchProfileData = useCallback(
     async (targetEmail = null) => {
-      const emailToFetch = targetEmail || getCurrentUserEmail;
-
-      if (!emailToFetch) {
-        console.warn("No email provided for fetching profile data");
-        return;
-      }
-
+      const email = targetEmail ?? getCurrentUserEmail;
+      if (!email) return;
       try {
-        const userDocRef = doc(firestore, "userdata", emailToFetch);
-        const userDocSnap = await getDoc(userDocRef);
-
-        if (userDocSnap.exists()) {
-          const userData = userDocSnap.data();
-          const profile = {
-            userName: userData.userName || "",
-            shelfName: userData.shelfName || "",
-            shelfDescription: userData.shelfDescription || "",
-            avatarBase64: userData.avatarBase64 || "",
-            isPublic:
-              userData.isPublic !== undefined ? userData.isPublic : true,
-          };
-
-          setProfileData(profile);
-        } else {
-          // No profile data exists, set default empty profile
-          const defaultProfile = {
-            userName: "",
-            shelfName: "",
-            shelfDescription: "",
-            avatarBase64: "",
-            isPublic: true,
-          };
-
-          setProfileData(defaultProfile);
-        }
-      } catch (error) {
-        console.error("Error fetching profile data:", error);
-        setProfileData({
-          userName: "",
-          shelfName: "",
-          shelfDescription: "",
-          avatarBase64: "",
-          isPublic: true,
-        });
+        const fetched = await getProfile(email);
+        setProfileData(fetched);
+      } catch (err) {
+        console.error("fetchProfileData:", err);
       }
     },
     [getCurrentUserEmail]
   );
+
   const getProfileData = useCallback(
     async (targetEmail = null) => {
       await fetchProfileData(targetEmail);
@@ -394,47 +244,30 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     [fetchProfileData, profileData]
   );
 
-  // Clear profile data (Require edit permissions)
   const clearProfileData = useCallback(async () => {
-    if (!canEdit) {
-      console.warn("No permission to clear profile");
+    if (!canEdit) return false;
+    if (!window.confirm("Are you sure you want to clear all profile data?"))
       return false;
-    }
-
-    if (!window.confirm("Are you sure you want to clear all profile data?")) {
-      return false;
-    }
-
-    return await updateProfileData({
-      userName: "",
-      shelfName: "",
-      shelfDescription: "",
-      avatarBase64: "",
-      isPublic: true,
+    return updateProfileData({
+      userName: "", shelfName: "", shelfDescription: "",
+      avatarBase64: "", isPublic: true,
     });
   }, [canEdit, updateProfileData]);
 
-  // TAG COLOR OPERATIONS (Require edit permissions)
+  // ── Tag colour operations ─────────────────────────────────────────────────
+
   const addTagColor = useCallback(
-    async (newTagName, newTagColor) => {
-      if (!canEdit || !newTagName) return false;
-
-      const userDocRef = doc(firestore, "userdata", getCurrentUserEmail);
-
+    async (tagName, color) => {
+      if (!canEdit || !tagName || !getCurrentUserEmail) return false;
       try {
-        await setDoc(
-          userDocRef,
-          {
-            tagColors: { [newTagName]: newTagColor },
-            userEmail: getCurrentUserEmail,
-          },
-          { merge: true }
-        );
-
-        setTagColors((prev) => ({ ...prev, [newTagName]: newTagColor }));
+        await upsertTagColor(getCurrentUserEmail, tagName, color);
+        setProfileData((prev) => ({
+          ...prev,
+          tagColors: { ...prev.tagColors, [tagName]: color },
+        }));
         return true;
-      } catch (error) {
-        console.error("Error adding tag color:", error);
+      } catch (err) {
+        console.error("addTagColor:", err);
         return false;
       }
     },
@@ -443,20 +276,16 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
 
   const updateTagColor = useCallback(
     async (tagName, newColor) => {
-      if (!canEdit || !tagName) return false;
-
-      const userDocRef = doc(firestore, "userdata", getCurrentUserEmail);
-
+      if (!canEdit || !tagName || !getCurrentUserEmail) return false;
       try {
-        await updateDoc(userDocRef, {
-          [`tagColors.${tagName}`]: newColor,
-          userEmail: getCurrentUserEmail,
-        });
-
-        setTagColors((prev) => ({ ...prev, [tagName]: newColor }));
+        await upsertTagColor(getCurrentUserEmail, tagName, newColor);
+        setProfileData((prev) => ({
+          ...prev,
+          tagColors: { ...prev.tagColors, [tagName]: newColor },
+        }));
         return true;
-      } catch (error) {
-        console.error("Error updating tag color:", error);
+      } catch (err) {
+        console.error("updateTagColor:", err);
         return false;
       }
     },
@@ -465,193 +294,60 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
 
   const deleteTagColor = useCallback(
     async (tagName) => {
-      if (!canEdit || !tagName) return false;
-
-      if (
-        !window.confirm(`Are you sure you want to delete the tag "${tagName}"?`)
-      ) {
+      if (!canEdit || !tagName || !getCurrentUserEmail) return false;
+      if (!window.confirm(`Are you sure you want to delete the tag "${tagName}"?`))
         return false;
-      }
-
-      const userDocRef = doc(firestore, "userdata", getCurrentUserEmail);
-
       try {
-        await updateDoc(userDocRef, {
-          [`tagColors.${tagName}`]: deleteField(),
-        });
+        // 1. Batch-update all affected books (atomic, chunked)
+        await removeTagFromBooks(books, tagName);
+        // 2. Remove the tag colour key from userdata
+        await removeTagColor(getCurrentUserEmail, tagName);
 
-        // Remove tag from all books
-        const booksWithTag = books.filter(
-          (book) => book.tags && book.tags.includes(tagName)
+        // 3. Optimistic local state update
+        setBooks((prev) =>
+          prev.map((b) =>
+            b.tags?.includes(tagName)
+              ? { ...b, tags: b.tags.filter((t) => t !== tagName) }
+              : b
+          )
         );
-
-        const updatePromises = booksWithTag.map(async (book) => {
-          const updatedTags = book.tags.filter((tag) => tag !== tagName);
-          const bookRef = doc(firestore, "books", book.id);
-          await updateDoc(bookRef, { tags: updatedTags });
-          return { ...book, tags: updatedTags };
+        setProfileData((prev) => {
+          const { [tagName]: _, ...rest } = prev.tagColors ?? {};
+          return { ...prev, tagColors: rest };
         });
-
-        await Promise.all(updatePromises);
-
-        // Update local state
-        setTagColors((prev) => {
-          const updated = { ...prev };
-          delete updated[tagName];
-          return updated;
-        });
-
-        setBooks((prevBooks) => {
-          return prevBooks.map((book) => {
-            if (book.tags && book.tags.includes(tagName)) {
-              return {
-                ...book,
-                tags: book.tags.filter((tag) => tag !== tagName),
-              };
-            }
-            return book;
-          });
-        });
-
         return true;
-      } catch (error) {
-        console.error("Error deleting tag color:", error);
+      } catch (err) {
+        console.error("deleteTagColor:", err);
         return false;
       }
     },
     [canEdit, getCurrentUserEmail, books]
   );
 
-  // UTILITY FUNCTIONS
-  const getTagColor = useCallback(
-    (tag) => {
-      return tagColors[tag] || "#6c757d";
-    },
-    [tagColors]
-  );
-
-  const getConvertedBooks = useCallback(() => {
-    return books.map((book) => ({
-      id: book.id,
-      title: book.title,
-      title2: book.title2,
-      author: book.author,
-      "num pages": book.pages,
-      "avg rating": book.rating,
-      shelves: book.shelves || [],
-      tags: book.tags || [],
-      "date started": book.dateStarted,
-      "date read": book.dateFinished,
-      "date added": book.dateAdded,
-      coverBase64: book.coverBase64,
-      notes: book.notes || "",
-    }));
-  }, [books]);
-
-  // ADMIN FUNCTION: Switch to view another user's bookshelf
-  const switchUser = useCallback(
-    async (targetEmail) => {
-      await fetchBooks(targetEmail);
-    },
-    [fetchBooks]
-  );
-
-  // Add this inside your hook, e.g., after updateEntireProfile
-  const updatePublic = useCallback(
-    async (isPublic) => {
-      if (!canEdit) {
-        console.warn("No permission to update public status");
-        return false;
-      }
-
-      const userDocRef = doc(firestore, "userdata", getCurrentUserEmail);
-
-      try {
-        // Merge only the isPublic field
-        await setDoc(
-          userDocRef,
-          { isPublic, updatedAt: new Date() },
-          { merge: true }
-        );
-
-        // Update local state
-        setProfileData((prev) => ({ ...prev, isPublic }));
-
-        return true;
-      } catch (error) {
-        console.error("Error updating public status:", error);
-        return false;
-      }
-    },
-    [canEdit, getCurrentUserEmail]
-  );
+  // ── Shelf operations ──────────────────────────────────────────────────────
 
   const renameShelf = useCallback(
     async (oldShelfName, newShelfName) => {
-      if (!canEdit) {
-        console.warn("No permission to rename shelves");
-        return false;
-      }
-
-      if (!oldShelfName || !newShelfName) {
-        console.error("Both old and new shelf names are required");
-        return false;
-      }
-
-      if (oldShelfName === newShelfName) {
-        console.warn("New shelf name is the same as the old one");
-        return false;
-      }
-
-      // Check if the new shelf name already exists
-      if (allShelves.includes(newShelfName)) {
-        console.warn(`Shelf "${newShelfName}" already exists`);
-        return false;
-      }
-
+      if (!canEdit || !oldShelfName || !newShelfName) return false;
+      if (oldShelfName === newShelfName) return false;
+      if (allShelves.includes(newShelfName)) return false;
       try {
-        // Find all books that have the old shelf name
-        const booksWithShelf = books.filter(
-          (book) => book.shelves && book.shelves.includes(oldShelfName)
+        await renameShelfOnBooks(books, oldShelfName, newShelfName);
+        setBooks((prev) =>
+          prev.map((b) =>
+            b.shelves?.includes(oldShelfName)
+              ? {
+                  ...b,
+                  shelves: b.shelves.map((s) =>
+                    s === oldShelfName ? newShelfName : s
+                  ),
+                }
+              : b
+          )
         );
-
-        if (booksWithShelf.length === 0) {
-          console.warn(`No books found with shelf "${oldShelfName}"`);
-          return false;
-        }
-
-        // Update each book's shelves array
-        const updatePromises = booksWithShelf.map(async (book) => {
-          const updatedShelves = book.shelves.map((shelf) =>
-            shelf === oldShelfName ? newShelfName : shelf
-          );
-
-          const bookRef = doc(firestore, "books", book.id);
-          await updateDoc(bookRef, { shelves: updatedShelves });
-
-          return { ...book, shelves: updatedShelves };
-        });
-
-        await Promise.all(updatePromises);
-
-        // Update local state
-        setBooks((prevBooks) =>
-          prevBooks.map((book) => {
-            if (book.shelves && book.shelves.includes(oldShelfName)) {
-              return {
-                ...book,
-                shelves: book.shelves.map((shelf) =>
-                  shelf === oldShelfName ? newShelfName : shelf
-                ),
-              };
-            }
-            return book;
-          })
-        );
-
         return true;
-      } catch (error) {
-        console.error("Error renaming shelf:", error);
+      } catch (err) {
+        console.error("renameShelf:", err);
         return false;
       }
     },
@@ -660,71 +356,71 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
 
   const deleteShelf = useCallback(
     async (shelfName) => {
-      if (!canEdit) {
-        console.warn("No permission to delete shelves");
-        return false;
-      }
-
-      if (!shelfName) {
-        console.error("Shelf name is required");
-        return false;
-      }
-
-      // Count how many books have this shelf
-      const booksWithShelf = books.filter(
-        (book) => book.shelves && book.shelves.includes(shelfName)
-      );
-
-      if (booksWithShelf.length === 0) {
-        console.warn(`No books found with shelf "${shelfName}"`);
-        // Still allow deletion even if no books have it
-      }
-
-      const confirmMessage =
-        booksWithShelf.length > 0
-          ? `Are you sure you want to delete the shelf "${shelfName}"? This will remove it from ${booksWithShelf.length} book(s).`
+      if (!canEdit || !shelfName) return false;
+      const affected = books.filter((b) => b.shelves?.includes(shelfName));
+      const msg =
+        affected.length > 0
+          ? `Are you sure you want to delete the shelf "${shelfName}"? This will remove it from ${affected.length} book(s).`
           : `Are you sure you want to delete the shelf "${shelfName}"?`;
-
-      if (!window.confirm(confirmMessage)) {
-        return false;
-      }
-
+      if (!window.confirm(msg)) return false;
       try {
-        // Update each book's shelves array to remove this shelf
-        const updatePromises = booksWithShelf.map(async (book) => {
-          const updatedShelves = book.shelves.filter(
-            (shelf) => shelf !== shelfName
-          );
-
-          const bookRef = doc(firestore, "books", book.id);
-          await updateDoc(bookRef, { shelves: updatedShelves });
-
-          return { ...book, shelves: updatedShelves };
-        });
-
-        await Promise.all(updatePromises);
-
-        // Update local state
-        setBooks((prevBooks) =>
-          prevBooks.map((book) => {
-            if (book.shelves && book.shelves.includes(shelfName)) {
-              return {
-                ...book,
-                shelves: book.shelves.filter((shelf) => shelf !== shelfName),
-              };
-            }
-            return book;
-          })
+        await removeShelfFromBooks(books, shelfName);
+        setBooks((prev) =>
+          prev.map((b) =>
+            b.shelves?.includes(shelfName)
+              ? { ...b, shelves: b.shelves.filter((s) => s !== shelfName) }
+              : b
+          )
         );
-
         return true;
-      } catch (error) {
-        console.error("Error deleting shelf:", error);
+      } catch (err) {
+        console.error("deleteShelf:", err);
         return false;
       }
     },
     [canEdit, books]
   );
+
+  // ── Utility ───────────────────────────────────────────────────────────────
+
+  const getTagColor = useCallback(
+    (tag) => tagColors[tag] ?? "#6c757d",
+    [tagColors]
+  );
+
+  /**
+   * Returns books in the shape expected by the static BookShelf component
+   * (mirrors the old getConvertedBooks format exactly).
+   */
+  const getConvertedBooks = useCallback(
+    () =>
+      books.map((b) => ({
+        id:           b.id,
+        title:        b.title,
+        title2:       b.title2,
+        author:       b.author,
+        "num pages":  b.pages,
+        "avg rating": b.rating,
+        shelves:      b.shelves ?? [],
+        tags:         b.tags ?? [],
+        "date started": b.dateStarted,
+        "date read":    b.dateFinished,
+        "date added":   b.dateAdded,
+        coverBase64:    b.coverBase64,
+        notes:          b.notes ?? "",
+      })),
+    [books]
+  );
+
+  /** Admin helper: reload the shelf as if viewing a different user. */
+  const switchUser = useCallback(
+    async (targetEmail) => {
+      await fetchBooks(targetEmail);
+    },
+    [fetchBooks]
+  );
+
+  // ── Public API (identical surface to previous hook) ───────────────────────
 
   return {
     // State
@@ -755,6 +451,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     getProfileData,
     fetchProfileData,
     clearProfileData,
+    updatePublic,
 
     // Tag operations
     addTagColor,
@@ -762,20 +459,18 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     deleteTagColor,
     getTagColor,
 
-    // Utility functions
+    // Shelf operations
+    renameShelf,
+    deleteShelf,
+
+    // Utilities
     getConvertedBooks,
     getCurrentUserEmail,
     getCurrentUserId,
     switchUser,
 
-    // State setters
+    // State setters (kept for components that use them directly)
     setEditingBook,
-    setAllShelves,
-
-    // Shelf operations
-    renameShelf,
-    deleteShelf,
-
-    updatePublic,
+    setAllShelves: () => {}, // allShelves is now derived — setter is a no-op
   };
 };
