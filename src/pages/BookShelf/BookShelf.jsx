@@ -8,26 +8,34 @@ import HideBtnsContext from "../../components/bookShelf/HideBtnsContext";
 
 const BookShelf = () => {
   const [userEmail, setUserEmail] = useState(null);
-  const [resolving, setResolving] = useState(true);
+  // Three states: "resolving" (looking up email), "ready" (email found), "not-found"
+  const [resolveState, setResolveState] = useState("resolving");
 
   const { userName } = useParams();
 
-  // Only needed to translate the URL slug → email; profile data comes from the hook.
+  // Translate the URL slug → full email.
+  // useBookshelf is not called until this resolves so there is no race condition.
   useEffect(() => {
-    if (userName === "cenhan") {
-      setResolving(false);
-      return;
-    }
+    if (userName === "cenhan") return; // handled by early return below
 
     let cancelled = false;
-    setResolving(true);
+    setResolveState("resolving");
+    setUserEmail(null);
 
     getEmailFromDisplayName(userName)
       .then((foundEmail) => {
-        if (!cancelled && foundEmail) setUserEmail(foundEmail);
+        if (cancelled) return;
+        if (foundEmail) {
+          setUserEmail(foundEmail);
+          setResolveState("ready");
+        } else {
+          setResolveState("not-found");
+        }
       })
-      .catch((err) => console.error("Error finding user email:", err))
-      .finally(() => { if (!cancelled) setResolving(false); });
+      .catch((err) => {
+        console.error("Error finding user email:", err);
+        if (!cancelled) setResolveState("not-found");
+      });
 
     return () => { cancelled = true; };
   }, [userName]);
@@ -43,6 +51,19 @@ const BookShelf = () => {
     return <MyBookShelf />;
   }
 
+  // Still looking up the email, or the hook hasn't fetched yet
+  const isLoading = resolveState === "resolving" || (resolveState === "ready" && bookshelfLoading);
+
+  if (resolveState === "not-found") {
+    return (
+      <DefaultBookShelf
+        books={[]}
+        title="User not found"
+        paramGetTagColor={() => "#6c757d"}
+      />
+    );
+  }
+
   return (
     <HideBtnsContext.Provider
       value={{
@@ -53,9 +74,7 @@ const BookShelf = () => {
       }}>
       <DefaultBookShelf
         books={getConvertedBooks()}
-        title={`${resolving || bookshelfLoading ? "Loading..." : ""}${
-          profileData.shelfName ?? ""
-        }`}
+        title={isLoading ? "Loading..." : (profileData.shelfName || userName)}
         paramGetTagColor={getTagColor}
       />
     </HideBtnsContext.Provider>
