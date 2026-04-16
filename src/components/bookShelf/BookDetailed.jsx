@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import parse from "html-react-parser";
 import { marked } from "marked";
 import StarRating from "./StarRating";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 import { useHideBtns } from "./HideBtnsContext";
 import BookQuotes from "../../data/books/book-quotes.json";
+import Introductions from "../../data/books/introductions.json";
 
 const BookDetailed = ({
   id,
@@ -31,40 +32,13 @@ const BookDetailed = ({
   onEditBook,
 }) => {
   const getTagColor = paramGetTagColor || defaultGetTagColor;
-  const [introduction, setIntroduction] = useState("");
+  const introduction = marked(Introductions[id] ?? notes ?? "");
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
   const textRef = useRef(null);
   const navigate = useNavigate();
   const { theme } = useTheme();
-  const latestIdRef = useRef(id);
   const { hideEditDelete, hideSessions } = useHideBtns();
-
-  useEffect(() => {
-    latestIdRef.current = id;
-  }, [id]);
-
-  useEffect(() => {
-    let cancelled = false;
-    latestIdRef.current = id;
-
-    setIntroduction("");
-    setExpanded(false);
-    setShowToggle(false);
-    (async () => {
-      try {
-        const mod = await import(`../../data/books/introductions/${id}.md?raw`);
-        if (cancelled || latestIdRef.current !== id) return; // stale
-        setIntroduction(marked(mod.default));
-      } catch {
-        if (cancelled || latestIdRef.current !== id) return; // stale
-        setIntroduction(notes || "");
-      }
-    })();
-    return () => {
-      cancelled = true; // cancel in-flight import for this id
-    };
-  }, [id, notes]);
 
   useLayoutEffect(() => {
     const el = textRef.current;
