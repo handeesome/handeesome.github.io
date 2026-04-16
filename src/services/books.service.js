@@ -15,7 +15,6 @@ import {
   writeBatch,
   query,
   where,
-  orderBy,
 } from "firebase/firestore";
 
 // ---------------------------------------------------------------------------
@@ -40,9 +39,13 @@ const bookDoc = (bookId) => doc(db, "books", bookId);
 // ---------------------------------------------------------------------------
 
 /**
- * Fetch all books for a user, sorted newest-first.
+ * Fetch all books for a user.
  * Uses an indexed where("userEmail") query — no full collection scan.
- * Required Firestore index: books [ userEmail ASC, createdAt DESC ]
+ *
+ * NOTE: orderBy("createdAt") is intentionally omitted here.  Firestore silently
+ * excludes documents that are missing the ordered field, which would drop any
+ * books written before the "createdAt" stamp was introduced.  Sorting is done
+ * client-side in getConvertedBooks() instead.
  *
  * @param {string} userEmail
  * @returns {Promise<Array>}
@@ -50,8 +53,7 @@ const bookDoc = (bookId) => doc(db, "books", bookId);
 export async function getBooksByUser(userEmail) {
   const q = query(
     collection(db, "books"),
-    where("userEmail", "==", userEmail),
-    orderBy("createdAt", "desc")
+    where("userEmail", "==", userEmail)
   );
   const snap = await getDocs(q);
   return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
