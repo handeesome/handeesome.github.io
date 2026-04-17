@@ -1,6 +1,0 @@
-const i=`Celebrated historian John Hirst offers a fascinating exploration of the qualities that made Europe a world-changing civilisation.
-
-The Shortest History of Europe begins with a rapid overview of European civilisation, describing its birth from an unlikely mixture of classical learning, Christianity and German warrior culture. Over the centuries, this unstable blend produced highly distinctive characters – pious knights and belligerent popes, romantics spouting folklore and revolutionaries imitating Rome – and its coming apart provided the dynamic of European history in modern times.
-
-Accompanied by lively illustrations, The Shortest History of Europe is a clear, humorous and thought-provoking account of a remarkable civilisation.
-`;export{i as default};

@@ -1,4 +1,0 @@
-const t=`Students of political theory will welcome the return to print of this brilliant defense of ordered liberty. Impugning John Stuart Mill’s famous treatise, On Liberty, Stephen criticized Mill for turning abstract doctrines of the French Revolution into “the creed of a religion.”
-
-Only the constraints of morality and law make liberty possible, warned Stephen, and attempts to impose unlimited freedom, material equality, and an indiscriminate love of humanity will lead inevitably to coercion and tyranny. Liberty must be restrained by custom and tradition if it is to endure; equality must be limited to equality before the law if it is to be just; and fraternity must include actual men, not the amorphous mass of mankind, if it is to be real and genuine.
-`;export{t as default};
