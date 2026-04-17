@@ -35,10 +35,16 @@ export const useUsers = () => {
     getAllUsers()
       .then((list) => {
         if (cancelled) return;
-        // Merge: live data wins for existing ids, new ids are appended
+        // Merge: live avatarBase64 always wins, append new ids
+        const liveById = Object.fromEntries(list.map((u) => [u.id, u]));
+        const merged = staticUsers.map((u) =>
+          liveById[u.id]?.avatarBase64
+            ? { ...u, avatarBase64: liveById[u.id].avatarBase64 }
+            : u
+        );
         const staticIds = new Set(staticUsers.map((u) => u.id));
         const extra = list.filter((u) => !staticIds.has(u.id));
-        if (extra.length > 0) setUsers([...staticUsers, ...extra]);
+        setUsers([...merged, ...extra]);
       })
       .catch((err) => { console.error("useUsers:", err); })
       .finally(() => { if (!cancelled) setLoading(false); });
