@@ -1,8 +1,8 @@
-import "./BookShelf.css";
-import "./Header.css";
-import "./Introduction.css";
-import "./NavBar.css";
-import "./Projects.css";
-import "./StudyNotes.css";
+import "../features/bookshelf/components/BookShelf.css";
+import "../components/layout/header/Header.css";
+import "../pages/Introduction.css";
+import "../components/layout/header/NavBar.css";
+import "../pages/projects/Projects.css";
+import "../pages/StudyNotes.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./ArticleCard.css";
+import "../components/ArticleCard.css";
