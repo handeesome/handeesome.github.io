@@ -1,4 +1,4 @@
-import Board from "../components/Board";
+import Board from "../features/profile/components/Board";
 import { useTheme } from "../contexts/ThemeContext";
 
 const Item = ({ title, description }) => {

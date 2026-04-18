@@ -1,4 +1,4 @@
-import Board from "../components/Board";
+import Board from "../features/profile/components/Board";
 
 const Items = () => {
   const Item = ({ category, date }) => (

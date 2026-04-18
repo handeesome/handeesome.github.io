@@ -1,4 +1,4 @@
-import Board from "../../components/Board";
+import Board from "../../features/profile/components/Board";
 import Avatar from "../../components/ui/Avatar";
 import Modal from "../../components/ui/Modal";
 import { useUsers } from "../../hooks/useUsers";

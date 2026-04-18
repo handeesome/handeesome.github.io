@@ -1,7 +1,7 @@
 // FirebaseBookshelf.jsx - Using Shared Auth Context
 import React, { useState } from "react";
 import HideBtnsContext from "../../contexts/HideBtnsContext";
-import Board from "../../components/Board";
+import Board from "../../features/profile/components/Board";
 import BookShelf from "../../features/bookshelf/components/BookShelf";
 import BookFormModal from "../../features/bookshelf/components/BookFormModal";
 import { useBookshelf } from "../../hooks/useBookShelf";

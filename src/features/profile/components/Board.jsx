@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, forwardRef } from "react";
-import { useTheme } from "../contexts/ThemeContext";
+import { useTheme } from "../../../contexts/ThemeContext";
 
 const Board = forwardRef(({ title, titleRight, children }, ref) => {
   const [scrollPosition, setScrollPosition] = useState(0);

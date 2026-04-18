@@ -1,4 +1,4 @@
-import Board from "../../components/Board";
+import Board from "../../features/profile/components/Board";
 import bookQuotes from "../../data/books/book-quotes.json";
 import BookQuote from "../../features/bookshelf/components/BookQuote";
 import { useParams, useNavigate } from "react-router-dom";

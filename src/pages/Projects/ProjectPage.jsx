@@ -1,4 +1,4 @@
-import Board from "../../components/Board";
+import Board from "../../features/profile/components/Board";
 import { useParams, useNavigate } from "react-router-dom";
 import fm from "front-matter";
 import ReactMarkdown from "react-markdown";

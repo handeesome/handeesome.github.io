@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Board from "../../components/Board";
+import Board from "../../features/profile/components/Board";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";

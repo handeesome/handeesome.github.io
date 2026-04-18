@@ -1,4 +1,4 @@
-import Board from "../../components/Board";
+import Board from "../../features/profile/components/Board";
 import fm from "front-matter";
 import { useNavigate } from "react-router-dom";
 import ArticleCard from "../../components/ArticleCard";
