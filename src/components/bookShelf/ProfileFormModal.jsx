@@ -1,4 +1,4 @@
-import ProfilePictureUpload from "../ProfilePictureUpload";
+import ProfilePictureUpload from "./ProfilePictureUpload";
 import Modal from "../ui/Modal";
 import { useState } from "react";
 import { useTheme } from "../../contexts/ThemeContext";

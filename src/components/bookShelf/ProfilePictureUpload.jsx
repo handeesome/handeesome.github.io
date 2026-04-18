@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import Cropper from "react-easy-crop";
-import Modal from "./ui/Modal";
-import { getCroppedImg } from "../utils/cropImage";
+import Modal from "../ui/Modal";
+import { getCroppedImg } from "../../utils/cropImage";
 const ProfilePictureUpload = ({ formData, setFormData }) => {
   const [imageSrc, setImageSrc] = useState(null);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
