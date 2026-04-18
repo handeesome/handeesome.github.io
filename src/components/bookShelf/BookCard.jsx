@@ -1,6 +1,6 @@
 import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
-import { hexToRgb } from "../../utils/HexToRBG";
+import { hexToRgb } from "../../utils/hexToRgb";
 import { useHideBtns } from "../../contexts/HideBtnsContext";
 
 const BookCard = ({
