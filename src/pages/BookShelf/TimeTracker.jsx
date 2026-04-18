@@ -17,7 +17,7 @@ import {
   ReferenceLine,
 } from "recharts";
 import togglData from "../../data/books/toggl-data.json";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import GoBackBtn from "../../components/GoBackButton";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { Overlay, Popover } from "react-bootstrap";

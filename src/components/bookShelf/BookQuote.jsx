@@ -1,5 +1,5 @@
 import { Quote } from "lucide-react";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const BookQuote = ({ children }) => {
   const variants = {

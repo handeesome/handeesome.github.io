@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import { Link } from "react-router-dom";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import { useState } from "react";
 
 const NavBar = ({ isScrolled }) => {

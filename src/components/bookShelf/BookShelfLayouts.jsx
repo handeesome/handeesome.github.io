@@ -1,5 +1,5 @@
 import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import BookDetailed from "./BookDetailed";
 import BookCard from "./BookCard";
 import BookRow from "./BookRow";

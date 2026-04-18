@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import NavBar from "./NavBar";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import backgroundLight from "/src/assets/images/background_light.webp";
 import backgroundDark from "/src/assets/images/background_dark.webp";
 import bookQuotes from "../../data/books/book-quotes.json";

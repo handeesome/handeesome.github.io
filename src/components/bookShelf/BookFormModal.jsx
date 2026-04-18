@@ -9,7 +9,7 @@ import FormDataTags from "./FormDataTags";
 import FormRow from "./FormRow";
 import { Editor } from "@tinymce/tinymce-react";
 import Modal from "../ui/Modal";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 const getInitialFormData = () => ({
   title: "",
   title2: "",

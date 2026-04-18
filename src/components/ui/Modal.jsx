@@ -1,6 +1,6 @@
 // components/ui/Modal.jsx
 import React from "react";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const Modal = ({
   isOpen,

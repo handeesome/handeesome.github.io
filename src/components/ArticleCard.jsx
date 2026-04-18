@@ -1,4 +1,4 @@
-import { useTheme } from "../ThemeContext";
+import { useTheme } from "../contexts/ThemeContext";
 const Card = ({ title, description, date, tags, onClick }) => {
   const { theme } = useTheme();
   return (

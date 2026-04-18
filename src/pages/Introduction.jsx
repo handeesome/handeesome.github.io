@@ -1,5 +1,5 @@
 import Board from "../components/Board";
-import { useTheme } from "../ThemeContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Item = ({ title, description }) => {
   const { theme } = useTheme();

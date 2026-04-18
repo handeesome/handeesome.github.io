@@ -4,7 +4,7 @@ import Board from "../Board";
 import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { GridView, DetailedView, TableView } from "./BookShelfLayouts";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import GoBackBtn from "../GoBackButton";
 import { useHideBtns } from "./HideBtnsContext";
 

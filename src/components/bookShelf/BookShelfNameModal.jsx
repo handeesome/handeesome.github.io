@@ -1,4 +1,4 @@
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import Modal from "../ui/Modal";
 import { useState } from "react";
 

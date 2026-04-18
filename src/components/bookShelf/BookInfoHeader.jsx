@@ -1,4 +1,4 @@
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import GoBackBtn from "../GoBackButton";
 const BookInfoHeader = ({ book }) => {
   const { theme } = useTheme();

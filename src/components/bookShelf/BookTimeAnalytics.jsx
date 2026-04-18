@@ -12,7 +12,7 @@ import {
   Bar,
 } from "recharts";
 import togglData from "../../data/books/toggl-data.json";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const BookTimeAnalytics = ({ bookTitle, bookTitle2 }) => {
   const [rawData, setRawData] = useState([]);
