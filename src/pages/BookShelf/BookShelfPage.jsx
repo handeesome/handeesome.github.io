@@ -1,4 +1,4 @@
-// FirebaseBookshelf.jsx - Using Shared Auth Context
+// BookShelfPage.jsx - Using Shared Auth Context
 import React, { useState } from "react";
 import HideBtnsContext from "../../contexts/HideBtnsContext";
 import Board from "../../features/profile/components/Board";
@@ -11,7 +11,7 @@ import { Users, User } from "lucide-react";
 import ProfileFormModal from "../../features/bookshelf/components/ProfileFormModal";
 import { LockOpen, LockKeyhole } from "lucide-react";
 
-const FirebaseBookshelf = () => {
+const BookShelfPage = () => {
   // Get auth state from context
   const { user, loading: authLoading, signInWithGoogle, signOut } = useAuth();
 
@@ -235,4 +235,4 @@ const FirebaseBookshelf = () => {
   );
 };
 
-export default FirebaseBookshelf;
+export default BookShelfPage;

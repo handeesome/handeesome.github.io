@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 const MyBookShelf = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.MyBookShelf })));
 const BookAnalytics = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.BookAnalytics })));
 const TimeTracker = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.TimeTracker })));
-const FirebaseBookshelf = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.FirebaseBookshelf })));
+const BookShelfPage = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.BookShelfPage })));
 const BookNotes = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.BookNotes })));
 const UserSelection = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.UserSelection })));
 const BookShelf = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.BookShelf })));
@@ -21,4 +21,4 @@ export const bookShelfRoutes = (
 );
 
 // Separate route for edit (different path pattern)
-export const editBookshelfRoute = <Route path="/edit-bookshelf" element={<FirebaseBookshelf />} />;
+export const editBookshelfRoute = <Route path="/edit-bookshelf" element={<BookShelfPage />} />;
