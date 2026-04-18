@@ -13,13 +13,13 @@ import {
   removeTagFromBooks,
   renameShelfOnBooks,
   removeShelfFromBooks,
-} from "../services/books.service";
+} from "../../../services/books.service";
 import {
   getProfile,
   updateProfile as svcUpdateProfile,
   upsertTagColor,
   removeTagColor,
-} from "../services/profile.service";
+} from "../../../services/profile.service";
 
 // ---------------------------------------------------------------------------
 // Constants

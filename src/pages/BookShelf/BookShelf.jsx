@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import MyBookShelf from "./MyBookShelf";
 import { default as DefaultBookShelf } from "../../features/bookshelf/components/BookShelf";
-import { useBookshelf } from "../../hooks/useBookShelf";
+import { useBookshelf } from "../../features/bookshelf/hooks/useBookShelf";
 import { useEffect, useState } from "react";
 import { getEmailFromDisplayName } from "../../utils/userUtils";
 import HideBtnsContext from "../../contexts/HideBtnsContext";

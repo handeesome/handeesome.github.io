@@ -4,7 +4,7 @@ import HideBtnsContext from "../../contexts/HideBtnsContext";
 import Board from "../../features/profile/components/Board";
 import BookShelf from "../../features/bookshelf/components/BookShelf";
 import BookFormModal from "../../features/bookshelf/components/BookFormModal";
-import { useBookshelf } from "../../hooks/useBookShelf";
+import { useBookshelf } from "../../features/bookshelf/hooks/useBookShelf";
 import { useAuth } from "../../contexts/AuthContext";
 import UserToggleModal from "../../features/bookshelf/components/UserToggleModal";
 import { Users, User } from "lucide-react";
