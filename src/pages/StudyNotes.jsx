@@ -1,4 +1,5 @@
 import Board from "../features/profile/components/Board";
+import "./StudyNotes.css";
 
 const Items = () => {
   const Item = ({ category, date }) => (

@@ -7,6 +7,7 @@ import { GridView, DetailedView, TableView } from "./BookShelfLayouts";
 import { useTheme } from "../../../contexts/ThemeContext";
 import GoBackBtn from "../../../components/GoBackButton";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
+import "./BookShelf.css";
 
 const BookShelf = ({
   books,

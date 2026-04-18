@@ -1,4 +1,5 @@
 import Board from "../features/profile/components/Board";
+import "./Introduction.css";
 import { useTheme } from "../contexts/ThemeContext";
 
 const Item = ({ title, description }) => {
