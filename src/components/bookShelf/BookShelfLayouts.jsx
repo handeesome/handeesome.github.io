@@ -3,7 +3,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 import BookDetailed from "./BookDetailed";
 import BookCard from "./BookCard";
 import BookRow from "./BookRow";
-import { useHideBtns } from "./HideBtnsContext";
+import { useHideBtns } from "../../contexts/HideBtnsContext";
 
 // Layout 1: Grid View - Simple covers with basic info
 export const GridView = ({

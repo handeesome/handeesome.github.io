@@ -6,7 +6,7 @@ import { hexToRgb } from "../../utils/HexToRBG";
 import { GridView, DetailedView, TableView } from "./BookShelfLayouts";
 import { useTheme } from "../../contexts/ThemeContext";
 import GoBackBtn from "../GoBackButton";
-import { useHideBtns } from "./HideBtnsContext";
+import { useHideBtns } from "../../contexts/HideBtnsContext";
 
 const BookShelf = ({
   books,

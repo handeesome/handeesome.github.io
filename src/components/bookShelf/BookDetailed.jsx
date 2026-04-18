@@ -6,7 +6,7 @@ import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
 import { hexToRgb } from "../../utils/HexToRBG";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
-import { useHideBtns } from "./HideBtnsContext";
+import { useHideBtns } from "../../contexts/HideBtnsContext";
 import BookQuotes from "../../data/books/book-quotes.json";
 import Introductions from "../../data/books/introductions.json";
 

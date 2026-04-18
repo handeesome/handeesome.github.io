@@ -4,7 +4,7 @@ import { default as DefaultBookShelf } from "../../components/bookShelf/BookShel
 import { useBookshelf } from "../../hooks/useBookShelf";
 import { useEffect, useState } from "react";
 import { getEmailFromDisplayName } from "../../utils/userUtils";
-import HideBtnsContext from "../../components/bookShelf/HideBtnsContext";
+import HideBtnsContext from "../../contexts/HideBtnsContext";
 
 const BookShelf = () => {
   const [userEmail, setUserEmail] = useState(null);

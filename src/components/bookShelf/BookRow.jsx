@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useHideBtns } from "./HideBtnsContext";
+import { useHideBtns } from "../../contexts/HideBtnsContext";
 import { hexToRgb } from "../../utils/HexToRBG";
 import StarRating from "./StarRating";
 
