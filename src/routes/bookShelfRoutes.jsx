@@ -1,13 +1,13 @@
 import { lazy } from "react";
 import { Route } from "react-router-dom";
 
-const MyBookShelf = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.MyBookShelf })));
-const BookAnalytics = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.BookAnalytics })));
-const TimeTracker = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.TimeTracker })));
-const BookShelfPage = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.BookShelfPage })));
-const BookNotes = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.BookNotes })));
-const UserSelection = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.UserSelection })));
-const BookShelf = lazy(() => import("../pages/bookshelf").then((module) => ({ default: module.BookShelf })));
+const MyBookShelf = lazy(() => import("../pages/bookshelf/MyBookShelf.jsx"));
+const BookAnalytics = lazy(() => import("../pages/bookshelf/BookAnalytics.jsx"));
+const TimeTracker = lazy(() => import("../pages/bookshelf/TimeTracker.jsx"));
+const BookShelfPage = lazy(() => import("../pages/bookshelf/BookShelfPage.jsx"));
+const BookNotes = lazy(() => import("../pages/bookshelf/BookNotes.jsx"));
+const UserSelection = lazy(() => import("../pages/bookshelf/UserSelection.jsx"));
+const BookShelf = lazy(() => import("../pages/bookshelf/BookShelf.jsx"));
 
 export const bookShelfRoutes = (
   <Route path="/book-shelf">

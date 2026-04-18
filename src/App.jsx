@@ -14,12 +14,8 @@ import {
 } from "./routes/bookShelfRoutes.jsx";
 import { gamesRoutes } from "./routes/gameRoutes.jsx";
 
-const Projects = lazy(() =>
-  import("./pages/projects").then((module) => ({ default: module.Projects }))
-);
-const ProjectPage = lazy(() =>
-  import("./pages/projects").then((module) => ({ default: module.ProjectPage }))
-);
+const Projects = lazy(() => import("./pages/projects/Projects.jsx"));
+const ProjectPage = lazy(() => import("./pages/projects/ProjectPage.jsx"));
 const StudyNotes = lazy(() => import("./pages/StudyNotes"));
 
 function App() {
