@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Header from "./components/header/Header";
 import GoToTopButton from "./components/GoToTopButton.jsx";
-import { AuthProvider } from "./contexts/authContext.jsx";
+import { AuthProvider } from "./contexts/AuthContext.jsx";
 import {
   bookShelfRoutes,
   editBookshelfRoute,

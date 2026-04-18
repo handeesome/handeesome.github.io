@@ -3,7 +3,7 @@ import Avatar from "../../components/Avatar";
 import Modal from "../../components/ui/Modal";
 import { useUsers } from "../../hooks/useUsers";
 import { getDisplayNameFromEmail } from "../../utils/userUtils";
-import { useAuth } from "../../contexts/authContext";
+import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import books from "../../data/books/books.json";

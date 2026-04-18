@@ -5,7 +5,7 @@ import Board from "../../components/Board";
 import BookShelf from "../../components/bookShelf/BookShelf";
 import BookFormModal from "../../components/bookShelf/BookFormModal";
 import { useBookshelf } from "../../hooks/useBookShelf";
-import { useAuth } from "../../contexts/authContext";
+import { useAuth } from "../../contexts/AuthContext";
 import UserToggleModal from "../../components/bookShelf/UserToggleModal";
 import { Users, User } from "lucide-react";
 import ProfileFormModal from "../../components/bookShelf/ProfileFormModal";
