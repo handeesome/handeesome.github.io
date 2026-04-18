@@ -2,7 +2,7 @@ import { useState, useRef, useLayoutEffect } from "react";
 import parse from "html-react-parser";
 import { marked } from "marked";
 import StarRating from "./StarRating";
-import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
+import { getTagColor as defaultGetTagColor } from "../../utils/tagColors";
 import { hexToRgb } from "../../utils/hexToRgb";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";

@@ -1,4 +1,4 @@
-import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
+import { getTagColor as defaultGetTagColor } from "../../utils/tagColors";
 import { useTheme } from "../../contexts/ThemeContext";
 import BookDetailed from "./BookDetailed";
 import BookCard from "./BookCard";

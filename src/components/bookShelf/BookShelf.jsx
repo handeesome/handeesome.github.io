@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import Board from "../Board";
-import { getTagColor as defaultGetTagColor } from "../../utils/TagColors";
+import { getTagColor as defaultGetTagColor } from "../../utils/tagColors";
 import { hexToRgb } from "../../utils/hexToRgb";
 import { GridView, DetailedView, TableView } from "./BookShelfLayouts";
 import { useTheme } from "../../contexts/ThemeContext";
