@@ -1,7 +1,7 @@
 // components/TagManagementModal.jsx
 import React, { useState } from "react";
-import { useTheme } from "../../contexts/ThemeContext";
-import Modal from "../ui/Modal";
+import { useTheme } from "../../../contexts/ThemeContext";
+import Modal from "../../../components/ui/Modal";
 
 const TagManagementModal = ({
   isOpen,

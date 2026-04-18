@@ -2,13 +2,13 @@ import { useState, useRef, useLayoutEffect } from "react";
 import parse from "html-react-parser";
 import { marked } from "marked";
 import StarRating from "./StarRating";
-import { getTagColor as defaultGetTagColor } from "../../utils/tagColors";
-import { hexToRgb } from "../../utils/hexToRgb";
+import { getTagColor as defaultGetTagColor } from "../../../utils/tagColors";
+import { hexToRgb } from "../../../utils/hexToRgb";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "../../contexts/ThemeContext";
-import { useHideBtns } from "../../contexts/HideBtnsContext";
-import BookQuotes from "../../data/books/book-quotes.json";
-import Introductions from "../../data/books/introductions.json";
+import { useTheme } from "../../../contexts/ThemeContext";
+import { useHideBtns } from "../../../contexts/HideBtnsContext";
+import BookQuotes from "../../../data/books/book-quotes.json";
+import Introductions from "../../../data/books/introductions.json";
 
 const BookDetailed = ({
   id,

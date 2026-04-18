@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useHideBtns } from "../../contexts/HideBtnsContext";
-import { hexToRgb } from "../../utils/hexToRgb";
+import { useHideBtns } from "../../../contexts/HideBtnsContext";
+import { hexToRgb } from "../../../utils/hexToRgb";
 import StarRating from "./StarRating";
 
 const BookRow = ({

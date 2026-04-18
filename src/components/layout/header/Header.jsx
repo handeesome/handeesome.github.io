@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import NavBar from "./NavBar";
-import { useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../../contexts/ThemeContext";
 import backgroundLight from "/src/assets/images/background_light.webp";
 import backgroundDark from "/src/assets/images/background_dark.webp";
-import bookQuotes from "../../data/books/book-quotes.json";
+import bookQuotes from "../../../data/books/book-quotes.json";
 import { Textfit } from "react-textfit";
 
 const Header = () => {
@@ -68,7 +68,8 @@ const Header = () => {
           transition: "opacity 0.3s ease",
           opacity: imageLoaded ? 1 : 0.5,
           position: "relative",
-        }}>
+        }}
+      >
         <NavBar isScrolled={isScrolled} />
         <div className="container h-100 d-flex align-items-start justify-content-center position-relative">
           <div
@@ -80,7 +81,8 @@ const Header = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-            }}>
+            }}
+          >
             <Textfit
               key={selectedQuote.text}
               mode="multi"
@@ -92,7 +94,8 @@ const Header = () => {
                 lineHeight: "1.2",
                 margin: "0",
                 overflow: "hidden",
-              }}>
+              }}
+            >
               "{selectedQuote.text}"
             </Textfit>
             <p
@@ -102,7 +105,8 @@ const Header = () => {
                 fontSize: "1.125rem",
                 fontWeight: "500",
                 margin: "20px 0 0 0",
-              }}>
+              }}
+            >
               — {selectedQuote.book}
             </p>
           </div>

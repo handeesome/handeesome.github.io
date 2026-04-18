@@ -1,12 +1,12 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import Board from "../Board";
-import { getTagColor as defaultGetTagColor } from "../../utils/tagColors";
-import { hexToRgb } from "../../utils/hexToRgb";
+import Board from "../../../components/Board";
+import { getTagColor as defaultGetTagColor } from "../../../utils/tagColors";
+import { hexToRgb } from "../../../utils/hexToRgb";
 import { GridView, DetailedView, TableView } from "./BookShelfLayouts";
-import { useTheme } from "../../contexts/ThemeContext";
-import GoBackBtn from "../GoBackButton";
-import { useHideBtns } from "../../contexts/HideBtnsContext";
+import { useTheme } from "../../../contexts/ThemeContext";
+import GoBackBtn from "../../../components/GoBackButton";
+import { useHideBtns } from "../../../contexts/HideBtnsContext";
 
 const BookShelf = ({
   books,

@@ -1,15 +1,15 @@
 // components/BookFormModal.jsx
 import React, { useState, useEffect } from "react";
 import { Palette } from "lucide-react";
-import CoverDropZone from "../bookShelf/CoverDropZone";
+import CoverDropZone from "./CoverDropZone";
 import TagManagementModal from "./TagManagementModal";
 import BookShelfNameModal from "./BookShelfNameModal";
 import BookSearchBar from "./BookSearchBar";
 import FormDataTags from "./FormDataTags";
 import FormRow from "./FormRow";
 import { Editor } from "@tinymce/tinymce-react";
-import Modal from "../ui/Modal";
-import { useTheme } from "../../contexts/ThemeContext";
+import Modal from "../../../components/ui/Modal";
+import { useTheme } from "../../../contexts/ThemeContext";
 const getInitialFormData = () => ({
   title: "",
   title2: "",

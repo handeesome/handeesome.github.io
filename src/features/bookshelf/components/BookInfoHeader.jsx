@@ -1,5 +1,5 @@
-import { useTheme } from "../../contexts/ThemeContext";
-import GoBackBtn from "../GoBackButton";
+import { useTheme } from "../../../contexts/ThemeContext";
+import GoBackBtn from "../../../components/GoBackButton";
 const BookInfoHeader = ({ book }) => {
   const { theme } = useTheme();
   return (

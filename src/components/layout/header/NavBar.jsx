@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import { Link } from "react-router-dom";
-import { useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../../contexts/ThemeContext";
 import { useState } from "react";
 
 const NavBar = ({ isScrolled }) => {
@@ -30,7 +30,8 @@ const NavBar = ({ isScrolled }) => {
         boxShadow: "0 2px 4px rgba(0,0,0,0.3)",
         height: isScrolled ? "50px" : "60px",
         transition: "height 0.3s ease-in-out",
-      }}>
+      }}
+    >
       <Container>
         <Navbar.Brand href="/">Cenhan's Site</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -66,7 +67,8 @@ const NavBar = ({ isScrolled }) => {
               onClick={() => {
                 toggleTheme();
                 closeNavbar();
-              }}>
+              }}
+            >
               <FontAwesomeIcon
                 icon={theme === "dark" ? faSun : faMoon}
                 className="fa-2xl"

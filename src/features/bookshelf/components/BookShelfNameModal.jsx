@@ -1,5 +1,5 @@
-import { useTheme } from "../../contexts/ThemeContext";
-import Modal from "../ui/Modal";
+import { useTheme } from "../../../contexts/ThemeContext";
+import Modal from "../../../components/ui/Modal";
 import { useState } from "react";
 
 const BookShelfNameModal = ({

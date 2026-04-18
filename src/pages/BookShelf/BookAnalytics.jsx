@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import Board from "../../components/Board";
-import BookTimeAnalytics from "../../components/bookShelf/BookTimeAnalytics";
+import BookTimeAnalytics from "../../features/bookshelf/components/BookTimeAnalytics";
 import books from "../../data/books/books.json";
-import BookInfoHeader from "../../components/bookShelf/BookInfoHeader";
+import BookInfoHeader from "../../features/bookshelf/components/BookInfoHeader";
 import ScrollToRef from "../../components/ScrollToRef";
 
 const BookAnalytics = () => {

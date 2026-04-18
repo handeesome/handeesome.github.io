@@ -1,7 +1,7 @@
 import ProfilePictureUpload from "./ProfilePictureUpload";
-import Modal from "../ui/Modal";
+import Modal from "../../../components/ui/Modal";
 import { useState } from "react";
-import { useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../../contexts/ThemeContext";
 const ProfileFormModal = ({
   isOpen,
   onClose,

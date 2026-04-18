@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from "react";
 import { Users } from "lucide-react";
-import { useTheme } from "../../contexts/ThemeContext";
-import Modal from "../ui/Modal";
-import { getDisplayNameFromEmail } from "../../utils/userUtils";
-import { useUsers } from "../../hooks/useUsers";
+import { useTheme } from "../../../contexts/ThemeContext";
+import Modal from "../../../components/ui/Modal";
+import { getDisplayNameFromEmail } from "../../../utils/userUtils";
+import { useUsers } from "../../../hooks/useUsers";
 
 const UserToggleModal = ({
   isOpen,

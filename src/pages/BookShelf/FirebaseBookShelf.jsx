@@ -2,13 +2,13 @@
 import React, { useState } from "react";
 import HideBtnsContext from "../../contexts/HideBtnsContext";
 import Board from "../../components/Board";
-import BookShelf from "../../components/bookShelf/BookShelf";
-import BookFormModal from "../../components/bookShelf/BookFormModal";
+import BookShelf from "../../features/bookshelf/components/BookShelf";
+import BookFormModal from "../../features/bookshelf/components/BookFormModal";
 import { useBookshelf } from "../../hooks/useBookShelf";
 import { useAuth } from "../../contexts/AuthContext";
-import UserToggleModal from "../../components/bookShelf/UserToggleModal";
+import UserToggleModal from "../../features/bookshelf/components/UserToggleModal";
 import { Users, User } from "lucide-react";
-import ProfileFormModal from "../../components/bookShelf/ProfileFormModal";
+import ProfileFormModal from "../../features/bookshelf/components/ProfileFormModal";
 import { LockOpen, LockKeyhole } from "lucide-react";
 
 const FirebaseBookshelf = () => {
