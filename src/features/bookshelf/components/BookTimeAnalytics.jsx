@@ -11,7 +11,7 @@ import {
   BarChart,
   Bar,
 } from "recharts";
-import togglData from "../../../data/books/toggl-data.json";
+import togglData from "../../../static/books/toggl-data.json";
 import { useTheme } from "../../../contexts/ThemeContext";
 
 const BookTimeAnalytics = ({ bookTitle, bookTitle2 }) => {

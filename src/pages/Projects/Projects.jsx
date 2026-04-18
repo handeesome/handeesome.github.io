@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import ArticleCard from "../../components/ArticleCard";
 const Items = () => {
   const navigate = useNavigate();
-  const modules = import.meta.glob("../../data/projects/*.md", {
+  const modules = import.meta.glob("../../content/projects/*.md", {
     eager: true,
     query: "?raw",
     import: "default",
@@ -13,7 +13,7 @@ const Items = () => {
 
   const projects = Object.entries(modules).map(([path, raw]) => {
     const { attributes, body } = fm(raw);
-    const slug = path.replace("../../data/projects/", "").replace(".md", "");
+    const slug = path.replace("../../content/projects/", "").replace(".md", "");
     return {
       title: attributes.title || slug,
       description: attributes.description || "",

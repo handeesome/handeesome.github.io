@@ -9,13 +9,13 @@ const ProjectPage = ({}) => {
   const { slug } = useParams();
   const [content, setContent] = useState(null);
 
-  const modules = import.meta.glob("../../data/projects/*.md", {
+  const modules = import.meta.glob("../../content/projects/*.md", {
     query: "?raw",
     import: "default",
   });
 
   useEffect(() => {
-    const loader = modules[`../../data/projects/${slug}.md`];
+    const loader = modules[`../../content/projects/${slug}.md`];
     if (!loader) {
       setContent(null);
       return;

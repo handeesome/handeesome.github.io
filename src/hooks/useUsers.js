@@ -10,7 +10,7 @@ import {
   getEmailFromDisplayName,
   getBookCountForUser,
 } from "../services/users.service";
-import staticUsers from "../data/static-users.json";
+import staticUsers from "../static/users.json";
 
 /**
  * Provides the full user list from Firestore (cached).

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from "../../../components/ui/Modal";
-import books from "../../../data/books/books.json";
+import books from "../../../static/books/books.json";
 
 const BookSearchBar = ({ isOpen, onClose, onSelect }) => {
   const [searchQuery, setSearchQuery] = useState("");

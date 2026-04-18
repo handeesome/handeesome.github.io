@@ -16,7 +16,7 @@ import {
   Brush,
   ReferenceLine,
 } from "recharts";
-import togglData from "../../data/books/toggl-data.json";
+import togglData from "../../static/books/toggl-data.json";
 import { useTheme } from "../../contexts/ThemeContext";
 import GoBackBtn from "../../components/GoBackButton";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";

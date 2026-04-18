@@ -6,7 +6,7 @@ import { getDisplayNameFromEmail } from "../../utils/userUtils";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
-import books from "../../data/books/books.json";
+import books from "../../static/books/books.json";
 
 const UserSelection = () => {
   const navigate = useNavigate();

@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import Board from "../../features/profile/components/Board";
 import BookTimeAnalytics from "../../features/bookshelf/components/BookTimeAnalytics";
-import books from "../../data/books/books.json";
+import books from "../../static/books/books.json";
 import BookInfoHeader from "../../features/bookshelf/components/BookInfoHeader";
 import ScrollToRef from "../../components/ScrollToRef";
 

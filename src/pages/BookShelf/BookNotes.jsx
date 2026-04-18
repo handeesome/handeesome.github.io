@@ -1,9 +1,9 @@
 import Board from "../../features/profile/components/Board";
-import bookQuotes from "../../data/books/book-quotes.json";
+import bookQuotes from "../../static/books/book-quotes.json";
 import BookQuote from "../../features/bookshelf/components/BookQuote";
 import { useParams, useNavigate } from "react-router-dom";
 import BookInfoHeader from "../../features/bookshelf/components/BookInfoHeader";
-import books from "../../data/books/books.json";
+import books from "../../static/books/books.json";
 import { useState, useEffect, useRef } from "react";
 import ScrollToRef from "../../components/ScrollToRef";
 

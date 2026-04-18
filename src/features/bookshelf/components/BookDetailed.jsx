@@ -7,8 +7,8 @@ import { hexToRgb } from "../../../utils/hexToRgb";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../../contexts/ThemeContext";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
-import BookQuotes from "../../../data/books/book-quotes.json";
-import Introductions from "../../../data/books/introductions.json";
+import BookQuotes from "../../../static/books/book-quotes.json";
+import Introductions from "../../../static/books/introductions.json";
 
 const BookDetailed = ({
   id,
