@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className={`position-bottom container`}>
       <div className="row justify-content-md-center">
         <div className="col-md-5 ">
-          <p>&copy; 2024 Cenhan Du. All Rights Reserved.</p>
+          <p>&copy; 2026 Cenhan Du. All Rights Reserved.</p>
           {/* Add more footer content, links, or social media icons as needed */}
         </div>
         <div className="col-md-5 justify-content-end d-flex list-unstyled">

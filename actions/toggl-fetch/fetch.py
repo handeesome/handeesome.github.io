@@ -7,7 +7,7 @@ from dateutil import parser
 API_TOKEN = os.environ['TOGGL_API_TOKEN']
 WORKSPACE_ID = 20692980
 USER_AGENT = "ducenhandee@gmail.com"
-JSON_PATH = 'src/data/books/toggl-data.json'  # Path relative to the repo root
+JSON_PATH = 'src/static/books/toggl-data.json'  # Path relative to the repo root
 
 def split_entry_if_crosses_midnight(entry):
     start_dt = parser.isoparse(entry['start'])

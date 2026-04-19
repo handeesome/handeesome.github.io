@@ -36,14 +36,17 @@ const Board = forwardRef(({ title, titleRight, children }, ref) => {
         top: "-80px",
         position: "relative",
       }}
-      ref={boardRef}>
+      ref={boardRef}
+    >
       <div className="row justify-content-center">
         <div
           className="col-md-10 rounded shadow-lg"
           id="board"
           style={{
             backgroundColor: theme === "light" ? "#e7e7e7" : "#252d38",
-          }}>
+            paddingBottom: "3rem",
+          }}
+        >
           <div className="row justify-content-center">
             <div className="col-md-10">
               <div className="d-flex justify-content-between align-items-center mt-5">
