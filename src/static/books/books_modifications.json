@@ -2,639 +2,489 @@
   "29494295": {
     "title": "幸せになる勇気",
     "title2": "",
-    "tags": []
+    "tags": ["psychology", "philosophy"],
+    "avg rating": 4.01
   },
   "51374": {
     "title": "Changes That Heal: How to Understand the Past to Ensure a Healthier Future",
     "title2": "改变带来医治",
-    "tags": [
-      "psychology",
-      "religion"
-    ]
+    "tags": ["psychology", "religion"],
+    "avg rating": 4.37
   },
   "25037087": {
     "title": "小顾聊绘画·贰",
     "title2": "",
-    "tags": [
-      "arts"
-    ]
+    "tags": ["arts"],
+    "avg rating": 3.88
   },
   "212108726": {
     "title": "小顾聊绘画·叁",
     "title2": "",
-    "tags": [
-      "arts"
-    ]
+    "tags": ["arts"],
+    "avg rating": 3.75
   },
   "44796": {
     "title": "The Moon and Sixpence",
     "title2": "月亮与六便士",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 4.12
   },
   "100142": {
     "title": "The Art of Love",
     "title2": "爱的艺术",
-    "tags": [
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["philosophy", "classics"],
+    "avg rating": 3.7
   },
   "32175062": {
     "title": "게으름",
     "title2": "懒惰",
-    "tags": [
-      "essays"
-    ]
+    "tags": ["essays"],
+    "avg rating": 4.5
   },
   "50705179": {
     "title": "Numbers Don't Lie: 71 Things You Need to Know About the World",
     "title2": "",
-    "tags": [
-      "statistics",
-      "essays"
-    ]
+    "tags": ["statistics", "essays"],
+    "avg rating": 3.82
   },
   "48889983": {
     "title": "Calling Bullshit: The Art of Skepticism in a Data-Driven World",
     "title2": "",
-    "tags": [
-      "statistics",
-      "essays"
-    ]
+    "tags": ["statistics", "essays"],
+    "avg rating": 4.1
   },
   "53605067": {
     "title": "The Data Detective: Ten Easy Rules to Make Sense of Statistics",
     "title2": "",
-    "tags": [
-      "statistics",
-      "essays"
-    ]
+    "tags": ["statistics", "essays"],
+    "avg rating": 4.12
   },
   "13588394": {
     "title": "The Signal and the Noise: Why So Many Predictions Fail—But Some Don't",
     "title2": "",
-    "tags": [
-      "statistics",
-      "essays"
-    ]
+    "tags": ["statistics", "essays"],
+    "avg rating": 3.97
   },
   "43722897": {
     "title": "The Art of Statistics: How to Learn from Data",
     "title2": "",
-    "tags": [
-      "statistics"
-    ]
+    "tags": ["statistics"],
+    "avg rating": 4.15
   },
   "52036": {
     "title": "Siddhartha",
     "title2": "流浪者之歌",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 4.08
   },
   "79121": {
     "title": "The Happy Prince",
     "title2": "快乐王子",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 4.19
   },
   "489732": {
     "title": "The Picture of Dorian Gray",
     "title2": "道林格雷的画像",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 4.13
   },
   "323455": {
     "title": "De Profundis",
     "title2": "自深深处",
-    "tags": [
-      "biography",
-      "classics"
-    ]
+    "tags": ["biography", "classics"],
+    "avg rating": 4.22
   },
   "71943": {
     "title": "Peter Camenzind",
     "title2": "彼得卡门青",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.89
   },
   "23456814": {
     "title": "Storia della bambina perduta",
     "title2": "失踪的孩子",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.46
   },
   "18716142": {
     "title": "Storia di chi fugge e di chi resta",
     "title2": "离开的留下的",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.36
   },
   "16005941": {
     "title": "Storia del nuovo cognome",
     "title2": "新名字的故事",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.46
   },
   "12913570": {
     "title": "L'amica geniale",
     "title2": "我的天才女友",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.05
   },
   "121732": {
     "title": "Surprised by Joy: The Shape of My Early Life",
     "title2": "惊喜之旅",
-    "tags": [
-      "biography",
-      "religion"
-    ]
+    "tags": ["biography", "religion"],
+    "avg rating": 4.06
   },
   "221282": {
     "title": "A Tale of Three Kings: A Study in Brokenness",
     "title2": "三王演义",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.3
   },
   "3116205": {
     "title": "The Prodigal God: Recovering the Heart of the Christian Faith",
     "title2": "挥霍的上帝",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.43
   },
   "125974": {
     "title": "Purity of Heart is to Will One Thing: Spiritual Preparation for the Office of Confession",
     "title2": "清心志于一事",
-    "tags": [
-      "religion",
-      "philosophy"
-    ]
+    "tags": ["religion", "philosophy"],
+    "avg rating": 4.23
   },
   "27995383": {
     "title": "氷点",
     "title2": "冰点",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 3.98
   },
   "14059361": {
     "title": "ナミヤ雑貨店の奇蹟",
     "title2": "解忧杂货店",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.41
   },
   "6934913": {
     "title": "The Shortest History of Europe",
     "title2": "你一定爱读的极简欧洲史",
-    "tags": [
-      "history"
-    ]
+    "tags": ["history"],
+    "avg rating": 4.03
   },
   "23692271": {
     "title": "Sapiens: A Brief History of Humankind",
     "title2": "人类简史",
-    "tags": [
-      "history",
-      "essays",
-      "social-science"
-    ]
+    "tags": ["history", "essays", "social-science"],
+    "avg rating": 4.33
   },
   "18905230": {
     "title": "Counselling for Toads: A Psychological Adventure",
     "title2": "蛤蟆先生去看心理医生",
-    "tags": [
-      "psychology"
-    ]
+    "tags": ["psychology"],
+    "avg rating": 4.28
   },
   "19480382": {
     "title": "嫌われる勇気",
     "title2": "被讨厌的勇气",
-    "tags": [
-      "psychology",
-      "philosophy"
-    ]
+    "tags": ["psychology", "philosophy"],
+    "avg rating": 3.92
   },
   "23507559": {
     "title": "小顾聊绘画",
     "title2": "",
-    "tags": [
-      "arts"
-    ]
+    "tags": ["arts"],
+    "avg rating": 3.99
   },
   "52249653": {
     "title": "从量子到宇宙——颠覆人类认知的科学之旅",
     "title2": "From Quantum to UNIVERSE",
-    "tags": [
-      "science"
-    ]
+    "tags": ["science"],
+    "avg rating": 4.0
   },
   "105984427": {
     "title": "今日店休",
     "title2": "",
     "author": "坂本健一",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.38
   },
   "43277265": {
     "title": "回答不了",
     "title2": "",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.2
   },
   "238727": {
     "title": "My First Summer in the Sierra",
     "title2": "夏日走过山间",
-    "tags": []
+    "tags": [],
+    "avg rating": 4.05
   },
   "4069": {
     "title": "Man's Search for Meaning",
     "title2": "活出意义来",
-    "tags": [
-      "biography",
-      "philosophy"
-    ]
+    "tags": ["biography", "philosophy"],
+    "avg rating": 4.37
   },
   "24583": {
     "title": "The Adventures of Tom Sawyer",
     "title2": "汤姆索亚历险记",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.92
   },
   "1953": {
     "title": "A Tale of Two Cities",
     "title2": "双城记",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.88
   },
   "16981": {
     "title": "Invisible Man",
     "title2": "看不见的人",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.92
   },
   "6334": {
     "title": "Never Let Me Go",
     "title2": "别让我走",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 3.85
   },
   "87247": {
     "title": "Der Steppenwolf",
     "title2": "荒原狼",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 4.13
   },
   "18752103": {
     "title": "Anna Karenina",
     "title2": "安娜·卡列尼娜",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 4.1
   },
   "19421327": {
     "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
     "title2": "爱的五种语言",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.28
   },
   "57300433": {
     "title": "The Book of Why: The New Science of Cause and Effect",
     "title2": "为什么：关于因果关系的新科学",
-    "tags": [
-      "statistics",
-      "social-science",
-      "essays"
-    ]
+    "tags": ["statistics", "social-science", "essays"],
+    "avg rating": 3.94,
+    "num pages": "335"
   },
   "21122": {
     "title": "The Coming of Age",
     "title2": "论老年",
-    "tags": [
-      "philosophy",
-      "social-science",
-      "essays"
-    ]
+    "tags": ["philosophy", "social-science", "essays"],
+    "avg rating": 3.93
   },
   "457264": {
     "title": "The Second Sex",
     "title2": "第二性",
-    "tags": [
-      "philosophy",
-      "social-science",
-      "essays"
-    ]
+    "tags": ["philosophy", "social-science", "essays"],
+    "avg rating": 4.18
   },
   "2054": {
     "title": "The Long Goodbye",
     "title2": "漫长的告别",
-    "tags": [
-      "fiction"
-    ]
+    "tags": ["fiction"],
+    "avg rating": 4.19
   },
   "485894": {
     "title": "Die Verwandlung",
     "title2": "变形记",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.91
   },
   "45633325": {
     "title2": "Catch-22",
     "title": "第二十二条军规",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.99
   },
   "18756051": {
     "title": "Братья Карамазовы",
     "title2": "卡拉马佐夫兄弟",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 4.39
   },
   "19324807": {
     "title": "Die Leiden des jungen Werthers",
     "title2": "少年维特的烦恼",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.69
   },
   "2376901": {
     "title": "人間失格 [Ningen Shikkaku]",
     "title2": "人间失格",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.94
   },
   "58715110": {
     "title": "Anti-Intellectualism in American Life",
     "title2": "美国的反智传统",
-    "tags": [
-      "essays",
-      "social-science"
-    ],
-    "num pages": "434"
+    "tags": ["essays", "social-science"],
+    "num pages": "434",
+    "avg rating": 4.11
   },
   "30659": {
     "title": "Τὰ εἰς ἑαυτόν",
     "title2": "沉思录",
-    "tags": [
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["philosophy", "classics"],
+    "avg rating": 4.28
   },
   "5107": {
     "title": "The Catcher in the Rye",
     "title2": "麦田里的守望者",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.8
   },
   "51502975": {
     "title": "바깥은 여름",
     "title2": "外面是夏天",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.07
   },
   "2165": {
     "title": "The Old Man and the Sea",
     "title2": "老人与海",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.81
   },
   "54861804": {
     "title": "如何假装懂音乐",
-    "tags": [
-      "arts",
-      "social-science"
-    ]
+    "tags": ["arts", "social-science"],
+    "avg rating": 3.12
   },
   "385228": {
     "title": "On Liberty",
     "title2": "论自由",
-    "tags": [
-      "philosophy",
-      "social-science",
-      "classics"
-    ]
+    "tags": ["philosophy", "social-science", "classics"],
+    "avg rating": 3.96
   },
   "1314433": {
     "title": "Liberty, Equality, Fraternity",
     "title2": "自由，平等，博爱",
-    "tags": [
-      "philosophy",
-      "history",
-      "social-science"
-    ]
+    "tags": ["philosophy", "history", "social-science"],
+    "avg rating": 3.81
   },
   "23275043": {
     "title": "沈黙",
     "title2": "沉默",
-    "tags": [
-      "fiction",
-      "religion"
-    ]
+    "tags": ["fiction", "religion"],
+    "avg rating": 4.09
   },
   "19342729": {
     "title": "Atonement",
     "title2": "赎罪",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.95
   },
   "41810863": {
     "title": "The Remains of the Day",
     "title2": "长日将尽",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 4.14
   },
   "11138": {
     "title": "Mere Christianity",
     "title2": "返璞归真：纯粹的基督教",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.37
   },
   "57836039": {
     "title": "ぼくはこんな音楽を聴いて育った",
     "title2": "我成长的音乐时代",
-    "tags": [
-      "biography",
-      "arts"
-    ]
+    "tags": ["biography", "arts"],
+    "avg rating": 3.5
   },
   "3730": {
     "title": "The Hidden Persuaders",
-    "tags": [
-      "essays",
-      "social-science"
-    ]
+    "tags": ["essays", "social-science"],
+    "avg rating": 3.84
   },
   "1000751": {
     "title": "Pollyanna",
     "title2": "波丽安娜",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 4.02
   },
   "40000210": {
     "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
     "title2": "存在主义咖啡馆",
-    "tags": [
-      "philosophy",
-      "essays"
-    ]
+    "tags": ["philosophy", "essays"],
+    "avg rating": 4.24
   },
   "59719801": {
     "title": "法治的细节",
-    "tags": [
-      "essays",
-      "social-science"
-    ]
+    "tags": ["essays", "social-science"],
+    "avg rating": 4.26
   },
   "28154510": {
     "title": "Le mythe de Sisyphe",
     "title2": "西西弗神话",
-    "tags": [
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["philosophy", "classics"],
+    "avg rating": 4.17
   },
   "36160370": {
     "title": "Brave New World",
     "title2": "美丽新世界",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.99
   },
   "54383459": {
     "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
     "title2": "哲学的故事",
-    "tags": [
-      "philosophy",
-      "biography"
-    ]
+    "tags": ["philosophy", "biography"],
+    "avg rating": 4.15
   },
   "202694": {
     "title": "Émile, ou De l'éducation",
     "title2": "爱弥儿",
-    "tags": [
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["philosophy", "classics"],
+    "avg rating": 3.57
   },
   "28807853": {
     "title": "The Four Loves",
     "title2": "四种爱",
-    "tags": [
-      "religion",
-      "philosophy"
-    ]
+    "tags": ["religion", "philosophy"],
+    "avg rating": 4.16
   },
   "26007192": {
     "title": "Counterfeit Gods: The Empty Promises of Money, Sex, and Power, and the Only Hope that Matters",
     "title2": "山寨版的上帝",
     "author": "Timothy J. Keller",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.37
   },
   "13589149": {
     "title": "Every Good Endeavor: Connecting Your Work to God's Work",
     "title2": "工作的意义",
     "author": "Timothy J. Keller",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.31
   },
   "42767746": {
     "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
     "title2": "婚姻的意义",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.48
   },
   "17174373": {
     "title": "Cloud Atlas",
     "title2": "云图",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.01
   },
   "1156110": {
     "title": "Micromegas",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics",
-      "satire"
-    ]
+    "tags": ["fiction", "philosophy", "classics", "satire"],
+    "avg rating": 3.65
   },
   "42092510": {
     "title": "Brave New World Revisited",
     "title2": "重返美丽新世界",
-    "tags": [
-      "essays",
-      "social-science"
-    ]
+    "tags": ["essays", "social-science"],
+    "avg rating": 3.99
   },
   "174237": {
     "title": "A Treatise on the Family",
@@ -642,352 +492,257 @@
     "author": "Gary S. Becker",
     "num pages": "440",
     "avg rating": "3.93",
-    "tags": [
-      "economics",
-      "social-science"
-    ]
+    "tags": ["economics", "social-science"],
+    "avg rating": 3.93
   },
   "53263624": {
     "title": "L'évolution créatrice",
     "title2": "创造进化论",
-    "tags": [
-      "philosophy"
-    ]
+    "tags": ["philosophy"],
+    "avg rating": 4.1
   },
   "3836": {
     "title": "Don Quixote de la Mancha",
     "title2": "堂吉诃德",
-    "tags": [
-      "fiction",
-      "classics",
-      "satire"
-    ]
+    "tags": ["fiction", "classics", "satire"],
+    "avg rating": 3.91
   },
   "43491623": {
     "title": "Zadig ou la Destinée",
     "title2": "查第格",
     "num pages": "192",
     "avg rating": "3.79",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics",
-      "satire"
-    ]
+    "tags": ["fiction", "philosophy", "classics", "satire"],
+    "avg rating": 3.79
   },
   "80493508": {
     "title": "ノルウェイの森",
     "title2": "挪威的森林",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 3.99
   },
   "19380": {
     "title": "Candide, ou l'Optimisme",
     "title2": "老实人",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics",
-      "satire"
-    ]
+    "tags": ["fiction", "philosophy", "classics", "satire"],
+    "avg rating": 3.76
   },
   "60470571": {
     "title": "Nonverts: The Making of Ex-Christian America",
-    "tags": [
-      "religion",
-      "history",
-      "social-science"
-    ]
+    "tags": ["religion", "history", "social-science"],
+    "avg rating": 3.86
   },
   "63354300": {
     "title": "The Great Dechurching: Who's Leaving, Why Are They Going, and What Will It Take to Bring Them Back?",
-    "tags": [
-      "religion",
-      "social-science"
-    ]
+    "tags": ["religion", "social-science"],
+    "avg rating": 3.86
   },
   "38135623": {
     "title": "L'Ingénu",
     "title2": "天真汉",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics",
-      "satire"
-    ]
+    "tags": ["fiction", "philosophy", "classics", "satire"],
+    "avg rating": 3.51
   },
   "11438": {
     "title": "What We Talk About When We Talk About Love",
-    "tags": [
-      "fiction",
-      "contemporary"
-    ]
+    "tags": ["fiction", "contemporary"],
+    "avg rating": 4.0
   },
   "16241133": {
     "title": "The History of the Renaissance World: From the Rediscovery of Aristotle to the Conquest of Constantinople",
     "title2": "世界史的故事 III",
-    "tags": [
-      "history"
-    ]
+    "tags": ["history"],
+    "avg rating": 4.17
   },
   "225947": {
     "title": "The History of the Ancient World: From the Earliest Accounts to the Fall of Rome",
     "title2": "世界史的故事 I",
-    "tags": [
-      "history"
-    ]
+    "tags": ["history"],
+    "avg rating": 4.11
   },
   "48917953": {
     "title": "La Peste",
     "title2": "鼠疫",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 4.02
   },
   "6484128": {
     "title": "The History of the Medieval World: From the Conversion of Constantine to the First Crusade",
     "title2": "世界史的故事 II",
-    "tags": [
-      "history"
-    ]
+    "tags": ["history"],
+    "avg rating": 4.11
   },
   "18250837": {
     "title": "How (Not) to Be Secular: Reading Charles Taylor",
-    "tags": [
-      "religion",
-      "philosophy",
-      "essays"
-    ]
+    "tags": ["religion", "philosophy", "essays"],
+    "avg rating": 4.21
   },
   "824412": {
     "title": "A Secular Age",
-    "tags": [
-      "religion",
-      "philosophy",
-      "social-science"
-    ]
+    "tags": ["religion", "philosophy", "social-science"],
+    "avg rating": 4.27
   },
   "55385983": {
     "title": "Speechless: Controlling Words, Controlling Minds",
-    "tags": [
-      "essays",
-      "social-science"
-    ]
+    "tags": ["essays", "social-science"],
+    "avg rating": 4.24
   },
   "61369370": {
     "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
-    "tags": [
-      "essays",
-      "economics",
-      "social-science"
-    ]
+    "tags": ["essays", "economics", "social-science"],
+    "avg rating": 4.16
   },
   "36651676": {
     "title": "L'Étranger",
     "title2": "局外人",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 4.03
   },
   "57846996": {
     "title": "Red Roulette: An Insider's Story of Wealth, Power, Corruption, and Vengeance in Today's China",
     "title2": "红色赌盘",
     "num pages": "171",
-    "tags": [
-      "biography",
-      "history",
-      "social-science"
-    ]
+    "tags": ["biography", "history", "social-science"],
+    "avg rating": 3.91
   },
   "28137375": {
     "title": "Pride and Predujice",
     "title2": "傲慢与偏见",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 4.3
   },
   "18922517": {
     "title": "Le Rouge et le Noir, Chronique du XIXe siécle",
     "title2": "红与黑",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 3.86
   },
   "19179596": {
     "title": "Преступление и наказание",
     "title2": "罪与罚",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 4.29
   },
   "19230853": {
     "title": "Война и миръ",
     "title2": "战争与和平",
-    "tags": [
-      "fiction",
-      "classics"
-    ]
+    "tags": ["fiction", "classics"],
+    "avg rating": 4.17
   },
   "203774224": {
     "title": "法律的悖论",
     "title2": "Paradoxes of Law",
-    "tags": [
-      "philosophy",
-      "social-science"
-    ]
+    "tags": ["philosophy", "social-science"],
+    "avg rating": 3.91
   },
   "17259893": {
     "title": "Le petit prince",
     "title2": "小王子",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 4.33
   },
   "27788": {
     "title": "Julie ou La nouvelle Héloïse",
     "title2": "新爱洛伊丝",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 3.44
   },
   "12649": {
     "title": "Les Confessions",
     "title2": "忏悔录",
-    "tags": [
-      "biography",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["biography", "philosophy", "classics"],
+    "avg rating": 3.6
   },
   "3023": {
     "title": "Basic Economics: A Citizen's Guide to the Economy",
-    "tags": [
-      "economics",
-      "social-science"
-    ]
+    "tags": ["economics", "social-science"],
+    "avg rating": 4.37
   },
   "170448": {
     "title": "Animal Farm",
     "title2": "动物农场",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics",
-      "satire"
-    ]
+    "tags": ["fiction", "philosophy", "classics", "satire"],
+    "avg rating": 4.02
   },
   "61439040": {
     "title": "1984",
-    "tags": [
-      "fiction",
-      "philosophy",
-      "classics"
-    ]
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": 4.2
   },
   "27840555": {
     "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.61
   },
   "152344": {
     "title": "Victory Over the Darkness",
     "title2": "胜过黑暗",
-    "tags": [
-      "religion"
-    ]
+    "tags": ["religion"],
+    "avg rating": 4.21
   },
   "52104820": {
     "title": "圆圈正义：作为自由前提的信念",
     "title2": "The Faith as Premise of Freedom",
-    "tags": [
-      "philosophy",
-      "social-science"
-    ]
+    "tags": ["philosophy", "social-science"],
+    "avg rating": 4.06
   },
   "41889692": {
     "title": "When Breath Becomes Air",
     "title2": "当呼吸化为空气",
-    "tags": [
-      "biography"
-    ]
+    "tags": ["biography"],
+    "avg rating": 4.41
   },
   "23336950": {
     "title": "A Pearl Necklace",
     "title2": "珍珠项链",
-    "tags": [
-      "biography"
-    ]
+    "tags": ["biography"],
+    "avg rating": 4.24
   },
   "52884924": {
     "title": "走到比錢更遠的地方",
-    "tags": [
-      "biography"
-    ]
+    "tags": ["biography"],
+    "avg rating": 5.0
   },
   "38819247": {
     "title": "Food and Nutrition: What Everyone Needs to Know®",
-    "tags": [
-      "essays",
-      "social-science"
-    ]
+    "tags": ["essays", "social-science"],
+    "avg rating": 3.88
   },
   "211854307": {
     "title": "康熙的红票：全球化中的清朝",
     "title2": "Emporor Kangxi's Red Manifesto: The Qing Dynasty in Globalization",
-    "tags": [
-      "history"
-    ]
+    "tags": ["history"],
+    "avg rating": 4.61
   },
   "210594797": {
     "title": "A Pearl Necklace",
     "title2": "珍珠项链",
-    "tags": [
-      "biography"
-    ]
+    "tags": ["biography"],
+    "avg rating": 5.0
   },
   "32899495": {
     "title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
-    "tags": [
-      "programming"
-    ]
+    "tags": ["programming"],
+    "avg rating": 4.55
   },
   "38606117": {
     "title": "Java编程的逻辑 (Java核心技术系列) (Chinese Edition)",
-    "tags": [
-      "programming"
-    ]
+    "tags": ["programming"],
+    "avg rating": 4.0
   },
   "52935138": {
     "title": "The Secret Life of Programs: Understand Computers -- Craft Better Code",
-    "tags": [
-      "programming"
-    ]
+    "tags": ["programming"],
+    "avg rating": 3.89
   },
   "52555533": {
     "title": "Algorithmic Thinking: A Problem-Based Introduction",
-    "tags": [
-      "programming"
-    ]
+    "tags": ["programming"],
+    "avg rating": 4.45
   },
   "13590009": {
     "title": "Think Like a Programmer: An Introduction to Creative Problem Solving",
-    "tags": [
-      "programming"
-    ]
+    "tags": ["programming"],
+    "avg rating": 3.86
   }
 }
