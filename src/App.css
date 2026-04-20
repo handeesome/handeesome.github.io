@@ -78,3 +78,44 @@ html.dark .icon {
 .hover-bg-light:hover {
   background-color: #f8f9fa;
 }
+
+/* Show More/Less Button */
+.show-more-btn {
+  font-size: 1rem !important;
+  border-radius: 20px !important;
+  padding: 0.25rem 0.75rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.show-more-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Clamping */
+.line-clamp-content {
+  max-height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.line-clamp-content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 1.9em;
+  pointer-events: none;
+}
+
+/* Light theme gradient */
+.light .line-clamp-content::after {
+  background: linear-gradient(to right, transparent, white);
+}
+
+/* Dark theme gradient */
+.dark .line-clamp-content::after {
+  background: linear-gradient(to right, transparent, rgba(33, 37, 41));
+}

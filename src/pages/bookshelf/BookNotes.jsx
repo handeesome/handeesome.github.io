@@ -1,6 +1,7 @@
 import Board from "../../features/profile/components/Board";
 import bookQuotes from "../../static/books/book-quotes.json";
 import BookQuote from "../../features/bookshelf/components/BookQuote";
+import bookDescription from "../../static/books/introductions.json";
 import { useParams, useNavigate } from "react-router-dom";
 import BookInfoHeader from "../../features/bookshelf/components/BookInfoHeader";
 import books from "../../static/books/books.json";
@@ -18,6 +19,20 @@ const BookNotes = () => {
     ? quotesEntry[0]
     : book?.title || "Unknown Book";
   const quotes = quotesEntry ? quotesEntry[1] : [];
+
+  const description = bookDescription[bookId] || "No description available.";
+
+  const [expanded, setExpanded] = useState(false);
+  const [showToggle, setShowToggle] = useState(false);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const el = textRef.current;
+    if (!el) return;
+    // If your content includes images/fonts, you can also wrap in requestAnimationFrame
+    const needsToggle = el.scrollHeight > el.clientHeight + 10;
+    setShowToggle(needsToggle);
+  }, [description, book]);
 
   useEffect(() => {
     // Find the book by ID
@@ -48,6 +63,33 @@ const BookNotes = () => {
   return (
     <Board title={`NOTES FROM ${bookTitle}`} ref={boardRef}>
       <BookInfoHeader book={book} />
+      <div className="card mb-4 description-card">
+        <div className="card-body p-4">
+          <h5
+            className="card-title"
+            style={{ borderLeft: "3px solid #007bff", paddingLeft: "10px" }}
+          >
+            Book Description
+          </h5>
+          <div
+            className={`card-text ${!expanded ? "line-clamp-content" : ""}`}
+            style={{ whiteSpace: "pre-line" }}
+            ref={textRef}
+          >
+            {description}
+          </div>
+          {showToggle && (
+            <div className="text-end mb-3">
+              <button
+                onClick={() => setExpanded((prev) => !prev)}
+                className="btn btn-outline-secondary btn-sm mt-2 show-more-btn"
+              >
+                {expanded ? "▲ Show Less" : "▼ Show More"}
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
       {quotes.length > 0 ? (
         quotes.map((note, index) => (
           <div key={index} className="d-flex mb-3 align-items-center">
@@ -58,7 +100,8 @@ const BookNotes = () => {
                 height: "2rem",
                 borderRadius: "0.25rem",
                 flexShrink: 0,
-              }}>
+              }}
+            >
               {index + 1}
             </div>
             <BookQuote>{note}</BookQuote>
