@@ -33,7 +33,7 @@ jobs:
       - name: Check for changes
         id: verify-changed-files
         run: |
-          if git diff --quiet src/data/books/toggl-data.json; then
+          if git diff --quiet src/static/books/toggl-data.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -44,6 +44,6 @@ jobs:
         run: |
           git config --local user.name 'github-actions[bot]'
           git config --local user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/data/books/toggl-data.json
+          git add src/static/books/toggl-data.json
           git commit -m "📊 Update Toggl data [CI]"
           git push
