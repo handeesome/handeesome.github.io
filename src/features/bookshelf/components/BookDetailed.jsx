@@ -104,14 +104,14 @@ const BookDetailed = ({
                       <strong>Pages:</strong> {numPages}
                     </p>
 
-                    {/* <div className="mb-1 d-flex align-items-center gap-2">
+                    <div className="mb-1 d-flex align-items-center gap-2">
                       <strong>Rating:</strong>
                       <StarRating
                         rating={avgRating}
                         size="sm"
                         showText={true}
                       />
-                    </div> */}
+                    </div>
 
                     <div className="mb-1">
                       <strong>Shelf:</strong>{" "}

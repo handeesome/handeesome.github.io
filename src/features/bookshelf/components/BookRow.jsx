@@ -25,10 +25,10 @@ const BookRow = ({
           <div className="text-muted small">by {book.author}</div>
         </div>
       </td>
-      {/* <td>
+      <td>
         <StarRating rating={book["avg rating"]} size="sm" showText={false} />
         <div className="small text-muted">{book["avg rating"]}</div>
-      </td> */}
+      </td>
       <td>
         <span className="badge bg-secondary">{book["num pages"]}</span>
       </td>

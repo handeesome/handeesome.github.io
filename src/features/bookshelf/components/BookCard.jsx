@@ -130,9 +130,9 @@ const BookCard = ({
 
           {/* Bottom content - always at bottom */}
           <div className="mt-auto">
-            {/* <div className="mb-2 d-flex justify-content-center">
+            <div className="mb-2 d-flex justify-content-center">
               <StarRating rating={book["avg rating"]} size="sm" />
-            </div> */}
+            </div>
 
             {/* Action Buttons */}
             <div className="d-grid gap-2">
