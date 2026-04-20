@@ -1,4 +1,4 @@
-import{D as q,j as r,r as b,u as V,E as u,g as Te,G as Fe,B as de}from"./index-DIbQYVqW.js";import{H as ze,B as Be}from"./BookShelf-BIEPfg45.js";import{M as U,u as Ie,g as Le}from"./useUsers-BCp9UTRr.js";import{b as Oe}from"./books-BzPYJ41X.js";import{u as We}from"./useBookShelf-BpvXGIUf.js";import"./index-84k9TH_T.js";import"./GoBackButton-Dh4-R0FC.js";import"./users.service-BNxr5rqC.js";/**
+import{D as q,j as r,r as b,u as V,E as u,g as Te,G as Fe,B as de}from"./index-Bs9Uz0WP.js";import{H as ze,B as Be}from"./BookShelf-Ds_W-b3t.js";import{M as U,u as Ie,g as Le}from"./useUsers-CqXJ7QkY.js";import{b as Oe}from"./books-CLEuW7EG.js";import{u as We}from"./useBookShelf-Bt9O2v5z.js";import"./index-84k9TH_T.js";import"./GoBackButton-CDTs2JHX.js";import"./users.service-D1AUJudd.js";/**
  * @license lucide-react v0.541.0 - ISC
  *
  * This source code is licensed under the ISC license.
