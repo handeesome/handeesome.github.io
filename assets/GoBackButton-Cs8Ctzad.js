@@ -1,0 +1,1 @@
+import{a as o,j as e}from"./index-BifK0mut.js";const i=({defaultDest:n,text:s})=>{const t=o();return e.jsxs("button",{className:"btn btn-outline-info",onClick:()=>{window.history.length>1?t(-1):t(n)},children:["← ",s]})};export{i as G};
