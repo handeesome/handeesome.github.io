@@ -4,7 +4,7 @@ import { marked } from "marked";
 import StarRating from "./StarRating";
 import { getTagColor as defaultGetTagColor } from "../../../utils/tagColors";
 import { hexToRgb } from "../../../utils/hexToRgb";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useTheme } from "../../../contexts/ThemeContext";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
 import BookQuotes from "../../../static/books/book-quotes.json";
@@ -37,8 +37,15 @@ const BookDetailed = ({
   const [showToggle, setShowToggle] = useState(false);
   const textRef = useRef(null);
   const navigate = useNavigate();
+  const { userName } = useParams();
   const { theme } = useTheme();
-  const { hideEditDelete, hideSessions } = useHideBtns();
+  const { hideEditDelete, hideSessions, hideQuotes } = useHideBtns();
+  const quotePath = userName
+    ? `/book-shelf/${userName}/book/${id}/quotes`
+    : `/book-shelf/book/${id}/notes`;
+  const quoteButtonLabel = userName
+    ? "View Quotes"
+    : `View ${BookQuotes[id]?.[1]?.length || 0} Notes`;
 
   useLayoutEffect(() => {
     const el = textRef.current;
@@ -61,7 +68,7 @@ const BookDetailed = ({
   };
 
   const handleViewNotesClick = () => {
-    navigate(`/book-shelf/book/${id}/notes`);
+    navigate(quotePath);
   };
 
   const handleDeleteBook = (bookId) => {
@@ -201,11 +208,15 @@ const BookDetailed = ({
                       >
                         Reading Sessions
                       </button>
+                    </>
+                  )}
+                  {!hideQuotes && (
+                    <>
                       <button
                         className="btn btn-outline-warning btn-lg"
                         onClick={handleViewNotesClick}
                       >
-                        View {BookQuotes[id]?.[1]?.length || 0} Notes
+                        {quoteButtonLabel}
                       </button>
                     </>
                   )}

@@ -1,5 +1,5 @@
 import StarRating from "./StarRating";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { hexToRgb } from "../../../utils/hexToRgb";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
 
@@ -14,8 +14,14 @@ const BookCard = ({
   theme,
 }) => {
   const navigate = useNavigate();
+  const { userName } = useParams();
   // Move the useState hook here - now each BookCard has its own consistent hook
-  const { hideEditDelete, hideSessions } = useHideBtns();
+  const { hideEditDelete, hideSessions, hideQuotes } = useHideBtns();
+  const quotePath = userName
+    ? `/book-shelf/${userName}/book/${book.id}/quotes`
+    : `/book-shelf/book/${book.id}/notes`;
+  const canViewQuotes = !hideQuotes;
+
   return (
     <div key={book.id} className="col-md-3 col-sm-6">
       <div
@@ -32,15 +38,13 @@ const BookCard = ({
             }
             alt={book.title}
             onClick={
-              !hideSessions
-                ? () => navigate(`/book-shelf/book/${book.id}/notes`)
-                : undefined
+              canViewQuotes ? () => navigate(quotePath) : undefined
             }
             className="book-cover-grid"
             style={{
               width: "100%",
               height: "auto",
-              cursor: !hideSessions ? "pointer" : "default",
+              cursor: canViewQuotes ? "pointer" : "default",
             }}
             onError={(e) =>
               (e.currentTarget.src = book.coverBase64 || "/default-cover.jpg")
@@ -55,14 +59,12 @@ const BookCard = ({
             <h6
               className="card-title mb-1 text-center"
               onClick={
-                !hideSessions
-                  ? () => navigate(`/book-shelf/book/${book.id}/notes`)
-                  : undefined
+                canViewQuotes ? () => navigate(quotePath) : undefined
               }
               style={{
                 fontSize: "1rem",
                 lineHeight: "1.2",
-                cursor: !hideSessions ? "pointer" : "default",
+                cursor: canViewQuotes ? "pointer" : "default",
               }}
             >
               {book.title}
@@ -73,11 +75,9 @@ const BookCard = ({
             <p
               className="card-text text-muted mb-2"
               onClick={
-                !hideSessions
-                  ? () => navigate(`/book-shelf/book/${book.id}/notes`)
-                  : undefined
+                canViewQuotes ? () => navigate(quotePath) : undefined
               }
-              style={{ cursor: !hideSessions ? "pointer" : "default" }}
+              style={{ cursor: canViewQuotes ? "pointer" : "default" }}
             >
               by {book.author}
             </p>

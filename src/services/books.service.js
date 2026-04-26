@@ -8,6 +8,7 @@ import {
   collection,
   doc,
   addDoc,
+  getDoc,
   updateDoc,
   deleteDoc,
   getDocs,
@@ -57,6 +58,18 @@ export async function getBooksByUser(userEmail) {
   );
   const snap = await getDocs(q);
   return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+/**
+ * Fetch one book document by its Firestore id.
+ *
+ * @param {string} bookId
+ * @returns {Promise<object|null>}
+ */
+export async function getBookById(bookId) {
+  const snap = await getDoc(bookDoc(bookId));
+  if (!snap.exists()) return null;
+  return { id: snap.id, ...snap.data() };
 }
 
 /**

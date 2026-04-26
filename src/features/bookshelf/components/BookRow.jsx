@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
 import { hexToRgb } from "../../../utils/hexToRgb";
+import { getTagColor as defaultGetTagColor } from "../../../utils/tagColors";
 import StarRating from "./StarRating";
 
 const BookRow = ({
@@ -14,8 +15,13 @@ const BookRow = ({
 }) => {
   const getTagColor = paramGetTagColor || defaultGetTagColor;
   const navigate = useNavigate();
+  const { userName } = useParams();
+  const quotePath = userName
+    ? `/book-shelf/${userName}/book/${book.id}/quotes`
+    : `/book-shelf/book/${book.id}/notes`;
 
-  const { hideEditDelete, hideSessions, hideActions } = useHideBtns();
+  const { hideEditDelete, hideSessions, hideQuotes, hideActions } =
+    useHideBtns();
   return (
     <tr key={book.id} className="book-row">
       <td>
@@ -119,22 +125,22 @@ const BookRow = ({
               </>
             )}
             {!hideSessions && (
-              <>
-                <button
-                  className="btn btn-outline-info btn-sm mb-2"
-                  onClick={() =>
-                    navigate(`/book-shelf/book/${book.id}/analytics`)
-                  }
-                >
-                  📊 Sessions
-                </button>
-                <button
-                  className="btn btn-outline-secondary btn-sm"
-                  onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
-                >
-                  📝 Notes
-                </button>
-              </>
+              <button
+                className="btn btn-outline-info btn-sm mb-2"
+                onClick={() =>
+                  navigate(`/book-shelf/book/${book.id}/analytics`)
+                }
+              >
+                📊 Sessions
+              </button>
+            )}
+            {!hideQuotes && (
+              <button
+                className="btn btn-outline-secondary btn-sm"
+                onClick={() => navigate(quotePath)}
+              >
+                📝 {userName ? "Quotes" : "Notes"}
+              </button>
             )}
           </div>
         </td>

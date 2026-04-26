@@ -4,6 +4,7 @@ import { createContext, useContext } from "react";
 const HideBtnsContext = createContext({
   hideEditDelete: false,
   hideSessions: false,
+  hideQuotes: false,
   hideActions: false,
   hideTimeTracker: false,
 });

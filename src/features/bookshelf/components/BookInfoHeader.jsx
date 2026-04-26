@@ -2,6 +2,9 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import GoBackBtn from "../../../components/GoBackButton";
 const BookInfoHeader = ({ book }) => {
   const { theme } = useTheme();
+  const coverSrc = book.coverBase64 || `/images/bookCovers/${book.id}.jpg`;
+  const pages = book["num pages"] ?? book.pages ?? "N/A";
+
   return (
     <div className="row mb-4">
       <div className="col-12">
@@ -10,10 +13,13 @@ const BookInfoHeader = ({ book }) => {
             <div className="row align-items-center">
               <div className="col-md-2">
                 <img
-                  src={`/images/bookCovers/${book.id}.jpg`}
+                  src={coverSrc}
                   alt={book.title}
                   className="img-fluid rounded"
                   style={{ maxHeight: "150px", objectFit: "cover" }}
+                  onError={(e) => {
+                    e.currentTarget.src = "/default-cover.jpg";
+                  }}
                 />
               </div>
               <div className="col-md-10">
@@ -22,7 +28,7 @@ const BookInfoHeader = ({ book }) => {
                 <p className="card-text">
                   <strong>Author:</strong> {book.author}
                   <br />
-                  <strong>Pages:</strong> {book["num pages"]}
+                  <strong>Pages:</strong> {pages}
                   <br />
                   <strong>Reading Status:</strong> {book.shelves}
                 </p>

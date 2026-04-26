@@ -112,7 +112,7 @@ const BookShelfPage = () => {
   // Render loading state
   if (authLoading || bookshelfLoading) {
     return (
-      <HideBtnsContext.Provider value={{ hideSessions: true }}>
+      <HideBtnsContext.Provider value={{ hideSessions: true, hideQuotes: true }}>
         <BookShelf books={[]} title="My Bookshelf" loading />
       </HideBtnsContext.Provider>
     );
@@ -130,7 +130,7 @@ const BookShelfPage = () => {
   // Main bookshelf interface
   return (
     <>
-      <HideBtnsContext.Provider value={{ hideSessions: true }}>
+      <HideBtnsContext.Provider value={{ hideSessions: true, hideQuotes: true }}>
         <BookShelf
           books={getConvertedBooks()}
           title={

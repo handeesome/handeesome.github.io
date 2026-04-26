@@ -69,7 +69,6 @@ const BookShelf = () => {
       value={{
         hideEditDelete: true,
         hideSessions: true,
-        hideActions: true,
         hideTimeTracker: true,
       }}>
       <DefaultBookShelf
