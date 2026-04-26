@@ -73,7 +73,7 @@ const BookShelfPage = () => {
   const handleSignIn = async () => {
     try {
       await signInWithGoogle();
-    } catch (error) {
+    } catch {
       alert("Error signing in. Please try again.");
     }
   };
@@ -112,14 +112,9 @@ const BookShelfPage = () => {
   // Render loading state
   if (authLoading || bookshelfLoading) {
     return (
-      <Board title="📚 My Bookshelf">
-        <div className="text-center py-5">
-          <div className="spinner-border text-primary mb-3" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <h5 className="text-muted">Loading your bookshelf...</h5>
-        </div>
-      </Board>
+      <HideBtnsContext.Provider value={{ hideSessions: true }}>
+        <BookShelf books={[]} title="My Bookshelf" loading />
+      </HideBtnsContext.Provider>
     );
   }
 

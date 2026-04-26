@@ -76,6 +76,7 @@ const BookShelf = () => {
         books={getConvertedBooks()}
         title={isLoading ? "Loading..." : (profileData.shelfName || userName)}
         paramGetTagColor={getTagColor}
+        loading={isLoading}
       />
     </HideBtnsContext.Provider>
   );

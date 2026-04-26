@@ -10,12 +10,13 @@ import { useHideBtns } from "../../../contexts/HideBtnsContext";
 import "./BookShelf.css";
 
 const BookShelf = ({
-  books,
+  books = [],
   title = "Book Shelf",
   paramGetTagColor,
   titleRight = null,
   deleteBook,
   onEditBook,
+  loading = false,
 }) => {
   const getTagColor = paramGetTagColor || defaultGetTagColor;
   const [searchParams, setSearchParams] = useSearchParams();
@@ -185,7 +186,55 @@ const BookShelf = ({
     }
   };
 
-  const displayTitle = selectedShelf ? `${title} - ${selectedShelf}` : title;
+  const BookShelfTitleLoading = () => (
+    <div
+      className={`bookshelf-title-loading ${
+        theme === "dark" ? "bookshelf-loading-dark" : ""
+      }`}
+      aria-label="Loading bookshelf title">
+      <span className="bookshelf-skeleton bookshelf-title-skeleton" />
+      <span className="bookshelf-loading-dot" />
+      <span className="bookshelf-loading-dot" />
+      <span className="bookshelf-loading-dot" />
+    </div>
+  );
+
+  const BookShelfBooksLoading = () => (
+    <div
+      className={`bookshelf-loading-section ${
+        theme === "dark" ? "bookshelf-loading-dark" : ""
+      }`}
+      aria-hidden="true">
+      <div className="bookshelf-loading-toolbar">
+        <span className="bookshelf-skeleton bookshelf-filter-skeleton wide" />
+        <span className="bookshelf-skeleton bookshelf-filter-skeleton" />
+        <span className="bookshelf-skeleton bookshelf-filter-skeleton" />
+      </div>
+      <div className="row g-3">
+        {Array.from({ length: 8 }).map((_, index) => (
+          <div className="col-md-3 col-sm-6" key={index}>
+            <div className="bookshelf-loading-card">
+              <span className="bookshelf-skeleton bookshelf-cover-skeleton" />
+              <span className="bookshelf-skeleton bookshelf-line-skeleton" />
+              <span className="bookshelf-skeleton bookshelf-line-skeleton short" />
+              <div className="bookshelf-loading-tags">
+                <span className="bookshelf-skeleton bookshelf-pill-skeleton" />
+                <span className="bookshelf-skeleton bookshelf-pill-skeleton" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const displayTitle = loading ? (
+    <BookShelfTitleLoading />
+  ) : selectedShelf ? (
+    `${title} - ${selectedShelf}`
+  ) : (
+    title
+  );
   return (
     <Board
       title={displayTitle}
@@ -203,157 +252,173 @@ const BookShelf = ({
           )}
         </div>
       }>
-      {/* Layout Selector */}
-      <div className="row mb-3">
-        <div className="col-12">
-          <div className="d-flex justify-content-center">
-            <div className="btn-group" role="group" aria-label="Layout options">
-              <button
-                className={`btn ${
-                  layout === "grid" ? "btn-primary" : "btn-outline-primary"
-                }`}
-                onClick={() => setLayout("grid")}>
-                <i className="fas fa-th-large me-1"></i>
-                🏁 Grid View
-              </button>
-              <button
-                className={`btn ${
-                  layout === "detailed" ? "btn-primary" : "btn-outline-primary"
-                }`}
-                onClick={() => setLayout("detailed")}>
-                <i className="fas fa-list me-1"></i>
-                📖 Detailed View
-              </button>
-              <button
-                className={`btn ${
-                  layout === "table" ? "btn-primary" : "btn-outline-primary"
-                }`}
-                onClick={() => setLayout("table")}>
-                <i className="fas fa-table me-1"></i>
-                📋 Table View
-              </button>
-            </div>
-          </div>
+      {loading ? (
+        <div aria-busy="true" aria-live="polite">
+          <span className="visually-hidden">Loading bookshelf...</span>
+          <BookShelfBooksLoading />
         </div>
-      </div>
-
-      {/* Filter Controls */}
-      <div className="row mb-4">
-        <div className="col-12">
-          <div
-            className={`d-flex flex-wrap align-items-center gap-2 p-3 rounded ${
-              theme === "light" ? "bg-light" : "bg-dark"
-            }`}>
-            <strong>Filter by shelf:</strong>
-
-            {/* All Books Button */}
-            <button
-              className={`btn btn-sm ${
-                !selectedShelf ? "btn-primary" : "btn-outline-primary"
-              }`}
-              onClick={clearFilter}>
-              All Books ({books.length})
-            </button>
-
-            {/* Shelf Filter Buttons */}
-            {allShelves.map((shelf) => {
-              const shelfCount = books.filter(
-                (book) => book.shelves && book.shelves.includes(shelf)
-              ).length;
-
-              return (
-                <button
-                  key={shelf}
-                  className={`btn btn-sm ${
-                    selectedShelf === shelf
-                      ? "btn-primary"
-                      : "btn-outline-primary"
-                  }`}
-                  onClick={() => handleShelfClick(shelf)}>
-                  {shelf} ({shelfCount})
-                </button>
-              );
-            })}
-          </div>
-          {/* Tags Filter - Only show in non-table view to save space */}
-          <div
-            className={`d-flex flex-wrap align-items-center gap-2 p-3 rounded ${
-              theme === "light" ? "bg-light" : "bg-dark"
-            }`}>
-            <strong>Filter by tags:</strong>
-            {allTags.map((tag) => {
-              const tagCount = tagCounts.get(tag);
-
-              return (
-                tagCount > 0 && (
+      ) : (
+        <>
+          {/* Layout Selector */}
+          <div className="row mb-3">
+            <div className="col-12">
+              <div className="d-flex justify-content-center">
+                <div
+                  className="btn-group"
+                  role="group"
+                  aria-label="Layout options">
                   <button
-                    key={tag}
-                    className={`btn btn-sm book-tag ${
-                      selectedTags.has(tag) ? "selected" : ""
+                    className={`btn ${
+                      layout === "grid" ? "btn-primary" : "btn-outline-primary"
                     }`}
-                    style={{
-                      "--tag-color": getTagColor(tag),
-                      "--tag-color-rgb": hexToRgb(getTagColor(tag)),
-                    }}
-                    onClick={() => handleTagClick(tag)}>
-                    {tag} ({tagCount})
+                    onClick={() => setLayout("grid")}>
+                    <i className="fas fa-th-large me-1"></i>
+                    🏁 Grid View
                   </button>
-                )
-              );
-            })}
-          </div>
-          {/* Current Filter Status */}
-          {(selectedShelf || selectedTags.size > 0) && (
-            <div className="mt-2">
-              <div
-                className={`alert d-flex justify-content-between align-items-center mb-0 ${
-                  theme === "light" ? "alert-info" : "alert-dark"
-                }`}>
-                <span>
-                  <strong>Showing {filteredBooks.length} book(s)</strong>
-                  {selectedShelf && (
-                    <>
-                      {" from shelf: "}
-                      <strong>
-                        <em>{selectedShelf}</em>
-                      </strong>
-                    </>
-                  )}
-                  {selectedTags.size > 0 && (
-                    <>
-                      {" with tags: "}
-                      <strong>
-                        <em>{Array.from(selectedTags).join(", ")}</em>
-                      </strong>
-                    </>
-                  )}
-                </span>
-                <button
-                  className="btn btn-sm btn-outline-secondary"
-                  onClick={clearFilter}>
-                  Clear Filter ✕
-                </button>
+                  <button
+                    className={`btn ${
+                      layout === "detailed"
+                        ? "btn-primary"
+                        : "btn-outline-primary"
+                    }`}
+                    onClick={() => setLayout("detailed")}>
+                    <i className="fas fa-list me-1"></i>
+                    📖 Detailed View
+                  </button>
+                  <button
+                    className={`btn ${
+                      layout === "table" ? "btn-primary" : "btn-outline-primary"
+                    }`}
+                    onClick={() => setLayout("table")}>
+                    <i className="fas fa-table me-1"></i>
+                    📋 Table View
+                  </button>
+                </div>
               </div>
             </div>
-          )}
-        </div>
-      </div>
+          </div>
 
-      {/* Books Display */}
-      <div className="row">
-        <div className="col-12">
-          {filteredBooks.length > 0 ? (
-            renderBooks()
-          ) : (
-            <div className="text-center py-5">
-              <h5>No books found in this filter</h5>
-              <button className="btn btn-primary mt-2" onClick={clearFilter}>
-                Show All Books
-              </button>
+          {/* Filter Controls */}
+          <div className="row mb-4">
+            <div className="col-12">
+              <div
+                className={`d-flex flex-wrap align-items-center gap-2 p-3 rounded ${
+                  theme === "light" ? "bg-light" : "bg-dark"
+                }`}>
+                <strong>Filter by shelf:</strong>
+
+                {/* All Books Button */}
+                <button
+                  className={`btn btn-sm ${
+                    !selectedShelf ? "btn-primary" : "btn-outline-primary"
+                  }`}
+                  onClick={clearFilter}>
+                  All Books ({books.length})
+                </button>
+
+                {/* Shelf Filter Buttons */}
+                {allShelves.map((shelf) => {
+                  const shelfCount = books.filter(
+                    (book) => book.shelves && book.shelves.includes(shelf)
+                  ).length;
+
+                  return (
+                    <button
+                      key={shelf}
+                      className={`btn btn-sm ${
+                        selectedShelf === shelf
+                          ? "btn-primary"
+                          : "btn-outline-primary"
+                      }`}
+                      onClick={() => handleShelfClick(shelf)}>
+                      {shelf} ({shelfCount})
+                    </button>
+                  );
+                })}
+              </div>
+              {/* Tags Filter - Only show in non-table view to save space */}
+              <div
+                className={`d-flex flex-wrap align-items-center gap-2 p-3 rounded ${
+                  theme === "light" ? "bg-light" : "bg-dark"
+                }`}>
+                <strong>Filter by tags:</strong>
+                {allTags.map((tag) => {
+                  const tagCount = tagCounts.get(tag);
+
+                  return (
+                    tagCount > 0 && (
+                      <button
+                        key={tag}
+                        className={`btn btn-sm book-tag ${
+                          selectedTags.has(tag) ? "selected" : ""
+                        }`}
+                        style={{
+                          "--tag-color": getTagColor(tag),
+                          "--tag-color-rgb": hexToRgb(getTagColor(tag)),
+                        }}
+                        onClick={() => handleTagClick(tag)}>
+                        {tag} ({tagCount})
+                      </button>
+                    )
+                  );
+                })}
+              </div>
+              {/* Current Filter Status */}
+              {(selectedShelf || selectedTags.size > 0) && (
+                <div className="mt-2">
+                  <div
+                    className={`alert d-flex justify-content-between align-items-center mb-0 ${
+                      theme === "light" ? "alert-info" : "alert-dark"
+                    }`}>
+                    <span>
+                      <strong>Showing {filteredBooks.length} book(s)</strong>
+                      {selectedShelf && (
+                        <>
+                          {" from shelf: "}
+                          <strong>
+                            <em>{selectedShelf}</em>
+                          </strong>
+                        </>
+                      )}
+                      {selectedTags.size > 0 && (
+                        <>
+                          {" with tags: "}
+                          <strong>
+                            <em>{Array.from(selectedTags).join(", ")}</em>
+                          </strong>
+                        </>
+                      )}
+                    </span>
+                    <button
+                      className="btn btn-sm btn-outline-secondary"
+                      onClick={clearFilter}>
+                      Clear Filter ✕
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+
+          {/* Books Display */}
+          <div className="row">
+            <div className="col-12">
+              {filteredBooks.length > 0 ? (
+                renderBooks()
+              ) : (
+                <div className="text-center py-5">
+                  <h5>No books found in this filter</h5>
+                  <button
+                    className="btn btn-primary mt-2"
+                    onClick={clearFilter}>
+                    Show All Books
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </>
+      )}
     </Board>
   );
 };

@@ -548,6 +548,133 @@ svg:focus,
    TRANSITIONS & ANIMATIONS
    ====================== */
 
+.bookshelf-title-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: min(280px, 55vw);
+}
+
+.bookshelf-skeleton {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: linear-gradient(90deg, #d7dce3 0%, #eef1f5 45%, #d7dce3 90%);
+  background-size: 220% 100%;
+  border-radius: 6px;
+  animation: bookshelf-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.bookshelf-loading-dark .bookshelf-skeleton {
+  background: linear-gradient(90deg, #3a4655 0%, #556274 45%, #3a4655 90%);
+  background-size: 220% 100%;
+}
+
+.bookshelf-title-skeleton {
+  width: min(220px, 48vw);
+  height: 1.45rem;
+}
+
+.bookshelf-loading-dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: #0d6efd;
+  opacity: 0.45;
+  animation: bookshelf-loading-pulse 1s ease-in-out infinite;
+}
+
+.bookshelf-loading-dot:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.bookshelf-loading-dot:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.bookshelf-loading-section {
+  padding-top: 0.25rem;
+}
+
+.bookshelf-loading-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.bookshelf-filter-skeleton {
+  width: 96px;
+  height: 34px;
+  border-radius: 8px;
+}
+
+.bookshelf-filter-skeleton.wide {
+  width: 160px;
+}
+
+.bookshelf-loading-card {
+  height: 100%;
+  min-height: 340px;
+  padding: 0.85rem;
+  border: 1px solid rgba(108, 117, 125, 0.25);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.bookshelf-cover-skeleton {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  max-height: 220px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.bookshelf-line-skeleton {
+  width: 90%;
+  height: 0.9rem;
+  margin-bottom: 0.65rem;
+}
+
+.bookshelf-line-skeleton.short {
+  width: 62%;
+}
+
+.bookshelf-loading-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.bookshelf-pill-skeleton {
+  width: 64px;
+  height: 24px;
+  border-radius: 999px;
+}
+
+@keyframes bookshelf-skeleton-shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+
+  100% {
+    background-position: -120% 0;
+  }
+}
+
+@keyframes bookshelf-loading-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
 .bookshelf,
 .table-responsive,
 .row.g-3 {
