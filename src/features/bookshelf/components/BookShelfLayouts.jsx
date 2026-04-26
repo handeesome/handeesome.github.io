@@ -102,7 +102,7 @@ export const TableView = ({
         <thead className="table-dark sticky-top">
           <tr>
             <th style={{ width: "31%" }}>Title & Author</th>
-            {/* <th style={{ width: "12%" }}>Rating</th> */}
+            <th style={{ width: "12%" }}>Rating</th>
             <th style={{ width: "8%" }}>Pages</th>
             <th style={{ width: "18%" }}>Shelf</th>
             <th style={{ width: "18%" }}>Tags</th>
