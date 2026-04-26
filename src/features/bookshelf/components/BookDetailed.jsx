@@ -76,7 +76,9 @@ const BookDetailed = ({
   };
   return (
     <div
+      id={`book-${id}`}
       className={`card mb-4 shadow-sm ${theme === "light" ? "" : "bg-dark"}`}
+      style={{ scrollMarginTop: "2rem" }}
     >
       <div className="row g-0">
         {/* BookDetailed Cover */}

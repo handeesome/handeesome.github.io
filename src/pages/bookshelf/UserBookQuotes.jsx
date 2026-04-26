@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Board from "../../features/profile/components/Board";
 import BookInfoHeader from "../../features/bookshelf/components/BookInfoHeader";
 import BookQuote from "../../features/bookshelf/components/BookQuote";
@@ -14,7 +14,7 @@ const normalizeQuotes = (quotes) => {
 
   if (typeof quotes === "string") {
     return quotes
-      .split(/\n{2,}/)
+      .split("\n")
       .map((quote) => quote.trim())
       .filter(Boolean);
   }
@@ -25,6 +25,7 @@ const normalizeQuotes = (quotes) => {
 const UserBookQuotes = () => {
   const { userName, bookId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const boardRef = useRef(null);
   const [book, setBook] = useState(null);
   const [quotes, setQuotes] = useState([]);
@@ -66,6 +67,19 @@ const UserBookQuotes = () => {
     };
   }, [bookId, navigate, userName]);
 
+  useEffect(() => {
+    if (loading || !location.hash) return;
+
+    const timeoutId = window.setTimeout(() => {
+      const target = document.getElementById(
+        decodeURIComponent(location.hash.slice(1)),
+      );
+      target?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [loading, location.hash, quotes]);
+
   if (loading || !book) {
     return (
       <Board title="Loading Quotes..." ref={boardRef}>
@@ -85,7 +99,11 @@ const UserBookQuotes = () => {
 
       {quotes.length > 0 ? (
         quotes.map((quote, index) => (
-          <div key={`${book.id}-${index}`} className="d-flex mb-3 align-items-center">
+          <div
+            id={`quote-${index}`}
+            key={`${book.id}-${index}`}
+            className="d-flex mb-3 align-items-center"
+            style={{ scrollMarginTop: "2rem" }}>
             <div
               className="d-flex justify-content-center align-items-center bg-primary text-white fw-bold me-3"
               style={{

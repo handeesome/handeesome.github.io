@@ -2,7 +2,7 @@ import Board from "../../features/profile/components/Board";
 import bookQuotes from "../../static/books/book-quotes.json";
 import BookQuote from "../../features/bookshelf/components/BookQuote";
 import bookDescription from "../../static/books/introductions.json";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import BookInfoHeader from "../../features/bookshelf/components/BookInfoHeader";
 import books from "../../static/books/books.json";
 import { useState, useEffect, useRef } from "react";
@@ -12,6 +12,7 @@ const BookNotes = () => {
   const { bookId } = useParams();
   const [book, setBook] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const boardRef = useRef(null);
 
   const quotesEntry = bookQuotes[bookId];
@@ -44,6 +45,19 @@ const BookNotes = () => {
       navigate("/book-shelf");
     }
   }, [bookId, navigate]);
+
+  useEffect(() => {
+    if (!book || !location.hash) return;
+
+    const timeoutId = window.setTimeout(() => {
+      const target = document.getElementById(
+        decodeURIComponent(location.hash.slice(1)),
+      );
+      target?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [book, location.hash]);
 
   if (!book) {
     return (
@@ -92,7 +106,11 @@ const BookNotes = () => {
       </div>
       {quotes.length > 0 ? (
         quotes.map((note, index) => (
-          <div key={index} className="d-flex mb-3 align-items-center">
+          <div
+            id={`quote-${index}`}
+            key={index}
+            className="d-flex mb-3 align-items-center"
+            style={{ scrollMarginTop: "2rem" }}>
             <div
               className="d-flex justify-content-center align-items-center bg-primary text-white fw-bold me-3"
               style={{

@@ -22,7 +22,22 @@ const getInitialFormData = () => ({
   dateFinished: "N/A",
   dateAdded: new Date().toISOString().split("T")[0],
   notes: "",
+  quotesText: "",
 });
+
+const quotesToText = (quotes) => {
+  if (Array.isArray(quotes)) {
+    return quotes.join("\n");
+  }
+
+  return typeof quotes === "string" ? quotes : "";
+};
+
+const textToQuotes = (text) =>
+  text
+    .split("\n")
+    .map((quote) => quote.trim())
+    .filter(Boolean);
 
 const BookFormModal = ({
   book = {},
@@ -61,6 +76,7 @@ const BookFormModal = ({
     shelves: book?.shelves || ["to-read"],
     tags: book?.tags || [],
     coverBase64: book?.coverBase64 || "",
+    quotesText: quotesToText(book?.quotes),
   });
 
   useEffect(() => {
@@ -74,6 +90,7 @@ const BookFormModal = ({
         shelves: book.shelves || ["to-read"],
         tags: book.tags || [],
         coverBase64: book.coverBase64 || "",
+        quotesText: quotesToText(book.quotes),
       });
 
       // Update selected items
@@ -131,7 +148,10 @@ const BookFormModal = ({
       tags: selectedTags,
       shelves: selectedShelves,
       coverBase64: formData.coverBase64,
+      quotes: textToQuotes(formData.quotesText || ""),
     };
+    delete processedData.quotesText;
+
     setIsSubmitting(true);
     try {
       await onSubmit(processedData);
@@ -386,6 +406,18 @@ const BookFormModal = ({
                 toolbar:
                   "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | checklist numlist bullist indent outdent",
               }}
+            />
+            <div className="mt-4">Quotes:</div>
+            <textarea
+              className="form-control"
+              rows={6}
+              value={formData.quotesText}
+              placeholder={
+                "Add one quote per line. Each line will be saved as a separate quote.\n\nExample:\nIt is only with the heart that one can see rightly.\nWhat is essential is invisible to the eye."
+              }
+              onChange={(e) =>
+                setFormData({ ...formData, quotesText: e.target.value })
+              }
             />
           </div>
         </form>

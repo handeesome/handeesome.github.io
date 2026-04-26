@@ -1,5 +1,5 @@
-import { useState, useMemo, useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useState, useMemo, useEffect, useRef } from "react";
+import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 import Board from "../../profile/components/Board";
 import { getTagColor as defaultGetTagColor } from "../../../utils/tagColors";
 import { hexToRgb } from "../../../utils/hexToRgb";
@@ -8,6 +8,11 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import GoBackBtn from "../../../components/GoBackButton";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
 import "./BookShelf.css";
+
+const setsEqual = (firstSet, secondSet) => {
+  if (firstSet.size !== secondSet.size) return false;
+  return [...firstSet].every((value) => secondSet.has(value));
+};
 
 const BookShelf = ({
   books = [],
@@ -19,11 +24,14 @@ const BookShelf = ({
   loading = false,
 }) => {
   const getTagColor = paramGetTagColor || defaultGetTagColor;
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { theme } = useTheme();
   const { hideTimeTracker } = useHideBtns();
   const [isInitialMount, setIsInitialMount] = useState(true);
+  const previousSearchRef = useRef(location.search);
+  const syncingFromUrlRef = useRef(false);
 
   // Add layout state
   const [layout, setLayout] = useState(searchParams.get("layout") || "grid");
@@ -50,6 +58,50 @@ const BookShelf = ({
 
     return tagParam ? new Set(tagParam.split(",")) : new Set();
   });
+
+  useEffect(() => {
+    if (location.search === previousSearchRef.current) return;
+
+    previousSearchRef.current = location.search;
+
+    const urlParams = new URLSearchParams(location.search);
+    const nextLayout = urlParams.get("layout");
+    const hasUrlShelf = urlParams.has("shelf");
+    const hasViewAll = urlParams.get("view") === "all";
+    const urlControlsBookshelf =
+      urlParams.has("layout") ||
+      hasUrlShelf ||
+      hasViewAll ||
+      urlParams.has("tags");
+    let changedFromUrl = false;
+
+    if (nextLayout && nextLayout !== layout) {
+      setLayout(nextLayout);
+      changedFromUrl = true;
+    }
+
+    if (hasUrlShelf || hasViewAll) {
+      const nextShelf = hasUrlShelf ? urlParams.get("shelf") : null;
+      if (nextShelf !== selectedShelf) {
+        setSelectedShelf(nextShelf);
+        changedFromUrl = true;
+      }
+    }
+
+    if (urlControlsBookshelf) {
+      const tagParam = urlParams.get("tags");
+      const nextTags = tagParam ? new Set(tagParam.split(",")) : new Set();
+
+      if (!setsEqual(nextTags, selectedTags)) {
+        setSelectedTags(nextTags);
+        changedFromUrl = true;
+      }
+    }
+
+    if (changedFromUrl) {
+      syncingFromUrlRef.current = true;
+    }
+  }, [layout, location.search, selectedShelf, selectedTags]);
 
   // Get all unique shelves for the filter dropdown/buttons
   const allShelves = useMemo(() => {
@@ -122,6 +174,11 @@ const BookShelf = ({
   }, [selectedShelf]);
 
   useEffect(() => {
+    if (syncingFromUrlRef.current) {
+      syncingFromUrlRef.current = false;
+      return;
+    }
+
     const params = new URLSearchParams();
 
     params.set("layout", layout);
@@ -136,8 +193,69 @@ const BookShelf = ({
       params.set("tags", Array.from(selectedTags).join(","));
     }
 
-    setSearchParams(params, { replace: true });
-  }, [layout, selectedShelf, selectedTags, setSearchParams]);
+    const nextSearch = params.toString();
+
+    if (nextSearch !== searchParams.toString()) {
+      navigate(
+        {
+          pathname: location.pathname,
+          search: `?${nextSearch}`,
+          hash: location.hash,
+        },
+        {
+          replace: true,
+          state: location.state,
+          preventScrollReset: true,
+        }
+      );
+    }
+  }, [
+    layout,
+    location.hash,
+    location.pathname,
+    location.state,
+    navigate,
+    searchParams,
+    selectedShelf,
+    selectedTags,
+  ]);
+
+  useEffect(() => {
+    if (loading || !location.hash) return;
+
+    const scrollToHash = () => {
+      const target = document.getElementById(
+        decodeURIComponent(location.hash.slice(1)),
+      );
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      navigate(
+        {
+          pathname: location.pathname,
+          search: location.search,
+          hash: "",
+        },
+        {
+          replace: true,
+          state: location.state,
+          preventScrollReset: true,
+        },
+      );
+    };
+
+    const timeoutId = window.setTimeout(scrollToHash, 100);
+    return () => window.clearTimeout(timeoutId);
+  }, [
+    filteredBooks,
+    layout,
+    loading,
+    location.hash,
+    location.pathname,
+    location.search,
+    location.state,
+    navigate,
+  ]);
 
   const handleTimeTrackerClick = () => {
     navigate("./time-tracker");

@@ -17,6 +17,7 @@ import {
 import {
   getProfile,
   updateProfile as svcUpdateProfile,
+  adjustQuoteCount,
   upsertTagColor,
   removeTagColor,
 } from "../../../services/profile.service";
@@ -33,7 +34,31 @@ const DEFAULT_PROFILE = {
   shelfDescription: "",
   avatarBase64: "",
   isPublic: true,
+  quoteCount: 0,
   tagColors: {},
+};
+
+const countQuotes = (quotes) => {
+  if (Array.isArray(quotes)) {
+    return quotes.filter(Boolean).length;
+  }
+
+  if (typeof quotes === "string") {
+    return quotes
+      .split("\n")
+      .map((quote) => quote.trim())
+      .filter(Boolean).length;
+  }
+
+  return 0;
+};
+
+const syncQuoteCountDelta = async (email, delta) => {
+  try {
+    await adjustQuoteCount(email, delta);
+  } catch (err) {
+    console.error("syncQuoteCountDelta:", err);
+  }
 };
 
 // ---------------------------------------------------------------------------
@@ -127,6 +152,10 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
           getCurrentUserId,
           bookData
         );
+        await syncQuoteCountDelta(
+          getCurrentUserEmail,
+          countQuotes(bookData.quotes)
+        );
         setBooks((prev) => [created, ...prev]);
         return true;
       } catch (err) {
@@ -141,7 +170,11 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
     async (bookId, bookData) => {
       if (!canEdit) return false;
       try {
+        const currentBook = books.find((b) => b.id === bookId);
+        const quoteDelta =
+          countQuotes(bookData.quotes) - countQuotes(currentBook?.quotes);
         await svcUpdateBook(bookId, bookData);
+        await syncQuoteCountDelta(currentBook?.userEmail, quoteDelta);
         setBooks((prev) =>
           prev.map((b) => (b.id === bookId ? { ...b, ...bookData } : b))
         );
@@ -152,7 +185,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         return false;
       }
     },
-    [canEdit]
+    [canEdit, books]
   );
 
   const deleteBook = useCallback(
@@ -161,7 +194,12 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
       if (!window.confirm("Are you sure you want to delete this book?"))
         return false;
       try {
+        const currentBook = books.find((b) => b.id === bookId);
         await svcDeleteBook(bookId);
+        await syncQuoteCountDelta(
+          currentBook?.userEmail,
+          -countQuotes(currentBook?.quotes)
+        );
         setBooks((prev) => prev.filter((b) => b.id !== bookId));
         return true;
       } catch (err) {
@@ -169,7 +207,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         return false;
       }
     },
-    [canEdit]
+    [canEdit, books]
   );
 
   const handleEditBook = useCallback(
@@ -408,6 +446,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         "date added":   b.dateAdded,
         coverBase64:    b.coverBase64,
         notes:          b.notes ?? "",
+        quotes:         b.quotes ?? [],
       })),
     [books]
   );

@@ -4,7 +4,14 @@
 // No React state, no hooks. Returns plain JS objects.
 // ─────────────────────────────────────────────────────────────────────────────
 import { db } from "../lib/firebase-config";
-import { doc, getDoc, setDoc, updateDoc, deleteField } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  deleteField,
+  increment,
+} from "firebase/firestore";
 
 const DEFAULT_PROFILE = {
   userName: "",
@@ -40,6 +47,7 @@ export async function getProfile(email) {
     shelfDescription: d.shelfDescription ?? "",
     avatarBase64:     d.avatarBase64     ?? "",
     isPublic:         d.isPublic         ?? true,
+    quoteCount:       d.quoteCount       ?? 0,
     tagColors:        d.tagColors        ?? {},
   };
 }
@@ -59,6 +67,21 @@ export async function updateProfile(email, updates) {
   await setDoc(
     userDataDoc(email),
     { ...updates, userEmail: email, updatedAt: new Date() },
+    { merge: true }
+  );
+}
+
+/**
+ * Adjust the denormalized quote count on a userdata document.
+ *
+ * @param {string} email
+ * @param {number} delta
+ */
+export async function adjustQuoteCount(email, delta) {
+  if (!email || !delta) return;
+  await setDoc(
+    userDataDoc(email),
+    { userEmail: email, quoteCount: increment(delta), updatedAt: new Date() },
     { merge: true }
   );
 }
