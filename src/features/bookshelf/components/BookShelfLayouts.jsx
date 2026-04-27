@@ -4,6 +4,8 @@ import BookDetailed from "./BookDetailed";
 import BookCard from "./BookCard";
 import BookRow from "./BookRow";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
+import { useParams } from "react-router-dom";
+import { countQuotes } from "../utils/quotes";
 
 // Layout 1: Grid View - Simple covers with basic info
 export const GridView = ({
@@ -71,6 +73,7 @@ export const DetailedView = ({
           paramGetTagColor={paramGetTagColor}
           coverBase64={book.coverBase64}
           notes={book.notes}
+          quotes={book.quotes}
           deleteBook={deleteBook}
           onEditBook={onEditBook}
         />
@@ -90,7 +93,14 @@ export const TableView = ({
   onEditBook,
 }) => {
   const { theme } = useTheme();
-  const { hideActions } = useHideBtns();
+  const { userName } = useParams();
+  const { hideEditDelete, hideSessions, hideQuotes, hideActions } =
+    useHideBtns();
+  const hasQuoteActions =
+    !hideQuotes &&
+    (!userName || books.some((book) => countQuotes(book.quotes) > 0));
+  const showActionsColumn =
+    !hideActions && (!hideEditDelete || !hideSessions || hasQuoteActions);
 
   return (
     <div className="table-responsive">
@@ -106,8 +116,8 @@ export const TableView = ({
             <th style={{ width: "8%" }}>Pages</th>
             <th style={{ width: "18%" }}>Shelf</th>
             <th style={{ width: "18%" }}>Tags</th>
-            <th style={{ width: hideActions ? "25%" : "15%" }}>Dates</th>
-            {!hideActions && <th style={{ width: "10%" }}>Actions</th>}
+            <th style={{ width: showActionsColumn ? "15%" : "25%" }}>Dates</th>
+            {showActionsColumn && <th style={{ width: "10%" }}>Actions</th>}
           </tr>
         </thead>
         <tbody>
@@ -121,6 +131,7 @@ export const TableView = ({
               paramGetTagColor={paramGetTagColor}
               deleteBook={deleteBook}
               onEditBook={onEditBook}
+              showActionsColumn={showActionsColumn}
             />
           ))}
         </tbody>

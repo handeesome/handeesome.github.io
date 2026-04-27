@@ -3,6 +3,7 @@ import { useHideBtns } from "../../../contexts/HideBtnsContext";
 import { hexToRgb } from "../../../utils/hexToRgb";
 import { getTagColor as defaultGetTagColor } from "../../../utils/tagColors";
 import StarRating from "./StarRating";
+import { countQuotes } from "../utils/quotes";
 
 const BookRow = ({
   book,
@@ -12,6 +13,7 @@ const BookRow = ({
   paramGetTagColor,
   deleteBook,
   onEditBook,
+  showActionsColumn,
 }) => {
   const getTagColor = paramGetTagColor || defaultGetTagColor;
   const navigate = useNavigate();
@@ -19,9 +21,9 @@ const BookRow = ({
   const quotePath = userName
     ? `/book-shelf/${userName}/book/${book.id}/quotes`
     : `/book-shelf/book/${book.id}/notes`;
-
-  const { hideEditDelete, hideSessions, hideQuotes, hideActions } =
-    useHideBtns();
+  const { hideEditDelete, hideSessions, hideQuotes } = useHideBtns();
+  const canViewQuotes =
+    !hideQuotes && (!userName || countQuotes(book.quotes) > 0);
   return (
     <tr key={book.id} className="book-row">
       <td>
@@ -105,7 +107,7 @@ const BookRow = ({
           </div>
         </div>
       </td>
-      {!hideActions && (
+      {showActionsColumn && (
         <td>
           <div className="btn-group-vertical btn-group-sm" role="group">
             {!hideEditDelete && (
@@ -134,7 +136,7 @@ const BookRow = ({
                 📊 Sessions
               </button>
             )}
-            {!hideQuotes && (
+            {canViewQuotes && (
               <button
                 className="btn btn-outline-secondary btn-sm"
                 onClick={() => navigate(quotePath)}

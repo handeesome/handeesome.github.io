@@ -9,6 +9,7 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
 import BookQuotes from "../../../static/books/book-quotes.json";
 import Introductions from "../../../static/books/introductions.json";
+import { countQuotes } from "../utils/quotes";
 
 const BookDetailed = ({
   id,
@@ -28,6 +29,7 @@ const BookDetailed = ({
   paramGetTagColor,
   coverBase64,
   notes,
+  quotes,
   deleteBook,
   onEditBook,
 }) => {
@@ -46,6 +48,7 @@ const BookDetailed = ({
   const quoteButtonLabel = userName
     ? "View Quotes"
     : `View ${BookQuotes[id]?.[1]?.length || 0} Notes`;
+  const canViewQuotes = !hideQuotes && (!userName || countQuotes(quotes) > 0);
 
   useLayoutEffect(() => {
     const el = textRef.current;
@@ -212,7 +215,7 @@ const BookDetailed = ({
                       </button>
                     </>
                   )}
-                  {!hideQuotes && (
+                  {canViewQuotes && (
                     <>
                       <button
                         className="btn btn-outline-warning btn-lg"
