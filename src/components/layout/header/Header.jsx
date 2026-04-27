@@ -89,6 +89,9 @@ const Header = () => {
 
     const selectRandomQuote = async () => {
       const fallbackQuote = selectCenhanQuote();
+      if (fallbackQuote) {
+        setSelectedQuote(fallbackQuote);
+      }
 
       try {
         const users = await getAllUsers();
