@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import parse from "html-react-parser";
 import Board from "../../features/profile/components/Board";
 import BookInfoHeader from "../../features/bookshelf/components/BookInfoHeader";
 import BookQuote from "../../features/bookshelf/components/BookQuote";
@@ -22,14 +23,24 @@ const normalizeQuotes = (quotes) => {
   return [];
 };
 
+const hasRenderableNotes = (notes) =>
+  typeof notes === "string" &&
+  notes
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .trim().length > 0;
+
 const UserBookQuotes = () => {
   const { userName, bookId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const boardRef = useRef(null);
+  const notesRef = useRef(null);
   const [book, setBook] = useState(null);
   const [quotes, setQuotes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [notesExpanded, setNotesExpanded] = useState(false);
+  const [showNotesToggle, setShowNotesToggle] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -52,6 +63,7 @@ const UserBookQuotes = () => {
 
         setBook(fetchedBook);
         setQuotes(normalizeQuotes(fetchedBook.quotes));
+        setNotesExpanded(false);
       } catch (err) {
         console.error("UserBookQuotes fetchBook:", err);
         if (!cancelled) navigate(`/book-shelf/${userName}`, { replace: true });
@@ -80,6 +92,14 @@ const UserBookQuotes = () => {
     return () => window.clearTimeout(timeoutId);
   }, [loading, location.hash, quotes]);
 
+  useLayoutEffect(() => {
+    const el = notesRef.current;
+    if (!el) return;
+
+    const needsToggle = el.scrollHeight > el.clientHeight + 10;
+    setShowNotesToggle(needsToggle);
+  }, [book?.notes, notesExpanded]);
+
   if (loading || !book) {
     return (
       <Board title="Loading Quotes..." ref={boardRef}>
@@ -93,9 +113,42 @@ const UserBookQuotes = () => {
     );
   }
 
+  const hasNotes = hasRenderableNotes(book.notes);
+
   return (
     <Board title={`QUOTES FROM ${book.title}`} ref={boardRef}>
       <BookInfoHeader book={book} />
+
+      {hasNotes && (
+        <div className="card mb-4 description-card">
+          <div className="card-body p-4">
+            <h5
+              className="card-title"
+              style={{ borderLeft: "3px solid #007bff", paddingLeft: "10px" }}
+            >
+              Book Notes
+            </h5>
+            <div
+              className={`card-text ${
+                !notesExpanded ? "line-clamp-content" : ""
+              }`}
+              ref={notesRef}
+            >
+              <div className="rendered-content">{parse(book.notes)}</div>
+            </div>
+            {showNotesToggle && (
+              <div className="text-end mb-3">
+                <button
+                  onClick={() => setNotesExpanded((prev) => !prev)}
+                  className="btn btn-outline-secondary btn-sm mt-2 show-more-btn"
+                >
+                  {notesExpanded ? "▲ Show Less" : "▼ Show More"}
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {quotes.length > 0 ? (
         quotes.map((quote, index) => (
@@ -103,7 +156,8 @@ const UserBookQuotes = () => {
             id={`quote-${index}`}
             key={`${book.id}-${index}`}
             className="d-flex mb-3 align-items-center"
-            style={{ scrollMarginTop: "2rem" }}>
+            style={{ scrollMarginTop: "2rem" }}
+          >
             <div
               className="d-flex justify-content-center align-items-center bg-primary text-white fw-bold me-3"
               style={{

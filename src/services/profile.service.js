@@ -19,6 +19,7 @@ const DEFAULT_PROFILE = {
   shelfDescription: "",
   avatarBase64: "",
   isPublic: true,
+  quoteCount: 0,
   tagColors: {},
 };
 

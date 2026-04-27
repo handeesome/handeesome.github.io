@@ -27,6 +27,8 @@ import {
 // ---------------------------------------------------------------------------
 
 const ADMIN_EMAIL = "ducenhandee@gmail.com";
+const SHELF_CACHE_TTL_MS = 5 * 60 * 1000;
+const shelfCache = new Map();
 
 const DEFAULT_PROFILE = {
   userName: "",
@@ -36,6 +38,28 @@ const DEFAULT_PROFILE = {
   isPublic: true,
   quoteCount: 0,
   tagColors: {},
+};
+
+const getCachedShelf = (email) => {
+  const cached = shelfCache.get(email);
+  if (!cached) return null;
+
+  if (Date.now() - cached.cachedAt > SHELF_CACHE_TTL_MS) {
+    shelfCache.delete(email);
+    return null;
+  }
+
+  return cached;
+};
+
+const setCachedShelf = (email, books, profileData) => {
+  if (!email) return;
+
+  shelfCache.set(email, {
+    books,
+    profileData,
+    cachedAt: Date.now(),
+  });
 };
 
 const countQuotes = (quotes) => {
@@ -118,18 +142,30 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         return;
       }
 
-      setLoading(true);
+      const cachedShelf = getCachedShelf(emailToFetch);
+
+      if (cachedShelf) {
+        setBooks(cachedShelf.books);
+        setProfileData(cachedShelf.profileData);
+        setLoading(false);
+      } else {
+        setLoading(true);
+      }
+
       try {
         const [fetchedBooks, fetchedProfile] = await Promise.all([
           getBooksByUser(emailToFetch),
           getProfile(emailToFetch),
         ]);
+        setCachedShelf(emailToFetch, fetchedBooks, fetchedProfile);
         setBooks(fetchedBooks);
         setProfileData(fetchedProfile);
       } catch (err) {
         console.error("useBookshelf fetchBooks:", err);
-        setBooks([]);
-        setProfileData({ ...DEFAULT_PROFILE });
+        if (!cachedShelf) {
+          setBooks([]);
+          setProfileData({ ...DEFAULT_PROFILE });
+        }
       } finally {
         setLoading(false);
       }
@@ -140,6 +176,12 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
   useEffect(() => {
     if (getCurrentUserEmail) fetchBooks();
   }, [getCurrentUserEmail, fetchBooks]);
+
+  useEffect(() => {
+    if (!loading && getCurrentUserEmail) {
+      setCachedShelf(getCurrentUserEmail, books, profileData);
+    }
+  }, [books, getCurrentUserEmail, loading, profileData]);
 
   // ── Book CRUD ─────────────────────────────────────────────────────────────
 
