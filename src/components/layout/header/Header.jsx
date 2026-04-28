@@ -53,7 +53,8 @@ const normalizeQuotes = (quotes) => {
 const getUserDisplayName = (user) =>
   user.shelfName || user.userName || user.id?.split("@")[0] || "Public Shelf";
 
-const getUserPathName = (user) => user.id?.split("@")[0] || "";
+const getUserPathName = (user) =>
+  user.userName?.trim() || user.id?.split("@")[0] || "";
 
 const parseNavigationTarget = (target) => {
   const [pathAndSearch, hash = ""] = target.split("#");
@@ -112,7 +113,9 @@ const Header = () => {
           return;
         }
 
-        const userPathName = getUserPathName(selectedCandidate.user);
+        const userPathName = encodeURIComponent(
+          getUserPathName(selectedCandidate.user),
+        );
         const userBooks = await getBooksByUser(selectedCandidate.user.id);
         const userQuotes = userBooks.flatMap((book) =>
           normalizeQuotes(book.quotes).map((quote, index) => ({

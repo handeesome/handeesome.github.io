@@ -229,7 +229,16 @@ const BookShelf = ({
       );
       if (!target) return;
 
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const navbar = document.querySelector(".navbar.fixed-top");
+      const navbarHeight = navbar?.getBoundingClientRect().height ?? 0;
+      const scrollBuffer = 72;
+      const targetTop =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        navbarHeight -
+        scrollBuffer;
+
+      window.scrollTo({ top: targetTop, behavior: "smooth" });
       navigate(
         {
           pathname: location.pathname,
