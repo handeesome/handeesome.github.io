@@ -2,6 +2,18 @@
 import React, { useState } from "react";
 import { useTheme } from "../../../contexts/ThemeContext";
 import Modal from "../../../components/ui/Modal";
+import {
+  Check,
+  CirclePlus,
+  Pencil,
+  Palette,
+  SwatchBook,
+  Tag,
+  Trash2,
+  X,
+} from "lucide-react";
+import { FormSection, ModalTitle } from "./ModalFormParts";
+import "./ModalForms.css";
 
 const TagManagementModal = ({
   isOpen,
@@ -16,10 +28,13 @@ const TagManagementModal = ({
   const [editingTag, setEditingTag] = useState(null);
   const [editColor, setEditColor] = useState("");
   const { theme } = useTheme();
+  const trimmedNewTagName = newTagName.trim();
+  const tagEntries = Object.entries(tagColors);
+  const duplicateTag = Boolean(trimmedNewTagName && tagColors[trimmedNewTagName]);
 
   const handleAddTag = () => {
-    if (newTagName.trim() && !tagColors[newTagName.trim()]) {
-      onAddTag(newTagName.trim(), newTagColor);
+    if (trimmedNewTagName && !tagColors[trimmedNewTagName]) {
+      onAddTag(trimmedNewTagName, newTagColor);
       setNewTagName("");
       setNewTagColor("#FF6B6B");
     }
@@ -34,12 +49,6 @@ const TagManagementModal = ({
   const startEditing = (tagName, currentColor) => {
     setEditingTag(tagName);
     setEditColor(currentColor);
-  };
-
-  const handleBackdropClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
   };
 
   const predefinedColors = [
@@ -63,127 +72,125 @@ const TagManagementModal = ({
   if (!isOpen) return null;
 
   const bgDark = theme === "dark" ? "bg-dark text-light" : "";
+  const inputThemeClass = theme === "dark" ? "bg-dark text-light" : "";
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title="🎨 Manage Tag Colors"
-      size="md"
-      bodyClassName="p-0"
+      title={<ModalTitle icon={Palette}>Manage Tag Colors</ModalTitle>}
+      size="lg"
+      className="book-form-modal tag-management-modal"
+      bodyClassName="book-form-modal-body"
       maxHeight="70vh">
-      <div className={`card mb-4 ${bgDark}`}>
-        <div className={`card-header bg-light ${bgDark}`}>
-          <h6 className="card-title mb-0 d-flex align-items-center">
-            ➕ Add New Tag
-          </h6>
-        </div>
-        <div className="card-body">
-          <div className="row g-2 mb-3">
-            <div className="col">
+      <div className="tag-management">
+        <FormSection
+          icon={CirclePlus}
+          title="Add Tag"
+          className="tag-management-section">
+          <div className="tag-management-add-row">
+            <div className="tag-management-name-field">
               <input
                 type="text"
-                className={`form-control ${bgDark}`}
+                className={`form-control ${inputThemeClass} ${
+                  duplicateTag ? "is-invalid" : ""
+                }`}
                 placeholder="Tag name"
                 value={newTagName}
                 onChange={(e) => setNewTagName(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && handleAddTag()}
+                onKeyDown={(e) => e.key === "Enter" && handleAddTag()}
               />
+              {duplicateTag && (
+                <div className="invalid-feedback d-block">
+                  This tag already exists.
+                </div>
+              )}
             </div>
-            <div className="col-auto">
+            <label className="tag-management-color-input">
               <input
                 type="color"
-                className={`form-control form-control-color ${bgDark}`}
+                className={`form-control form-control-color ${inputThemeClass}`}
                 value={newTagColor}
                 onChange={(e) => setNewTagColor(e.target.value)}
-                style={{ width: "3rem" }}
+                aria-label="New tag color"
               />
-            </div>
-            <div className="col-auto">
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={handleAddTag}
-                disabled={!newTagName.trim() || tagColors[newTagName.trim()]}>
-                Add
-              </button>
-            </div>
+            </label>
+            <button
+              type="button"
+              className="btn btn-primary tag-management-add-btn"
+              onClick={handleAddTag}
+              disabled={!trimmedNewTagName || duplicateTag}>
+              <CirclePlus size={16} />
+              Add
+            </button>
           </div>
 
-          {/* Quick Color Picker */}
-          <div className="d-flex flex-wrap gap-2">
+          <div className="tag-management-swatch-grid" aria-label="Quick colors">
             {predefinedColors.map((color) => (
               <button
                 key={color}
                 type="button"
-                className={`btn p-0 rounded-circle ${
-                  newTagColor === color
-                    ? "border border-dark border-3"
-                    : "border"
+                className={`tag-management-swatch ${
+                  newTagColor === color ? "selected" : ""
                 }`}
                 onClick={() => setNewTagColor(color)}
-                style={{
-                  backgroundColor: color,
-                  width: "24px",
-                  height: "24px",
-                  transform: newTagColor === color ? "scale(1.1)" : "scale(1)",
-                }}
-                title={color}></button>
+                style={{ "--swatch-color": color }}
+                title={color}
+                aria-label={`Use color ${color}`}>
+                {newTagColor === color && <Check size={13} strokeWidth={3} />}
+              </button>
             ))}
           </div>
-        </div>
-      </div>
+        </FormSection>
 
-      {/* Existing Tags */}
-      <div className={`card ${bgDark}`}>
-        <div className={`card-header bg-light ${bgDark}`}>
-          <h6 className="card-title mb-0 d-flex align-items-center">
-            🏷️ Existing Tags ({Object.keys(tagColors).length})
-          </h6>
-        </div>
-        <div className="card-body">
-          {Object.keys(tagColors).length === 0 ? (
-            <p className="text-muted text-center py-3 mb-0">
+        <FormSection
+          icon={SwatchBook}
+          title="Existing Tags"
+          count={tagEntries.length}
+          className={`tag-management-section ${bgDark}`}>
+          {tagEntries.length === 0 ? (
+            <div className="tag-management-empty">
+              <Tag size={22} />
               No tags created yet
-            </p>
+            </div>
           ) : (
-            <div className="d-flex flex-column gap-2">
-              {Object.entries(tagColors).map(([tagName, color]) => (
-                <div
-                  key={tagName}
-                  className={`d-flex align-items-center justify-content-between p-3 bg-light rounded ${bgDark}`}>
-                  <div className="d-flex align-items-center gap-3">
-                    <div
-                      className="rounded-circle border"
-                      style={{
-                        backgroundColor: color,
-                        width: "24px",
-                        height: "24px",
-                      }}
+            <div className="tag-management-list">
+              {tagEntries.map(([tagName, color]) => (
+                <div key={tagName} className="tag-management-item">
+                  <div className="tag-management-tag-preview">
+                    <span
+                      className="tag-management-color-dot"
+                      style={{ backgroundColor: color }}
                     />
-                    <span className="fw-medium">{tagName}</span>
+                    <span
+                      className="tag-management-pill"
+                      style={{ "--tag-color": color }}>
+                      {tagName}
+                    </span>
                   </div>
 
-                  <div className="d-flex align-items-center gap-2">
+                  <div className="tag-management-actions">
                     {editingTag === tagName ? (
                       <>
                         <input
                           type="color"
-                          className="form-control form-control-color"
+                          className={`form-control form-control-color ${inputThemeClass}`}
                           value={editColor}
                           onChange={(e) => setEditColor(e.target.value)}
-                          style={{ width: "2rem", height: "2rem" }}
+                          aria-label={`Color for ${tagName}`}
                         />
                         <button
                           type="button"
-                          className="btn btn-success btn-sm"
+                          className="btn btn-success btn-sm tag-management-icon-btn"
                           onClick={() => handleUpdateTag(tagName)}>
+                          <Check size={15} />
                           Save
                         </button>
                         <button
                           type="button"
-                          className="btn btn-secondary btn-sm"
+                          className="btn btn-outline-secondary btn-sm tag-management-icon-btn"
                           onClick={() => setEditingTag(null)}>
+                          <X size={15} />
                           Cancel
                         </button>
                       </>
@@ -191,17 +198,19 @@ const TagManagementModal = ({
                       <>
                         <button
                           type="button"
-                          className="btn btn-outline-primary btn-sm"
+                          className="btn btn-outline-primary btn-sm tag-management-icon-btn"
                           onClick={() => startEditing(tagName, color)}
                           title="Edit color">
-                          ✏️ Edit
+                          <Pencil size={15} />
+                          Edit
                         </button>
                         <button
                           type="button"
-                          className="btn btn-outline-danger btn-sm"
+                          className="btn btn-outline-danger btn-sm tag-management-icon-btn"
                           onClick={() => onDeleteTag(tagName)}
                           title="Delete tag">
-                          🗑️ Delete
+                          <Trash2 size={15} />
+                          Delete
                         </button>
                       </>
                     )}
@@ -210,7 +219,7 @@ const TagManagementModal = ({
               ))}
             </div>
           )}
-        </div>
+        </FormSection>
       </div>
     </Modal>
   );

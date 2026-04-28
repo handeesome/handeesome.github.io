@@ -1,5 +1,5 @@
 // components/ui/Modal.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const Modal = ({
@@ -32,6 +32,17 @@ const Modal = ({
     };
     return sizeMap[size] || "";
   };
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 

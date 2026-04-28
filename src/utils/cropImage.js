@@ -3,9 +3,11 @@ export const getCroppedImg = async (imageSrc, pixelCrop) => {
   const image = await createImage(imageSrc);
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
+  const maxSize = 512;
+  const scale = Math.min(1, maxSize / Math.max(pixelCrop.width, pixelCrop.height));
 
-  canvas.width = pixelCrop.width;
-  canvas.height = pixelCrop.height;
+  canvas.width = Math.round(pixelCrop.width * scale);
+  canvas.height = Math.round(pixelCrop.height * scale);
 
   ctx.drawImage(
     image,
@@ -15,8 +17,8 @@ export const getCroppedImg = async (imageSrc, pixelCrop) => {
     pixelCrop.height,
     0,
     0,
-    pixelCrop.width,
-    pixelCrop.height
+    canvas.width,
+    canvas.height
   );
 
   return new Promise((resolve) => {
@@ -26,7 +28,7 @@ export const getCroppedImg = async (imageSrc, pixelCrop) => {
       reader.onloadend = () => {
         resolve(reader.result);
       };
-    }, "image/jpeg");
+    }, "image/jpeg", 0.85);
   });
 };
 

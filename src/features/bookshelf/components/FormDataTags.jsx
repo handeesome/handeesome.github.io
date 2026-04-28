@@ -1,5 +1,5 @@
 // components/FormDataTags.jsx
-import { useState } from "react";
+import { Check } from "lucide-react";
 
 const FormDataTags = ({
   items = [],
@@ -35,14 +35,13 @@ const FormDataTags = ({
     "#ffc107",
     "#ff9800",
   ];
+
+  if (items.length === 0) {
+    return <div className="form-data-tags-empty">No options yet</div>;
+  }
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "4px",
-        maxWidth: "300px",
-      }}>
+    <div className="form-data-tags">
       {items.map((item, index) => {
         const isSelected = selectedItems.includes(item);
         const color =
@@ -51,14 +50,16 @@ const FormDataTags = ({
           <button
             key={item}
             type="button"
-            className={`btn book-tag ${isSelected ? "selected" : ""}`}
+            className={`btn book-tag form-data-tag ${
+              isSelected ? "selected" : ""
+            }`}
             onClick={() => toggleItem(item)}
             style={{
-              fontSize: "0.6rem",
-              padding: "2px 4px",
               "--tag-color": color,
+              "--tag-color-rgb": "108, 117, 125",
             }}>
-            {item} {isSelected && "✓"}
+            <span>{item}</span>
+            {isSelected && <Check size={13} strokeWidth={3} />}
           </button>
         );
       })}

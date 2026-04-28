@@ -2,6 +2,8 @@ import { useCallback, useState } from "react";
 import Cropper from "react-easy-crop";
 import Modal from "../../../components/ui/Modal";
 import { getCroppedImg } from "../../../utils/cropImage";
+import { Camera, Check, ImagePlus, SlidersHorizontal, X } from "lucide-react";
+
 const ProfilePictureUpload = ({ formData, setFormData }) => {
   const [imageSrc, setImageSrc] = useState(null);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -50,35 +52,24 @@ const ProfilePictureUpload = ({ formData, setFormData }) => {
   };
 
   return (
-    <div>
-      {/* Upload Area */}
-      <div
-        onClick={() => document.getElementById("profile-upload").click()}
-        style={{
-          width: "200px",
-          height: "200px",
-          border: "2px dashed #ccc",
-          borderRadius: "50%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-          overflow: "hidden",
-        }}>
+    <div className="profile-picture-upload">
+      <button
+        type="button"
+        className="profile-picture-dropzone"
+        onClick={() => document.getElementById("profile-upload").click()}>
         {formData.profilePictureBase64 ? (
-          <img
-            src={formData.profilePictureBase64}
-            alt="Profile"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
+          <>
+            <img src={formData.profilePictureBase64} alt="Profile" />
+            <span className="profile-picture-change">
+              <Camera size={16} />
+              Change
+            </span>
+          </>
         ) : (
-          <p style={{ textAlign: "center", padding: "20px", color: "#888" }}>
-            Click to upload profile picture
-          </p>
+          <span className="profile-picture-placeholder">
+            <ImagePlus size={24} />
+            Upload photo
+          </span>
         )}
         <input
           id="profile-upload"
@@ -87,34 +78,41 @@ const ProfilePictureUpload = ({ formData, setFormData }) => {
           onChange={handleFileUpload}
           style={{ display: "none" }}
         />
-      </div>
+      </button>
 
-      {/* Crop Modal */}
       <Modal
         isOpen={showCropModal}
         onClose={handleCancelCrop}
-        title="Adjust Your Profile Picture"
+        title={
+          <span className="book-form-title">
+            <SlidersHorizontal size={20} />
+            Adjust Profile Picture
+          </span>
+        }
         size="lg"
+        className="book-form-modal profile-crop-modal"
+        bodyClassName="book-form-modal-body"
         preventBackdropClose={true}
         footer={
-          <div className="d-flex gap-2 w-100 justify-content-end">
-            <button className="btn btn-secondary" onClick={handleCancelCrop}>
+          <div className="book-form-footer">
+            <button
+              type="button"
+              className="btn btn-outline-secondary d-inline-flex align-items-center gap-2"
+              onClick={handleCancelCrop}>
+              <X size={16} />
               Cancel
             </button>
-            <button className="btn btn-primary" onClick={handleConfirmCrop}>
+            <button
+              type="button"
+              className="btn btn-primary d-inline-flex align-items-center gap-2"
+              onClick={handleConfirmCrop}>
+              <Check size={16} />
               Confirm
             </button>
           </div>
         }>
-        <div>
-          {/* Cropper Container */}
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              height: "400px",
-              backgroundColor: "#000",
-            }}>
+        <div className="profile-crop">
+          <div className="profile-crop-stage">
             <Cropper
               image={imageSrc}
               crop={crop}
@@ -127,6 +125,17 @@ const ProfilePictureUpload = ({ formData, setFormData }) => {
               onCropComplete={onCropComplete}
             />
           </div>
+          <label className="profile-crop-zoom">
+            <span>Zoom</span>
+            <input
+              type="range"
+              min="1"
+              max="3"
+              step="0.1"
+              value={zoom}
+              onChange={(e) => setZoom(Number(e.target.value))}
+            />
+          </label>
         </div>
       </Modal>
     </div>

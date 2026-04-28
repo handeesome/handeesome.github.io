@@ -1,6 +1,18 @@
 // components/BookFormModal.jsx
 import React, { useState, useEffect } from "react";
-import { Palette } from "lucide-react";
+import {
+  AlertTriangle,
+  BookOpen,
+  CalendarDays,
+  Library,
+  NotebookPen,
+  Palette,
+  Plus,
+  Quote,
+  Save,
+  Search,
+  Tags,
+} from "lucide-react";
 import CoverDropZone from "./CoverDropZone";
 import TagManagementModal from "./TagManagementModal";
 import BookShelfNameModal from "./BookShelfNameModal";
@@ -10,6 +22,13 @@ import FormRow from "./FormRow";
 import { Editor } from "@tinymce/tinymce-react";
 import Modal from "../../../components/ui/Modal";
 import { useTheme } from "../../../contexts/ThemeContext";
+import {
+  FormSection,
+  ModalFooterActions,
+  ModalSubmittingOverlay,
+  ModalTitle,
+} from "./ModalFormParts";
+import "./ModalForms.css";
 const getInitialFormData = () => ({
   title: "",
   title2: "",
@@ -38,6 +57,8 @@ const textToQuotes = (text) =>
     .split("\n")
     .map((quote) => quote.trim())
     .filter(Boolean);
+
+const dateInputValue = (value) => (value === "N/A" ? "" : value || "");
 
 const BookFormModal = ({
   book = {},
@@ -78,6 +99,8 @@ const BookFormModal = ({
     coverBase64: book?.coverBase64 || "",
     quotesText: quotesToText(book?.quotes),
   });
+  const quoteCount = textToQuotes(formData.quotesText || "").length;
+  const hasValidationErrors = Object.values(validationErrors).some(Boolean);
 
   useEffect(() => {
     if (book?.id) {
@@ -168,26 +191,14 @@ const BookFormModal = ({
   };
 
   const modalFooter = (
-    <>
-      <button
-        type="submit"
-        form="bookForm"
-        className="btn btn-primary"
-        disabled={isSubmitting}>
-        {isSubmitting ? (
-          <>
-            <span
-              className="spinner-border spinner-border-sm me-2"
-              role="status"></span>
-            Updating...
-          </>
-        ) : book?.id ? (
-          "💾 Update Book"
-        ) : (
-          "➕ Add Book"
-        )}
-      </button>
-    </>
+    <ModalFooterActions
+      formId="bookForm"
+      isLoading={isSubmitting}
+      loadingLabel="Updating..."
+      onCancel={onCancel}
+      submitIcon={book?.id ? Save : Plus}
+      submitLabel={book?.id ? "Update Book" : "Add Book"}
+    />
   );
 
   if (!show) return null;
@@ -197,39 +208,19 @@ const BookFormModal = ({
       <Modal
         isOpen={show}
         onClose={onCancel}
-        title={`📚${title}`}
-        size="lg"
+        title={<ModalTitle icon={BookOpen}>{title}</ModalTitle>}
+        size="xl"
+        className="book-form-modal"
+        bodyClassName="book-form-modal-body"
+        maxHeight="calc(100vh - 10rem)"
         footer={modalFooter}>
-        {isSubmitting && (
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: "rgba(0, 0, 0, 0.8)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 1000,
-            }}>
-            <div className="text-center">
-              <div
-                className="spinner-border mb-3"
-                style={{ color: "white" }}
-                role="status">
-                <span className="visually-hidden">Loading...</span>
-              </div>
-              <div style={{ color: "white" }}>Updating book...</div>
-            </div>
-          </div>
-        )}
-        <form onSubmit={handleSubmit} id="bookForm">
-          <div className="row g-0">
-            <div className="col-md-4 d-flex justify-content-center align-items-start">
-              <div className="text-center d-flex flex-column align-items-center">
-                <div className="mb-3">
+        {isSubmitting && <ModalSubmittingOverlay label="Updating book..." />}
+        <form onSubmit={handleSubmit} id="bookForm" className="book-form">
+          <div className="book-form-grid">
+            <aside className="book-form-cover-panel">
+              <div className="book-form-cover-sticky">
+                <div className="book-form-panel-label">Cover</div>
+                <div className="book-form-cover-wrap">
                   <CoverDropZone
                     formData={formData}
                     setFormData={setFormData}
@@ -237,188 +228,230 @@ const BookFormModal = ({
                 </div>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-outline-primary book-form-search-btn"
                   onClick={() => setShowSearchModal(true)}>
-                  Get from
-                  <br /> Cenhan's BookShelf
+                  <Search size={16} />
+                  Find in bookshelf
                 </button>
-              </div>
-            </div>
 
-            <div className="col-md-8">
-              <FormRow
-                label="Title *"
-                value={formData.title}
-                onChange={(e) =>
-                  setFormData({ ...formData, title: e.target.value })
-                }
-                required
-              />
-              <FormRow
-                label="Second Title"
-                value={formData.title2}
-                placeholder={"(optional)"}
-                onChange={(e) =>
-                  setFormData({ ...formData, title2: e.target.value })
-                }
-              />
-              <FormRow
-                label="Author *"
-                value={formData.author}
-                onChange={(e) =>
-                  setFormData({ ...formData, author: e.target.value })
-                }
-                required
-              />
-
-              <FormRow
-                label="Pages"
-                placeholder={"(optional)"}
-                type="number"
-                min="1"
-                value={formData.pages}
-                onChange={(e) =>
-                  setFormData({ ...formData, pages: e.target.value })
-                }
-              />
-              <FormRow
-                label="Shelves"
-                hideInput="true"
-                value={formData.shelves}
-                customComponent={
-                  <>
-                    <FormDataTags
-                      items={allShelves}
-                      selectedItems={selectedShelves}
-                      setSelectedItems={setSelectedShelves}
-                      onItemsToggle={() => {
-                        if (validationErrors.shelves) {
-                          setValidationErrors((prev) => ({
-                            ...prev,
-                            shelves: undefined,
-                          }));
-                        }
-                      }}
-                    />
+                <div className="book-form-side-fields">
+                  <FormSection icon={Library} title="Shelves">
+                    {hasValidationErrors && (
+                      <div className="book-form-error-summary">
+                        <AlertTriangle size={16} />
+                        <span>Check the highlighted fields before saving.</span>
+                      </div>
+                    )}
+                    <div className="book-form-pill-row">
+                      <FormDataTags
+                        items={allShelves}
+                        selectedItems={selectedShelves}
+                        setSelectedItems={setSelectedShelves}
+                        onItemsToggle={() => {
+                          if (validationErrors.shelves) {
+                            setValidationErrors((prev) => ({
+                              ...prev,
+                              shelves: undefined,
+                            }));
+                          }
+                        }}
+                      />
+                      <button
+                        type="button"
+                        className="btn btn-outline-primary book-form-manage-btn"
+                        onClick={() => setShowShelfNameModal(true)}>
+                        <Library size={16} />
+                        Manage
+                      </button>
+                    </div>
                     {validationErrors.shelves && (
-                      <small className="text-danger mt-1 d-block">
-                        ⚠️{validationErrors.shelves}
+                      <small className="text-danger mt-2 d-block">
+                        {validationErrors.shelves}
                       </small>
                     )}
+                  </FormSection>
 
-                    <button
-                      type="button"
-                      className="btn btn-primary col-auto"
-                      onClick={() => setShowShelfNameModal(true)}>
-                      Manage Shelves
-                    </button>
-                  </>
-                }
-              />
-              <FormRow
-                label="Rating (1-5)"
-                placeholder={"(optional)"}
-                type="number"
-                min="1"
-                max="5"
-                step="0.01"
-                value={formData.rating}
-                onChange={(e) =>
-                  setFormData({ ...formData, rating: e.target.value })
-                }
-                style={{ width: "120px" }}
-              />
-              <FormRow
-                label="Tags"
-                hideInput="true"
-                customComponent={
-                  <>
-                    <FormDataTags
-                      items={allTags}
-                      colors={tagColors}
-                      selectedItems={selectedTags}
-                      setSelectedItems={setSelectedTags}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowTagManagementModal(true)}
-                      className="btn btn-outline-primary d-flex align-items-center gap-2"
-                      style={{
-                        backgroundColor: "#6f42c1",
-                        borderColor: "#6f42c1",
-                        color: "white",
-                      }}>
-                      <Palette size={18} />
-                      Manage Tags
-                    </button>
-                  </>
-                }
-              />
+                  <FormSection icon={Tags} title="Tags">
+                    <div className="book-form-pill-row">
+                      <FormDataTags
+                        items={allTags}
+                        colors={tagColors}
+                        selectedItems={selectedTags}
+                        setSelectedItems={setSelectedTags}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowTagManagementModal(true)}
+                        className="btn btn-outline-primary book-form-manage-btn">
+                        <Palette size={16} />
+                        Manage
+                      </button>
+                    </div>
+                  </FormSection>
 
-              <FormRow
-                label="Date Started (optional)"
-                type="date"
-                value={formData.dateStarted}
-                onChange={(e) =>
-                  setFormData({ ...formData, dateStarted: e.target.value })
-                }
-              />
-              <FormRow
-                label="Date Finished (optional)"
-                type="date"
-                value={formData.dateFinished}
-                onChange={(e) =>
-                  setFormData({ ...formData, dateFinished: e.target.value })
-                }
-              />
-              <FormRow
-                label="Date Added (optional)"
-                type="date"
-                value={formData.dateAdded}
-                onChange={(e) =>
-                  setFormData({ ...formData, dateAdded: e.target.value })
-                }
-              />
+                  <FormSection icon={CalendarDays} title="Dates">
+                    <div className="book-form-three-col">
+                      <FormRow
+                        label="Started"
+                        type="date"
+                        value={dateInputValue(formData.dateStarted)}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            dateStarted: e.target.value || "N/A",
+                          })
+                        }
+                      />
+                      <FormRow
+                        label="Finished"
+                        type="date"
+                        value={dateInputValue(formData.dateFinished)}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            dateFinished: e.target.value || "N/A",
+                          })
+                        }
+                      />
+                      <FormRow
+                        label="Added"
+                        type="date"
+                        value={dateInputValue(formData.dateAdded)}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            dateAdded:
+                              e.target.value ||
+                              new Date().toISOString().split("T")[0],
+                          })
+                        }
+                      />
+                    </div>
+                  </FormSection>
+                </div>
+              </div>
+            </aside>
+
+            <div className="book-form-fields">
+              <FormSection icon={BookOpen} title="Book Details">
+                <div className="book-form-two-col">
+                  <FormRow
+                    label="Title *"
+                    value={formData.title}
+                    onChange={(e) => {
+                      setFormData({ ...formData, title: e.target.value });
+                      if (validationErrors.title) {
+                        setValidationErrors((prev) => ({
+                          ...prev,
+                          title: undefined,
+                        }));
+                      }
+                    }}
+                    invalid={Boolean(validationErrors.title)}
+                    validationMessage={validationErrors.title}
+                    required
+                  />
+                  <FormRow
+                    label="Second Title"
+                    value={formData.title2}
+                    placeholder={"(optional)"}
+                    onChange={(e) =>
+                      setFormData({ ...formData, title2: e.target.value })
+                    }
+                  />
+                  <FormRow
+                    label="Author *"
+                    value={formData.author}
+                    onChange={(e) => {
+                      setFormData({ ...formData, author: e.target.value });
+                      if (validationErrors.author) {
+                        setValidationErrors((prev) => ({
+                          ...prev,
+                          author: undefined,
+                        }));
+                      }
+                    }}
+                    invalid={Boolean(validationErrors.author)}
+                    validationMessage={validationErrors.author}
+                    required
+                  />
+                  <FormRow
+                    label="Pages"
+                    placeholder={"(optional)"}
+                    type="number"
+                    min="1"
+                    value={formData.pages}
+                    onChange={(e) =>
+                      setFormData({ ...formData, pages: e.target.value })
+                    }
+                  />
+                  <FormRow
+                    label="Rating"
+                    placeholder={"1-5"}
+                    type="number"
+                    min="1"
+                    max="5"
+                    step="0.01"
+                    value={formData.rating}
+                    onChange={(e) =>
+                      setFormData({ ...formData, rating: e.target.value })
+                    }
+                  />
+                </div>
+              </FormSection>
+
+              <FormSection
+                icon={NotebookPen}
+                title="Notes"
+                className="book-form-wide-section">
+                <Editor
+                  value={formData.notes}
+                  onEditorChange={(content) =>
+                    setFormData({ ...formData, notes: content })
+                  }
+                  init={{
+                    height: 300,
+                    width: "100%",
+                    menubar: false,
+                    skin: darkMode ? "oxide-dark" : "oxide",
+                    content_css: darkMode ? "dark" : "default",
+
+                    placeholder:
+                      "Add the book introduction or your thoughts about this book.",
+                    plugins: [
+                      "lists",
+                      "link",
+                      "image",
+                      "charmap",
+                      "preview",
+                      "searchreplace",
+                    ],
+                    toolbar:
+                      "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | checklist numlist bullist indent outdent",
+                  }}
+                />
+              </FormSection>
+
+              <FormSection
+                icon={Quote}
+                title="Quotes"
+                count={quoteCount > 0 ? quoteCount : undefined}
+                className="book-form-wide-section">
+                <textarea
+                  className={`form-control book-form-quotes ${
+                    darkMode ? "bg-dark text-light" : ""
+                  }`}
+                  rows={6}
+                  value={formData.quotesText}
+                  placeholder={
+                    "Add one quote per line. Each line will be saved as a separate quote."
+                  }
+                  onChange={(e) =>
+                    setFormData({ ...formData, quotesText: e.target.value })
+                  }
+                />
+              </FormSection>
             </div>
-            <div>Notes:</div>
-            <Editor
-              value={formData.notes}
-              onEditorChange={(content) =>
-                setFormData({ ...formData, notes: content })
-              }
-              init={{
-                height: 300,
-                width: "100%",
-                menubar: false,
-                skin: darkMode ? "oxide-dark" : "oxide",
-                content_css: darkMode ? "dark" : "default",
-
-                placeholder:
-                  "You can add the Book's Introduction or Your thoughts about this book...(optional)",
-                plugins: [
-                  "lists",
-                  "link",
-                  "image",
-                  "charmap",
-                  "preview",
-                  "searchreplace",
-                ],
-                toolbar:
-                  "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | checklist numlist bullist indent outdent",
-              }}
-            />
-            <div className="mt-4">Quotes:</div>
-            <textarea
-              className="form-control"
-              rows={6}
-              value={formData.quotesText}
-              placeholder={
-                "Add one quote per line. Each line will be saved as a separate quote.\n\nExample:\nIt is only with the heart that one can see rightly.\nWhat is essential is invisible to the eye."
-              }
-              onChange={(e) =>
-                setFormData({ ...formData, quotesText: e.target.value })
-              }
-            />
           </div>
         </form>
       </Modal>
