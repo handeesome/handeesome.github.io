@@ -52,7 +52,9 @@ export function clearUsersCache() {
 // ---------------------------------------------------------------------------
 
 /**
- * Resolve a URL display name (e.g. "johndoe") to the full email.
+ * Resolve a URL user name to the full email.
+ * Prefers the user-set profile name, with the old email-prefix route kept as a
+ * fallback for existing links.
  * Uses the cached user list — no extra Firestore read if cache is warm.
  *
  * @param {string} displayName
@@ -60,10 +62,14 @@ export function clearUsersCache() {
  */
 export async function getEmailFromDisplayName(displayName) {
   if (!displayName) return null;
+  const normalizedDisplayName = displayName.trim().toLowerCase();
   const users = await getAllUsers();
   return (
     users.find(
-      (u) => u.id.split("@")[0].toLowerCase() === displayName.toLowerCase()
+      (u) => (u.userName ?? "").trim().toLowerCase() === normalizedDisplayName
+    )?.id ??
+    users.find(
+      (u) => u.id.split("@")[0].toLowerCase() === normalizedDisplayName
     )?.id ?? null
   );
 }

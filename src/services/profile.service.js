@@ -12,6 +12,7 @@ import {
   deleteField,
   increment,
 } from "firebase/firestore";
+import { clearUsersCache } from "./users.service";
 
 const DEFAULT_PROFILE = {
   userName: "",
@@ -70,6 +71,7 @@ export async function updateProfile(email, updates) {
     { ...updates, userEmail: email, updatedAt: new Date() },
     { merge: true }
   );
+  clearUsersCache();
 }
 
 /**

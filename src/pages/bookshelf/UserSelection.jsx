@@ -94,7 +94,7 @@ const UserSelection = () => {
 
   const handleEnterBookshelf = () => {
     if (selectedAvatar.shelfPath) {
-      navigate(`/book-shelf/${getDisplayNameFromEmail(selectedAvatar.shelfPath)}`);
+      navigate(`/book-shelf/${encodeURIComponent(selectedAvatar.shelfPath)}`);
     }
     setShowModal(false);
   };
@@ -142,6 +142,7 @@ const UserSelection = () => {
               )
               .map((user) => {
                 const displayName = getDisplayNameFromEmail(user.id);
+                const routeName = (user.userName || displayName).trim();
                 return (
                   <Avatar
                     src={user.avatarBase64}
@@ -149,7 +150,7 @@ const UserSelection = () => {
                     name={user.userName || displayName}
                     toggleModal={() =>
                       handleToggleModal({
-                        shelfPath: getDisplayNameFromEmail(user.id),
+                        shelfPath: routeName,
                         userId: user.id,
                         shelfName: user.shelfName || displayName,
                         ownerName: user.userName || displayName,
