@@ -27,7 +27,7 @@ import staticUsers from "../static/users.json";
  */
 export const useUsers = () => {
   const [users,   setUsers]   = useState(staticUsers);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;

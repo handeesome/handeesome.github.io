@@ -102,7 +102,7 @@ const UserSelection = () => {
   return (
     <>
       <Board
-        title={`${loading ? "Loading..." : "Book Shelf Users"}`}
+        title="Book Shelf Users"
         titleRight={
           <div
             className="btn btn-outline-primary"
@@ -161,6 +161,19 @@ const UserSelection = () => {
                 );
               })}
           </div>
+          {loading && (
+            <div
+              className="d-flex align-items-center justify-content-center gap-2 text-muted pb-3"
+              role="status"
+              aria-live="polite"
+            >
+              <span
+                className="spinner-border spinner-border-sm"
+                aria-hidden="true"
+              />
+              <span>Fetching more users...</span>
+            </div>
+          )}
         </div>
       </Board>
 
