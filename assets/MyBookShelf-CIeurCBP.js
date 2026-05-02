@@ -1,1 +1,0 @@
-import{j as o}from"./index-DmKz_XUy.js";import{b as t}from"./books-CLEuW7EG.js";import{H as e,B as r}from"./BookShelf-CX1TNGQd.js";import"./index-84k9TH_T.js";import"./introductions-CLow6FXX.js";import"./GoBackButton-CZ2QOKkP.js";const f=()=>o.jsx(e.Provider,{value:{hideEditDelete:!0},children:o.jsx(r,{books:t,title:"Book Shelf"})});export{f as default};
