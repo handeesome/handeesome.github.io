@@ -67,6 +67,17 @@ const ProjectPage = ({}) => {
             </div>
           ),
           a: ({ node, ...props }) => {
+            if (props.href?.startsWith("/demos/")) {
+              return (
+                <a
+                  {...props}
+                  className="btn btn-info text-white fw-bold my-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              );
+            }
+
             if (props.href?.startsWith("http")) {
               return <a {...props} target="_blank" rel="noopener noreferrer" />;
             }
