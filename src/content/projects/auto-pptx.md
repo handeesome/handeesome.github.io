@@ -1,6 +1,6 @@
 ---
 title: CCG Auto PPTX Generator
-date: 2025-03-22
+date: 2024-01-03
 tags: [python, flask, python-pptx]
 description: A Flask app that helps church coworkers generate weekly worship PowerPoint slides from structured service content, Bible passages, and song lyrics.
 ---
@@ -39,4 +39,3 @@ The DIY lyric tool helps split lyrics into pages, preview the result, and export
 This project came from a real weekly need. Before this tool, preparing slides required many small manual steps, and small formatting mistakes were easy to introduce under time pressure. By turning the repeated parts into a structured app, the process became faster, more consistent, and easier for different coworkers to share.
 
 It is a practical project, but I enjoyed it because it sits at the intersection of software, design, and service. The most satisfying part was not just generating a PowerPoint file, but making a workflow that respects the people who have to use it every week.
-

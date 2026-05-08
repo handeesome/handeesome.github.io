@@ -11,19 +11,22 @@ const Items = () => {
     import: "default",
   });
 
-  const projects = Object.entries(modules).map(([path, raw]) => {
-    const { attributes, body } = fm(raw);
-    const slug = path.replace("../../content/projects/", "").replace(".md", "");
-    return {
-      title: attributes.title || slug,
-      description: attributes.description || "",
-      date: attributes.date
-        ? new Date(attributes.date).toLocaleDateString()
-        : "",
-      tags: attributes.tags || [],
-      slug,
-    };
-  });
+  const projects = Object.entries(modules)
+    .map(([path, raw]) => {
+      const { attributes } = fm(raw);
+      const slug = path.replace("../../content/projects/", "").replace(".md", "");
+      const dateValue = attributes.date ? new Date(attributes.date) : null;
+
+      return {
+        title: attributes.title || slug,
+        description: attributes.description || "",
+        date: dateValue ? dateValue.toLocaleDateString() : "",
+        dateTime: dateValue?.getTime() || 0,
+        tags: attributes.tags || [],
+        slug,
+      };
+    })
+    .sort((a, b) => b.dateTime - a.dateTime);
 
   const Item = ({ title, date }) => (
     <div className="row">
