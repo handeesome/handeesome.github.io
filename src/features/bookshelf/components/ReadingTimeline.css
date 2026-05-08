@@ -1,0 +1,72 @@
+.reading-timeline {
+  width: 100%;
+  padding: 24px;
+}
+
+.timeline-list {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 112px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: #d6d6d6;
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 88px 24px 1fr;
+  column-gap: 16px;
+  padding-bottom: 36px;
+}
+
+.timeline-date {
+  color: #777;
+  font-size: 0.85rem;
+  line-height: 18px;
+  text-align: right;
+}
+
+.timeline-marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #111;
+  border: 4px solid white;
+  z-index: 1;
+}
+
+.timeline-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 18px;
+  padding-bottom: 4px;
+}
+
+.timeline-book {
+  max-width: 112px;
+}
+
+.timeline-book-cover {
+  width: 84px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.timeline-book h3 {
+  margin: 8px 0 0;
+  color: #555;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
