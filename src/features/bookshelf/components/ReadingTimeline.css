@@ -52,7 +52,24 @@
 }
 
 .timeline-book {
+  border: 0;
+  background: transparent;
   max-width: 112px;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.timeline-book:hover .timeline-book-cover,
+.timeline-book:focus-visible .timeline-book-cover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+.timeline-book:focus-visible {
+  border-radius: 6px;
+  outline: 2px solid #4f7cff;
+  outline-offset: 6px;
 }
 
 .timeline-book-cover {
@@ -61,6 +78,9 @@
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .timeline-book h3 {

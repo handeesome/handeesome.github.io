@@ -5,8 +5,8 @@ const BookQuote = ({ children }) => {
   const variants = {
     light: {
       container:
-        "p-4 my-4 rounded shadow bg-warning bg-opacity-25 border-start border-3 border-warning",
-      quote: "text-dark fs-5 fst-italic mb-3",
+        "p-3 my-3 rounded shadow bg-warning bg-opacity-25 border-start border-3 border-warning",
+      quote: "text-dark fs-6 fst-italic mb-2",
       attribution: "text-warning fw-semibold small",
       icon: "text-warning me-2",
     },

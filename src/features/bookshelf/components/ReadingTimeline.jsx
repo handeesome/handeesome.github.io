@@ -1,4 +1,5 @@
 import "./ReadingTimeline.css";
+import { useNavigate } from "react-router-dom";
 import books from "../../../static/books/books.json";
 
 const parseBookDate = (date) => {
@@ -48,6 +49,8 @@ const timelineItems = Object.values(
 ).sort((a, b) => b.date - a.date);
 
 const ReadingTimeline = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="reading-timeline">
       <ol className="timeline-list">
@@ -58,7 +61,12 @@ const ReadingTimeline = () => {
 
             <div className="timeline-content">
               {item.books.map((book) => (
-                <article className="timeline-book" key={book.id}>
+                <button
+                  className="timeline-book"
+                  key={book.id}
+                  type="button"
+                  onClick={() => navigate(`/book-shelf/book/${book.id}/notes`)}
+                >
                   <img
                     className="timeline-book-cover"
                     src={book.coverBase64 || `/images/bookCovers/${book.id}.jpg`}
@@ -68,7 +76,7 @@ const ReadingTimeline = () => {
                     }}
                   />
                   <h3>{getBookDisplayTitle(book)}</h3>
-                </article>
+                </button>
               ))}
             </div>
           </li>

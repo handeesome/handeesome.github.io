@@ -1,7 +1,10 @@
 import { useTheme } from "../../../contexts/ThemeContext";
 import GoBackBtn from "../../../components/GoBackButton";
-const BookInfoHeader = ({ book }) => {
+import { useNavigate } from "react-router-dom";
+
+const BookInfoHeader = ({ book, showReadingSessionsButton = false }) => {
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const coverSrc = book.coverBase64 || `/images/bookCovers/${book.id}.jpg`;
   const pages = book["num pages"] ?? book.pages ?? "N/A";
 
@@ -32,10 +35,23 @@ const BookInfoHeader = ({ book }) => {
                   <br />
                   <strong>Reading Status:</strong> {book.shelves}
                 </p>
-                <GoBackBtn
-                  defaultDest="/book-shelf"
-                  text="Back to Book Shelf"
-                />
+                <div className="d-flex flex-wrap gap-2">
+                  <GoBackBtn
+                    defaultDest="/book-shelf"
+                    text="Go Back to Previous Page"
+                  />
+                  {showReadingSessionsButton && (
+                    <button
+                      className="btn btn-warning shadow-sm"
+                      type="button"
+                      onClick={() =>
+                        navigate(`/book-shelf/book/${book.id}/analytics`)
+                      }
+                    >
+                      Reading Sessions →
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>

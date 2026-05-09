@@ -76,7 +76,7 @@ const BookNotes = () => {
   };
   return (
     <Board title={`NOTES FROM ${bookTitle}`} ref={boardRef}>
-      <BookInfoHeader book={book} />
+      <BookInfoHeader book={book} showReadingSessionsButton />
       <div className="card mb-4 description-card">
         <div className="card-body p-4">
           <h5
