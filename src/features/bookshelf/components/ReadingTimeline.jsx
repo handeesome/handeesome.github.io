@@ -1,6 +1,7 @@
 import "./ReadingTimeline.css";
 import { useNavigate } from "react-router-dom";
 import books from "../../../static/books/books.json";
+import togglData from "../../../static/books/toggl-data.json";
 
 const parseBookDate = (date) => {
   if (!date) return null;
@@ -23,6 +24,18 @@ const getBookDisplayTitle = (book) => {
 
   return book.title.split(":")[0].trim();
 };
+
+const monthlyReadingMinutes = togglData.reduce((months, entry) => {
+  const startDate = new Date(entry.start);
+
+  if (Number.isNaN(startDate.getTime())) {
+    return months;
+  }
+
+  const monthKey = getMonthKey(startDate);
+  months[monthKey] = (months[monthKey] || 0) + entry.dur / 60000;
+  return months;
+}, {});
 
 const timelineItems = Object.values(
   books.reduce((months, book) => {
@@ -56,7 +69,12 @@ const ReadingTimeline = () => {
       <ol className="timeline-list">
         {timelineItems.map((item) => (
           <li className="timeline-item" key={item.key}>
-            <time className="timeline-date">{item.label}</time>
+            <time className="timeline-date">
+              <span>{item.label}</span>
+              <span className="timeline-minutes">
+                {Math.round(monthlyReadingMinutes[item.key] || 0)} mins
+              </span>
+            </time>
             <div className="timeline-marker" />
 
             <div className="timeline-content">
