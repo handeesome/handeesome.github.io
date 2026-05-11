@@ -258,6 +258,7 @@ const Header = () => {
                 alignItems: "flex-start",
                 gap: "1rem",
                 margin: "20px 0 0 0",
+                minWidth: 0,
                 position: "relative",
                 zIndex: 2,
               }}
@@ -270,10 +271,12 @@ const Header = () => {
                   border: 0,
                   padding: 0,
                   color: "inherit",
+                  minWidth: 0,
                   textAlign: "left",
                   fontSize: "1rem",
                   fontWeight: "500",
                   margin: 0,
+                  overflowWrap: "anywhere",
                   cursor: selectedQuote.shelfPath ? "pointer" : "default",
                 }}
                 onClick={handleShelfClick}
@@ -288,10 +291,12 @@ const Header = () => {
                   border: 0,
                   padding: 0,
                   color: "inherit",
+                  minWidth: 0,
                   textAlign: "right",
                   fontSize: "1.125rem",
                   fontWeight: "500",
                   margin: 0,
+                  overflowWrap: "anywhere",
                   cursor: selectedQuote.bookPath ? "pointer" : "default",
                 }}
                 onClick={handleBookClick}

@@ -1,5 +1,13 @@
 .about-page {
+  max-width: 100%;
+  overflow-x: clip;
   padding: 1.5rem 0 0.25rem;
+}
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
 }
 
 .about-hero {
@@ -72,6 +80,7 @@
 .about-site-section > div {
   border: 1px solid rgba(120, 130, 140, 0.22);
   border-radius: 8px;
+  min-width: 0;
   padding: 1.2rem;
 }
 
@@ -133,11 +142,12 @@
   border-radius: 8px;
   bottom: calc(100% + 0.65rem);
   box-shadow: 0 14px 34px rgba(20, 25, 35, 0.18);
-  display: grid;
+  display: none;
   gap: 0.45rem;
   left: 0;
   line-height: 1.35;
-  min-width: min(320px, 78vw);
+  max-width: calc(100vw - 2rem);
+  min-width: min(320px, calc(100vw - 2rem));
   opacity: 0;
   padding: 0.8rem 0.9rem;
   pointer-events: none;
@@ -168,6 +178,7 @@
 
 .about-reading-tag:hover .about-reading-tooltip,
 .about-reading-tag:focus .about-reading-tooltip {
+  display: grid;
   opacity: 1;
   transform: translateY(0);
 }
@@ -185,6 +196,7 @@ html.dark .about-reading-tooltip {
   gap: 1.5rem;
   grid-template-columns: minmax(0, 1fr) auto;
   margin-top: 2.25rem;
+  min-width: 0;
   padding: 1.35rem;
 }
 
@@ -208,6 +220,7 @@ html.dark .about-reading-tooltip {
   gap: 0.85rem;
   justify-items: start;
   max-width: 260px;
+  min-width: 0;
 }
 
 .about-reading-cta p {
