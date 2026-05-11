@@ -1,1 +1,0 @@
-import{J as r,r as e}from"./index-DMr52Tof.js";const a=({scrollRef:o})=>{const{pathname:t}=r();return e.useEffect(()=>{o?.current?.scrollIntoView({behavior:"smooth",block:"start"})},[t,o]),null};export{a as S};
