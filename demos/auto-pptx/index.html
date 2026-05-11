@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>创建崇拜 PPTX - Static Demo</title>
+    <link rel="stylesheet" href="./static/css/custom.css" />
+    <link rel="stylesheet" href="./static/css/searchBtn.css" />
+    <link rel="stylesheet" href="./static/css/DIYBtn.css" />
+    <link rel="icon" type="image/png" href="./static/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .demo-toast {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 30;
+        max-width: min(420px, calc(100% - 44px));
+        transform: translateY(16px);
+        opacity: 0;
+        border-radius: 14px;
+        padding: 0.9rem 1rem;
+        color: #fff;
+        background: #245b8f;
+        box-shadow: var(--shadow-lg);
+        transition: 0.18s ease;
+        pointer-events: none;
+      }
+      .demo-toast.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .demo-slide-preview {
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: #fff;
+        overflow: hidden;
+      }
+      .demo-slide-title {
+        padding: 0.85rem 1rem;
+        color: #fff;
+        font-weight: 800;
+        background: linear-gradient(90deg, #163d68, #245b8f);
+      }
+      .demo-slide-body {
+        min-height: 150px;
+        padding: 1.1rem 1.25rem;
+        line-height: 1.75;
+        color: var(--text-main);
+      }
+      .demo-slide-body p {
+        margin-bottom: 0.45rem;
+      }
+      .mock-note {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+      }
+    </style>
+  </head>
+  <body class="app-shell">
+    <main class="page-wrap">
+      <section class="hero-panel">
+        <div class="toolbar-row">
+          <a href="../../" class="btn btn-light btn-soft">返回项目文章</a>
+          <div class="hero-badge">Worship PPTX Builder</div>
+        </div>
+        <div class="hero-brand">
+          <img src="./static/logo.png" alt="Logo" class="logo" />
+          <div>
+            <h1>不来梅教会崇拜 PPTX 生成器</h1>
+            <p class="hero-text">
+              这是一个静态前端演示页，尽量复刻真实项目界面。按钮和表单可以点击预览流程，但不会连接后端，也不会生成真实 PPTX。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <form id="pptxForm" class="worship-form">
+        <section class="section-card section-card-full">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Step 1</div>
+              <h2>崇拜类型</h2>
+            </div>
+          </div>
+          <div class="section-body centered-stack">
+            <div id="isCommunion" class="row g-3 w-100">
+              <div class="col-12 col-md-6 d-flex">
+                <label class="w-100">
+                  <input type="radio" name="isCommunionRadio" class="d-none" checked />
+                  <div class="card p-3 h-100 d-flex flex-column clickable">
+                    <blockquote class="blockquote mb-0 flex-grow-1"><p>普通主日崇拜</p></blockquote>
+                  </div>
+                </label>
+              </div>
+              <div class="col-12 col-md-6 d-flex">
+                <label class="w-100">
+                  <input type="radio" name="isCommunionRadio" class="d-none" />
+                  <div class="card p-3 h-100 d-flex flex-column clickable">
+                    <blockquote class="blockquote mb-0 flex-grow-1"><p>圣餐崇拜</p></blockquote>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="section-subtitle" id="communionTitle"><h4>圣餐礼诗歌</h4></div>
+            <div id="lyricsRadio" class="row g-3 w-100">
+              <div class="col-12 col-md-6 d-flex">
+                <label class="w-100">
+                  <input type="radio" name="lyricsRadio" class="d-none" checked />
+                  <div class="card p-3 h-100 d-flex flex-column clickable">
+                    <blockquote class="blockquote mb-0 flex-grow-1"><p>照我本相</p></blockquote>
+                  </div>
+                </label>
+              </div>
+              <div class="col-12 col-md-6 d-flex">
+                <label class="w-100">
+                  <input type="radio" name="lyricsRadio" class="d-none" />
+                  <div class="card p-3 h-100 d-flex flex-column clickable">
+                    <blockquote class="blockquote mb-0 flex-grow-1"><p>主，我愿像你</p></blockquote>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-grid section-grid-two">
+          <section class="section-card">
+            <div class="section-header"><div><div class="section-kicker">Step 2</div><h2>本周事奉名单</h2></div></div>
+            <div class="section-body">
+              <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="col-form-label">日期:</label></div><div class="col-12 col-md-9 col-xl-10"><input class="form-control" type="date" value="2026-05-10" /></div></div>
+              <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="col-form-label">主题:</label></div><div class="col-12 col-md-9 col-xl-10"><input class="form-control" value="在主里同心建造" /></div></div>
+              <div id="thisWeekList">
+                <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="form-label">证道:</label></div><div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2"><input class="form-control form-input" value="李" /><select class="form-select form-select-suffix"><option>牧师</option><option>传道</option></select></div></div></div>
+                <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="form-label">司会:</label></div><div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2"><input class="form-control form-input" value="王" /><select class="form-select form-select-suffix"><option>弟兄</option><option>姊妹</option></select></div></div></div>
+                <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="form-label">PPT:</label></div><div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2"><input class="form-control form-input" value="陈" /><select class="form-select form-select-suffix"><option>弟兄</option><option>姊妹</option></select></div></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card">
+            <div class="section-header"><div><div class="section-kicker">Step 3</div><h2>下周事奉名单</h2></div></div>
+            <div class="section-body">
+              <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="col-form-label">日期:</label></div><div class="col-12 col-md-9 col-xl-10"><input class="form-control" type="date" value="2026-05-17" /></div></div>
+              <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="col-form-label">经文:</label></div><div class="col-12 col-md-9 col-xl-10"><input class="form-control" value="路加福音 1:1-4" /></div></div>
+              <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="form-label">证道:</label></div><div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2"><input class="form-control form-input" value="周" /><select class="form-select form-select-suffix"><option>牧师</option><option>传道</option></select></div></div></div>
+              <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label class="form-label">司会:</label></div><div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2"><input class="form-control form-input" value="林" /><select class="form-select form-select-suffix"><option>姊妹</option><option>弟兄</option></select></div></div></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="section-card section-card-full">
+          <div class="section-header"><div><div class="section-kicker">Step 4</div><h2>经文设置</h2></div></div>
+          <div class="section-body compact-section content-narrow">
+            <div class="row align-items-center g-2 mb-3">
+              <div class="col-12 col-md-3 col-xl-2"><label>宣召:</label></div>
+              <div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2 align-items-center flex-wrap"><select class="form-select"><option>诗篇</option><option>路加福音</option></select><select class="form-select"><option>第九十五篇</option><option>第一章</option></select><select class="form-select"><option>第一节</option></select><span>至</span><select class="form-select"><option>第七节</option></select><button class="btn btn-primary control-icon-btn control-icon-btn-add" type="button">+</button></div></div>
+            </div>
+            <div class="row align-items-center g-2 mb-3">
+              <div class="col-12 col-md-3 col-xl-2"><label>启应:</label></div>
+              <div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2 align-items-center flex-wrap"><select class="form-select"><option>路加福音</option></select><select class="form-select"><option>第一章</option></select><select class="form-select"><option>第一节</option></select><span>至</span><select class="form-select"><option>第四节</option></select><button class="btn btn-primary control-icon-btn control-icon-btn-add" type="button">+</button></div></div>
+            </div>
+            <div class="row align-items-center g-2 mb-3">
+              <div class="col-12 col-md-3 col-xl-2"><label>读经:</label></div>
+              <div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2 align-items-center flex-wrap"><select class="form-select"><option>出埃及记</option></select><select class="form-select"><option>第三十三章</option></select><select class="form-select"><option>第二节</option></select><span>至</span><select class="form-select"><option>第三节</option></select><button class="btn btn-primary control-icon-btn control-icon-btn-add" type="button">+</button></div></div>
+            </div>
+            <span class="verse-preview" id="versePreview">1-3. 提阿非罗大人哪，有好些人提笔作书...<br />4. 要让你知道所学的道都是确实的。</span>
+          </div>
+        </section>
+
+        <div id="popup-overlay" class="overlay">
+          <div id="search-container" class="popup">
+            <h1 class="text-center">Google Drive 搜索</h1>
+            <div class="popup-content"><div class="row justify-content-center"><div class="col-12"><input type="text" id="search-input" placeholder="简体繁體都得啦" class="form-control" /></div></div><ul id="search-results"><li>奇异恩典.pptx</li><li>主我愿像你.pptx</li></ul></div>
+          </div>
+        </div>
+
+        <section class="section-card section-card-full">
+          <div class="section-header"><div><div class="section-kicker">Step 5</div><h2>诗歌安排</h2></div></div>
+          <div class="section-body compact-section">
+            <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label>宣召诗歌:</label></div><div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2"><input class="form-control" value="奇异恩典" /><button type="button" class="btn section-action-btn demo-drive">Google Drive 搜索</button><button type="button" class="btn section-action-btn demo-diy">DIY</button></div></div></div>
+            <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label>回应诗歌:</label></div><div class="col-12 col-md-9 col-xl-10"><div class="d-flex gap-2"><input class="form-control" value="如鹿切慕溪水" /><button type="button" class="btn section-action-btn demo-drive">Google Drive 搜索</button><button type="button" class="btn section-action-btn demo-diy">DIY</button></div></div></div>
+          </div>
+        </section>
+
+        <section class="section-card section-card-full">
+          <div class="section-header">
+            <div><div class="section-kicker">Step 6</div><h2>活动报告与金句</h2><p class="section-description">可手动填写，也可以直接从 CCG Bremen 网站抓取当周内容后再微调。</p></div>
+            <div class="section-header-actions"><button type="button" class="btn section-action-btn" id="fetchMock">自动获取 CCG Bremen 内容</button></div>
+          </div>
+          <div class="section-body compact-section content-narrow">
+            <div class="row align-items-center g-2 mb-3"><div class="col-12 col-md-3 col-xl-2"><label>金句:</label></div><div class="col-12 col-md-9 col-xl-10"><input class="form-control" value="罗马书 12:1" /></div></div>
+            <span class="verse-preview">所以，弟兄们，我以上帝的慈悲劝你们，将身体献上，当作活祭...</span>
+            <div class="mb-3 textarea-entry"><textarea class="form-control textarea-entry-input">1. 主日学本周继续。
+2. 祷告会周三晚上线上举行。</textarea><button type="button" class="btn btn-danger control-icon-btn control-icon-btn-remove textarea-entry-remove">−</button></div>
+          </div>
+        </section>
+
+        <section class="section-card section-card-full">
+          <div class="section-header"><div><div class="section-kicker">Step 7</div><h2>奉献回应礼经文</h2></div></div>
+          <div class="section-body centered-stack"><div class="row g-3 w-100"><div class="col-12 col-md-6 d-flex"><label class="w-100"><input type="radio" name="verseRadio" class="d-none" checked /><div class="card p-3 h-100 d-flex flex-column clickable"><blockquote class="blockquote mb-0 flex-grow-1"><p>各人要随本心所酌定的...</p></blockquote><footer class="blockquote-footer text-end mt-auto mb-auto">林后9:6-7</footer></div></label></div><div class="col-12 col-md-6 d-flex"><label class="w-100"><input type="radio" name="verseRadio" class="d-none" /><div class="card p-3 h-100 d-flex flex-column clickable"><blockquote class="blockquote mb-0 flex-grow-1"><p>所以，弟兄们...</p></blockquote><footer class="blockquote-footer text-end mt-auto mb-auto">罗12:1</footer></div></label></div></div></div>
+        </section>
+
+        <div class="section-grid section-grid-two">
+          <section class="section-card"><div class="section-header"><div><div class="section-kicker">Step 8</div><h2>为世界及社会祷告</h2></div></div><div class="section-body"><div class="mb-3 textarea-entry"><textarea class="form-control textarea-entry-input">为和平、城市、学生和家庭祷告。</textarea><button type="button" class="btn btn-danger control-icon-btn control-icon-btn-remove textarea-entry-remove">−</button></div></div></section>
+          <section class="section-card"><div class="section-header"><div><div class="section-kicker">Step 9</div><h2>为教会及个人祷告</h2></div></div><div class="section-body"><div class="mb-3 textarea-entry"><textarea class="form-control textarea-entry-input">为教会服事、同工和有需要的肢体祷告。</textarea><button type="button" class="btn btn-danger control-icon-btn control-icon-btn-remove textarea-entry-remove">−</button></div></div></section>
+        </div>
+
+        <section class="section-card section-card-full">
+          <div class="section-header"><div><div class="section-kicker">Preview</div><h2>生成结果预览</h2><p class="section-description">真实项目会在后端生成 PowerPoint。这里展示的是静态预览。</p></div></div>
+          <div class="section-body"><div class="section-grid section-grid-two"><div class="demo-slide-preview"><div class="demo-slide-title">读经（路 1:1-4）</div><div class="demo-slide-body"><p><strong>1-3.</strong>提阿非罗大人哪，有好些人提笔作书，述说在我们中间所实现的事...</p><p><strong>4.</strong>要让你知道所学的道都是确实的。</p></div></div><div class="demo-slide-preview"><div class="demo-slide-title">诗歌：奇异恩典</div><div class="demo-slide-body">奇异恩典，何等甘甜，<br />我罪已得赦免；<br />前我失丧，今被寻回，<br />瞎眼今得看见。</div></div></div></div>
+        </section>
+
+        <section class="submit-panel">
+          <p class="submit-note">静态演示：按钮只展示交互效果，不会上传、抓取网页或生成 PPTX。</p>
+          <button type="button" id="submitForm" class="btn btn-primary btn-lg submit-btn">生成崇拜 PPTX</button>
+        </section>
+      </form>
+
+      <footer class="page-footer"><p>Static frontend demo · 如需查看源码可访问项目仓库</p></footer>
+    </main>
+
+    <div id="dialogs-container"></div>
+    <div id="demoToast" class="demo-toast">这是静态演示，不会生成真实 PPTX。</div>
+
+    <script>
+      const toast = document.getElementById('demoToast');
+      function showToast(text) {
+        toast.textContent = text;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2200);
+      }
+      document.getElementById('submitForm').addEventListener('click', () => showToast('静态演示：真实项目会在这里生成并下载 PPTX。'));
+      document.getElementById('fetchMock').addEventListener('click', () => showToast('静态演示：真实项目会从 CCG Bremen 网站抓取内容。'));
+      document.querySelectorAll('.control-icon-btn-add').forEach((button) => button.addEventListener('click', () => showToast('静态演示：真实项目会新增一组经文选择。')));
+      document.querySelectorAll('.control-icon-btn-remove').forEach((button) => button.addEventListener('click', () => showToast('静态演示：真实项目会删除这一项。')));
+      document.querySelectorAll('.demo-drive').forEach((button) => button.addEventListener('click', () => document.getElementById('popup-overlay').style.display = 'block'));
+      document.querySelectorAll('.demo-diy').forEach((button) => button.addEventListener('click', () => showToast('静态演示：真实项目会打开单首诗歌 DIY 流程。')));
+      document.getElementById('popup-overlay').addEventListener('click', (event) => { if (event.target.id === 'popup-overlay') event.currentTarget.style.display = 'none'; });
+      document.querySelectorAll('input[type="radio"]').forEach((input) => input.addEventListener('change', () => showToast('选项已切换。')));
+    </script>
+  </body>
+</html>
