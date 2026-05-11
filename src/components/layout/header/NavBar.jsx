@@ -55,10 +55,10 @@ const NavBar = ({ isScrolled }) => {
               Study Notes
             </Link> */}
             <Link to="/games" className="nav-link" onClick={closeNavbar}>
-              🎮 Games
+              Games
             </Link>
             <Link to="/book-shelf" className="nav-link" onClick={closeNavbar}>
-              📚 Book Shelf
+              Book Shelf
             </Link>
 
             <div
