@@ -1,4 +1,100 @@
 {
+  "779021": {
+    "title": "The Happy Prince and Other Tales",
+    "title2": "快乐王子",
+    "tags": ["fiction", "classics"],
+    "avg rating": "4.16"
+  },
+  "14142": {
+    "title": "The Art of Loving",
+    "title2": "爱的艺术",
+    "tags": ["psychology", "philosophy"],
+    "avg rating": "4.00"
+  },
+  "29509524": {
+    "title": "Воскресение",
+    "title2": "复活",
+    "tags": ["psychology", "philosophy"],
+    "avg rating": "4.17"
+  },
+  "836230": {
+    "title": "Der Prozess",
+    "title2": "审判",
+    "tags": ["fiction", "philosophy", "classics"],
+    "avg rating": "3.94"
+  },
+  "82135847": {
+    "title": "宁静无价",
+    "title2": "",
+    "tags": ["essays"],
+    "avg rating": "null"
+  },
+  "24062593": {
+    "title": "额尔古纳河右岸",
+    "title2": "",
+    "tags": ["fiction", "contemporary"],
+    "avg rating": "4.09"
+  },
+  "245663083": {
+    "title": "咸的玩笑",
+    "title2": "",
+    "tags": ["fiction", "contemporary"],
+    "avg rating": "4.15"
+  },
+  "19200550": {
+    "title": "一句顶一万句",
+    "title2": "",
+    "tags": ["fiction", "contemporary"],
+    "avg rating": "4.36"
+  },
+  "42616411": {
+    "title": "Educated: A Memoir",
+    "title2": "你当像鸟飞往你的山",
+    "tags": ["biography"],
+    "avg rating": "4.46"
+  },
+  "31837": {
+    "title": "The Consolation of Philosophy",
+    "title2": "哲学的慰藉",
+    "tags": ["philosophy", "classics"],
+    "avg rating": "4.05"
+  },
+  "493311": {
+    "title": "The Collected Stories",
+    "title2": "被困住的人",
+    "tags": ["fiction", "contemporary"],
+    "avg rating": "4.45"
+  },
+  "247797083": {
+    "title": "本なら売るほど  3",
+    "title2": "十月堂旧书事3",
+    "tags": [],
+    "avg rating": "4.50"
+  },
+  "231418250": {
+    "title": "本なら売るほど 2",
+    "title2": "十月堂旧书事2",
+    "tags": ["fiction", "contemporary"],
+    "avg rating": "4.35"
+  },
+  "229123221": {
+    "title": "本なら売るほど 1",
+    "title2": "十月堂旧书事1",
+    "tags": ["fiction", "contemporary"],
+    "avg rating": "4.55"
+  },
+  "230402606": {
+    "title": "Mina vänner",
+    "title2": "我的好朋友",
+    "tags": ["fiction", "contemporary"],
+    "avg rating": "4.33"
+  },
+  "228899731": {
+    "title": "想在天气好时去海边",
+    "title2": "",
+    "tags": ["fiction", "contemporary"],
+    "avg rating": "4.33"
+  },
   "29494295": {
     "title": "幸せになる勇気",
     "title2": "幸福的勇气",
@@ -479,9 +575,8 @@
     "title2": "家庭论",
     "author": "Gary S. Becker",
     "num pages": "440",
-    "avg rating": "3.93",
-    "tags": ["economics", "social-science"],
-    "avg rating": 3.93
+    "avg rating": 3.93,
+    "tags": ["economics", "social-science"]
   },
   "53263624": {
     "title": "L'évolution créatrice",
@@ -499,9 +594,8 @@
     "title": "Zadig ou la Destinée",
     "title2": "查第格",
     "num pages": "192",
-    "avg rating": "3.79",
-    "tags": ["fiction", "philosophy", "classics", "satire"],
-    "avg rating": 3.79
+    "avg rating": 3.79,
+    "tags": ["fiction", "philosophy", "classics", "satire"]
   },
   "80493508": {
     "title": "ノルウェイの森",
