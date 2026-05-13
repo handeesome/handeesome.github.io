@@ -7,21 +7,7 @@ import BookQuote from "../../features/bookshelf/components/BookQuote";
 import ScrollToRef from "../../components/ScrollToRef";
 import { getBookById } from "../../services/books.service";
 import { getEmailFromDisplayName } from "../../utils/userUtils";
-
-const normalizeQuotes = (quotes) => {
-  if (Array.isArray(quotes)) {
-    return quotes.filter(Boolean);
-  }
-
-  if (typeof quotes === "string") {
-    return quotes
-      .split("\n")
-      .map((quote) => quote.trim())
-      .filter(Boolean);
-  }
-
-  return [];
-};
+import { normalizeQuotes } from "../../features/bookshelf/utils/quotes";
 
 const hasRenderableNotes = (notes) =>
   typeof notes === "string" &&
@@ -169,7 +155,7 @@ const UserBookQuotes = () => {
             >
               {index + 1}
             </div>
-            <BookQuote>{quote}</BookQuote>
+            <BookQuote quote={quote} />
           </div>
         ))
       ) : (

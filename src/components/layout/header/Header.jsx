@@ -6,48 +6,115 @@ import backgroundLight from "/src/assets/images/background_light.webp";
 import backgroundDark from "/src/assets/images/background_dark.webp";
 import bookQuotes from "../../../static/books/book-quotes.json";
 import { Textfit } from "react-textfit";
+import parse from "html-react-parser";
 import { getBooksByUser } from "../../../services/books.service";
 import { getAllUsers } from "../../../services/users.service";
+import {
+  getQuoteBodyText,
+  getQuoteContentHtml,
+  normalizeQuotes,
+} from "../../../features/bookshelf/utils/quotes";
 
 const CENHAN_EMAIL = "ducenhandee@gmail.com";
 const CENHAN_SHELF_NAME = "乱七八糟de书架";
+const HEADER_QUOTE_CACHE_TTL_MS = 5 * 60 * 1000;
+
+let publicQuoteGroupsCache = null;
+let publicQuoteGroupsCacheAt = 0;
+let publicQuoteGroupsPromise = null;
 
 const pickRandom = (items) => items[Math.floor(Math.random() * items.length)];
 
-const selectCenhanQuote = () => {
-  const bookIds = Object.keys(bookQuotes);
-  if (bookIds.length === 0) return null;
+const buildCenhanQuotePool = () =>
+  Object.entries(bookQuotes).flatMap(([bookId, [bookName, quotes = []]]) =>
+    quotes.filter(Boolean).map((quote, quoteIndex) => ({
+      text: quote,
+      html: "",
+      book: bookName,
+      source: CENHAN_SHELF_NAME,
+      quotePath: `/book-shelf/book/${bookId}/notes#quote-${quoteIndex}`,
+      shelfPath: "/book-shelf/cenhan",
+      bookPath: `/book-shelf/cenhan?layout=detailed&view=all#book-${bookId}`,
+    })),
+  );
 
-  const randomBookId = pickRandom(bookIds);
-  const [bookName, bookQuotesArray] = bookQuotes[randomBookId];
-
-  if (!bookQuotesArray || bookQuotesArray.length === 0) return null;
-
-  const quoteIndex = Math.floor(Math.random() * bookQuotesArray.length);
-
-  return {
-    text: bookQuotesArray[quoteIndex],
-    book: bookName,
-    source: CENHAN_SHELF_NAME,
-    quotePath: `/book-shelf/book/${randomBookId}/notes#quote-${quoteIndex}`,
-    shelfPath: "/book-shelf/cenhan",
-    bookPath: `/book-shelf/cenhan?layout=detailed&view=all#book-${randomBookId}`,
-  };
+const pickCenhanQuote = () => {
+  const cenhanQuotes = buildCenhanQuotePool();
+  return cenhanQuotes.length > 0 ? pickRandom(cenhanQuotes) : null;
 };
 
-const normalizeQuotes = (quotes) => {
-  if (Array.isArray(quotes)) {
-    return quotes.filter(Boolean);
+const buildPublicQuoteGroups = async () => {
+  const users = await getAllUsers();
+  const publicUsersWithQuotes = users.filter(
+    (user) =>
+      user.id !== CENHAN_EMAIL &&
+      user.isPublic !== false &&
+      Number(user.quoteCount || 0) > 0,
+  );
+
+  const userQuoteGroups = await Promise.all(
+    publicUsersWithQuotes.map(async (user) => {
+      const userPathName = encodeURIComponent(getUserPathName(user));
+      const userBooks = await getBooksByUser(user.id);
+      const quotes = userBooks.flatMap((book) =>
+        normalizeQuotes(book.quotes).map((quote, index) => ({
+          text: getQuoteBodyText(quote),
+          html: getQuoteContentHtml(quote),
+          book: book.title,
+          source: getUserDisplayName(user),
+          quotePath: `/book-shelf/${userPathName}/book/${book.id}/quotes#quote-${index}`,
+          shelfPath: `/book-shelf/${userPathName}`,
+          bookPath: `/book-shelf/${userPathName}?layout=detailed&view=all#book-${book.id}`,
+        })),
+      );
+
+      return quotes.length > 0
+        ? {
+            userId: user.id,
+            source: getUserDisplayName(user),
+            quotes,
+          }
+        : null;
+    }),
+  );
+
+  return userQuoteGroups.filter(Boolean);
+};
+
+const getPublicQuoteGroups = async () => {
+  const now = Date.now();
+  if (
+    publicQuoteGroupsCache &&
+    now - publicQuoteGroupsCacheAt < HEADER_QUOTE_CACHE_TTL_MS
+  ) {
+    return publicQuoteGroupsCache;
   }
 
-  if (typeof quotes === "string") {
-    return quotes
-      .split("\n")
-      .map((quote) => quote.trim())
-      .filter(Boolean);
-  }
+  if (publicQuoteGroupsPromise) return publicQuoteGroupsPromise;
 
-  return [];
+  publicQuoteGroupsPromise = (async () => {
+    const groups = await buildPublicQuoteGroups();
+    publicQuoteGroupsCache = groups;
+    publicQuoteGroupsCacheAt = Date.now();
+    publicQuoteGroupsPromise = null;
+    return groups;
+  })().catch((err) => {
+    publicQuoteGroupsPromise = null;
+    throw err;
+  });
+
+  return publicQuoteGroupsPromise;
+};
+
+const pickHeaderQuote = (publicQuoteGroups) => {
+  const candidates = [
+    { type: "cenhan" },
+    ...publicQuoteGroups.map((group) => ({ type: "public", group })),
+  ];
+  const selectedCandidate = pickRandom(candidates);
+
+  if (selectedCandidate.type === "cenhan") return pickCenhanQuote();
+  return pickRandom(selectedCandidate.group.quotes);
 };
 
 const getUserDisplayName = (user) =>
@@ -73,6 +140,7 @@ const Header = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [selectedQuote, setSelectedQuote] = useState({
     text: "",
+    html: "",
     book: "",
     source: "",
     quotePath: "",
@@ -89,55 +157,19 @@ const Header = () => {
     let cancelled = false;
 
     const selectRandomQuote = async () => {
-      const fallbackQuote = selectCenhanQuote();
-      if (fallbackQuote) {
-        setSelectedQuote(fallbackQuote);
+      if (!publicQuoteGroupsCache) {
+        const fallbackQuote = pickCenhanQuote();
+        if (!cancelled && fallbackQuote) setSelectedQuote(fallbackQuote);
       }
 
       try {
-        const users = await getAllUsers();
-        const publicUsersWithQuotes = users.filter(
-          (user) =>
-            user.id !== CENHAN_EMAIL &&
-            user.isPublic !== false &&
-            Number(user.quoteCount || 0) > 0,
-        );
-        const candidates = [
-          { type: "cenhan" },
-          ...publicUsersWithQuotes.map((user) => ({ type: "user", user })),
-        ];
-        const selectedCandidate = pickRandom(candidates);
-
-        if (selectedCandidate.type === "cenhan") {
-          if (!cancelled && fallbackQuote) setSelectedQuote(fallbackQuote);
-          return;
-        }
-
-        const userPathName = encodeURIComponent(
-          getUserPathName(selectedCandidate.user),
-        );
-        const userBooks = await getBooksByUser(selectedCandidate.user.id);
-        const userQuotes = userBooks.flatMap((book) =>
-          normalizeQuotes(book.quotes).map((quote, index) => ({
-            text: quote,
-            book: book.title,
-            source: getUserDisplayName(selectedCandidate.user),
-            quotePath: `/book-shelf/${userPathName}/book/${book.id}/quotes#quote-${index}`,
-            shelfPath: `/book-shelf/${userPathName}`,
-            bookPath: `/book-shelf/${userPathName}?layout=detailed&view=all#book-${book.id}`,
-          })),
-        );
-
-        if (!cancelled) {
-          setSelectedQuote(
-            userQuotes.length > 0 ? pickRandom(userQuotes) : fallbackQuote,
-          );
-        }
+        const publicQuoteGroups = await getPublicQuoteGroups();
+        const selected = pickHeaderQuote(publicQuoteGroups);
+        if (!cancelled && selected) setSelectedQuote(selected);
       } catch (err) {
         console.error("Header selectRandomQuote:", err);
-        if (!cancelled && fallbackQuote) {
-          setSelectedQuote(fallbackQuote);
-        }
+        const fallbackQuote = pickCenhanQuote();
+        if (!cancelled && fallbackQuote) setSelectedQuote(fallbackQuote);
       }
     };
 
@@ -146,7 +178,7 @@ const Header = () => {
     return () => {
       cancelled = true;
     };
-  }, [location.pathname, location.state]);
+  }, [location.pathname, location.search, location.state]);
 
   const handleQuoteClick = (event) => {
     event?.stopPropagation();
@@ -248,7 +280,7 @@ const Header = () => {
                 }}
                 onClick={handleQuoteClick}
               >
-                "{selectedQuote.text}"
+                "{selectedQuote.html ? parse(selectedQuote.html) : selectedQuote.text}"
               </span>
             </Textfit>
             <div

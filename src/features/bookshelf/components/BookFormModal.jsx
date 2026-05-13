@@ -28,6 +28,12 @@ import {
   ModalSubmittingOverlay,
   ModalTitle,
 } from "./ModalFormParts";
+import {
+  QUOTE_COLOR_PALETTE,
+  countQuotes,
+  editorHtmlToQuotes,
+  quotesToEditorHtml,
+} from "../utils/quotes";
 import "./ModalForms.css";
 const getInitialFormData = () => ({
   title: "",
@@ -41,22 +47,12 @@ const getInitialFormData = () => ({
   dateFinished: "N/A",
   dateAdded: new Date().toISOString().split("T")[0],
   notes: "",
-  quotesText: "",
+  quotesHtml: "",
 });
 
-const quotesToText = (quotes) => {
-  if (Array.isArray(quotes)) {
-    return quotes.join("\n");
-  }
-
-  return typeof quotes === "string" ? quotes : "";
-};
-
-const textToQuotes = (text) =>
-  text
-    .split("\n")
-    .map((quote) => quote.trim())
-    .filter(Boolean);
+const quoteEditorColorMap = QUOTE_COLOR_PALETTE.filter(
+  (color) => color.value,
+).flatMap((color) => [color.value.replace("#", ""), color.label]);
 
 const dateInputValue = (value) => (value === "N/A" ? "" : value || "");
 
@@ -97,9 +93,10 @@ const BookFormModal = ({
     shelves: book?.shelves || ["to-read"],
     tags: book?.tags || [],
     coverBase64: book?.coverBase64 || "",
-    quotesText: quotesToText(book?.quotes),
+    quotesHtml: quotesToEditorHtml(book?.quotes),
   });
-  const quoteCount = textToQuotes(formData.quotesText || "").length;
+  const currentQuoteDrafts = editorHtmlToQuotes(formData.quotesHtml || "");
+  const quoteCount = countQuotes(currentQuoteDrafts);
   const hasValidationErrors = Object.values(validationErrors).some(Boolean);
 
   useEffect(() => {
@@ -113,7 +110,7 @@ const BookFormModal = ({
         shelves: book.shelves || ["to-read"],
         tags: book.tags || [],
         coverBase64: book.coverBase64 || "",
-        quotesText: quotesToText(book.quotes),
+        quotesHtml: quotesToEditorHtml(book.quotes),
       });
 
       // Update selected items
@@ -171,9 +168,9 @@ const BookFormModal = ({
       tags: selectedTags,
       shelves: selectedShelves,
       coverBase64: formData.coverBase64,
-      quotes: textToQuotes(formData.quotesText || ""),
+      quotes: editorHtmlToQuotes(formData.quotesHtml || ""),
     };
-    delete processedData.quotesText;
+    delete processedData.quotesHtml;
 
     setIsSubmitting(true);
     try {
@@ -437,18 +434,28 @@ const BookFormModal = ({
                 title="Quotes"
                 count={quoteCount > 0 ? quoteCount : undefined}
                 className="book-form-wide-section">
-                <textarea
-                  className={`form-control book-form-quotes ${
-                    darkMode ? "bg-dark text-light" : ""
-                  }`}
-                  rows={6}
-                  value={formData.quotesText}
-                  placeholder={
-                    "Add one quote per line. Each line will be saved as a separate quote."
+                <Editor
+                  value={formData.quotesHtml}
+                  onEditorChange={(content) =>
+                    setFormData({ ...formData, quotesHtml: content })
                   }
-                  onChange={(e) =>
-                    setFormData({ ...formData, quotesText: e.target.value })
-                  }
+                  init={{
+                    height: 220,
+                    width: "100%",
+                    menubar: false,
+                    skin: darkMode ? "oxide-dark" : "oxide",
+                    content_css: darkMode ? "dark" : "default",
+                    placeholder:
+                      "Chapter 2: The Theory of Love -- Without love, humanity could not exist for a day.\nChapter 2: The Theory of Love / Self-Love -- Love yourself as one among many.",
+                    plugins: [],
+                    toolbar:
+                      "undo redo | bold italic underline | forecolor removeformat",
+                    color_map: quoteEditorColorMap,
+                    custom_colors: false,
+                    forced_root_block: "p",
+                    content_style:
+                      "body { font-size: 15px; line-height: 1.65; } p { margin: 0 0 0.75rem; } .mce-content-body[data-mce-placeholder]::before { white-space: pre-line; }",
+                  }}
                 />
               </FormSection>
             </div>

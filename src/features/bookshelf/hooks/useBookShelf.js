@@ -21,6 +21,7 @@ import {
   upsertTagColor,
   removeTagColor,
 } from "../../../services/profile.service";
+import { countQuotes } from "../utils/quotes";
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -60,21 +61,6 @@ const setCachedShelf = (email, books, profileData) => {
     profileData,
     cachedAt: Date.now(),
   });
-};
-
-const countQuotes = (quotes) => {
-  if (Array.isArray(quotes)) {
-    return quotes.filter(Boolean).length;
-  }
-
-  if (typeof quotes === "string") {
-    return quotes
-      .split("\n")
-      .map((quote) => quote.trim())
-      .filter(Boolean).length;
-  }
-
-  return 0;
 };
 
 const syncQuoteCountDelta = async (email, delta) => {
