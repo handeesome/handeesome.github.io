@@ -1,4 +1,4 @@
-import{G as N,j as t,c as b,u as Z,d as Je,H as u,I as ge,J as ve,K as et,L as de,Q as tt,g as nt,M as ot,B as rt}from"./index-2Ffjy6sE.js";import{H as ye,B as xe}from"./BookShelf-Duq1lHpJ.js";import{M as W,u as it,g as at}from"./useUsers-CRcpUTql.js";import{g as st}from"./bookCovers-BZOOPHY3.js";import{Q as lt}from"./quote-B0m3l-Dr.js";import{u as ct}from"./useBookShelf-2oQ3eX4A.js";import"./introductions-Dr4TtLH6.js";import"./GoBackButton-WZbUrNJp.js";/**
+import{G as N,j as t,c as b,u as Z,d as Je,H as u,I as ge,J as ve,K as et,L as de,Q as tt,g as nt,M as ot,B as rt}from"./index-Cjw0JuZG.js";import{H as ye,B as xe}from"./BookShelf-DJPvdObD.js";import{M as W,u as it,g as at}from"./useUsers-DwMrOhS7.js";import{g as st}from"./bookCovers-BZOOPHY3.js";import{Q as lt}from"./quote-B5cxx-FC.js";import{u as ct}from"./useBookShelf-BdChly4e.js";import"./introductions-Dr4TtLH6.js";import"./GoBackButton-4_BpeVqp.js";/**
  * @license lucide-react v0.541.0 - ISC
  *
  * This source code is licensed under the ISC license.
