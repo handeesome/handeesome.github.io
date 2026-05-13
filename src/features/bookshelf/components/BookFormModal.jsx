@@ -34,6 +34,7 @@ import {
   editorHtmlToQuotes,
   quotesToEditorHtml,
 } from "../utils/quotes";
+import { getBookCoverSrc } from "../utils/bookCovers";
 import "./ModalForms.css";
 const getInitialFormData = () => ({
   title: "",
@@ -499,7 +500,7 @@ const BookFormModal = ({
             author: bookData.author,
             pages: bookData.pages,
             rating: bookData.rating,
-            coverBase64: `/images/bookCovers/${bookData.coverId}.jpg`,
+            coverBase64: getBookCoverSrc(bookData.coverId),
           });
           setShowSearchModal(false);
         }}

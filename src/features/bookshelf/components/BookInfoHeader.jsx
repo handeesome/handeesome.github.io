@@ -1,11 +1,12 @@
 import { useTheme } from "../../../contexts/ThemeContext";
 import GoBackBtn from "../../../components/GoBackButton";
 import { useNavigate } from "react-router-dom";
+import { getBookCoverSrc, handleBookCoverError } from "../utils/bookCovers";
 
 const BookInfoHeader = ({ book, showReadingSessionsButton = false }) => {
   const { theme } = useTheme();
   const navigate = useNavigate();
-  const coverSrc = book.coverBase64 || `/images/bookCovers/${book.id}.jpg`;
+  const coverSrc = getBookCoverSrc(book);
   const pages = book["num pages"] ?? book.pages ?? "N/A";
 
   return (
@@ -20,9 +21,7 @@ const BookInfoHeader = ({ book, showReadingSessionsButton = false }) => {
                   alt={book.title}
                   className="img-fluid rounded"
                   style={{ maxHeight: "150px", objectFit: "cover" }}
-                  onError={(e) => {
-                    e.currentTarget.src = "/default-cover.jpg";
-                  }}
+                  onError={(e) => handleBookCoverError(e, book)}
                 />
               </div>
               <div className="col-md-10">

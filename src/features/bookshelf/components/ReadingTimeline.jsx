@@ -2,6 +2,7 @@ import "./ReadingTimeline.css";
 import { useNavigate } from "react-router-dom";
 import books from "../../../static/books/books.json";
 import togglData from "../../../static/books/toggl-data.json";
+import { getBookCoverSrc, handleBookCoverError } from "../utils/bookCovers";
 
 const parseBookDate = (date) => {
   if (!date) return null;
@@ -87,11 +88,9 @@ const ReadingTimeline = () => {
                 >
                   <img
                     className="timeline-book-cover"
-                    src={book.coverBase64 || `/images/bookCovers/${book.id}.jpg`}
+                    src={getBookCoverSrc(book)}
                     alt={book.title}
-                    onError={(e) => {
-                      e.currentTarget.src = "/default-cover.jpg";
-                    }}
+                    onError={(e) => handleBookCoverError(e, book)}
                   />
                   <h3>{getBookDisplayTitle(book)}</h3>
                 </button>

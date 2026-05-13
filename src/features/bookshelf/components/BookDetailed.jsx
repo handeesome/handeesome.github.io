@@ -9,6 +9,7 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
 import BookQuotes from "../../../static/books/book-quotes.json";
 import Introductions from "../../../static/books/introductions.json";
+import { getBookCoverSrc, handleBookCoverError } from "../utils/bookCovers";
 import { countQuotes } from "../utils/quotes";
 
 const BookDetailed = ({
@@ -87,16 +88,10 @@ const BookDetailed = ({
         {/* BookDetailed Cover */}
         <div className="col-md-4 d-flex justify-content-center mt-4">
           <img
-            src={
-              coverBase64 ||
-              `/images/bookCovers/${id}.jpg` ||
-              "/default-cover.jpg"
-            }
+            src={getBookCoverSrc({ id, coverBase64 })}
             alt={title}
             className="fixed-img rounded-start"
-            onError={(e) =>
-              (e.currentTarget.src = coverBase64 || "/default-cover.jpg")
-            }
+            onError={(e) => handleBookCoverError(e, { id, coverBase64 })}
           />
         </div>
 

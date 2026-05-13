@@ -20,6 +20,24 @@ field_map = {
 
 books_output = []
 
+def normalize_shelf_name(shelf):
+    return "want-to-read" if shelf == "to-read" else shelf
+
+def parse_shelf_list(value):
+    return [
+        normalize_shelf_name(shelf.strip())
+        for shelf in value.split(",")
+        if shelf.strip()
+    ]
+
+def get_shelves(row):
+    shelf_names = [
+        *parse_shelf_list(row.get("Bookshelves", "")),
+        *parse_shelf_list(row.get("Exclusive Shelf", "")),
+    ]
+
+    return list(dict.fromkeys(shelf_names)) or ["finished"]
+
 # Load modifications (if exists)
 modifications = {}
 if modification_file.exists():
@@ -37,11 +55,7 @@ with open(input_csv, newline='', encoding='utf-8') as csvfile:
             value = row.get(source_field, "").strip()
 
             if key == "shelves":
-                shelves_str = value or "finished"
-                shelves_list = [s.strip() for s in shelves_str.split(",")]
-
-                shelves_list = ["want-to-read" if s == "to-read" else s for s in shelves_list]
-                book["shelves"] = shelves_list
+                book["shelves"] = get_shelves(row)
             else:
                 book[key] = value or None
 

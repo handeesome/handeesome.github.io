@@ -2,6 +2,7 @@ import StarRating from "./StarRating";
 import { useNavigate, useParams } from "react-router-dom";
 import { hexToRgb } from "../../../utils/hexToRgb";
 import { useHideBtns } from "../../../contexts/HideBtnsContext";
+import { getBookCoverSrc, handleBookCoverError } from "../utils/bookCovers";
 
 const BookCard = ({
   book,
@@ -31,11 +32,7 @@ const BookCard = ({
       >
         <div className="position-relative">
           <img
-            src={
-              book.coverBase64 ||
-              `/images/bookCovers/${book.id}.jpg` ||
-              "/default-cover.jpg"
-            }
+            src={getBookCoverSrc(book)}
             alt={book.title}
             onClick={
               canViewQuotes ? () => navigate(quotePath) : undefined
@@ -46,9 +43,7 @@ const BookCard = ({
               height: "auto",
               cursor: canViewQuotes ? "pointer" : "default",
             }}
-            onError={(e) =>
-              (e.currentTarget.src = book.coverBase64 || "/default-cover.jpg")
-            }
+            onError={(e) => handleBookCoverError(e, book)}
           />
         </div>
 
