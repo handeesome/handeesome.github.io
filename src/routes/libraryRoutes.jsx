@@ -21,7 +21,6 @@ const createLibraryRoutes = (basePath) => (
     <Route index element={<LibraryOwners />} />
     <Route path=":userName" element={<Library />} />
     <Route path=":userName/book/:bookId/quotes" element={<UserBookQuotes />} />
-    <Route path="cenhan" element={<Library />} />
     <Route path="book/:bookId/analytics" element={<BookAnalytics />} />
     <Route path="book/:bookId/notes" element={<BookNotes />} />
     <Route path="cenhan/time-tracker" element={<TimeTracker />} />
