@@ -6,6 +6,7 @@
 import { db } from "../lib/firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import { countBooksByUser } from "./books.service";
+import { countMediaByUser } from "./media.service";
 
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
@@ -82,4 +83,14 @@ export async function getEmailFromDisplayName(displayName) {
  */
 export async function getBookCountForUser(userEmail) {
   return countBooksByUser(userEmail);
+}
+
+/**
+ * Count media items for a user without downloading document payloads.
+ *
+ * @param {string} userEmail
+ * @returns {Promise<number>}
+ */
+export async function getMediaCountForUser(userEmail) {
+  return countMediaByUser(userEmail);
 }

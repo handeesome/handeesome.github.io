@@ -9,6 +9,7 @@ import {
   getAllUsers,
   getEmailFromDisplayName,
   getBookCountForUser,
+  getMediaCountForUser,
 } from "../services/users.service";
 import staticUsers from "../static/users.json";
 
@@ -22,6 +23,7 @@ import staticUsers from "../static/users.json";
  *   users: Array,
  *   loading: boolean,
  *   getBookCount: (email: string) => Promise<number>,
+ *   getMediaCount: (email: string) => Promise<number>,
  *   getEmailFromDisplayName: (name: string) => Promise<string|null>,
  * }}
  */
@@ -60,6 +62,7 @@ export const useUsers = () => {
     users,
     loading,
     getBookCount:            getBookCountForUser,
+    getMediaCount:           getMediaCountForUser,
     getEmailFromDisplayName,
   };
 };

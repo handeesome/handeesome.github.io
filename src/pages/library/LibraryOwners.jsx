@@ -45,7 +45,7 @@ const LibraryOwners = () => {
 
   // Replaces the manual useEffect + getUserList() pattern.
   // useUsers() handles loading state and caching internally.
-  const { users, loading, getBookCount } = useUsers();
+  const { users, loading, getBookCount, getMediaCount } = useUsers();
 
   const [showModal, setShowModal] = useState(false);
   const [fetchingBookCount, setFetchingBookCount] = useState(false);
@@ -55,6 +55,7 @@ const LibraryOwners = () => {
     ownerName: "",
     src: "",
     booksNumber: null,
+    mediaNumber: null,
     description: "",
   });
 
@@ -67,7 +68,7 @@ const LibraryOwners = () => {
   };
 
   const handleToggleModal = (avatarData = {}) => {
-    setSelectedAvatar({ ...avatarData, booksNumber: null });
+    setSelectedAvatar({ ...avatarData, booksNumber: null, mediaNumber: null });
     setShowModal(true);
 
     if (avatarData.shelfPath) {
@@ -75,16 +76,29 @@ const LibraryOwners = () => {
       setTimeout(async () => {
         try {
           let bookCount;
+          let mediaCount;
           if (avatarData.shelfPath === "cenhan") {
             bookCount = books.length;
+            mediaCount = 0;
           } else {
-            // getBookCount now uses getCountFromServer — no full payload download
-            bookCount = await getBookCount(avatarData.userId);
+            // Count helpers use getCountFromServer — no full payload download.
+            [bookCount, mediaCount] = await Promise.all([
+              getBookCount(avatarData.userId),
+              getMediaCount(avatarData.userId),
+            ]);
           }
-          setSelectedAvatar((prev) => ({ ...prev, booksNumber: bookCount }));
+          setSelectedAvatar((prev) => ({
+            ...prev,
+            booksNumber: bookCount,
+            mediaNumber: mediaCount,
+          }));
         } catch (error) {
-          console.error("Error fetching book count:", error);
-          setSelectedAvatar((prev) => ({ ...prev, booksNumber: 0 }));
+          console.error("Error fetching library counts:", error);
+          setSelectedAvatar((prev) => ({
+            ...prev,
+            booksNumber: 0,
+            mediaNumber: 0,
+          }));
         } finally {
           setFetchingBookCount(false);
         }
@@ -252,16 +266,30 @@ const LibraryOwners = () => {
                 <strong>Owner:</strong> {selectedAvatar.ownerName || ""}
               </div>
               <div className="col-6">
-                {fetchingBookCount ? (
-                  <span
-                    className="spinner-border spinner-border-sm me-2"
-                    role="status"
-                    aria-hidden="true"
-                  ></span>
-                ) : (
-                  selectedAvatar.booksNumber ?? "..."
-                )}{" "}
-                <strong>Books</strong>
+                <div>
+                  {fetchingBookCount ? (
+                    <span
+                      className="spinner-border spinner-border-sm me-2"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                  ) : (
+                    selectedAvatar.booksNumber ?? "..."
+                  )}{" "}
+                  <strong>Books</strong>
+                </div>
+                <div className="mt-2">
+                  {fetchingBookCount ? (
+                    <span
+                      className="spinner-border spinner-border-sm me-2"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                  ) : (
+                    selectedAvatar.mediaNumber ?? "..."
+                  )}{" "}
+                  <strong>Media</strong>
+                </div>
               </div>
               <div className="col-12 mt-2">
                 <strong>Description:</strong>

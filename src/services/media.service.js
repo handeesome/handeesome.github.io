@@ -6,18 +6,25 @@ import {
   updateDoc,
   deleteDoc,
   getDocs,
+  getCountFromServer,
   writeBatch,
   query,
   where,
 } from "firebase/firestore";
 
 const mediaDoc = (mediaId) => doc(db, "media", mediaId);
+const mediaCol = (userEmail) =>
+  query(collection(db, "media"), where("userEmail", "==", userEmail));
 const BATCH_LIMIT = 499;
 
 export async function getMediaByUser(userEmail) {
-  const q = query(collection(db, "media"), where("userEmail", "==", userEmail));
-  const snap = await getDocs(q);
+  const snap = await getDocs(mediaCol(userEmail));
   return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+export async function countMediaByUser(userEmail) {
+  const snap = await getCountFromServer(mediaCol(userEmail));
+  return snap.data().count;
 }
 
 export async function addMedia(userEmail, userId, mediaData) {
