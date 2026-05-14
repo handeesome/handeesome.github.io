@@ -57,8 +57,8 @@ const NavBar = ({ isScrolled }) => {
             <Link to="/games" className="nav-link" onClick={closeNavbar}>
               Games
             </Link>
-            <Link to="/book-shelf" className="nav-link" onClick={closeNavbar}>
-              Book Shelf
+            <Link to="/library" className="nav-link" onClick={closeNavbar}>
+              Library
             </Link>
 
             <div

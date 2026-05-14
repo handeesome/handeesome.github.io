@@ -9,9 +9,9 @@ import Header from "./components/layout/header/Header";
 import GoToTopButton from "./components/GoToTopButton.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import {
-  bookShelfRoutes,
-  editBookshelfRoute,
-} from "./routes/bookShelfRoutes.jsx";
+  libraryRoutes,
+  editLibraryRoute,
+} from "./routes/libraryRoutes.jsx";
 import { gamesRoutes } from "./routes/gameRoutes.jsx";
 
 const Projects = lazy(() => import("./pages/projects/Projects.jsx"));
@@ -28,8 +28,8 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="/study-notes" element={<StudyNotes />} />
-          {bookShelfRoutes}
-          {editBookshelfRoute}
+          {libraryRoutes}
+          {editLibraryRoute}
           {gamesRoutes}
         </Routes>
       </Suspense>

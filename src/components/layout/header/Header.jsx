@@ -13,7 +13,7 @@ import {
   getQuoteBodyText,
   getQuoteContentHtml,
   normalizeQuotes,
-} from "../../../features/bookshelf/utils/quotes";
+} from "../../../features/library/bookshelf/utils/quotes";
 
 const CENHAN_EMAIL = "ducenhandee@gmail.com";
 const CENHAN_SHELF_NAME = "乱七八糟de书架";
