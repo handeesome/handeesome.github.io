@@ -369,7 +369,11 @@ const BookShelf = ({
       title={displayTitle}
       titleRight={
         <div className="d-flex gap-2 align-items-center">
-          <GoBackBtn defaultDest="/library" text="Back to Library" />
+          <GoBackBtn
+            defaultDest="/library"
+            text="Back to Library"
+            preferDefaultDest
+          />
 
           {titleRight}
           {!hideTimeTracker && (

@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router-dom";
 
-const GoBackBtn = ({ defaultDest, text }) => {
+const GoBackBtn = ({ defaultDest, text, preferDefaultDest = false }) => {
   const navigate = useNavigate();
 
   return (
     <button
       className="btn btn-outline-info"
       onClick={() => {
-        if (window.history.length > 1) {
+        if (preferDefaultDest && defaultDest) {
+          navigate(defaultDest);
+        } else if (window.history.length > 1) {
           navigate(-1);
-        } else {
+        } else if (defaultDest) {
           navigate(defaultDest);
         }
       }}>

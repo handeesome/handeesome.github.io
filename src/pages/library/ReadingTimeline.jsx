@@ -12,7 +12,10 @@ const ReadingTimeline = () => {
       title="Reading Timeline"
       ref={boardRef}
       titleRight={
-        <GoBackBtn defaultDest="/library/cenhan" text="Back to Library" />
+        <GoBackBtn
+          defaultDest="/library/cenhan"
+          text="Go Back to Previous Page"
+        />
       }
     >
       <ReadingTimelineComponent />

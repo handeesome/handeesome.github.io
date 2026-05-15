@@ -41,15 +41,18 @@ const BookDetailed = ({
   const textRef = useRef(null);
   const navigate = useNavigate();
   const { userName } = useParams();
+  const isStaticLibrary = userName === "cenhan";
   const { theme } = useTheme();
   const { hideEditDelete, hideSessions, hideQuotes } = useHideBtns();
-  const quotePath = userName
+  const quotePath = userName && !isStaticLibrary
     ? `/book-shelf/${userName}/book/${id}/quotes`
     : `/book-shelf/book/${id}/notes`;
-  const quoteButtonLabel = userName
+  const quoteButtonLabel = userName && !isStaticLibrary
     ? "View Quotes"
     : `View ${BookQuotes[id]?.[1]?.length || 0} Notes`;
-  const canViewQuotes = !hideQuotes && (!userName || countQuotes(quotes) > 0);
+  const canViewQuotes =
+    !hideQuotes &&
+    (!userName || isStaticLibrary || countQuotes(quotes) > 0);
 
   useLayoutEffect(() => {
     const el = textRef.current;

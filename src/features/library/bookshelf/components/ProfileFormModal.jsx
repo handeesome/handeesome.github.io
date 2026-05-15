@@ -26,10 +26,10 @@ const ProfileFormModal = ({
 }) => {
   const [formData, setFormData] = useState({
     userName: profileData.userName || defaultName || "User",
-    shelfName: profileData.shelfName || defaultName || "User's Bookshelf",
+    shelfName: profileData.shelfName || defaultName || "User's Library",
     shelfDescription:
       profileData.shelfDescription ||
-      "This is a book shelf containing various books and collections.",
+      "This is a library containing various books and collections.",
     profilePictureBase64: profileData.avatarBase64 || "",
     cropData: null,
     isPublic: profileData.isPublic !== undefined ? profileData.isPublic : true,
@@ -104,7 +104,7 @@ const ProfileFormModal = ({
                 />
                 <span className="profile-form-switch-track" />
                 <span className="profile-form-switch-text">
-                  {formData.isPublic ? "Public shelf" : "Private shelf"}
+                  {formData.isPublic ? "Public library" : "Private library"}
                 </span>
               </label>
             </FormSection>
@@ -130,7 +130,7 @@ const ProfileFormModal = ({
                 </div>
                 <div className="profile-form-field">
                   <label htmlFor="shelfName" className="form-label">
-                    Shelf Name
+                    Library Name
                   </label>
                   <input
                     type="text"
@@ -140,13 +140,13 @@ const ProfileFormModal = ({
                     onChange={(e) =>
                       setFormData({ ...formData, shelfName: e.target.value })
                     }
-                    placeholder="Enter shelf name"
+                    placeholder="Enter library name"
                   />
                 </div>
               </div>
             </FormSection>
 
-            <FormSection icon={BookOpen} title="Shelf Details">
+            <FormSection icon={BookOpen} title="Library Details">
               <div className="profile-form-field">
                 <label htmlFor="description" className="form-label">
                   Description
@@ -171,7 +171,7 @@ const ProfileFormModal = ({
               <FileText size={18} />
               <div>
                 <div className="profile-form-preview-title">
-                  {formData.shelfName || "Untitled bookshelf"}
+                  {formData.shelfName || "Untitled library"}
                 </div>
                 <div className="profile-form-preview-text">
                   {formData.shelfDescription || "No description yet"}

@@ -18,12 +18,14 @@ const BookRow = ({
   const getTagColor = paramGetTagColor || defaultGetTagColor;
   const navigate = useNavigate();
   const { userName } = useParams();
-  const quotePath = userName
+  const isStaticLibrary = userName === "cenhan";
+  const quotePath = userName && !isStaticLibrary
     ? `/book-shelf/${userName}/book/${book.id}/quotes`
     : `/book-shelf/book/${book.id}/notes`;
   const { hideEditDelete, hideSessions, hideQuotes } = useHideBtns();
   const canViewQuotes =
-    !hideQuotes && (!userName || countQuotes(book.quotes) > 0);
+    !hideQuotes &&
+    (!userName || isStaticLibrary || countQuotes(book.quotes) > 0);
   return (
     <tr key={book.id} className="book-row">
       <td>
@@ -141,7 +143,7 @@ const BookRow = ({
                 className="btn btn-outline-secondary btn-sm"
                 onClick={() => navigate(quotePath)}
               >
-                📝 {userName ? "Quotes" : "Notes"}
+                📝 {userName && !isStaticLibrary ? "Quotes" : "Notes"}
               </button>
             )}
           </div>

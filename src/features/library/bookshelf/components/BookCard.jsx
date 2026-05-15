@@ -16,9 +16,10 @@ const BookCard = ({
 }) => {
   const navigate = useNavigate();
   const { userName } = useParams();
+  const isStaticLibrary = userName === "cenhan";
   // Move the useState hook here - now each BookCard has its own consistent hook
   const { hideEditDelete, hideSessions, hideQuotes } = useHideBtns();
-  const quotePath = userName
+  const quotePath = userName && !isStaticLibrary
     ? `/book-shelf/${userName}/book/${book.id}/quotes`
     : `/book-shelf/book/${book.id}/notes`;
   const canViewQuotes = !hideQuotes;

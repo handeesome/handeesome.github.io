@@ -234,11 +234,7 @@ const LibraryOwners = () => {
       <Modal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
-        title={
-          selectedAvatar.ownerName
-            ? `${selectedAvatar.ownerName}'s Library`
-            : "Library"
-        }
+        title={selectedAvatar.shelfName || "Library"}
         size="lg"
       >
         <div className="row">

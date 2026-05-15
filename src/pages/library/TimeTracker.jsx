@@ -512,7 +512,10 @@ const TogglChart = () => {
     <Board
       title="Time Tracker"
       titleRight={
-        <GoBackBtn defaultDest="/library" text="Back to Library" />
+        <GoBackBtn
+          defaultDest="/library"
+          text="Go Back to Previous Page"
+        />
       }>
       <div className={`shadow-lg border-0 mb-4 ${cardDark}`}>
         <div className="card-body p-4">
