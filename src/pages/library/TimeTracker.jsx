@@ -3,6 +3,7 @@ import Board from "../../features/profile/components/Board";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import "./TimeTracker.css";
 
 import {
   XAxis,
@@ -138,7 +139,9 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
       <Overlay
         target={CalendarRef.current}
         show={showCalendar}
-        placement="bottom-end">
+        placement="bottom-end"
+        rootClose
+        onHide={() => setShowCalendar(false)}>
         {(props) => (
           <Popover {...props} className="calendar-popover">
             <Popover.Body>
@@ -517,7 +520,7 @@ const TogglChart = () => {
           text="Go Back to Previous Page"
         />
       }>
-      <div className={`shadow-lg border-0 mb-4 ${cardDark}`}>
+      <div className={`time-tracker-card shadow-lg border-0 mb-4 ${cardDark}`}>
         <div className="card-body p-4">
           <div className="mb-4 d-flex justify-content-center">
             <WeekStrip
