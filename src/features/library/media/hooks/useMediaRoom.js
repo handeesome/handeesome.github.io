@@ -140,7 +140,7 @@ export const useMediaRoom = (user, currentViewingUserEmail = null) => {
         return true;
       } catch (err) {
         console.error("addMedia:", err);
-        return false;
+        throw err;
       }
     },
     [canEdit, getCurrentUserEmail, getCurrentUserId]
@@ -160,7 +160,7 @@ export const useMediaRoom = (user, currentViewingUserEmail = null) => {
         return true;
       } catch (err) {
         console.error("updateMedia:", err);
-        return false;
+        throw err;
       }
     },
     [canEdit]

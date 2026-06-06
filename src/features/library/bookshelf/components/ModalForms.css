@@ -1,5 +1,6 @@
 /* Shared polished modal form surfaces */
 .book-form-modal {
+  position: relative;
   border: 0;
   border-radius: 12px;
   overflow: hidden;
@@ -52,6 +53,60 @@
 
 .book-form {
   padding: 1.25rem;
+}
+
+.book-form-submit-error {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 20;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(220, 53, 69, 0.28);
+  border-radius: 10px;
+  background: #fff5f5;
+  color: #842029;
+  box-shadow: 0 12px 28px rgba(132, 32, 41, 0.14);
+}
+
+.book-form-submit-error svg {
+  flex: 0 0 auto;
+  margin-top: 0.1rem;
+}
+
+.book-form-submit-error-copy {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.book-form-submit-error-copy strong {
+  font-size: 0.92rem;
+}
+
+.book-form-submit-error-copy span {
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.book-form-submit-error-close {
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 0.55rem;
+}
+
+.bg-dark .book-form-submit-error {
+  border-color: rgba(248, 215, 218, 0.28);
+  background: rgba(132, 32, 41, 0.9);
+  color: #f8d7da;
+}
+
+.bg-dark .book-form-submit-error-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
 }
 
 .book-form-grid {

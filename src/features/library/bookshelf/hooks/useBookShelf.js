@@ -188,7 +188,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         return true;
       } catch (err) {
         console.error("addBook:", err);
-        return false;
+        throw err;
       }
     },
     [canEdit, getCurrentUserEmail, getCurrentUserId]
@@ -210,7 +210,7 @@ export const useBookshelf = (user, currentViewingUserEmail = null) => {
         return true;
       } catch (err) {
         console.error("updateBook:", err);
-        return false;
+        throw err;
       }
     },
     [canEdit, books]

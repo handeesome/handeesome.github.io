@@ -1,17 +1,28 @@
 import { useState } from "react";
+import { compressCoverImageFile } from "../utils/imageStorage";
 
 const CoverDropZone = ({ formData, setFormData }) => {
-  const handleFiles = (files) => {
+  const [isCompressing, setIsCompressing] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+
+  const handleFiles = async (files) => {
     const file = files[0];
     if (file && file.type.startsWith("image/")) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
+      setUploadError("");
+      setIsCompressing(true);
+
+      try {
+        const coverBase64 = await compressCoverImageFile(file);
         setFormData({
           ...formData,
-          coverBase64: reader.result,
+          coverBase64,
         });
-      };
-      reader.readAsDataURL(file);
+      } catch (error) {
+        console.error("compressCoverImageFile:", error);
+        setUploadError("Could not use this image");
+      } finally {
+        setIsCompressing(false);
+      }
     }
   };
 
@@ -46,7 +57,9 @@ const CoverDropZone = ({ formData, setFormData }) => {
         fontSize: "0.9rem",
         textAlign: "center",
       }}>
-      {formData.coverBase64 ? (
+      {isCompressing ? (
+        <div style={{ padding: "10px", color: "#888" }}>Preparing cover...</div>
+      ) : formData.coverBase64 ? (
         <img
           src={formData.coverBase64}
           alt="Book cover"
@@ -57,6 +70,12 @@ const CoverDropZone = ({ formData, setFormData }) => {
           Drag your file here
           <br />
           or click to upload
+          {uploadError && (
+            <>
+              <br />
+              <span style={{ color: "#dc3545" }}>{uploadError}</span>
+            </>
+          )}
         </div>
       )}
     </div>

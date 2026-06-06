@@ -24,8 +24,10 @@ import Modal from "../../../../components/ui/Modal";
 import { useTheme } from "../../../../contexts/ThemeContext";
 import {
   FormSection,
+  getModalSubmitErrorMessage,
   ModalFooterActions,
   ModalSubmittingOverlay,
+  ModalSubmitErrorAlert,
   ModalTitle,
 } from "./ModalFormParts";
 import {
@@ -35,6 +37,10 @@ import {
   quotesToEditorHtml,
 } from "../utils/quotes";
 import { getBookCoverSrc } from "../utils/bookCovers";
+import {
+  FIRESTORE_FIELD_VALUE_LIMIT_BYTES,
+  isFirestoreCoverTooLarge,
+} from "../utils/imageStorage";
 import "./ModalForms.css";
 const getInitialFormData = () => ({
   title: "",
@@ -78,6 +84,7 @@ const BookFormModal = ({
   const [validationErrors, setValidationErrors] = useState({});
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [showShelfNameModal, setShowShelfNameModal] = useState(false);
 
   const { theme } = useTheme();
@@ -155,6 +162,7 @@ const BookFormModal = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     setValidationErrors({});
+    setSubmitError("");
     const errors = {};
 
     if (selectedShelves.length === 0) {
@@ -185,9 +193,26 @@ const BookFormModal = ({
     };
     delete processedData.quotesHtml;
 
+    if (isFirestoreCoverTooLarge(processedData.coverBase64)) {
+      setSubmitError(
+        getModalSubmitErrorMessage(
+          new Error(
+            `The value of property "coverBase64" is longer than ${FIRESTORE_FIELD_VALUE_LIMIT_BYTES} bytes.`
+          ),
+          "book"
+        )
+      );
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      await onSubmit(processedData);
+      const success = await onSubmit(processedData);
+
+      if (success === false) {
+        setSubmitError(getModalSubmitErrorMessage(null, "book"));
+        return;
+      }
 
       // Only reset form data for new books (when book.id doesn't exist)
       if (!book?.id) {
@@ -195,6 +220,8 @@ const BookFormModal = ({
         setSelectedTags([]);
         setSelectedShelves([]);
       }
+    } catch (err) {
+      setSubmitError(getModalSubmitErrorMessage(err, "book"));
     } finally {
       setIsSubmitting(false);
     }
@@ -204,7 +231,7 @@ const BookFormModal = ({
     <ModalFooterActions
       formId="bookForm"
       isLoading={isSubmitting}
-      loadingLabel="Updating..."
+      loadingLabel={book?.id ? "Updating..." : "Adding..."}
       onCancel={onCancel}
       submitIcon={book?.id ? Save : Plus}
       submitLabel={book?.id ? "Update Book" : "Add Book"}
@@ -223,9 +250,19 @@ const BookFormModal = ({
         className="book-form-modal"
         bodyClassName="book-form-modal-body"
         maxHeight="calc(100vh - 10rem)"
-        footer={modalFooter}>
-        {isSubmitting && <ModalSubmittingOverlay label="Updating book..." />}
+        footer={modalFooter}
+        overlay={
+          isSubmitting ? (
+            <ModalSubmittingOverlay
+              label={book?.id ? "Updating book..." : "Adding book..."}
+            />
+          ) : null
+        }>
         <form onSubmit={handleSubmit} id="bookForm" className="book-form">
+          <ModalSubmitErrorAlert
+            message={submitError}
+            onDismiss={() => setSubmitError("")}
+          />
           <div className="book-form-grid">
             <aside className="book-form-cover-panel">
               <div className="book-form-cover-sticky">

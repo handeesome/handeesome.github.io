@@ -10,6 +10,7 @@ const Modal = ({
   size = "md", // sm, md, lg, xl
   showCloseButton = true,
   footer = null,
+  overlay = null,
   className = "",
   bodyClassName = "",
   maxHeight = null,
@@ -85,6 +86,7 @@ const Modal = ({
           </div>
 
           {footer && <div className="modal-footer">{footer}</div>}
+          {overlay}
         </div>
       </div>
     </div>

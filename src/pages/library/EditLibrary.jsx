@@ -87,6 +87,7 @@ const EditLibrary = () => {
     if (success) {
       setShowAddForm(false);
     }
+    return success;
   };
 
   const handleUpdateBook = async (bookData) => {
@@ -94,6 +95,7 @@ const EditLibrary = () => {
     if (success) {
       setEditingBook(null);
     }
+    return success;
   };
 
   const handleAddMedia = async (mediaData) => {
@@ -101,6 +103,7 @@ const EditLibrary = () => {
     if (success) {
       setShowAddForm(false);
     }
+    return success;
   };
 
   const handleUpdateMedia = async (mediaData) => {
@@ -108,6 +111,7 @@ const EditLibrary = () => {
     if (success) {
       setEditingMedia(null);
     }
+    return success;
   };
 
   const handleSignIn = async () => {

@@ -18,11 +18,17 @@ import TagManagementModal from "../../bookshelf/components/TagManagementModal";
 import { Editor } from "@tinymce/tinymce-react";
 import {
   FormSection,
+  getModalSubmitErrorMessage,
   ModalFooterActions,
   ModalSubmittingOverlay,
+  ModalSubmitErrorAlert,
   ModalTitle,
 } from "../../bookshelf/components/ModalFormParts";
 import { useTheme } from "../../../../contexts/ThemeContext";
+import {
+  FIRESTORE_FIELD_VALUE_LIMIT_BYTES,
+  isFirestoreCoverTooLarge,
+} from "../../bookshelf/utils/imageStorage";
 import "../../bookshelf/components/ModalForms.css";
 
 const today = () => new Date().toISOString().split("T")[0];
@@ -60,6 +66,7 @@ const MediaFormModal = ({
   const [showShelfNameModal, setShowShelfNameModal] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const allTags = Object.keys(tagColors || {});
   const { theme } = useTheme();
   const darkMode = theme === "dark";
@@ -107,6 +114,7 @@ const MediaFormModal = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
     setValidationErrors({});
+    setSubmitError("");
     const errors = {};
 
     if (!formData.title.trim()) errors.title = "Title is required";
@@ -128,14 +136,33 @@ const MediaFormModal = ({
       dateAdded: formData.dateAdded || today(),
     };
 
+    if (isFirestoreCoverTooLarge(processedData.coverBase64)) {
+      setSubmitError(
+        getModalSubmitErrorMessage(
+          new Error(
+            `The value of property "coverBase64" is longer than ${FIRESTORE_FIELD_VALUE_LIMIT_BYTES} bytes.`
+          ),
+          "media item"
+        )
+      );
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      await onSubmit(processedData);
+      const success = await onSubmit(processedData);
+      if (success === false) {
+        setSubmitError(getModalSubmitErrorMessage(null, "media item"));
+        return;
+      }
+
       if (!media?.id) {
         setFormData(getInitialFormData());
         setSelectedTags([]);
         setSelectedShelves([]);
       }
+    } catch (err) {
+      setSubmitError(getModalSubmitErrorMessage(err, "media item"));
     } finally {
       setIsSubmitting(false);
     }
@@ -165,9 +192,17 @@ const MediaFormModal = ({
         bodyClassName="book-form-modal-body"
         maxHeight="calc(100vh - 10rem)"
         footer={modalFooter}
+        overlay={
+          isSubmitting ? (
+            <ModalSubmittingOverlay label="Saving media..." />
+          ) : null
+        }
       >
-        {isSubmitting && <ModalSubmittingOverlay label="Saving media..." />}
         <form onSubmit={handleSubmit} id="mediaForm" className="book-form">
+          <ModalSubmitErrorAlert
+            message={submitError}
+            onDismiss={() => setSubmitError("")}
+          />
           <div className="book-form-fields media-form-fields">
             <FormSection
               icon={Clapperboard}

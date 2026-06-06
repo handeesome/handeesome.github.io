@@ -1,4 +1,28 @@
-import { LoaderCircle } from "lucide-react";
+import { AlertTriangle, LoaderCircle } from "lucide-react";
+import { FIRESTORE_FIELD_VALUE_LIMIT_BYTES } from "../utils/imageStorage";
+
+export const getModalSubmitErrorMessage = (error, itemLabel = "item") => {
+  const message = error?.message || "";
+  const text = `${error?.code || ""} ${message}`.toLowerCase();
+
+  if (
+    text.includes("coverbase64") &&
+    (text.includes(`${FIRESTORE_FIELD_VALUE_LIMIT_BYTES}`) ||
+      text.includes("longer than"))
+  ) {
+    return `This cover image is too large to save here. Please use a smaller image under 1 MB and try again.`;
+  }
+
+  if (text.includes("permission")) {
+    return `You do not have permission to save this ${itemLabel}. Please sign in again or check that you are editing the right library.`;
+  }
+
+  if (text.includes("network") || text.includes("offline")) {
+    return `Could not save this ${itemLabel} because the network looks unavailable. Please reconnect and try again.`;
+  }
+
+  return `Could not save this ${itemLabel}. Please try again.`;
+};
 
 export const ModalTitle = ({ icon: Icon, children }) => (
   <span className="book-form-title">
@@ -19,6 +43,26 @@ export const FormSection = ({ icon: Icon, title, count, className = "", children
     {children}
   </section>
 );
+
+export const ModalSubmitErrorAlert = ({ message, onDismiss }) => {
+  if (!message) return null;
+
+  return (
+    <div className="book-form-submit-error" role="alert">
+      <AlertTriangle size={20} />
+      <div className="book-form-submit-error-copy">
+        <strong>Save failed</strong>
+        <span>{message}</span>
+      </div>
+      <button
+        type="button"
+        className="btn-close book-form-submit-error-close"
+        onClick={onDismiss}
+        aria-label="Dismiss error"
+      />
+    </div>
+  );
+};
 
 export const ModalFooterActions = ({
   cancelLabel = "Cancel",
