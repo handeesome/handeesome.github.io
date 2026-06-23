@@ -1,0 +1,212 @@
+.project-markdown pre {
+  position: relative;
+  margin: 1.75rem 0;
+  padding: 3.4rem 1.15rem 1.15rem;
+  overflow-x: auto;
+  border: 1px solid rgba(13, 110, 253, 0.18);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(13, 110, 253, 0.12), transparent 4.2rem),
+    #f8fbff;
+  box-shadow:
+    0 18px 44px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.project-markdown pre::before {
+  position: absolute;
+  top: 0.85rem;
+  left: 3.8rem;
+  color: #0b5ed7;
+  content: "Example interaction";
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-markdown pre::after {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow:
+    1rem 0 0 #ffbd2e,
+    2rem 0 0 #28c840;
+  content: "";
+}
+
+.project-markdown pre code {
+  display: block;
+  color: #172033;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.project-chat-snippet {
+  margin: 1.75rem 0;
+  overflow: hidden;
+  border: 1px solid rgba(13, 110, 253, 0.18);
+  border-radius: 12px;
+  background: #f8fbff;
+  box-shadow:
+    0 18px 44px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.project-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(13, 110, 253, 0.14);
+  background: linear-gradient(90deg, rgba(13, 110, 253, 0.14), transparent);
+  color: #0b5ed7;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-chat-dots {
+  position: relative;
+  width: 2.62rem;
+  height: 0.62rem;
+  flex: 0 0 auto;
+}
+
+.project-chat-dots::before {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow:
+    1rem 0 0 #ffbd2e,
+    2rem 0 0 #28c840;
+  content: "";
+}
+
+.project-chat-thread {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+}
+
+.project-chat-message {
+  display: grid;
+  gap: 0.3rem;
+  max-width: min(82%, 620px);
+}
+
+.project-chat-message.ai {
+  justify-self: start;
+}
+
+.project-chat-message.me {
+  justify-self: end;
+  justify-items: end;
+}
+
+.project-chat-speaker {
+  color: #5f6f89;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.project-chat-bubble {
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.project-chat-message.ai .project-chat-bubble {
+  border: 1px solid rgba(13, 110, 253, 0.16);
+  border-top-left-radius: 4px;
+  background: #eef5ff;
+  color: #172033;
+}
+
+.project-chat-message.me .project-chat-bubble {
+  border-top-right-radius: 4px;
+  background: #0d6efd;
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(13, 110, 253, 0.24);
+}
+
+.dark .project-markdown pre {
+  border-color: rgba(88, 166, 255, 0.32);
+  background:
+    linear-gradient(180deg, rgba(88, 166, 255, 0.18), transparent 4.2rem),
+    #101826;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dark .project-markdown pre::before {
+  color: #8ec5ff;
+}
+
+.dark .project-markdown pre code {
+  color: #e6edf3;
+}
+
+.dark .project-chat-snippet {
+  border-color: rgba(88, 166, 255, 0.32);
+  background: #101826;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dark .project-chat-header {
+  border-bottom-color: rgba(88, 166, 255, 0.2);
+  background: linear-gradient(90deg, rgba(88, 166, 255, 0.18), transparent);
+  color: #8ec5ff;
+}
+
+.dark .project-chat-speaker {
+  color: #a8b3c7;
+}
+
+.dark .project-chat-message.ai .project-chat-bubble {
+  border-color: rgba(88, 166, 255, 0.22);
+  background: #172033;
+  color: #e6edf3;
+}
+
+.dark .project-chat-message.me .project-chat-bubble {
+  background: #2f81f7;
+  box-shadow: 0 10px 22px rgba(47, 129, 247, 0.28);
+}
+
+@media (max-width: 576px) {
+  .project-markdown pre {
+    padding: 3.2rem 0.9rem 1rem;
+  }
+
+  .project-markdown pre code {
+    font-size: 0.84rem;
+  }
+
+  .project-chat-thread {
+    padding: 0.9rem;
+  }
+
+  .project-chat-message {
+    max-width: 92%;
+  }
+
+  .project-chat-bubble {
+    font-size: 0.85rem;
+  }
+}
