@@ -468,6 +468,7 @@ const BookFormModal = ({
                     menubar: false,
                     skin: darkMode ? "oxide-dark" : "oxide",
                     content_css: darkMode ? "dark" : "default",
+                    highlight_on_focus: false,
 
                     placeholder:
                       "Add the book introduction or your thoughts about this book.",
@@ -503,6 +504,7 @@ const BookFormModal = ({
                     menubar: false,
                     skin: darkMode ? "oxide-dark" : "oxide",
                     content_css: darkMode ? "dark" : "default",
+                    highlight_on_focus: false,
                     placeholder:
                       "Chapter 2: The Theory of Love -- Without love, humanity could not exist for a day.\nChapter 2: The Theory of Love / Self-Love -- Love yourself as one among many.",
                     plugins: [],

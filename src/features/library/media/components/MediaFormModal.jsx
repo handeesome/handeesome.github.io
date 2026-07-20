@@ -349,6 +349,7 @@ const MediaFormModal = ({
                   menubar: false,
                   skin: darkMode ? "oxide-dark" : "oxide",
                   content_css: darkMode ? "dark" : "default",
+                  highlight_on_focus: false,
                   placeholder:
                     "Write review notes, reactions, or anything worth remembering.",
                   plugins: [
