@@ -17,6 +17,10 @@ import BookShelfNameModal from "../../bookshelf/components/BookShelfNameModal";
 import TagManagementModal from "../../bookshelf/components/TagManagementModal";
 import { Editor } from "@tinymce/tinymce-react";
 import {
+  TINYMCE_API_KEY,
+  TINYMCE_CLOUD_CHANNEL,
+} from "../../../../lib/tinymce-config";
+import {
   FormSection,
   getModalSubmitErrorMessage,
   ModalFooterActions,
@@ -333,6 +337,8 @@ const MediaFormModal = ({
               className="book-form-wide-section"
             >
               <Editor
+                apiKey={TINYMCE_API_KEY}
+                cloudChannel={TINYMCE_CLOUD_CHANNEL}
                 value={formData.review}
                 onEditorChange={(content) =>
                   setFormData({ ...formData, review: content })

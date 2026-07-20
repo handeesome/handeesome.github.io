@@ -20,6 +20,10 @@ import BookSearchBar from "./BookSearchBar";
 import FormDataTags from "./FormDataTags";
 import FormRow from "./FormRow";
 import { Editor } from "@tinymce/tinymce-react";
+import {
+  TINYMCE_API_KEY,
+  TINYMCE_CLOUD_CHANNEL,
+} from "../../../../lib/tinymce-config";
 import Modal from "../../../../components/ui/Modal";
 import { useTheme } from "../../../../contexts/ThemeContext";
 import {
@@ -452,6 +456,8 @@ const BookFormModal = ({
                 title="Notes"
                 className="book-form-wide-section">
                 <Editor
+                  apiKey={TINYMCE_API_KEY}
+                  cloudChannel={TINYMCE_CLOUD_CHANNEL}
                   value={formData.notes}
                   onEditorChange={(content) =>
                     setFormData({ ...formData, notes: content })
@@ -485,6 +491,8 @@ const BookFormModal = ({
                 count={quoteCount > 0 ? quoteCount : undefined}
                 className="book-form-wide-section">
                 <Editor
+                  apiKey={TINYMCE_API_KEY}
+                  cloudChannel={TINYMCE_CLOUD_CHANNEL}
                   value={formData.quotesHtml}
                   onEditorChange={(content) =>
                     setFormData({ ...formData, quotesHtml: content })

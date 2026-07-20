@@ -13,3 +13,20 @@
   background-size: cover;
   background-position: center;
 }
+
+.header-quote-fit {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.header-quote-fit__content {
+  width: 100%;
+  margin: 0;
+  overflow-wrap: anywhere;
+}

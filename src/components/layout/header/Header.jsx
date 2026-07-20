@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import { useTheme } from "../../../contexts/ThemeContext";
 import backgroundLight from "/src/assets/images/background_light.webp";
 import backgroundDark from "/src/assets/images/background_dark.webp";
 import bookQuotes from "../../../static/books/book-quotes.json";
-import { Textfit } from "react-textfit";
 import parse from "html-react-parser";
 import { getBooksByUser } from "../../../services/books.service";
 import { getAllUsers } from "../../../services/users.service";
@@ -18,10 +17,74 @@ import {
 const CENHAN_EMAIL = "ducenhandee@gmail.com";
 const CENHAN_SHELF_NAME = "乱七八糟de书架";
 const HEADER_QUOTE_CACHE_TTL_MS = 5 * 60 * 1000;
+// Match react-textfit's ability to keep even unusually long quotes visible.
+const HEADER_QUOTE_MIN_FONT_SIZE = 1;
+const HEADER_QUOTE_MAX_FONT_SIZE = 40;
 
 let publicQuoteGroupsCache = null;
 let publicQuoteGroupsCacheAt = 0;
 let publicQuoteGroupsPromise = null;
+
+const AutoFitText = ({ children, contentKey }) => {
+  const containerRef = useRef(null);
+  const contentRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const container = containerRef.current;
+    const content = contentRef.current;
+    if (!container || !content) return undefined;
+
+    let animationFrameId;
+    let cancelled = false;
+
+    const fitText = () => {
+      if (cancelled) return;
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(() => {
+        let low = HEADER_QUOTE_MIN_FONT_SIZE;
+        let high = HEADER_QUOTE_MAX_FONT_SIZE;
+        let best = low;
+
+        while (low <= high) {
+          const candidate = Math.floor((low + high) / 2);
+          content.style.fontSize = `${candidate}px`;
+
+          const fits =
+            content.scrollWidth <= container.clientWidth + 1 &&
+            content.scrollHeight <= container.clientHeight + 1;
+
+          if (fits) {
+            best = candidate;
+            low = candidate + 1;
+          } else {
+            high = candidate - 1;
+          }
+        }
+
+        content.style.fontSize = `${best}px`;
+      });
+    };
+
+    const resizeObserver = new ResizeObserver(fitText);
+    resizeObserver.observe(container);
+    fitText();
+    document.fonts?.ready.then(fitText);
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(animationFrameId);
+      resizeObserver.disconnect();
+    };
+  }, [contentKey]);
+
+  return (
+    <div ref={containerRef} className="header-quote-fit">
+      <div ref={contentRef} className="header-quote-fit__content">
+        {children}
+      </div>
+    </div>
+  );
+};
 
 const pickRandom = (items) => items[Math.floor(Math.random() * items.length)];
 
@@ -258,20 +321,8 @@ const Header = () => {
               justifyContent: "center",
             }}
           >
-            <Textfit
-              key={selectedQuote.text}
-              mode="multi"
-              max={40}
-              style={{
-                height: "100%",
-                fontStyle: "italic",
-                textAlign: "center",
-                lineHeight: "1.2",
-                margin: "0",
-                overflow: "hidden",
-                position: "relative",
-                zIndex: 1,
-              }}
+            <AutoFitText
+              contentKey={`${selectedQuote.text}:${selectedQuote.html}`}
             >
               <span
                 style={{
@@ -282,7 +333,7 @@ const Header = () => {
               >
                 "{selectedQuote.html ? parse(selectedQuote.html) : selectedQuote.text}"
               </span>
-            </Textfit>
+            </AutoFitText>
             <div
               style={{
                 display: "flex",
