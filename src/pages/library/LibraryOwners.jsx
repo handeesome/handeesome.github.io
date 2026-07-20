@@ -3,10 +3,11 @@ import Avatar from "../../components/ui/Avatar";
 import Modal from "../../components/ui/Modal";
 import { useUsers } from "../../hooks/useUsers";
 import { getDisplayNameFromEmail } from "../../utils/userUtils";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/auth-context";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import books from "../../static/books/books.json";
+import { getSignInErrorMessage } from "../../utils/authErrors";
 
 const GoogleIcon = () => (
   <svg
@@ -37,7 +38,12 @@ const GoogleIcon = () => (
 
 const LibraryOwners = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, signInWithGoogle } = useAuth();
+  const {
+    isAuthenticated,
+    loading: authLoading,
+    signingIn,
+    signInWithGoogle,
+  } = useAuth();
   const location = useLocation();
   const libraryBasePath = location.pathname.startsWith("/book-shelf")
     ? "/book-shelf"
@@ -63,7 +69,7 @@ const LibraryOwners = () => {
     try {
       await signInWithGoogle();
     } catch (error) {
-      alert("Error signing in. Please try again.");
+      alert(getSignInErrorMessage(error));
     }
   };
 
@@ -150,25 +156,36 @@ const LibraryOwners = () => {
       <Board
         title="Library Owners"
         titleRight={
-          <div
+          <button
+            type="button"
             className="btn btn-outline-primary"
+            disabled={!isAuthenticated && (authLoading || signingIn)}
+            aria-busy={signingIn}
             onClick={() => {
               if (isAuthenticated) {
                 navigate("/edit-library");
               } else {
-                handleSignIn();
+                void handleSignIn();
               }
             }}
           >
             {isAuthenticated ? (
               "Edit Your Library"
+            ) : signingIn ? (
+              <span className="d-inline-flex align-items-center gap-2">
+                <span
+                  className="spinner-border spinner-border-sm"
+                  aria-hidden="true"
+                />
+                Signing in...
+              </span>
             ) : (
               <span className="d-inline-flex align-items-center gap-2">
                 <GoogleIcon />
-                Access Library
+                {authLoading ? "Checking session..." : "Access Library"}
               </span>
             )}
-          </div>
+          </button>
         }
       >
         <div className="container" style={{ minHeight: "80vh" }}>

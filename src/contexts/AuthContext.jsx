@@ -1,5 +1,9 @@
 // contexts/AuthContext.jsx
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   signInWithPopup,
   GoogleAuthProvider,
@@ -7,39 +11,57 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth as firebaseAuth } from "../lib/firebase-config";
-
-const AuthContext = createContext();
+import { AuthContext } from "./auth-context";
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [signingIn, setSigningIn] = useState(false);
+  const signInInProgressRef = useRef(false);
 
   // Listen to authentication state changes
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-    });
+    const unsubscribe = onAuthStateChanged(
+      firebaseAuth,
+      (currentUser) => {
+        setUser(currentUser);
+        setLoading(false);
+      },
+      (error) => {
+        console.error("Error observing authentication state:", error);
+        setLoading(false);
+      },
+    );
 
     return () => unsubscribe();
   }, []);
 
   // Sign in with Google
   const signInWithGoogle = async () => {
+    if (signInInProgressRef.current) {
+      return null;
+    }
+
+    signInInProgressRef.current = true;
+    setSigningIn(true);
+
     const provider = new GoogleAuthProvider();
     try {
-      setLoading(true);
-      await signInWithPopup(firebaseAuth, provider);
-      // User state will be updated by onAuthStateChanged
+      // User state will be updated by onAuthStateChanged.
+      return await signInWithPopup(firebaseAuth, provider);
     } catch (error) {
-      console.error("Error signing in:", error);
-      setLoading(false);
-
-      if (error.code === "auth/popup-closed-by-user") {
-        return; // User closed popup, no error needed
-      } else {
-        throw error; // Let component handle the error
+      if (
+        error.code === "auth/popup-closed-by-user" ||
+        error.code === "auth/cancelled-popup-request"
+      ) {
+        return null;
       }
+
+      console.error("Error signing in:", error);
+      throw error; // Let the component show a user-friendly error
+    } finally {
+      signInInProgressRef.current = false;
+      setSigningIn(false);
     }
   };
 
@@ -63,6 +85,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     user,
     loading,
+    signingIn,
     isAuthenticated,
     isAdmin,
     signInWithGoogle,
@@ -70,13 +93,4 @@ export const AuthProvider = ({ children }) => {
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-};
-
-// Custom hook to use auth context
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
-  return context;
 };

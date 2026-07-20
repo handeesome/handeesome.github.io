@@ -6,7 +6,7 @@ import Board from "../../features/profile/components/Board";
 import BookShelf from "../../features/library/bookshelf/components/BookShelf";
 import BookFormModal from "../../features/library/bookshelf/components/BookFormModal";
 import { useBookshelf } from "../../features/library/bookshelf/hooks/useBookShelf";
-import { useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/auth-context";
 import UserToggleModal from "../../features/library/bookshelf/components/UserToggleModal";
 import { Users, User } from "lucide-react";
 import ProfileFormModal from "../../features/library/bookshelf/components/ProfileFormModal";
@@ -14,10 +14,17 @@ import LibraryCollectionSwitch from "../../features/library/components/LibraryCo
 import MediaRoom from "../../features/library/media/components/MediaRoom";
 import MediaFormModal from "../../features/library/media/components/MediaFormModal";
 import { useMediaRoom } from "../../features/library/media/hooks/useMediaRoom";
+import { getSignInErrorMessage } from "../../utils/authErrors";
 
 const EditLibrary = () => {
   // Get auth state from context
-  const { user, loading: authLoading, signInWithGoogle, signOut } = useAuth();
+  const {
+    user,
+    loading: authLoading,
+    signingIn,
+    signInWithGoogle,
+    signOut,
+  } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const activeCollection =
@@ -117,8 +124,8 @@ const EditLibrary = () => {
   const handleSignIn = async () => {
     try {
       await signInWithGoogle();
-    } catch {
-      alert("Error signing in. Please try again.");
+    } catch (error) {
+      alert(getSignInErrorMessage(error));
     }
   };
 
@@ -159,16 +166,17 @@ const EditLibrary = () => {
           <button
             className="btn btn-primary btn-lg"
             onClick={handleSignIn}
-            disabled={authLoading}>
-            {authLoading ? (
+            disabled={authLoading || signingIn}
+            aria-busy={signingIn}>
+            {signingIn ? (
               <>
                 <span
                   className="spinner-border spinner-border-sm me-2"
-                  role="status"></span>
+                  aria-hidden="true"></span>
                 Signing in...
               </>
             ) : (
-              "Sign in with Google"
+              authLoading ? "Checking session..." : "Sign in with Google"
             )}
           </button>
         </div>
