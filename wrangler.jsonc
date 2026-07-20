@@ -8,6 +8,10 @@
   },
   "routes": [
     {
+      "pattern": "ducenhan.com",
+      "custom_domain": true
+    },
+    {
       "pattern": "www.ducenhan.com",
       "custom_domain": true
     }
