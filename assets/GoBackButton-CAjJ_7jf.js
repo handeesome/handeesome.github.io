@@ -1,1 +1,0 @@
-import{a as t,j as a}from"./index-BS1VlOKP.js";const r=({defaultDest:n,text:o,preferDefaultDest:s=!1})=>{const i=t();return a.jsxs("button",{className:"btn btn-outline-info",onClick:()=>{s&&n?i(n):window.history.length>1?i(-1):n&&i(n)},children:["← ",o]})};export{r as G};
