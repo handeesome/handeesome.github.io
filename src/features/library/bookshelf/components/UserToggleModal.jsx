@@ -4,6 +4,7 @@ import { useTheme } from "../../../../contexts/ThemeContext";
 import Modal from "../../../../components/ui/Modal";
 import { getDisplayNameFromEmail } from "../../../../utils/userUtils";
 import { useUsers } from "../../../../hooks/useUsers";
+import "./UserToggleModal.css";
 
 const UserToggleModal = ({
   isOpen,
@@ -76,6 +77,7 @@ const UserToggleModal = ({
         </div>
       }
       size="md"
+      className="user-toggle-modal"
       footer={modalFooter}>
       <div className="mb-3">
         <small className="text-muted">
@@ -110,7 +112,7 @@ const UserToggleModal = ({
                 type="button"
                 className={`list-group-item list-group-item-action d-flex justify-content-between align-items-center ${
                   currentViewingEmail === user.email ? "active" : ""
-                }`}
+                } ${theme === "dark" ? "user-toggle-item-dark" : ""}`}
                 onClick={() => handleSwitchUser(user.email)}
                 disabled={loading || currentViewingEmail === user.email}>
                 <div>
@@ -133,7 +135,11 @@ const UserToggleModal = ({
         </div>
       )}
 
-      <div className="alert alert-info mt-3" role="alert">
+      <div
+        className={`alert alert-info mt-3 ${
+          theme === "dark" ? "user-toggle-info-dark" : ""
+        }`}
+        role="alert">
         <small>
           <strong>Note:</strong> This feature is only available for admin users.
           Switching users will reload the bookshelf data for the selected

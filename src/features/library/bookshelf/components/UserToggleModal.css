@@ -1,0 +1,34 @@
+.user-toggle-modal.bg-dark {
+  border-color: #495057;
+}
+
+.user-toggle-modal.bg-dark .modal-header,
+.user-toggle-modal.bg-dark .modal-footer {
+  border-color: #495057;
+}
+
+.user-toggle-item-dark:not(.active) {
+  color: #f1f3f5;
+  background-color: #212529;
+  border-color: #495057;
+}
+
+.user-toggle-item-dark:not(.active):hover,
+.user-toggle-item-dark:not(.active):focus-visible {
+  color: #fff;
+  background-color: #343a40;
+}
+
+.user-toggle-item-dark.active .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.user-toggle-info-dark {
+  color: #9eeaf9;
+  background-color: #0c3b45;
+  border-color: #087990;
+}
+
+.user-toggle-info-dark strong {
+  color: inherit;
+}
