@@ -1,0 +1,1 @@
+import{O as r,c as e}from"./index-CaY7-6Kn.js";const a=({scrollRef:o})=>{const{pathname:t}=r();return e.useEffect(()=>{o?.current?.scrollIntoView({behavior:"smooth",block:"start"})},[t,o]),null};export{a as S};
