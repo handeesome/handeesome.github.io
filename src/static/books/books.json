@@ -1,612 +1,104 @@
 [
   {
-    "id": "125974",
-    "title": "Purity of Heart is to Will One Thing: Spiritual Preparation for the Office of Confession",
-    "author": "Søren Kierkegaard",
-    "num pages": "220",
-    "avg rating": 4.23,
-    "shelves": ["currently-reading"],
+    "id": "33986067",
+    "title": "Deep Learning with Python",
+    "author": "François Chollet",
+    "num pages": "350",
+    "avg rating": "4.57",
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
-    "date added": "2026/01/10",
-    "title2": "清心志于一事",
-    "tags": ["religion", "philosophy"]
-  },
-  {
-    "id": "23507559",
-    "title": "小顾聊绘画",
-    "author": "顾爷",
-    "num pages": "256",
-    "avg rating": 3.99,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/04/30",
-    "date added": "2026/01/08",
+    "date added": "2026/08/25",
     "title2": "",
-    "tags": ["arts"]
+    "tags": [
+      "programming"
+    ]
   },
   {
-    "id": "14059361",
-    "title": "ナミヤ雑貨店の奇蹟",
-    "author": "Keigo Higashino",
-    "num pages": "385",
-    "avg rating": 4.41,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/05/05",
-    "date added": "2026/01/09",
-    "title2": "解忧杂货店",
-    "tags": ["fiction", "contemporary"]
-  },
-  {
-    "id": "25037087",
-    "title": "小顾聊绘画·贰",
-    "author": "顾爷Gu Ye",
-    "num pages": "242",
-    "avg rating": 3.88,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/05/05",
-    "date added": "2026/03/26",
-    "title2": "",
-    "tags": ["arts"]
-  },
-  {
-    "id": "212108726",
-    "title": "小顾聊绘画·叁",
-    "author": "顾爷",
-    "num pages": "223",
-    "avg rating": 3.75,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/05/07",
-    "date added": "2026/03/26",
-    "title2": "",
-    "tags": ["arts"]
-  },
-  {
-    "id": "23692271",
-    "title": "Sapiens: A Brief History of Humankind",
-    "author": "Yuval Noah Harari",
-    "num pages": "512",
-    "avg rating": 4.33,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/05/11",
-    "date added": "2026/01/09",
-    "title2": "人类简史",
-    "tags": ["history", "essays", "social-science"]
-  },
-  {
-    "id": "16005941",
-    "title": "Storia del nuovo cognome",
-    "author": "Elena Ferrante",
-    "num pages": "470",
-    "avg rating": 4.46,
-    "shelves": ["currently-reading"],
-    "date read": null,
-    "date added": "2026/01/12",
-    "title2": "新名字的故事",
-    "tags": ["fiction", "contemporary"]
-  },
-  {
-    "id": "779021",
-    "title": "The Happy Prince and Other Tales",
-    "author": "Oscar Wilde",
-    "num pages": "96",
-    "avg rating": "4.16",
-    "shelves": ["currently-reading"],
-    "date read": null,
-    "date added": "2026/05/12",
-    "title2": "快乐王子与其他故事",
-    "tags": ["fiction", "classics"]
-  },
-  {
-    "id": "12913570",
-    "title": "L'amica geniale",
-    "author": "Elena Ferrante",
-    "num pages": "327",
-    "avg rating": 4.05,
-    "shelves": ["read"],
-    "date read": "2026/05/12",
-    "date added": "2026/01/12",
-    "title2": "我的天才女友",
-    "tags": ["fiction", "contemporary"]
-  },
-  {
-    "id": "14142",
-    "title": "The Art of Loving",
-    "author": "Erich Fromm",
-    "num pages": "180",
-    "avg rating": "4.00",
-    "shelves": ["currently-reading"],
-    "date read": null,
-    "date added": "2026/05/09",
-    "title2": "爱的艺术",
-    "tags": ["psychology", "philosophy"]
-  },
-  {
-    "id": "18905230",
-    "title": "Counselling for Toads: A Psychological Adventure",
-    "author": "Robert De Board",
-    "num pages": "153",
-    "avg rating": 4.28,
-    "shelves": ["read"],
-    "date read": "2026/05/11",
-    "date added": "2026/01/09",
-    "title2": "蛤蟆先生去看心理医生",
-    "tags": ["psychology"]
-  },
-  {
-    "id": "221282",
-    "title": "A Tale of Three Kings: A Study in Brokenness",
-    "author": "Gene Edwards",
-    "num pages": "105",
-    "avg rating": 4.3,
-    "shelves": ["read"],
-    "date read": "2026/05/10",
-    "date added": "2026/01/10",
-    "title2": "三王演义",
-    "tags": ["religion"]
-  },
-  {
-    "id": "43722897",
-    "title": "The Art of Statistics: How to Learn from Data",
-    "author": "David Spiegelhalter",
-    "num pages": "448",
-    "avg rating": 4.15,
-    "shelves": ["currently-reading"],
-    "date read": null,
-    "date added": "2026/02/05",
-    "title2": "统计的艺术",
-    "tags": ["statistics"]
-  },
-  {
-    "id": "21122",
-    "title": "The Coming of Age",
-    "author": "Simone de Beauvoir",
-    "num pages": "592",
-    "avg rating": 3.93,
-    "shelves": ["read"],
-    "date read": "2026/05/06",
-    "date added": "2025/10/02",
-    "title2": "论老年",
-    "tags": ["philosophy", "social-science", "essays"]
-  },
-  {
-    "id": "52249653",
-    "title": "从量子到宇宙——颠覆人类认知的科学之旅",
-    "author": "高鹏",
-    "num pages": "219",
-    "avg rating": 4.0,
-    "shelves": ["read"],
-    "date read": "2026/05/05",
-    "date added": "2026/01/08",
-    "title2": "From Quantum to UNIVERSE",
-    "tags": ["science"]
-  },
-  {
-    "id": "51374",
-    "title": "Changes That Heal: How to Understand the Past to Ensure a Healthier Future",
-    "author": "Henry Cloud",
-    "num pages": "368",
-    "avg rating": 4.37,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/04/07",
-    "date added": "2026/02/10",
-    "title2": "改变带来医治",
-    "tags": ["psychology", "religion"]
-  },
-  {
-    "id": "48917953",
-    "title": "La Peste",
-    "author": "Albert Camus",
-    "num pages": "235",
-    "avg rating": 4.02,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/07/08",
-    "date added": "2025/07/02",
-    "title2": "鼠疫",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "211854307",
-    "title": "康熙的红票：全球化中的清朝",
-    "author": "Litian Swen",
-    "num pages": "400",
-    "avg rating": 4.61,
-    "shelves": ["worth-a-try", "read"],
-    "date read": null,
-    "date added": "2025/05/04",
-    "title2": "Emporor Kangxi's Red Manifesto: The Qing Dynasty in Globalization",
-    "tags": ["history"]
-  },
-  {
-    "id": "38135623",
-    "title": "L'Ingénu",
-    "author": "Voltaire",
-    "num pages": "182",
-    "avg rating": 3.51,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/07/12",
-    "date added": "2025/06/17",
-    "title2": "天真汉",
-    "tags": ["fiction", "philosophy", "classics", "satire"]
-  },
-  {
-    "id": "61439040",
-    "title": "1984",
-    "author": "George Orwell",
-    "num pages": "368",
-    "avg rating": 4.2,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/12/07",
-    "date added": "2025/06/11",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "170448",
-    "title": "Animal Farm",
-    "author": "George Orwell",
-    "num pages": "141",
-    "avg rating": 4.02,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/12/10",
-    "date added": "2025/06/11",
-    "title2": "动物农场",
-    "tags": ["fiction", "philosophy", "classics", "satire"]
-  },
-  {
-    "id": "6334",
-    "title": "Never Let Me Go",
-    "author": "Kazuo Ishiguro",
-    "num pages": "288",
-    "avg rating": 3.85,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/02/10",
-    "date added": "2025/11/13",
-    "title2": "别让我走",
-    "tags": ["fiction", "contemporary"]
-  },
-  {
-    "id": "4069",
-    "title": "Man's Search for Meaning",
-    "author": "Viktor E. Frankl",
-    "num pages": "165",
-    "avg rating": 4.37,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/04/19",
-    "date added": "2025/12/05",
-    "title2": "活出意义来",
-    "tags": ["biography", "philosophy"]
-  },
-  {
-    "id": "52104820",
-    "title": "圆圈正义：作为自由前提的信念",
-    "author": "LUO XIANG",
-    "num pages": "307",
-    "avg rating": 4.06,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/05/26",
-    "date added": "2025/05/04",
-    "title2": "The Faith as Premise of Freedom",
-    "tags": ["philosophy", "social-science"]
-  },
-  {
-    "id": "41889692",
-    "title": "When Breath Becomes Air",
-    "author": "Paul Kalanithi",
-    "num pages": "148",
-    "avg rating": 4.41,
-    "shelves": ["worth-a-try", "read"],
-    "date read": null,
-    "date added": "2025/05/04",
-    "title2": "当呼吸化为空气",
-    "tags": ["biography"]
-  },
-  {
-    "id": "203774224",
-    "title": "法律的悖论",
-    "author": "罗翔",
-    "num pages": "254",
-    "avg rating": 3.91,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/06/23",
-    "date added": "2025/05/18",
-    "title2": "Paradoxes of Law",
-    "tags": ["philosophy", "social-science"]
-  },
-  {
-    "id": "27840555",
-    "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity",
-    "author": "Nabeel Qureshi",
-    "num pages": "320",
-    "avg rating": 4.61,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/05/29",
-    "date added": "2025/05/23",
-    "tags": ["religion"]
-  },
-  {
-    "id": "54383459",
-    "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
-    "author": "Will Durant",
-    "num pages": "608",
-    "avg rating": 4.15,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/07/30",
-    "date added": "2025/05/28",
-    "title2": "哲学的故事",
-    "tags": ["philosophy", "biography"]
-  },
-  {
-    "id": "36651676",
-    "title": "L'Étranger",
-    "author": "Albert Camus",
-    "num pages": "66",
-    "avg rating": 4.03,
-    "shelves": ["worth-a-try", "read"],
-    "date read": null,
-    "date added": "2025/06/09",
-    "title2": "局外人",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "17259893",
-    "title": "Le petit prince",
-    "author": "Antoine de Saint-Exupéry",
-    "num pages": "112",
-    "avg rating": 4.33,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/06/23",
-    "date added": "2025/06/09",
-    "title2": "小王子",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "36160370",
-    "title": "Brave New World",
-    "author": "Aldous Huxley",
-    "num pages": "287",
-    "avg rating": 3.99,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/07/24",
-    "date added": "2025/06/18",
-    "title2": "美丽新世界",
-    "tags": ["fiction", "classics"]
-  },
-  {
-    "id": "19179596",
-    "title": "Преступление и наказание",
-    "author": "Fyodor Dostoevsky",
-    "num pages": "548",
-    "avg rating": 4.29,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/10/30",
-    "date added": "2025/06/30",
-    "title2": "罪与罚",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "28154510",
-    "title": "Le mythe de Sisyphe",
-    "author": "Albert Camus",
-    "num pages": "172",
-    "avg rating": 4.17,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/09/15",
-    "date added": "2025/06/30",
-    "title2": "西西弗神话",
-    "tags": ["philosophy", "classics"]
-  },
-  {
-    "id": "19380",
-    "title": "Candide, ou l'Optimisme",
-    "author": "Voltaire",
-    "num pages": "129",
-    "avg rating": 3.76,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/07/15",
-    "date added": "2025/07/13",
-    "title2": "老实人",
-    "tags": ["fiction", "philosophy", "classics", "satire"]
-  },
-  {
-    "id": "42767746",
-    "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
-    "author": "Timothy J. Keller",
-    "num pages": "287",
-    "avg rating": 4.48,
-    "shelves": ["worth-revisit", "read"],
-    "date read": "2025/10/20",
-    "date added": "2025/07/27",
-    "title2": "婚姻的意义",
-    "tags": ["religion"]
-  },
-  {
-    "id": "28807853",
-    "title": "The Four Loves",
-    "author": "C.S. Lewis",
-    "num pages": "264",
-    "avg rating": 4.16,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/11/11",
-    "date added": "2025/07/27",
-    "title2": "四种爱",
-    "tags": ["religion", "philosophy"]
-  },
-  {
-    "id": "59719801",
-    "title": "法治的细节",
-    "author": "罗翔",
-    "num pages": "288",
-    "avg rating": 4.26,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/08/18",
-    "date added": "2025/07/27",
-    "tags": ["essays", "social-science"]
-  },
-  {
-    "id": "11138",
-    "title": "Mere Christianity",
-    "author": "C.S. Lewis",
-    "num pages": "191",
-    "avg rating": 4.37,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/01/07",
-    "date added": "2025/08/14",
-    "title2": "返璞归真：纯粹的基督教",
-    "tags": ["religion"]
-  },
-  {
-    "id": "41810863",
-    "title": "The Remains of the Day",
-    "author": "Kazuo Ishiguro",
-    "num pages": "337",
-    "avg rating": 4.14,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/11/14",
-    "date added": "2025/08/15",
-    "title2": "长日将尽",
-    "tags": ["fiction", "classics"]
-  },
-  {
-    "id": "19342729",
-    "title": "Atonement",
-    "author": "Ian McEwan",
-    "num pages": "426",
-    "avg rating": 3.95,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/11/25",
-    "date added": "2025/08/15",
-    "title2": "赎罪",
-    "tags": ["fiction", "classics"]
-  },
-  {
-    "id": "23275043",
-    "title": "沈黙",
-    "author": "遠藤周作",
-    "num pages": "292",
-    "avg rating": 4.09,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2025/11/21",
-    "date added": "2025/08/15",
-    "title2": "沉默",
-    "tags": ["fiction", "religion"]
-  },
-  {
-    "id": "385228",
-    "title": "On Liberty",
-    "author": "John Stuart Mill",
-    "num pages": "187",
-    "avg rating": 3.96,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/01/17",
-    "date added": "2025/08/15",
-    "title2": "论自由",
-    "tags": ["philosophy", "social-science", "classics"]
-  },
-  {
-    "id": "19421327",
-    "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
-    "author": "Gary Chapman",
-    "num pages": "200",
-    "avg rating": 4.28,
-    "shelves": ["worth-revisit", "read"],
-    "date read": "2026/01/16",
-    "date added": "2025/10/24",
-    "title2": "爱的五种语言",
-    "tags": ["religion"]
-  },
-  {
-    "id": "87247",
-    "title": "Der Steppenwolf",
+    "id": "52036",
+    "title": "Siddhartha",
     "author": "Hermann Hesse",
-    "num pages": "278",
+    "num pages": "152",
+    "avg rating": 4.08,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/08/20",
+    "date added": "2026/01/28",
+    "title2": "悉达多",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "53605067",
+    "title": "The Data Detective: Ten Easy Rules to Make Sense of Statistics",
+    "author": "Tim Harford",
+    "num pages": "334",
+    "avg rating": 4.12,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/08/19",
+    "date added": "2026/02/05",
+    "title2": "拼凑真相",
+    "tags": [
+      "statistics",
+      "essays"
+    ]
+  },
+  {
+    "id": "9536880",
+    "title": "それから",
+    "author": "Natsume Sōseki",
+    "num pages": "363",
+    "avg rating": "3.88",
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/08/10",
+    "date added": "2026/07/12",
+    "title2": "从此以后",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "489732",
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "num pages": "253",
     "avg rating": 4.13,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/01/23",
-    "date added": "2025/11/06",
-    "title2": "荒原狼",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "121732",
-    "title": "Surprised by Joy: The Shape of My Early Life",
-    "author": "C.S. Lewis",
-    "num pages": "185",
-    "avg rating": 4.06,
-    "shelves": ["worth-a-try", "read"],
-    "date read": "2026/01/12",
-    "date added": "2025/12/26",
-    "title2": "惊喜之旅",
-    "tags": ["biography", "religion"]
-  },
-  {
-    "id": "19480382",
-    "title": "嫌われる勇気",
-    "author": "Ichiro Kishimi",
-    "num pages": "300",
-    "avg rating": 3.92,
-    "shelves": ["worth-revisit", "read"],
-    "date read": "2026/04/24",
-    "date added": "2026/01/09",
-    "title2": "被讨厌的勇气",
-    "tags": ["psychology", "philosophy"]
-  },
-  {
-    "id": "29509524",
-    "title": "Воскресение",
-    "author": "Лев Толстой",
-    "num pages": "666",
-    "avg rating": "4.17",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
-    "date added": "2026/04/27",
-    "title2": "复活",
-    "tags": ["psychology", "philosophy"]
+    "date added": "2026/01/28",
+    "title2": "道林格雷的画像",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
-    "id": "836230",
-    "title": "Der Prozess",
-    "author": "Franz Kafka",
-    "num pages": "208",
-    "avg rating": "3.94",
-    "shelves": ["want-to-read"],
+    "id": "19389511",
+    "title": "For Calvinism / Against Calvinism",
+    "author": "Michael Scott Horton",
+    "num pages": "466",
+    "avg rating": "4.00",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
-    "date added": "2026/04/27",
-    "title2": "审判",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "82135847",
-    "title": "宁静无价",
-    "author": "程虹",
-    "num pages": "0",
-    "avg rating": "null",
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/04/24",
+    "date added": "2026/08/04",
     "title2": "",
-    "tags": ["essays"]
-  },
-  {
-    "id": "24062593",
-    "title": "额尔古纳河右岸",
-    "author": "Zijian Chi",
-    "num pages": null,
-    "avg rating": "4.09",
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/04/23",
-    "title2": "",
-    "tags": ["fiction", "contemporary"]
-  },
-  {
-    "id": "245663083",
-    "title": "咸的玩笑",
-    "author": "刘震云",
-    "num pages": "546",
-    "avg rating": "4.15",
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/04/23",
-    "title2": "",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "religion"
+    ]
   },
   {
     "id": "19200550",
@@ -614,11 +106,1070 @@
     "author": "Liu Zhenyun",
     "num pages": "382",
     "avg rating": "4.36",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/08/04",
+    "date added": "2026/04/23",
+    "title2": "",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "44796",
+    "title": "The Moon and Sixpence",
+    "author": "W. Somerset Maugham",
+    "num pages": "187",
+    "avg rating": 4.12,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/08/04",
+    "date added": "2026/03/18",
+    "title2": "月亮与六便士",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "13588394",
+    "title": "The Signal and the Noise: Why So Many Predictions Fail—But Some Don't",
+    "author": "Nate Silver",
+    "num pages": "544",
+    "avg rating": 3.97,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/07/28",
+    "date added": "2026/02/05",
+    "title2": "信号与噪声",
+    "tags": [
+      "statistics",
+      "essays"
+    ]
+  },
+  {
+    "id": "23456814",
+    "title": "Storia della bambina perduta",
+    "author": "Elena Ferrante",
+    "num pages": "451",
+    "avg rating": 4.46,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/07/27",
+    "date added": "2026/01/12",
+    "title2": "失踪的孩子",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "323455",
+    "title": "De Profundis",
+    "author": "Oscar Wilde",
+    "num pages": "188",
+    "avg rating": 4.22,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/07/17",
+    "date added": "2026/01/28",
+    "title2": "自深深处",
+    "tags": [
+      "biography",
+      "classics"
+    ]
+  },
+  {
+    "id": "18716142",
+    "title": "Storia di chi fugge e di chi resta",
+    "author": "Elena Ferrante",
+    "num pages": "382",
+    "avg rating": 4.36,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/07/14",
+    "date added": "2026/01/12",
+    "title2": "离开的留下的",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "73322",
+    "title": "Jean-Christophe, Vol. 1",
+    "author": "Romain Rolland",
+    "num pages": "556",
+    "avg rating": "4.14",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/07/12",
+    "title2": "约翰·克利斯朵夫 卷一",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "55279783",
+    "title": "我的二本学生",
+    "author": "黄灯",
+    "num pages": "320",
+    "avg rating": "3.61",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/07/01",
+    "title2": "",
+    "tags": [
+      "essays",
+      "social-science"
+    ]
+  },
+  {
+    "id": "29434",
+    "title": "Self-Made Man: One Woman's Journey Into Manhood and Back Again",
+    "author": "Norah Vincent",
+    "num pages": "290",
+    "avg rating": "3.45",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/06/09",
+    "title2": "自制男人",
+    "tags": [
+      "biography",
+      "social-science"
+    ]
+  },
+  {
+    "id": "6934913",
+    "title": "The Shortest History of Europe",
+    "author": "John Hirst",
+    "num pages": "160",
+    "avg rating": 4.03,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/28",
+    "date added": "2026/01/09",
+    "title2": "你一定爱读的极简欧洲史",
+    "tags": [
+      "history"
+    ]
+  },
+  {
+    "id": "14142",
+    "title": "The Art of Loving",
+    "author": "Erich Fromm",
+    "num pages": "180",
+    "avg rating": "4.00",
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/25",
+    "date added": "2026/05/09",
+    "title2": "爱的艺术",
+    "tags": [
+      "psychology",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "16005941",
+    "title": "Storia del nuovo cognome",
+    "author": "Elena Ferrante",
+    "num pages": "470",
+    "avg rating": 4.46,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/25",
+    "date added": "2026/01/12",
+    "title2": "新名字的故事",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "43722897",
+    "title": "The Art of Statistics: How to Learn from Data",
+    "author": "David Spiegelhalter",
+    "num pages": "448",
+    "avg rating": 4.15,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/23",
+    "date added": "2026/02/05",
+    "title2": "统计的艺术",
+    "tags": [
+      "statistics"
+    ]
+  },
+  {
+    "id": "779021",
+    "title": "The Happy Prince and Other Tales",
+    "author": "Oscar Wilde",
+    "num pages": "96",
+    "avg rating": "4.16",
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/13",
+    "date added": "2026/05/12",
+    "title2": "快乐王子与其他故事",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "125974",
+    "title": "Purity of Heart is to Will One Thing: Spiritual Preparation for the Office of Confession",
+    "author": "Søren Kierkegaard",
+    "num pages": "220",
+    "avg rating": 4.23,
+    "shelves": [
+      "currently-reading"
+    ],
+    "date read": null,
+    "date added": "2026/01/10",
+    "title2": "清心志于一事",
+    "tags": [
+      "religion",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "23507559",
+    "title": "小顾聊绘画",
+    "author": "顾爷",
+    "num pages": "256",
+    "avg rating": 3.99,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/04/30",
+    "date added": "2026/01/08",
+    "title2": "",
+    "tags": [
+      "arts"
+    ]
+  },
+  {
+    "id": "14059361",
+    "title": "ナミヤ雑貨店の奇蹟",
+    "author": "Keigo Higashino",
+    "num pages": "385",
+    "avg rating": 4.41,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/05/05",
+    "date added": "2026/01/09",
+    "title2": "解忧杂货店",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "25037087",
+    "title": "小顾聊绘画·贰",
+    "author": "顾爷Gu Ye",
+    "num pages": "242",
+    "avg rating": 3.88,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/05/05",
+    "date added": "2026/03/26",
+    "title2": "",
+    "tags": [
+      "arts"
+    ]
+  },
+  {
+    "id": "212108726",
+    "title": "小顾聊绘画·叁",
+    "author": "顾爷",
+    "num pages": "223",
+    "avg rating": 3.75,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/05/07",
+    "date added": "2026/03/26",
+    "title2": "",
+    "tags": [
+      "arts"
+    ]
+  },
+  {
+    "id": "23692271",
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "num pages": "512",
+    "avg rating": 4.33,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/05/11",
+    "date added": "2026/01/09",
+    "title2": "人类简史",
+    "tags": [
+      "history",
+      "essays",
+      "social-science"
+    ]
+  },
+  {
+    "id": "12913570",
+    "title": "L'amica geniale",
+    "author": "Elena Ferrante",
+    "num pages": "327",
+    "avg rating": 4.05,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/12",
+    "date added": "2026/01/12",
+    "title2": "我的天才女友",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "18905230",
+    "title": "Counselling for Toads: A Psychological Adventure",
+    "author": "Robert De Board",
+    "num pages": "153",
+    "avg rating": 4.28,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/11",
+    "date added": "2026/01/09",
+    "title2": "蛤蟆先生去看心理医生",
+    "tags": [
+      "psychology"
+    ]
+  },
+  {
+    "id": "221282",
+    "title": "A Tale of Three Kings: A Study in Brokenness",
+    "author": "Gene Edwards",
+    "num pages": "105",
+    "avg rating": 4.3,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/10",
+    "date added": "2026/01/10",
+    "title2": "三王演义",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "21122",
+    "title": "The Coming of Age",
+    "author": "Simone de Beauvoir",
+    "num pages": "592",
+    "avg rating": 3.93,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/06",
+    "date added": "2025/10/02",
+    "title2": "论老年",
+    "tags": [
+      "philosophy",
+      "social-science",
+      "essays"
+    ]
+  },
+  {
+    "id": "52249653",
+    "title": "从量子到宇宙——颠覆人类认知的科学之旅",
+    "author": "高鹏",
+    "num pages": "219",
+    "avg rating": 4.0,
+    "shelves": [
+      "read"
+    ],
+    "date read": "2026/05/05",
+    "date added": "2026/01/08",
+    "title2": "From Quantum to UNIVERSE",
+    "tags": [
+      "science"
+    ]
+  },
+  {
+    "id": "51374",
+    "title": "Changes That Heal: How to Understand the Past to Ensure a Healthier Future",
+    "author": "Henry Cloud",
+    "num pages": "368",
+    "avg rating": 4.37,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/04/07",
+    "date added": "2026/02/10",
+    "title2": "改变带来医治",
+    "tags": [
+      "psychology",
+      "religion"
+    ]
+  },
+  {
+    "id": "48917953",
+    "title": "La Peste",
+    "author": "Albert Camus",
+    "num pages": "235",
+    "avg rating": 4.02,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/07/08",
+    "date added": "2025/07/02",
+    "title2": "鼠疫",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "211854307",
+    "title": "康熙的红票：全球化中的清朝",
+    "author": "Litian Swen",
+    "num pages": "400",
+    "avg rating": 4.61,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": null,
+    "date added": "2025/05/04",
+    "title2": "Emporor Kangxi's Red Manifesto: The Qing Dynasty in Globalization",
+    "tags": [
+      "history"
+    ]
+  },
+  {
+    "id": "38135623",
+    "title": "L'Ingénu",
+    "author": "Voltaire",
+    "num pages": "182",
+    "avg rating": 3.51,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/07/12",
+    "date added": "2025/06/17",
+    "title2": "天真汉",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics",
+      "satire"
+    ]
+  },
+  {
+    "id": "61439040",
+    "title": "1984",
+    "author": "George Orwell",
+    "num pages": "368",
+    "avg rating": 4.2,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/12/07",
+    "date added": "2025/06/11",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "170448",
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "num pages": "141",
+    "avg rating": 4.02,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/12/10",
+    "date added": "2025/06/11",
+    "title2": "动物农场",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics",
+      "satire"
+    ]
+  },
+  {
+    "id": "6334",
+    "title": "Never Let Me Go",
+    "author": "Kazuo Ishiguro",
+    "num pages": "288",
+    "avg rating": 3.85,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/02/10",
+    "date added": "2025/11/13",
+    "title2": "别让我走",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "4069",
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "num pages": "165",
+    "avg rating": 4.37,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/04/19",
+    "date added": "2025/12/05",
+    "title2": "活出意义来",
+    "tags": [
+      "biography",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "52104820",
+    "title": "圆圈正义：作为自由前提的信念",
+    "author": "LUO XIANG",
+    "num pages": "307",
+    "avg rating": 4.06,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/05/26",
+    "date added": "2025/05/04",
+    "title2": "The Faith as Premise of Freedom",
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
+  },
+  {
+    "id": "41889692",
+    "title": "When Breath Becomes Air",
+    "author": "Paul Kalanithi",
+    "num pages": "148",
+    "avg rating": 4.41,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": null,
+    "date added": "2025/05/04",
+    "title2": "当呼吸化为空气",
+    "tags": [
+      "biography"
+    ]
+  },
+  {
+    "id": "203774224",
+    "title": "法律的悖论",
+    "author": "罗翔",
+    "num pages": "254",
+    "avg rating": 3.91,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/06/23",
+    "date added": "2025/05/18",
+    "title2": "Paradoxes of Law",
+    "tags": [
+      "philosophy",
+      "social-science"
+    ]
+  },
+  {
+    "id": "27840555",
+    "title": "No God but One: Allah or Jesus?: A Former Muslim Investigates the Evidence for Islam and Christianity",
+    "author": "Nabeel Qureshi",
+    "num pages": "320",
+    "avg rating": 4.61,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/05/29",
+    "date added": "2025/05/23",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "54383459",
+    "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
+    "author": "Will Durant",
+    "num pages": "608",
+    "avg rating": 4.15,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/07/30",
+    "date added": "2025/05/28",
+    "title2": "哲学的故事",
+    "tags": [
+      "philosophy",
+      "biography"
+    ]
+  },
+  {
+    "id": "36651676",
+    "title": "L'Étranger",
+    "author": "Albert Camus",
+    "num pages": "66",
+    "avg rating": 4.03,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": null,
+    "date added": "2025/06/09",
+    "title2": "局外人",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "17259893",
+    "title": "Le petit prince",
+    "author": "Antoine de Saint-Exupéry",
+    "num pages": "112",
+    "avg rating": 4.33,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/06/23",
+    "date added": "2025/06/09",
+    "title2": "小王子",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "36160370",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "num pages": "287",
+    "avg rating": 3.99,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/07/24",
+    "date added": "2025/06/18",
+    "title2": "美丽新世界",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "19179596",
+    "title": "Преступление и наказание",
+    "author": "Fyodor Dostoevsky",
+    "num pages": "548",
+    "avg rating": 4.29,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/10/30",
+    "date added": "2025/06/30",
+    "title2": "罪与罚",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "28154510",
+    "title": "Le mythe de Sisyphe",
+    "author": "Albert Camus",
+    "num pages": "172",
+    "avg rating": 4.17,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/09/15",
+    "date added": "2025/06/30",
+    "title2": "西西弗神话",
+    "tags": [
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "19380",
+    "title": "Candide, ou l'Optimisme",
+    "author": "Voltaire",
+    "num pages": "129",
+    "avg rating": 3.76,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/07/15",
+    "date added": "2025/07/13",
+    "title2": "老实人",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics",
+      "satire"
+    ]
+  },
+  {
+    "id": "42767746",
+    "title": "The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God",
+    "author": "Timothy J. Keller",
+    "num pages": "287",
+    "avg rating": 4.48,
+    "shelves": [
+      "worth-revisit",
+      "read"
+    ],
+    "date read": "2025/10/20",
+    "date added": "2025/07/27",
+    "title2": "婚姻的意义",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "28807853",
+    "title": "The Four Loves",
+    "author": "C.S. Lewis",
+    "num pages": "264",
+    "avg rating": 4.16,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/11/11",
+    "date added": "2025/07/27",
+    "title2": "四种爱",
+    "tags": [
+      "religion",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "59719801",
+    "title": "法治的细节",
+    "author": "罗翔",
+    "num pages": "288",
+    "avg rating": 4.26,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/08/18",
+    "date added": "2025/07/27",
+    "tags": [
+      "essays",
+      "social-science"
+    ]
+  },
+  {
+    "id": "11138",
+    "title": "Mere Christianity",
+    "author": "C.S. Lewis",
+    "num pages": "191",
+    "avg rating": 4.37,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/01/07",
+    "date added": "2025/08/14",
+    "title2": "返璞归真：纯粹的基督教",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "41810863",
+    "title": "The Remains of the Day",
+    "author": "Kazuo Ishiguro",
+    "num pages": "337",
+    "avg rating": 4.14,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/11/14",
+    "date added": "2025/08/15",
+    "title2": "长日将尽",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "19342729",
+    "title": "Atonement",
+    "author": "Ian McEwan",
+    "num pages": "426",
+    "avg rating": 3.95,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/11/25",
+    "date added": "2025/08/15",
+    "title2": "赎罪",
+    "tags": [
+      "fiction",
+      "classics"
+    ]
+  },
+  {
+    "id": "23275043",
+    "title": "沈黙",
+    "author": "遠藤周作",
+    "num pages": "292",
+    "avg rating": 4.09,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2025/11/21",
+    "date added": "2025/08/15",
+    "title2": "沉默",
+    "tags": [
+      "fiction",
+      "religion"
+    ]
+  },
+  {
+    "id": "385228",
+    "title": "On Liberty",
+    "author": "John Stuart Mill",
+    "num pages": "187",
+    "avg rating": 3.96,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/01/17",
+    "date added": "2025/08/15",
+    "title2": "论自由",
+    "tags": [
+      "philosophy",
+      "social-science",
+      "classics"
+    ]
+  },
+  {
+    "id": "19421327",
+    "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
+    "author": "Gary Chapman",
+    "num pages": "200",
+    "avg rating": 4.28,
+    "shelves": [
+      "worth-revisit",
+      "read"
+    ],
+    "date read": "2026/01/16",
+    "date added": "2025/10/24",
+    "title2": "爱的五种语言",
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "id": "87247",
+    "title": "Der Steppenwolf",
+    "author": "Hermann Hesse",
+    "num pages": "278",
+    "avg rating": 4.13,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/01/23",
+    "date added": "2025/11/06",
+    "title2": "荒原狼",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "121732",
+    "title": "Surprised by Joy: The Shape of My Early Life",
+    "author": "C.S. Lewis",
+    "num pages": "185",
+    "avg rating": 4.06,
+    "shelves": [
+      "worth-a-try",
+      "read"
+    ],
+    "date read": "2026/01/12",
+    "date added": "2025/12/26",
+    "title2": "惊喜之旅",
+    "tags": [
+      "biography",
+      "religion"
+    ]
+  },
+  {
+    "id": "19480382",
+    "title": "嫌われる勇気",
+    "author": "Ichiro Kishimi",
+    "num pages": "300",
+    "avg rating": 3.92,
+    "shelves": [
+      "worth-revisit",
+      "read"
+    ],
+    "date read": "2026/04/24",
+    "date added": "2026/01/09",
+    "title2": "被讨厌的勇气",
+    "tags": [
+      "psychology",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "29509524",
+    "title": "Воскресение",
+    "author": "Лев Толстой",
+    "num pages": "666",
+    "avg rating": "4.17",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/04/27",
+    "title2": "复活",
+    "tags": [
+      "psychology",
+      "philosophy"
+    ]
+  },
+  {
+    "id": "836230",
+    "title": "Der Prozess",
+    "author": "Franz Kafka",
+    "num pages": "208",
+    "avg rating": "3.94",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/04/27",
+    "title2": "审判",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
+  },
+  {
+    "id": "82135847",
+    "title": "宁静无价",
+    "author": "程虹",
+    "num pages": "0",
+    "avg rating": "null",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/04/24",
+    "title2": "",
+    "tags": [
+      "essays"
+    ]
+  },
+  {
+    "id": "24062593",
+    "title": "额尔古纳河右岸",
+    "author": "Zijian Chi",
+    "num pages": null,
+    "avg rating": "4.09",
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/23",
     "title2": "",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
+  },
+  {
+    "id": "245663083",
+    "title": "咸的玩笑",
+    "author": "Liu Zhenyun",
+    "num pages": "546",
+    "avg rating": "4.15",
+    "shelves": [
+      "want-to-read"
+    ],
+    "date read": null,
+    "date added": "2026/04/23",
+    "title2": "",
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "42616411",
@@ -626,11 +1177,15 @@
     "author": "Tara Westover",
     "num pages": "329",
     "avg rating": "4.46",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/23",
     "title2": "你当像鸟飞往你的山",
-    "tags": ["biography"]
+    "tags": [
+      "biography"
+    ]
   },
   {
     "id": "105984427",
@@ -638,11 +1193,16 @@
     "author": "坂本健一",
     "num pages": "0",
     "avg rating": 4.38,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/04/23",
     "date added": "2026/01/06",
     "title2": "",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "31837",
@@ -650,11 +1210,16 @@
     "author": "Boethius",
     "num pages": "155",
     "avg rating": "4.05",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/23",
     "title2": "哲学的慰藉",
-    "tags": ["philosophy", "classics"]
+    "tags": [
+      "philosophy",
+      "classics"
+    ]
   },
   {
     "id": "493311",
@@ -662,11 +1227,16 @@
     "author": "William Trevor",
     "num pages": "1262",
     "avg rating": "4.45",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/22",
     "title2": "被困住的人",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "247797083",
@@ -674,7 +1244,9 @@
     "author": "Ao Kojima",
     "num pages": "194",
     "avg rating": "4.50",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/22",
     "title2": "十月堂旧书事3",
@@ -686,11 +1258,16 @@
     "author": "Ao Kojima",
     "num pages": "194",
     "avg rating": "4.35",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/22",
     "title2": "十月堂旧书事2",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "229123221",
@@ -698,11 +1275,16 @@
     "author": "Ao Kojima",
     "num pages": "194",
     "avg rating": "4.55",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/22",
     "title2": "十月堂旧书事1",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "230402606",
@@ -710,11 +1292,16 @@
     "author": "Fredrik Backman",
     "num pages": "398",
     "avg rating": "4.33",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/22",
     "title2": "我的好朋友",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "228899731",
@@ -722,11 +1309,16 @@
     "author": "拟泥nini",
     "num pages": "272",
     "avg rating": "4.33",
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/22",
     "title2": "",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "43277265",
@@ -734,11 +1326,16 @@
     "author": "匡扶",
     "num pages": "224",
     "avg rating": 4.2,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/04/21",
     "date added": "2026/01/06",
     "title2": "",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "29494295",
@@ -746,11 +1343,16 @@
     "author": "Ichiro Kishimi",
     "num pages": "250",
     "avg rating": 4.01,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/04/19",
     "title2": "幸福的勇气",
-    "tags": ["psychology", "philosophy"]
+    "tags": [
+      "psychology",
+      "philosophy"
+    ]
   },
   {
     "id": "16981",
@@ -758,11 +1360,16 @@
     "author": "Ralph Ellison",
     "num pages": "581",
     "avg rating": 3.92,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/04/19",
     "date added": "2025/11/17",
     "title2": "看不见的人",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "1953",
@@ -770,11 +1377,16 @@
     "author": "Charles Dickens",
     "num pages": "489",
     "avg rating": 3.88,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/04/19",
     "date added": "2025/11/24",
     "title2": "双城记",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "57300433",
@@ -782,11 +1394,17 @@
     "author": "Judea Pearl",
     "num pages": "335",
     "avg rating": 3.94,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/03/30",
     "date added": "2025/10/11",
     "title2": "为什么：关于因果关系的新科学",
-    "tags": ["statistics", "social-science", "essays"]
+    "tags": [
+      "statistics",
+      "social-science",
+      "essays"
+    ]
   },
   {
     "id": "18752103",
@@ -794,11 +1412,16 @@
     "author": "Leo Tolstoy",
     "num pages": "855",
     "avg rating": 4.1,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/04/03",
     "date added": "2025/11/04",
     "title2": "安娜·卡列尼娜",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "24583",
@@ -806,11 +1429,16 @@
     "author": "Mark Twain",
     "num pages": "244",
     "avg rating": 3.92,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/04/02",
     "date added": "2025/12/05",
     "title2": "汤姆索亚历险记",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "1314433",
@@ -818,23 +1446,17 @@
     "author": "James Fitzjames Stephen",
     "num pages": "299",
     "avg rating": 3.81,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/03/23",
     "date added": "2025/08/15",
     "title2": "自由，平等，博爱",
-    "tags": ["philosophy", "history", "social-science"]
-  },
-  {
-    "id": "44796",
-    "title": "The Moon and Sixpence",
-    "author": "W. Somerset Maugham",
-    "num pages": "187",
-    "avg rating": 4.12,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/03/18",
-    "title2": "月亮与六便士",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "philosophy",
+      "history",
+      "social-science"
+    ]
   },
   {
     "id": "32175062",
@@ -842,11 +1464,15 @@
     "author": "김남준",
     "num pages": "224",
     "avg rating": 4.5,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/02/12",
     "date added": "2026/02/09",
     "title2": "懒惰",
-    "tags": ["essays"]
+    "tags": [
+      "essays"
+    ]
   },
   {
     "id": "50705179",
@@ -854,11 +1480,16 @@
     "author": "Vaclav Smil",
     "num pages": "384",
     "avg rating": 3.82,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/02/05",
     "title2": "",
-    "tags": ["statistics", "essays"]
+    "tags": [
+      "statistics",
+      "essays"
+    ]
   },
   {
     "id": "48889983",
@@ -866,35 +1497,16 @@
     "author": "Carl T. Bergstrom",
     "num pages": "336",
     "avg rating": 4.1,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/02/05",
     "title2": "拆穿数据胡扯",
-    "tags": ["statistics", "essays"]
-  },
-  {
-    "id": "53605067",
-    "title": "The Data Detective: Ten Easy Rules to Make Sense of Statistics",
-    "author": "Tim Harford",
-    "num pages": "334",
-    "avg rating": 4.12,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/02/05",
-    "title2": "拼凑真相",
-    "tags": ["statistics", "essays"]
-  },
-  {
-    "id": "13588394",
-    "title": "The Signal and the Noise: Why So Many Predictions Fail—But Some Don't",
-    "author": "Nate Silver",
-    "num pages": "544",
-    "avg rating": 3.97,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/02/05",
-    "title2": "信号与噪声",
-    "tags": ["statistics", "essays"]
+    "tags": [
+      "statistics",
+      "essays"
+    ]
   },
   {
     "id": "45633325",
@@ -902,11 +1514,16 @@
     "author": "Joseph Heller",
     "num pages": "572",
     "avg rating": 3.99,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/01/31",
     "date added": "2025/09/13",
     "title2": "Catch-22",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "71943",
@@ -914,11 +1531,16 @@
     "author": "Hermann Hesse",
     "num pages": "201",
     "avg rating": 3.89,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/02/01",
     "date added": "2026/01/23",
     "title2": "彼得卡门青",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "58715110",
@@ -926,47 +1548,16 @@
     "author": "Richard Hofstadter",
     "num pages": "434",
     "avg rating": 4.11,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/01/28",
     "date added": "2025/08/21",
     "title2": "美国的反智传统",
-    "tags": ["essays", "social-science"]
-  },
-  {
-    "id": "52036",
-    "title": "Siddhartha",
-    "author": "Hermann Hesse",
-    "num pages": "152",
-    "avg rating": 4.08,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/01/28",
-    "title2": "悉达多",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "489732",
-    "title": "The Picture of Dorian Gray",
-    "author": "Oscar Wilde",
-    "num pages": "253",
-    "avg rating": 4.13,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/01/28",
-    "title2": "道林格雷的画像",
-    "tags": ["fiction", "classics"]
-  },
-  {
-    "id": "323455",
-    "title": "De Profundis",
-    "author": "Oscar Wilde",
-    "num pages": "188",
-    "avg rating": 4.22,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/01/28",
-    "title2": "自深深处",
-    "tags": ["biography", "classics"]
+    "tags": [
+      "essays",
+      "social-science"
+    ]
   },
   {
     "id": "30659",
@@ -974,11 +1565,16 @@
     "author": "Marcus Aurelius",
     "num pages": "254",
     "avg rating": 4.28,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/01/27",
     "date added": "2025/08/20",
     "title2": "沉思录",
-    "tags": ["philosophy", "classics"]
+    "tags": [
+      "philosophy",
+      "classics"
+    ]
   },
   {
     "id": "238727",
@@ -986,7 +1582,9 @@
     "author": "John Muir",
     "num pages": "160",
     "avg rating": 4.05,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/01/23",
     "date added": "2025/12/22",
     "title2": "夏日走过山间",
@@ -998,35 +1596,17 @@
     "author": "Fyodor Dostoevsky",
     "num pages": "472",
     "avg rating": 4.39,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/01/18",
     "date added": "2025/09/13",
     "title2": "卡拉马佐夫兄弟",
-    "tags": ["fiction", "philosophy", "classics"]
-  },
-  {
-    "id": "23456814",
-    "title": "Storia della bambina perduta",
-    "author": "Elena Ferrante",
-    "num pages": "451",
-    "avg rating": 4.46,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/01/12",
-    "title2": "失踪的孩子",
-    "tags": ["fiction", "contemporary"]
-  },
-  {
-    "id": "18716142",
-    "title": "Storia di chi fugge e di chi resta",
-    "author": "Elena Ferrante",
-    "num pages": "382",
-    "avg rating": 4.36,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/01/12",
-    "title2": "离开的留下的",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
   },
   {
     "id": "3730",
@@ -1034,10 +1614,15 @@
     "author": "Vance Packard",
     "num pages": "240",
     "avg rating": 3.84,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/01/12",
     "date added": "2025/08/07",
-    "tags": ["essays", "social-science"]
+    "tags": [
+      "essays",
+      "social-science"
+    ]
   },
   {
     "id": "485894",
@@ -1045,11 +1630,16 @@
     "author": "Franz Kafka",
     "num pages": "201",
     "avg rating": 3.91,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/01/11",
     "date added": "2025/09/14",
     "title2": "变形记",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "3116205",
@@ -1057,11 +1647,15 @@
     "author": "Timothy J. Keller",
     "num pages": "139",
     "avg rating": 4.43,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/01/10",
     "title2": "挥霍的上帝",
-    "tags": ["religion"]
+    "tags": [
+      "religion"
+    ]
   },
   {
     "id": "27995383",
@@ -1069,23 +1663,16 @@
     "author": "Ayako Miura",
     "num pages": "396",
     "avg rating": 3.98,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2026/01/10",
     "title2": "冰点",
-    "tags": ["fiction", "contemporary"]
-  },
-  {
-    "id": "6934913",
-    "title": "The Shortest History of Europe",
-    "author": "John Hirst",
-    "num pages": "160",
-    "avg rating": 4.03,
-    "shelves": ["want-to-read"],
-    "date read": null,
-    "date added": "2026/01/09",
-    "title2": "你一定爱读的极简欧洲史",
-    "tags": ["history"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "2054",
@@ -1093,11 +1680,15 @@
     "author": "Raymond Chandler",
     "num pages": "379",
     "avg rating": 4.19,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2026/01/07",
     "date added": "2025/09/26",
     "title2": "漫长的告别",
-    "tags": ["fiction"]
+    "tags": [
+      "fiction"
+    ]
   },
   {
     "id": "27788",
@@ -1105,11 +1696,17 @@
     "author": "Jean-Jacques Rousseau",
     "num pages": "728",
     "avg rating": 3.44,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/12/30",
     "date added": "2025/06/20",
     "title2": "新爱洛伊丝",
-    "tags": ["fiction", "philosophy", "classics"]
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics"
+    ]
   },
   {
     "id": "3836",
@@ -1117,11 +1714,17 @@
     "author": "Miguel de Cervantes Saavedra",
     "num pages": "1023",
     "avg rating": 3.91,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/12/23",
     "date added": "2025/07/23",
     "title2": "堂吉诃德",
-    "tags": ["fiction", "classics", "satire"]
+    "tags": [
+      "fiction",
+      "classics",
+      "satire"
+    ]
   },
   {
     "id": "60470571",
@@ -1129,10 +1732,16 @@
     "author": "Stephen Bullivant",
     "num pages": "257",
     "avg rating": 3.86,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/12/18",
     "date added": "2025/07/14",
-    "tags": ["religion", "history", "social-science"]
+    "tags": [
+      "religion",
+      "history",
+      "social-science"
+    ]
   },
   {
     "id": "53263624",
@@ -1140,11 +1749,15 @@
     "author": "Henri Bergson",
     "num pages": "244",
     "avg rating": 4.1,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/12/17",
     "date added": "2025/07/24",
     "title2": "创造进化论",
-    "tags": ["philosophy"]
+    "tags": [
+      "philosophy"
+    ]
   },
   {
     "id": "19324807",
@@ -1152,11 +1765,16 @@
     "author": "Johann Wolfgang von Goethe",
     "num pages": "154",
     "avg rating": 3.69,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/12/16",
     "date added": "2025/09/13",
     "title2": "少年维特的烦恼",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "2376901",
@@ -1164,11 +1782,16 @@
     "author": "Osamu Dazai",
     "num pages": "185",
     "avg rating": 3.94,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/12/12",
     "date added": "2025/09/13",
     "title2": "人间失格",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "55385983",
@@ -1176,10 +1799,15 @@
     "author": "Michael J. Knowles",
     "num pages": "383",
     "avg rating": 4.24,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/12/06",
     "date added": "2025/07/07",
-    "tags": ["essays", "social-science"]
+    "tags": [
+      "essays",
+      "social-science"
+    ]
   },
   {
     "id": "5107",
@@ -1187,11 +1815,16 @@
     "author": "J.D. Salinger",
     "num pages": "277",
     "avg rating": 3.8,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/12/04",
     "date added": "2025/08/17",
     "title2": "麦田里的守望者",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "51502975",
@@ -1199,11 +1832,16 @@
     "author": "Kim Ae-ran",
     "num pages": "208",
     "avg rating": 4.07,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/29",
     "date added": "2025/08/17",
     "title2": "外面是夏天",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "13590009",
@@ -1211,10 +1849,14 @@
     "author": "V. Anton Spraul",
     "num pages": "233",
     "avg rating": 3.86,
-    "shelves": ["currently-reading"],
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2021/04/29",
-    "tags": ["programming"]
+    "tags": [
+      "programming"
+    ]
   },
   {
     "id": "26007192",
@@ -1222,11 +1864,15 @@
     "author": "Timothy J. Keller",
     "num pages": "285",
     "avg rating": 4.37,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/28",
     "date added": "2025/07/27",
     "title2": "山寨版的上帝",
-    "tags": ["religion"]
+    "tags": [
+      "religion"
+    ]
   },
   {
     "id": "2165",
@@ -1234,11 +1880,16 @@
     "author": "Ernest Hemingway",
     "num pages": "96",
     "avg rating": 3.81,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/27",
     "date added": "2025/08/16",
     "title2": "老人与海",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "28137375",
@@ -1246,11 +1897,16 @@
     "author": "Jane Austen",
     "num pages": "234",
     "avg rating": 4.3,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/25",
     "date added": "2025/06/30",
     "title2": "傲慢与偏见",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "40000210",
@@ -1258,11 +1914,16 @@
     "author": "Sarah Bakewell",
     "num pages": "563",
     "avg rating": 4.24,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/17",
     "date added": "2025/08/03",
     "title2": "存在主义咖啡馆",
-    "tags": ["philosophy", "essays"]
+    "tags": [
+      "philosophy",
+      "essays"
+    ]
   },
   {
     "id": "18922517",
@@ -1270,11 +1931,16 @@
     "author": "Stendhal",
     "num pages": "512",
     "avg rating": 3.86,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/14",
     "date added": "2025/06/30",
     "title2": "红与黑",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "18250837",
@@ -1282,10 +1948,16 @@
     "author": "James K.A. Smith",
     "num pages": "148",
     "avg rating": 4.21,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/12",
     "date added": "2025/07/08",
-    "tags": ["religion", "philosophy", "essays"]
+    "tags": [
+      "religion",
+      "philosophy",
+      "essays"
+    ]
   },
   {
     "id": "54861804",
@@ -1293,22 +1965,32 @@
     "author": "王硕",
     "num pages": "190",
     "avg rating": 3.12,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/07",
     "date added": "2025/08/15",
-    "tags": ["arts", "social-science"]
+    "tags": [
+      "arts",
+      "social-science"
+    ]
   },
   {
     "id": "1000751",
     "title": "Pollyanna",
-    "author": "Eleanor H. Porter",
+    "author": "Eleanor Hodgman Porter",
     "num pages": "304",
     "avg rating": 4.02,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/04",
     "date added": "2025/08/08",
     "title2": "波丽安娜",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "13589149",
@@ -1316,11 +1998,15 @@
     "author": "Timothy J. Keller",
     "num pages": "288",
     "avg rating": 4.31,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/11/02",
     "date added": "2025/08/08",
     "title2": "工作的意义",
-    "tags": ["religion"]
+    "tags": [
+      "religion"
+    ]
   },
   {
     "id": "61369370",
@@ -1328,10 +2014,16 @@
     "author": "Charlie Kirk",
     "num pages": "288",
     "avg rating": 4.16,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/10/27",
     "date added": "2025/07/07",
-    "tags": ["essays", "economics", "social-science"]
+    "tags": [
+      "essays",
+      "economics",
+      "social-science"
+    ]
   },
   {
     "id": "12649",
@@ -1339,11 +2031,17 @@
     "author": "Jean-Jacques Rousseau",
     "num pages": "676",
     "avg rating": 3.6,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/10/21",
     "date added": "2025/06/20",
     "title2": "忏悔录",
-    "tags": ["biography", "philosophy", "classics"]
+    "tags": [
+      "biography",
+      "philosophy",
+      "classics"
+    ]
   },
   {
     "id": "16241133",
@@ -1351,11 +2049,15 @@
     "author": "Susan Wise Bauer",
     "num pages": "785",
     "avg rating": 4.17,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/10/12",
     "date added": "2025/07/09",
     "title2": "世界史的故事 III",
-    "tags": ["history"]
+    "tags": [
+      "history"
+    ]
   },
   {
     "id": "17174373",
@@ -1363,11 +2065,16 @@
     "author": "David  Mitchell",
     "num pages": "486",
     "avg rating": 4.01,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/10/02",
     "date added": "2025/07/27",
     "title2": "云图",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "457264",
@@ -1375,11 +2082,17 @@
     "author": "Simone de Beauvoir",
     "num pages": "746",
     "avg rating": 4.18,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/10/02",
     "title2": "第二性",
-    "tags": ["philosophy", "social-science", "essays"]
+    "tags": [
+      "philosophy",
+      "social-science",
+      "essays"
+    ]
   },
   {
     "id": "19230853",
@@ -1387,11 +2100,16 @@
     "author": "Leo Tolstoy",
     "num pages": "726",
     "avg rating": 4.17,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/09/26",
     "date added": "2025/06/30",
     "title2": "战争与和平",
-    "tags": ["fiction", "classics"]
+    "tags": [
+      "fiction",
+      "classics"
+    ]
   },
   {
     "id": "3023",
@@ -1399,10 +2117,15 @@
     "author": "Thomas Sowell",
     "num pages": "448",
     "avg rating": 4.37,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/09/17",
     "date added": "2025/05/12",
-    "tags": ["economics", "social-science"]
+    "tags": [
+      "economics",
+      "social-science"
+    ]
   },
   {
     "id": "6484128",
@@ -1410,11 +2133,15 @@
     "author": "Susan Wise Bauer",
     "num pages": "746",
     "avg rating": 4.11,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/09/14",
     "date added": "2025/07/08",
     "title2": "世界史的故事 II",
-    "tags": ["history"]
+    "tags": [
+      "history"
+    ]
   },
   {
     "id": "80493508",
@@ -1422,11 +2149,16 @@
     "author": "村上春树 林少华",
     "num pages": "200",
     "avg rating": 3.99,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/09/11",
     "date added": "2025/07/15",
     "title2": "挪威的森林",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "202694",
@@ -1434,11 +2166,16 @@
     "author": "Jean-Jacques Rousseau",
     "num pages": "358",
     "avg rating": 3.57,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/09/04",
     "date added": "2025/06/20",
     "title2": "爱弥儿",
-    "tags": ["philosophy", "classics"]
+    "tags": [
+      "philosophy",
+      "classics"
+    ]
   },
   {
     "id": "225947",
@@ -1446,11 +2183,15 @@
     "author": "Susan Wise Bauer",
     "num pages": "896",
     "avg rating": 4.11,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/08/19",
     "date added": "2025/07/08",
     "title2": "世界史的故事 I",
-    "tags": ["history"]
+    "tags": [
+      "history"
+    ]
   },
   {
     "id": "42092510",
@@ -1458,11 +2199,16 @@
     "author": "Aldous Huxley",
     "num pages": "347",
     "avg rating": 3.99,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/08/19",
     "date added": "2025/07/27",
     "title2": "重返美丽新世界",
-    "tags": ["essays", "social-science"]
+    "tags": [
+      "essays",
+      "social-science"
+    ]
   },
   {
     "id": "57836039",
@@ -1470,11 +2216,16 @@
     "author": "大友良英",
     "num pages": "350",
     "avg rating": 3.5,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/08/11",
     "title2": "我成长的音乐时代",
-    "tags": ["biography", "arts"]
+    "tags": [
+      "biography",
+      "arts"
+    ]
   },
   {
     "id": "174237",
@@ -1482,11 +2233,16 @@
     "author": "Gary S. Becker",
     "num pages": "440",
     "avg rating": 3.93,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/08/08",
     "title2": "家庭论",
-    "tags": ["economics", "social-science"]
+    "tags": [
+      "economics",
+      "social-science"
+    ]
   },
   {
     "id": "1156110",
@@ -1494,10 +2250,17 @@
     "author": "Voltaire",
     "num pages": "38",
     "avg rating": 3.65,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/07/15",
     "date added": "2025/08/07",
-    "tags": ["fiction", "philosophy", "classics", "satire"]
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics",
+      "satire"
+    ]
   },
   {
     "id": "43491623",
@@ -1505,11 +2268,18 @@
     "author": "Voltaire",
     "num pages": "192",
     "avg rating": 3.79,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/07/15",
     "date added": "2025/06/17",
     "title2": "查第格",
-    "tags": ["fiction", "philosophy", "classics", "satire"]
+    "tags": [
+      "fiction",
+      "philosophy",
+      "classics",
+      "satire"
+    ]
   },
   {
     "id": "63354300",
@@ -1517,10 +2287,15 @@
     "author": "Jim  Davis",
     "num pages": "272",
     "avg rating": 3.86,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/07/14",
     "date added": "2025/06/05",
-    "tags": ["religion", "social-science"]
+    "tags": [
+      "religion",
+      "social-science"
+    ]
   },
   {
     "id": "11438",
@@ -1528,10 +2303,15 @@
     "author": "Raymond Carver",
     "num pages": "159",
     "avg rating": 4.0,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/07/12",
     "date added": "2025/07/03",
-    "tags": ["fiction", "contemporary"]
+    "tags": [
+      "fiction",
+      "contemporary"
+    ]
   },
   {
     "id": "824412",
@@ -1539,10 +2319,16 @@
     "author": "Charles Margrave Taylor",
     "num pages": "874",
     "avg rating": 4.27,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2025/07/08",
-    "tags": ["religion", "philosophy", "social-science"]
+    "tags": [
+      "religion",
+      "philosophy",
+      "social-science"
+    ]
   },
   {
     "id": "57846996",
@@ -1550,11 +2336,17 @@
     "author": "Desmond Shum",
     "num pages": "171",
     "avg rating": 3.91,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/07/01",
     "date added": "2025/06/08",
     "title2": "红色赌盘",
-    "tags": ["biography", "history", "social-science"]
+    "tags": [
+      "biography",
+      "history",
+      "social-science"
+    ]
   },
   {
     "id": "152344",
@@ -1562,11 +2354,15 @@
     "author": "Neil T. Anderson",
     "num pages": "256",
     "avg rating": 4.21,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/05/28",
     "date added": "2025/05/23",
     "title2": "胜过黑暗",
-    "tags": ["religion"]
+    "tags": [
+      "religion"
+    ]
   },
   {
     "id": "23336950",
@@ -1574,11 +2370,15 @@
     "author": "Mi Xue",
     "num pages": "288",
     "avg rating": 4.24,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": "2025/05/13",
     "date added": "2025/05/04",
     "title2": "珍珠项链",
-    "tags": ["biography"]
+    "tags": [
+      "biography"
+    ]
   },
   {
     "id": "52884924",
@@ -1586,10 +2386,14 @@
     "author": "陳維恩",
     "num pages": "254",
     "avg rating": 5.0,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": null,
     "date added": "2025/05/04",
-    "tags": ["biography"]
+    "tags": [
+      "biography"
+    ]
   },
   {
     "id": "38819247",
@@ -1597,10 +2401,15 @@
     "author": "P.K. Newby",
     "num pages": "316",
     "avg rating": 3.88,
-    "shelves": ["currently-reading"],
+    "shelves": [
+      "currently-reading"
+    ],
     "date read": null,
     "date added": "2025/05/04",
-    "tags": ["essays", "social-science"]
+    "tags": [
+      "essays",
+      "social-science"
+    ]
   },
   {
     "id": "210594797",
@@ -1608,11 +2417,15 @@
     "author": "雪 米",
     "num pages": "191",
     "avg rating": 5.0,
-    "shelves": ["read"],
+    "shelves": [
+      "read"
+    ],
     "date read": null,
     "date added": "2025/05/04",
     "title2": "珍珠项链",
-    "tags": ["biography"]
+    "tags": [
+      "biography"
+    ]
   },
   {
     "id": "32899495",
@@ -1620,10 +2433,14 @@
     "author": "Aurélien Géron",
     "num pages": "450",
     "avg rating": 4.55,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2022/10/05",
-    "tags": ["programming"]
+    "tags": [
+      "programming"
+    ]
   },
   {
     "id": "38606117",
@@ -1631,10 +2448,14 @@
     "author": "马俊昌",
     "num pages": "1308",
     "avg rating": 4.0,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2021/09/27",
-    "tags": ["programming"]
+    "tags": [
+      "programming"
+    ]
   },
   {
     "id": "52935138",
@@ -1642,10 +2463,14 @@
     "author": "Jon Steinhart",
     "num pages": "504",
     "avg rating": 3.89,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2021/04/29",
-    "tags": ["programming"]
+    "tags": [
+      "programming"
+    ]
   },
   {
     "id": "52555533",
@@ -1653,9 +2478,13 @@
     "author": "Daniel Zingaro",
     "num pages": "408",
     "avg rating": 4.45,
-    "shelves": ["want-to-read"],
+    "shelves": [
+      "want-to-read"
+    ],
     "date read": null,
     "date added": "2021/04/29",
-    "tags": ["programming"]
+    "tags": [
+      "programming"
+    ]
   }
 ]
