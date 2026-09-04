@@ -26,6 +26,14 @@ The site uses **Hugo** as the static site generator, with content stored primari
 
 Two Netlify serverless functions support the parts that need dynamic behavior. One function validates audio requests and redirects them to object storage, keeping the public pages lightweight while still supporting protected media delivery. Another function reads a remote music manifest, groups folders, sorts entries, and returns paginated JSON for the frontend.
 
+## Preparing Books and Audio
+
+The material goes through a preparation workflow before Hugo builds the public site. Source text may begin as a PDF or Word document, and scanned pages may need OCR. I remove headers, footers, page numbers, and extraction noise; repair unwanted line breaks and paragraph boundaries; preserve headings, quotations, and notes; then split the cleaned text into chapter-based Markdown with Hugo front matter. The final chapters are proofread against the source before publication.
+
+Audio is prepared separately with **FFmpeg** when recordings need to be resized, re-encoded, or joined in chapter order. Filenames and chapter boundaries are checked against the Markdown, and the finished duration, playback, format, and output size are verified before the files are uploaded to object storage.
+
+These preparation steps are deliberately separate from the Hugo build and Netlify functions. The repository documents the workflow, but it does not pretend that source extraction and audio cleanup happen automatically inside the website.
+
 ## Featured Collection
 
 The bookshelf includes works such as:
