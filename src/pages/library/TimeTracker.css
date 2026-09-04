@@ -68,6 +68,46 @@
   font-weight: bold;
 }
 
+.time-tracker-book-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.9rem;
+  line-height: 1.25;
+}
+
+.time-tracker-book-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #495057;
+  font-size: 0.875rem;
+}
+
+.time-tracker-book-legend-color {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border-radius: 2px;
+}
+
+.time-tracker-book-legend-link {
+  border-radius: 0.2rem;
+  text-decoration: none;
+}
+
+.time-tracker-book-legend-link:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.time-tracker-book-legend-link:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
 .week-of-day {
   font-size: 0.75rem;
   font-weight: 500;
@@ -151,6 +191,14 @@
   border-color: rgba(13, 110, 253, 0.7);
   background: #0d6efd;
   color: #fff;
+}
+
+.dark .time-tracker-book-legend-item {
+  color: #dee2e6;
+}
+
+.dark .time-tracker-book-legend-link:hover {
+  color: #6ea8fe;
 }
 
 .dark .calendar-popover,

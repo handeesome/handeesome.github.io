@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Board from "../../features/profile/components/Board";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Calendar from "react-calendar";
@@ -18,10 +19,48 @@ import {
   ReferenceLine,
 } from "recharts";
 import togglData from "../../static/books/toggl-data.json";
+import bookCatalog from "../../static/books/books.json";
 import { useTheme } from "../../contexts/ThemeContext";
 import GoBackBtn from "../../components/GoBackButton";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { Overlay, Popover } from "react-bootstrap";
+
+const normalizeBookTitle = (title) =>
+  title
+    ?.trim()
+    .toLocaleLowerCase()
+    .replace(/[\s·・•:：—–-]+/gu, "");
+
+const bookIdByTitle = bookCatalog.reduce((lookup, book) => {
+  [book.title, book.title2].filter(Boolean).forEach((title) => {
+    const normalizedTitle = normalizeBookTitle(title);
+    const existingId = lookup.get(normalizedTitle);
+
+    if (!lookup.has(normalizedTitle)) {
+      lookup.set(normalizedTitle, book.id);
+    } else if (existingId !== book.id) {
+      // Do not link an ambiguous title to an arbitrary edition.
+      lookup.set(normalizedTitle, null);
+    }
+  });
+
+  return lookup;
+}, new Map());
+
+const trackerTitleAliases = new Map([
+  [normalizeBookTitle("从量子到宇宙"), "52249653"],
+  [normalizeBookTitle("解忧杂货铺"), "14059361"],
+]);
+
+const getBookIdForTrackerTitle = (title) => {
+  const normalizedTitle = normalizeBookTitle(title);
+
+  return (
+    trackerTitleAliases.get(normalizedTitle) ??
+    bookIdByTitle.get(normalizedTitle) ??
+    null
+  );
+};
 
 const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
   const [middleDate, setMiddleDate] = useState(new Date(defaultDate));
@@ -90,7 +129,7 @@ const WeekStrip = ({ defaultDate, onDateSelect, readingData }) => {
     onDateSelect(middleDate.toDateString());
 
     setTimeout(() => centerSelecetedCell(), 100);
-  }, [middleDate]);
+  }, [middleDate, onDateSelect]);
 
   const onDateClick = (direction) => {
     navigateDay(direction);
@@ -423,6 +462,45 @@ const CustomTooltip = ({ active, payload, sessionDetails, theme }) => {
   return null;
 };
 
+const BookLegend = ({ payload = [] }) => (
+  <div className="time-tracker-book-legend" aria-label="Books read">
+    {payload.map((entry) => {
+      const bookTitle = String(entry.value ?? entry.dataKey ?? "");
+      const bookId = getBookIdForTrackerTitle(bookTitle);
+      const content = (
+        <>
+          <span
+            className="time-tracker-book-legend-color"
+            style={{ backgroundColor: entry.color }}
+            aria-hidden="true"
+          />
+          <span>{bookTitle}</span>
+        </>
+      );
+
+      if (!bookId) {
+        return (
+          <span
+            key={bookTitle}
+            className="time-tracker-book-legend-item">
+            {content}
+          </span>
+        );
+      }
+
+      return (
+        <Link
+          key={bookTitle}
+          className="time-tracker-book-legend-item time-tracker-book-legend-link"
+          to={`/book-shelf/book/${bookId}/analytics`}
+          aria-label={`View reading sessions for ${bookTitle}`}>
+          {content}
+        </Link>
+      );
+    })}
+  </div>
+);
+
 const TogglChart = () => {
   const [rawData, setRawData] = useState([]);
   const [data, setData] = useState([]);
@@ -431,7 +509,7 @@ const TogglChart = () => {
   const [selectedDate, setSelectedDate] = useState(new Date().toDateString());
   const [formatter, setFormatter] = useState(() => (m) => m);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -453,9 +531,9 @@ const TogglChart = () => {
     }
   }, [rawData, selectedDate]);
 
-  const handleDateChange = (event) => {
+  const handleDateChange = useCallback((event) => {
     setSelectedDate(event);
-  };
+  }, []);
 
   const formatDateForDisplay = (dateString) => {
     return new Date(dateString).toLocaleDateString("en-US", {
@@ -578,7 +656,7 @@ const TogglChart = () => {
                   data={data}
                   margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
                   <defs>
-                    {GRADIENTS.map((gradient, index) => (
+                    {GRADIENTS.map((gradient) => (
                       <linearGradient
                         key={gradient.id}
                         id={gradient.id}
@@ -642,6 +720,7 @@ const TogglChart = () => {
                   />
 
                   <Legend
+                    content={<BookLegend />}
                     verticalAlign={window.innerWidth < 768 ? "bottom" : "top"}
                     height={50}
                     wrapperStyle={{ paddingBottom: "10px" }}
