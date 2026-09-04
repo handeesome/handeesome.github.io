@@ -1,6 +1,7 @@
 export const TAG_COLORS = {
   fiction: "#FF5733", // Red-orange
   biography: "#D35400", // Dark orange
+  memoir: "#B56576", // Muted rose
   essays: "#E67E22", // Orange
   philosophy: "#9B59B6", // Purple
   religion: "#F39C12", // Yellow-orange
@@ -16,6 +17,7 @@ export const TAG_COLORS = {
   contemporary: "#95A5A6", // Gray
   satire: "#FF6B35", // Bright orange
   statistics: "#9C27B0", // Deep purple
+  law: "#34495E", // Slate navy
 };
 export const getTagColor = (tag) => {
   return TAG_COLORS[tag] || "#6c757d"; // Default gray if tag not found

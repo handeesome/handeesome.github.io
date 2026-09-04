@@ -32,7 +32,7 @@
   "29434": {
     "title": "Self-Made Man: One Woman's Journey Into Manhood and Back Again",
     "title2": "自制男人",
-    "tags": ["biography", "social-science"],
+    "tags": ["memoir", "social-science"],
     "avg rating": "3.45"
   },
   "779021": {
@@ -50,7 +50,7 @@
   "29509524": {
     "title": "Воскресение",
     "title2": "复活",
-    "tags": ["psychology", "philosophy"],
+    "tags": ["fiction", "classics"],
     "avg rating": "4.17"
   },
   "836230": {
@@ -86,7 +86,7 @@
   "42616411": {
     "title": "Educated: A Memoir",
     "title2": "你当像鸟飞往你的山",
-    "tags": ["biography"],
+    "tags": ["memoir"],
     "avg rating": "4.46"
   },
   "31837": {
@@ -104,7 +104,7 @@
   "247797083": {
     "title": "本なら売るほど  3",
     "title2": "十月堂旧书事3",
-    "tags": [],
+    "tags": ["fiction", "contemporary"],
     "avg rating": "4.50"
   },
   "231418250": {
@@ -164,7 +164,7 @@
   "32175062": {
     "title": "게으름",
     "title2": "懒惰",
-    "tags": ["essays"],
+    "tags": ["religion"],
     "avg rating": 4.5
   },
   "50705179": {
@@ -176,19 +176,19 @@
   "48889983": {
     "title": "Calling Bullshit: The Art of Skepticism in a Data-Driven World",
     "title2": "拆穿数据胡扯",
-    "tags": ["statistics", "essays"],
+    "tags": ["statistics"],
     "avg rating": 4.1
   },
   "53605067": {
     "title": "The Data Detective: Ten Easy Rules to Make Sense of Statistics",
     "title2": "拼凑真相",
-    "tags": ["statistics", "essays"],
+    "tags": ["statistics"],
     "avg rating": 4.12
   },
   "13588394": {
     "title": "The Signal and the Noise: Why So Many Predictions Fail—But Some Don't",
     "title2": "信号与噪声",
-    "tags": ["statistics", "essays"],
+    "tags": ["statistics"],
     "avg rating": 3.97
   },
   "43722897": {
@@ -212,7 +212,7 @@
   "323455": {
     "title": "De Profundis",
     "title2": "自深深处",
-    "tags": ["biography", "classics"],
+    "tags": ["memoir", "classics"],
     "avg rating": 4.22
   },
   "71943": {
@@ -248,7 +248,7 @@
   "121732": {
     "title": "Surprised by Joy: The Shape of My Early Life",
     "title2": "惊喜之旅",
-    "tags": ["biography", "religion"],
+    "tags": ["memoir", "religion"],
     "avg rating": 4.06
   },
   "221282": {
@@ -272,7 +272,7 @@
   "27995383": {
     "title": "氷点",
     "title2": "冰点",
-    "tags": ["fiction", "contemporary"],
+    "tags": ["fiction", "classics"],
     "avg rating": 3.98
   },
   "14059361": {
@@ -290,7 +290,7 @@
   "23692271": {
     "title": "Sapiens: A Brief History of Humankind",
     "title2": "人类简史",
-    "tags": ["history", "essays", "social-science"],
+    "tags": ["history", "social-science"],
     "avg rating": 4.33
   },
   "18905230": {
@@ -321,7 +321,7 @@
     "title": "今日店休",
     "title2": "",
     "author": "坂本健一",
-    "tags": ["fiction", "contemporary"],
+    "tags": ["essays", "arts"],
     "avg rating": 4.38
   },
   "43277265": {
@@ -333,13 +333,13 @@
   "238727": {
     "title": "My First Summer in the Sierra",
     "title2": "夏日走过山间",
-    "tags": [],
+    "tags": ["memoir", "classics"],
     "avg rating": 4.05
   },
   "4069": {
     "title": "Man's Search for Meaning",
     "title2": "活出意义来",
-    "tags": ["biography", "philosophy"],
+    "tags": ["memoir", "psychology", "philosophy"],
     "avg rating": 4.37
   },
   "24583": {
@@ -381,32 +381,32 @@
   "19421327": {
     "title": "The Five Love Languages: How to Express Heartfelt Commitment to Your Mate",
     "title2": "爱的五种语言",
-    "tags": ["religion"],
+    "tags": ["psychology", "religion"],
     "avg rating": 4.28
   },
   "57300433": {
     "title": "The Book of Why: The New Science of Cause and Effect",
     "title2": "为什么：关于因果关系的新科学",
-    "tags": ["statistics", "social-science", "essays"],
+    "tags": ["statistics", "social-science"],
     "avg rating": 3.94,
     "num pages": "335"
   },
   "21122": {
     "title": "The Coming of Age",
     "title2": "论老年",
-    "tags": ["philosophy", "social-science", "essays"],
+    "tags": ["philosophy", "social-science"],
     "avg rating": 3.93
   },
   "457264": {
     "title": "The Second Sex",
     "title2": "第二性",
-    "tags": ["philosophy", "social-science", "essays"],
+    "tags": ["philosophy", "social-science", "classics"],
     "avg rating": 4.18
   },
   "2054": {
     "title": "The Long Goodbye",
     "title2": "漫长的告别",
-    "tags": ["fiction"],
+    "tags": ["fiction", "classics"],
     "avg rating": 4.19
   },
   "485894": {
@@ -442,7 +442,7 @@
   "58715110": {
     "title": "Anti-Intellectualism in American Life",
     "title2": "美国的反智传统",
-    "tags": ["essays", "social-science"],
+    "tags": ["history", "social-science"],
     "num pages": "434",
     "avg rating": 4.11
   },
@@ -472,7 +472,7 @@
   },
   "54861804": {
     "title": "如何假装懂音乐",
-    "tags": ["arts", "social-science"],
+    "tags": ["arts", "history"],
     "avg rating": 3.12
   },
   "385228": {
@@ -484,25 +484,25 @@
   "1314433": {
     "title": "Liberty, Equality, Fraternity",
     "title2": "自由，平等，博爱",
-    "tags": ["philosophy", "history", "social-science"],
+    "tags": ["philosophy", "social-science", "classics"],
     "avg rating": 3.81
   },
   "23275043": {
     "title": "沈黙",
     "title2": "沉默",
-    "tags": ["fiction", "religion"],
+    "tags": ["fiction", "religion", "classics"],
     "avg rating": 4.09
   },
   "19342729": {
     "title": "Atonement",
     "title2": "赎罪",
-    "tags": ["fiction", "classics"],
+    "tags": ["fiction", "contemporary"],
     "avg rating": 3.95
   },
   "41810863": {
     "title": "The Remains of the Day",
     "title2": "长日将尽",
-    "tags": ["fiction", "classics"],
+    "tags": ["fiction", "contemporary"],
     "avg rating": 4.14
   },
   "11138": {
@@ -514,12 +514,12 @@
   "57836039": {
     "title": "ぼくはこんな音楽を聴いて育った",
     "title2": "我成长的音乐时代",
-    "tags": ["biography", "arts"],
+    "tags": ["memoir", "arts"],
     "avg rating": 3.5
   },
   "3730": {
     "title": "The Hidden Persuaders",
-    "tags": ["essays", "social-science"],
+    "tags": ["psychology", "social-science"],
     "avg rating": 3.84
   },
   "1000751": {
@@ -531,12 +531,12 @@
   "40000210": {
     "title": "At the Existentialist Café: Freedom, Being, and Apricot Cocktails",
     "title2": "存在主义咖啡馆",
-    "tags": ["philosophy", "essays"],
+    "tags": ["philosophy", "history", "biography"],
     "avg rating": 4.24
   },
   "59719801": {
     "title": "法治的细节",
-    "tags": ["essays", "social-science"],
+    "tags": ["law", "essays"],
     "avg rating": 4.26
   },
   "28154510": {
@@ -554,7 +554,7 @@
   "54383459": {
     "title": "The Story of Philosophy: The Lives and Opinions of the World's Greatest Philosophers",
     "title2": "哲学的故事",
-    "tags": ["philosophy", "biography"],
+    "tags": ["philosophy", "history", "biography"],
     "avg rating": 4.15
   },
   "202694": {
@@ -617,7 +617,7 @@
   "53263624": {
     "title": "L'évolution créatrice",
     "title2": "创造进化论",
-    "tags": ["philosophy"],
+    "tags": ["philosophy", "classics"],
     "avg rating": 4.1
   },
   "3836": {
@@ -692,7 +692,7 @@
   },
   "18250837": {
     "title": "How (Not) to Be Secular: Reading Charles Taylor",
-    "tags": ["religion", "philosophy", "essays"],
+    "tags": ["religion", "philosophy"],
     "avg rating": 4.21
   },
   "824412": {
@@ -702,12 +702,12 @@
   },
   "55385983": {
     "title": "Speechless: Controlling Words, Controlling Minds",
-    "tags": ["essays", "social-science"],
+    "tags": ["political-science", "social-science"],
     "avg rating": 4.24
   },
   "61369370": {
     "title": "The College Scam: How America's Universities Are Bankrupting and Brainwashing Away the Future of America's Youth",
-    "tags": ["essays", "economics", "social-science"],
+    "tags": ["political-science", "social-science"],
     "avg rating": 4.16
   },
   "36651676": {
@@ -720,11 +720,11 @@
     "title": "Red Roulette: An Insider's Story of Wealth, Power, Corruption, and Vengeance in Today's China",
     "title2": "红色赌盘",
     "num pages": "171",
-    "tags": ["biography", "history", "social-science"],
+    "tags": ["memoir", "social-science"],
     "avg rating": 3.91
   },
   "28137375": {
-    "title": "Pride and Predujice",
+    "title": "Pride and Prejudice",
     "title2": "傲慢与偏见",
     "tags": ["fiction", "classics"],
     "avg rating": 4.3
@@ -750,7 +750,7 @@
   "203774224": {
     "title": "法律的悖论",
     "title2": "Paradoxes of Law",
-    "tags": ["philosophy", "social-science"],
+    "tags": ["law", "philosophy"],
     "avg rating": 3.91
   },
   "17259893": {
@@ -768,7 +768,7 @@
   "12649": {
     "title": "Les Confessions",
     "title2": "忏悔录",
-    "tags": ["biography", "philosophy", "classics"],
+    "tags": ["memoir", "philosophy", "classics"],
     "avg rating": 3.6
   },
   "3023": {
@@ -801,41 +801,41 @@
   "52104820": {
     "title": "圆圈正义：作为自由前提的信念",
     "title2": "The Faith as Premise of Freedom",
-    "tags": ["philosophy", "social-science"],
+    "tags": ["law", "philosophy", "essays"],
     "avg rating": 4.06
   },
   "41889692": {
     "title": "When Breath Becomes Air",
     "title2": "当呼吸化为空气",
-    "tags": ["biography"],
+    "tags": ["memoir"],
     "avg rating": 4.41
   },
   "23336950": {
     "title": "A Pearl Necklace",
     "title2": "珍珠项链",
-    "tags": ["biography"],
+    "tags": ["memoir", "religion"],
     "avg rating": 4.24
   },
   "52884924": {
     "title": "走到比錢更遠的地方",
-    "tags": ["biography"],
+    "tags": ["memoir", "religion"],
     "avg rating": 5.0
   },
   "38819247": {
     "title": "Food and Nutrition: What Everyone Needs to Know®",
-    "tags": ["essays", "social-science"],
+    "tags": ["science"],
     "avg rating": 3.88
   },
   "211854307": {
     "title": "康熙的红票：全球化中的清朝",
-    "title2": "Emporor Kangxi's Red Manifesto: The Qing Dynasty in Globalization",
+    "title2": "Emperor Kangxi's Red Manifesto: The Qing Dynasty in Globalization",
     "tags": ["history"],
     "avg rating": 4.61
   },
   "210594797": {
     "title": "A Pearl Necklace",
     "title2": "珍珠项链",
-    "tags": ["biography"],
+    "tags": ["memoir", "religion"],
     "avg rating": 5.0
   },
   "32899495": {
