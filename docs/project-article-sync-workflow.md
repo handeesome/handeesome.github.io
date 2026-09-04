@@ -49,7 +49,7 @@ Do not change a source project while updating the personal website unless the us
 | Article | Last reviewed | Source snapshot used |
 | --- | --- | --- |
 | `hugo-book` | 2026-09-04 | Xiangcaoshan working-tree `README.md`, including the documented text/audio preparation workflow |
-| `notion-widgets` | 2026-09-04 | Root, Gallery, and Weather READMEs; Gallery and Weather UIs rendered for screenshots |
+| `notion-widgets` | 2026-09-04 | Root, Gallery, and Weather READMEs; Gallery and Weather UIs rendered for screenshots; Visual Board and Vertical Board examples use local cat/dog training images rather than personal book covers |
 | `pnyl` | 2026-09-04 | Root README and the current descriptions of its five activity tools |
 | `personal-website` | 2026-09-04 | Current repository README and project-loading implementation |
 

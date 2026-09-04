@@ -12,15 +12,20 @@ The repository currently contains two widgets: a configurable image gallery and 
 ## Links
 
 - **Source code:** [GitHub repository](https://github.com/handeesome/notion-widgets)
+- **Gallery configuration:** [Open the configuration page](https://handeesome.github.io/notion-widgets/gallery/configure.html) and add your private gallery ID as the `?id=` URL parameter
 - **Weather widget:** [Open the live widget](https://handeesome.github.io/notion-widgets/weather/)
 
 ## Gallery Widget
 
 The gallery stores its images and settings in **Supabase**. A private random gallery ID connects the public display page to its configuration page, where images can be uploaded, replaced, deleted, and reordered. The same page controls layout, image sizing, autoplay speed, transitions, colors, card radius, arrows, dots, and counters.
 
-![Gallery Widget showing the visual board layout](/images/projects/notion-widgets/gallery-widget.png)
+![Gallery Widget showing cats and dogs in the visual board layout](/images/projects/notion-widgets/gallery-widget.png)
 
 I wanted the gallery to feel good inside a narrow Notion embed rather than behave like a full website. It supports Carousel, Accordion, Fan stack, and Vertical board layouts, along with keyboard controls, touch gestures, hover interactions, autoplay pausing, and links to the original images. Uploads are resized in the browser and converted to WebP before being sent to storage.
+
+The Vertical board layout keeps the current image in front while nearby cards remain visible above and below as navigation context.
+
+![Gallery Widget showing cats and dogs in the vertical board layout](/images/projects/notion-widgets/gallery-vertical-widget.png)
 
 The repository contains only a Supabase publishable key. The gallery ID is deliberately kept out of Git because it also acts as the editing credential for that particular gallery.
 
