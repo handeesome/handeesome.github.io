@@ -10,9 +10,14 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
+  ReferenceLine,
 } from "recharts";
 import togglData from "../../../../static/books/toggl-data.json";
 import { useTheme } from "../../../../contexts/ThemeContext";
+import {
+  buildDailyReadingTimeline,
+  READING_GAP_THRESHOLD_DAYS,
+} from "../utils/readingAnalytics";
 
 const BookTimeAnalytics = ({ bookTitle, bookTitle2 }) => {
   const [rawData, setRawData] = useState([]);
@@ -72,36 +77,7 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2 }) => {
       });
     });
 
-    // Fill in missing dates
-    const dates = Object.keys(dailyAgg).map((date) => new Date(date));
-    const minDate = new Date(Math.min(...dates));
-    const maxDate = new Date(Math.max(...dates));
-
-    // Create entries for all dates between min and max
-    const currentDate = new Date(minDate);
-    while (currentDate <= maxDate) {
-      const dateString = currentDate.toDateString();
-      if (!dailyAgg[dateString]) {
-        dailyAgg[dateString] = {
-          date: dateString,
-          totalMinutes: 0,
-          sessionCount: 0,
-        };
-      }
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
-
-    // Convert to arrays and sort
-    const dailyArray = Object.values(dailyAgg)
-      .sort((a, b) => new Date(a.date) - new Date(b.date))
-      .map((item) => ({
-        ...item,
-        minutes: item.totalMinutes,
-        dateFormatted: new Date(item.date).toLocaleDateString("en-US", {
-          month: "short",
-          day: "numeric",
-        }),
-      }));
+    const dailyArray = buildDailyReadingTimeline(Object.values(dailyAgg));
 
     setDailyData(dailyArray);
     setSessionData(sessions.slice(-20)); // Last 20 sessions
@@ -134,6 +110,42 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2 }) => {
   };
 
   const darkBg = theme === "dark" ? "bg-dark" : "";
+  const gaps = dailyData.filter((day) => day.gapDays);
+  const formatTick = (date) =>
+    dailyData.find((day) => day.date === date)?.dateFormatted ?? date;
+  const tooltipProps = {
+    filterNull: false,
+    formatter: (value, name, item) =>
+      item.payload.gapDays
+        ? [`${item.payload.gapDays} days without reading`, "Collapsed gap"]
+        : [
+            `${Number(value).toFixed(1)} minutes`,
+            name === "totalMinutes" ? "Reading Time" : name,
+          ],
+    labelFormatter: (label, payload) => {
+      const day = payload?.[0]?.payload;
+      return day?.gapDays
+        ? `${day.gapStart} – ${day.gapEnd}`
+        : `Date: ${new Date(label).toLocaleDateString("en-US")}`;
+    },
+    contentStyle: {
+      backgroundColor: theme === "dark" ? "#333" : "#fff",
+    },
+  };
+  const gapMarkers = gaps.map((gap) => (
+    <ReferenceLine
+      key={gap.date}
+      x={gap.date}
+      stroke={theme === "dark" ? "#aaa" : "#666"}
+      strokeDasharray="4 4"
+      label={{
+        value: `// ${gap.gapDays}d`,
+        position: "insideTop",
+        fill: theme === "dark" ? "#ddd" : "#555",
+        fontSize: 12,
+      }}
+    />
+  ));
 
   const StatCard = ({ title, value, unit, icon }) => (
     <div className="col-md-3 mb-3">
@@ -192,26 +204,25 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2 }) => {
         </div>
       </div>
 
+      {gaps.length > 0 && (
+        <p className="small text-body-secondary text-center mb-2">
+          // marks gaps longer than {READING_GAP_THRESHOLD_DAYS} days without
+          reading. Hover for dates.
+        </p>
+      )}
+
       {/* Charts */}
       <div style={{ height: 400, marginBottom: 20 }}>
         {viewMode === "daily" && (
           <ResponsiveContainer>
             <BarChart data={dailyData}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="dateFormatted" />
+              <XAxis dataKey="date" tickFormatter={formatTick} />
               <YAxis
                 label={{ value: "Minutes", angle: -90, position: "insideLeft" }}
               />
-              <Tooltip
-                formatter={(value, name) => [
-                  `${value.toFixed(1)} minutes`,
-                  "Reading Time",
-                ]}
-                labelFormatter={(label) => `Date: ${label}`}
-                contentStyle={{
-                  backgroundColor: theme === "dark" ? "#333" : "#fff",
-                }}
-              />
+              <Tooltip {...tooltipProps} />
+              {gapMarkers}
               <Bar dataKey="totalMinutes" fill="#8884d8" />
             </BarChart>
           </ResponsiveContainer>
@@ -221,25 +232,19 @@ const BookTimeAnalytics = ({ bookTitle, bookTitle2 }) => {
           <ResponsiveContainer>
             <LineChart data={dailyData}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="dateFormatted" />
+              <XAxis dataKey="date" tickFormatter={formatTick} />
               <YAxis
                 label={{ value: "Minutes", angle: -90, position: "insideLeft" }}
               />
-              <Tooltip
-                formatter={(value, name) => [
-                  `${Math.round(value)} minutes`,
-                  "Reading Time",
-                ]}
-                contentStyle={{
-                  backgroundColor: theme === "dark" ? "#333" : "#fff",
-                }}
-              />
+              <Tooltip {...tooltipProps} />
+              {gapMarkers}
               <Legend />
               <Line
                 type="monotone"
                 dataKey="totalMinutes"
                 stroke="#8884d8"
                 strokeWidth={3}
+                connectNulls={false}
                 name="Daily Reading Time"
               />
             </LineChart>
