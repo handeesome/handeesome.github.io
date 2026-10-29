@@ -11,7 +11,7 @@ The app is built with **Flask** and **python-pptx**. It provides a web form wher
 
 Source code: [github.com/handeesome/ccg-bremen-auto-pptx](https://github.com/handeesome/ccg-bremen-auto-pptx)
 
-[Try the frontend-only demo](/demos/auto-pptx/index.html)
+[Try the frontend-only demo](/demos/auto-pptx/index.html). It previews the form; generating files requires the Python backend.
 
 ![A simple form](/images/projects/auto-pptx/simple-form.png)
 
@@ -27,12 +27,27 @@ The project uses the 2010 **Revised Chinese Union Version** / 《和合本修订
 
 ## Song Slide Tools
 
-Another important part of the app is song slide generation. Coworkers can either download existing song PowerPoints from the church Google Drive workflow or create new song slides directly from lyrics.
+The app now has three entry points: a complete worship deck, a single song made from lyrics, and a batch converter for existing song decks. The lyric editor generates a pagination draft that coworkers can rearrange before export.
 
 The DIY lyric tool helps split lyrics into pages, preview the result, and export a new PowerPoint file with the church's slide style. This makes it easier to create consistent song slides without manually duplicating and formatting PowerPoint pages.
 
-![google drive](/images/projects/auto-pptx/google-drive.png)
+The earlier Google Drive integration is disabled in the current source. Existing song decks can instead be uploaded for lyric extraction and regeneration with the current template.
+
 ![DIY-lyrics](/images/projects/auto-pptx/DIY-lyrics.png)
+
+## Reusing Old Song Decks
+
+Changing a church slide template should not require manually rebuilding an entire song library. The batch workflow uploads old `.pptx` files in chunks, extracts their lyric pages, and regenerates each deck through the same `python-pptx` template generator used by the single-song editor. When first-slide audio is available, the importer attempts to carry it into the new deck.
+
+Flask keeps each batch's working files and generated outputs in separate temporary directories. Each chunk returns successful and failed files separately, duplicate output names receive numbered suffixes, and the final step returns either one PowerPoint file or a ZIP archive. This makes partial failures visible while preserving the files that converted successfully.
+
+The worship form can also import lyric pages and available audio from existing song decks into its song slots. Structured service information and reusable song content meet at the deck generator, rather than requiring coworkers to merge separate presentations by hand.
+
+## Runtime and Current Scope
+
+The frontend uses plain HTML, CSS, and JavaScript; Flask handles form data, uploads, extraction, and downloads. `requests` and BeautifulSoup support external content lookups. This needs a Python service with writable temporary storage, so a static frontend host alone cannot generate the files.
+
+The README documents running `python application.py` after installing the Python dependencies. Generated audio may still need its cross-slide playback settings adjusted in PowerPoint. The source includes cleanup after downloads, while production operation also needs upload limits, disk-space management, and cleanup for abandoned temporary work. The batch behavior described here was checked against the current README and routes; it is not a claim that every legacy deck or audio format has been exercised.
 
 ## Why I Built It
 

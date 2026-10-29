@@ -2,7 +2,7 @@
 title: Xiangcaoshan Christian Reading Library
 date: 2025-01-21
 tags: [hugo, javascript, netlify, markdown]
-description: A Hugo-powered Christian reading and listening site that collects spiritual books, playable chapter audio, Christian music, and children's learning resources.
+description: A Hugo reading and listening library with saved reading progress, adjustable typography, paragraph audio highlighting, music, and children's resources.
 ---
 
 Xiangcaoshan is a Christian reading and listening library built with **Hugo**, custom JavaScript, and a modified `my-book` theme. The site gathers spiritual writings from authors such as Watchman Nee, Andrew Murray, T. Austin-Sparks, Jessie Penn-Lewis, John Nelson Darby, Thomas a Kempis, and others, then presents them in a quiet, book-like browsing experience.
@@ -24,7 +24,21 @@ The music section extends the same idea to worship media. It supports folders, s
 
 The site uses **Hugo** as the static site generator, with content stored primarily under `content/books`, `content/music`, and `content/children`. Markdown keeps the book chapters easy to maintain, while custom JavaScript handles bookshelf filtering, audio playback controls, and the interactive music index.
 
-Two Netlify serverless functions support the parts that need dynamic behavior. One function validates audio requests and redirects them to object storage, keeping the public pages lightweight while still supporting protected media delivery. Another function reads a remote music manifest, groups folders, sorts entries, and returns paginated JSON for the frontend.
+Two Netlify serverless functions support the parts that need dynamic behavior. One validates the requested book and audio path, then redirects to Alibaba Cloud OSS. Another reads a remote music manifest, groups folders, sorts entries, and returns paginated JSON with short-lived server and HTTP caching. Large audio and video files stay outside Git.
+
+## Returning to a Long Book
+
+I added browser-local reading history for the 30 most recently visited reading pages. It saves the chapter, paragraph position, and paused audio progress. Opening the homepage directly can return to the latest chapter; explicit homepage links, reloads, browser back navigation, and chapter fragments retain their intended destinations. Audio resumes from its saved time only after the reader presses play. No reading history is sent to a server.
+
+Typography is part of the same problem. Readers can preview sans-serif or serif text and choose a body size from 14 to 26 pixels, with preferences saved locally. Changing the font keeps the current paragraph in view. On mobile, reading controls return progressively when scrolling upward and hide when scrolling down, while the table of contents reveals the current section. Navigation dialogs also handle keyboard focus.
+
+## Connecting Paragraphs to Audio
+
+Supported recordings can highlight the paragraph currently being read. A local Python tool uses **faster-whisper**, or existing word-timed transcripts, to align the chapter text and produce timing JSON. The website fetches that JSON on demand and connects each cue to the rendered paragraph using its target index and normalized text. Headings remain in the page's element indexing but are excluded from alignment and highlighting, avoiding shifted paragraph targets.
+
+The difficult part is accepting the timing. Repeated phrases, introductory quotations, omitted passages, and edited recordings can all create plausible but wrong matches. The workflow checks paragraph identity and its opening and closing phrases, compares targets against Hugo's actual HTML, and calls for listening at boundaries and ambiguous sections. Unverified generated candidates stay local by default. Partial repair changes only boundaries with evidence and retains unresolved timings and warnings.
+
+I chose paragraph-level highlighting because it can be reviewed and maintained alongside the chapters. The recognized transcript locates the text; the public page still shows the edited source text. Published timing JSON belongs in Git, while recordings, models, transcripts, and temporary reports remain separate.
 
 ## Preparing Books and Audio
 
@@ -47,6 +61,12 @@ The bookshelf includes works such as:
 - `圣灵全备的祝福` by Andrew Murray
 - `十字架与生命之路` by T. Austin-Sparks
 - `魂与灵` by Jessie Penn-Lewis
+
+## Offline Behavior and Verification
+
+The installable PWA uses runtime caching for successfully visited same-origin pages and assets. An uncached page that cannot load shows an offline message. External audio and video still need a connection, so installing the site does not download the media library.
+
+The repository includes Node regression tests for reading progress, typography, mobile controls, lazy audio synchronization, and service-worker navigation, plus Python alignment regressions. Its documented acceptance process combines those checks with a Hugo build, representative mobile and desktop pages, rendered paragraph targets, and audio boundary checks. A successful build alone does not establish that a recording is aligned correctly.
 
 ## Why I Built It
 

@@ -37,6 +37,16 @@ These pages are used while people are talking, moving, looking at a projector, a
 
 The project also treats privacy as part of the interaction design. Anonymous tools avoid collecting identity fields, short-lived event data is deleted automatically, secrets stay in deployment configuration, and inactive services are turned into explicit demos rather than quietly failing.
 
+## Keeping the Debate's Stages Separate
+
+Between Two Sides separates anonymous topic interest from later participation. The first stage accepts no nickname and stores votes separately from named side selections, without a link between the two tables. After the host chooses a topic, participants enter a nickname and choose a side once. Only after the host distributes tasks does each phone receive its private task, hidden until tapped; the host API does not return those tasks.
+
+The host and phone pages poll the Worker every 2.2 seconds for stage changes. D1 holds durable room state, while each browser keeps its own room credential in `localStorage`. Rooms expire after six hours and an hourly cleanup removes expired data. Host recovery invalidates the previous host credential. Starting another round clears the votes, participants, sides, and tasks while keeping the same room code and QR code.
+
+This structure supports a particular kind of discussion. Private tasks invite people to acknowledge their own side's weaknesses, ask sincere questions, summarize the other side, or encourage a teammate. A browser-only demo supplies fictional votes and participants without writing them to D1, so the facilitator can rehearse the stages before involving the room.
+
+The debate subproject includes topic, QR-code, and validation tests. Those checks support the application logic; projection readability and a real phone's connection still need checking in the activity's environment. Other tools retain their own storage choices: a local Monopoly session is not automatically shared across participants, and the archived Church Untold demo accepts no new answers.
+
 ## Why I Built It
 
 I built these tools because many good group activities have awkward operational edges. The idea itself may be simple, but the person leading it still has to collect answers, keep time, split teams, protect anonymity, and keep the room focused. Small purpose-built pages remove those distractions and let the technology stay in the background of the conversation.

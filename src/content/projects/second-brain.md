@@ -2,82 +2,71 @@
 title: Obsidian Second Brain
 date: 2026-06-02
 tags: [obsidian, markdown, python, ai, personal-knowledge-management]
-description: A local-first Obsidian vault that turns reading records, highlights, conversations, and AI-assisted reflection into a long-term memory and thought-evolution system.
+description: A local-first Markdown vault where Codex maintains reading conversations, evidence links, and evolving thought without turning AI inference into personal memory.
 ---
 
-Obsidian Second Brain is a local-first knowledge system I am building around my own reading, notes, conversations, and learning process. It is not meant to be a polished SaaS app or a generic note-taking template. The goal is more personal: to help me remember what I have read, notice what has caught my attention, recover past thinking, and see how my views change over time.
+Obsidian Second Brain is a local-first knowledge system I am building around reading, conversations, and learning. I want to recover what I read, understand why something caught my attention, and compare how I understood a question at different times.
 
-The project uses **Obsidian Markdown** as the source of truth. Books, highlights, topics, conversations, stance drafts, profile notes, learning notes, dashboards, and system rules all live as readable files in the vault. AI can help organize and question the material, but it has to preserve a strict boundary between original sources, my highlights, my confirmed thoughts, and AI inference.
+**Obsidian Markdown is the durable source of truth; Codex is the current conversation and maintenance interface.** Books, highlights, source conversations, topics, formal stances, and system rules remain human-readable files. The interface can change without making the notes dependent on a particular AI product.
 
-This is the main design rule of the project: a highlight is not automatically agreement. A book I read is not automatically my worldview. AI analysis is useful only when it clearly marks `AI推测` (AI inference), `待确认` (to be confirmed), and `用户确认` (user-confirmed thought).
+The source repository is private. This article describes its system design rather than publishing personal notes or conversations.
 
-## What It Does
+## From Conversation to Connected Notes
 
-The first layer is reading memory. The vault stores book notes, Goodreads-derived reading records, and highlight notes, then connects them through topic notes and recall indexes. That makes it possible to ask questions like where I may have read an idea before, which books or quotes relate to a topic, or how a certain theme has appeared across my reading.
+The project has two parallel uses: deepening selected books I have already read, and discussing topics or learning something new. Book work gets more attention at present, but it is not a prerequisite for a useful discussion.
 
-The second layer is thought evolution. Instead of replacing older views with newer summaries, the system keeps a trail of how ideas develop. Topic notes and stance notes can record source evidence, open questions, AI observations, and user-confirmed updates. This matters because a second brain should not only store conclusions; it should also preserve the path that led there.
+A book session starts from existing notes, highlights, prior conversations, and a confidently matched ebook's structure or short context. The ebook library stays outside the vault and serves as auxiliary source material. Highlights are memory cues; questions follow the book's arguments, scenes, and tensions rather than requiring a response to every highlighted sentence.
 
-The third layer is guided AI intake. I do not want to fill out a rigid template every time I finish a book, notice a quote, or have a messy thought. The intended workflow is conversational: I can say something casually, the AI asks a few short follow-up questions, proposes where the material should go, shows a draft, and only writes to the vault after the boundary is clear.
+Each completed reading unit is saved incrementally as a source conversation. At a natural session boundary, Codex integrates relevant book and topic notes, source links, stance signals, and necessary profile changes. Ordinary note maintenance does not need a separate approval for every file. Topic and learning conversations are captured when they contain durable thought or understanding; routine tool questions and maintenance chatter are excluded.
 
-## AI Boundaries
+## Evidence Boundaries
 
-A major part of the project is deciding what AI is allowed to do. The vault supports different modes: strict vault-only recall for personal memory questions, web-assisted mode for learning or external research, Socratic mode for confusion, and book-deepening mode for recovering the structure of books I have already read.
+Automatic maintenance makes attribution more important. The system distinguishes source text (`原文`), highlights (`我的高亮`), original user wording (`用户原话`), explicit expressions in context (`用户明确表达`), faithful AI organization (`AI整理`), uncertain inference (`AI推测`), external material (`外部资料`), and a revisable current synthesis (`当前综合`).
 
-The system is intentionally careful with personal memory. AI may summarize, connect, and challenge, but it should not invent my beliefs, quietly turn speculation into identity, or treat external sources as my own thoughts. Chinese, English, and mixed-language notes are preserved in their natural form, so the project does not become cleaner by becoming less true.
+These are evidence categories, not an approval ladder. There is no routine waiting queue for me to clear. Uncertain interpretations remain AI inference. A highlight does not establish agreement, a past view does not automatically describe my current view, and one emotional or exploratory statement cannot become a stable profile fact.
+
+Topic notes connect sources and unresolved questions over time. Formal stances are reserved for views that are important, repeated, and stable enough to benefit from independent retrieval. Stance signals are an AI-owned observation layer, not automatically accepted beliefs. New understanding preserves earlier evidence and its date instead of rewriting the past into apparent consistency.
 
 ## Example Interaction
 
-A typical exchange is closer to guided reflection than to filling out a form. The AI can ask questions, recover related notes, and draft a clean entry, but the final memory still depends on my confirmation.
+This illustrative exchange shows the intended attribution and saving behavior; it is not an excerpt from the private vault.
 
 ```chat
 Me:
-I keep thinking about Fromm's idea that love is not mainly a feeling,
-but a practice. I do not know if I agree, but it keeps coming back
-when I think about discipline and attention.
+I keep thinking about Fromm's idea that love is a practice.
+I do not know whether I agree yet.
 
 AI:
-Before I write this into the vault, I need to separate a few things:
-
-1. Is this your current belief, an open question, or just a line that
-   caught your attention?
-2. Should I connect it to the topic note on love, the stance note on
-   self-discipline, or create a new waiting note?
-3. Do you want me to search only your vault, or can I use external
-   context about Fromm?
+Let's keep that distinction: the idea belongs to the book,
+and your response is an open question. What would treating
+love as a practice explain, and what might it leave out?
 
 Me:
-Treat it as an open question. Use vault-only mode first. Connect it to
-love and self-discipline, but do not mark it as my confirmed view yet.
+It explains why attention matters. But I do not want to
+reduce love to discipline.
 
 AI:
-I found related notes from The Art of Loving, a prior conversation about
-attention, and your topic note on self-discipline. Here is the draft:
-
-- Source evidence: Fromm quote and previous highlight references.
-- 待确认: whether love should be understood as a practice.
-- AI推测: this may connect to your recurring interest in attention.
-- 用户确认: you want this preserved as an open question, not a belief.
-
-Proposed destination:
-04_主题_Topics/Love.md
-06_立场_Stances/Self-discipline and attention.md
-
-Should I write this draft to the vault?
+I saved this unit as a source conversation and connected it
+to the topic note on love. Your question and wording remain
+separate from my synthesis. Any possible connection to other
+themes stays labeled AI推测, without becoming a formal stance.
 
 Me:
-Yes, but keep the AI推测 label visible.
+Let's continue with that tension next time.
 ```
 
-## Technical Shape
+## Technical Architecture
 
-The technical side is deliberately simple. The vault is a folder of Markdown files with clear top-level areas for books, highlights, topics, conversations, stances, learning notes, personal notes, attachments, and system files. A Python standard-library script, `vault_recall.py`, builds the lightweight recall index, dashboard notes, and candidate path lists for future RAG workflows.
+Global instructions route work to task-specific workflows for book deepening, conversation capture, topic/stance/profile maintenance, intake, and imports. Templates and deterministic scripts support those workflows. Ordinary discussion can update Markdown directly; repeated imports, migrations, and validation use scripts.
 
-The current index tracks hundreds of ordinary vault notes while skipping raw-like materials, logs, backups, chat exports, and the separate ebook source library from routine retrieval scope. The dashboard layer gives a quick overview of books, highlights, topics, stances, evidence levels, and recall readiness without turning raw private material into the default search surface.
+The Python standard-library helper `vault_recall.py` builds a lightweight recall index and dashboards. It excludes raw exports, logs, backups, raw chat and Notion imports, attachments, and the separate ebook library from routine retrieval. The index provides an evidence map; the source note supplies the wording and context needed to attribute a claim.
 
-Git acts as the recovery layer for normal edits, and the project favors small safe scripts over a large app. That keeps the system understandable: if a tool changes later, the Markdown vault still remains readable, portable, and useful.
+Personal recall starts with vault evidence. Learning and open discussion can also draw on external sources, with their contribution kept separate from my own expressions. This prevents outside research from silently becoming autobiographical memory.
 
-## Why I Built It
+## Validation, Recovery, and Privacy
 
-I built this project because reading and thinking are temporal. I often care less about a final polished note than about the question underneath it: why did this sentence catch me, what was I wrestling with then, and how has that changed?
+Validation follows the scale of the change. Incremental conversation saves do not trigger a full scan. Natural session checkpoints use changed-file validation when links or front matter changed; book completion, bulk imports, system changes, and moves call for broader checks. Indexes and dashboards refresh when their underlying decision data is materially stale.
 
-What I like most about this project is the restraint in its architecture. AI is invited into the workflow, but not as the owner of memory. The vault stays local, the evidence boundaries stay visible, and the system grows from real use rather than from a perfect abstract taxonomy. It is a personal knowledge project, but at its best it feels like a long-term reading partner: one that helps me remember, asks better questions, and keeps the thread of my thinking from disappearing.
+Git tracks core Markdown, rules, scripts, and lightweight indexes. Raw exports, attachments, ebooks, local backups, application state, and reports need their own backup strategy because Git excludes them. Credentials and third-party secrets do not belong in the vault.
+
+Local-first describes where the durable files live. Codex may read selected material while assisting, and external research introduces additional sources; this is not a promise of fully offline AI processing. The system's evidence rules guide that assistance, but they still require careful source handling. Its most useful property is that I can inspect and correct the memory in ordinary Markdown.

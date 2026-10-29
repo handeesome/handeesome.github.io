@@ -5,7 +5,7 @@ import "./styles/index.js";
 
 import Home from "./pages/Home";
 import Footer from "./components/layout/Footer";
-import Header from "./components/layout/header/Header";
+import ProjectsHeader from "./pages/projects/ProjectsHeader";
 import GoToTopButton from "./components/GoToTopButton.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import {
@@ -21,7 +21,7 @@ const StudyNotes = lazy(() => import("./pages/StudyNotes"));
 function App() {
   return (
     <AuthProvider>
-      <Header picHeight={80} />
+      <ProjectsHeader />
       <Suspense fallback={<div className="loading">Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />

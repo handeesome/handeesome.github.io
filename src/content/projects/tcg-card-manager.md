@@ -2,7 +2,7 @@
 title: TCG Card Manager
 date: 2026-06-20
 tags: [python, dashboard, data-collection, tcg]
-description: A local-first TCG portfolio dashboard that tracks card holdings, purchase cost, grading details, multi-market price references, and collector run history.
+description: A local TCG portfolio dashboard with three-source price evidence, grade-aware sale targets, daily refreshes, and recoverable edits.
 ---
 
 TCG Card Manager is a local-first dashboard I built for managing trading card holdings, starting with **Pokémon** cards. A card collection is not just a list of names and prices: every card has a language, set, number, grade, purchase cost, market context, and a price that can vary widely between Chinese, Japanese, and US trading channels.
@@ -11,7 +11,7 @@ The goal of this project is to keep that messy information in one place. It lets
 
 Source code: [github.com/handeesome/tcg-card-manager](https://github.com/handeesome/tcg-card-manager)
 
-[Try the frontend-only demo](/demos/tcg-card-manager/index.html)
+[Try the frontend-only demo](/demos/tcg-card-manager/index.html). It is a static sample; saving changes and collecting new prices require the local Python service.
 
 ## What It Does
 
@@ -23,23 +23,40 @@ One small but useful part is local editing. The dashboard can update purchase in
 
 ## Price Collection Workflow
 
-The collector is a Python script that updates cards from multiple sources and writes the results back into the local data model. It uses direct API clients first, then falls back to reference sources only when the primary route does not return a usable price. Every source result is stored with a status such as `ok`, `auth_required`, `no_match`, `no_price`, `reference_only`, or `raw_data_unresolved`, so the dashboard can show uncertainty instead of hiding it.
+The current collection workflow is organized around three sources: **JiHuanShe (集换社), BiaoKa (镖卡), and eBay**. Each produces normalized source rows under `current_prices.collector_sources`, retaining the observed price, currency, grade, timestamp, identity evidence, and status. Ambiguous matches and permission failures stay visible instead of becoming a fabricated estimate.
 
-For Chinese and US-facing references, the project can use BiaoKa, CardHobby, TCGPriceLookup, PokemonPriceTracker, SerpAPI/eBay, and related data. For Japanese cards, the collector keeps Japanese-market verification links such as Aucfan, Mercari JP, Yahoo! Auctions, magi, SNKRDUNK, CardRush, and PriceCharting, so uncertain estimates can still be checked manually.
+The practical JiHuanShe route reads the Android app through ADB and UI XML. It opens a result only when the name, number, game, and language identify a unique card, then captures the visible price, grading label, sampled listings, and optional trend points. Uncertain matches stop at the search stage. The capture script does not change the portfolio; a separate normalization step imports reviewed runs, backs up the destination, and checks that card identity, transactions, and purchase information remain unchanged.
 
-Some platform-specific routes are intentionally treated as authorized research and audit routes rather than production dependencies. The project records source status, permission responses, and unresolved samples when a route is not ready, but it does not hide that uncertainty behind a clean-looking number. That makes the collector useful for learning what is available without turning the dashboard into a fragile scraping dependency.
+BiaoKa uses an authorized account token for search, details, trends, and grade-specific sales. eBay uses SerpAPI sold-result searches and keeps the original USD observations and matching context. Missing credentials return an explicit source status. An unsuccessful refresh must preserve the previous usable value with its original timestamp and a stale label.
+
+Direct JiHuanShe API work remains a separate research track. The local research document reports a functioning public-ranking client, while arbitrary card search and price queries are not yet working end to end. A successful HTTP response is not sufficient when the response contains a business permission error, and ranking heat or percentage change is not a card price.
+
+## Targets and Daily Refreshes
+
+Each holding can have a sale target in CNY. The alert evaluator accepts only a usable current observation fetched within 36 hours and compatible with the holding's grade. Reference values, proxy grades, stale observations, and mismatched grades do not trigger a reached-target alert. The dashboard highlights reached cards and offers a target-first sort. A partial run reevaluates only the selected cards, preserving the check times of untouched holdings.
+
+While `server.py` is running, a local scheduler attempts a daily refresh at 09:00, or catches up when started later that day. It makes one automatic attempt per day; the page provides manual retry. Completion is checked using a run-specific commit receipt and fresh-price coverage, so a subprocess exiting successfully cannot by itself make a partially refreshed portfolio appear fully current.
+
+Editing and deletion use validated, backed-up, atomic writes and recompute the portfolio totals. Deleting a holding removes its main record while retaining historical collection records and backups. The separate watchlist is read-only and cannot be edited, deleted, or assigned sale targets.
 
 ## Technical Shape
 
 The app is intentionally small. The main pieces are:
 
-- `server.py`, a local Python HTTP server that serves the dashboard and accepts `POST /api/save-portfolio`.
+- `server.py`, a local Python HTTP server for the dashboard, card edits, targets, deletion, and scheduled or manual refreshes.
 - `web/index.html`, a single-page dashboard with the portfolio grid, filters, detail modal, source table, inline editing, and theme support.
 - `scripts/collect_card_prices.py`, the unified collector that updates current prices, run logs, price history, and backups.
-- `scripts/chinese_platform_api.py`, which contains the platform client wrappers.
+- The ADB capture and source-normalization scripts, which separate observed app data from reviewed portfolio updates.
+- `scripts/price_alerts.py`, which selects fresh, grade-compatible prices and evaluates targets.
 - `data/portfolio.example.json`, a public sample portfolio used as the fallback when no private portfolio exists.
 
 Collector runs generate a few different files: updated portfolio data, daily price history snapshots, detailed run records, and pre-run backups. Secrets are loaded from environment variables or `data/api_tokens.json`, both of which are kept out of source control.
+
+## Public Samples and Verification Scope
+
+A clean checkout can use the sample portfolio and a published 22-card watchlist snapshot. The watchlist is dated demonstration data, not live pricing. Its exporter rejects credentials, private holding IDs, transactions, and local machine paths before producing public fixtures.
+
+The local research notes document tests for ranking-response parsing, distinguishing percentages from prices, rejecting malformed results, and detecting expired-login errors inside HTTP 200 responses. Those checks do not establish that core JiHuanShe price queries work. The workflow also depends on the Android app's current layout and authorized sessions. This article review inspected documentation and focused source code; it did not run live collectors or read private holdings or credentials.
 
 ## Why I Built It
 

@@ -27,7 +27,9 @@ The Vertical board layout keeps the current image in front while nearby cards re
 
 ![Gallery Widget showing cats and dogs in the vertical board layout](/images/projects/notion-widgets/gallery-vertical-widget.png)
 
-The repository contains only a Supabase publishable key. The gallery ID is deliberately kept out of Git because it also acts as the editing credential for that particular gallery.
+The configuration page supports mouse and touch reordering. A dragged card lifts out of the list, neighboring cards move aside as it crosses their midpoints, and dropping saves the new order. Long lists scroll near the viewport edge. Esc restores the previous order, and focused cards can also move with Alt + ↑ / ↓. A movement threshold separates a drag from the click used to replace an image, while reduced-motion preferences skip the shifting animation.
+
+The repository contains only a Supabase publishable key. The random gallery ID is deliberately kept out of Git because anyone who knows it can view and edit that gallery. The full embed or configuration URL therefore acts as a shared editing credential, rather than a read-only public link. Opening the page without an ID shows an empty prompt and does not load another gallery.
 
 ## Weather Widget
 

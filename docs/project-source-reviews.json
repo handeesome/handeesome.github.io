@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "reviews": {
+    "score-karaoke-studio": {
+      "reviewedAt": "2026-10-29T07:56:47.872Z",
+      "note": "Existing detailed local snapshot still matches; checked public upstream HEAD 3246773df77e18fd3459b48cd16e3cf859eed357. No article change.",
+      "snapshot": {
+        "source": "C:\\Users\\ducenhan\\Desktop\\歌谱文字滚动",
+        "head": "3246773df77e18fd3459b48cd16e3cf859eed357",
+        "sourceFiles": {
+          "README.md": "ebdb11bfa95153a4d0ed8977a19cd0c3ad58960bba3d4c0b6c06f67cc6a14734",
+          "AGENTS.md": null,
+          "docs/DESIGN.md": null,
+          "docs/ARCHITECTURE_DECISIONS.md": null
+        },
+        "articleHash": "c9cc4165efb9975c9ada96013986cb5786b953fb95454447d5728d41c90a9caf"
+      }
+    },
+    "google-scholar": {
+      "reviewedAt": "2026-10-29T07:56:34.245Z",
+      "note": "Compared README and background sync/storage source with article; public upstream HEAD matches local. No article change.",
+      "snapshot": {
+        "source": "C:\\Users\\ducenhan\\Desktop\\google-scholar-extension",
+        "head": "98a19d97d42304fb285a63636c663d63e29a4185",
+        "sourceFiles": {
+          "README.md": "f1c0ac24a43dd54d6c577e908299c8c6cb266fb8b498073993ff4f8476cc64a3",
+          "AGENTS.md": null,
+          "docs/DESIGN.md": null,
+          "docs/ARCHITECTURE_DECISIONS.md": null
+        },
+        "articleHash": "c1cd160c49da420ceccb186b326736c25fef03ca29567ff68feef3bae5c141cb"
+      }
+    },
+    "hugo-book": {
+      "reviewedAt": "2026-10-29T07:56:36.639Z",
+      "note": "Compared AGENTS, README, full audio-sync guide and focused reading/audio source; upstream HEAD matches. Updated reading state, typography, synchronization, offline and documented verification scope.",
+      "snapshot": {
+        "source": "D:\\my-projects\\香草山\\xiangcaoshan",
+        "head": "8c72d869083982003b99e7eee10e2260fc506e66",
+        "sourceFiles": {
+          "README.md": "fc435812893fb1d6c6635b5d46be689dde46c47cef5d335ec3a724edf5b1b4eb",
+          "AGENTS.md": "8537e91e3217e5bf1a170bb5473af0f687d199c2008752de186ed5911d487bb4",
+          "docs/DESIGN.md": null,
+          "docs/ARCHITECTURE_DECISIONS.md": null
+        },
+        "articleHash": "56f26549a30b355cdc297730550740a08f6ce8b795c709ff45e52ab00f250c9a"
+      }
+    },
+    "second-brain": {
+      "reviewedAt": "2026-10-29T07:56:38.866Z",
+      "note": "Compared AGENTS, README, Vision v2, user guide and validator; reviewed system docs/workflows/scripts match checked upstream object. Corrected automatic maintenance and evidence boundaries without reading private notes.",
+      "snapshot": {
+        "source": "D:\\my-projects\\obsidian\\secondBrain\\第二大脑",
+        "head": "b852b25f762a3d54fc9afe6083bfc3c75c2cdd77",
+        "sourceFiles": {
+          "README.md": "fe889509b897da60437cff7f78839faa20c238d5af21be1e7e462ce339e772f5",
+          "AGENTS.md": "1350e85ed45f287deffc14848718f28753a6c96731ed8996d46736d520e7fc3d",
+          "docs/DESIGN.md": null,
+          "docs/ARCHITECTURE_DECISIONS.md": null
+        },
+        "articleHash": "678d2f4e9ba3ec33f085d6f3f229f84a72d87aa224311dfe33ddbc35f0c3987e"
+      }
+    },
+    "tcg-card-manager": {
+      "reviewedAt": "2026-10-29T07:56:41.181Z",
+      "note": "Compared local README, collector and API research docs, server.py and price_alerts.py including uncommitted research; checked upstream HEAD. Updated three-source collection, targets, daily receipts and recovery. No private data or live calls.",
+      "snapshot": {
+        "source": "D:\\my-projects\\卡牌交易助手",
+        "head": "b1dc5e2fe60cd821d71c5c9a63c947ebd3183b9e",
+        "sourceFiles": {
+          "README.md": "527fae4e14dffa0fd7b0ed81d16ddd4c8da091b7a96c660387f223bc90fc9f61",
+          "AGENTS.md": null,
+          "docs/DESIGN.md": null,
+          "docs/ARCHITECTURE_DECISIONS.md": null
+        },
+        "articleHash": "45784caad312403deaeb1e5281dd7b2ae412c07118ba83f092b505814fbd75ce"
+      }
+    },
+    "notion-widgets": {
+      "reviewedAt": "2026-10-29T07:56:43.357Z",
+      "note": "Compared AGENTS and root/Gallery/Weather READMEs with configure.js; upstream HEAD matches. Added drag/keyboard ordering and gallery-ID access boundary; existing images verified.",
+      "snapshot": {
+        "source": "C:\\Users\\ducenhan\\Desktop\\Notion_Widgets",
+        "head": "e30f1b1c1398fcb5eae79a5a5ced1ac939537e12",
+        "sourceFiles": {
+          "README.md": "36f74513e3d34cc73d9d5970d92c6313564ac82c4742ecae3d8f3ab5500749b9",
+          "AGENTS.md": "a377cc8b08321c9edc60ec756665543daab85f845f1a2a09def62d627d59264d",
+          "docs/DESIGN.md": null,
+          "docs/ARCHITECTURE_DECISIONS.md": null
+        },
+        "articleHash": "b72b0321fa367cda3ad619704151c52a0c4cc41b8c55238453074958556f9575"
+      }
+    },
+    "pnyl": {
+      "reviewedAt": "2026-10-29T07:56:45.598Z",
+      "note": "Compared local and remote root/debate READMEs and existing upstream Git differences. Added shared staged participation and privacy mechanisms; local-only debate-flow additions not presented as deployed.",
+      "snapshot": {
+        "source": "C:\\Users\\ducenhan\\Desktop\\信仰大富翁",
+        "head": "762eeeda9a39e8edbe7ee6f4f29a8fea29e70195",
+        "sourceFiles": {
+          "README.md": "d406e9017ef87bdc3f0548b55056d5c5400c3db90624ba6fc763afa13ef60946",
+          "AGENTS.md": null,
+          "docs/DESIGN.md": null,
+          "docs/ARCHITECTURE_DECISIONS.md": null
+        },
+        "articleHash": "b7bd2f225a571ae0dbf83040ba957575b28746dad2894e300521e025961afd3a"
+      }
+    },
+    "personal-website": {
+      "reviewedAt": "2026-10-29T07:56:50.347Z",
+      "note": "Compared README and current Projects loader/header/article UI plus maintenance workflow. Upstream dev differs only in generated Toggl data. Article includes local uncommitted Projects improvements, not a deployment claim.",
+      "snapshot": {
+        "source": "D:\\my-projects\\personal website\\my-website\\vite-app",
+        "head": "ed848b32c679b6c85d4be72f5bcd028571b6ce50",
+        "sourceFiles": {
+          "README.md": "4be417142ca186304ec0f2dbd845e5549539e1d49927eeabc74c71f3b7f4e202",
+          "AGENTS.md": "449fafb218d1faaae4db4a1015b6b98e909610763942154c38cea72579f357fc",
+          "docs/DESIGN.md": null,
+          "docs/ARCHITECTURE_DECISIONS.md": null
+        },
+        "articleHash": "f48e0cc473c14b90df1a32e395d3bb29b98f5b0949edf4d730dc959e902961eb"
+      }
+    }
+  }
+}
