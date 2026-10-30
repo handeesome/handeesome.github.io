@@ -1,19 +1,27 @@
 Book Id,Title,Author,Author l-f,Additional Authors,ISBN,ISBN13,My Rating,Publisher,Binding,Number of Pages,Year Published,Original Publication Year,Date Read,Date Added,Bookshelves,Bookshelves with positions,Exclusive Shelf,My Review,Spoiler,Private Notes,Read Count,Owned Copies
-33986067,Deep Learning with Python,François Chollet,"Chollet, François",,"=""1617294438""","=""9781617294433""",0,Manning,Paperback,350,2017,2017,,2026/08/25,currently-reading,currently-reading (#5),currently-reading,,,,1,0
+221161075,椿ノ恋文,Ito Ogawa,"Ogawa, Ito",小川 糸,"=""4344041925""","=""9784344041929""",0,幻冬舎,Paperback,344,2023,2023,,2026/10/30,to-read,to-read (#31),to-read,,,,0,0
+39755675,キラキラ共和国,Ito Ogawa,"Ogawa, Ito",小川 糸,"=""4344031938""","=""9784344031937""",0,幻冬舎,Paperback,251,2017,2017,,2026/10/28,to-read,to-read (#30),to-read,,,,0,0
+35101223,ツバキ文具店,Ito Ogawa,"Ogawa, Ito",小川 糸,"=""4344029275""","=""9784344029279""",0,幻冬舎,Hardcover,269,2016,2016,,2026/10/28,to-read,to-read (#29),to-read,,,,0,0
+48889983,Calling Bullshit: The Art of Skepticism in a Data-Driven World,Carl T. Bergstrom,"Bergstrom, Carl T.",Jevin D. West,"=""0525509186""","=""9780525509189""",0,Random House,Hardcover,336,2020,2020,2026/10/17,2026/02/05,,,read,,,,1,0
+24062593,额尔古纳河右岸,Zijian Chi,"Chi, Zijian",迟子建,"=""7530209930""","=""9787530209936""",0,北京十月文艺出版社,Paperback,,2005,2005,,2026/04/23,currently-reading,currently-reading (#5),currently-reading,,,,1,0
+42616411,Educated: A Memoir,Tara Westover,"Westover, Tara",,"=""1984854852""","=""9781984854858""",0,Random House US,Paperback,329,2018,2018,2026/10/05,2026/04/23,,,read,,,,1,0
+214281576,时间游戏,周洛华,"周洛华, 周洛华",新华书店北美网,"=""7564243414""","=""9787564243418""",0,上海财经大学出版社,Hardcover,230,2024,,,2026/10/05,to-read,to-read (#28),to-read,,,,0,0
+55279783,"我的二本学生 (我的二本学生, #1)",黄灯,"黄灯, 黄灯",,"=""7020161871""","=""9787020161874""",0,人民文学出版社,Paperback,320,2020,2020,2026/09/25,2026/07/01,,,read,,,,1,0
+20696006,Being Mortal: Medicine and What Matters in the End,Atul Gawande,"Gawande, Atul",,"=""0805095152""","=""9780805095159""",0,Metropolitan Books,Hardcover,282,2014,2014,,2026/09/17,to-read,to-read (#27),to-read,,,,0,0
+489732,The Picture of Dorian Gray,Oscar Wilde,"Wilde, Oscar",Robert Mighall,"=""0141439572""","=""9780141439570""",0,Penguin Classics,Paperback,253,2003,1890,2026/09/13,2026/01/28,,,read,,,,1,0
+33986067,Deep Learning with Python,François Chollet,"Chollet, François",,"=""1617294438""","=""9781617294433""",0,Manning,Paperback,350,2017,2017,,2026/08/25,currently-reading,currently-reading (#4),currently-reading,,,,1,0
 52036,Siddhartha,Hermann Hesse,"Hesse, Hermann",Hilda Rosner,"=""""","=""""",0,Bantam Books,Mass Market Paperback,152,1981,1922,2026/08/20,2026/01/28,,,read,,,,1,0
 53605067,The Data Detective: Ten Easy Rules to Make Sense of Statistics,Tim Harford,"Harford, Tim",,"=""0593084675""","=""9780593084670""",0,Riverhead Books,Kindle Edition,334,2021,2020,2026/08/19,2026/02/05,,,read,,,,1,0
 9536880,それから,Natsume Sōseki,"Sōseki, Natsume",,"=""4041001080""","=""9784041001080""",0,角川書店,Paperback,363,1985,1909,2026/08/10,2026/07/12,,,read,,,,1,0
-489732,The Picture of Dorian Gray,Oscar Wilde,"Wilde, Oscar",Robert Mighall,"=""0141439572""","=""9780141439570""",0,Penguin Classics,Paperback,253,2003,1890,,2026/01/28,currently-reading,currently-reading (#4),currently-reading,,,,1,0
-19389511,For Calvinism / Against Calvinism (Enhanced Edition),Michael Scott Horton,"Horton, Michael Scott",,"=""""","=""9780310490647""",0,Zondervan Academic,Kindle Edition,466,2012,2011,,2026/08/04,to-read,to-read (#30),to-read,,,,0,0
+19389511,For Calvinism / Against Calvinism (Enhanced Edition),Michael Scott Horton,"Horton, Michael Scott",,"=""""","=""9780310490647""",0,Zondervan Academic,Kindle Edition,466,2012,2011,,2026/08/04,to-read,to-read (#26),to-read,,,,0,0
 19200550,一句顶一万句,Liu Zhenyun,"Zhenyun, Liu",,"=""""","=""""",0,长江文艺出版社,Kindle Edition,382,2009,2009,2026/08/04,2026/04/23,,,read,,,,1,0
 44796,The Moon and Sixpence,W. Somerset Maugham,"Maugham, W. Somerset",,"=""1598185217""","=""9781598185218""",0,Alan Rodgers Books,Paperback,187,2005,1919,2026/08/04,2026/03/18,,,read,,,,1,0
 13588394,The Signal and the Noise: Why So Many Predictions Fail—But Some Don't,Nate Silver,"Silver, Nate",,"=""159420411X""","=""9781594204111""",0,Penguin,Hardcover,544,2012,2012,2026/07/28,2026/02/05,,,read,,,,1,0
 23456814,Storia della bambina perduta,Elena Ferrante,"Ferrante, Elena",,"=""""","=""""",0,Edizioni e/o,Paperback,451,2014,2014,2026/07/27,2026/01/12,,,read,,,,1,0
-323455,De Profundis,Oscar Wilde,"Wilde, Oscar","Masolino d'Amico, Oreste Del Buono","=""""","=""""",0,Fontamara,Paperback,188,1993,1897,2026/07/17,2026/01/28,,,read,,,,1,0
+323455,De Profundis,Oscar Wilde,"Wilde, Oscar","Oreste Del Buono, Masolino d'Amico","=""""","=""""",0,Fontamara,Paperback,188,1993,1897,2026/07/17,2026/01/28,,,read,,,,1,0
 18716142,Storia di chi fugge e di chi resta,Elena Ferrante,"Ferrante, Elena",,"=""""","=""""",0,Edizioni e/o,Paperback,382,2013,2013,2026/07/14,2026/01/12,,,read,,,,1,0
-73322,"Jean-Christophe, Vol. 1",Romain Rolland,"Rolland, Romain",,"=""1419127381""","=""9781419127380""",0,Kessinger Publishing,Paperback,556,2004,1905,,2026/07/12,to-read,to-read (#29),to-read,,,,0,0
-55279783,"我的二本学生 (我的二本学生, #1)",黄灯,"黄灯, 黄灯",,"=""7020161871""","=""9787020161874""",0,人民文学出版社,Paperback,320,2020,2020,,2026/07/01,to-read,to-read (#28),to-read,,,,0,0
-29434,Self-Made Man: One Woman's Journey Into Manhood and Back Again,Norah Vincent,"Vincent, Norah",,"=""0670034665""","=""9780670034666""",0,Viking,Hardcover,290,2006,2006,,2026/06/09,to-read,to-read (#27),to-read,,,,0,0
+73322,"Jean-Christophe, Vol. 1",Romain Rolland,"Rolland, Romain",,"=""1419127381""","=""9781419127380""",0,Kessinger Publishing,Paperback,556,2004,1905,,2026/07/12,to-read,to-read (#25),to-read,,,,0,0
+29434,Self-Made Man: One Woman's Journey Into Manhood and Back Again,Norah Vincent,"Vincent, Norah",,"=""0670034665""","=""9780670034666""",0,Viking,Hardcover,290,2006,2006,,2026/06/09,to-read,to-read (#24),to-read,,,,0,0
 6934913,The Shortest History of Europe,John Hirst,"Hirst, John",,"=""1863954392""","=""9781863954396""",0,Black Inc.,Paperback,160,2009,2009,2026/05/28,2026/01/09,,,read,,,,1,0
 14142,The Art of Loving,Erich Fromm,"Fromm, Erich",,"=""0061129739""","=""9780061129735""",0,Harper Perennial Modern Classics,Paperback,180,2006,1956,2026/05/25,2026/05/09,,,read,,,,1,0
 16005941,Storia del nuovo cognome,Elena Ferrante,"Ferrante, Elena",,"=""""","=""""",0,Edizioni e/o,Paperback,470,2012,2012,2026/05/25,2026/01/12,,,read,,,,1,0
@@ -48,7 +56,7 @@ Book Id,Title,Author,Author l-f,Additional Authors,ISBN,ISBN13,My Rating,Publish
 36160370,美丽新世界,Aldous Huxley,"Huxley, Aldous",陈超,"=""""","=""""",0,上海译文出版社,Kindle Edition,287,2017,1932,2025/07/24,2025/06/18,worth-a-try,worth-a-try (#13),read,,,,1,0
 19179596,罪与罚,Fyodor Dostoevsky,"Dostoevsky, Fyodor",岳麟,"=""""","=""""",0,上海译文出版社,Kindle Edition,548,2011,1866,2025/10/30,2025/06/30,worth-a-try,worth-a-try (#12),read,,,,1,0
 28154510,西西弗神话,Albert Camus,"Camus, Albert","阿尔贝·加缪, 沈志明","=""""","=""""",0,上海译文出版社,Kindle Edition,172,2013,1942,2025/09/15,2025/06/30,worth-a-try,worth-a-try (#11),read,,,,1,0
-19380,Candide,Voltaire,"Voltaire, Voltaire","Walter Jerrold, Sara Gioacchino Corcos, Don Hagen, Rockwell Kent","=""0486266893""","=""9780486266893""",0,"Dover Publications, Incorporated",Paperback,129,1991,1759,2025/07/15,2025/07/13,worth-a-try,worth-a-try (#10),read,,,,1,0
+19380,Candide,Voltaire,"Voltaire, Voltaire","Don Hagen, Sara Gioacchino Corcos, Walter Jerrold, Rockwell Kent","=""0486266893""","=""9780486266893""",0,"Dover Publications, Incorporated",Paperback,129,1991,1759,2025/07/15,2025/07/13,worth-a-try,worth-a-try (#10),read,,,,1,0
 42767746,婚姻的意义,Timothy J. Keller,"Keller, Timothy J.","Kathy    Keller, 提摩太·凯勒, 凯西·凯勒, 杨基","=""""","=""""",0,上海三联书店,Paperback,287,2015,2011,2025/10/20,2025/07/27,worth-revisit,worth-revisit (#3),read,,,,1,0
 28807853,四种爱 (外研社双语读库),C.S. Lewis,"Lewis, C.S.",,"=""""","=""""",0,外语教学与研究出版社,Kindle Edition,264,2010,1960,2025/11/11,2025/07/27,worth-a-try,worth-a-try (#9),read,,,,1,0
 59719801,法治的细节,罗翔,"罗翔, 罗翔",,"=""""","=""""",0,云南人民出版社,Kindle Edition,288,2021,2021,2025/08/18,2025/07/27,worth-a-try,worth-a-try (#8),read,,,,1,0
@@ -61,22 +69,20 @@ Book Id,Title,Author,Author l-f,Additional Authors,ISBN,ISBN13,My Rating,Publish
 87247,Der Steppenwolf,Hermann Hesse,"Hesse, Hermann",,"=""3518366750""","=""9783518366752""",0,Suhrkamp,Paperback,278,1974,1927,2026/01/23,2025/11/06,worth-a-try,worth-a-try (#2),read,,,,1,0
 121732,Surprised by Joy: The Shape of My Early Life,C.S. Lewis,"Lewis, C.S.",,"=""0006280838""","=""9780006280835""",0,,Paperback,185,,1955,2026/01/12,2025/12/26,worth-a-try,worth-a-try (#1),read,,,,1,0
 19480382,嫌われる勇気,Ichiro Kishimi,"Kishimi, Ichiro","岸見 一郎, Fumitake Koga, 古賀 史健","=""""","=""""",0,ダイヤモンド社,Kindle Edition,300,2013,2013,2026/04/24,2026/01/09,worth-revisit,worth-revisit (#1),read,,,,1,0
-29509524,Воскресение,Лев Толстой,"Толстой, Лев",Leo Tolstoy,"=""5392026419""","=""9785392026418""",0,"Издательство ""Проспект""",Kindle Edition,666,2015,1899,,2026/04/27,to-read,to-read (#26),to-read,,,,0,0
-836230,Der Prozess,Franz Kafka,"Kafka, Franz",,"=""""","=""""",0,Anaconda,Hardcover,208,2006,1925,,2026/04/27,to-read,to-read (#25),to-read,,,,0,0
-82135847,宁静无价,程虹,"程虹, 程虹",,"=""720813166X""","=""9787208131668""",0,上海人民出版社,Paperback,0,2015,,,2026/04/24,to-read,to-read (#24),to-read,,,,0,0
-24062593,额尔古纳河右岸,Zijian Chi,"Chi, Zijian",迟子建,"=""7530209930""","=""9787530209936""",0,北京十月文艺出版社,Paperback,,2005,2005,,2026/04/23,to-read,to-read (#23),to-read,,,,0,0
-245663083,咸的玩笑 (Chinese Edition),Liu Zhenyun,"Zhenyun, Liu",,"=""""","=""9798295500206""",0,Nova Literature,Kindle Edition,546,2025,,,2026/04/23,to-read,to-read (#22),to-read,,,,0,0
-42616411,Educated: A Memoir,Tara Westover,"Westover, Tara",,"=""1984854852""","=""9781984854858""",0,Random House US,Paperback,329,2018,2018,,2026/04/23,to-read,to-read (#21),to-read,,,,0,0
+29509524,Воскресение,Лев Толстой,"Толстой, Лев",Leo Tolstoy,"=""5392026419""","=""9785392026418""",0,"Издательство ""Проспект""",Kindle Edition,666,2015,1899,,2026/04/27,to-read,to-read (#23),to-read,,,,0,0
+836230,Der Prozess,Franz Kafka,"Kafka, Franz",,"=""""","=""""",0,Anaconda,Hardcover,208,2006,1925,,2026/04/27,to-read,to-read (#22),to-read,,,,0,0
+82135847,宁静无价,程虹,"程虹, 程虹",,"=""720813166X""","=""9787208131668""",0,上海人民出版社,Paperback,0,2015,,,2026/04/24,to-read,to-read (#21),to-read,,,,0,0
+245663083,咸的玩笑 (Chinese Edition),Liu Zhenyun,"Zhenyun, Liu",,"=""""","=""9798295500206""",0,Nova Literature,Kindle Edition,546,2025,,,2026/04/23,to-read,to-read (#20),to-read,,,,0,0
 105984427,今日店休,Sakamoto kenichi,"kenichi, Sakamoto",,"=""""","=""""",0,新星出版社,Hardcover,0,2017,,2026/04/23,2026/01/06,,,read,,,,1,0
-31837,The Consolation of Philosophy,Boethius,"Boethius, Boethius",Victor  Watts,"=""0140447806""","=""9780140447804""",0,Penguin Classics,Paperback,155,1999,524,,2026/04/23,to-read,to-read (#20),to-read,,,,0,0
-493311,The Collected Stories,William Trevor,"Trevor, William",,"=""0140232451""","=""9780140232455""",0,Penguin Books,Paperback,1262,1993,1992,,2026/04/22,to-read,to-read (#19),to-read,,,,0,0
-247797083,本なら売るほど  3,Ao Kojima,"Kojima, Ao",児島 青,"=""4045000097""","=""9784045000096""",0,KADOKAWA,Paperback,194,2026,,,2026/04/22,to-read,to-read (#18),to-read,,,,0,0
-231418250,本なら売るほど 2,Ao Kojima,"Kojima, Ao",,"=""4047383740""","=""9784047383746""",0,KADOKAWA,Paperback,194,2025,,,2026/04/22,to-read,to-read (#17),to-read,,,,0,0
-229123221,本なら売るほど 1,Ao Kojima,"Kojima, Ao",児島 青,"=""4047381071""","=""9784047381070""",0,KADOKAWA,Comic,194,2025,,,2026/04/22,to-read,to-read (#16),to-read,,,,0,0
-230402606,Mina vänner,Fredrik Backman,"Backman, Fredrik",,"=""9113143808""","=""9789113143804""",0,Norstedts,Hardcover,398,2025,2025,,2026/04/22,to-read,to-read (#15),to-read,,,,0,0
-228899731,"想在天气好时去海边 (成长三部曲, #2)",拟泥nini,"拟泥nini, 拟泥nini",,"=""7559492088""","=""9787559492081""",0,江苏凤凰文艺出版社,Paperback,272,2025,2025,,2026/04/22,to-read,to-read (#14),to-read,,,,0,0
+31837,The Consolation of Philosophy,Boethius,"Boethius, Boethius",Victor  Watts,"=""0140447806""","=""9780140447804""",0,Penguin Classics,Paperback,155,1999,524,,2026/04/23,to-read,to-read (#19),to-read,,,,0,0
+493311,The Collected Stories,William Trevor,"Trevor, William",,"=""0140232451""","=""9780140232455""",0,Penguin Books,Paperback,1262,1993,1992,,2026/04/22,to-read,to-read (#18),to-read,,,,0,0
+247797083,本なら売るほど  3,Ao Kojima,"Kojima, Ao",児島 青,"=""4045000097""","=""9784045000096""",0,KADOKAWA,Paperback,194,2026,,,2026/04/22,to-read,to-read (#17),to-read,,,,0,0
+231418250,本なら売るほど 2,Ao Kojima,"Kojima, Ao",,"=""4047383740""","=""9784047383746""",0,KADOKAWA,Paperback,194,2025,,,2026/04/22,to-read,to-read (#16),to-read,,,,0,0
+229123221,本なら売るほど 1,Ao Kojima,"Kojima, Ao",児島 青,"=""4047381071""","=""9784047381070""",0,KADOKAWA,Comic,194,2025,,,2026/04/22,to-read,to-read (#15),to-read,,,,0,0
+230402606,Mina vänner,Fredrik Backman,"Backman, Fredrik",,"=""9113143808""","=""9789113143804""",0,Norstedts,Hardcover,398,2025,2025,,2026/04/22,to-read,to-read (#14),to-read,,,,0,0
+228899731,"想在天气好时去海边 (成长三部曲, #2)",拟泥nini,"拟泥nini, 拟泥nini",,"=""7559492088""","=""9787559492081""",0,江苏凤凰文艺出版社,Paperback,272,2025,2025,,2026/04/22,to-read,to-read (#13),to-read,,,,0,0
 43277265,回答不了,匡扶,"匡扶, 匡扶",,"=""""","=""""",0,浙江文艺出版社,Paperback,224,2018,,2026/04/21,2026/01/06,,,read,,,,1,0
-29494295,幸せになる勇気 (Japanese Edition),Ichiro Kishimi,"Kishimi, Ichiro","岸見 一郎, Fumitake Koga, 古賀 史健","=""""","=""""",0,ダイヤモンド社,Kindle Edition,250,2016,2016,,2026/04/19,to-read,to-read (#13),to-read,,,,0,0
+29494295,幸せになる勇気 (Japanese Edition),Ichiro Kishimi,"Kishimi, Ichiro","岸見 一郎, Fumitake Koga, 古賀 史健","=""""","=""""",0,ダイヤモンド社,Kindle Edition,250,2016,2016,,2026/04/19,to-read,to-read (#12),to-read,,,,0,0
 16981,Invisible Man,Ralph Ellison,"Ellison, Ralph",,"=""""","=""""",0,Vintage,Paperback,581,1995,1952,2026/04/19,2025/11/17,,,read,,,,1,0
 1953,A Tale of Two Cities,Charles Dickens,"Dickens, Charles",,"=""0141439602""","=""9780141439600""",0,Penguin Books,Paperback,489,2003,1859,2026/04/19,2025/11/24,,,read,,,,1,0
 57300433,为什么：关于因果关系的新科学,Judea Pearl,"Pearl, Judea",,"=""""","=""""",0,,Unknown Binding,,,2018,2026/03/30,2025/10/11,,,read,,,,1,0
@@ -84,8 +90,7 @@ Book Id,Title,Author,Author l-f,Additional Authors,ISBN,ISBN13,My Rating,Publish
 24583,The Adventures of Tom Sawyer,Mark Twain,"Twain, Mark","Guy Cardwell, John Seelye, Mark Hallaq, Amanda Lee","=""""","=""9780143039563""",0,Penguin Classics,Paperback,244,2006,1876,2026/04/02,2025/12/05,,,read,,,,1,0
 1314433,"Liberty, Equality, Fraternity",James Fitzjames Stephen,"Stephen, James Fitzjames",Stuart D. Warner,"=""0865971110""","=""9780865971110""",0,Liberty Fund,Paperback,299,1993,1873,2026/03/23,2025/08/15,,,read,,,,1,0
 32175062,게으름,김남준,"김남준, 김남준",,"=""""","=""9788904158324""",0,생명의 말씀사,,224,2009,,2026/02/12,2026/02/09,,,read,,,,1,0
-50705179,Numbers Don't Lie: 71 Things You Need to Know About the World,Vaclav Smil,"Smil, Vaclav",,"=""0241454417""","=""9780241454411""",0,Viking,Hardcover,384,2020,2020,,2026/02/05,to-read,to-read (#12),to-read,,,,0,0
-48889983,Calling Bullshit: The Art of Skepticism in a Data-Driven World,Carl T. Bergstrom,"Bergstrom, Carl T.",Jevin D. West,"=""0525509186""","=""9780525509189""",0,Random House,Hardcover,336,2020,2020,,2026/02/05,to-read,to-read (#11),to-read,,,,0,0
+50705179,Numbers Don't Lie: 71 Things You Need to Know About the World,Vaclav Smil,"Smil, Vaclav",,"=""0241454417""","=""9780241454411""",0,Viking,Hardcover,384,2020,2020,,2026/02/05,to-read,to-read (#11),to-read,,,,0,0
 45633325,第二十二条军规,Joseph Heller,"Heller, Joseph",,"=""""","=""""",0,译林出版社,Kindle Edition,572,2012,1961,2026/01/31,2025/09/13,,,read,,,,1,0
 71943,Peter Camenzind,Hermann Hesse,"Hesse, Hermann",Michael Roloff,"=""0312422636""","=""9780312422639""",0,Picador,Paperback,201,2003,1904,2026/02/01,2026/01/23,,,read,,,,1,0
 58715110,美国的反智传统,Richard Hofstadter,"Hofstadter, Richard","理查德·霍夫施塔特, 陈思贤","=""7500166877""","=""9787500166870""",0,中译出版社,Hardcover,,2021,1963,2026/01/28,2025/08/21,,,read,,,,1,0
@@ -98,7 +103,7 @@ Book Id,Title,Author,Author l-f,Additional Authors,ISBN,ISBN13,My Rating,Publish
 27995383,冰点,Ayako Miura,"Miura, Ayako","三浦绫子, 朱佩兰","=""7501156743""","=""9787501156740""",0,新华出版社,Paperback,396,2002,1965,,2026/01/10,to-read,to-read (#9),to-read,,,,0,0
 2054,"The Long Goodbye (Philip Marlowe, #6)",Raymond Chandler,"Chandler, Raymond",,"=""0394757688""","=""9780394757681""",0,Vintage Crime/Black Lizard,Paperback,379,1988,1953,2026/01/07,2025/09/26,,,read,,,,1,0
 27788,"Julie, or the New Heloise",Jean-Jacques Rousseau,"Rousseau, Jean-Jacques","Jean Vache, Philip Stewart","=""0874518253""","=""9780874518252""",0,Dartmouth College Press,Paperback,728,1997,1760,2025/12/30,2025/06/20,,,read,,,,1,0
-3836,Don Quixote,Miguel de Cervantes Saavedra,"Saavedra, Miguel de Cervantes","Roberto González Echevarría, John Rutherford","=""""","=""""",0,Penguin Books,Paperback,1023,2003,1605,2025/12/23,2025/07/23,,,read,,,,1,0
+3836,Don Quixote,Miguel de Cervantes Saavedra,"Saavedra, Miguel de Cervantes","John Rutherford, Roberto González Echevarría","=""""","=""""",0,Penguin Books,Paperback,1023,2003,1605,2025/12/23,2025/07/23,,,read,,,,1,0
 60470571,Nonverts: The Making of Ex-Christian America,Stephen Bullivant,"Bullivant, Stephen",,"=""0197587445""","=""9780197587447""",0,Oxford University Press,Hardcover,257,2022,2022,2025/12/18,2025/07/14,,,read,,,,1,0
 53263624,创造进化论,Henri Bergson,"Bergson, Henri","亨利·柏格森, 刘霞","=""""","=""9787201150475""",0,天津人民出版社,Kindle Edition,244,2019,1907,2025/12/17,2025/07/24,,,read,,,,1,0
 19324807,少年维特的烦恼,Johann Wolfgang von Goethe,"Goethe, Johann Wolfgang von",,"=""""","=""""",0,译林出版社,Kindle Edition,154,2011,1774,2025/12/16,2025/09/13,,,read,,,,1,0
@@ -109,7 +114,7 @@ Book Id,Title,Author,Author l-f,Additional Authors,ISBN,ISBN13,My Rating,Publish
 13590009,Think Like a Programmer: An Introduction to Creative Problem Solving,V. Anton Spraul,"Spraul, V. Anton",,"=""1593274246""","=""9781593274245""",0,No Starch Press,Paperback,233,2012,2012,,2021/04/29,currently-reading,currently-reading (#2),currently-reading,,,,1,0
 26007192,山寨版的上帝,提摩太．凱勒,"提摩太．凱勒, 提摩太．凱勒",,"=""""","=""""",0,希望之聲文化有限公司,Hardcover,285,2013,2009,2025/11/28,2025/07/27,,,read,,,,1,0
 2165,The Old Man and the Sea,Ernest Hemingway,"Hemingway, Ernest",,"=""0684830493""","=""9780684830490""",0,Scribner,Hardcover,96,1996,1952,2025/11/27,2025/08/16,,,read,,,,1,0
-28137375,Pride and Prejudice,Jane Austen,"Austen, Jane",,"=""1519674589""","=""9781519674586""",0,CreateSpace Independent Publishing Platform,Paperback,234,2015,1813,2025/11/25,2025/06/30,,,read,,,,1,0
+28137375,Pride and Predujice,Jane Austen,"Austen, Jane",,"=""1519674589""","=""9781519674586""",0,CreateSpace Independent Publishing Platform,Paperback,234,2015,1813,2025/11/25,2025/06/30,,,read,,,,1,0
 40000210,存在主义咖啡馆,Sarah Bakewell,"Bakewell, Sarah",,"=""""","=""""",0,北京联合出版公司,Kindle Edition,563,2017,2016,2025/11/17,2025/08/03,,,read,,,,1,0
 18922517,Le Rouge et le noir (红与黑 ) (免费公版书),Stendhal,"Stendhal, Stendhal",,"=""""","=""""",0,免费公版书,Kindle Edition,512,2011,1830,2025/11/14,2025/06/30,,,read,,,,1,0
 18250837,How (Not) to Be Secular: Reading Charles Taylor,James K.A. Smith,"Smith, James K.A.",,"=""0802867618""","=""9780802867612""",0,Eerdmans,Paperback,148,2014,2014,2025/11/12,2025/07/08,,,read,,,,1,0
@@ -125,7 +130,7 @@ Book Id,Title,Author,Author l-f,Additional Authors,ISBN,ISBN13,My Rating,Publish
 3023,Basic Economics: A Citizen's Guide to the Economy,Thomas Sowell,"Sowell, Thomas",,"=""0465081452""","=""9780465081455""",0,Basic Books,Hardcover,448,2003,2000,2025/09/17,2025/05/12,,,read,,,,1,0
 6484128,The History of the Medieval World: From the Conversion of Constantine to the First Crusade,Susan Wise Bauer,"Bauer, Susan Wise",,"=""0393059758""","=""9780393059755""",0,W. W. Norton & Company,Hardcover,746,2010,2010,2025/09/14,2025/07/08,,,read,,,,1,0
 80493508,挪威的森林,村上春树 林少华,"林少华, 村上春树",,"=""""","=""""",0,上海译文出版社,Paperback,200,2014,1987,2025/09/11,2025/07/15,,,read,,,,1,0
-202694,Emile: Or Treatise on Education (Great Books in Philosophy),Jean-Jacques Rousseau,"Rousseau, Jean-Jacques",William Harold Payne,"=""1591021111""","=""9781591021117""",0,Prometheus,Paperback,358,2003,1762,2025/09/04,2025/06/20,,,read,,,,1,0
+202694,Emile (Great Books in Philosophy),Jean-Jacques Rousseau,"Rousseau, Jean-Jacques",William Harold Payne,"=""1591021111""","=""9781591021117""",0,G38-Prometheus,Paperback,358,2003,1762,2025/09/04,2025/06/20,,,read,,,,1,0
 225947,The History of the Ancient World: From the Earliest Accounts to the Fall of Rome,Susan Wise Bauer,"Bauer, Susan Wise",,"=""039305974X""","=""9780393059748""",0,W. W. Norton & Company ,Hardcover,896,2007,2007,2025/08/19,2025/07/08,,,read,,,,1,0
 42092510,重返美丽新世界,Aldous Huxley,"Huxley, Aldous",,"=""""","=""""",0,北京时代华文书局有限公司,Kindle Edition,347,2015,1932,2025/08/19,2025/07/27,,,read,,,,1,0
 57836039,ぼくはこんな音楽を聴いて育った (Japanese Edition),大友良英,"大友良英, 大友良英",,"=""""","=""""",0,筑摩書房,Kindle Edition,350,2017,,,2025/08/11,to-read,to-read (#7),to-read,,,,0,0
