@@ -1,0 +1,1 @@
+import{d as t,j as e}from"./index-CZ6oZiv9.js";const r=({defaultDest:n,text:o,preferDefaultDest:s=!1})=>{const i=t();return e.jsxs("button",{className:"btn btn-outline-info",onClick:()=>{s&&n?i(n):window.history.length>1?i(-1):n&&i(n)},children:["← ",o]})};export{r as G};
