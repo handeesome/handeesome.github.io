@@ -2,23 +2,23 @@
   "schemaVersion": 1,
   "reviews": {
     "score-karaoke-studio": {
-      "reviewedAt": "2026-10-29T07:56:47.872Z",
-      "note": "Existing detailed local snapshot still matches; checked public upstream HEAD 3246773df77e18fd3459b48cd16e3cf859eed357. No article change.",
+      "reviewedAt": "2026-10-29T14:31:53.057Z",
+      "note": "Final source recheck: v0.1.12 committed and published during review. Local/upstream HEAD 1a5f92072eaddc2040fee90be5d06cee86bacca2 and public v0.1.12 Release confirmed via GitHub API. Final article covers reviewed import/page actions, background waveform refinement and update/cache behavior; source tests not run.",
       "snapshot": {
         "source": "C:\\Users\\ducenhan\\Desktop\\歌谱文字滚动",
-        "head": "3246773df77e18fd3459b48cd16e3cf859eed357",
+        "head": "1a5f92072eaddc2040fee90be5d06cee86bacca2",
         "sourceFiles": {
-          "README.md": "ebdb11bfa95153a4d0ed8977a19cd0c3ad58960bba3d4c0b6c06f67cc6a14734",
+          "README.md": "4e8705c83ef09bbcb35b72825e6a3a8f6965af6d3bd0e72326bb45adc6216507",
           "AGENTS.md": null,
           "docs/DESIGN.md": null,
           "docs/ARCHITECTURE_DECISIONS.md": null
         },
-        "articleHash": "c9cc4165efb9975c9ada96013986cb5786b953fb95454447d5728d41c90a9caf"
+        "articleHash": "69b43519a58103680447da852eb8ab5e48c25da5a0d918029f478a02f7bd75e1"
       }
     },
     "google-scholar": {
-      "reviewedAt": "2026-10-29T07:56:34.245Z",
-      "note": "Compared README and background sync/storage source with article; public upstream HEAD matches local. No article change.",
+      "reviewedAt": "2026-10-29T14:28:04.239Z",
+      "note": "Reused matching reviewed source/article fingerprint; read-only upstream HEAD still 98a19d97d42304fb285a63636c663d63e29a4185. No article change.",
       "snapshot": {
         "source": "C:\\Users\\ducenhan\\Desktop\\google-scholar-extension",
         "head": "98a19d97d42304fb285a63636c663d63e29a4185",
@@ -32,8 +32,8 @@
       }
     },
     "hugo-book": {
-      "reviewedAt": "2026-10-29T07:56:36.639Z",
-      "note": "Compared AGENTS, README, full audio-sync guide and focused reading/audio source; upstream HEAD matches. Updated reading state, typography, synchronization, offline and documented verification scope.",
+      "reviewedAt": "2026-10-29T14:28:10.148Z",
+      "note": "Source documentation and upstream HEAD remain 8c72d869083982003b99e7eee10e2260fc506e66. Compared current article with prior reviewed source evidence; its added text/audio preparation section agrees with maintained workflow. No article change.",
       "snapshot": {
         "source": "D:\\my-projects\\香草山\\xiangcaoshan",
         "head": "8c72d869083982003b99e7eee10e2260fc506e66",
@@ -43,12 +43,12 @@
           "docs/DESIGN.md": null,
           "docs/ARCHITECTURE_DECISIONS.md": null
         },
-        "articleHash": "56f26549a30b355cdc297730550740a08f6ce8b795c709ff45e52ab00f250c9a"
+        "articleHash": "a40ddd4e89cb54abc0340365c551ef21fe81b52b643697209e537f1fa9d576c7"
       }
     },
     "second-brain": {
-      "reviewedAt": "2026-10-29T07:56:38.866Z",
-      "note": "Compared AGENTS, README, Vision v2, user guide and validator; reviewed system docs/workflows/scripts match checked upstream object. Corrected automatic maintenance and evidence boundaries without reading private notes.",
+      "reviewedAt": "2026-10-29T14:28:16.874Z",
+      "note": "Reviewed source documentation fingerprint unchanged; checked upstream ddfeb757d2a2916ba0df54dba4d2df8d6fd43c69 and no differences in reviewed README/AGENTS/system workflows/scripts. Dirty private notes/generated indexes excluded. No article change.",
       "snapshot": {
         "source": "D:\\my-projects\\obsidian\\secondBrain\\第二大脑",
         "head": "b852b25f762a3d54fc9afe6083bfc3c75c2cdd77",
@@ -58,12 +58,12 @@
           "docs/DESIGN.md": null,
           "docs/ARCHITECTURE_DECISIONS.md": null
         },
-        "articleHash": "678d2f4e9ba3ec33f085d6f3f229f84a72d87aa224311dfe33ddbc35f0c3987e"
+        "articleHash": "425d12488fefa47c82aaf3a5c919a2680b93d14802544bc9a91f7d37d386382d"
       }
     },
     "tcg-card-manager": {
-      "reviewedAt": "2026-10-29T07:56:41.181Z",
-      "note": "Compared local README, collector and API research docs, server.py and price_alerts.py including uncommitted research; checked upstream HEAD. Updated three-source collection, targets, daily receipts and recovery. No private data or live calls.",
+      "reviewedAt": "2026-10-29T14:28:20.553Z",
+      "note": "Reviewed README fingerprint and upstream b1dc5e2fe60cd821d71c5c9a63c947ebd3183b9e unchanged; dirty README/API research remains within previously reviewed evidence and limitations in article. No live collectors, private portfolio or credential reads; no article change.",
       "snapshot": {
         "source": "D:\\my-projects\\卡牌交易助手",
         "head": "b1dc5e2fe60cd821d71c5c9a63c947ebd3183b9e",
@@ -73,27 +73,27 @@
           "docs/DESIGN.md": null,
           "docs/ARCHITECTURE_DECISIONS.md": null
         },
-        "articleHash": "45784caad312403deaeb1e5281dd7b2ae412c07118ba83f092b505814fbd75ce"
+        "articleHash": "f5d21306b1c6e4eaefaaa786c36ca067f1e0098500e6147fc81fb881fcc8bc4d"
       }
     },
     "notion-widgets": {
-      "reviewedAt": "2026-10-29T07:56:43.357Z",
-      "note": "Compared AGENTS and root/Gallery/Weather READMEs with configure.js; upstream HEAD matches. Added drag/keyboard ordering and gallery-ID access boundary; existing images verified.",
+      "reviewedAt": "2026-10-29T14:27:58.642Z",
+      "note": "Compared AGENTS, root/questions/gallery READMEs, cloud/app/dashboard state logic, SQL access/revision checks and gallery image preparation with final article. Remote HEAD df90654dc1188ed169727573ba433b334ecf7491 matches. Added question-box architecture and image-format compatibility; no production data or database writes.",
       "snapshot": {
         "source": "C:\\Users\\ducenhan\\Desktop\\Notion_Widgets",
-        "head": "e30f1b1c1398fcb5eae79a5a5ced1ac939537e12",
+        "head": "df90654dc1188ed169727573ba433b334ecf7491",
         "sourceFiles": {
-          "README.md": "36f74513e3d34cc73d9d5970d92c6313564ac82c4742ecae3d8f3ab5500749b9",
+          "README.md": "fb4612accedaca5a89fda21e8ee650495f8bc1d4d65aadfa535d3b674f86a050",
           "AGENTS.md": "a377cc8b08321c9edc60ec756665543daab85f845f1a2a09def62d627d59264d",
           "docs/DESIGN.md": null,
           "docs/ARCHITECTURE_DECISIONS.md": null
         },
-        "articleHash": "b72b0321fa367cda3ad619704151c52a0c4cc41b8c55238453074958556f9575"
+        "articleHash": "3d65e52039d3a52b4f2156500bf42a752d0be638b5c44c634ee6c8b004822ae3"
       }
     },
     "pnyl": {
-      "reviewedAt": "2026-10-29T07:56:45.598Z",
-      "note": "Compared local and remote root/debate READMEs and existing upstream Git differences. Added shared staged participation and privacy mechanisms; local-only debate-flow additions not presented as deployed.",
+      "reviewedAt": "2026-10-29T14:28:23.855Z",
+      "note": "Reviewed documentation fingerprint and local HEAD unchanged; upstream remains 88931d754fb85666f70af7d0e64fd2a6fcb4949b. Prior local debate changes remain distinguished from deployed scope; untracked outputs excluded. No article change.",
       "snapshot": {
         "source": "C:\\Users\\ducenhan\\Desktop\\信仰大富翁",
         "head": "762eeeda9a39e8edbe7ee6f4f29a8fea29e70195",
@@ -103,22 +103,22 @@
           "docs/DESIGN.md": null,
           "docs/ARCHITECTURE_DECISIONS.md": null
         },
-        "articleHash": "b7bd2f225a571ae0dbf83040ba957575b28746dad2894e300521e025961afd3a"
+        "articleHash": "5d12096bfb4cf33946f5953d1a39ce89434c0de81ce5b55b2f06bf1d44cd4c46"
       }
     },
     "personal-website": {
-      "reviewedAt": "2026-10-29T07:56:50.347Z",
-      "note": "Compared README and current Projects loader/header/article UI plus maintenance workflow. Upstream dev differs only in generated Toggl data. Article includes local uncommitted Projects improvements, not a deployment claim.",
+      "reviewedAt": "2026-10-29T14:28:26.543Z",
+      "note": "Compared current README, Projects loader/article UI and revised workflow against article. Upstream/local HEAD match 5c34acbe674fd1d2e393e7ed011a015b0a1afafa; changes since previous snapshot already represented or article maintenance. No article change.",
       "snapshot": {
         "source": "D:\\my-projects\\personal website\\my-website\\vite-app",
-        "head": "ed848b32c679b6c85d4be72f5bcd028571b6ce50",
+        "head": "5c34acbe674fd1d2e393e7ed011a015b0a1afafa",
         "sourceFiles": {
           "README.md": "4be417142ca186304ec0f2dbd845e5549539e1d49927eeabc74c71f3b7f4e202",
-          "AGENTS.md": "449fafb218d1faaae4db4a1015b6b98e909610763942154c38cea72579f357fc",
+          "AGENTS.md": "e766eb877ae2b8e4552ebb2d08df3347ac868e2bb4e9cfe386309041528cad59",
           "docs/DESIGN.md": null,
           "docs/ARCHITECTURE_DECISIONS.md": null
         },
-        "articleHash": "f48e0cc473c14b90df1a32e395d3bb29b98f5b0949edf4d730dc959e902961eb"
+        "articleHash": "03f05a5bd657601425e9acf975a67c2a428b44d15377ef98ea00f03ecc8bf941"
       }
     }
   }

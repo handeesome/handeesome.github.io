@@ -12,9 +12,13 @@ The workflow is straightforward: import a score and a recording, mark the lyric 
 - **Source code:** [View the GitHub repository](https://github.com/handeesome/score-karaoke-studio)
 - **Windows app:** [Download from GitHub Releases](https://github.com/handeesome/score-karaoke-studio/releases)
 
+![Pujian editor with an original sample score and synthesized audio, showing lyric regions and the phrase timeline](/images/projects/score-karaoke-studio/pujian-editor-sample.png)
+
 ## From Sheet Music to Timed Lyrics
 
 The app accepts a PDF or a set of score images, together with an audio file. I can draw boxes around the lyrics or divide the page with horizontal and vertical lines, then number the regions in the order they are sung. Repeated phrases can reuse the same region without drawing another box. For scores with several verses, automatic numbering offers a verse-by-verse order to review before applying it.
+
+In v0.1.12, the top score picker starts a new project from one PDF or image, then asks for audio. Dropping score files also starts a new project, but carries over the current audio unless a new recording is dropped with them. Only “更多歌谱” appends pages while preserving the existing recording, regions, and timing. Multi-page scores expose previous/next controls and a confirmed, undoable page deletion that removes the affected annotations while retaining other pages and the audio.
 
 While the recording plays, clicking the timing button or pressing Enter marks the first phrase, each following phrase, and the final ending. A zoomable timeline shows a locally separated vocal waveform as a reference. Phrase bars and their edges can be dragged to adjust the timing after the initial pass.
 
@@ -44,11 +48,17 @@ The two highlight modes need different editing rules. Whole-region mode connects
 
 Merging regions also needs care. I preserve the existing time slots, rebind them in singing order, and retain surplus slots for later assignment. This avoids throwing away the timing work when the score layout changes. The partition and timing logic is covered by focused frontend tests.
 
+The v0.1.12 import flow treats replacement as a project transition. It imports and validates the new score and saves the previous project before activating a fresh project model. A canceled selection, failed import, or failed save leaves the current editor content in place. Page deletion filters page-linked regions, partitions, and timing flags, then reconnects timing according to the highlight mode. This keeps page editing within the same project model and undo history instead of changing only the visible page list.
+
 ### Local Recognition and Audio Analysis
 
 PDF pages are rasterized with **PyMuPDF at 240 DPI**. Automatic alignment combines **Tesseract** OCR with **faster-whisper** transcription and vocal waveform information to propose phrase times. Suggestions remain reviewable instead of replacing existing manual timing.
 
-For vocal analysis, the app can use a fast **Spleeter ONNX model through ONNX Runtime**, with **Demucs** used when the fast model is unavailable. Completed analysis is cached for reuse. Progress reflects processing stages and completed audio segments, so a long-running analysis does not show a percentage based only on elapsed time.
+For vocal analysis, the app can use a fast **Spleeter ONNX model through ONNX Runtime**, with **Demucs** used when the fast model is unavailable. Since v0.1.11, the fast result also provides an early usable waveform while **HTDemucs** processes the same recording in a separate background queue. On success, the app replaces the waveform and updates its cache; on failure, the fast result remains usable without interrupting editing.
+
+The background worker runs at lower priority on Windows and defaults to two CPU compute threads. Cached fast waveforms can still be refined, while completed HTDemucs results are reused. The frontend keeps polling while refinement is active and stops accepting results after the audio changes, so one song's result cannot replace another song's waveform. This gives an initial timing reference sooner while leaving the original soundtrack untouched.
+
+Progress reflects processing stages and completed audio segments, so a long-running analysis does not show a percentage based only on elapsed time. Progress and retry controls remain in the timeline's visible area when it is zoomed or scrolled horizontally.
 
 ### Rendering and Audio Preservation
 
@@ -61,5 +71,9 @@ This makes audio compatibility an explicit export constraint: an unsupported MP4
 The app works on one song at a time and saves the session so it can be continued after reopening. An offline package includes models and OCR tools; the standard package needs those prepared before the related features can be used. Windows packages need WebView2 Runtime and .NET Framework 4.8.
 
 Cumulative updates reuse the existing runtime and model caches. Keeping installed program files separate from user data allows upgrades without replacing the imported scores, recordings, or saved timing work.
+
+The desktop app checks GitHub Releases at startup and every six hours, and also has a persistent manual check. Each check or retry creates a fresh network opener so a proxy enabled after startup can take effect. Installation checks local task readiness, verifies the package's SHA256 and compatibility, and blocks background editor actions while downloading and installing. A versioned frontend URL and cache revalidation prevent the updated executable from reopening an old cached interface while preserving the same origin for saved preferences.
+
+The article was checked against the v0.1.12 source and published GitHub Release. The repository includes tests for waveform refinement, stale-result isolation, import behavior, project actions, update networking, and frontend cache handling. Those tests were inspected as evidence; source application tests and media processing were not rerun for this article update.
 
 The useful part for me is keeping the score, singing order, and timing together. I can work directly with an existing score, correct individual phrases while listening, and check the synchronized result before exporting it.

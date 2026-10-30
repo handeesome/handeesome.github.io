@@ -1,7 +1,7 @@
 import fm from "front-matter";
 
 const presentation = {
-  "score-karaoke-studio": { category: "Windows app", featured: 1, illustration: "score" },
+  "score-karaoke-studio": { category: "Windows app", featured: 1 },
   "learning-guide-live": { category: "Real-time collaboration", featured: 2, displayTitle: "Learning Guide Live & 见面" },
   "notion-widgets": { category: "Web widgets", featured: 3 },
   "tcg-card-manager": { category: "Collection tools" },

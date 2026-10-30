@@ -37,7 +37,8 @@ Label repositories requiring access. Do not invent a deployment URL.
 ## What It Does
 
 Explain the main user journey with one concrete example or scenario.
-Add a maintained, checked screenshot where it helps understanding.
+Include a representative real screenshot for a project with a visible interface.
+Add focused interaction states beside the workflow they explain when useful.
 
 ## Technical Architecture
 
@@ -69,6 +70,7 @@ State relevant limitations in proportion to the project.
 - Projects has its own list and article layout. Preserve the shared navigation, site palette, light/dark themes, and other pages. `ProjectsHeader.jsx` selects a compact header only for `/projects` routes.
 - `projectData.js` reads article front matter and supplies presentation metadata. Register selected projects and categories there; a new article otherwise appears automatically in the chronological list. Use real maintained images when available, or clearly label an illustration. Never present a drawn interface as a screenshot.
 - The first Markdown image is reused as a detail-page hero and removed from its old position at render time without changing the article file. Give it meaningful alt text; that text is also used as its caption. All article images support enlargement.
+- Interface projects should have at least one clear, current screenshot. Prefer an overview for the first image and one or two additional views for meaningful new components or interaction states. Preserve accurate existing images. Capture the real UI with isolated example data, identify demonstration content in captions, and verify that presentation metadata actually displays the screenshot instead of an older illustration. Report unavailable captures; do not fabricate an interface. Projects without a visual interface may use a relevant real result instead.
 - Put the project name and summary first, followed by real source/demo/download links, then the preview and article. Keep prose around 680px wide, with wider media and a desktop table of contents. Use the collapsible contents list on narrow screens.
 - Keep implementation details in the article. Use purpose, outcome, and a small number of technologies in list previews. Preserve original dates and source access labels.
 - Scope all new presentation styles to Projects. Verify 320px/390px, desktop, both themes, image viewer keyboard behavior, contents links, missing slugs, and a non-Projects page when changing the shared header selector.
