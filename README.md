@@ -41,3 +41,6 @@ React · Vite · React Router · Firebase · Bootstrap · Recharts · Markdown
 The Cloudflare Worker also serves the static question deck, gallery and weather widgets at /widgets/questions/, /widgets/gallery/ and /widgets/weather/. These paths serve widget files directly, without redirecting to github.io. Existing shared links retain their query parameters (especially id).
 
 Before each build, scripts/sync-notion-widgets.mjs fetches main from handeesome/notion-widgets and copies browser assets into public/widgets. A new widget release reaches this domain on the next website build; redeploy the website after updating that repository. Set NOTION_WIDGETS_SOURCE to a local repository path to build offline or validate unpublished changes. No database SQL, tests or private deck IDs are copied.
+
+If the source repository is temporarily unreachable, the build logs a warning and serves the checked-in widget snapshot, so a source-network outage does not block the rest of the personal website.
+

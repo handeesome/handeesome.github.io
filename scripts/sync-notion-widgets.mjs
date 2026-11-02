@@ -5,7 +5,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 let source=process.env.NOTION_WIDGETS_SOURCE;
-if(!source){const scratch=mkdtempSync(join(tmpdir(),'notion-widgets-build-'));source=join(scratch,'source');execFileSync('git',['clone','--depth','1','--branch','main','https://github.com/handeesome/notion-widgets.git',source],{stdio:'inherit'});}
+if(!source){const scratch=mkdtempSync(join(tmpdir(),'notion-widgets-build-'));source=join(scratch,'source');try { execFileSync('git',['clone','--depth','1','--branch','main','https://github.com/handeesome/notion-widgets.git',source],{stdio:'inherit'}); } catch(error) { if(['questions','gallery','weather'].every(w=>existsSync(join(root,'public','widgets',w,'index.html')))){console.warn('Widget source unavailable; using the checked-in widget snapshot.');process.exit(0);} throw error; }}
 const tracked=new Set(execFileSync('git',['-C',resolve(source),'ls-files'],{encoding:'utf8'}).split(/\r?\n/));
 for(const widget of ['questions','gallery','weather']){
  const from=join(resolve(source),widget),to=join(root,'public','widgets',widget);
