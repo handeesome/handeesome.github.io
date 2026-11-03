@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/sync-notion-widgets.mjs",
+    "widgets:snapshot": "node scripts/sync-notion-widgets.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
