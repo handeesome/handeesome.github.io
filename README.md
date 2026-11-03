@@ -45,3 +45,5 @@ Before each build, scripts/sync-notion-widgets.mjs fetches main from handeesome/
 If the source repository is temporarily unreachable, the build logs a warning and serves the checked-in widget snapshot, so a source-network outage does not block the rest of the personal website.
 
 The question widget uses one compact card drawer with single/multiple draw modes. Multiple draws retain a collapsible, height-limited history; there are no participant-count or turn controls. Its batch question editor uses one continuous editable bullet list, opens at the end for additions, and dims the background with an 85% black overlay.
+
+Question themes can be chosen or created when adding a question and edited per card in the dashboard. Both the question wall and shared drawing UI support theme filtering and theme totals; bulk entry stays a plain question list.
