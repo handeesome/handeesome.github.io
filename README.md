@@ -35,7 +35,3 @@ React · Vite · React Router · Firebase · Bootstrap · Recharts · Markdown
 ---
 
 © 2026 Cenhan. All rights reserved.
-
-## Related project
-
-[Notion Widgets](https://github.com/handeesome/notion-widgets) is maintained and deployed independently. Its Cloudflare Worker serves /widgets/ on ducenhan.com; this repository contains only the personal website.
