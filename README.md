@@ -36,13 +36,6 @@ React · Vite · React Router · Firebase · Bootstrap · Recharts · Markdown
 
 © 2026 Cenhan. All rights reserved.
 
-## Notion widgets
+## Related project
 
-The widgets at https://www.ducenhan.com/widgets/questions/, /widgets/gallery/ and /widgets/weather/ are now served by the independent Cloudflare Worker notion-widgets. Its /widgets/* routes take precedence over this website's ducenhan-website Custom Domains, while all other website paths stay on the personal-site Worker. Existing shared links and their query parameters (especially id) are unchanged.
-
-Cloudflare Git integration builds and deploys handeesome/notion-widgets main directly. Widget releases no longer require this website to build or deploy. The personal website build has no prebuild widget fetch and does not depend on the widget source repository being available.
-
-Checked-in public/widgets files remain as a rollback snapshot only. scripts/sync-notion-widgets.mjs is retained as an explicit maintenance tool, available via npm run widgets:snapshot; it is not part of the website build. Set NOTION_WIDGETS_SOURCE to a local widget repository path when refreshing that snapshot manually. If the independent widget routes are removed, the existing snapshot can serve as a fallback. Do not remove the personal-site Custom Domains or DNS when rolling back.
-The question widget uses one compact card drawer with single/multiple draw modes. Multiple draws retain a collapsible, height-limited history; there are no participant-count or turn controls. Its batch question editor uses one continuous editable bullet list, opens at the end for additions, and dims the background with an 85% black overlay.
-
-Question themes can be chosen or created when adding a question and edited per card in the dashboard. The add-panel theme dropdown sits at its top right; the shared drawing UI uses inline theme choices with totals below the card deck and no extra label beside the draw-mode toggle. Custom themes are limited to six (excluding All and Uncategorized). The question wall supports theme filtering and full theme dropdowns (including creation), with explicit dark-mode option colors and no focus outline or shadow on any question dashboard dropdown. Theme choices below the deck use three equal-width columns, including narrow Notion embeds; bulk entry stays a plain question list.
+[Notion Widgets](https://github.com/handeesome/notion-widgets) is maintained and deployed independently. Its Cloudflare Worker serves /widgets/ on ducenhan.com; this repository contains only the personal website.
